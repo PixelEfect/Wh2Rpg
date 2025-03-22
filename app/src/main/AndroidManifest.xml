@@ -39,7 +39,13 @@
             android:name=".StatsFormActivity"
             android:exported="false"/>
         <activity
+            android:name=".DescriptionFormActivity"
+            android:exported="false"/>
+        <activity
             android:name=".LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ProfessionsConsistencyChecker"
             android:exported="false"/>
     </application>
 

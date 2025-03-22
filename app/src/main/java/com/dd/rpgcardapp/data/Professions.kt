@@ -1,7 +1,5 @@
 package com.dd.rpgcardapp.data
 
-import android.widget.GridLayout.Spec
-
 data class Profession(
     val name: String,
     val ww: Int,

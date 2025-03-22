@@ -103,6 +103,7 @@ object ProfessionPaths {
                 Professions.Herold,
                 Professions.Kanciarz,
                 Professions.Wloczykij,
+                Professions.Zlodziej,
             ),
             exit = listOf(
                 Professions.Bard,
@@ -497,10 +498,11 @@ object ProfessionPaths {
                 Professions.Ochotnik,
                 Professions.Sluga,
                 Professions.Przepatrywacz,
-                Professions.StraznikPol,
+                Professions.StraznikDrog,
             ),
             exit = listOf(
                 Professions.Herold,
+                Professions.Przepatrywacz,
                 Professions.StraznikDrog,
                 Professions.WojownikKlanowy,
                 Professions.Woznica,
@@ -544,6 +546,7 @@ object ProfessionPaths {
             ),
             exit = listOf(
                 Professions.Najemnik,
+                Professions.Poslaniec,
                 Professions.Rozbojnik,
                 Professions.StraznikDrog,
                 Professions.Woznica,
@@ -683,6 +686,7 @@ object ProfessionPaths {
                 Professions.Przepatrywacz,
                 Professions.Przewoznik,
                 Professions.Straznik,
+                Professions.Woznica,
             ),
             exit = listOf(
                 Professions.Banita,
@@ -1064,6 +1068,7 @@ object ProfessionPaths {
                 Professions.Fanatyk,
                 Professions.Kaplan,
                 Professions.WybraniecBozy,
+                Professions.Zakonnik,
             ),
             exit = listOf(
                 Professions.Demagog,
