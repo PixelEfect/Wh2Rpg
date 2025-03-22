@@ -142,6 +142,9 @@ class MainActivity : BaseActivity() {
         findViewById<Button>(R.id.addCharacterButton).setOnClickListener {
             startActivity(Intent(this, NewCardActivity::class.java))
         }
+        findViewById<Button>(R.id.testButton).setOnClickListener {
+            startActivity(Intent(this, ProfessionsConsistencyChecker::class.java))
+        }
     }
 
     // onStart is called when the activity is about to become visible

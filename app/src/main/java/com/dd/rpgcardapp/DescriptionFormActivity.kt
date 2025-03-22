@@ -18,7 +18,7 @@ class DescriptionFormActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_stats_form)
+        setContentView(R.layout.activity_description_form)
 
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
