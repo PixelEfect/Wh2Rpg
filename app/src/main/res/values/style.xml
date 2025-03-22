@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textStyle">bold</item> <!-- Pogrubienie tekstu -->
+        <item name="android:textColor">@color/black</item> <!-- Kolor tekstu -->
+        <item name="android:textSize">16sp</item> <!-- Rozmiar czcionki -->
+    </style>
+
+    <style name="InputBlockStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="NumberInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">number</item>
+        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="ReadOnlyInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/translucent_bg2</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:inputType">none</item>
+    </style>
+
+    <style name="SmallInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">text</item>
+        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="MediumInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:gravity">top</item>
+        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="LargeInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:gravity">top</item>
+        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="HugeInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">160dp</item>
+        <item name="android:gravity">top</item>
+        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+
+</resources>
