@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Wh2Rpg</string>
+    <string name="default_web_client_id">917823270858-5dejtujiu8dr37f1mds964a219envp4n.apps.googleusercontent.com</string>
+    <string name="wyloguj">Wyloguj</string>
+
+    <string name="label_ww">WW:</string>
+    <string name="label_us">US:</string>
+    <string name="label_k">K:</string>
+    <string name="label_odp">Odp:</string>
+    <string name="label_zr">Zr:</string>
+    <string name="label_int">Int:</string>
+    <string name="label_sw">SW:</string>
+    <string name="label_ogd">Ogd:</string>
+    <string name="label_a">A:</string>
+    <string name="label_zyw">Żyw:</string>
+    <string name="label_s">S:</string>
+    <string name="label_wt">Wt:</string>
+    <string name="label_sz">Sz:</string>
+    <string name="label_mag">Mag:</string>
+    <string name="label_po">PO:</string>
+    <string name="label_pp">PP:</string>
+
+    <string name="label_stateOfHealth">Stan zdrowia</string>
+    <string name="label_history">Hisotria</string>
+    <string name="label_additionalInformation">Dodatkowe informacje</string>
+</resources>

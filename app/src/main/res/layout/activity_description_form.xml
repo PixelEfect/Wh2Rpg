@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_0003"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <!-- Pierwszy blok z Inputami -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Blok WW -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/stateOfHealthView"
+                style="@style/LabelStyle"
+                android:text="@string/label_stateOfHealth" />
+            <EditText
+                android:id="@+id/inputStateOfHealth"
+                style="@style/LargeInputStyle" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <LinearLayout style="@style/InputBlockStyle">
+                <TextView
+                    android:id="@+id/historyView"
+                    style="@style/LabelStyle"
+                    android:text="@string/label_history" />
+                <EditText
+                    android:id="@+id/inputHistory"
+                    style="@style/LargeInputStyle" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <LinearLayout style="@style/InputBlockStyle">
+                <TextView
+                    android:id="@+id/additionalInformationView"
+                    style="@style/LabelStyle"
+                    android:text="@string/label_additionalInformation" />
+                <EditText
+                    android:id="@+id/inputAdditionalInformation"
+                    style="@style/HugeInputStyle" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/next_001" />
+
+        <Space
+            android:layout_width="40dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_0003"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <!-- Pierwszy blok z Inputami -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Blok WW -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/WWView"
+                style="@style/LabelStyle"
+                android:text="@string/label_ww" />
+            <EditText
+                android:id="@+id/inputWW"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+        <!-- Blok US -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/USView"
+                style="@style/LabelStyle"
+                android:text="@string/label_us" />
+            <EditText
+                android:id="@+id/inputUS"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+        <!-- Blok K -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/KView"
+                style="@style/LabelStyle"
+                android:text="@string/label_k" />
+            <EditText
+                android:id="@+id/inputK"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+        <!-- Blok Odp -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/OdpView"
+                style="@style/LabelStyle"
+                android:text="@string/label_odp" />
+            <EditText
+                android:id="@+id/inputOdp"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Dodatkowe widoki (spacery, odstępy itp.) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <!-- Kolejny blok (Zr, Int, SW, Ogd) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Blok Zr -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/ZrView"
+                style="@style/LabelStyle"
+                android:text="@string/label_zr" />
+            <EditText
+                android:id="@+id/inputZr"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+        <!-- Blok Int -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/IntView"
+                style="@style/LabelStyle"
+                android:text="@string/label_int" />
+            <EditText
+                android:id="@+id/inputInt"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+        <!-- Blok SW -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/SWView"
+                style="@style/LabelStyle"
+                android:text="@string/label_sw" />
+            <EditText
+                android:id="@+id/inputSW"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+        <!-- Blok Ogd -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/OgdView"
+                style="@style/LabelStyle"
+                android:text="@string/label_ogd" />
+            <EditText
+                android:id="@+id/inputOgd"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Blok A -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/AView"
+                style="@style/LabelStyle"
+                android:text="@string/label_a" />
+            <EditText
+                android:id="@+id/inputA"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+        <!-- Blok Żyw -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/ŻywView"
+                style="@style/LabelStyle"
+                android:text="@string/label_zyw" />
+            <EditText
+                android:id="@+id/inputŻyw"
+                style="@style/SmallInputStyle"/>
+        </LinearLayout>
+
+        <!-- Blok S -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/SView"
+                style="@style/LabelStyle"
+                android:text="@string/label_s" />
+            <EditText
+                android:id="@+id/inputS"
+                style="@style/ReadOnlyInputStyle"/>
+        </LinearLayout>
+
+        <!-- Blok Wt -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/WtView"
+                style="@style/LabelStyle"
+                android:text="@string/label_wt" />
+            <EditText
+                android:id="@+id/inputWt"
+                style="@style/ReadOnlyInputStyle" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Blok Sz -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/SzView"
+                style="@style/LabelStyle"
+                android:text="@string/label_sz" />
+            <EditText
+                android:id="@+id/inputSz"
+                style="@style/NumberInputStyle"/>
+        </LinearLayout>
+
+        <!-- Blok Mag -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/MagView"
+                style="@style/LabelStyle"
+                android:text="@string/label_mag" />
+            <EditText
+                android:id="@+id/inputMag"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+        <!-- Blok PO -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/POView"
+                style="@style/LabelStyle"
+                android:text="@string/label_po" />
+            <EditText
+                android:id="@+id/inputPO"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+        <!-- Blok PP -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/PPView"
+                style="@style/LabelStyle"
+                android:text="@string/label_pp" />
+            <EditText
+                android:id="@+id/inputPP"
+                style="@style/NumberInputStyle" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/next_001" />
+
+        <Space
+            android:layout_width="40dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>
