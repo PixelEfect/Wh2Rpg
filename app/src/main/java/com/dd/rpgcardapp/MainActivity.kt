@@ -23,7 +23,10 @@ import android.widget.RelativeLayout
 import androidx.core.animation.addListener
 import kotlin.random.Random
 
-//NIEWOLNIK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//NIEWOLNIK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! podobnie pielgrzymem moze zostac kazdy
+//DODATKOWE ZAKLECIE
+//TODO Profesje: ksiega zbawienia, ksiega spaczenia, kraina królowej lodu, mroczni wladcy nocy, poradnik staroswiatowca, królestwa renegatów
+// Duch przodka - ksiega zbawienia 81,
 
 class WelcomeActivity : BaseActivity() {
     private lateinit var auth: FirebaseAuth  // Firebase Authentication instance

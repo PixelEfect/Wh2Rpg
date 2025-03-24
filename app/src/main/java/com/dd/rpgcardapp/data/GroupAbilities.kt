@@ -44,6 +44,7 @@ object KnowledgeAbilities {
 
 object LanguageAbilities {
     val All = listOf(
+        SpecializedAbilities.znajomoscJezykaArabski,
         SpecializedAbilities.znajomoscJezykaBretonski,
         SpecializedAbilities.znajomoscJezykaEltharin,
         SpecializedAbilities.znajomoscJezykaEstalijski,
