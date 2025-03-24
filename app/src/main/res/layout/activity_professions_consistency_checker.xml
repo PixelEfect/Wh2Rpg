@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/textViewConsistencyReport"
         android:layout_width="match_parent"
-        android:layout_height="694dp"
+        android:layout_height="807dp"
         android:text="Sprawdzanie spójności danych..."
         android:textSize="18sp"
         android:textStyle="bold" />
