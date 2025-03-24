@@ -50,10 +50,27 @@ object PriestlyMagic {
         MagicSkills.magiaKaplanskaRanald,
         MagicSkills.magiaKaplanskaSigmar,
         MagicSkills.magiaKaplanskaShallya,
-        MagicSkills.magiaKaplanskaTaal,
-        MagicSkills.magiaKaplanskaRhyia,
+        MagicSkills.magiaKaplanskaTaalRhyia,
+        MagicSkills.magiaKaplanskaKhaina,
         MagicSkills.magiaKaplanskaUlryk,
         MagicSkills.magiaKaplanskaVerena,
+        MagicSkills.magiaKaplanskaGunndreda,
+        MagicSkills.magiaKaplanskaHandricha,
+    )
+}
+
+object SimplePriestlyMagic {
+    val All = listOf(
+        MagicSkills.magiaProstaKaplanska,
+        MagicSkills.magiaProstaManannitow,
+        MagicSkills.magiaProstaMorrytow,
+        MagicSkills.magiaProstaMyrmidian,
+        MagicSkills.magiaProstaRanaldian,
+        MagicSkills.magiaProstaShallyan,
+        MagicSkills.magiaProstaSigmarytow,
+        MagicSkills.magiaProstaTaalitow,
+        MagicSkills.magiaProstaUlrykan,
+        MagicSkills.magiaProstaVerenian,
     )
 }
 
@@ -109,5 +126,52 @@ object Blessing {
         KnightSkills.blogoslawienstwoWyszkolenia,
         KnightSkills.blogoslawienstwoZrecznosci,
         KnightSkills.blogoslawienstwoZuchwalosci,
+    )
+}
+
+object MinorRuneForging {
+    val All = listOf(
+        RuneSkills.runaSzybkosci,
+        RuneSkills.runaCiosu,
+        RuneSkills.runaOchrony,
+        RuneSkills.runaKamienia,
+    )
+}
+
+object RuneForging {
+    val All = listOf(
+        RuneSkills.runaKrzywd,
+        RuneSkills.runaRozproszeniaCzaru,
+        RuneSkills.runaOslony,
+        RuneSkills.runaSily,
+        RuneSkills.runaMocy,
+        RuneSkills.runaZelaza,
+        RuneSkills.runaPrzeznaczenia,
+        RuneSkills.runaOgnia,
+        RuneSkills.runaPieca,
+        RuneSkills.runaZywotnosci,
+        RuneSkills.runaWytrzymalosci,
+        RuneSkills.runaFurii,
+        RuneSkills.runaSzczescia,
+        RuneSkills.runaZdlawieniaMagii,
+    )
+}
+
+object MasterRuneForging {
+    val All = listOf(
+        RuneSkills.mistrzowskaRunaRzutu,
+        RuneSkills.mistrzowskaRunaSzybkosci,
+        RuneSkills.mistrzowskaRunaZlosliwosci,
+        RuneSkills.mistrzowskaRunaDiamentu,
+        RuneSkills.mistrzowskaRunaStrzaskania,
+        RuneSkills.mistrzowskaRunaTlumieniaMagii,
+        RuneSkills.mistrzowskaRunaZwiazaniaMagii,
+        RuneSkills.mistrzowskaRunaAlaryka,
+        RuneSkills.mistrzowskaRunaStali,
+        RuneSkills.mistrzowskaRunaZwatpienia,
+        RuneSkills.mistrzowskaRunaSnorriego,
+        RuneSkills.mistrzowskaRunaGromrilu,
+        RuneSkills.mistrzowskaRunaSkalfa,
+        RuneSkills.mistrzowskaRunaWladzyKrolewskiej,
     )
 }

@@ -47,6 +47,7 @@ object RareAbilities {
     val unik = Ability("Unik", "Zr")
     val warzenieTrucizn = Ability("Warzenie Trucizn", "Int")
     val wykrywanieMagii = Ability("Wykrywanie Magii", "SW")
+    val wykuwanieRun = Ability("Wykuwanie run", "SW")
     val zastawianiePulapek = Ability("Zastawianie Pułapek", "Zr")
     val zwinnePalce = Ability("Zwinne Palce", "Zr")
     val zeglarstwo = Ability("Żeglarstwo", "Zr")
@@ -56,6 +57,7 @@ object SpecializedAbilities{
     val jezykTajemnyDemoniczny = Ability("Jezyk tajemny: Demoniczny", "Int")
     val jezykTajemnyMagiczny = Ability("Jezyk tajemny: Magiczny", "Int")
     val jezykTajemnyElfi = Ability("Jezyk tajemny: Tajemny elfi", "Int")
+    val jezykTajemnyKrasnoludzki = Ability("Jezyk tajemny: Tajemny krasnoludzki", "Int")
 
     val kuglarstwoAkrobatyka = Ability("Kuglarstwo: Akrobatyka", "Ogd")
     val kuglarstwoAktorstwo = Ability("Kuglarstwo: Aktorstwo", "Ogd")
@@ -146,6 +148,7 @@ object SpecializedAbilities{
     val wiedzaOgry = Ability("Wiedza: Ogry", "Int")
     val wiedzaSkaveny = Ability("Wiedza: Skaveny", "Int")
 
+    val znajomoscJezykaArabski = Ability("Znajomość języka: Arabski", "Int")
     val znajomoscJezykaBretonski = Ability("Znajomość języka: Bretoński", "Int")
     val znajomoscJezykaEltharin = Ability("Znajomość języka: Eltharin (elfi)", "Int")
     val znajomoscJezykaEstalijski = Ability("Znajomość języka: Estalijski", "Int")
