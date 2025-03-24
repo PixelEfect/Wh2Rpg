@@ -23,6 +23,7 @@ import android.widget.RelativeLayout
 import androidx.core.animation.addListener
 import kotlin.random.Random
 
+//NIEWOLNIK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 class WelcomeActivity : BaseActivity() {
     private lateinit var auth: FirebaseAuth  // Firebase Authentication instance

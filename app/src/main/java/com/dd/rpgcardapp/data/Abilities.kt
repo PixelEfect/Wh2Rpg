@@ -75,6 +75,7 @@ object SpecializedAbilities{
     val naukaAstronomia = Ability("Nauka: Astronomia", "Int")
     val naukaDemonologia = Ability("Nauka: Demonologia", "Int")
     val naukaFilozofia = Ability("Nauka: Filozofia", "Int")
+    val naukaFizyka = Ability("Nauka: Fizyka", "Int")
     val naukaGeneologiaHeraldyka = Ability("Nauka: Geneologia/heraldyka", "Int")
     val naukaHistoria = Ability("Nauka: Historia", "Int")
     val naukaInzynieria = Ability("Nauka: Inzynieria", "Int")
@@ -119,6 +120,7 @@ object SpecializedAbilities{
     val rzemiosloZielarstwo = Ability("Rzemiosło: Zielarstwo", "Int")
     val rzemiosloZlotnictwo = Ability("Rzemiosło: Złotnictwo", "Zr")
 
+    val sekretneZnakiAstrologow = Ability("Sekretne znaki: Astrologów", "Int")
     val sekretneZnakiLowcow = Ability("Sekretne znaki: Łowców", "Int")
     val sekretneZnakiRycerzyZakonnych = Ability("Sekretne znaki: Rycerzy zakonnych", "Int")
     val sekretneZnakiZlodziei = Ability("Sekretne znaki: Złodziei", "Int")
@@ -133,6 +135,7 @@ object SpecializedAbilities{
     val wiedzaEstalia = Ability("Wiedza: Estalia", "Int")
     val wiedzaImperium = Ability("Wiedza: Imperium", "Int")
     val wiedzaJalowaKraina = Ability("Wiedza: Jałowa Kraina", "Int")
+    val wiedzaKataj = Ability("Wiedza: Kataj", "Int")
     val wiedzaKislev = Ability("Wiedza: Kisleva", "Int")
     val wiedzaKsiestwaGraniczne = Ability("Wiedza: Księstwa Graniczne", "Int")
     val wiedzaNorska = Ability("Wiedza: Norska", "Int")
@@ -141,6 +144,7 @@ object SpecializedAbilities{
     val wiedzaKrasnoludy = Ability("Wiedza: Krasnoludy", "Int")
     val wiedzaNiziolki = Ability("Wiedza: Niziołki", "Int")
     val wiedzaOgry = Ability("Wiedza: Ogry", "Int")
+    val wiedzaSkaveny = Ability("Wiedza: Skaveny", "Int")
 
     val znajomoscJezykaBretonski = Ability("Znajomość języka: Bretoński", "Int")
     val znajomoscJezykaEltharin = Ability("Znajomość języka: Eltharin (elfi)", "Int")
@@ -155,5 +159,6 @@ object SpecializedAbilities{
     val znajomoscJezykaGoblinski = Ability("Znajomość języka: Gobliński", "Int")
     val znajomoscJezykaGrumbarth = Ability("Znajomość języka: Narzecze Grumbarth (ogry)", "Int")
     val znajomoscJezykaMrocznaMowa = Ability("Znajomość języka: Mroczna Mowa", "Int")
+    val znajomoscJezykaQueekish = Ability("Znajomość języka: Queekish", "Int")
 }
 
