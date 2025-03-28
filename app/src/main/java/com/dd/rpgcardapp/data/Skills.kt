@@ -4,6 +4,7 @@ data class Skill (val name: String, val description: String)
 
 object CommonSkills {
     val artylerzysta = Skill("Artylerzysta", "Ładowanie broni palnej krótsze o 1 akcję")
+    val bezrozumny = Skill("Bezrozumny", "Istota bez Int, Sw i Ogd")
     val biegPoScianach = Skill("Bieg po ścianach", "+20 wspinaczka, wysokość = szybkość")
     val bijatyka = Skill("Bijatyka", "Walka bez broni: WW +10, obrażenia +1")
     val blyskawicznePrzadowanie = Skill("Błyskawiczne przeładowanie", "Skróca przeładowanie broni strzeleckiej o 1 akcję")
@@ -45,10 +46,12 @@ object CommonSkills {
 
     val medytacja = Skill("Medytacja", "Poziom mocy rytuału + Mag BG")
     val mieczRodowy = Skill("Miecz rodowy", "Miecz rodowy daje +5WW, +1obr, +10 na strach i grozę")
+    val mierzonyCios = Skill("Mierzony cios", "+20 do WW podczas akcji 'celowanie'")
     val mistrzTresury = Skill("Mistrz tresury", "+20 dowodzenie/tresura skaveńskimi stworzeniami")
     val morderczyAtak = Skill("Morderczy atak", "Traficie krytyczne zadanie bronią w walce wręcz +1")
     val morderczyPocisk = Skill("Morderczy pocisk", "Zaklęcia typu 'magiczy pocisk' obrażenia +1")
     val nasladowca = Skill("Naśladujący", "+10 do testów wymagających udawania kogoś innego")
+    val niekompletny = Skill("Niekompletny", "Trafienie krytyczne = nagła śmierć")
     val niepokojacy = Skill("Niepokojący", "Test SW przeciwnika albo kara -10 do WW i US")
     val nieustraszony = Skill("Nieustraszony", "Strach nie działa; Groza działa jak strach")
     val obiezyswiat = Skill("Obieżyświat", "+10 do wiedzy i znajomości języka")
@@ -65,6 +68,7 @@ object CommonSkills {
     val ozywieniec = Skill("Ożywieniec", "Jesteś nieumarłym stworem!")
     val pancerzWiary = Skill("Pancerz wiary", "+3 do rzucania zaklęć w zbroi")
     val poliglota = Skill("Poliglota", "+10 do czytania i pisania oraz znajomości języka")
+    val polityk = Skill("Polityk", "+10 do gadaniny, przekonywania, targowania")
 
     val poteznyCios = Skill("Potężny cios", "-30 do parowania ciosu dla przeciwnika")
     val przemawianie = Skill("Przemawianie", "Oddziaływanie na grupę osób 10 razy większą niż normalnie")
@@ -85,6 +89,7 @@ object CommonSkills {
 
     val szybkieWyciagniecie = Skill("Szybkie wyciągnięcie", "Dobycie broni jako akcja natychmiastowa")
     val talentArtystyczny = Skill("Talent artystyczny", "+10 do rzemiosła/sztuki; +10 do wyceny dzieł sztuki")
+    val tobarskiPilot = Skill("Tobarski pilot", "+10/20 do testów związanych ze Skałami Głupców")
 
     val ulicznik = Skill("Ulicznik", "+10 do skradania i ukrywania się w mieście")
     val walkaOgonem = Skill("Walka ogonem", "Władanie bronią za pomocą ogona")
@@ -154,6 +159,7 @@ object MagicSkills {
     val magiaProstaVerenian = Skill("Magia prosta: Verenian", "Dostęp do błogosławieństw - Verena")
 
     val magiaCzarnoksieskaChaos = Skill("Magia czarnoksięska: Chaos", "Dostęp do czarów magii chaosu")
+    val magiaCzarnoksieskaNagasha = Skill("Magia czarnoksięska: Nagasha", "Dostęp do czarów tradycji Nagasha")
     val magiaCzarnoksieskaNekromacja = Skill("Magia czarnoksięska: Nekromancja", "Dostęp do czarów magii nekromanckiej")
     val magiaCzarnoksieskaNurgl = Skill("Magia czarnoksięska: Nurgl", "Dostęp do czarów magii Nurgla")
     val magiaCzarnoksieskaSkrytosci = Skill("Magia czarnoksięska: Tradycja skrytości", "Dostęp do czarów magii Skaveńskiej - tradycja skrytości")
