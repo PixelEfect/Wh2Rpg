@@ -59,6 +59,7 @@ object LanguageAbilities {
         SpecializedAbilities.znajomoscJezykaGrumbarth,
         SpecializedAbilities.znajomoscJezykaMrocznaMowa,
         SpecializedAbilities.znajomoscJezykaQueekish,
+        SpecializedAbilities.znajomoscJezykaStrzyganski,
     )
 }
 

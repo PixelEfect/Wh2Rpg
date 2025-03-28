@@ -46,7 +46,7 @@ object ConsistencyChecker {
                 val entryList = paths[exitProfession]?.entry ?: emptyList()
 
                 if (profession !in entryList) {
-                    inconsistencies.add("Brak spójności: ${profession.name} prowadzi do ${exitProfession.name}, ale ${exitProfession.name} nie ma ${profession.name} w entry.")
+                    inconsistencies.add("Błąd:  ${exitProfession.name} - brak ${profession.name} w entry.")
                 }
             }
         }
@@ -62,7 +62,7 @@ object ConsistencyChecker {
                 val exitList = paths[entryProfession]?.exit ?: emptyList()
 
                 if (profession !in exitList) {
-                    inconsistencies.add("Brak spójności: ${profession.name} ma w entry ${entryProfession.name}, ale ${entryProfession.name} nie prowadzi do ${profession.name} w exit.")
+                    inconsistencies.add("Błąd:  ${entryProfession.name} nie ma ${profession.name} w exit.")
                 }
             }
         }

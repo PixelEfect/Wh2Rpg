@@ -58,6 +58,7 @@ object SpecializedAbilities{
     val jezykTajemnyMagiczny = Ability("Jezyk tajemny: Magiczny", "Int")
     val jezykTajemnyElfi = Ability("Jezyk tajemny: Tajemny elfi", "Int")
     val jezykTajemnyKrasnoludzki = Ability("Jezyk tajemny: Tajemny krasnoludzki", "Int")
+    val jezykTajemnyNehekharanski = Ability("Jezyk tajemny: Tajemny nehekharański", "Int")
 
     val kuglarstwoAkrobatyka = Ability("Kuglarstwo: Akrobatyka", "Ogd")
     val kuglarstwoAktorstwo = Ability("Kuglarstwo: Aktorstwo", "Ogd")
@@ -127,6 +128,7 @@ object SpecializedAbilities{
     val sekretneZnakiRycerzyZakonnych = Ability("Sekretne znaki: Rycerzy zakonnych", "Int")
     val sekretneZnakiZlodziei = Ability("Sekretne znaki: Złodziei", "Int")
     val sekretneZnakiZwiadowcow = Ability("Sekretne znaki: Zwiadowców", "Int")
+    val sekretneZnakiKultuOswiecenia = Ability("Sekretne znaki: Kultu oświecenia (Poradnik staroświatowca)", "Int")
 
     val sekretnyJezykBitewny = Ability("Sekretny jezyk: Bitewny", "Int")
     val sekretnyJezykGildii = Ability("Sekretny jezyk: Gildii", "Int")
@@ -163,5 +165,6 @@ object SpecializedAbilities{
     val znajomoscJezykaGrumbarth = Ability("Znajomość języka: Narzecze Grumbarth (ogry)", "Int")
     val znajomoscJezykaMrocznaMowa = Ability("Znajomość języka: Mroczna Mowa", "Int")
     val znajomoscJezykaQueekish = Ability("Znajomość języka: Queekish", "Int")
+    val znajomoscJezykaStrzyganski = Ability("Znajomość języka: Strzygański", "Int")
 }
 
