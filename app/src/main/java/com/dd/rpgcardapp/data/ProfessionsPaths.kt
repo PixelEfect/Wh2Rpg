@@ -648,7 +648,7 @@ object ProfessionPaths {
                 Professions.Pacholek,
                 Professions.PasterzZCarcassonne,
                 Professions.PielgrzymGraala,
-                Professions.Poganiacz,
+                Professions.PoganiaczSkavenski,
                 Professions.Rozjemca,
                 Professions.StraznikPol,
                 Professions.Strzelec,
@@ -668,7 +668,7 @@ object ProfessionPaths {
                 Professions.Lowca,
                 Professions.Najemnik,
                 Professions.Ochroniarz,
-                Professions.Poganiacz,
+                Professions.PoganiaczSkavenski,
                 Professions.PoslaniecNocy,
                 Professions.Rynsztokowiec,
                 Professions.StraznikPol,
@@ -676,7 +676,7 @@ object ProfessionPaths {
             exit = listOf(
                 Professions.LowcaWampirow,
                 Professions.Najemnik,
-                Professions.Poganiacz,
+                Professions.PoganiaczSkavenski,
                 Professions.Rzezimieszek,
                 Professions.Strzelec,
                 Professions.SledczyVereny,
@@ -740,7 +740,7 @@ object ProfessionPaths {
                 Professions.Ochroniarz,
                 Professions.Oprych,
                 Professions.PielgrzymGraala,
-                Professions.Poganiacz,
+                Professions.PoganiaczSkavenski,
                 Professions.PoslaniecNocy,
                 Professions.Przepatrywacz,
                 Professions.Rynsztokowiec,
@@ -819,7 +819,7 @@ object ProfessionPaths {
             entry = listOf(
                 Professions.Doker,
                 Professions.Klanbrat,
-                Professions.Poganiacz,
+                Professions.PoganiaczSkavenski,
                 Professions.Rzezimieszek,
                 Professions.ZbieraczLajna,
                 Professions.ZolnierzOkretowy,
@@ -1618,7 +1618,7 @@ object ProfessionPaths {
                 Professions.Pielgrzym,
                 Professions.PielgrzymBitewny,
                 Professions.PielgrzymGraala,
-                Professions.Poganiacz,
+                Professions.PoganiaczSkavenski,
                 Professions.Pokutnik,
                 Professions.PoslaniecNocy,
                 Professions.RzecznikRodu,
@@ -3565,7 +3565,7 @@ object ProfessionPaths {
                 Professions.Najemnik,
                 Professions.Ochroniarz,
                 Professions.Oprych,
-                Professions.Poganiacz,
+                Professions.PoganiaczSkavenski,
                 Professions.PorywaczZwlok,
                 Professions.PoslaniecNocy,
                 Professions.Rzemieslnik,
@@ -3586,7 +3586,7 @@ object ProfessionPaths {
             )
         ),
 
-        Professions.Poganiacz to Paths(
+        Professions.PoganiaczSkavenski to Paths(
             entry = listOf(
                 Professions.Klanbrat,
                 Professions.Lowca,
@@ -3693,7 +3693,7 @@ object ProfessionPaths {
 
         Professions.MistrzCialoksztaltowania to Paths(
             entry = listOf(
-                Professions.Poganiacz,
+                Professions.PoganiaczSkavenski,
                 Professions.Szponowlad,
             ),
             exit = listOf(
@@ -3780,7 +3780,7 @@ object ProfessionPaths {
                 Professions.Harcownik,
                 Professions.Klanbrat,
                 Professions.Niewolnik,
-                Professions.Poganiacz,
+                Professions.PoganiaczSkavenski,
                 Professions.PoslaniecNocy,
                 Professions.Szturmoszczur,
             ),
