@@ -153,6 +153,7 @@ object MagicSkills {
     val magiaProstaKaplanska = Skill("Magia prosta: Kapłańska", "Dostęp do czarów magii prostej - kapłańskiej")
     val magiaProstaSpaczeniowa = Skill("Magia prosta: Spaczeniowa", "Dostęp do czarów magii prostej - spaczeniowej")
     val magiaProstaLodu = Skill("Magia prosta: Lodu", "Dostęp do czarów magii prostej - lodu")
+    val magiaProstaWiedzm = Skill("Magia prosta: Wiedźm", "Dostęp do czarów magii prostej - wiedźm")
     val magiaProstaTajemna = Skill("Magia prosta: Tajemna", "Dostęp do czarów magii prostej - tajemnej")
     val magiaProstaManannitow = Skill("Magia prosta: Manannitów", "Dostęp do błogosławieństw - Manann")
     val magiaProstaMorrytow = Skill("Magia prosta: Morrytów", "Dostęp do błogosławieństw - Morr")
@@ -221,6 +222,9 @@ object MagicSkills {
     val magiaTajemnaTradycjaSmierci = Skill("Shyish - Tradycja Śmierci", "Dostęp do magii umierających i duchów")
     val magiaTajemnaTradycjaNiebios = Skill("Azyr - Tradycja Niebios", "Dostęp do magii wróżbiarskiej i kontroli pogody")
     val magiaTajemnaTradycjaCienia = Skill("Ulgu - Tradycja Cienia", "Dostęp do magii iluzji i manipulacji umysłem")
+
+    val magiaCzarownicTradycjaWiedzm = Skill("Tradycja Wiedźm", "Dostęp do magii duchów")
+    val magiaCzarownicTradycjaLodu = Skill("Tradycja Lodu", "Dostęp do magii lodu")
 }
 
 object KnightSkills {

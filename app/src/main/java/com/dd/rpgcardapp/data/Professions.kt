@@ -2186,7 +2186,7 @@ object Professions {
         name = "Arcymag",
         ww = 15, us = 15, k = 5, odp = 15, zr = 20, int = 35, sw = 40, ogd = 20,
         zyw = 5, mag = 4,
-        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = SecretLanguageAbilities.Common + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.zastraszanie,
             RareAbilities.czytanieIPisanie,
@@ -2967,7 +2967,7 @@ object Professions {
     val KonnyLucznik = Profession(
         name = "Konny łucznik",
         ww = 15, us = 25, k = 15, odp = 15, zr = 15, int = 0, sw = 15, ogd = 5,
-        a =1, zyw = 4,
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
@@ -3134,6 +3134,59 @@ object Professions {
             CommonSkills.szybkieWyciagniecie,
             StatsSkills.bardzoSzybki,
             StatsSkills.twardziel,
+        ),
+        isStartingProfession = false,
+    )
+
+    val LodowaCzarownica = Profession(
+        name = "Lodowa czarownica",
+        ww = 15, us = 0, k = 5, odp = 20, zr = 15, int = 30, sw = 40, ogd = 15,
+         zyw = 6, mag = 4,
+        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.sztukaPrzetrwania,
+            CommonAbilities.zastraszanie,
+            RareAbilities.czytanieIPisanie,
+            RareAbilities.splatanieMagii,
+            RareAbilities.wykrywanieMagii,
+            SpecializedAbilities.jezykTajemnyMagiczny,
+        ),
+        skills = UniversalMagic.All + listOf(
+            CommonSkills.dotykMocy,
+            CommonSkills.grozny,
+            CommonSkills.niepokojacy,
+        ),
+        isStartingProfession = false,
+    )
+
+    val LodowaPanna = Profession(
+        name = "Lodowa panna",
+        ww = 5, us = 0, k = 5, odp = 10, zr = 5, int = 20, sw = 25, ogd = 10,
+         zyw = 4, mag = 2,
+        abilities = listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.sztukaPrzetrwania,
+            CommonAbilities.zastraszanie,
+            RareAbilities.czytanieIPisanie,
+            RareAbilities.nawigacja,
+            RareAbilities.splatanieMagii,
+            RareAbilities.wykrywanieMagii,
+            SpecializedAbilities.jezykTajemnyMagiczny,
+            SpecializedAbilities.naukaMagia,
+            SpecializedAbilities.wiedzaKislev,
+            SpecializedAbilities.znajomoscJezykaKislevski,
+        ),
+        skills = UniversalMagic.All + listOf(
+            CommonSkills.medytacja,
+            CommonSkills.morderczyPocisk,
+            CommonSkills.odpornoscPsychiczna,
+            CommonSkills.odwaga,
+            StatsSkills.opanowanie,
+            MagicSkills.magiaCzarownicTradycjaLodu,
         ),
         isStartingProfession = false,
     )
@@ -3344,7 +3397,7 @@ object Professions {
         name = "Mistrz magii",
         ww = 10, us = 10, k = 0, odp = 10, zr = 15, int = 30, sw = 35, ogd = 15,
         zyw = 4, mag = 3,
-        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = SecretLanguageAbilities.Common + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -3628,6 +3681,34 @@ object Professions {
             StatsSkills.bardzoSilny,
             StatsSkills.niezwykleOdporny,
             StatsSkills.twardziel,
+        ),
+        isStartingProfession = false,
+    )
+
+    val Prawiedzma = Profession(
+        name = "Prawiedźma",
+        ww = 0, us = 0, k = 5, odp = 20, zr = 10, int = 40, sw = 30, ogd = 15,
+         zyw = 6, mag = 3,
+        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.opiekaNadZwierzetami,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.zastraszanie,
+            RareAbilities.leczenie,
+            RareAbilities.oswajanie,
+            RareAbilities.warzenieTrucizn,
+            RareAbilities.wykrywanieMagii,
+            SpecializedAbilities.rzemiosloAptekarstwo,
+            SpecializedAbilities.rzemiosloZielarstwo,
+            SpecializedAbilities.znajomoscJezykaUngolski,
+        ),
+        skills = UniversalMagic.All + listOf(
+            CommonSkills.bystryWzrok,
+            CommonSkills.szczescie,
+            CommonSkills.szostyZmysl,
+            CommonSkills.wedrowiec,
+            CommonSkills.zmyslMagii,
+            MagicSkills.magiaCzarownicTradycjaWiedzm
         ),
         isStartingProfession = false,
     )
@@ -4158,6 +4239,37 @@ object Professions {
             MagicSkills.magiaCzarnoksieskaNurgl,
             MagicSkills.magiaCzarnoksieskaSlaanesh,
             MagicSkills.magiaCzarnoksieskaTzeentch,
+        ),
+        isStartingProfession = false,
+    )
+
+    val Wiedzma = Profession(
+        name = "Wiedźma",
+        ww = 0, us = 0, k = 5, odp = 10, zr = 5, int = 25, sw = 20, ogd = 10,
+        zyw = 4, mag = 1,
+        abilities = listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.mocnaGlowa,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.zastraszanie,
+            RareAbilities.leczenie,
+            RareAbilities.warzenieTrucizn,
+            RareAbilities.wykrywanieMagii,
+            SpecializedAbilities.jezykTajemnyMagiczny,
+            SpecializedAbilities.naukaDuchy,
+            SpecializedAbilities.naukaHistoria,
+            SpecializedAbilities.rzemiosloAptekarstwo,
+            SpecializedAbilities.rzemiosloZielarstwo,
+            SpecializedAbilities.wiedzaKislev,
+            SpecializedAbilities.wiedzaKrajTrolli,
+            SpecializedAbilities.znajomoscJezykaUngolski,
+        ),
+        skills = UniversalMagic.All + listOf(
+            CommonSkills.dotykMocy,
+            CommonSkills.medytacja,
+            CommonSkills.odpornoscPsychiczna,
+            StatsSkills.twardziel,
+            MagicSkills.magiaProstaWiedzm,
         ),
         isStartingProfession = false,
     )
@@ -5136,7 +5248,7 @@ object Professions {
         name = "Nadprorok",
         ww = 20, us = 20, k = 15, odp = 15, zr = 40, int = 40, sw = 35, ogd = 35,
         a = 1, zyw = 9, mag = 3,
-        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = SecretLanguageAbilities.Common + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.zastraszanie,
             RareAbilities.czytanieIPisanie,
@@ -5467,7 +5579,7 @@ object Professions {
         isStartingProfession = false,
     )
 
-    /////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////      ZWIERZAKI      ///////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
