@@ -22,7 +22,7 @@ object Professions {
     val Akolita = Profession(
         name = "Akolita",
         ww = 5, us = 5, k = 0, odp = 5, zr = 0, int = 10, sw = 10, ogd = 10,
-         zyw = 2, 
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.spostrzegawczosc,
@@ -70,7 +70,7 @@ object Professions {
     val Banita = Profession(
         name = "Banita",
         ww = 10, us = 10, k = 0, odp = 0, zr = 10, int = 5, sw = 0, ogd = 0,
-        a = 1, zyw = 2, 
+        a = 1, zyw = 2,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -97,7 +97,7 @@ object Professions {
     val BerserkerZNorski = Profession(
         name = "Berserker z Norski",
         ww = 15, us = 0, k = 10, odp = 10, zr = 0, int = 0, sw = 10, ogd = 0,
-         zyw = 2, 
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.plywanie,
@@ -118,7 +118,7 @@ object Professions {
         name = "Błędny rycerz",
         ww = 15, us = 0, k = 5, odp = 5, zr = 5, int = 0, sw = 5, ogd = 5,
         a = 1, zyw = 2,
-        abilities =KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.sztukaPrzetrwania,
@@ -138,7 +138,7 @@ object Professions {
     val Chlop = Profession(
         name = "Chłop",
         ww = 5, us = 5, k = 5, odp = 10, zr = 5, int = 0, sw = 5, ogd = 0,
-         zyw = 2, 
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.opiekaNadZwierzetami,
@@ -170,7 +170,7 @@ object Professions {
     val CiuraObozowa = Profession(
         name = "Ciura Obozowa",
         ww = 0, us = 0, k = 0, odp = 5, zr = 10, int = 5, sw = 5, ogd = 10,
-         zyw = 2, 
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plywanie,
@@ -208,7 +208,7 @@ object Professions {
     val Cyrkowiec = Profession(
         name = "Cyrkowiec",
         ww = 5, us = 10, k = 0, odp = 0, zr = 10, int = 0, sw = 5, ogd = 10,
-         zyw = 2, 
+        zyw = 2,
         abilities = SleightOfHandAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -244,7 +244,7 @@ object Professions {
     val Cyrulik = Profession(
         name = "Cyrulik",
         ww = 5, us = 0, k = 0, odp = 0, zr = 10, int = 10, sw = 10, ogd = 5,
-         zyw = 2, 
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.powozenie,
             CommonAbilities.plywanie,
@@ -264,6 +264,31 @@ object Professions {
             StatsSkills.blyskotliwosc,
             StatsSkills.charyzmatyczny,
             StatsSkills.niezwykleOdporny,
+        ),
+    )
+
+    val Czekista = Profession(
+        name = "Czekista",
+        ww = 10, us = 5, k = 5, odp = 5, zr = 5, int = 5, sw = 5, ogd = 0,
+        zyw = 2,
+        abilities = listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.przeszukiwanie,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.zastraszanie,
+            RareAbilities.sledzenie,
+            RareAbilities.tropienie,
+            RareAbilities.unik,
+            SpecializedAbilities.naukaPrawo,
+            SpecializedAbilities.wiedzaKislev,
+        ),
+        skills = listOf(
+            CommonSkills.grozny,
+            CommonSkills.ogluszenie,
+            CommonSkills.rozbrajanie,
+            CommonSkills.silnyCios,
+            WeaponSkills.bronPalna,
         ),
     )
 
@@ -311,7 +336,7 @@ object Professions {
     val Fanatyk = Profession(
         name = "Fanatyk",
         ww = 10, us = 0, k = 5, odp = 10, zr = 0, int = 0, sw = 10, ogd = 5,
-         zyw = 2, 
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.zastraszanie,
@@ -332,7 +357,7 @@ object Professions {
     val Flisak = Profession(
         name = "Flisak",
         ww = 10, us = 5, k = 5, odp = 5, zr = 10, int = 5, sw = 0, ogd = 0,
-         zyw = 2, 
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.plotkowanie,
@@ -356,7 +381,7 @@ object Professions {
     val Giermek = Profession(
         name = "Giermek",
         ww = 10, us = 5, k = 5, odp = 5, zr = 5, int = 0, sw = 0, ogd = 5,
-        a = 1, zyw = 2, 
+        a = 1, zyw = 2,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -379,7 +404,7 @@ object Professions {
     val Gladiator = Profession(
         name = "Gladiator",
         ww = 15, us = 0, k = 0, odp = 10, zr = 10, int = 0, sw = 10, ogd = 0,
-         zyw = 2, 
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.zastraszanie,
             RareAbilities.unik,
@@ -401,7 +426,7 @@ object Professions {
     val Goniec = Profession(
         name = "Goniec",
         ww = 10, us = 0, k = 5, odp = 5, zr = 10, int = 5, sw = 5, ogd = 0,
-         zyw = 2,  sz = 1,
+        zyw = 2, sz = 1,
         abilities = listOf(
             CommonAbilities.plywanie,
             CommonAbilities.spostrzegawczosc,
@@ -424,7 +449,7 @@ object Professions {
     val Gornik = Profession(
         name = "Górnik",
         ww = 5, us = 5, k = 10, odp = 5, zr = 0, int = 5, sw = 5, ogd = 0,
-         zyw = 2, 
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.powozenie,
@@ -469,7 +494,7 @@ object Professions {
     val Guslarz = Profession(
         name = "Guślarz",
         ww = 0, us = 0, k = 0, odp = 5, zr = 5, int = 5, sw = 10, ogd = 10,
-         zyw = 2, mag = 1, 
+        zyw = 2, mag = 1,
         abilities = listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.przekonywanie,
@@ -496,7 +521,7 @@ object Professions {
     val HienaCmentarna = Profession(
         name = "Hiena cmentarna",
         ww = 10, us = 0, k = 0, odp = 0, zr = 10, int = 10, sw = 10, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.skradanieSie,
@@ -524,7 +549,7 @@ object Professions {
     val Kanciarz = Profession(
         name = "Kanciarz",
         ww = 5, us = 5, k = 0, odp = 0, zr = 10, int = 5, sw = 5, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.plotkowanie,
@@ -549,10 +574,64 @@ object Professions {
         ),
     )
 
+    val Koczownik = Profession(
+        name = "Koczownik",
+        ww = 10, us = 10, k = 0, odp = 5, zr = 5, int = 0, sw = 10, ogd = 0,
+        zyw = 2,
+        abilities = listOf(
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.mocnaGlowa,
+            CommonAbilities.opiekaNadZwierzetami,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.sztukaPrzetrwania,
+            CommonAbilities.ukrywanieSie,
+            CommonAbilities.wycena,
+            RareAbilities.leczenie,
+            RareAbilities.nawigacja,
+            RareAbilities.oswajanie,
+            RareAbilities.tresura,
+            RareAbilities.tropienie,
+            SpecializedAbilities.kuglarstwoTaniec,
+            SpecializedAbilities.sekretneZnakiZwiadowcow,
+            SpecializedAbilities.rzemiosloGotowanie,
+            SpecializedAbilities.rzemiosloWyrobLukow,
+            SpecializedAbilities.wiedzaKrajTrolli,
+        ),
+        skills = listOf(
+            CommonSkills.wedrowiec,
+            StatsSkills.twardziel,
+        ),
+    )
+
+    val Koniarz = Profession(
+        name = "Koniarz",
+        ww = 0, us = 5, k = 5, odp = 0, zr = 5, int = 5, sw = 5, ogd = 5,
+        zyw = 2,
+        abilities = listOf(
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.mocnaGlowa,
+            CommonAbilities.opiekaNadZwierzetami,
+            CommonAbilities.plotkowanie,
+            CommonAbilities.przekonywanie,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.targowanie,
+            CommonAbilities.wycena,
+            RareAbilities.oswajanie,
+            RareAbilities.tropienie,
+            SpecializedAbilities.znajomoscJezykaKislevski,
+        ),
+        skills = listOf(
+            CommonSkills.chodu,
+            CommonSkills.zylkaHandlowa,
+            StatsSkills.charyzmatyczny,
+            WeaponSkills.bronUnieruchamiajaca,
+        ),
+    )
+
     val KozakKislevski = Profession(
         name = "Kozak kislevski",
         ww = 10, us = 10, k = 0, odp = 10, zr = 0, int = 0, sw = 10, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.mocnaGlowa,
@@ -573,7 +652,7 @@ object Professions {
     val Lesnik = Profession(
         name = "Leśnik",
         ww = 10, us = 0, k = 10, odp = 0, zr = 5, int = 0, sw = 10, ogd = 0,
-         zyw = 3,  
+        zyw = 3,
         abilities = listOf(
             CommonAbilities.skradanieSie,
             CommonAbilities.spostrzegawczosc,
@@ -595,7 +674,7 @@ object Professions {
     val Lowca = Profession(
         name = "Łowca",
         ww = 0, us = 15, k = 0, odp = 5, zr = 10, int = 5, sw = 0, ogd = 0,
-         zyw = 3,  
+        zyw = 3,
         abilities = listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.plywanie,
@@ -622,7 +701,7 @@ object Professions {
     val LowcaNagrod = Profession(
         name = "Łowca nagród",
         ww = 5, us = 10, k = 5, odp = 0, zr = 10, int = 0, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.skradanieSie,
@@ -645,7 +724,7 @@ object Professions {
     val Mieszczanin = Profession(
         name = "Mieszczanin",
         ww = 5, us = 0, k = 0, odp = 0, zr = 5, int = 10, sw = 5, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.mocnaGlowa,
@@ -671,7 +750,7 @@ object Professions {
     val Mytnik = Profession(
         name = "Mytnik",
         ww = 10, us = 5, k = 5, odp = 10, zr = 5, int = 0, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przeszukiwanie,
@@ -693,7 +772,7 @@ object Professions {
     val Najemnik = Profession(
         name = "Najemnik",
         ww = 10, us = 10, k = 5, odp = 5, zr = 5, int = 0, sw = 5, ogd = 0,
-        a = 1, zyw = 2,  
+        a = 1, zyw = 2,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.jezdziectwo,
@@ -724,7 +803,7 @@ object Professions {
     val Ochotnik = Profession(
         name = "Ochotnik",
         ww = 10, us = 5, k = 5, odp = 5, zr = 10, int = 0, sw = 0, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.opiekaNadZwierzetami,
@@ -746,7 +825,7 @@ object Professions {
     val Ochroniarz = Profession(
         name = "Ochroniarz",
         ww = 10, us = 0, k = 5, odp = 5, zr = 5, int = 0, sw = 0, ogd = 0,
-        a = 1, zyw = 3,  
+        a = 1, zyw = 3,
         abilities = listOf(
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.zastraszanie,
@@ -768,7 +847,7 @@ object Professions {
     val Oprych = Profession(
         name = "Oprych",
         ww = 10, us = 0, k = 5, odp = 5, zr = 0, int = 0, sw = 5, ogd = 5,
-        a = 1, zyw = 2,  
+        a = 1, zyw = 2,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.mocnaGlowa,
@@ -791,7 +870,7 @@ object Professions {
     val Pacholek = Profession(
         name = "Pachołek",
         ww = 10, us = 0, k = 5, odp = 10, zr = 10, int = 0, sw = 0, ogd = 0,
-         zyw = 2,
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.mocnaGlowa,
@@ -832,7 +911,7 @@ object Professions {
     val Paz = Profession(
         name = "Paź",
         ww = 0, us = 0, k = 0, odp = 0, zr = 10, int = 10, sw = 5, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przeszukiwanie,
@@ -878,7 +957,7 @@ object Professions {
     val PielgrzymGraala = Profession(
         name = "Pielgrzym Graala",
         ww = 10, us = 5, k = 5, odp = 5, zr = 5, int = 0, sw = 0, ogd = 5,
-         zyw = 2,
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.spostrzegawczosc,
@@ -927,7 +1006,7 @@ object Professions {
     val Podzegacz = Profession(
         name = "Podżegacz",
         ww = 5, us = 5, k = 0, odp = 0, zr = 5, int = 10, sw = 0, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -946,6 +1025,32 @@ object Professions {
             CommonSkills.chodu,
             CommonSkills.przemawianie,
             StatsSkills.opanowanie,
+        ),
+    )
+
+    val Poganiacz = Profession(
+        name = "Poganiacz",
+        ww = 5, us = 10, k = 10, odp = 5, zr = 10, int = 0, sw = 5, ogd = 0,
+        zyw = 2,
+        abilities = listOf(
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.opiekaNadZwierzetami,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.sztukaPrzetrwania,
+            RareAbilities.nawigacja,
+            RareAbilities.oswajanie,
+            RareAbilities.tresura,
+            RareAbilities.tropienie,
+            SpecializedAbilities.wiedzaKislev,
+            SpecializedAbilities.wiedzaKrajTrolli,
+            SpecializedAbilities.znajomoscJezykaKislevski,
+            SpecializedAbilities.znajomoscJezykaUngolski,
+        ),
+        skills = listOf(
+            CommonSkills.obiezyswiat,
+            CommonSkills.wedrowiec,
+            CommonSkills.wyczucieKierunku,
+            WeaponSkills.bronUnieruchamiajaca,
         ),
     )
 
@@ -971,7 +1076,7 @@ object Professions {
     val PorywaczZwlok = Profession(
         name = "Porywacz zwłok",
         ww = 5, us = 5, k = 5, odp = 0, zr = 10, int = 0, sw = 10, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.powozenie,
@@ -990,10 +1095,33 @@ object Professions {
         ),
     )
 
+    val PoskramiaczNiedzwiedzi = Profession(
+        name = "Poskramiacz niedzwiedzi",
+        ww = 5, us = 0, k = 10, odp = 5, zr = 5, int = 0, sw = 10, ogd = 5,
+        zyw = 2,
+        abilities = SleightOfHandAbilities.All + listOf(
+            CommonAbilities.mocnaGlowa,
+            CommonAbilities.opiekaNadZwierzetami,
+            CommonAbilities.plotkowanie,
+            CommonAbilities.spostrzegawczosc,
+            RareAbilities.oswajanie,
+            RareAbilities.tresura,
+            SpecializedAbilities.znajomoscJezykaKislevski,
+        ),
+        skills = listOf(
+            CommonSkills.przemawianie,
+            CommonSkills.zapasy,
+            StatsSkills.bardzoSilny,
+            StatsSkills.niezwykleOdporny,
+            StatsSkills.opanowanie,
+            StatsSkills.szybkiRefleks,
+        ),
+    )
+
     val Poslaniec = Profession(
         name = "Posłaniec",
         ww = 5, us = 5, k = 0, odp = 5, zr = 10, int = 5, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -1016,7 +1144,7 @@ object Professions {
     val Przemytnik = Profession(
         name = "Przemytnik",
         ww = 5, us = 5, k = 0, odp = 0, zr = 10, int = 10, sw = 0, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.plywanie,
@@ -1041,7 +1169,7 @@ object Professions {
     val Przepatrywacz = Profession(
         name = "Przepatrywacz",
         ww = 5, us = 10, k = 0, odp = 0, zr = 10, int = 10, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -1063,7 +1191,7 @@ object Professions {
     val Przewoznik = Profession(
         name = "Przewoźnik",
         ww = 5, us = 5, k = 10, odp = 5, zr = 5, int = 5, sw = 0, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.plywanie,
@@ -1111,7 +1239,7 @@ object Professions {
     val Rybak = Profession(
         name = "Rybak",
         ww = 0, us = 5, k = 10, odp = 5, zr = 10, int = 5, sw = 0, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.plywanie,
@@ -1139,7 +1267,7 @@ object Professions {
     val RzecznikRodu = Profession(
         name = "Rzecznik rodu",
         ww = 5, us = 5, k = 0, odp = 0, zr = 5, int = 10, sw = 5, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.plywanie,
@@ -1162,7 +1290,7 @@ object Professions {
     val Rzemieslnik = Profession(
         name = "Rzemieślnik",
         ww = 0, us = 0, k = 5, odp = 5, zr = 10, int = 5, sw = 10, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = CraftAbilities.All + listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plotkowanie,
@@ -1182,7 +1310,7 @@ object Professions {
     val Rzezimieszek = Profession(
         name = "Rzezimieszek",
         ww = 10, us = 0, k = 10, odp = 0, zr = 10, int = 0, sw = 10, ogd = 0,
-        a = 1, zyw = 2,  
+        a = 1, zyw = 2,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
@@ -1205,8 +1333,8 @@ object Professions {
     val Skryba = Profession(
         name = "Skryba",
         ww = 0, us = 0, k = 0, odp = 0, zr = 10, int = 10, sw = 10, ogd = 5,
-         zyw = 2,  
-        abilities =ScienceAbilities.All + listOf(
+        zyw = 2,
+        abilities = ScienceAbilities.All + listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.zastraszanie,
@@ -1227,7 +1355,7 @@ object Professions {
     val Sluga = Profession(
         name = "Sługa",
         ww = 5, us = 0, k = 5, odp = 0, zr = 10, int = 5, sw = 10, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plotkowanie,
@@ -1255,7 +1383,7 @@ object Professions {
     val Straznik = Profession(
         name = "Strażnik",
         ww = 10, us = 5, k = 5, odp = 0, zr = 5, int = 10, sw = 0, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przeszukiwanie,
@@ -1278,7 +1406,7 @@ object Professions {
     val StraznikDrog = Profession(
         name = "Strażnik dróg",
         ww = 10, us = 10, k = 5, odp = 0, zr = 10, int = 5, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -1302,7 +1430,7 @@ object Professions {
     val StraznikPol = Profession(
         name = "Strażnik pól",
         ww = 5, us = 10, k = 0, odp = 5, zr = 10, int = 0, sw = 10, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.skradanieSie,
@@ -1391,7 +1519,7 @@ object Professions {
     val StraznikWiezienny = Profession(
         name = "Strażnik więzienny",
         ww = 10, us = 0, k = 10, odp = 10, zr = 0, int = 0, sw = 5, ogd = 0,
-         zyw = 3,  
+        zyw = 3,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.mocnaGlowa,
@@ -1407,6 +1535,31 @@ object Professions {
             CommonSkills.odpornoscNaTrucizny,
             CommonSkills.zapasy,
             WeaponSkills.bronUnieruchamiajaca,
+        ),
+    )
+
+    val Strielec = Profession(
+        name = "Strażnik więzienny",
+        ww = 10, us = 10, k = 5, odp = 5, zr = 5, int = 0, sw = 5, ogd = 0,
+        zyw = 2,
+        abilities = listOf(
+            CommonAbilities.hazard,
+            CommonAbilities.mocnaGlowa,
+            CommonAbilities.plotkowanie,
+            CommonAbilities.spostrzegawczosc,
+            RareAbilities.unik,
+            SpecializedAbilities.wiedzaKislev,
+            SpecializedAbilities.znajomoscJezykaKislevski,
+        ),
+        skills = listOf(
+            CommonSkills.artylerzysta,
+            CommonSkills.blyskawicznePrzadowanie,
+            CommonSkills.strzalMierzony,
+            CommonSkills.strzalPrecyzyjny,
+            CommonSkills.szybkieWyciagniecie,
+            StatsSkills.strzelecWyborowy,
+            WeaponSkills.bronDwureczna,
+            WeaponSkills.bronPalna,
         ),
     )
 
@@ -1439,7 +1592,7 @@ object Professions {
     val Szczurolap = Profession(
         name = "Szczurołap",
         ww = 5, us = 10, k = 0, odp = 5, zr = 10, int = 0, sw = 10, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.przeszukiwanie,
@@ -1460,7 +1613,7 @@ object Professions {
     val SzermierzEstalijski = Profession(
         name = "Szermierz estalijski",
         ww = 15, us = 0, k = 5, odp = 5, zr = 10, int = 5, sw = 0, ogd = 0,
-        a = 1, zyw = 2,  
+        a = 1, zyw = 2,
         abilities = listOf(
             RareAbilities.czytanieIPisanie,
             RareAbilities.unik,
@@ -1481,7 +1634,7 @@ object Professions {
     val Szlachcic = Profession(
         name = "Szlachcic",
         ww = 10, us = 5, k = 0, odp = 0, zr = 5, int = 5, sw = 5, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.hazard,
@@ -1509,7 +1662,7 @@ object Professions {
     val Smieciarz = Profession(
         name = "Śmieciarz",
         ww = 5, us = 0, k = 5, odp = 10, zr = 5, int = 0, sw = 5, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plotkowanie,
@@ -1532,7 +1685,7 @@ object Professions {
     val Tarczownik = Profession(
         name = "Tarczownik",
         ww = 10, us = 0, k = 5, odp = 5, zr = 10, int = 0, sw = 5, ogd = 0,
-        a = 1, zyw = 2,  
+        a = 1, zyw = 2,
         abilities = listOf(
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.wspinaczka,
@@ -1553,7 +1706,7 @@ object Professions {
     val UczenCzarodzieja = Profession(
         name = "Uczeń czarodzieja",
         ww = 0, us = 0, k = 0, odp = 0, zr = 5, int = 10, sw = 15, ogd = 5,
-         zyw = 2, mag = 1, 
+        zyw = 2, mag = 1,
         abilities = listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.spostrzegawczosc,
@@ -1573,10 +1726,34 @@ object Professions {
         ),
     )
 
+    val UczennicaCzarodziejki = Profession(
+        name = "Uczennica czarodziejki",
+        ww = 0, us = 0, k = 0, odp = 10, zr = 5, int = 10, sw = 10, ogd = 0,
+        zyw = 2, mag = 1,
+        abilities = listOf(
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.sztukaPrzetrwania,
+            CommonAbilities.zastraszanie,
+            RareAbilities.nawigacja,
+            RareAbilities.splatanieMagii,
+            RareAbilities.wykrywanieMagii,
+            SpecializedAbilities.jezykTajemnyMagiczny,
+            SpecializedAbilities.naukaMagia,
+            SpecializedAbilities.wiedzaKislev,
+            SpecializedAbilities.znajomoscJezykaKislevski,
+        ),
+        skills = UniversalMagic.All + listOf(
+            CommonSkills.zmyslMagii,
+            MagicSkills.magiaProstaLodu,
+            StatsSkills.niezwykleOdporny,
+            StatsSkills.twardziel,
+        ),
+    )
+
     val Weglarz = Profession(
         name = "Węglarz",
         ww = 5, us = 0, k = 5, odp = 5, zr = 5, int = 5, sw = 5, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.powozenie,
@@ -1599,7 +1776,7 @@ object Professions {
     val Wloczykij = Profession(
         name = "Włóczykij",
         ww = 5, us = 10, k = 0, odp = 0, zr = 10, int = 5, sw = 0, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.plywanie,
@@ -1633,7 +1810,7 @@ object Professions {
     val WojownikKlanowy = Profession(
         name = "Wojownik klanowy",
         ww = 5, us = 5, k = 0, odp = 0, zr = 10, int = 10, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.skradanieSie,
@@ -1656,7 +1833,7 @@ object Professions {
     val Woznica = Profession(
         name = "Woźnica",
         ww = 5, us = 10, k = 0, odp = 0, zr = 10, int = 0, sw = 5, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -1681,7 +1858,7 @@ object Professions {
     val ZabojcaTrolli = Profession(
         name = "Zabójca trolli",
         ww = 10, us = 0, k = 5, odp = 5, zr = 5, int = 0, sw = 10, ogd = 0,
-        a = 1, zyw = 3,  
+        a = 1, zyw = 3,
         abilities = listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.zastraszanie,
@@ -1702,7 +1879,7 @@ object Professions {
     val Zakapturzony = Profession(
         name = "Zakapturzony",
         ww = 5, us = 10, k = 0, odp = 0, zr = 10, int = 0, sw = 0, ogd = 10,
-        a =1, zyw = 2,
+        a = 1, zyw = 2,
         abilities = listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plotkowanie,
@@ -1726,7 +1903,7 @@ object Professions {
     val Zarzadca = Profession(
         name = "Zarządca",
         ww = 5, us = 5, k = 5, odp = 0, zr = 0, int = 10, sw = 5, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
@@ -1750,7 +1927,7 @@ object Professions {
     val Zlodziej = Profession(
         name = "Złodziej",
         ww = 5, us = 5, k = 0, odp = 0, zr = 15, int = 5, sw = 0, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.hazard,
@@ -1778,7 +1955,7 @@ object Professions {
     val Zak = Profession(
         name = "Żak",
         ww = 0, us = 0, k = 0, odp = 0, zr = 10, int = 10, sw = 5, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = ScienceAbilities.All + listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.plotkowanie,
@@ -1803,7 +1980,7 @@ object Professions {
     val Zeglarz = Profession(
         name = "Żeglarz",
         ww = 10, us = 5, k = 10, odp = 0, zr = 10, int = 0, sw = 0, ogd = 0,
-        a = 1, zyw = 2,  
+        a = 1, zyw = 2,
         abilities = listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.plywanie,
@@ -1829,10 +2006,39 @@ object Professions {
         ),
     )
 
+    val Znachorka = Profession(
+        name = "Znachorka",
+        ww = 0, us = 0, k = 0, odp = 5, zr = 0, int = 15, sw = 10, ogd = 5,
+        zyw = 2,
+        abilities = listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.mocnaGlowa,
+            CommonAbilities.plotkowanie,
+            CommonAbilities.przekonywanie,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.zastraszanie,
+            RareAbilities.leczenie,
+            RareAbilities.warzenieTrucizn,
+            RareAbilities.wykrywanieMagii,
+            SpecializedAbilities.kuglarstwoGawedziarstwo,
+            SpecializedAbilities.naukaDuchy,
+            SpecializedAbilities.naukaHistoria,
+            SpecializedAbilities.rzemiosloAptekarstwo,
+            SpecializedAbilities.rzemiosloZielarstwo,
+            SpecializedAbilities.wiedzaKislev,
+            SpecializedAbilities.wiedzaKrajTrolli,
+            SpecializedAbilities.znajomoscJezykaUngolski,
+        ),
+        skills = listOf(
+            StatsSkills.blyskotliwosc,
+            StatsSkills.opanowanie,
+        ),
+    )
+
     val Zolnierz = Profession(
         name = "Żołnierz",
         ww = 10, us = 10, k = 0, odp = 0, zr = 10, int = 0, sw = 5, ogd = 0,
-        a = 1, zyw = 2,  
+        a = 1, zyw = 2,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.jezdziectwo,
@@ -1862,7 +2068,7 @@ object Professions {
     val ZolnierzOkretowy = Profession(
         name = "Żołnierz okrętowy",
         ww = 10, us = 10, k = 10, odp = 0, zr = 5, int = 0, sw = 5, ogd = 0,
-        a = 1, zyw = 3,  
+        a = 1, zyw = 3,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.mocnaGlowa,
@@ -1919,11 +2125,41 @@ object Professions {
         isStartingProfession = false,
     )
 
+    val Ambasador = Profession(
+        name = "Ambasador",
+        ww = 10, us = 10, k = 5, odp = 10, zr = 10, int = 30, sw = 30, ogd = 40,
+        zyw = 6,
+        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.plotkowanie,
+            CommonAbilities.przekonywanie,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.targowanie,
+            RareAbilities.czytanieIPisanie,
+            RareAbilities.gadanina,
+            SpecializedAbilities.kuglarstwoAktorstwo,
+            SpecializedAbilities.naukaGeneologiaHeraldyka,
+            SpecializedAbilities.naukaHistoria,
+        ),
+        skills = listOf(
+            CommonSkills.etykieta,
+            CommonSkills.intrygant,
+            CommonSkills.krasomowstwo,
+            CommonSkills.poliglota,
+            CommonSkills.przemawianie,
+            CommonSkills.zylkaHandlowa,
+            StatsSkills.blyskotliwosc,
+            StatsSkills.charyzmatyczny,
+        ),
+        isStartingProfession = false,
+    )
+
     val Arcykaplan = Profession(
         name = "Arcykapłan",
         ww = 20, us = 20, k = 15, odp = 15, zr = 15, int = 20, sw = 30, ogd = 25,
         a = 1, zyw = 6, mag = 3,
-        abilities =ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.plywanie,
@@ -1949,7 +2185,7 @@ object Professions {
     val Arcymag = Profession(
         name = "Arcymag",
         ww = 15, us = 15, k = 5, odp = 15, zr = 20, int = 35, sw = 40, ogd = 20,
-         zyw = 5, mag = 4, 
+        zyw = 5, mag = 4,
         abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.zastraszanie,
@@ -2052,7 +2288,7 @@ object Professions {
     val Arystokrata = Profession(
         name = "Arystokrata",
         ww = 25, us = 15, k = 10, odp = 10, zr = 10, int = 20, sw = 20, ogd = 30,
-        a = 1, zyw = 6,  
+        a = 1, zyw = 6,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
@@ -2076,10 +2312,39 @@ object Professions {
         isStartingProfession = false,
     )
 
+    val Ataman = Profession(
+        name = "Ataman",
+        ww = 10, us = 10, k = 5, odp = 15, zr = 5, int = 30, sw = 20, ogd = 25,
+        zyw = 4,
+        abilities = listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.plotkowanie,
+            CommonAbilities.przekonywanie,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.sztukaPrzetrwania,
+            CommonAbilities.targowanie,
+            CommonAbilities.zastraszanie,
+            SpecializedAbilities.naukaHistoria,
+            SpecializedAbilities.naukaPrawo,
+            SpecializedAbilities.naukaStrategiaTaktyka,
+            SpecializedAbilities.naukaTeologia,
+            SpecializedAbilities.wiedzaKislev,
+            SpecializedAbilities.wiedzaKrajTrolli,
+            SpecializedAbilities.znajomoscJezykaKislevski,
+        ),
+        skills = listOf(
+            CommonSkills.przemawianie,
+            StatsSkills.charyzmatyczny,
+            StatsSkills.opanowanie,
+        ),
+        isStartingProfession = false,
+    )
+
     val Bard = Profession(
         name = "Bard",
         ww = 10, us = 10, k = 0, odp = 0, zr = 15, int = 10, sw = 5, ogd = 25,
-         zyw = 4,  
+        zyw = 4,
         abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -2153,7 +2418,7 @@ object Professions {
     val Biczownik = Profession(
         name = "Biczownik",
         ww = 15, us = 0, k = 10, odp = 15, zr = 5, int = 0, sw = 20, ogd = 10,
-        a = 1, zyw = 6,  
+        a = 1, zyw = 6,
         abilities = listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.zastraszanie,
@@ -2173,7 +2438,7 @@ object Professions {
     val Bosman = Profession(
         name = "Bosman",
         ww = 15, us = 15, k = 10, odp = 15, zr = 10, int = 10, sw = 10, ogd = 10,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.hazard,
@@ -2200,7 +2465,7 @@ object Professions {
     val Brygadzista = Profession(
         name = "Brygadzista",
         ww = 10, us = 5, k = 10, odp = 10, zr = 5, int = 5, sw = 15, ogd = 15,
-         zyw = 4,
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.hazard,
@@ -2227,7 +2492,7 @@ object Professions {
     val Budowniczy = Profession(
         name = "Budowniczy",
         ww = 0, us = 10, k = 10, odp = 10, zr = 25, int = 20, sw = 10, ogd = 10,
-         zyw = 4,
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.spostrzegawczosc,
@@ -2358,7 +2623,7 @@ object Professions {
     val Demagog = Profession(
         name = "Demagog",
         ww = 10, us = 10, k = 0, odp = 10, zr = 15, int = 20, sw = 15, ogd = 30,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.dowodzenie,
@@ -2387,7 +2652,7 @@ object Professions {
     val Dworzanin = Profession(
         name = "Dworzanin",
         ww = 5, us = 5, k = 0, odp = 0, zr = 10, int = 20, sw = 20, ogd = 20,
-         zyw = 4,  
+        zyw = 4,
         abilities = SleightOfHandAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.hazard,
@@ -2421,7 +2686,7 @@ object Professions {
     val Fechtmistrz = Profession(
         name = "Fechtmistrz",
         ww = 40, us = 40, k = 25, odp = 25, zr = 30, int = 0, sw = 20, ogd = 0,
-        a = 2, zyw = 8,  
+        a = 2, zyw = 8,
         abilities = listOf(
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.wycena,
@@ -2442,7 +2707,7 @@ object Professions {
     val Herold = Profession(
         name = "Herold",
         ww = 10, us = 10, k = 5, odp = 5, zr = 15, int = 15, sw = 10, ogd = 20,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
@@ -2474,7 +2739,7 @@ object Professions {
     val HersztBanitow = Profession(
         name = "Herszt banitów",
         ww = 20, us = 30, k = 10, odp = 20, zr = 10, int = 10, sw = 10, ogd = 20,
-        a = 2, zyw = 6,  
+        a = 2, zyw = 6,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
@@ -2500,10 +2765,39 @@ object Professions {
         isStartingProfession = false,
     )
 
+    val Husarz = Profession(
+        name = "Husarz",
+        ww = 25, us = 15, k = 15, odp = 15, zr = 15, int = 0, sw = 15, ogd = 15,
+        a = 1, zyw = 4,
+        abilities = listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.mocnaGlowa,
+            CommonAbilities.opiekaNadZwierzetami,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.sztukaPrzetrwania,
+            RareAbilities.nawigacja,
+            SpecializedAbilities.naukaStrategiaTaktyka,
+            SpecializedAbilities.sekretnyJezykBitewny,
+            SpecializedAbilities.wiedzaKislev,
+            SpecializedAbilities.wiedzaKrajTrolli,
+            SpecializedAbilities.znajomoscJezykaKislevski,
+        ),
+        skills = listOf(
+            CommonSkills.morderczyAtak,
+            CommonSkills.mierzonyCios,
+            CommonSkills.silnyCios,
+            StatsSkills.niezwykleOdporny,
+            StatsSkills.twardziel,
+            WeaponSkills.bronKawaleryjska,
+        ),
+        isStartingProfession = false,
+    )
+
     val Inzynier = Profession(
         name = "Inżynier",
         ww = 10, us = 15, k = 5, odp = 5, zr = 10, int = 20, sw = 10, ogd = 0,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.powozenie,
@@ -2528,7 +2822,7 @@ object Professions {
     val Kapitan = Profession(
         name = "Kapitan",
         ww = 25, us = 20, k = 15, odp = 20, zr = 20, int = 20, sw = 25, ogd = 30,
-        a = 2, zyw = 6,  
+        a = 2, zyw = 6,
         abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plywanie,
@@ -2554,7 +2848,7 @@ object Professions {
     val Kaplan = Profession(
         name = "Kapłan",
         ww = 10, us = 10, k = 5, odp = 10, zr = 5, int = 10, sw = 20, ogd = 15,
-         zyw = 4, mag = 1, 
+        zyw = 4, mag = 1,
         abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
@@ -2604,7 +2898,7 @@ object Professions {
     val Karczmarz = Profession(
         name = "Karczmarz",
         ww = 10, us = 5, k = 5, odp = 10, zr = 20, int = 10, sw = 10, ogd = 20,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.plotkowanie,
@@ -2642,6 +2936,60 @@ object Professions {
         ),
         skills = listOf(
             CommonSkills.przemawianie,
+        ),
+        isStartingProfession = false,
+    )
+
+    val Koniuszy = Profession(
+        name = "Koniuszy",
+        ww = 5, us = 15, k = 15, odp = 10, zr = 15, int = 20, sw = 15, ogd = 25,
+        zyw = 5,
+        abilities = listOf(
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.mocnaGlowa,
+            CommonAbilities.opiekaNadZwierzetami,
+            CommonAbilities.powozenie,
+            CommonAbilities.przekonywanie,
+            CommonAbilities.spostrzegawczosc,
+            RareAbilities.oswajanie,
+            RareAbilities.tresura,
+            RareAbilities.unik,
+        ),
+        skills = listOf(
+            StatsSkills.bardzoSilny,
+            StatsSkills.opanowanie,
+            StatsSkills.twardziel,
+            WeaponSkills.bronUnieruchamiajaca,
+        ),
+        isStartingProfession = false,
+    )
+
+    val KonnyLucznik = Profession(
+        name = "Konny łucznik",
+        ww = 15, us = 25, k = 15, odp = 15, zr = 15, int = 0, sw = 15, ogd = 5,
+        a =1, zyw = 4,
+        abilities = listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.jezdziectwo,
+            CommonAbilities.mocnaGlowa,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.sztukaPrzetrwania,
+            RareAbilities.nawigacja,
+            RareAbilities.unik,
+            SpecializedAbilities.naukaStrategiaTaktyka,
+            SpecializedAbilities.wiedzaKislev,
+            SpecializedAbilities.wiedzaKrajTrolli,
+            SpecializedAbilities.znajomoscJezykaKislevski,
+            SpecializedAbilities.znajomoscJezykaUngolski,
+        ),
+        skills = listOf(
+            CommonSkills.blyskawicznePrzadowanie,
+            CommonSkills.strzalPrecyzyjny,
+            CommonSkills.strzalPrzebijajacy,
+            CommonSkills.szybkieWyciagniecie,
+            StatsSkills.opanowanie,
+            StatsSkills.twardziel,
+            WeaponSkills.bronKawaleryjska,
         ),
         isStartingProfession = false,
     )
@@ -2702,7 +3050,7 @@ object Professions {
     val KsiazeZlodziei = Profession(
         name = "Książe złodziei",
         ww = 20, us = 20, k = 15, odp = 15, zr = 20, int = 25, sw = 20, ogd = 30,
-        a = 1, zyw = 6,  
+        a = 1, zyw = 6,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
@@ -2735,8 +3083,8 @@ object Professions {
     val Kupiec = Profession(
         name = "Kupiec",
         ww = 10, us = 10, k = 5, odp = 5, zr = 10, int = 25, sw = 20, ogd = 20,
-         zyw = 4,  
-        abilities =KnowledgeAbilities.All + listOf(
+        zyw = 4,
+        abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.powozenie,
@@ -2762,7 +3110,7 @@ object Professions {
     val LesnyDuch = Profession(
         name = "Leśny duch",
         ww = 20, us = 30, k = 15, odp = 15, zr = 25, int = 20, sw = 20, ogd = 0,
-        a = 2, zyw = 6,  
+        a = 2, zyw = 6,
         abilities = listOf(
             CommonAbilities.skradanieSie,
             CommonAbilities.spostrzegawczosc,
@@ -2793,7 +3141,7 @@ object Professions {
     val LowcaCzarownic = Profession(
         name = "Łowca czarownic",
         ww = 30, us = 30, k = 15, odp = 15, zr = 15, int = 15, sw = 35, ogd = 20,
-        a = 2, zyw = 6,  
+        a = 2, zyw = 6,
         abilities = LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
@@ -2827,7 +3175,7 @@ object Professions {
     val LowcaWampirow = Profession(
         name = "Łowca wampirów",
         ww = 20, us = 20, k = 10, odp = 20, zr = 15, int = 15, sw = 20, ogd = 0,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.skradanieSie,
@@ -2887,7 +3235,7 @@ object Professions {
     val Majordomus = Profession(
         name = "Majordomus",
         ww = 10, us = 10, k = 10, odp = 10, zr = 0, int = 30, sw = 20, ogd = 25,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -2911,7 +3259,7 @@ object Professions {
     val Medyk = Profession(
         name = "Medyk",
         ww = 0, us = 0, k = 10, odp = 10, zr = 15, int = 30, sw = 20, ogd = 15,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.spostrzegawczosc,
@@ -2932,7 +3280,7 @@ object Professions {
     val MistrzCieni = Profession(
         name = "Mistrz Cieni",
         ww = 20, us = 20, k = 10, odp = 10, zr = 40, int = 25, sw = 20, ogd = 25,
-        a = 1, zyw = 6,  
+        a = 1, zyw = 6,
         abilities = listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.hazard,
@@ -2967,7 +3315,7 @@ object Professions {
     val MistrzGildii = Profession(
         name = "Mistrz gildii",
         ww = 10, us = 10, k = 0, odp = 10, zr = 15, int = 30, sw = 20, ogd = 35,
-        a = 1, zyw = 5,  
+        a = 1, zyw = 5,
         abilities = CraftAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
@@ -2995,8 +3343,8 @@ object Professions {
     val MistrzMagii = Profession(
         name = "Mistrz magii",
         ww = 10, us = 10, k = 0, odp = 10, zr = 15, int = 30, sw = 35, ogd = 15,
-         zyw = 4, mag = 3, 
-        abilities =SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        zyw = 4, mag = 3,
+        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -3005,7 +3353,7 @@ object Professions {
             RareAbilities.splatanieMagii,
             RareAbilities.wykrywanieMagii,
         ),
-        skills =UniversalMagic.All + listOf(
+        skills = UniversalMagic.All + listOf(
             CommonSkills.czarnoksiestwo,
             CommonSkills.dotykMocy,
             CommonSkills.medytacja,
@@ -3043,8 +3391,8 @@ object Professions {
     val MistrzRzemiosla = Profession(
         name = "Mistrz rzemiosła",
         ww = 0, us = 0, k = 10, odp = 10, zr = 20, int = 10, sw = 10, ogd = 10,
-         zyw = 3,  
-        abilities =CraftAbilities.All + listOf(
+        zyw = 3,
+        abilities = CraftAbilities.All + listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.powozenie,
             CommonAbilities.spostrzegawczosc,
@@ -3066,7 +3414,7 @@ object Professions {
     val MistrzZakonny = Profession(
         name = "Mistrz zakonny",
         ww = 35, us = 10, k = 20, odp = 20, zr = 20, int = 15, sw = 25, ogd = 15,
-        a = 2, zyw = 8,  
+        a = 2, zyw = 8,
         abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
@@ -3119,7 +3467,7 @@ object Professions {
     val Nawigator = Profession(
         name = "Nawigator",
         ww = 10, us = 10, k = 5, odp = 5, zr = 10, int = 25, sw = 10, ogd = 5,
-         zyw = 4,  
+        zyw = 4,
         abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.plywanie,
             CommonAbilities.spostrzegawczosc,
@@ -3161,8 +3509,8 @@ object Professions {
     val Odkrywca = Profession(
         name = "Odkrywca",
         ww = 20, us = 20, k = 10, odp = 15, zr = 15, int = 25, sw = 20, ogd = 15,
-        a = 1, zyw = 6,  
-        abilities =KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        a = 1, zyw = 6,
+        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.plywanie,
@@ -3191,8 +3539,8 @@ object Professions {
     val Oficer = Profession(
         name = "Oficer",
         ww = 30, us = 20, k = 20, odp = 20, zr = 20, int = 15, sw = 15, ogd = 25,
-        a = 2, zyw = 7,  
-        abilities =KnowledgeAbilities.All + listOf(
+        a = 2, zyw = 7,
+        abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -3219,7 +3567,7 @@ object Professions {
     val Oprawca = Profession(
         name = "Oprawca",
         ww = 15, us = 0, k = 20, odp = 10, zr = 10, int = 10, sw = 20, ogd = 15,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.spostrzegawczosc,
@@ -3238,7 +3586,7 @@ object Professions {
     val Paser = Profession(
         name = "Paser",
         ww = 15, us = 10, k = 10, odp = 5, zr = 10, int = 5, sw = 10, ogd = 10,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.plotkowanie,
@@ -3305,7 +3653,7 @@ object Professions {
     val Rajtar = Profession(
         name = "Rajtar",
         ww = 20, us = 20, k = 10, odp = 10, zr = 15, int = 0, sw = 15, ogd = 15,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -3329,7 +3677,7 @@ object Professions {
     val Reketer = Profession(
         name = "Reketer",
         ww = 20, us = 15, k = 15, odp = 10, zr = 10, int = 0, sw = 15, ogd = 10,
-        a = 1, zyw = 5,  
+        a = 1, zyw = 5,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
@@ -3354,7 +3702,7 @@ object Professions {
     val Rozbojnik = Profession(
         name = "Rozbójnik",
         ww = 20, us = 20, k = 10, odp = 10, zr = 30, int = 20, sw = 15, ogd = 25,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -3382,8 +3730,8 @@ object Professions {
     val Rycerz = Profession(
         name = "Rycerz",
         ww = 25, us = 0, k = 15, odp = 15, zr = 15, int = 5, sw = 15, ogd = 5,
-        a = 1, zyw = 4,  
-        abilities =LanguageAbilities.All + listOf(
+        a = 1, zyw = 4,
+        abilities = LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.spostrzegawczosc,
             RareAbilities.unik,
@@ -3531,8 +3879,8 @@ object Professions {
     val Sierzant = Profession(
         name = "Sierżant",
         ww = 20, us = 15, k = 10, odp = 10, zr = 10, int = 10, sw = 10, ogd = 20,
-        a = 1, zyw = 4,  
-        abilities =KnowledgeAbilities.All + listOf(
+        a = 1, zyw = 4,
+        abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
@@ -3558,7 +3906,7 @@ object Professions {
     val Skrytobojca = Profession(
         name = "Skrytobójca",
         ww = 25, us = 25, k = 10, odp = 10, zr = 30, int = 20, sw = 10, ogd = 20,
-        a = 2, zyw = 4,  
+        a = 2, zyw = 4,
         abilities = listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.plotkowanie,
@@ -3587,7 +3935,7 @@ object Professions {
     val StarszyWioskowy = Profession(
         name = "Starszy wioskowy",
         ww = 0, us = 0, k = 0, odp = 0, zr = 0, int = 20, sw = 20, ogd = 30,
-         zyw = 4,
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -3610,7 +3958,7 @@ object Professions {
     val Strzelec = Profession(
         name = "Strzelec",
         ww = 0, us = 35, k = 10, odp = 10, zr = 25, int = 10, sw = 20, ogd = 15,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przeszukiwanie,
@@ -3634,7 +3982,7 @@ object Professions {
     val Szampierz = Profession(
         name = "Szampierz",
         ww = 35, us = 0, k = 15, odp = 15, zr = 20, int = 10, sw = 15, ogd = 0,
-        a = 2, zyw = 6,  
+        a = 2, zyw = 6,
         abilities = listOf(
             CommonAbilities.spostrzegawczosc,
             RareAbilities.unik,
@@ -3652,7 +4000,7 @@ object Professions {
     val Szarlatan = Profession(
         name = "Szarlatan",
         ww = 10, us = 10, k = 5, odp = 10, zr = 15, int = 15, sw = 15, ogd = 25,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.hazard,
@@ -3684,7 +4032,7 @@ object Professions {
     val Szpieg = Profession(
         name = "Szpieg",
         ww = 15, us = 15, k = 5, odp = 10, zr = 20, int = 20, sw = 35, ogd = 20,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.plotkowanie,
@@ -3714,7 +4062,7 @@ object Professions {
     val Uczony = Profession(
         name = "Uczony",
         ww = 5, us = 5, k = 5, odp = 5, zr = 10, int = 30, sw = 15, ogd = 15,
-         zyw = 4,  
+        zyw = 4,
         abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.wycena,
@@ -3730,7 +4078,7 @@ object Professions {
     val Urzednik = Profession(
         name = "Urzędnik",
         ww = 5, us = 5, k = 5, odp = 10, zr = 0, int = 20, sw = 10, ogd = 20,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
@@ -3761,7 +4109,7 @@ object Professions {
     val Weteran = Profession(
         name = "Weteran",
         ww = 20, us = 20, k = 10, odp = 10, zr = 15, int = 0, sw = 15, ogd = 0,
-        a = 1, zyw = 6,  
+        a = 1, zyw = 6,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.mocnaGlowa,
@@ -3772,7 +4120,7 @@ object Professions {
             SpecializedAbilities.sekretnyJezykBitewny,
             SpecializedAbilities.wiedzaImperium,
         ),
-        skills =SpecialWeapon.All + listOf(
+        skills = SpecialWeapon.All + listOf(
             CommonSkills.blyskawicznePrzadowanie,
             CommonSkills.morderczyAtak,
             CommonSkills.strzalPrecyzyjny,
@@ -3786,8 +4134,8 @@ object Professions {
     val WedrownyCzarodziej = Profession(
         name = "Wędrowny czarodziej",
         ww = 5, us = 5, k = 0, odp = 5, zr = 10, int = 20, sw = 25, ogd = 10,
-         zyw = 3, mag = 2, 
-        abilities =ScienceAbilities.All + KnowledgeAbilities.All +LanguageAbilities.All + listOf(
+        zyw = 3, mag = 2,
+        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.plywanie,
@@ -3798,7 +4146,7 @@ object Professions {
             RareAbilities.wykrywanieMagii,
             SpecializedAbilities.jezykTajemnyMagiczny,
         ),
-        skills =UniversalMagic.All +  TraditionsOfMagic.All + listOf(
+        skills = UniversalMagic.All + TraditionsOfMagic.All + listOf(
             CommonSkills.czarnoksiestwo,
             CommonSkills.dotykMocy,
             CommonSkills.medytacja,
@@ -3817,7 +4165,7 @@ object Professions {
     val Wlamywacz = Profession(
         name = "Włamywacz",
         ww = 10, us = 10, k = 5, odp = 5, zr = 25, int = 10, sw = 10, ogd = 0,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przeszukiwanie,
@@ -3843,7 +4191,7 @@ object Professions {
     val WybraniecBozy = Profession(
         name = "Wybraniec Boży",
         ww = 15, us = 15, k = 10, odp = 10, zr = 10, int = 15, sw = 25, ogd = 20,
-        a = 1, zyw = 5, mag = 2, 
+        a = 1, zyw = 5, mag = 2,
         abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plywanie,
@@ -3868,8 +4216,8 @@ object Professions {
     val ZabojcaDemonow = Profession(
         name = "Zabójca demonów",
         ww = 40, us = 0, k = 30, odp = 30, zr = 20, int = 0, sw = 30, ogd = 0,
-        a = 2, zyw = 8,  
-        abilities =KnowledgeAbilities.All + listOf(
+        a = 2, zyw = 8,
+        abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.wspinaczka,
             CommonAbilities.zastraszanie,
@@ -3923,7 +4271,7 @@ object Professions {
     val ZabojcaOlbrzymow = Profession(
         name = "Zabójca olbrzymów",
         ww = 25, us = 0, k = 15, odp = 15, zr = 10, int = 0, sw = 20, ogd = 0,
-        a = 1, zyw = 6,  
+        a = 1, zyw = 6,
         abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.spostrzegawczosc,
@@ -3942,7 +4290,7 @@ object Professions {
     val Zakonnik = Profession(
         name = "Zakonnik",
         ww = 10, us = 0, k = 5, odp = 10, zr = 0, int = 15, sw = 15, ogd = 15,
-         zyw = 4,  
+        zyw = 4,
         abilities = KnowledgeAbilities.All + listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.spostrzegawczosc,
@@ -3993,7 +4341,7 @@ object Professions {
     val Zwadzca = Profession(
         name = "Zwadźca",
         ww = 20, us = 20, k = 10, odp = 20, zr = 20, int = 15, sw = 15, ogd = 10,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.plotkowanie,
@@ -4024,7 +4372,7 @@ object Professions {
     val Zwiadowca = Profession(
         name = "Zwiadowca",
         ww = 20, us = 20, k = 10, odp = 10, zr = 15, int = 20, sw = 15, ogd = 0,
-        a = 1, zyw = 6,  
+        a = 1, zyw = 6,
         abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -4050,7 +4398,7 @@ object Professions {
     )
 
 
-/////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////        NOWE      /////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -4058,7 +4406,7 @@ object Professions {
     val Aptekarz = Profession(
         name = "Aptekarz",
         ww = 0, us = 0, k = 0, odp = 5, zr = 5, int = 10, sw = 10, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.targowanie,
@@ -4080,7 +4428,7 @@ object Professions {
     val Astrolog = Profession(
         name = "Astrolog",
         ww = 5, us = 5, k = 0, odp = 5, zr = 10, int = 25, sw = 20, ogd = 20,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -4114,7 +4462,7 @@ object Professions {
     val Bajarz = Profession(
         name = "Bajarz",
         ww = 5, us = 0, k = 0, odp = 0, zr = 5, int = 10, sw = 10, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -4134,7 +4482,7 @@ object Professions {
     val Egzorcysta = Profession(
         name = "Egzorcysta",
         ww = 0, us = 0, k = 10, odp = 15, zr = 15, int = 20, sw = 35, ogd = 20,
-        a = 1, zyw = 6, mag = 2, 
+        a = 1, zyw = 6, mag = 2,
         abilities = LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.spostrzegawczosc,
@@ -4162,7 +4510,7 @@ object Professions {
     val Falszerz = Profession(
         name = "Fałszerz",
         ww = 5, us = 5, k = 10, odp = 10, zr = 20, int = 20, sw = 10, ogd = 10,
-         zyw = 3,  
+        zyw = 3,
         abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.spostrzegawczosc,
@@ -4190,7 +4538,7 @@ object Professions {
     val Gazeciarz = Profession(
         name = "Gazeciarz",
         ww = 5, us = 5, k = 0, odp = 0, zr = 10, int = 5, sw = 0, ogd = 10,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -4214,7 +4562,7 @@ object Professions {
     val Kominiarz = Profession(
         name = "Kominiarz",
         ww = 5, us = 0, k = 5, odp = 5, zr = 5, int = 0, sw = 5, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.plotkowanie,
@@ -4235,7 +4583,7 @@ object Professions {
     val Latarnik = Profession(
         name = "Latarnik",
         ww = 5, us = 0, k = 5, odp = 0, zr = 10, int = 5, sw = 5, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.plotkowanie,
@@ -4257,7 +4605,7 @@ object Professions {
     val Niewolnik = Profession(
         name = "Niewolnik",
         ww = 5, us = 0, k = 5, odp = 5, zr = 10, int = 0, sw = 5, ogd = 0,
-         zyw = 4,  
+        zyw = 4,
         abilities = listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.spostrzegawczosc,
@@ -4277,7 +4625,7 @@ object Professions {
     val RycerzPlonacegoSlonca = Profession(
         name = "Rycerz Płonącego Słońca (Myrmidia)",
         ww = 25, us = 0, k = 10, odp = 20, zr = 20, int = 10, sw = 15, ogd = 10,
-        a = 1, zyw = 5,  
+        a = 1, zyw = 5,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
@@ -4310,7 +4658,7 @@ object Professions {
     val StraznikKanalow = Profession(
         name = "Strażnik kanałów",
         ww = 10, us = 5, k = 0, odp = 10, zr = 5, int = 0, sw = 10, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.plywanie,
             CommonAbilities.przeszukiwanie,
@@ -4334,7 +4682,7 @@ object Professions {
     val Szuler = Profession(
         name = "Szuler",
         ww = 10, us = 5, k = 0, odp = 10, zr = 5, int = 0, sw = 10, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.hazard,
             CommonAbilities.plotkowanie,
@@ -4359,7 +4707,7 @@ object Professions {
     val SledczyVereny = Profession(
         name = "Śledczy Vereny",
         ww = 10, us = 10, k = 10, odp = 10, zr = 20, int = 30, sw = 20, ogd = 20,
-        a = 1, zyw = 5,  
+        a = 1, zyw = 5,
         abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.plotkowanie,
@@ -4393,7 +4741,7 @@ object Professions {
     val ZbieraczLajna = Profession(
         name = "Zbieracz łajna",
         ww = 5, us = 0, k = 5, odp = 10, zr = 5, int = 0, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.opiekaNadZwierzetami,
@@ -4420,11 +4768,11 @@ object Professions {
     val Czarnoszczur = Profession(
         name = "Czarnoszczur",
         ww = 10, us = 0, k = 5, odp = 5, zr = 10, int = 0, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.zastraszanie,
             RareAbilities.unik,
-            ),
+        ),
         skills = listOf(
             CommonSkills.bijatyka,
             CommonSkills.silnyCios,
@@ -4438,7 +4786,7 @@ object Professions {
     val CzcicielZarazy = Profession(
         name = "Czciciel zarazy",
         ww = 10, us = 0, k = 5, odp = 10, zr = 5, int = 0, sw = 10, ogd = 5,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.skradanieSie,
             CommonAbilities.sztukaPrzetrwania,
@@ -4459,7 +4807,7 @@ object Professions {
     val Harcownik = Profession(
         name = "Harcownik",
         ww = 5, us = 10, k = 0, odp = 0, zr = 10, int = 10, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.skradanieSie,
             CommonAbilities.sztukaPrzetrwania,
@@ -4478,7 +4826,7 @@ object Professions {
     val Klanbrat = Profession(
         name = "Klanbrat",
         ww = 5, us = 5, k = 0, odp = 0, zr = 5, int = 0, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.skradanieSie,
             CommonAbilities.sztukaPrzetrwania,
@@ -4492,10 +4840,10 @@ object Professions {
         ),
     )
 
-    val Poganiacz = Profession(
-        name = "Poganiacz",
+    val PoganiaczSkavenski = Profession(
+        name = "Poganiacz skaveński",
         ww = 5, us = 0, k = 5, odp = 5, zr = 5, int = 5, sw = 10, ogd = 5,
-         zyw = 3,  
+        zyw = 3,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.skradanieSie,
@@ -4517,7 +4865,7 @@ object Professions {
     val PoslaniecNocy = Profession(
         name = "Posłaniec nocy",
         ww = 10, us = 10, k = 0, odp = 5, zr = 10, int = 0, sw = 5, ogd = 0,
-         zyw = 2,  
+        zyw = 2,
         abilities = listOf(
             CommonAbilities.skradanieSie,
             CommonAbilities.spostrzegawczosc,
@@ -4541,7 +4889,7 @@ object Professions {
     val UczenSzaregoProroka = Profession(
         name = "Uczeń szarego proroka",
         ww = 5, us = 5, k = 0, odp = 0, zr = 10, int = 10, sw = 15, ogd = 5,
-         zyw = 3, mag = 1, 
+        zyw = 3, mag = 1,
         abilities = LanguageAbilities.All + listOf(
             CommonAbilities.przeszukiwanie,
             CommonAbilities.spostrzegawczosc,
@@ -4549,7 +4897,7 @@ object Professions {
             RareAbilities.splatanieMagii,
             RareAbilities.wykrywanieMagii,
         ),
-        skills =UniversalMagic.All + listOf(
+        skills = UniversalMagic.All + listOf(
             CommonSkills.dotykMocy,
             CommonSkills.przemawianie,
             StatsSkills.blyskotliwosc,
@@ -4560,8 +4908,8 @@ object Professions {
     val DiakonZarazy = Profession(
         name = "Diakon zarazy",
         ww = 10, us = 5, k = 10, odp = 15, zr = 10, int = 5, sw = 15, ogd = 10,
-        a = 1, zyw = 4, mag = 1, 
-        abilities =ScienceAbilities.All + KnowledgeAbilities.All + listOf(
+        a = 1, zyw = 4, mag = 1,
+        abilities = ScienceAbilities.All + KnowledgeAbilities.All + listOf(
             CommonAbilities.plywanie,
             CommonAbilities.spostrzegawczosc,
             RareAbilities.czytanieIPisanie,
@@ -4583,7 +4931,7 @@ object Professions {
     val HersztKlanu = Profession(
         name = "Herszt klanu",
         ww = 40, us = 30, k = 30, odp = 30, zr = 40, int = 30, sw = 20, ogd = 25,
-        a = 2, zyw = 6,  
+        a = 2, zyw = 6,
         abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
@@ -4599,7 +4947,7 @@ object Professions {
             SpecializedAbilities.naukaHistoria,
             SpecializedAbilities.naukaStrategiaTaktyka,
         ),
-        skills =SpecialWeapon.All + listOf(
+        skills = SpecialWeapon.All + listOf(
             CommonSkills.blyskawicznyBlok,
             CommonSkills.grozny,
             CommonSkills.krasomowstwo,
@@ -4616,7 +4964,7 @@ object Professions {
     val InzynierSpaczenia = Profession(
         name = "Inżynier spaczenia",
         ww = 15, us = 20, k = 10, odp = 10, zr = 30, int = 30, sw = 15, ogd = 5,
-        a = 1, zyw = 7,  
+        a = 1, zyw = 7,
         abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.powozenie,
@@ -4642,7 +4990,7 @@ object Professions {
     val Kadzielnik = Profession(
         name = "Kadzielnik",
         ww = 25, us = 0, k = 25, odp = 20, zr = 10, int = 0, sw = 25, ogd = 0,
-        a = 1, zyw = 6,  
+        a = 1, zyw = 6,
         abilities = listOf(
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.sztukaPrzetrwania,
@@ -4666,7 +5014,7 @@ object Professions {
     val KaplanZarazy = Profession(
         name = "Kapłan zarazy",
         ww = 20, us = 10, k = 15, odp = 25, zr = 20, int = 10, sw = 25, ogd = 15,
-        a = 1, zyw = 6, mag = 2, 
+        a = 1, zyw = 6, mag = 2,
         abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.plywanie,
             CommonAbilities.spostrzegawczosc,
@@ -4686,7 +5034,7 @@ object Professions {
     val MistrzCialoksztaltowania = Profession(
         name = "Mistrz ciałokształtowania",
         ww = 15, us = 0, k = 10, odp = 15, zr = 10, int = 15, sw = 15, ogd = 10,
-        a = 1, zyw = 5,  
+        a = 1, zyw = 5,
         abilities = ScienceAbilities.All + CraftAbilities.All + KnowledgeAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.opiekaNadZwierzetami,
@@ -4712,8 +5060,8 @@ object Professions {
     val MistrzMutator = Profession(
         name = "Mistrz mutator",
         ww = 30, us = 10, k = 20, odp = 30, zr = 20, int = 30, sw = 25, ogd = 15,
-        a = 2, zyw = 7,  
-        abilities =ScienceAbilities.All + CraftAbilities.All + KnowledgeAbilities.All + listOf(
+        a = 2, zyw = 7,
+        abilities = ScienceAbilities.All + CraftAbilities.All + KnowledgeAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plywanie,
@@ -4753,7 +5101,7 @@ object Professions {
     val MistrzSkrytobojca = Profession(
         name = "Mistrz skrytobojca",
         ww = 25, us = 25, k = 10, odp = 15, zr = 30, int = 15, sw = 20, ogd = 10,
-        a = 2, zyw = 6,  
+        a = 2, zyw = 6,
         abilities = listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.plywanie,
@@ -4773,7 +5121,7 @@ object Professions {
             RareAbilities.zwinnePalce,
             SpecializedAbilities.wiedzaKataj,
         ),
-        skills =SpecialWeapon.All + listOf(
+        skills = SpecialWeapon.All + listOf(
             CommonSkills.biegPoScianach,
             CommonSkills.blyskawicznyBlok,
             CommonSkills.sztukaCichejSmierci,
@@ -4787,15 +5135,15 @@ object Professions {
     val Nadprorok = Profession(
         name = "Nadprorok",
         ww = 20, us = 20, k = 15, odp = 15, zr = 40, int = 40, sw = 35, ogd = 35,
-        a = 1, zyw = 9, mag = 3, 
-        abilities =SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        a = 1, zyw = 9, mag = 3,
+        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.zastraszanie,
             RareAbilities.czytanieIPisanie,
             RareAbilities.splatanieMagii,
             RareAbilities.wykrywanieMagii,
         ),
-        skills =UniversalMagic.All + listOf(
+        skills = UniversalMagic.All + listOf(
             CommonSkills.czarnoksiestwo,
             CommonSkills.dotykMocy,
             CommonSkills.krasomowstwo,
@@ -4812,7 +5160,7 @@ object Professions {
     val Rynsztokowiec = Profession(
         name = "Rynsztokowiec",
         ww = 15, us = 15, k = 5, odp = 10, zr = 20, int = 5, sw = 10, ogd = 5,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.plywanie,
@@ -4845,8 +5193,8 @@ object Professions {
     val SkavenskiZaklinacz = Profession(
         name = "Skaveński zaklinacz",
         ww = 15, us = 15, k = 0, odp = 20, zr = 25, int = 20, sw = 25, ogd = 10,
-         zyw = 5, mag = 2, 
-        abilities =ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        zyw = 5, mag = 2,
+        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.zastraszanie,
             RareAbilities.czytanieIPisanie,
             RareAbilities.splatanieMagii,
@@ -4854,7 +5202,7 @@ object Professions {
             SpecializedAbilities.jezykTajemnyMagiczny,
             SpecializedAbilities.wiedzaKataj,
         ),
-        skills =UniversalMagic.All + listOf(
+        skills = UniversalMagic.All + listOf(
             CommonSkills.czarnoksiestwo,
             CommonSkills.dotykMocy,
             CommonSkills.medytacja,
@@ -4872,8 +5220,8 @@ object Professions {
     val SzaryProrok = Profession(
         name = "Szary prorok",
         ww = 10, us = 10, k = 5, odp = 10, zr = 20, int = 20, sw = 25, ogd = 15,
-         zyw = 5, mag = 2, 
-        abilities =ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        zyw = 5, mag = 2,
+        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.zastraszanie,
             RareAbilities.czytanieIPisanie,
@@ -4883,7 +5231,7 @@ object Professions {
             SpecializedAbilities.jezykTajemnyMagiczny,
             SpecializedAbilities.wiedzaKataj,
         ),
-        skills =UniversalMagic.All + listOf(
+        skills = UniversalMagic.All + listOf(
             CommonSkills.czarnoksiestwo,
             CommonSkills.dotykMocy,
             CommonSkills.krasomowstwo,
@@ -4899,8 +5247,8 @@ object Professions {
     val Szponowlad = Profession(
         name = "Szponowład",
         ww = 15, us = 10, k = 5, odp = 5, zr = 10, int = 5, sw = 10, ogd = 5,
-        a = 1, zyw = 4,  
-        abilities =KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        a = 1, zyw = 4,
+        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plywanie,
             CommonAbilities.skradanieSie,
@@ -4929,7 +5277,7 @@ object Professions {
     val Szturmoszczur = Profession(
         name = "Szturmoszczur",
         ww = 15, us = 15, k = 10, odp = 10, zr = 15, int = 0, sw = 10, ogd = 5,
-        a = 1, zyw = 4,  
+        a = 1, zyw = 4,
         abilities = listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.przeszukiwanie,
@@ -4960,7 +5308,7 @@ object Professions {
         name = "Uczeń szamana",
         ww = 5, us = 5, k = 0, odp = 5, zr = 5, int = 10, sw = 10, ogd = 10,
         zyw = 2, mag = 1,
-        abilities =KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -4984,7 +5332,7 @@ object Professions {
         name = "Szaman",
         ww = 10, us = 10, k = 5, odp = 10, zr = 10, int = 15, sw = 20, ogd = 15,
         zyw = 4, mag = 2,
-        abilities =ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -5013,7 +5361,7 @@ object Professions {
         name = "Wielki szaman",
         ww = 15, us = 15, k = 10, odp = 15, zr = 15, int = 20, sw = 25, ogd = 20,
         a = 1, zyw = 6, mag = 3,
-        abilities =ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -5104,9 +5452,9 @@ object Professions {
             CommonAbilities.wspinaczka,
             CommonAbilities.zastraszanie,
             RareAbilities.unik,
-            SpecializedAbilities.naukaStrategiaTaktyka
+            SpecializedAbilities.naukaStrategiaTaktyka,
         ),
-        skills =SpecialWeapon.All + listOf(
+        skills = SpecialWeapon.All + listOf(
             CommonSkills.blyskawicznyBlok,
             CommonSkills.grozny,
             CommonSkills.ogluszenie,
@@ -5118,7 +5466,36 @@ object Professions {
         ),
         isStartingProfession = false,
     )
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////      ZWIERZAKI      ///////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+    val TresowanyNiedzwiedz = Profession(
+        name = "Tresowany Niedźwiedź",
+        ww = 10, us = 5, k = 5, odp = 5, zr = 5, int = 5, sw = 5, ogd = 0,
+        zyw = 2,
+        abilities = listOf(
+            CommonAbilities.plywanie,
+            CommonAbilities.przeszukiwanie,
+            CommonAbilities.spostrzegawczosc,
+            CommonAbilities.zastraszanie,
+            RareAbilities.unik,
+        ),
+        skills = listOf(
+            CommonSkills.grozny,
+            CommonSkills.oburecznosc,
+            CommonSkills.odwaga,
+            CommonSkills.ogluszenie,
+            CommonSkills.rozbrajanie,
+            CommonSkills.szalBojowy,
+            CommonSkills.zapasy,
+        ),
+    )
 }
+
+
 
 //TODO: PROFESJE WAMPIRÓW
 //TODO: PROFESJE Z KSIEGI SPACZENIA  (ODBLOKOWAC WROZBITE Z PROFESJI STRZYGONSKI MISTYK

@@ -115,6 +115,10 @@ object CommonSkills {
 
 }
 
+object InnateSkills {
+    val oporny = Skill("Oporny", "Przy rozwoju test tresury. Nieudany - utrata PD i brak rozwinięcia")
+}
+
 object StatsSkills {
     val bardzoSilny = Skill("Bardzo silny", "Krzeppa +5 na stałe")
     val bardzoSzybki = Skill("Bardzo szybki", "Szybkość +1 na stałe")
@@ -148,6 +152,7 @@ object MagicSkills {
     val magiaProstaGusla = Skill("Magia prosta: Gusła", "Dostęp do czarów magii prostej - gusła")
     val magiaProstaKaplanska = Skill("Magia prosta: Kapłańska", "Dostęp do czarów magii prostej - kapłańskiej")
     val magiaProstaSpaczeniowa = Skill("Magia prosta: Spaczeniowa", "Dostęp do czarów magii prostej - spaczeniowej")
+    val magiaProstaLodu = Skill("Magia prosta: Lodu", "Dostęp do czarów magii prostej - lodu")
     val magiaProstaTajemna = Skill("Magia prosta: Tajemna", "Dostęp do czarów magii prostej - tajemnej")
     val magiaProstaManannitow = Skill("Magia prosta: Manannitów", "Dostęp do błogosławieństw - Manann")
     val magiaProstaMorrytow = Skill("Magia prosta: Morrytów", "Dostęp do błogosławieństw - Morr")

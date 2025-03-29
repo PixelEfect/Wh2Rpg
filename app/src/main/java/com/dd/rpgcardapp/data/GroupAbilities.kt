@@ -6,6 +6,7 @@ object ScienceAbilities {
         SpecializedAbilities.naukaAnatomia,
         SpecializedAbilities.naukaAstronomia,
         SpecializedAbilities.naukaDemonologia,
+        SpecializedAbilities.naukaDuchy,
         SpecializedAbilities.naukaFilozofia,
         SpecializedAbilities.naukaFizyka,
         SpecializedAbilities.naukaGeneologiaHeraldyka,
@@ -38,6 +39,7 @@ object KnowledgeAbilities {
         SpecializedAbilities.wiedzaNiziolki,
         SpecializedAbilities.wiedzaOgry,
         SpecializedAbilities.wiedzaSkaveny,
+        SpecializedAbilities.wiedzaKrajTrolli,
         //BEZ KATAJU
     )
 }
@@ -60,6 +62,7 @@ object LanguageAbilities {
         SpecializedAbilities.znajomoscJezykaMrocznaMowa,
         SpecializedAbilities.znajomoscJezykaQueekish,
         SpecializedAbilities.znajomoscJezykaStrzyganski,
+        SpecializedAbilities.znajomoscJezykaUngolski,
     )
 }
 
