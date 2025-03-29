@@ -67,10 +67,17 @@ object LanguageAbilities {
 }
 
 object SecretLanguageAbilities {
+    val Common = listOf(
+        SpecializedAbilities.jezykTajemnyDemoniczny,
+        SpecializedAbilities.jezykTajemnyElfi,
+        SpecializedAbilities.jezykTajemnyMagiczny,
+    )
     val All = listOf(
         SpecializedAbilities.jezykTajemnyDemoniczny,
         SpecializedAbilities.jezykTajemnyElfi,
         SpecializedAbilities.jezykTajemnyMagiczny,
+        SpecializedAbilities.jezykTajemnyKrasnoludzki,
+        SpecializedAbilities.jezykTajemnyNehekharanski,
     )
 }
 
