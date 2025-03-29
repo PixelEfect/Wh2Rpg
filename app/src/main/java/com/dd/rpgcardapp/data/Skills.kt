@@ -109,6 +109,7 @@ object CommonSkills {
 
     val zelaznaWola = Skill("Żelazna wola", "Odporność na strach i grozę")
     val zmyslMagii = Skill("Zmysł magii", "+10 do testów splatania magii")
+    val znajomoscRegionu = Skill("Znajomość regionu", "+10 do testów wiedzy na temat wybranego regionu")
     val zrodzonyWMorzu = Skill("Zrodzony w morzu", "Można pić wode morską, +5pływanie,żeglarstwo.Utrata zdolności po zejściu na ląd")
     val zylkaHandlowa = Skill("Żyłka handlowa", "+10 do testów targowania i wyceny")
 
