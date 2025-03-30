@@ -143,6 +143,7 @@ object SpecializedAbilities{
     val wiedzaKataj = Ability("Wiedza: Kataj",)
     val wiedzaKislev = Ability("Wiedza: Kisleva",)
     val wiedzaKsiestwaGraniczne = Ability("Wiedza: Księstwa Graniczne",)
+    val wiedzaLustria = Ability("Wiedza: Lustria",)
     val wiedzaNorska = Ability("Wiedza: Norska",)
     val wiedzaTilea = Ability("Wiedza: Tilea",)
     val wiedzaElfy = Ability("Wiedza: Elfy",)
@@ -151,6 +152,7 @@ object SpecializedAbilities{
     val wiedzaOgry = Ability("Wiedza: Ogry",)
     val wiedzaSkaveny = Ability("Wiedza: Skaveny",)
     val wiedzaKrajTrolli = Ability("Wiedza: Kraj Trolli",)
+    val wiedzaPustkowiaChaosu = Ability("Wiedza: Pustkowia Chaosu",)
 
     val znajomoscJezykaArabski = Ability("Znajomość języka: Arabski",)
     val znajomoscJezykaBretonski = Ability("Znajomość języka: Bretoński",)

@@ -4,6 +4,7 @@ data class Skill (val name: String, val description: String)
 
 object CommonSkills {
     val artylerzysta = Skill("Artylerzysta", "Ładowanie broni palnej krótsze o 1 akcję")
+    val bezksztaltny = Skill("Bezkształtny", "Bezustanna zmiana kształtu, trafienie zawsze w korpus. TK = nagła śmierć")
     val bezrozumny = Skill("Bezrozumny", "Istota bez Int, Sw i Ogd")
     val biegPoScianach = Skill("Bieg po ścianach", "+20 wspinaczka, wysokość = szybkość")
     val bijatyka = Skill("Bijatyka", "Walka bez broni: WW +10, obrażenia +1")
@@ -32,6 +33,7 @@ object CommonSkills {
     val gusla = Skill("Gusła", "Dodatkowa kość przy określaniu poziomu mocy; służy do sprawdzania Przekleństwa Tzeentcha")
     val intrygant = Skill("Intrygant", "+10 do przekonywania i testów SW podczas intryg")
     val inzynieriaSpaczeniowa = Skill("Inżynieria spaczeniowa", "nauka inżynieria pozwala na tworzenie spaczeniowych wynalazków")
+    val kontrolowanaMutacja = Skill("Kontrolowana mutacja", "2 rzuty na mutacje i wybór. Następnie -10(odp) do testów na kolejne mutacje")
     val krasnoludzkifach = Skill("Krasnoludzki fach", "+10 do rzemiosła krasnoludzkiego")
     val krasomowstwo = Skill("Krasomówstwo", "Oddziaływanie na grupę osób 100 razy większą niż normalnie; wymaga Przemawianie")
     val krzepki = Skill("Krzepki", "BG nosi pancerz ciężki i zbroję płytową")
@@ -92,12 +94,16 @@ object CommonSkills {
     val tobarskiPilot = Skill("Tobarski pilot", "+10/20 do testów związanych ze Skałami Głupców")
 
     val ulicznik = Skill("Ulicznik", "+10 do skradania i ukrywania się w mieście")
+    val uodpornionyNaChaos = Skill("Uodporniony na Chaos", "mutant otrzymuje +10 przeciwko kolejnym przemianom")
+    val urodzonyWspinacz = Skill("Urodzony wspinacz", "W ramach akcji po udanym teście wspinaczki przebyto (Sz) metrów")
+
     val walkaOgonem = Skill("Walka ogonem", "Władanie bronią za pomocą ogona")
     val warzenieZarazy = Skill("Warzenie zarazy", "Rzemiosło piwowarstwo do tworzenia piwa z chorobą ze spaczenia")
     val wedrowiec = Skill("Wędrowiec", "+10 do skradania i ukrywania się poza miastem")
 
     val widzenieWCiemnosci = Skill("Widzenie w ciemności", "Widzenie w ciemności do 30 metrów")
     val woltyzerka = Skill("Woltyżerka", "+10 do jeździectwa; testy w ekstremalnych sytuacjach")
+    val wybraniecChaosu = Skill("Wybraniec Chaosu", "2 testy na rodzaj mutacji + wybór")
     val wyczucieKierunku = Skill("Wyczucie kierunku", "+10 do nawigacji; naturalny kompas")
     val wykrywaniePulapek = Skill("Wykrywanie pułapek", "+10 do spostrzegawczości i otwierania zamków")
     val wyostrzoneZmysly = Skill("Wyostrzone zmysły", "+20 do spostrzegawczości")
@@ -149,6 +155,7 @@ object WeaponSkills {
 }
 
 object MagicSkills {
+    val magiaProstaChaos = Skill("Magia prosta: Chaos", "Dostęp do czarów magii prostej - Chaos")
     val magiaProstaGusla = Skill("Magia prosta: Gusła", "Dostęp do czarów magii prostej - gusła")
     val magiaProstaKaplanska = Skill("Magia prosta: Kapłańska", "Dostęp do czarów magii prostej - kapłańskiej")
     val magiaProstaSpaczeniowa = Skill("Magia prosta: Spaczeniowa", "Dostęp do czarów magii prostej - spaczeniowej")
