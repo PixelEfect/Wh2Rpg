@@ -40,7 +40,8 @@ object KnowledgeAbilities {
         SpecializedAbilities.wiedzaOgry,
         SpecializedAbilities.wiedzaSkaveny,
         SpecializedAbilities.wiedzaKrajTrolli,
-        //BEZ KATAJU
+        SpecializedAbilities.wiedzaPustkowiaChaosu,
+        //BEZ KATAJU i Lustrii
     )
 }
 
@@ -129,3 +130,19 @@ object CraftAbilities {
         SpecializedAbilities.rzemiosloZlotnictwo,
     )
 }
+
+object SignsAndLanguagesAbilities {
+    val All = listOf(
+        SpecializedAbilities.sekretneZnakiAstrologow,
+        SpecializedAbilities.sekretneZnakiLowcow,
+        SpecializedAbilities.sekretneZnakiRycerzyZakonnych,
+        SpecializedAbilities.sekretneZnakiZlodziei,
+        SpecializedAbilities.sekretneZnakiZwiadowcow,
+        SpecializedAbilities.sekretneZnakiKultuOswiecenia,
+        SpecializedAbilities.sekretnyJezykBitewny,
+        SpecializedAbilities.sekretnyJezykGildii,
+        SpecializedAbilities.sekretnyJezykLowcow,
+        SpecializedAbilities.sekretnyJezykZlodziei,
+    )
+}
+
