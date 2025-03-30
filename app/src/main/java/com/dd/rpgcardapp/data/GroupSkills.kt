@@ -5,6 +5,7 @@ object UniversalMagic {
         MagicSkills.magiaPowszechnaAnatema,
         MagicSkills.magiaPowszechnaAzyl,
         MagicSkills.magiaPowszechnaBarieraCzystosci,
+        MagicSkills.magiaPowszechnaBarieraDuchow,
         MagicSkills.magiaPowszechnaDotykNaOdleglosc,
         MagicSkills.magiaPowszechnaEgzorcyzm,
         MagicSkills.magiaPowszechnaGlosKaznodziei,
@@ -16,12 +17,15 @@ object UniversalMagic {
         MagicSkills.magiaPowszechnaPalecBozy,
         MagicSkills.magiaPowszechnaPancerzEteru,
         MagicSkills.magiaPowszechnaPeta,
+        MagicSkills.magiaPowszechnaPieknaMaska,
+        MagicSkills.magiaPowszechnaPobranieMocy,
         MagicSkills.magiaPowszechnaPodniebnyChod,
         MagicSkills.magiaPowszechnaPowstrzymanieMutacji,
         MagicSkills.magiaPowszechnaPrzeskok,
         MagicSkills.magiaPowszechnaRozproszenieMagii,
         MagicSkills.magiaPowszechnaSlubowanie,
         MagicSkills.magiaPowszechnaUcienie,
+        MagicSkills.magiaPowszechnaWazila,
         MagicSkills.magiaPowszechnaWiezn,
         MagicSkills.magiaPowszechnaWspinacz,
         MagicSkills.magiaPowszechnaWstrzas,
@@ -56,6 +60,9 @@ object PriestlyMagic {
         MagicSkills.magiaKaplanskaVerena,
         MagicSkills.magiaKaplanskaGunndreda,
         MagicSkills.magiaKaplanskaHandricha,
+        MagicSkills.magiaKaplanskaDazha,
+        MagicSkills.magiaKaplanskaUrsuna,
+        MagicSkills.magiaKaplanskaTora,
     )
 }
 
