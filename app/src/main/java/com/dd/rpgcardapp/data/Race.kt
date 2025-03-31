@@ -25,8 +25,8 @@ object Races {
 
         abilities = listOf(
             CommonAbilities.plotkowanie,
-            SpecializedAbilities.wiedzaImperium,
-            SpecializedAbilities.znajomoscJezykaReikspiel,
+            SpecAbilities.wiedzaImperium,
+            SpecAbilities.JezykReikspiel,
         ),
         skills = listOf(
         ),
@@ -40,9 +40,9 @@ object Races {
         name = "Elf",
         us = 30, zr = 30, sz = 5,
         abilities = listOf(
-            SpecializedAbilities.wiedzaElfy,
-            SpecializedAbilities.znajomoscJezykaEltharin,
-            SpecializedAbilities.znajomoscJezykaReikspiel,
+            SpecAbilities.wiedzaElfy,
+            SpecAbilities.JezykEltharin,
+            SpecAbilities.JezykReikspiel,
         ),
         skills = listOf(
             CommonSkills.bystryWzrok,
@@ -60,9 +60,9 @@ object Races {
         name = "Gnom",
         k = 10, odp = 30, sw = 30,
         abilities = listOf(
-            SpecializedAbilities.wiedzaGnomy,
-            SpecializedAbilities.znajomoscJezykaGnomi,
-            SpecializedAbilities.znajomoscJezykaReikspiel,
+            SpecAbilities.wiedzaGnomy,
+            SpecAbilities.JezykGnomi,
+            SpecAbilities.JezykReikspiel,
         ),
         skills = listOf(
             CommonSkills.czulySluch,
@@ -82,9 +82,9 @@ object Races {
         name = "Krasnolud",
         ww = 30, odp = 30, zr = 10, ogd = 10, sz = 3,
         abilities = listOf(
-            SpecializedAbilities.wiedzaKrasnoludy,
-            SpecializedAbilities.znajomoscJezykaKhazalid,
-            SpecializedAbilities.znajomoscJezykaReikspiel,
+            SpecAbilities.wiedzaKrasnoludy,
+            SpecAbilities.JezykKhazalid,
+            SpecAbilities.JezykReikspiel,
         ),
         skills = listOf(
             CommonSkills.krasnoludzkifach,
@@ -95,7 +95,7 @@ object Races {
             CommonSkills.zapieklaNienawisc,
         ),
         optionalAbility = listOf(
-            listOf(SpecializedAbilities.rzemiosloGornictwo, SpecializedAbilities.rzemiosloKamieniarstwo, SpecializedAbilities.rzemiosloKowalstwo),
+            listOf(SpecAbilities.rzemiosloGornictwo, SpecAbilities.rzemiosloKamieniarstwo, SpecAbilities.rzemiosloKowalstwo),
         ),
     )
 
@@ -103,10 +103,10 @@ object Races {
         name = "Niziołek",
         ww = 10, us = 30, k = 10, odp = 10, zr = 30, ogd = 30,
         abilities = listOf(
-            SpecializedAbilities.naukaGeneologiaHeraldyka,
-            SpecializedAbilities.wiedzaNiziolki,
-            SpecializedAbilities.znajomoscJezykaNiziolek,
-            SpecializedAbilities.znajomoscJezykaReikspiel,
+            SpecAbilities.naukaGeneologiaHeraldyka,
+            SpecAbilities.wiedzaNiziolki,
+            SpecAbilities.JezykNiziolkow,
+            SpecAbilities.JezykReikspiel,
         ),
         skills = listOf(
             CommonSkills.odpornoscNaChaos,
@@ -114,7 +114,7 @@ object Races {
             WeaponSkills.proce,
         ),
         optionalAbility = listOf(
-            listOf(SpecializedAbilities.rzemiosloGotowanie, SpecializedAbilities.rzemiosloUprawaZiemi),
+            listOf(SpecAbilities.rzemiosloGotowanie, SpecAbilities.rzemiosloUprawaZiemi),
         ),
         optionalSkills = listOf(
             Random.All,

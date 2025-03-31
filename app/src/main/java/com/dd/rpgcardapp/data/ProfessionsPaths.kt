@@ -690,6 +690,27 @@ object ProfessionPaths {
             )
         ),
 
+        Professions.Kadet to Paths(
+            entry = listOf(
+                Professions.SzermierzEstalijski,
+                Professions.Najemnik,
+                Professions.Ochotnik,
+                Professions.Szlachcic,
+                Professions.StraznikDrog,
+                Professions.Giermek,
+                Professions.Zolnierz,
+                Professions.Zak,
+            ),
+            exit = listOf(
+                Professions.Herold,
+                Professions.Najemnik,
+                Professions.Rajtar,
+                Professions.Sierzant,
+                Professions.Giermek,
+                Professions.Zak,
+            )
+        ),
+
         Professions.Kanciarz to Paths(
             entry = listOf(
                 Professions.AkolitaKultuSlaanesha,
@@ -725,6 +746,27 @@ object ProfessionPaths {
                 Professions.Szuler,
                 Professions.Zakapturzony,
                 Professions.Zlodziej,
+            )
+        ),
+
+        Professions.Kanciarz to Paths(
+            entry = listOf(
+                Professions.Woznica,
+                Professions.Poslaniec,
+                Professions.Nawigator,
+                Professions.Zwiadowca,
+                Professions.Skryba,
+                Professions.Zak,
+                Professions.Rzemieslnik,
+            ),
+            exit = listOf(
+                Professions.Rzemieslnik,
+                Professions.Odkrywca,
+                Professions.Falszerz,
+                Professions.Nawigator,
+                Professions.Uczony,
+                Professions.Skryba,
+                Professions.Wloczykij,
             )
         ),
 
@@ -2380,6 +2422,18 @@ object ProfessionPaths {
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 
+        Professions.Admiral to Paths(
+            entry = listOf(
+                Professions.Szlachcic,
+                Professions.Kapitan,
+            ),
+            exit = listOf(
+                Professions.Ambasador,
+                Professions.Odkrywca,
+                Professions.MistrzGildii,
+            )
+        ),
+
         Professions.AgentCalunu to Paths(
             entry = listOf(
                 Professions.Akolita,
@@ -4003,6 +4057,23 @@ object ProfessionPaths {
                 Professions.Skrytobojca,
                 Professions.SledczyVereny,
                 Professions.ZakapturzonyBrat,
+            )
+        ),
+
+        Professions.TreserZwierzat to Paths(
+            entry = listOf(
+                Professions.Chlop,
+                Professions.Cyrkowiec,
+                Professions.Lowca,
+                Professions.PoganiaczMulow,
+                Professions.PoskramiaczNiedzwiedzi,
+                Professions.Rolnik,
+                Professions.Szczurolap,
+            ),
+            exit = listOf(
+                Professions.Cyrkowiec,
+                Professions.Lowca,
+                Professions.PoskramiaczNiedzwiedzi,
             )
         ),
 
