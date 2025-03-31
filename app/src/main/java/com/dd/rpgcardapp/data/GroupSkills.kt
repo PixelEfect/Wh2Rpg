@@ -182,3 +182,32 @@ object MasterRuneForging {
         RuneSkills.mistrzowskaRunaWladzyKrolewskiej,
     )
 }
+
+object  Random {
+    val All = listOf(
+        CommonSkills.bystryWzrok,
+        CommonSkills.czulySluch,
+        CommonSkills.geniuszArytmetyczny,
+        CommonSkills.krzepki,
+        CommonSkills.nasladowca,
+        CommonSkills.oburecznosc,
+        CommonSkills.odpornoscNaChoroby,
+        CommonSkills.odpornoscNaMagie,
+        CommonSkills.odpornoscNaTrucizny,
+        CommonSkills.odpornoscPsychiczna,
+        CommonSkills.szczescie,
+        CommonSkills.szostyZmysl,
+        CommonSkills.widzenieWCiemnosci,
+        StatsSkills.bardzoSilny,
+        StatsSkills.bardzoSzybki,
+        StatsSkills.blyskotliwosc,
+        StatsSkills.charyzmatyczny,
+        StatsSkills.niezwykleOdporny,
+        StatsSkills.opanowanie,
+        StatsSkills.strzelecWyborowy,
+        StatsSkills.szybkiRefleks,
+        StatsSkills.twardziel,
+        StatsSkills.urodzonyWojownik,
+    )
+
+}

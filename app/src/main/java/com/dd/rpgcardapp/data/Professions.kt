@@ -2,14 +2,14 @@ package com.dd.rpgcardapp.data
 
 data class Profession(
     val name: String,
-    val ww: Int,
-    val us: Int,
-    val k: Int,
-    val odp: Int,
-    val zr: Int,
-    val int: Int,
-    val sw: Int,
-    val ogd: Int,
+    val ww: Int = 0,
+    val us: Int = 0,
+    val k: Int = 0,
+    val odp: Int = 0,
+    val zr: Int = 0,
+    val int: Int = 0,
+    val sw: Int = 0,
+    val ogd: Int = 0,
     val a: Int = 0,
     val zyw: Int =2,
     val mag: Int = 0,
@@ -47,7 +47,7 @@ object Professions {
         name = "Akolita kultu Khorna",
         ww = 20, us = 0, k = 10, odp = 15, zr = 5, int = 0, sw = 15, ogd = 0,
         a = 1, zyw = 4,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.zastraszanie,
             RareAbilities.unik,
             SpecializedAbilities.sekretnyJezykBitewny,
@@ -69,7 +69,7 @@ object Professions {
         name = "Akolita kultu Nurgla",
         ww = 10, us = 0, k = 0, odp = 20, zr = 5, int = 0, sw = 15, ogd = 15,
         zyw = 3, mag = 1,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.sztukaPrzetrwania,
             CommonAbilities.zastraszanie,
@@ -128,7 +128,7 @@ object Professions {
         name = "Akolita kultu Tzeentcha",
         ww = 5, us = 5, k = 0, odp = 0, zr = 5, int = 20, sw = 10, ogd = 20,
         zyw = 3, mag = 1,
-        abilities = ScienceAbilities.All + CraftAbilities.All + LanguageAbilities.All + KnowledgeAbilities.All + listOf(
+        abilities = ScienceAbilities.All + CraftAbilities.All + LanguageAbilities.All + KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
@@ -237,7 +237,7 @@ object Professions {
         name = "Błędny rycerz",
         ww = 15, us = 0, k = 5, odp = 5, zr = 5, int = 0, sw = 5, ogd = 5,
         a = 1, 
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.sztukaPrzetrwania,
@@ -794,7 +794,7 @@ object Professions {
     )
 
     val Korsarz = Profession(
-        name = "Koniarz",
+        name = "Korsarz",
         ww = 10, us = 0, k = 10, odp = 5, zr = 10, int = 0, sw = 0, ogd = 0,
         a = 1,
         abilities = listOf(
@@ -1135,7 +1135,7 @@ object Professions {
         name = "Pielgrzym",
         ww = 5, us = 5, k = 5, odp = 5, zr = 5, int = 10, sw = 10, ogd = 10,
         zyw = 4,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plotkowanie,
@@ -1761,7 +1761,7 @@ object Professions {
         name = "Strażnik świątynny",
         ww = 10, us = 5, k = 5, odp = 5, zr = 5, int = 0, sw = 5, ogd = 0,
         
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przeszukiwanie,
             CommonAbilities.spostrzegawczosc,
@@ -1820,7 +1820,7 @@ object Professions {
     )
 
     val Strielec = Profession(
-        name = "Strażnik więzienny",
+        name = "Strielec",
         ww = 10, us = 10, k = 5, odp = 5, zr = 5, int = 0, sw = 5, ogd = 0,
         
         abilities = listOf(
@@ -1941,7 +1941,7 @@ object Professions {
     )
 
     val Szperacz = Profession(
-        name = "Szlachcic",
+        name = "Szperacz",
         ww = 5, us = 5, k = 0, odp = 10, zr = 10, int = 10, sw = 0, ogd = 0,
         
         abilities = listOf(
@@ -2496,7 +2496,7 @@ object Professions {
         name = "Ambasador",
         ww = 10, us = 10, k = 5, odp = 10, zr = 10, int = 30, sw = 30, ogd = 40,
         zyw = 6,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
@@ -2526,7 +2526,7 @@ object Professions {
         name = "Arcykapłan",
         ww = 20, us = 20, k = 15, odp = 15, zr = 15, int = 20, sw = 30, ogd = 25,
         a = 1, zyw = 6, mag = 3,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.plywanie,
@@ -2553,7 +2553,7 @@ object Professions {
         name = "Arcymag",
         ww = 15, us = 15, k = 5, odp = 15, zr = 20, int = 35, sw = 40, ogd = 20,
         zyw = 5, mag = 4,
-        abilities = SecretLanguageAbilities.Common + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = SecretLanguageAbilities.Common + ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.zastraszanie,
             RareAbilities.czytanieIPisanie,
@@ -2575,7 +2575,7 @@ object Professions {
         name = "Arcymistrz",
         ww = 40, us = 15, k = 25, odp = 25, zr = 25, int = 15, sw = 30, ogd = 20,
         a = 2, zyw = 8,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.przekonywanie,
@@ -2608,7 +2608,7 @@ object Professions {
         name = "Arcymistrz run",
         ww = 20, us = 15, k = 20, odp = 15, zr = 15, int = 30, sw = 40, ogd = 15,
         a = 2, zyw = 6, mag = 4,
-        abilities = CraftAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = CraftAbilities.All + ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -2712,7 +2712,7 @@ object Professions {
         name = "Bard",
         ww = 10, us = 10, k = 0, odp = 0, zr = 15, int = 10, sw = 5, ogd = 25,
         zyw = 4,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
             CommonAbilities.spostrzegawczosc,
@@ -2806,7 +2806,7 @@ object Professions {
         name = "Bosman",
         ww = 15, us = 15, k = 10, odp = 15, zr = 10, int = 10, sw = 10, ogd = 10,
         a = 1, zyw = 4,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.hazard,
             CommonAbilities.mocnaGlowa,
@@ -2882,7 +2882,7 @@ object Professions {
         name = "Ceremoniarz",
         ww = 10, us = 10, k = 5, odp = 5, zr = 0, int = 20, sw = 15, ogd = 10,
         zyw = 4,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
             CommonAbilities.spostrzegawczosc,
@@ -2900,7 +2900,7 @@ object Professions {
         name = "Czarownik",
         ww = 5, us = 5, k = 5, odp = 10, zr = 10, int = 10, sw = 15, ogd = 15,
         zyw = 4, mag = 2,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plotkowanie,
@@ -2928,7 +2928,7 @@ object Professions {
         name = "Czarnoksiężnik",
         ww = 10, us = 10, k = 10, odp = 10, zr = 15, int = 15, sw = 20, ogd = 20,
         zyw = 5, mag = 3,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
@@ -3247,7 +3247,7 @@ object Professions {
         name = "Kapitan",
         ww = 25, us = 20, k = 15, odp = 20, zr = 20, int = 20, sw = 25, ogd = 30,
         a = 2, zyw = 6,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plywanie,
             CommonAbilities.spostrzegawczosc,
@@ -3273,7 +3273,7 @@ object Professions {
         name = "Kapłan",
         ww = 10, us = 10, k = 5, odp = 10, zr = 5, int = 10, sw = 20, ogd = 15,
         zyw = 4, mag = 1,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.plywanie,
@@ -3298,7 +3298,7 @@ object Professions {
         name = "Kapłan - wojownik",
         ww = 20, us = 15, k = 10, odp = 10, zr = 15, int = 15, sw = 25, ogd = 15,
         a = 1, zyw = 5, mag = 2,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             RareAbilities.leczenie,
             RareAbilities.splatanieMagii,
@@ -3355,7 +3355,7 @@ object Professions {
         name = "Katecheta",
         ww = 0, us = 0, k = 5, odp = 5, zr = 10, int = 20, sw = 15, ogd = 10,
         zyw = 4,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             RareAbilities.czytanieIPisanie,
         ),
         skills = listOf(
@@ -3422,7 +3422,7 @@ object Professions {
         name = "Kowal run",
         ww = 10, us = 5, k = 10, odp = 5, zr = 5, int = 20, sw = 25, ogd = 5,
         zyw = 3, mag = 2,
-        abilities = CraftAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = CraftAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.wycena,
@@ -3445,7 +3445,7 @@ object Professions {
         name = "Krzyżowiec",
         ww = 30, us = 10, k = 20, odp = 20, zr = 20, int = 20, sw = 25, ogd = 15,
         a = 2, zyw = 8,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.sztukaPrzetrwania,
@@ -3508,7 +3508,7 @@ object Professions {
         name = "Kupiec",
         ww = 10, us = 10, k = 5, odp = 5, zr = 10, int = 25, sw = 20, ogd = 20,
         zyw = 4,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.powozenie,
@@ -3566,7 +3566,7 @@ object Professions {
         name = "Lodowa czarownica",
         ww = 15, us = 0, k = 5, odp = 20, zr = 15, int = 30, sw = 40, ogd = 15,
          zyw = 6, mag = 4,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.spostrzegawczosc,
@@ -3683,7 +3683,7 @@ object Professions {
         name = "Magister rewizor",
         ww = 15, us = 10, k = 5, odp = 10, zr = 20, int = 25, sw = 30, ogd = 15,
         zyw = 5, mag = 3,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przeszukiwanie,
@@ -3821,7 +3821,7 @@ object Professions {
         name = "Mistrz magii",
         ww = 10, us = 10, k = 0, odp = 10, zr = 15, int = 30, sw = 35, ogd = 15,
         zyw = 4, mag = 3,
-        abilities = SecretLanguageAbilities.Common + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = SecretLanguageAbilities.Common + ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -3845,7 +3845,7 @@ object Professions {
         name = "Mistrz run",
         ww = 15, us = 10, k = 15, odp = 10, zr = 10, int = 25, sw = 35, ogd = 10,
         a = 1, zyw = 5, mag = 3,
-        abilities = CraftAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = CraftAbilities.All + ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
             CommonAbilities.spostrzegawczosc,
@@ -3892,7 +3892,7 @@ object Professions {
         name = "Mistrz zakonny",
         ww = 35, us = 10, k = 20, odp = 20, zr = 20, int = 15, sw = 25, ogd = 15,
         a = 2, zyw = 8,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.przekonywanie,
@@ -3947,7 +3947,7 @@ object Professions {
         name = "Mnich",
         ww = 5, us = 0, k = 5, odp = 5, zr = 10, int = 25, sw = 15, ogd = 15,
         zyw = 4,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.spostrzegawczosc,
             RareAbilities.czytanieIPisanie,
@@ -3964,7 +3964,7 @@ object Professions {
         name = "Nawigator",
         ww = 10, us = 10, k = 5, odp = 5, zr = 10, int = 25, sw = 10, ogd = 5,
         zyw = 4,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.plywanie,
             CommonAbilities.spostrzegawczosc,
             RareAbilities.czytanieIPisanie,
@@ -4006,7 +4006,7 @@ object Professions {
         name = "Opat",
         ww = 10, us = 0, k = 10, odp = 10, zr = 10, int = 30, sw = 25, ogd = 20,
         zyw = 6,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -4029,7 +4029,7 @@ object Professions {
         name = "Odkrywca",
         ww = 20, us = 20, k = 10, odp = 15, zr = 15, int = 25, sw = 20, ogd = 15,
         a = 1, zyw = 6,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.plywanie,
@@ -4059,7 +4059,7 @@ object Professions {
         name = "Oficer",
         ww = 30, us = 20, k = 20, odp = 20, zr = 20, int = 15, sw = 15, ogd = 25,
         a = 2, zyw = 7,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
@@ -4155,7 +4155,7 @@ object Professions {
         name = "Prawiedźma",
         ww = 0, us = 0, k = 5, odp = 20, zr = 10, int = 40, sw = 30, ogd = 15,
          zyw = 6, mag = 3,
-        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + listOf(
+        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.spostrzegawczosc,
@@ -4183,7 +4183,7 @@ object Professions {
         name = "Psałterzysta",
         ww = 20, us = 10, k = 10, odp = 10, zr = 15, int = 10, sw = 10, ogd = 10,
         a = 1, zyw = 6,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.spostrzegawczosc,
             RareAbilities.czytanieIPisanie,
@@ -4355,7 +4355,7 @@ object Professions {
         name = "Rycerz Kruka",
         ww = 35, us = 15, k = 20, odp = 20, zr = 20, int = 15, sw = 30, ogd = 10,
         a = 2, zyw = 8,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.spostrzegawczosc,
             RareAbilities.czytanieIPisanie,
@@ -4423,7 +4423,7 @@ object Professions {
         name = "Rycerz Próby",
         ww = 35, us = 0, k = 20, odp = 20, zr = 25, int = 10, sw = 25, ogd = 25,
         a = 2, zyw = 6,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.przekonywanie,
@@ -4454,7 +4454,7 @@ object Professions {
         name = "Sierżant",
         ww = 20, us = 15, k = 10, odp = 10, zr = 10, int = 10, sw = 10, ogd = 20,
         a = 1, zyw = 4,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
@@ -4635,7 +4635,7 @@ object Professions {
         name = "Szpieg",
         ww = 15, us = 15, k = 5, odp = 10, zr = 20, int = 20, sw = 35, ogd = 20,
         a = 1, zyw = 4,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -4693,7 +4693,7 @@ object Professions {
         name = "Uczony",
         ww = 5, us = 5, k = 5, odp = 5, zr = 10, int = 30, sw = 15, ogd = 15,
         zyw = 4,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.wycena,
             RareAbilities.czytanieIPisanie,
@@ -4792,7 +4792,7 @@ object Professions {
         name = "Wędrowny czarodziej",
         ww = 5, us = 5, k = 0, odp = 5, zr = 10, int = 20, sw = 25, ogd = 10,
         zyw = 3, mag = 2,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.plywanie,
@@ -4904,7 +4904,7 @@ object Professions {
         name = "Wtajemniczony kultu Khorna",
         ww = 40, us = 5, k = 20, odp = 30, zr = 10, int = 0, sw = 15, ogd = 5,
         a = 2, zyw = 7,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.zastraszanie,
             RareAbilities.unik,
@@ -4927,7 +4927,7 @@ object Professions {
         name = "Wtajemniczony kultu Nurgla",
         ww = 15, us = 5, k = 5, odp = 30, zr = 10, int = 5, sw = 20, ogd = 15,
         a = 1, zyw = 5, mag = 2,
-        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.All + listOf(
+        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.zastraszanie,
@@ -4983,7 +4983,7 @@ object Professions {
         name = "Wtajemniczony kultu Tzeentcha",
         ww = 10, us = 10, k = 5, odp = 5, zr = 10, int = 40, sw = 20, ogd = 30,
         a = 1, zyw = 5, mag = 2,
-        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + LanguageAbilities.All + KnowledgeAbilities.All + listOf(
+        abilities = SecretLanguageAbilities.All + ScienceAbilities.All + LanguageAbilities.All + KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
@@ -5013,7 +5013,7 @@ object Professions {
         name = "Wybraniec Boży",
         ww = 15, us = 15, k = 10, odp = 10, zr = 10, int = 15, sw = 25, ogd = 20,
         a = 1, zyw = 5, mag = 2,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plywanie,
             CommonAbilities.plotkowanie,
@@ -5038,7 +5038,7 @@ object Professions {
         name = "Zabójca demonów",
         ww = 40, us = 0, k = 30, odp = 30, zr = 20, int = 0, sw = 30, ogd = 0,
         a = 2, zyw = 8,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.wspinaczka,
             CommonAbilities.zastraszanie,
@@ -5093,7 +5093,7 @@ object Professions {
         name = "Zabójca olbrzymów",
         ww = 25, us = 0, k = 15, odp = 15, zr = 10, int = 0, sw = 20, ogd = 0,
         a = 1, zyw = 6,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.mocnaGlowa,
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.zastraszanie,
@@ -5112,7 +5112,7 @@ object Professions {
         name = "Zakapturzony Brat",
         ww = 25, us = 10, k = 15, odp = 15, zr = 25, int = 30, sw = 25, ogd = 30,
         a = 1, zyw = 6,
-        abilities = SignsAndLanguagesAbilities.All + CraftAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = SignsAndLanguagesAbilities.All + CraftAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -5138,7 +5138,7 @@ object Professions {
         name = "Zakonnik",
         ww = 10, us = 0, k = 5, odp = 10, zr = 0, int = 15, sw = 15, ogd = 15,
         zyw = 4,
-        abilities = KnowledgeAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.sztukaPrzetrwania,
@@ -5220,7 +5220,7 @@ object Professions {
         name = "Zwiadowca",
         ww = 20, us = 20, k = 10, odp = 10, zr = 15, int = 20, sw = 15, ogd = 0,
         a = 1, zyw = 6,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.skradanieSie,
@@ -5310,7 +5310,7 @@ object Professions {
         name = "Bajarz",
         ww = 5, us = 0, k = 0, odp = 0, zr = 5, int = 10, sw = 10, ogd = 10,
         
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
             RareAbilities.czytanieIPisanie,
@@ -5358,7 +5358,7 @@ object Professions {
         name = "Fałszerz",
         ww = 5, us = 5, k = 10, odp = 10, zr = 20, int = 20, sw = 10, ogd = 10,
         zyw = 3,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.przekonywanie,
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.targowanie,
@@ -5555,7 +5555,7 @@ object Professions {
         name = "Śledczy Vereny",
         ww = 10, us = 10, k = 10, odp = 10, zr = 20, int = 30, sw = 20, ogd = 20,
         a = 1, zyw = 5,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.charakteryzacja,
             CommonAbilities.plotkowanie,
             CommonAbilities.przeszukiwanie,
@@ -5756,7 +5756,7 @@ object Professions {
         name = "Diakon zarazy",
         ww = 10, us = 5, k = 10, odp = 15, zr = 10, int = 5, sw = 15, ogd = 10,
         a = 1, zyw = 4, mag = 1,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.plywanie,
             CommonAbilities.spostrzegawczosc,
             RareAbilities.czytanieIPisanie,
@@ -5779,7 +5779,7 @@ object Professions {
         name = "Herszt klanu",
         ww = 40, us = 30, k = 30, odp = 30, zr = 40, int = 30, sw = 20, ogd = 25,
         a = 2, zyw = 6,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -5812,7 +5812,7 @@ object Professions {
         name = "Inżynier spaczenia",
         ww = 15, us = 20, k = 10, odp = 10, zr = 30, int = 30, sw = 15, ogd = 5,
         a = 1, zyw = 7,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.powozenie,
             CommonAbilities.spostrzegawczosc,
@@ -5862,7 +5862,7 @@ object Professions {
         name = "Kapłan zarazy",
         ww = 20, us = 10, k = 15, odp = 25, zr = 20, int = 10, sw = 25, ogd = 15,
         a = 1, zyw = 6, mag = 2,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.plywanie,
             CommonAbilities.spostrzegawczosc,
             RareAbilities.leczenie,
@@ -5882,7 +5882,7 @@ object Professions {
         name = "Mistrz ciałokształtowania",
         ww = 15, us = 0, k = 10, odp = 15, zr = 10, int = 15, sw = 15, ogd = 10,
         a = 1, zyw = 5,
-        abilities = ScienceAbilities.All + CraftAbilities.All + KnowledgeAbilities.All + listOf(
+        abilities = ScienceAbilities.All + CraftAbilities.All + KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.przeszukiwanie,
@@ -5908,7 +5908,7 @@ object Professions {
         name = "Mistrz mutator",
         ww = 30, us = 10, k = 20, odp = 30, zr = 20, int = 30, sw = 25, ogd = 15,
         a = 2, zyw = 7,
-        abilities = ScienceAbilities.All + CraftAbilities.All + KnowledgeAbilities.All + listOf(
+        abilities = ScienceAbilities.All + CraftAbilities.All + KnowledgeAbilities.OldWorld + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.opiekaNadZwierzetami,
             CommonAbilities.plywanie,
@@ -5983,7 +5983,7 @@ object Professions {
         name = "Nadprorok",
         ww = 20, us = 20, k = 15, odp = 15, zr = 40, int = 40, sw = 35, ogd = 35,
         a = 1, zyw = 9, mag = 3,
-        abilities = SecretLanguageAbilities.Common + ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = SecretLanguageAbilities.Common + ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.zastraszanie,
             RareAbilities.czytanieIPisanie,
@@ -6041,7 +6041,7 @@ object Professions {
         name = "Skaveński zaklinacz",
         ww = 15, us = 15, k = 0, odp = 20, zr = 25, int = 20, sw = 25, ogd = 10,
         zyw = 5, mag = 2,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.zastraszanie,
             RareAbilities.czytanieIPisanie,
             RareAbilities.splatanieMagii,
@@ -6068,7 +6068,7 @@ object Professions {
         name = "Szary prorok",
         ww = 10, us = 10, k = 5, odp = 10, zr = 20, int = 20, sw = 25, ogd = 15,
         zyw = 5, mag = 2,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.zastraszanie,
             RareAbilities.czytanieIPisanie,
@@ -6095,7 +6095,7 @@ object Professions {
         name = "Szponowład",
         ww = 15, us = 10, k = 5, odp = 5, zr = 10, int = 5, sw = 10, ogd = 5,
         a = 1, zyw = 4,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.dowodzenie,
             CommonAbilities.plywanie,
             CommonAbilities.skradanieSie,
@@ -6155,7 +6155,7 @@ object Professions {
         name = "Uczeń szamana",
         ww = 5, us = 5, k = 0, odp = 5, zr = 5, int = 10, sw = 10, ogd = 10,
          mag = 1,
-        abilities = KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -6179,7 +6179,7 @@ object Professions {
         name = "Szaman",
         ww = 10, us = 10, k = 5, odp = 10, zr = 10, int = 15, sw = 20, ogd = 15,
         zyw = 4, mag = 2,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
@@ -6208,7 +6208,7 @@ object Professions {
         name = "Wielki szaman",
         ww = 15, us = 15, k = 10, odp = 15, zr = 15, int = 20, sw = 25, ogd = 20,
         a = 1, zyw = 6, mag = 3,
-        abilities = ScienceAbilities.All + KnowledgeAbilities.All + LanguageAbilities.All + listOf(
+        abilities = ScienceAbilities.All + KnowledgeAbilities.OldWorld + LanguageAbilities.All + listOf(
             CommonAbilities.jezdziectwo,
             CommonAbilities.plotkowanie,
             CommonAbilities.przekonywanie,
