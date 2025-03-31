@@ -25,7 +25,7 @@ object ScienceAbilities {
 }
 
 object KnowledgeAbilities {
-    val All = listOf(
+    val OldWorld = listOf(
         SpecializedAbilities.wiedzaBretonia,
         SpecializedAbilities.wiedzaEstalia,
         SpecializedAbilities.wiedzaImperium,
@@ -41,6 +41,7 @@ object KnowledgeAbilities {
         SpecializedAbilities.wiedzaSkaveny,
         SpecializedAbilities.wiedzaKrajTrolli,
         SpecializedAbilities.wiedzaPustkowiaChaosu,
+        SpecializedAbilities.wiedzaGnomy,
         //BEZ KATAJU i Lustrii
     )
 }
@@ -64,6 +65,7 @@ object LanguageAbilities {
         SpecializedAbilities.znajomoscJezykaQueekish,
         SpecializedAbilities.znajomoscJezykaStrzyganski,
         SpecializedAbilities.znajomoscJezykaUngolski,
+        SpecializedAbilities.znajomoscJezykaGnomi,
     )
 }
 
