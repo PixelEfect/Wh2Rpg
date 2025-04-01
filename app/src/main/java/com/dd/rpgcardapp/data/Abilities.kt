@@ -53,7 +53,7 @@ object RareAbilities {
     val zeglarstwo = Ability("Żeglarstwo", "Zr")
 }
 
-object SpecAbilities{
+object SpecialAbilities{
     val jezykTajemnyDemoniczny = Ability("Jezyk tajemny: Demoniczny",)
     val jezykTajemnyMagiczny = Ability("Jezyk tajemny: Magiczny",)
     val jezykTajemnyElfi = Ability("Jezyk tajemny: Tajemny elfi",)

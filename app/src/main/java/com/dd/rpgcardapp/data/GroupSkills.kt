@@ -82,7 +82,7 @@ object SimplePriestlyMagic {
 }
 
 object SpecialWeapon {
-    val All = listOf(
+    val Common = listOf(
         WeaponSkills.bronDwureczna,
         WeaponSkills.bronKawaleryjska,
         WeaponSkills.kusze,
@@ -146,7 +146,7 @@ object MinorRuneForging {
 }
 
 object RuneForging {
-    val All = listOf(
+    val All = MinorRuneForging.All + listOf(
         RuneSkills.runaKrzywd,
         RuneSkills.runaRozproszeniaCzaru,
         RuneSkills.runaOslony,
@@ -209,5 +209,18 @@ object  Random {
         StatsSkills.twardziel,
         StatsSkills.urodzonyWojownik,
     )
+}
 
+object Acrobat {
+    val All = listOf(
+        CommonSkills.nasladowca,
+        CommonSkills.przemawianie,
+        CommonSkills.strzalMierzony,
+        CommonSkills.szybkieWyciagniecie,
+        CommonSkills.woltyzerka,
+        CommonSkills.zapasy,
+        StatsSkills.bardzoSilny,
+        StatsSkills.szybkiRefleks,
+        WeaponSkills.bronRzucana,
+    )
 }
