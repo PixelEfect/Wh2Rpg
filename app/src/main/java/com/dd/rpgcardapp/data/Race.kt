@@ -26,7 +26,7 @@ object Races {
         abilities = listOf(
             CommonAbilities.plotkowanie,
             SpecialAbilities.wiedzaImperium,
-            SpecialAbilities.JezykReikspiel,
+            SpecialAbilities.jezykReikspiel,
         ),
         skills = listOf(
         ),
@@ -41,8 +41,8 @@ object Races {
         us = 30, zr = 30, sz = 5,
         abilities = listOf(
             SpecialAbilities.wiedzaElfy,
-            SpecialAbilities.JezykEltharin,
-            SpecialAbilities.JezykReikspiel,
+            SpecialAbilities.jezykEltharin,
+            SpecialAbilities.jezykReikspiel,
         ),
         skills = listOf(
             CommonSkills.bystryWzrok,
@@ -61,8 +61,8 @@ object Races {
         k = 10, odp = 30, sw = 30,
         abilities = listOf(
             SpecialAbilities.wiedzaGnomy,
-            SpecialAbilities.JezykGnomi,
-            SpecialAbilities.JezykReikspiel,
+            SpecialAbilities.jezykGnomi,
+            SpecialAbilities.jezykReikspiel,
         ),
         skills = listOf(
             CommonSkills.czulySluch,
@@ -83,8 +83,8 @@ object Races {
         ww = 30, odp = 30, zr = 10, ogd = 10, sz = 3,
         abilities = listOf(
             SpecialAbilities.wiedzaKrasnoludy,
-            SpecialAbilities.JezykKhazalid,
-            SpecialAbilities.JezykReikspiel,
+            SpecialAbilities.jezykKhazalid,
+            SpecialAbilities.jezykReikspiel,
         ),
         skills = listOf(
             CommonSkills.krasnoludzkifach,
@@ -105,8 +105,8 @@ object Races {
         abilities = listOf(
             SpecialAbilities.naukaGeneologiaHeraldyka,
             SpecialAbilities.wiedzaNiziolki,
-            SpecialAbilities.JezykNiziolkow,
-            SpecialAbilities.JezykReikspiel,
+            SpecialAbilities.jezykNiziolkow,
+            SpecialAbilities.jezykReikspiel,
         ),
         skills = listOf(
             CommonSkills.odpornoscNaChaos,

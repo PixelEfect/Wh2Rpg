@@ -70,24 +70,24 @@ object KnowledgeAbilities {
 
 object LanguageAbilities {
     val All = listOf(
-        SpecialAbilities.JezykArabski,
-        SpecialAbilities.JezykBretonski,
-        SpecialAbilities.JezykEltharin,
-        SpecialAbilities.JezykEstalijski,
-        SpecialAbilities.JezykKhazalid,
-        SpecialAbilities.JezykKislevski,
-        SpecialAbilities.JezykNorski,
-        SpecialAbilities.JezykTileanski,
-        SpecialAbilities.JezykReikspiel,
-        SpecialAbilities.JezykNiziolkow,
-        SpecialAbilities.JezykKlasyczny,
-        SpecialAbilities.JezykGoblinski,
-        SpecialAbilities.JezykGrumbarth,
-        SpecialAbilities.JezykMrocznaMowa,
-        SpecialAbilities.JezykQueekish,
-        SpecialAbilities.JezykStrzyganski,
-        SpecialAbilities.JezykUngolski,
-        SpecialAbilities.JezykGnomi,
+        SpecialAbilities.jezykArabski,
+        SpecialAbilities.jezykBretonski,
+        SpecialAbilities.jezykEltharin,
+        SpecialAbilities.jezykEstalijski,
+        SpecialAbilities.jezykKhazalid,
+        SpecialAbilities.jezykKislevski,
+        SpecialAbilities.jezykNorski,
+        SpecialAbilities.jezykTileanski,
+        SpecialAbilities.jezykReikspiel,
+        SpecialAbilities.jezykNiziolkow,
+        SpecialAbilities.jezykKlasyczny,
+        SpecialAbilities.jezykGoblinski,
+        SpecialAbilities.jezykGrumbarth,
+        SpecialAbilities.jezykMrocznaMowa,
+        SpecialAbilities.jezykQueekish,
+        SpecialAbilities.jezykStrzyganski,
+        SpecialAbilities.jezykUngolski,
+        SpecialAbilities.jezykGnomi,
     )
 }
 
@@ -171,10 +171,10 @@ object SignsAndLanguagesAbilities {
         SpecialAbilities.sekretneZnakiZlodziei,
         SpecialAbilities.sekretneZnakiZwiadowcow,
         SpecialAbilities.sekretneZnakiKultuOswiecenia,
-        SpecialAbilities.sekretnyJezykBitewny,
-        SpecialAbilities.sekretnyJezykGildii,
-        SpecialAbilities.sekretnyJezykLowcow,
-        SpecialAbilities.sekretnyJezykZlodziei,
+        SpecialAbilities.sekretnyjezykBitewny,
+        SpecialAbilities.sekretnyjezykGildii,
+        SpecialAbilities.sekretnyjezykLowcow,
+        SpecialAbilities.sekretnyjezykZlodziei,
     )
 }
 
