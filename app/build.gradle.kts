@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.gms.google-services") // Usuń "version" tutaj, bo wersję definiujemy globalnie
+    id("com.google.gms.google-services")
 }
 
 android {

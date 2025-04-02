@@ -153,6 +153,28 @@ object ProfessionPaths {
             )
         ),
 
+        Professions.Bagiennik to Paths(
+            entry = listOf(
+                Professions.Chlop,
+                Professions.Flisak,
+                Professions.Lowca,
+                Professions.Ochotnik,
+                Professions.Przewoznik,
+                Professions.Smieciarz,
+                Professions.ZabiaPani,
+            ),
+            exit = listOf(
+                Professions.Banita,
+                Professions.CiuraObozowa,
+                Professions.Oprych,
+                Professions.PielgrzymGraala,
+                Professions.StarszyWioskowy,
+                Professions.Wloczykij,
+                Professions.Zakapturzony,
+                Professions.Zbrojny,
+            )
+        ),
+
         Professions.Bajarz to Paths(
             entry = listOf(
                 Professions.CiuraObozowa,
@@ -749,7 +771,7 @@ object ProfessionPaths {
             )
         ),
 
-        Professions.Kanciarz to Paths(
+        Professions.Kartograf to Paths(
             entry = listOf(
                 Professions.Woznica,
                 Professions.Poslaniec,
@@ -1230,6 +1252,22 @@ object ProfessionPaths {
             )
         ),
 
+        Professions.PoborcaPodatkowy to Paths(
+            entry = listOf(
+                Professions.Poslaniec,
+                Professions.Skryba,
+            ),
+            exit = listOf(
+                Professions.Banita,
+                Professions.Podzegacz,
+                Professions.Prawnik,
+                Professions.Kupiec,
+                Professions.Ochotnik,
+                Professions.StraznikDrog,
+                Professions.Zlodziej,
+            )
+        ),
+
         Professions.Podzegacz to Paths(
             entry = listOf(
                 Professions.AkolitaKultuKhorna,
@@ -1242,6 +1280,7 @@ object ProfessionPaths {
                 Professions.Latarnik,
                 Professions.Mieszczanin,
                 Professions.Oficer,
+                Professions.PoborcaPodatkowy,
                 Professions.Rozbojnik,
                 Professions.Skald,
                 Professions.Skryba,
@@ -1388,6 +1427,25 @@ object ProfessionPaths {
             )
         ),
 
+        Professions.Prawnik to Paths(
+            entry = listOf(
+                Professions.Mieszczanin,
+                Professions.RzecznikRodu,
+                Professions.PoborcaPodatkowy,
+                Professions.Skryba,
+                Professions.Zak,
+                Professions.Straznik,
+            ),
+            exit = listOf(
+                Professions.Demagog,
+                Professions.Kupiec,
+                Professions.MistrzGildii,
+                Professions.Szarlatan,
+                Professions.Uczony,
+                Professions.Urzednik,
+            )
+        ),
+
         Professions.Przemytnik to Paths(
             entry = listOf(
                 Professions.AkolitaKultuTzeentcha,
@@ -1472,6 +1530,37 @@ object ProfessionPaths {
                 Professions.Pogranicznik,
                 Professions.Szperacz,
                 Professions.Wloczykij,
+            )
+        ),
+
+        Professions.RogatyLowca to Paths(
+            entry = listOf(
+                Professions.Akolita,
+                Professions.Skryba,
+            ),
+            exit = listOf(
+                Professions.Banita,
+                Professions.Lowca,
+                Professions.Ochotnik,
+                Professions.Wloczykij,
+                Professions.Zwiadowca,
+            )
+        ),
+
+        Professions.Rolnik to Paths(
+            entry = listOf(
+                Professions.Karczmarz,
+                Professions.Kupiec,
+                Professions.Chlop,
+                Professions.Rzemieslnik,
+                Professions.Weteran,
+            ),
+            exit = listOf(
+                Professions.Karczmarz,
+                Professions.Kupiec,
+                Professions.Ochotnik,
+                Professions.Urzednik,
+                Professions.Majordomus,
             )
         ),
 
@@ -2042,6 +2131,24 @@ object ProfessionPaths {
             )
         ),
 
+        Professions.UczenZielarza to Paths(
+            entry = listOf(
+                Professions.Aptekarz,
+                Professions.Chlop,
+                Professions.Guslarz,
+            ),
+            exit = listOf(
+                Professions.Akolita,
+                Professions.Aptekarz,
+                Professions.Cyrulik,
+                Professions.MistrzZielarstwa,
+                Professions.Szarlatan,
+                Professions.Banita,
+                Professions.Skryba,
+                Professions.Fanatyk,
+            )
+        ),
+
         Professions.Weglarz to Paths(
             entry = listOf(
                 Professions.Chlop,
@@ -2191,6 +2298,28 @@ object ProfessionPaths {
                 Professions.Vitki,
                 Professions.Wloczykij,
                 // Professions.Zlowroz,
+            )
+        ),
+
+        Professions.ZabiaPani to Paths(
+            entry = listOf(
+                Professions.Chlop,
+                Professions.CiuraObozowa,
+                Professions.Smieciarz,
+            ),
+            exit = listOf(
+                Professions.CiuraObozowa,
+                Professions.Flisak,
+                Professions.Smieciarz,
+                Professions.Bagiennik,
+                Professions.PielgrzymGraala,
+                Professions.Zakapturzony,
+                Professions.Sluga,
+                Professions.Rzemieslnik,
+                Professions.Sluga,
+                Professions.Rzemieslnik,
+                Professions.Wloczykij,
+                Professions.StarszyWioskowy,
             )
         ),
 
@@ -2517,6 +2646,17 @@ object ProfessionPaths {
             exit = listOf(
                 Professions.MistrzGildii,
                 Professions.Oficer,
+            )
+        ),
+
+        Professions.ArcymistrzZielarstwa to Paths(
+            entry = listOf(
+                Professions.MistrzZielarstwa,
+            ),
+            exit = listOf(
+                Professions.Czarnoksieznik,
+                Professions.Medyk,
+                Professions.Zwiadowca,
             )
         ),
 
@@ -3450,6 +3590,19 @@ object ProfessionPaths {
             )
         ),
 
+        Professions.MistrzZielarstwa to Paths(
+            entry = listOf(
+                Professions.UczenZielarza,
+            ),
+            exit = listOf(
+                Professions.Rzemieslnik,
+                Professions.ArcymistrzZielarstwa,
+                Professions.Uczony,
+                Professions.Szpieg,
+                Professions.Wiedzma,
+            )
+        ),
+
         Professions.Mistyk to Paths(
             entry = listOf(
                 Professions.Cenobita,
@@ -3859,6 +4012,23 @@ object ProfessionPaths {
                 Professions.Oficer,
                 Professions.RycerzGraala,
                 Professions.Urzednik,
+            )
+        ),
+
+        Professions.RycerzZielonegoPola to Paths(
+            entry = listOf(
+                Professions.Akolita,
+                Professions.Lesnik,
+                Professions.Lowca,
+                Professions.Najemnik,
+                Professions.Ochotnik,
+                Professions.Przepatrywacz,
+                Professions.Zolnierz,
+            ),
+            exit = listOf(
+                Professions.Kaplan,
+                Professions.Weteran,
+                Professions.Zwiadowca,
             )
         ),
 
@@ -4899,6 +5069,69 @@ object ProfessionPaths {
             exit = listOf(
             )
         ),
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////      ZWIERZAKI      ///////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+        Professions.TresowanyNiedzwiedz to Paths(
+            entry = listOf(
+            ),
+            exit = listOf(
+            )
+        ),
 
-    )
+/////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////      ZWIERZOLUDZIE      //////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+        Professions.Bestigor to Paths(
+            entry = listOf(
+            ),
+            exit = listOf(
+                Professions.WodzZwierzoludzi,
+            )
+        ),
+
+        Professions.WodzZwierzoludzi to Paths(
+            entry = listOf(
+            ),
+            exit = listOf(
+                Professions.WodzPlemienny
+            )
+        ),
+
+        Professions.SzamanRykowcowK to Paths(
+            entry = listOf(
+            ),
+            exit = listOf(
+                Professions.WielkiSzamanRykowcowK,
+            )
+        ),
+
+        Professions.SzamanRykowcowNST to Paths(
+            entry = listOf(
+            ),
+            exit = listOf(
+                Professions.WielkiSzamanRykowcowNST
+            )
+        ),
+
+        Professions.WielkiSzamanRykowcowK to Paths(
+            entry = listOf(
+                Professions.SzamanRykowcowK,
+            ),
+            exit = listOf(
+            )
+        ),
+
+        Professions.WielkiSzamanRykowcowNST to Paths(
+            entry = listOf(
+                Professions.SzamanRykowcowNST,
+            ),
+            exit = listOf(
+            )
+        ),
+
+        )
+
+
 }

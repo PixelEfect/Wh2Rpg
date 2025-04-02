@@ -97,10 +97,7 @@ object SecretLanguageAbilities {
         SpecialAbilities.jezykTajemnyElfi,
         SpecialAbilities.jezykTajemnyMagiczny,
     )
-    val All = listOf(
-        SpecialAbilities.jezykTajemnyDemoniczny,
-        SpecialAbilities.jezykTajemnyElfi,
-        SpecialAbilities.jezykTajemnyMagiczny,
+    val All = SecretLanguageAbilities.Common + listOf(
         SpecialAbilities.jezykTajemnyKrasnoludzki,
         SpecialAbilities.jezykTajemnyNehekharanski,
     )
@@ -164,13 +161,15 @@ object CraftAbilities {
 }
 
 object SignsAndLanguagesAbilities {
-    val All = listOf(
+    val Signs = listOf(
         SpecialAbilities.sekretneZnakiAstrologow,
         SpecialAbilities.sekretneZnakiLowcow,
         SpecialAbilities.sekretneZnakiRycerzyZakonnych,
         SpecialAbilities.sekretneZnakiZlodziei,
         SpecialAbilities.sekretneZnakiZwiadowcow,
         SpecialAbilities.sekretneZnakiKultuOswiecenia,
+    )
+    val Lang = listOf(
         SpecialAbilities.sekretnyjezykBitewny,
         SpecialAbilities.sekretnyjezykGildii,
         SpecialAbilities.sekretnyjezykLowcow,
