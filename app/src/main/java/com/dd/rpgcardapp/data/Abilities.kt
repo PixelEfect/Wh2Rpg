@@ -134,11 +134,13 @@ object SpecialAbilities{
     val sekretneZnakiZlodziei = Ability("Sekretne znaki: Złodziei",)
     val sekretneZnakiZwiadowcow = Ability("Sekretne znaki: Zwiadowców",)
     val sekretneZnakiKultuOswiecenia = Ability("Sekretne znaki: Kultu oświecenia (Poradnik staroświatowca)",)
+    val sekretneZnakiStraznikowLasu = Ability("Sekretne znaki: Strażników lasu",)
 
     val sekretnyjezykBitewny = Ability("Sekretny jezyk: Bitewny",)
     val sekretnyjezykGildii = Ability("Sekretny jezyk: Gildii",)
     val sekretnyjezykLowcow = Ability("Sekretny jezyk: Łowców",)
     val sekretnyjezykZlodziei = Ability("Sekretny jezyk: Złodziei",)
+    val sekretnyjezykStraznikowLasu = Ability("Sekretny jezyk: Strażników lasu",)
 
     val wiedzaBretonia = Ability("Wiedza: Bretonia",)
     val wiedzaEstalia = Ability("Wiedza: Estalia",)

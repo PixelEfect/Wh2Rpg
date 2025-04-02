@@ -96,6 +96,7 @@ object SpecialWeapon {
         WeaponSkills.bronSzermiercza,
         WeaponSkills.bronUnieruchamiajaca,
     )
+    val All = SpecialWeapon.Common + WeaponSkills.ostrzeJadowe
 }
 
 object Virtue {
