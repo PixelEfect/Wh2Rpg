@@ -9,6 +9,7 @@ object CommonSkills {
     val biegPoScianach = Skill("Bieg po ścianach", "+20 wspinaczka, wysokość = szybkość")
     val bijatyka = Skill("Bijatyka", "Walka bez broni: WW +10, obrażenia +1")
     val blyskawicznePrzadowanie = Skill("Błyskawiczne przeładowanie", "Skróca przeładowanie broni strzeleckiej o 1 akcję")
+    val blyskawicznyJezdziec = Skill("Błyskawiczny jeździec", "+1Sz/dzień dla konia bez cieżkiej zbroi po udanym teście jeździectwa")
     val blyskawicznyBlok = Skill("Błyskawiczny blok", "Parowanie w ataku wielokrotnym")
     val brawura = Skill("Brawura", "Skok jako akcja pojedyncza, zasięg skoku +5")
     val bronNaturalna = Skill("Broń naturalna", "Szpony, kły itp., działają jak broń ręczna")

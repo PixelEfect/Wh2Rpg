@@ -117,7 +117,7 @@ object Races {
             listOf(SpecialAbilities.rzemiosloGotowanie, SpecialAbilities.rzemiosloUprawaZiemi),
         ),
         optionalSkills = listOf(
-            Random.All,
+            Random.Halfling,
         )
     )
 }
