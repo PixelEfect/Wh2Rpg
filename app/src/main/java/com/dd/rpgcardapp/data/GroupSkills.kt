@@ -96,7 +96,7 @@ object SpecialWeapon {
         WeaponSkills.bronSzermiercza,
         WeaponSkills.bronUnieruchamiajaca,
     )
-    val All = SpecialWeapon.Common + WeaponSkills.ostrzeJadowe
+    val All = Common + WeaponSkills.ostrzeJadowe
 }
 
 object Virtue {
@@ -185,7 +185,7 @@ object MasterRuneForging {
 }
 
 object  Random {
-    val All = listOf(
+    val Halfling = listOf(
         CommonSkills.bystryWzrok,
         CommonSkills.czulySluch,
         CommonSkills.geniuszArytmetyczny,
@@ -198,7 +198,6 @@ object  Random {
         CommonSkills.odpornoscPsychiczna,
         CommonSkills.szczescie,
         CommonSkills.szostyZmysl,
-        CommonSkills.widzenieWCiemnosci,
         StatsSkills.bardzoSilny,
         StatsSkills.bardzoSzybki,
         StatsSkills.blyskotliwosc,
@@ -210,6 +209,7 @@ object  Random {
         StatsSkills.twardziel,
         StatsSkills.urodzonyWojownik,
     )
+    val All = Halfling + CommonSkills.widzenieWCiemnosci
 }
 
 object Acrobat {
