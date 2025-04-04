@@ -39,25 +39,27 @@
                 android:id="@+id/raceView"
                 style="@style/LabelStyle"
                 android:text="Rasa: " />
-            <EditText
-                android:id="@+id/inputRace"
-                style="@style/SmallInputStyle"
-                android:layout_width="251dp" />
+            <Spinner
+                android:id="@+id/inputRaceSpinner"
+                android:layout_width="251dp"
+                android:layout_height="35dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- WIEK -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
                 android:id="@+id/ageView"
                 style="@style/LabelStyle"
-                android:text="Wiek: " />
-            <EditText
-                android:id="@+id/inputAge"
-                style="@style/SmallInputStyle"
-                android:layout_width="251dp" />
+                android:text="Wiek: 16" />
+            <SeekBar
+                android:id="@+id/ageSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="20" />
         </LinearLayout>
 
         <!-- PŁEĆ -->
@@ -69,10 +71,10 @@
                 android:id="@+id/sexView"
                 style="@style/LabelStyle"
                 android:text="Płeć: " />
-            <EditText
-                android:id="@+id/inputSex"
-                style="@style/SmallInputStyle"
-                android:layout_width="251dp" />
+            <Spinner
+                android:id="@+id/inputSexSpinner"
+                android:layout_width="251dp"
+                android:layout_height="35dp" />
         </LinearLayout>
 
         <!-- OCZY -->

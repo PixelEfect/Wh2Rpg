@@ -18,7 +18,9 @@ data class Race(
     val skills: List<Skill>,
     val optionalAbility: List<List<Ability>> = listOf(),
     val optionalSkills: List<List<Skill>> = listOf(),
-    val startingProfessions: List<Profession> = listOf()
+    val startingProfessions: List<Profession> = listOf(),
+    val minAge: Int = 16,   // Zakres wieku
+    val maxAge: Int = 35,   // Zakres wieku
 )
 object Races {
     val Czlowiek = Race(
@@ -45,6 +47,7 @@ object Races {
     val Elf = Race(
         name = "Elf",
         us = 30, zr = 30, sz = 5,
+        minAge = 30, maxAge = 125,
         abilities = listOf(
             SpecialAbilities.wiedzaElfy,
             SpecialAbilities.jezykEltharin,
@@ -53,8 +56,6 @@ object Races {
         skills = listOf(
             CommonSkills.bystryWzrok,
             CommonSkills.widzenieWCiemnosci,
-            StatsSkills.blyskotliwosc,
-            StatsSkills.opanowanie,
         ),
         optionalSkills = listOf(
             listOf(WeaponSkills.dlugieLuki, CommonSkills.zmyslMagii),
@@ -65,6 +66,7 @@ object Races {
     val Gnom = Race(
         name = "Gnom",
         k = 10, odp = 30, sw = 30,
+        minAge = 20, maxAge = 90,
         abilities = listOf(
             SpecialAbilities.wiedzaGnomy,
             SpecialAbilities.jezykGnomi,
@@ -78,15 +80,12 @@ object Races {
             CommonSkills.widzenieWCiemnosci,
             CommonSkills.zapieklaNienawisc,
         ),
-        optionalSkills = listOf(
-            listOf(WeaponSkills.dlugieLuki, CommonSkills.zmyslMagii),
-            listOf(StatsSkills.opanowanie, StatsSkills.blyskotliwosc)
-        )
     )
 
     val Krasnolud = Race(
         name = "Krasnolud",
         ww = 30, odp = 30, zr = 10, ogd = 10, sz = 3,
+        minAge = 20, maxAge = 115,
         abilities = listOf(
             SpecialAbilities.wiedzaKrasnoludy,
             SpecialAbilities.jezykKhazalid,
@@ -108,6 +107,7 @@ object Races {
     val Niziolek = Race(
         name = "Niziołek",
         ww = 10, us = 30, k = 10, odp = 10, zr = 30, ogd = 30,
+        minAge = 20, maxAge = 60,
         abilities = listOf(
             SpecialAbilities.naukaGeneologiaHeraldyka,
             SpecialAbilities.wiedzaNiziolki,
@@ -124,6 +124,27 @@ object Races {
         ),
         optionalSkills = listOf(
             Random.Halfling,
+        )
+    )
+
+    val Polelf = Race(
+        name = "Półelf",
+        us = 25, zr = 25, sz = 5,
+        minAge = 20, maxAge = 100,
+        abilities = listOf(
+            SpecialAbilities.jezykReikspiel,
+        ),
+        skills = listOf(
+            CommonSkills.bystryWzrok,
+            CommonSkills.widzenieWCiemnosci,
+        ),
+        optionalAbility = listOf(
+            listOf(SpecialAbilities.wiedzaElfy, SpecialAbilities.wiedzaImperium),
+            listOf(SpecialAbilities.jezykEltharin, CommonAbilities.plotkowanie),
+        ),
+        optionalSkills = listOf(
+            listOf(WeaponSkills.dlugieLuki, CommonSkills.zmyslMagii),
+            Random.All,
         )
     )
 }
