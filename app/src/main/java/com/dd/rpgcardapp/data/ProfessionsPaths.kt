@@ -50,7 +50,7 @@ object ProfessionPaths {
                 AdvancedProfessions.KaplanSwiecki,
                 AdvancedProfessions.Mnich,
                 AdvancedProfessions.Psalterzysta,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 AdvancedProfessions.SledczyVereny,
                 AdvancedProfessions.Zakonnik,
             )
@@ -145,12 +145,12 @@ object ProfessionPaths {
                 BasicProfessions.Ochotnik,
                 BasicProfessions.Przewoznik,
                 BasicProfessions.Smieciarz,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
             ),
             exit = listOf(
                 BasicProfessions.Banita,
-                BasicProfessions.CiuraObozowa,
                 BasicProfessions.Oprych,
+                BasicProfessions.Pacholek,
                 BasicProfessions.PielgrzymGraala,
                 BasicProfessions.Wloczykij,
                 BasicProfessions.Zakapturzony,
@@ -219,7 +219,7 @@ object ProfessionPaths {
                 BasicProfessions.PasterzZCarcassonne,
                 BasicProfessions.Pielgrzym,
                 BasicProfessions.PiratRzeczny,
-                BasicProfessions.PoborcaPodatkowy,
+                BasicProfessions.Skarbnik,
                 BasicProfessions.Podzegacz,
                 BasicProfessions.Poganiacz,
                 BasicProfessions.PoganiaczMulow,
@@ -352,7 +352,7 @@ object ProfessionPaths {
                 BasicProfessions.UczenZielarza,
                 BasicProfessions.Weglarz,
                 BasicProfessions.Zakapturzony,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
                 BasicProfessions.ZbieraczLajna,
                 AdvancedProfessions.Brygadzista,
                 AdvancedProfessions.Budowniczy,
@@ -365,10 +365,9 @@ object ProfessionPaths {
 
         BasicProfessions.CiuraObozowa to Paths(
             entry = listOf(
-                BasicProfessions.Bagiennik,
                 BasicProfessions.Sluga,
                 BasicProfessions.Smieciarz,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
             ),
             exit = listOf(
                 BasicProfessions.Bajarz,
@@ -377,7 +376,7 @@ object ProfessionPaths {
                 BasicProfessions.Sluga,
                 BasicProfessions.Weglarz,
                 BasicProfessions.Wloczykij,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
                 BasicProfessions.ZbieraczLajna,
                 AdvancedProfessions.Szarlatan,
                 AdvancedProfessions.Szpieg,
@@ -569,7 +568,7 @@ object ProfessionPaths {
                 BasicProfessions.Przemytnik,
                 BasicProfessions.Przewoznik,
                 BasicProfessions.StraznikRzeczny,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
             ),
             exit = listOf(
                 BasicProfessions.Bagiennik,
@@ -703,7 +702,7 @@ object ProfessionPaths {
                 BasicProfessions.AkolitaKultuTzeentcha,
                 BasicProfessions.BerserkerZNorski,
                 BasicProfessions.Korsarz,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 BasicProfessions.Skald,
                 BasicProfessions.Wielorybnik,
                 BasicProfessions.Woj,
@@ -964,7 +963,7 @@ object ProfessionPaths {
                 BasicProfessions.Ochotnik,
                 BasicProfessions.Pacholek,
                 BasicProfessions.PasterzZCarcassonne,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 BasicProfessions.Wloczykij,
                 BasicProfessions.Zakapturzony,
                 AdvancedProfessions.Zwiadowca,
@@ -988,9 +987,10 @@ object ProfessionPaths {
                 BasicProfessions.PasterzZCarcassonne,
                 BasicProfessions.PielgrzymGraala,
                 BasicProfessions.PoganiaczMulow,
+                BasicProfessions.RogatyLowca,
                 SkavenProfessions.PoganiaczSkavenski,
                 BasicProfessions.Rozjemca,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 BasicProfessions.StraznikPol,
                 AdvancedProfessions.StrozPrawa,
                 AdvancedProfessions.Strzelec,
@@ -1045,7 +1045,7 @@ object ProfessionPaths {
                 AdvancedProfessions.Karczmarz,
                 BasicProfessions.Koniarz,
                 AdvancedProfessions.Kupiec,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 BasicProfessions.Ochotnik,
                 AdvancedProfessions.Pamflecista,
                 AdvancedProfessions.Paser,
@@ -1123,7 +1123,7 @@ object ProfessionPaths {
                 BasicProfessions.LowcaNagrod,
                 BasicProfessions.Ochroniarz,
                 SkavenProfessions.PoslaniecNocy,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 AdvancedProfessions.Sierzant,
                 BasicProfessions.Szuler,
                 BasicProfessions.Tarczownik,
@@ -1142,7 +1142,7 @@ object ProfessionPaths {
                 BasicProfessions.Lesnik,
                 BasicProfessions.Mieszczanin,
                 AdvancedProfessions.MistrzRzemiosla,
-                BasicProfessions.PoborcaPodatkowy,
+                BasicProfessions.Skarbnik,
                 BasicProfessions.RogatyLowca,
                 BasicProfessions.Rolnik,
                 BasicProfessions.Rybak,
@@ -1156,7 +1156,7 @@ object ProfessionPaths {
                 AdvancedProfessions.MistrzRzemiosla,
                 BasicProfessions.Najemnik,
                 BasicProfessions.Poslaniec,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 AdvancedProfessions.Sierzant,
                 BasicProfessions.StraznikKanalow,
                 BasicProfessions.StraznikPol,
@@ -1215,6 +1215,7 @@ object ProfessionPaths {
 
         BasicProfessions.Pacholek to Paths(
             entry = listOf(
+                BasicProfessions.Bagiennik,
                 BasicProfessions.Chlop,
                 BasicProfessions.Lesnik,
                 BasicProfessions.Lowca,
@@ -1293,7 +1294,7 @@ object ProfessionPaths {
                 BasicProfessions.PasterzZCarcassonne,
                 BasicProfessions.Rzemieslnik,
                 BasicProfessions.Wloczykij,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
                 BasicProfessions.Zakapturzony,
             ),
             exit = listOf(
@@ -1325,22 +1326,6 @@ object ProfessionPaths {
             )
         ),
 
-        BasicProfessions.PoborcaPodatkowy to Paths(
-            entry = listOf(
-                BasicProfessions.Poslaniec,
-                BasicProfessions.Skryba,
-            ),
-            exit = listOf(
-                BasicProfessions.Banita,
-                BasicProfessions.Podzegacz,
-                BasicProfessions.Prawnik,
-                AdvancedProfessions.Kupiec,
-                BasicProfessions.Ochotnik,
-                BasicProfessions.StraznikDrog,
-                BasicProfessions.Zlodziej,
-            )
-        ),
-
         BasicProfessions.Podzegacz to Paths(
             entry = listOf(
                 BasicProfessions.AkolitaKultuKhorna,
@@ -1353,7 +1338,8 @@ object ProfessionPaths {
                 BasicProfessions.Latarnik,
                 BasicProfessions.Mieszczanin,
                 AdvancedProfessions.Oficer,
-                BasicProfessions.PoborcaPodatkowy,
+                BasicProfessions.Prawnik,
+                BasicProfessions.Skarbnik,
                 AdvancedProfessions.Rozbojnik,
                 BasicProfessions.Skald,
                 BasicProfessions.Skryba,
@@ -1496,7 +1482,7 @@ object ProfessionPaths {
                 BasicProfessions.Kartograf,
                 SkavenProfessions.Klanbrat,
                 BasicProfessions.Koniarz,
-                BasicProfessions.PoborcaPodatkowy,
+                BasicProfessions.Skarbnik,
                 BasicProfessions.Poganiacz,
                 BasicProfessions.PoganiaczMulow,
                 BasicProfessions.Przepatrywacz,
@@ -1513,7 +1499,7 @@ object ProfessionPaths {
             entry = listOf(
                 BasicProfessions.Mieszczanin,
                 BasicProfessions.RzecznikRodu,
-                BasicProfessions.PoborcaPodatkowy,
+                BasicProfessions.Skarbnik,
                 BasicProfessions.Skryba,
                 BasicProfessions.Zak,
                 BasicProfessions.Straznik,
@@ -1522,7 +1508,7 @@ object ProfessionPaths {
                 AdvancedProfessions.Demagog,
                 AdvancedProfessions.Kupiec,
                 AdvancedProfessions.MistrzGildii,
-                AdvancedProfessions.Szarlatan,
+                BasicProfessions.Podzegacz,
                 AdvancedProfessions.Uczony,
                 AdvancedProfessions.Urzednik,
             )
@@ -1581,7 +1567,7 @@ object ProfessionPaths {
                 BasicProfessions.Poganiacz,
                 BasicProfessions.Poslaniec,
                 AdvancedProfessions.Rozbojnik,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 BasicProfessions.StraznikDrog,
                 BasicProfessions.Woznica,
                 AdvancedProfessions.Zwiadowca,
@@ -1621,7 +1607,7 @@ object ProfessionPaths {
         BasicProfessions.RogatyLowca to Paths(
             entry = listOf(
                 BasicProfessions.Akolita,
-                BasicProfessions.Skryba,
+                BasicProfessions.Lowca,
             ),
             exit = listOf(
                 BasicProfessions.Banita,
@@ -1674,7 +1660,7 @@ object ProfessionPaths {
             exit = listOf(
                 AdvancedProfessions.Kupiec,
                 AdvancedProfessions.Nawigator,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 BasicProfessions.Ochotnik,
                 BasicProfessions.Wielorybnik,
                 BasicProfessions.Zeglarz,
@@ -1731,7 +1717,7 @@ object ProfessionPaths {
                 BasicProfessions.Mieszczanin,
                 AdvancedProfessions.MistrzZielarstwa,
                 BasicProfessions.Straznik,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
             ),
             exit = listOf(
                 BasicProfessions.Balsamista,
@@ -1745,7 +1731,7 @@ object ProfessionPaths {
                 SkavenProfessions.Klanbrat,
                 AdvancedProfessions.Kupiec,
                 AdvancedProfessions.MistrzRzemiosla,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 AdvancedProfessions.Pamflecista,
                 BasicProfessions.Ochotnik,
                 BasicProfessions.PielgrzymGraala,
@@ -1787,9 +1773,25 @@ object ProfessionPaths {
                 BasicProfessions.Korsarz,
                 BasicProfessions.Mieszczanin,
                 BasicProfessions.Najemnik,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 BasicProfessions.Podzegacz,
                 BasicProfessions.Wrozbita,
+            )
+        ),
+
+        BasicProfessions.Skarbnik to Paths(
+            entry = listOf(
+                BasicProfessions.Poslaniec,
+                BasicProfessions.Skryba,
+            ),
+            exit = listOf(
+                BasicProfessions.Banita,
+                BasicProfessions.Podzegacz,
+                BasicProfessions.Prawnik,
+                AdvancedProfessions.Kupiec,
+                BasicProfessions.Ochotnik,
+                BasicProfessions.StraznikDrog,
+                BasicProfessions.Zlodziej,
             )
         ),
 
@@ -1815,10 +1817,9 @@ object ProfessionPaths {
                 AdvancedProfessions.Mnich,
                 AdvancedProfessions.Nawigator,
                 AdvancedProfessions.Pamflecista,
-                BasicProfessions.PoborcaPodatkowy,
+                BasicProfessions.Skarbnik,
                 BasicProfessions.Podzegacz,
                 BasicProfessions.Prawnik,
-                BasicProfessions.RogatyLowca,
                 BasicProfessions.UczenCzarodzieja,
                 AdvancedProfessions.Uczony,
             )
@@ -1831,7 +1832,7 @@ object ProfessionPaths {
                 BasicProfessions.CiuraObozowa,
                 BasicProfessions.Kanciarz,
                 BasicProfessions.Latarnik,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
             ),
             exit = listOf(
                 BasicProfessions.CiuraObozowa,
@@ -1880,7 +1881,7 @@ object ProfessionPaths {
 
         BasicProfessions.StraznikDrog to Paths(
             entry = listOf(
-                BasicProfessions.PoborcaPodatkowy,
+                BasicProfessions.Skarbnik,
                 BasicProfessions.Poganiacz,
                 BasicProfessions.Poslaniec,
                 BasicProfessions.Przepatrywacz,
@@ -2153,7 +2154,7 @@ object ProfessionPaths {
                 BasicProfessions.StrzyganskiMistyk,
                 BasicProfessions.Szczurolap,
                 BasicProfessions.Wloczykij,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
                 BasicProfessions.ZbieraczLajna,
             ),
             exit = listOf(
@@ -2164,7 +2165,7 @@ object ProfessionPaths {
                 BasicProfessions.PorywaczZwlok,
                 BasicProfessions.Przemytnik,
                 AdvancedProfessions.Wlamywacz,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
                 BasicProfessions.ZbieraczLajna,
             )
         ),
@@ -2272,7 +2273,7 @@ object ProfessionPaths {
                 BasicProfessions.Grabiezca,
                 BasicProfessions.Korsarz,
                 AdvancedProfessions.Nawigator,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 AdvancedProfessions.Weteran,
             )
         ),
@@ -2310,7 +2311,7 @@ object ProfessionPaths {
                 AdvancedProfessions.Wlamywacz,
                 BasicProfessions.WojownikKlanowy,
                 BasicProfessions.Wrozbita,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
                 BasicProfessions.Zakapturzony,
                 BasicProfessions.Zolnierz,
             ),
@@ -2346,7 +2347,7 @@ object ProfessionPaths {
                 BasicProfessions.Grabiezca,
                 BasicProfessions.Korsarz,
                 BasicProfessions.Najemnik,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 BasicProfessions.Ochroniarz,
                 BasicProfessions.Skald,
                 AdvancedProfessions.Weteran,
@@ -2403,23 +2404,21 @@ object ProfessionPaths {
             )
         ),
 
-        BasicProfessions.ZabiaPani to Paths(
+        BasicProfessions.Zabiarka to Paths(
             entry = listOf(
                 BasicProfessions.Chlop,
                 BasicProfessions.CiuraObozowa,
                 BasicProfessions.Smieciarz,
             ),
             exit = listOf(
+                BasicProfessions.Bagiennik,
                 BasicProfessions.CiuraObozowa,
                 BasicProfessions.Flisak,
-                BasicProfessions.Smieciarz,
-                BasicProfessions.Bagiennik,
                 BasicProfessions.PielgrzymGraala,
                 BasicProfessions.Zakapturzony,
-                BasicProfessions.Sluga,
                 BasicProfessions.Rzemieslnik,
+                BasicProfessions.Smieciarz,
                 BasicProfessions.Sluga,
-                BasicProfessions.Rzemieslnik,
                 BasicProfessions.Wloczykij,
                 AdvancedProfessions.StarszyWioskowy,
             )
@@ -2461,7 +2460,7 @@ object ProfessionPaths {
                 BasicProfessions.Ochotnik,
                 AdvancedProfessions.Oprawca,
                 BasicProfessions.PiratRzeczny,
-                BasicProfessions.PoborcaPodatkowy,
+                BasicProfessions.Skarbnik,
                 BasicProfessions.PorywaczZwlok,
                 SkavenProfessions.PoslaniecNocy,
                 BasicProfessions.Przemytnik,
@@ -2546,7 +2545,7 @@ object ProfessionPaths {
                 AdvancedProfessions.Szarlatan,
                 BasicProfessions.Szlachcic,
                 BasicProfessions.Woznica,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
             ),
             exit = listOf(
                 BasicProfessions.Banita,
@@ -2630,7 +2629,7 @@ object ProfessionPaths {
                 AdvancedProfessions.Koniuszy,
                 BasicProfessions.Najemnik,
                 BasicProfessions.Przepatrywacz,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 AdvancedProfessions.Sierzant,
                 BasicProfessions.Straznik,
                 BasicProfessions.StraznikTuneli,
@@ -3199,7 +3198,7 @@ object ProfessionPaths {
                 BasicProfessions.Grabiezca,
                 BasicProfessions.Korsarz,
                 AdvancedProfessions.Kupiec,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
             ),
             exit = listOf(
                 AdvancedProfessions.HersztBanitow,
@@ -3321,7 +3320,7 @@ object ProfessionPaths {
                 AdvancedProfessions.Mnich,
                 AdvancedProfessions.Prelat,
                 AdvancedProfessions.Psalterzysta,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 AdvancedProfessions.Zakonnik,
             ),
             exit = listOf(
@@ -3371,7 +3370,7 @@ object ProfessionPaths {
         AdvancedProfessions.Karczmarz to Paths(
             entry = listOf(
                 BasicProfessions.Mieszczanin,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 BasicProfessions.Rolnik,
                 BasicProfessions.Sluga,
             ),
@@ -3517,11 +3516,11 @@ object ProfessionPaths {
                 AdvancedProfessions.Majordomus,
                 BasicProfessions.Mieszczanin,
                 AdvancedProfessions.MistrzRzemiosla,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 AdvancedProfessions.Odkrywca,
                 AdvancedProfessions.Oficer,
                 AdvancedProfessions.Pamflecista,
-                BasicProfessions.PoborcaPodatkowy,
+                BasicProfessions.Skarbnik,
                 BasicProfessions.PoganiaczMulow,
                 BasicProfessions.Prawnik,
                 BasicProfessions.Rolnik,
@@ -3782,7 +3781,7 @@ object ProfessionPaths {
                 AdvancedProfessions.Falszerz,
                 AdvancedProfessions.Inzynier,
                 AdvancedProfessions.Nawigator,
-                AdvancedProfessions.Obszarnik,
+                BasicProfessions.Obszarnik,
                 BasicProfessions.Ochotnik,
                 BasicProfessions.Rzemieslnik,
             ),
@@ -3888,7 +3887,7 @@ object ProfessionPaths {
             )
         ),
 
-        AdvancedProfessions.Obszarnik to Paths(
+        BasicProfessions.Obszarnik to Paths(
             entry = listOf(
                 BasicProfessions.Mieszczanin,
                 BasicProfessions.Rybak,
@@ -4288,7 +4287,7 @@ object ProfessionPaths {
             )
         ),
 
-        AdvancedProfessions.RycerzZielonegoPola to Paths(
+        AdvancedProfessions.RycerzZakonuZielonejChoragwi to Paths(
             entry = listOf(
                 BasicProfessions.Akolita,
                 BasicProfessions.Lesnik,
@@ -4400,7 +4399,7 @@ object ProfessionPaths {
                 BasicProfessions.Bagiennik,
                 AdvancedProfessions.Bezimienny,
                 BasicProfessions.Rozjemca,
-                BasicProfessions.ZabiaPani,
+                BasicProfessions.Zabiarka,
                 AdvancedProfessions.Zbrojny,
             ),
             exit = listOf(
@@ -4480,7 +4479,6 @@ object ProfessionPaths {
                 AdvancedProfessions.Paser,
                 BasicProfessions.Podzegacz,
                 BasicProfessions.Pokutnik,
-                BasicProfessions.Prawnik,
                 BasicProfessions.Przemytnik,
                 BasicProfessions.RzecznikRodu,
                 BasicProfessions.StrzyganskiMistyk,
@@ -4702,7 +4700,7 @@ object ProfessionPaths {
                 BasicProfessions.PiratRzeczny,
                 AdvancedProfessions.Rajtar,
                 AdvancedProfessions.RycerzPantery,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 SkavenProfessions.Rynsztokowiec,
                 BasicProfessions.StraznikKanalow,
                 BasicProfessions.StraznikTuneli,
@@ -4995,7 +4993,7 @@ object ProfessionPaths {
                 BasicProfessions.Poslaniec,
                 BasicProfessions.Przepatrywacz,
                 BasicProfessions.RogatyLowca,
-                AdvancedProfessions.RycerzZielonegoPola,
+                AdvancedProfessions.RycerzZakonuZielonejChoragwi,
                 SkavenProfessions.Rynsztokowiec,
                 BasicProfessions.StraznikDrog,
                 BasicProfessions.StraznikPol,

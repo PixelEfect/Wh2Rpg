@@ -1297,6 +1297,32 @@ object BasicProfessions {
         )
     )
 
+    val Obszarnik = Profession(
+        name = "Obszarnik",
+        ww = 5, us = 10, k = 0, odp = 0, zr = 10, int = 5, sw = 10, ogd = 10,
+        zyw = 3,
+        abilities = listOf(
+            CommonAbilities.dowodzenie,
+            CommonAbilities.opiekaNadZwierzetami,
+            CommonAbilities.plotkowanie,
+            CommonAbilities.powozenie,
+            CommonAbilities.targowanie,
+            CommonAbilities.wycena,
+            SpecialAbilities.wiedzaNorska,
+        ),
+        skills = listOf(
+            CommonSkills.intrygant,
+            CommonSkills.przemawianie,
+            CommonSkills.zylkaHandlowa,
+            StatsSkills.blyskotliwosc,
+            StatsSkills.charyzmatyczny,
+        ),
+        optionalAbility = listOf(
+            CraftAbilities.All,
+            LanguageAbilities.All
+        ),
+    )
+
     val Ochroniarz = Profession(
         name = "Ochroniarz",
         ww = 10, us = 0, k = 5, odp = 5, zr = 5, int = 0, sw = 0, ogd = 0,
@@ -1477,29 +1503,6 @@ object BasicProfessions {
         optionalSkills = listOf(
             listOf(CommonSkills.ogluszenie, CommonSkills.strzalMierzony),
             listOf(CommonSkills.wedrowiec, CommonSkills.wyczucieKierunku)
-        )
-    )
-
-    val PoborcaPodatkowy = Profession(
-        name = "Poborca podatkowy",
-        ww = 10, us = 0, k = 0, odp = 0, zr = 10, int = 10, sw = 5, ogd = 5,
-
-        abilities = listOf(
-            CommonAbilities.plotkowanie,
-            CommonAbilities.przekonywanie,
-            CommonAbilities.targowanie,
-            CommonAbilities.wycena,
-            RareAbilities.czytanieIPisanie,
-            RareAbilities.gadanina,
-            SpecialAbilities.naukaPrawo,
-        ),
-        skills = listOf(
-            CommonSkills.intrygant,
-            CommonSkills.geniuszArytmetyczny,
-            CommonSkills.wyczucieKierunku,
-        ),
-        optionalSkills = listOf(
-            listOf(StatsSkills.blyskotliwosc, StatsSkills.charyzmatyczny)
         )
     )
 
@@ -1711,7 +1714,7 @@ object BasicProfessions {
             listOf(CommonAbilities.plotkowanie, CommonAbilities.targowanie),
         ),
         optionalSkills = listOf(
-            listOf(CommonSkills.intrygant, CommonSkills.etykieta),
+            listOf(CommonSkills.zylkaHandlowa, CommonSkills.etykieta),
             listOf(StatsSkills.blyskotliwosc, StatsSkills.charyzmatyczny)
         )
     )
@@ -1823,11 +1826,10 @@ object BasicProfessions {
             CommonAbilities.spostrzegawczosc,
             CommonAbilities.ukrywanieSie,
             CommonAbilities.wspinaczka,
-            SpecialAbilities.sekretnyjezykStraznikowLasu,
-            SpecialAbilities.sekretneZnakiStraznikowLasu,
+            SpecialAbilities.sekretnyjezykLowcow,
+            SpecialAbilities.sekretneZnakiLowcow,
         ),
         skills = listOf(
-            CommonSkills.krzepki,
             CommonSkills.szalBojowy,
             StatsSkills.twardziel,
         ),
@@ -2012,6 +2014,29 @@ object BasicProfessions {
         optionalAbility = listOf(
             LanguageAbilities.All, LanguageAbilities.All + RareAbilities.brzuchomowstwo,
             SleightOfHandAbilities.All, SleightOfHandAbilities.All,
+        )
+    )
+
+    val Skarbnik = Profession(
+        name = "Skarbnik",
+        ww = 10, us = 0, k = 0, odp = 0, zr = 10, int = 10, sw = 5, ogd = 5,
+
+        abilities = listOf(
+            CommonAbilities.plotkowanie,
+            CommonAbilities.przekonywanie,
+            CommonAbilities.targowanie,
+            CommonAbilities.wycena,
+            RareAbilities.czytanieIPisanie,
+            RareAbilities.gadanina,
+            SpecialAbilities.naukaPrawo,
+        ),
+        skills = listOf(
+            CommonSkills.intrygant,
+            CommonSkills.geniuszArytmetyczny,
+            CommonSkills.zylkaHandlowa,
+        ),
+        optionalSkills = listOf(
+            listOf(StatsSkills.blyskotliwosc, StatsSkills.charyzmatyczny)
         )
     )
 
@@ -2719,8 +2744,8 @@ object BasicProfessions {
         )
     )
 
-    val ZabiaPani = Profession(
-        name = "Żabia pani",
+    val Zabiarka = Profession(
+        name = "Żabiarka",
         ww = 0, us = 0, k = 0, odp = 5, zr = 10, int = 5, sw = 10, ogd = 5,
 
         abilities = listOf(
@@ -2733,7 +2758,7 @@ object BasicProfessions {
         ),
         skills = listOf(
             CommonSkills.odwaga,
-            CommonSkills.ulicznik,
+            CommonSkills.lotrzyk,
             CommonSkills.zylkaHandlowa,
         ),
         optionalAbility = listOf(
@@ -5000,32 +5025,6 @@ object BasicProfessions {
             ),
         )
 
-        val Obszarnik = Profession(
-            name = "Obszarnik",
-            ww = 5, us = 10, k = 0, odp = 0, zr = 10, int = 5, sw = 10, ogd = 10,
-            zyw = 3,
-            abilities = listOf(
-                CommonAbilities.dowodzenie,
-                CommonAbilities.opiekaNadZwierzetami,
-                CommonAbilities.plotkowanie,
-                CommonAbilities.powozenie,
-                CommonAbilities.targowanie,
-                CommonAbilities.wycena,
-                SpecialAbilities.wiedzaNorska,
-            ),
-            skills = listOf(
-                CommonSkills.intrygant,
-                CommonSkills.przemawianie,
-                CommonSkills.zylkaHandlowa,
-                StatsSkills.blyskotliwosc,
-                StatsSkills.charyzmatyczny,
-            ),
-            optionalAbility = listOf(
-                CraftAbilities.All,
-                LanguageAbilities.All
-            ),
-        )
-
         val Opat = Profession(
             name = "Opat",
             ww = 10, us = 0, k = 10, odp = 10, zr = 10, int = 30, sw = 25, ogd = 20,
@@ -5596,7 +5595,7 @@ object BasicProfessions {
             ),
         )
 
-        val RycerzZielonegoPola = Profession(
+        val RycerzZakonuZielonejChoragwi = Profession(
             name = "Rycerz Zielonego Pola",
             ww = 20, us = 20, k = 15, odp = 15, zr = 10, int = 5, sw = 10, ogd = 5,
             a = 1, zyw = 4,
@@ -5604,7 +5603,7 @@ object BasicProfessions {
                 CommonAbilities.jezdziectwo,
                 CommonAbilities.przeszukiwanie,
                 CommonAbilities.spostrzegawczosc,
-                RareAbilities.oswajanie,
+                RareAbilities.tresura,
                 RareAbilities.tropienie,
                 RareAbilities.unik,
                 SpecialAbilities.naukaStrategiaTaktyka,
@@ -5617,18 +5616,11 @@ object BasicProfessions {
             optionalAbility = listOf(
                 listOf(CommonAbilities.dowodzenie, CommonAbilities.zastraszanie),
                 listOf(CommonAbilities.sztukaPrzetrwania, CommonAbilities.wspinaczka),
-                listOf(
-                    SpecialAbilities.sekretneZnakiStraznikowLasu,
-                    SpecialAbilities.sekretnyjezykStraznikowLasu
-                )
+                listOf(SpecialAbilities.sekretneZnakiLowcow, SpecialAbilities.sekretnyjezykLowcow)
             ),
             optionalSkills = listOf(
                 listOf(CommonSkills.wyostrzoneZmysly, StatsSkills.bardzoSzybki),
-                listOf(
-                    CommonSkills.morderczyAtak,
-                    CommonSkills.mierzonyCios,
-                    CommonSkills.strzalPrecyzyjny
-                )
+                listOf(CommonSkills.silnyCios, CommonSkills.strzalPrecyzyjny)
             ),
         )
 

@@ -174,7 +174,7 @@ object MagicSkills {
     val magiaProstaTaalitow = Skill("Magia prosta: Taalitów", "Dostęp do błogosławieństw - Taal i Rhyia")
     val magiaProstaUlrykan = Skill("Magia prosta: Ulrykan", "Dostęp do błogosławieństw - Ulryk")
     val magiaProstaVerenian = Skill("Magia prosta: Verenian", "Dostęp do błogosławieństw - Verena")
-    val magiaProstaZielarska = Skill("Magia prosta: Zielarska", "Dostęp do magii prostej - zielarskiej")
+    val magiaProstaZielarska = Skill("Magia prosta: Zielarska", "Dostęp do magii prostej - zielarskiej (mieszanka z krolestwa lodu i podrecznika glownego")
 
     val magiaCzarnoksieskaChaos = Skill("Magia czarnoksięska: Chaos", "Dostęp do czarów magii chaosu")
     val magiaCzarnoksieskaNagasha = Skill("Magia czarnoksięska: Nagasha", "Dostęp do czarów tradycji Nagasha")
