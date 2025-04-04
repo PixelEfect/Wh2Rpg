@@ -45,7 +45,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-
+    implementation ("org.jetbrains.kotlin:kotlin-reflect:1.9.0")
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.10.0")) // BOM zarządza wersjami
     implementation("com.google.firebase:firebase-firestore-ktx")
