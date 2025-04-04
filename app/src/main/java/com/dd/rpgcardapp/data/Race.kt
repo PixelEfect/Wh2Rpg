@@ -17,7 +17,8 @@ data class Race(
     val abilities: List<Ability>,
     val skills: List<Skill>,
     val optionalAbility: List<List<Ability>> = listOf(),
-    val optionalSkills: List<List<Skill>> = listOf()
+    val optionalSkills: List<List<Skill>> = listOf(),
+    val startingProfessions: List<Profession> = listOf()
 )
 object Races {
     val Czlowiek = Race(
@@ -33,6 +34,11 @@ object Races {
         optionalSkills = listOf(
             Random.All,
             Random.All,
+        ),
+        startingProfessions = listOf(
+            BasicProfessions.Akolita,
+            BasicProfessions.Zolnierz,
+            BasicProfessions.Zlodziej
         )
     )
 
