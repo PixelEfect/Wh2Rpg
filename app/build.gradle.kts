@@ -45,7 +45,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation ("org.jetbrains.kotlin:kotlin-reflect:1.9.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.10.0")) // BOM zarządza wersjami
     implementation("com.google.firebase:firebase-firestore-ktx")
@@ -53,8 +53,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx") // Aktualna wersja
 
     // Google Sign-In
-    implementation("com.google.android.gms:play-services-auth:20.7.0") // Najnowsza stabilna
-    implementation ("com.google.firebase:firebase-auth-ktx:22.1.1")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+
     // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.appcompat)
 
     // Testy
     testImplementation(libs.junit)
