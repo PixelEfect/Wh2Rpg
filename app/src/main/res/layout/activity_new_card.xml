@@ -39,11 +39,20 @@
                 android:id="@+id/raceView"
                 style="@style/LabelStyle"
                 android:text="Rasa: " />
-            <Spinner
-                android:id="@+id/inputRaceSpinner"
+            <TextView
+                android:id="@+id/inputRaceTextView"
                 android:layout_width="251dp"
                 android:layout_height="35dp"
-                android:textStyle="bold" />
+                android:background="@drawable/rounded_edittext"
+                android:drawableEnd="@drawable/ic_arrow_drop_down"
+                android:gravity="center_vertical|start"
+                android:hint="Wybierz rasę"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="false" />
         </LinearLayout>
 
         <!-- WIEK -->
@@ -71,10 +80,20 @@
                 android:id="@+id/sexView"
                 style="@style/LabelStyle"
                 android:text="Płeć: " />
-            <Spinner
-                android:id="@+id/inputSexSpinner"
+            <TextView
+                android:id="@+id/inputSexTextView"
                 android:layout_width="251dp"
-                android:layout_height="35dp" />
+                android:layout_height="35dp"
+                android:background="@drawable/rounded_edittext"
+                android:drawableEnd="@drawable/ic_arrow_drop_down"
+                android:gravity="center_vertical|start"
+                android:hint="Wybierz płeć"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="false" />
         </LinearLayout>
 
         <!-- OCZY -->
@@ -86,10 +105,20 @@
                 android:id="@+id/eyesView"
                 style="@style/LabelStyle"
                 android:text="Oczy: " />
-            <EditText
-                android:id="@+id/inputEyes"
-                style="@style/SmallInputStyle"
-                android:layout_width="251dp" />
+            <TextView
+                android:id="@+id/inputEyesTextView"
+                android:layout_width="251dp"
+                android:layout_height="35dp"
+                android:background="@drawable/rounded_edittext"
+                android:drawableEnd="@drawable/ic_arrow_drop_down"
+                android:gravity="center_vertical|start"
+                android:hint="Wybierz kolor"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="false" />
         </LinearLayout>
 
         <!-- WŁOSY -->
@@ -101,40 +130,52 @@
                 android:id="@+id/hairView"
                 style="@style/LabelStyle"
                 android:text="Włosy: " />
-            <EditText
-                android:id="@+id/inputHair"
-                style="@style/SmallInputStyle"
-                android:layout_width="251dp" />
+            <TextView
+                android:id="@+id/inputHairTextView"
+                android:layout_width="251dp"
+                android:layout_height="35dp"
+                android:background="@drawable/rounded_edittext"
+                android:drawableEnd="@drawable/ic_arrow_drop_down"
+                android:gravity="center_vertical|start"
+                android:hint="Wybierz kolor"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="false" />
         </LinearLayout>
 
             <!-- WZROST -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
-                android:id="@+id/growthView"
+                android:id="@+id/heightView"
                 style="@style/LabelStyle"
-                android:text="Wzrost: " />
-            <EditText
-                android:id="@+id/inputGrowth"
-                style="@style/SmallInputStyle"
-                android:layout_width="251dp" />
+                android:text="Wzrost: 160" />
+            <SeekBar
+                android:id="@+id/heightSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="20" />
         </LinearLayout>
 
         <!-- WAGA -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
                 android:id="@+id/weightView"
                 style="@style/LabelStyle"
-                android:text="Waga: " />
-            <EditText
-                android:id="@+id/inputWeight"
-                style="@style/SmallInputStyle"
-                android:layout_width="251dp" />
+                android:text="Waga: 50" />
+            <SeekBar
+                android:id="@+id/weightSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="20" />
         </LinearLayout>
 
         <!-- MIEJSCE URODZENIA -->
@@ -145,10 +186,10 @@
             <TextView
                 android:id="@+id/placeOfBirthView"
                 style="@style/LabelStyle"
-                android:text="Miejsce \nurodzenia: " />
+                android:text="M.urodzenia: " />
             <EditText
                 android:id="@+id/inputPlaceOfBirth"
-                style="@style/MediumInputStyle"
+                style="@style/SmallInputStyle"
                 android:layout_width="251dp" />
         </LinearLayout>
 
@@ -160,11 +201,21 @@
             <TextView
                 android:id="@+id/starSignView"
                 style="@style/LabelStyle"
-                android:text="Znak \nGwiezdny: " />
-            <EditText
-                android:id="@+id/inputStarSign"
-                style="@style/MediumInputStyle"
-                android:layout_width="251dp" />
+                android:text="Z. gwiezdny: " />
+            <TextView
+                android:id="@+id/inputStarSignTextView"
+                android:layout_width="251dp"
+                android:layout_height="35dp"
+                android:background="@drawable/rounded_edittext"
+                android:drawableEnd="@drawable/ic_arrow_drop_down"
+                android:gravity="center_vertical|start"
+                android:hint="Wybierz znak"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="false" />
         </LinearLayout>
     </LinearLayout>
 
@@ -185,7 +236,7 @@
                 android:text="Znaki Szczególne: " />
             <EditText
                 android:id="@+id/inputSpecialSigns"
-                style="@style/LargeInputStyle"
+                style="@style/MediumInputStyle"
                 android:layout_width="251dp"
                 />
         </LinearLayout>

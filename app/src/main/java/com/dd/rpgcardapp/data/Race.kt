@@ -21,6 +21,11 @@ data class Race(
     val startingProfessions: List<Profession> = listOf(),
     val minAge: Int = 16,   // Zakres wieku
     val maxAge: Int = 35,   // Zakres wieku
+    val minWeight: Int,
+    val maxWeight: Int,
+    val minHeight: Int,
+    val hair: List<Appearance>,
+    val eyes: List<Appearance>
 )
 object Races {
     val Czlowiek = Race(
@@ -41,7 +46,12 @@ object Races {
             BasicProfessions.Akolita,
             BasicProfessions.Zolnierz,
             BasicProfessions.Zlodziej
-        )
+        ),
+        hair = HairColor.HumanHalfling,
+        minWeight = 50,
+        maxWeight = 110,
+        minHeight = 160,
+        eyes = EyesColor.Human
     )
 
     val Elf = Race(
@@ -60,7 +70,12 @@ object Races {
         optionalSkills = listOf(
             listOf(WeaponSkills.dlugieLuki, CommonSkills.zmyslMagii),
             listOf(StatsSkills.opanowanie, StatsSkills.blyskotliwosc)
-        )
+        ),
+        hair = HairColor.ElfHalfElf,
+        minWeight = 40,
+        maxWeight = 95,
+        minHeight = 170,
+        eyes = EyesColor.Elf
     )
 
     val Gnom = Race(
@@ -80,6 +95,11 @@ object Races {
             CommonSkills.widzenieWCiemnosci,
             CommonSkills.zapieklaNienawisc,
         ),
+        hair = HairColor.DwarfGnom,
+        minWeight = 40,
+        maxWeight = 85,
+        minHeight = 120,
+        eyes = EyesColor.Gnome
     )
 
     val Krasnolud = Race(
@@ -102,6 +122,11 @@ object Races {
         optionalAbility = listOf(
             listOf(SpecialAbilities.rzemiosloGornictwo, SpecialAbilities.rzemiosloKamieniarstwo, SpecialAbilities.rzemiosloKowalstwo),
         ),
+        hair = HairColor.DwarfGnom,
+        minWeight = 45,
+        maxWeight = 100,
+        minHeight = 145,
+        eyes = EyesColor.Dwarf
     )
 
     val Niziolek = Race(
@@ -124,7 +149,12 @@ object Races {
         ),
         optionalSkills = listOf(
             Random.Halfling,
-        )
+        ),
+        hair = HairColor.HumanHalfling,
+        minWeight = 35,
+        maxWeight = 70,
+        minHeight = 110,
+        eyes = EyesColor.Halfling
     )
 
     val Polelf = Race(
@@ -145,8 +175,12 @@ object Races {
         optionalSkills = listOf(
             listOf(WeaponSkills.dlugieLuki, CommonSkills.zmyslMagii),
             Random.All,
-        )
+        ),
+        hair = HairColor.ElfHalfElf,
+        minWeight = 45,
+        maxWeight = 100,
+        minHeight = 165,
+        eyes = EyesColor.HalfElf
     )
 }
 
-//TODO: półelf,

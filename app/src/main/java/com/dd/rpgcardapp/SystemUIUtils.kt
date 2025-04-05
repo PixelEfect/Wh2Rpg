@@ -1,5 +1,6 @@
 package com.dd.rpgcardapp.utils
 
+import android.app.Activity
 import android.os.Build
 import android.view.View
 import android.view.WindowInsets
@@ -7,16 +8,36 @@ import android.view.WindowInsetsController
 import androidx.activity.ComponentActivity
 
 object SystemUIUtils {
-
-    // Metoda do ukrywania paska systemowego
-    fun hideSystemUI(activity: ComponentActivity) {
+    fun hideSystemUI(activity: Activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            val windowInsetsController = activity.window.insetsController
-            windowInsetsController?.hide(WindowInsets.Type.systemBars()) // Ukryj pasek systemowy
-            windowInsetsController?.systemBarsBehavior = WindowInsetsController.BEHAVIOR_DEFAULT // Umożliwia wyświetlenie paska przez przesunięcie
+            activity.window.insetsController?.hide(
+                android.view.WindowInsets.Type.statusBars() or
+                        android.view.WindowInsets.Type.navigationBars()
+            )
+            activity.window.insetsController?.systemBarsBehavior =
+                WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         } else {
-            // Dla starszych wersji Androida zachowanie z SYSTEM_UI_FLAG_FULLSCREEN
-            activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            // Dla starszych wersji Androida
+            activity.window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+        }
+    }
+
+    fun showSystemUI(activity: Activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            activity.window.insetsController?.show(
+                android.view.WindowInsets.Type.statusBars() or
+
+                        android.view.WindowInsets.Type.navigationBars()
+            )
+        } else {
+            // Dla starszych wersji Androida
+            activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
         }
     }
 }
+
