@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_0003"
@@ -24,9 +25,12 @@
                 android:id="@+id/stateOfHealthView"
                 style="@style/LabelStyle"
                 android:text="@string/label_stateOfHealth" />
+
             <EditText
                 android:id="@+id/inputStateOfHealth"
-                style="@style/LargeInputStyle" />
+                style="@style/MediumInputStyle"
+                android:layout_height="68dp"
+                android:text="Zdrowy" />
         </LinearLayout>
     </LinearLayout>
 
@@ -82,7 +86,7 @@
                     android:text="@string/label_additionalInformation" />
                 <EditText
                     android:id="@+id/inputAdditionalInformation"
-                    style="@style/HugeInputStyle" />
+                    style="@style/LargeInputStyle" />
             </LinearLayout>
 
         </LinearLayout>

@@ -27,7 +27,6 @@ object StartingProfessions {    //Wszyskie rasy
         BasicProfessions.Zak,
         BasicProfessions.Zlodziej,
     )
-
     val HalflingHuman = listOf(          // niziolek czlowiek
         BasicProfessions.Balsamista,
         BasicProfessions.Chlop,
@@ -47,22 +46,18 @@ object StartingProfessions {    //Wszyskie rasy
         BasicProfessions.Zarzadca,
         BasicProfessions.ZbieraczLajna,
     )
-
     val DwarfHuman = listOf(          // krasnolud czlowiek
         BasicProfessions.Doker,
         BasicProfessions.Rzezimieszek,
         BasicProfessions.StraznikWiezienny,
         BasicProfessions.Woznica,
     )
-
     val ElfHalfElfHuman = listOf(        //elf polelf czlowiek
-
         BasicProfessions.Lesnik,
         BasicProfessions.Przepatrywacz,
         BasicProfessions.StraznikRzeczny,
         BasicProfessions.ZolnierzOkretowy,
     )
-
     val DwarfHalfelfHalflingHuman = listOf(      //Krasnolud Polelf Niziolek Czlowiek
         BasicProfessions.BylySkazaniec,
         BasicProfessions.HienaCmentarna,
@@ -77,15 +72,13 @@ object StartingProfessions {    //Wszyskie rasy
         BasicProfessions.Szczurolap,
         BasicProfessions.Zolnierz,
         )
-
     val DwarfElfHalfelfHuman = listOf(      //krasnolud, elf, Polelf, czlowiek
         BasicProfessions.Gladiator,
         BasicProfessions.Ochroniarz,
         BasicProfessions.Zeglarz,
     )
-
 //////////////////////////////////////////////////////////////////////////////
-    val Dwarf = Common + DwarfHuman + DwarfHalfelfHalflingHuman + DwarfElfHalfelfHuman + listOf(         //krasnolud
+    val Dwarf = Common + DwarfHuman + DwarfHalfelfHalflingHuman + DwarfElfHalfelfHuman + listOf(
         BasicProfessions.CzeladnikRun,
         BasicProfessions.Goniec,
         BasicProfessions.Gornik,
@@ -116,7 +109,7 @@ object StartingProfessions {    //Wszyskie rasy
         BasicProfessions.Sluga,
         BasicProfessions.StraznikPol,
     )
-    val Human = Common + HalflingHuman + DwarfHuman + ElfHalfElfHuman + DwarfHalfelfHalflingHuman + DwarfElfHalfelfHuman + listOf(         //czlowiek
+    val Human = Common + HalflingHuman + DwarfHuman + ElfHalfElfHuman + DwarfHalfelfHalflingHuman + DwarfElfHalfelfHuman + listOf(
         BasicProfessions.Aptekarz,
         BasicProfessions.Bagiennik,
         BasicProfessions.BlednyRycerz,
@@ -166,7 +159,6 @@ object StartingProfessions {    //Wszyskie rasy
         BasicProfessions.Zakapturzony,
         BasicProfessions.Znachorka,
     )
-
     val Gnome = Common + listOf(
         BasicProfessions.Aptekarz,
         BasicProfessions.Goniec,
@@ -175,9 +167,6 @@ object StartingProfessions {    //Wszyskie rasy
         BasicProfessions.Sluga,
         BasicProfessions.UczenCzarodzieja,
     )
-
-
-
 }
 
 

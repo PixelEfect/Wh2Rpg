@@ -9,7 +9,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.ComponentActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -17,7 +16,6 @@ import com.google.firebase.ktx.Firebase
 import android.graphics.Color
 import android.animation.ValueAnimator
 import android.view.MotionEvent
-import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import androidx.core.animation.addListener
@@ -144,7 +142,7 @@ class MainActivity : BaseActivity() {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
         findViewById<Button>(R.id.addCharacterButton).setOnClickListener {
-            startActivity(Intent(this, NewCardActivity::class.java))
+            startActivity(Intent(this, NewCardAncestryActivity::class.java))
         }
         findViewById<Button>(R.id.testButton).setOnClickListener {
             startActivity(Intent(this, ProfessionsConsistencyChecker::class.java))

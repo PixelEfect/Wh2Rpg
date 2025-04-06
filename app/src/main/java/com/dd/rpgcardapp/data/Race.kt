@@ -11,9 +11,10 @@ data class Race(
     val sw: Int = 20,
     val ogd: Int = 20,
     val a: Int = 1,
-    val zyw: Int = 0,
+    val zyw: Int = 10,
     val mag: Int = 0,
     val sz: Int = 4,
+    val ppOptions: List<Int> = listOf(2, 3, 3),
     val abilities: List<Ability>,
     val skills: List<Skill>,
     val optionalAbility: List<List<Ability>> = listOf(),
@@ -27,6 +28,7 @@ data class Race(
     val hair: List<Appearance>,
     val eyes: List<Appearance>
 )
+
 object Races {
     val Czlowiek = Race(
         name = "Człowiek",
@@ -42,11 +44,7 @@ object Races {
             Random.All,
             Random.All,
         ),
-        startingProfessions = listOf(
-            BasicProfessions.Akolita,
-            BasicProfessions.Zolnierz,
-            BasicProfessions.Zlodziej
-        ),
+        startingProfessions = StartingProfessions.Human,
         hair = HairColor.HumanHalfling,
         minWeight = 50,
         maxWeight = 110,
@@ -57,6 +55,8 @@ object Races {
     val Elf = Race(
         name = "Elf",
         us = 30, zr = 30, sz = 5,
+        zyw = 9,
+        ppOptions = listOf(1, 2, 2),
         minAge = 30, maxAge = 125,
         abilities = listOf(
             SpecialAbilities.wiedzaElfy,
@@ -71,6 +71,7 @@ object Races {
             listOf(WeaponSkills.dlugieLuki, CommonSkills.zmyslMagii),
             listOf(StatsSkills.opanowanie, StatsSkills.blyskotliwosc)
         ),
+        startingProfessions = StartingProfessions.Elf,
         hair = HairColor.ElfHalfElf,
         minWeight = 40,
         maxWeight = 95,
@@ -81,6 +82,7 @@ object Races {
     val Gnom = Race(
         name = "Gnom",
         k = 10, odp = 30, sw = 30,
+        ppOptions = listOf(2, 2, 3),
         minAge = 20, maxAge = 90,
         abilities = listOf(
             SpecialAbilities.wiedzaGnomy,
@@ -95,6 +97,7 @@ object Races {
             CommonSkills.widzenieWCiemnosci,
             CommonSkills.zapieklaNienawisc,
         ),
+        startingProfessions = StartingProfessions.Gnome,
         hair = HairColor.DwarfGnom,
         minWeight = 40,
         maxWeight = 85,
@@ -105,6 +108,8 @@ object Races {
     val Krasnolud = Race(
         name = "Krasnolud",
         ww = 30, odp = 30, zr = 10, ogd = 10, sz = 3,
+        zyw = 11,
+        ppOptions = listOf(1, 2, 3),
         minAge = 20, maxAge = 115,
         abilities = listOf(
             SpecialAbilities.wiedzaKrasnoludy,
@@ -122,6 +127,7 @@ object Races {
         optionalAbility = listOf(
             listOf(SpecialAbilities.rzemiosloGornictwo, SpecialAbilities.rzemiosloKamieniarstwo, SpecialAbilities.rzemiosloKowalstwo),
         ),
+        startingProfessions = StartingProfessions.Dwarf,
         hair = HairColor.DwarfGnom,
         minWeight = 45,
         maxWeight = 100,
@@ -132,6 +138,8 @@ object Races {
     val Niziolek = Race(
         name = "Niziołek",
         ww = 10, us = 30, k = 10, odp = 10, zr = 30, ogd = 30,
+        zyw = 8,
+        ppOptions = listOf(2, 2, 3),
         minAge = 20, maxAge = 60,
         abilities = listOf(
             SpecialAbilities.naukaGeneologiaHeraldyka,
@@ -150,6 +158,7 @@ object Races {
         optionalSkills = listOf(
             Random.Halfling,
         ),
+        startingProfessions = StartingProfessions.Halfling,
         hair = HairColor.HumanHalfling,
         minWeight = 35,
         maxWeight = 70,
@@ -160,6 +169,8 @@ object Races {
     val Polelf = Race(
         name = "Półelf",
         us = 25, zr = 25, sz = 5,
+        zyw = 10,
+        ppOptions = listOf(2, 2, 3),
         minAge = 20, maxAge = 100,
         abilities = listOf(
             SpecialAbilities.jezykReikspiel,
@@ -176,11 +187,16 @@ object Races {
             listOf(WeaponSkills.dlugieLuki, CommonSkills.zmyslMagii),
             Random.All,
         ),
+        startingProfessions = StartingProfessions.HalfElf,
         hair = HairColor.ElfHalfElf,
         minWeight = 45,
         maxWeight = 100,
         minHeight = 165,
         eyes = EyesColor.HalfElf
     )
+    val all = listOf(Czlowiek, Elf, Gnom, Krasnolud, Niziolek, Polelf)
+    private val mapByName = all.associateBy { it.name }
+
+    fun getByName(name: String?): Race? = mapByName[name]
 }
 

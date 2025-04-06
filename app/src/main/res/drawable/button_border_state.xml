@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Tło przycisku, kiedy jest kliknięty -->
+    <item android:state_pressed="true" android:drawable="@drawable/translucent_bg"/>
+
+    <!-- Tło przycisku, kiedy nie jest kliknięty -->
+    <item android:drawable="@drawable/translucent_bg2"/>
+</selector>

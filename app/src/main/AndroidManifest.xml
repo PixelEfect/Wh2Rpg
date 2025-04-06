@@ -25,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="false"
@@ -33,13 +34,20 @@
             android:name=".ProfileActivity"
             android:exported="false"/>
         <activity
-            android:name=".NewCardActivity"
+            android:name=".NewCardAncestryActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:exported="false"/>
         <activity
-            android:name=".StatsFormActivity"
+            android:name=".NewCardAttributesActivity"
             android:exported="false"/>
         <activity
-            android:name=".DescriptionFormActivity"
+            android:name=".NewCardBackstoryActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".NewCardProfessionsActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".NewCardSkillsAndAbilitiesActivity"
             android:exported="false"/>
         <activity
             android:name=".LoginActivity"

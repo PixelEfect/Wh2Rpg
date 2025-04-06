@@ -177,3 +177,24 @@ object SignsAndLanguagesAbilities {
     )
 }
 
+object AbilityGroupSimplifier {
+
+    private val knownGroups = mapOf(
+        KnowledgeAbilities.OldWorld.map { it.name }.toSet() to "Wiedza (Stary Świat)",
+        KnowledgeAbilities.All.map { it.name }.toSet() to "Wiedza (dowolna)",
+        ScienceAbilities.All.map { it.name }.toSet() to "Nauka (dowolna)",
+        LanguageAbilities.All.map { it.name }.toSet() to "Język (dowolny)",
+        SecretLanguageAbilities.Common.map { it.name }.toSet() to "Język tajemny (Demoniczny, elfi lub magiczny)",
+        SecretLanguageAbilities.All.map { it.name }.toSet() to "Język tajemny (dowolny)",
+        SleightOfHandAbilities.All.map { it.name }.toSet() to "Kuglarstwo (dowolne)",
+        CraftAbilities.All.map { it.name }.toSet() to "Rzemiosło (dowolne)",
+        CraftAbilities.Animal.map { it.name }.toSet() to "Rzemiosło (Hodowla psów, koni lub ptaków)",
+        SignsAndLanguagesAbilities.Signs.map { it.name }.toSet() to "Sekretne znaki (dowolne)",
+        SignsAndLanguagesAbilities.Lang.map { it.name }.toSet() to "Sekretny język (dowolny)"
+    )
+
+    fun simplify(abilities: List<Ability>): String? {
+        val abilityNames = abilities.map { it.name }.toSet()
+        return knownGroups[abilityNames]
+    }
+}

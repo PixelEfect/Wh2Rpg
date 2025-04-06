@@ -38,7 +38,7 @@ object BasicProfessions {
 
             ),
         optionalAbility = listOf(
-            listOf(SpecialAbilities.naukaAstronomia, SpecialAbilities.naukaHistoria)
+            listOf(SpecialAbilities.naukaAstronomia, SpecialAbilities.naukaHistoria),
         ),
         optionalSkills = listOf(
             listOf(StatsSkills.bardzoSilny, StatsSkills.szybkiRefleks),
@@ -457,6 +457,7 @@ object BasicProfessions {
             CommonAbilities.przekonywanie,
             CommonAbilities.spostrzegawczosc,
             SpecialAbilities.wiedzaImperium,
+            SpecialAbilities.jezykReikspiel,
         ),
         skills = listOf(
         ),
@@ -466,7 +467,6 @@ object BasicProfessions {
             listOf(CommonAbilities.opiekaNadZwierzetami, CommonAbilities.plywanie),
             listOf(CommonAbilities.plotkowanie, CommonAbilities.wycena),
             listOf(
-                SpecialAbilities.jezykReikspiel,
                 RareAbilities.brzuchomowstwo,
                 RareAbilities.gadanina,
                 RareAbilities.hipnoza,
@@ -2762,7 +2762,7 @@ object BasicProfessions {
             CommonSkills.zylkaHandlowa,
         ),
         optionalAbility = listOf(
-            KnowledgeAbilities.OldWorld,
+            KnowledgeAbilities.OldWorld + CommonAbilities.mocnaGlowa,
         ),
         optionalSkills = listOf(
             listOf(CommonSkills.wedrowiec, StatsSkills.twardziel),
