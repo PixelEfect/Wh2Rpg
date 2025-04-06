@@ -18,7 +18,7 @@ class ProfessionsFormActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_stats_form)
+        setContentView(R.layout.activity_new_card_attributes)
 
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
@@ -57,7 +57,7 @@ class ProfessionsFormActivity : BaseActivity() {
             .addOnSuccessListener {
                 Toast.makeText(this, "Opisy zapisane!", Toast.LENGTH_SHORT).show()
                 // Przejście do nowej aktywności z przekazaniem ID dokumentu postaci
-                val intent = Intent(this, DescriptionFormActivity::class.java).apply {
+                val intent = Intent(this, NewCardBackstoryActivity::class.java).apply {
                     putExtra("CHARACTER_DOC_ID", characterDocId)  // Przekazanie characterDocId
                 }
                 startActivity(intent)

@@ -49,6 +49,7 @@ object EyesColor{
     val HalfElf = Elf + listOf(
         Eyes.szary,
         Eyes.piwny,
+        Eyes.zielony,
     )
     val Dwarf = All + listOf(
         Eyes.szary,

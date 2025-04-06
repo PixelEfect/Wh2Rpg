@@ -21,24 +21,28 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:inputType">number</item>
+        <item name="android:gravity">center</item>
         <item name="android:background">@drawable/translucent_bg</item>
-        <item name="android:padding">8dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="ReadOnlyInputStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/translucent_bg2</item>
-        <item name="android:padding">8dp</item>
+        <item name="android:padding">4dp</item>
         <item name="android:focusable">false</item>
         <item name="android:clickable">false</item>
+        <item name="android:gravity">center</item>
         <item name="android:inputType">none</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="SmallInputStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:inputType">text</item>
+        <item name="android:inputType">textCapWords</item>
         <item name="android:background">@drawable/translucent_bg</item>
         <item name="android:padding">8dp</item>
     </style>
@@ -47,6 +51,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:gravity">top</item>
+        <item name="android:inputType">textCapWords</item>
         <item name="android:background">@drawable/translucent_bg</item>
         <item name="android:padding">8dp</item>
     </style>
@@ -55,6 +60,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">100dp</item>
         <item name="android:gravity">top</item>
+        <item name="android:inputType">textCapWords</item>
         <item name="android:background">@drawable/translucent_bg</item>
         <item name="android:padding">8dp</item>
     </style>
