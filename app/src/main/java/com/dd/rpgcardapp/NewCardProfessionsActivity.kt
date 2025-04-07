@@ -32,7 +32,6 @@ class NewCardProfessionsActivity : BaseActivity() {
     private var selectedProfession: Profession? = null
 
     private lateinit var professionsTextView: TextView
-    private lateinit var nextButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +63,6 @@ class NewCardProfessionsActivity : BaseActivity() {
                     professionsTextView.text = selectedProfessionName // Ustaw tekst na wybraną profesję
                     selectedProfession?.let { updateProfessionStats(it) }
 
-                    nextButton.isEnabled = true
                 }
             }
 
@@ -72,10 +70,20 @@ class NewCardProfessionsActivity : BaseActivity() {
             Toast.makeText(this, "Rasa nieznana", Toast.LENGTH_SHORT).show()
         }
 
-        nextButton = findViewById<Button>(R.id.nextButton)
-        nextButton.isEnabled = false
+        val nextButton = findViewById<Button>(R.id.nextButton)
         nextButton.setOnClickListener {
-            saveProfessionToFirestore() // Wywołanie zapisu po kliknięciu
+            if (selectedProfession == null) {
+                Toast.makeText(this, "Musisz wybrać profesję, zanim przejdziesz dalej", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            saveProfessionToFirestore()
+        }
+
+        val exitButton = findViewById<Button>(R.id.exitButton)
+        exitButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
@@ -106,7 +114,6 @@ class NewCardProfessionsActivity : BaseActivity() {
                 selectedProfession = race.startingProfessions.firstOrNull { it.name == savedProfessionName }
                 selectedProfession?.let {
                     updateProfessionStats(it)
-                    nextButton.isEnabled = true // Jeśli profesja jest wybrana, włącz przycisk "Next"
                 }
             }
         }
@@ -123,23 +130,40 @@ class NewCardProfessionsActivity : BaseActivity() {
             Toast.makeText(this, "Brak danych do zapisania", Toast.LENGTH_SHORT).show()
             return
         }
+
         val professionName = selectedProfession!!.name
-        // Można tu zapisać wybraną profesję w Firestore lub na innej stronie
         val professionData = hashMapOf(
             "professionName" to professionName
         )
 
-        db.collection("users").document(userId)
+        val characterRef = db.collection("users").document(userId)
             .collection("characters").document(characterDocId!!)
-            .collection("professions").document(professionName)
+
+        characterRef.collection("professions").document(professionName)
             .set(professionData)
-
             .addOnSuccessListener {
-                db.collection("users").document(userId)
-                    .collection("characters").document(characterDocId!!)
-                    .update("progressStage", 4)
+                // Zapisz abilities
+                selectedProfession!!.abilities.forEach { ability ->
+                    val abilityData = hashMapOf(
+                        "name" to ability.name
+                    )
+                    characterRef.collection("abilities").document(ability.name)
+                        .set(abilityData)
+                }
 
-                Toast.makeText(this, "Profesja zapisana!", Toast.LENGTH_SHORT).show()
+                // Zapisz skills
+                selectedProfession!!.skills.forEach { skill ->
+                    val skillData = hashMapOf(
+                        "name" to skill.name
+                    )
+                    characterRef.collection("skills").document(skill.name)
+                        .set(skillData)
+                }
+
+                // Aktualizacja etapu tworzenia postaci
+                characterRef.update("progressStage", 4)
+
+                Toast.makeText(this, "Profesja i dane zapisane!", Toast.LENGTH_SHORT).show()
                 // Przejście do nowej aktywności z przekazaniem ID dokumentu postaci
                 val intent = Intent(this, NewCardSkillsAndAbilitiesActivity::class.java).apply {
                     putExtra("CHARACTER_DOC_ID", characterDocId)  // Przekazanie characterDocId
@@ -152,14 +176,6 @@ class NewCardProfessionsActivity : BaseActivity() {
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Błąd zapisu: ${e.message}", Toast.LENGTH_SHORT).show()
             }
-
-
-
-        if (userId.isEmpty() || characterDocId.isNullOrEmpty()) {
-            Toast.makeText(this, "Błąd: Nie można zapisać statystyk", Toast.LENGTH_SHORT).show()
-            return
-        }
-
     }
 
     fun updateProfessionStats(profession: Profession) {
@@ -208,7 +224,7 @@ class NewCardProfessionsActivity : BaseActivity() {
 
         val fullAbilitiesText = buildString {
             append("Umiejętności: ")
-            append(simplifiedAbilities.joinToString(separator = ", "))
+            append(profession.abilities.joinToString(separator = ", ") { it.name })
 
             if (profession.optionalAbility.isNotEmpty()) {
                 appendLine()

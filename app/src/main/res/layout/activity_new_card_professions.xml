@@ -10,7 +10,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="10dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             <TextView
                 android:id="@+id/inputProfessionTextView"
                 android:layout_width="251dp"
-                android:layout_height="48dp"
+                android:layout_height="35dp"
                 android:background="@drawable/rounded_edittext"
                 android:drawableEnd="@drawable/ic_arrow_drop_down"
                 android:gravity="center_vertical|start"
@@ -45,7 +45,7 @@
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            android:layout_height="5dp"/>
         <!-- Pierwszy blok z Inputami -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -144,7 +144,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="5dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -244,7 +244,7 @@
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="5dp"/>
         <TextView
             android:id="@+id/inputAbilities"
             android:layout_width="match_parent"
@@ -255,9 +255,6 @@
             android:maxLines="10"
             android:ellipsize="end"
             android:scrollHorizontally="false" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"/>
         <TextView
             android:id="@+id/inputSkills"
             android:layout_width="match_parent"
@@ -268,9 +265,6 @@
             android:maxLines="10"
             android:ellipsize="end"
             android:scrollHorizontally="false" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"/>
         <TextView
             android:id="@+id/inputEntryPaths"
             android:layout_width="match_parent"
@@ -281,9 +275,6 @@
             android:maxLines="10"
             android:ellipsize="end"
             android:scrollHorizontally="false" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"/>
         <TextView
             android:id="@+id/inputExitPaths"
             android:layout_width="match_parent"
@@ -294,19 +285,27 @@
             android:maxLines="10"
             android:ellipsize="end"
             android:scrollHorizontally="false" />
-
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
             android:paddingTop="8dp"
-            android:paddingBottom="16dp">
+            android:paddingBottom="10dp">
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/exitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/exit_001" />
 
             <Space
                 android:layout_width="0dp"
@@ -320,7 +319,7 @@
                 android:background="@drawable/next_001" />
 
             <Space
-                android:layout_width="40dp"
+                android:layout_width="10dp"
                 android:layout_height="match_parent" />
         </LinearLayout>
 

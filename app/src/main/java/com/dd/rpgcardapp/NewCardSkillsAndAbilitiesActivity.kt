@@ -12,9 +12,9 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
 import com.dd.rpgcardapp.data.Ability
-import com.dd.rpgcardapp.data.AbilityGroupSimplifier
 import com.dd.rpgcardapp.data.Profession
 import com.dd.rpgcardapp.data.ProfessionPaths
+import com.dd.rpgcardapp.data.Professions
 import com.dd.rpgcardapp.data.Races
 import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.google.firebase.auth.ktx.auth
@@ -29,7 +29,38 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
     private lateinit var db: FirebaseFirestore
     private lateinit var userId: String
     private var characterDocId: String? = null
-    private var selectedProfession: Profession? = null
+
+    private lateinit var inputWW: TextView
+    private lateinit var inputUS: TextView
+    private lateinit var inputK: TextView
+    private lateinit var inputOdp: TextView
+    private lateinit var inputZr: TextView
+    private lateinit var inputInt: TextView
+    private lateinit var inputSW: TextView
+    private lateinit var inputOgd: TextView
+    private lateinit var inputA: TextView
+    private lateinit var inputZyw: TextView
+    private lateinit var inputS: TextView
+    private lateinit var inputWt: TextView
+    private lateinit var inputSz: TextView
+    private lateinit var inputMag: TextView
+    private lateinit var inputPO: TextView
+    private lateinit var inputPP: TextView
+    private lateinit var buttonWW: TextView
+    private lateinit var buttonUS: TextView
+    private lateinit var buttonK: TextView
+    private lateinit var buttonOdp: TextView
+    private lateinit var buttonZr: TextView
+    private lateinit var buttonInt: TextView
+    private lateinit var buttonSW: TextView
+    private lateinit var buttonOgd: TextView
+    private lateinit var buttonA: TextView
+    private lateinit var buttonZyw: TextView
+    private lateinit var buttonSz: TextView
+    private lateinit var buttonMag: TextView
+
+    private var selectedMainStatButton: TextView? = null
+    private val mainStatButtons = mutableMapOf<TextView, Pair<TextView, Int>>() // przycisk -> (TextView input, wartość +5)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,15 +77,31 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
         if (characterDocId == null || raceName == null) {
             Toast.makeText(this, "Błąd: Brak ID postaci lub rasy", Toast.LENGTH_SHORT).show()
             finish()
+            return
         }
+        initViews()
+        professionStatsViews()
+        loadAttributes()
 
         val race = Races.getByName(raceName)
 
+
+
         val professionTextView: TextView = findViewById(R.id.professionsTextView)
-        if (professionName != null) {
-            professionTextView.text = "Profesja: $professionName"
+        val profession = Professions.professionMap[professionName]
+
+        if (profession != null) {
+            professionTextView.text = "Profesja: ${profession.name}"
+            assignProfessionStats(profession)
         } else {
             professionTextView.text = "Profesja: Nieznana"
+        }
+
+        val exitButton = findViewById<Button>(R.id.exitButton)
+        exitButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
@@ -63,181 +110,154 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
         SystemUIUtils.hideSystemUI(this)
     }
 
-    // Funkcja do zapisywania profesji do Firestore (można rozbudować, aby zapisać więcej danych)
-    private fun saveProfessionToFirestore() {
-        if (characterDocId == null || selectedProfession == null) {
-            Toast.makeText(this, "Brak danych do zapisania", Toast.LENGTH_SHORT).show()
+    private fun initViews() {
+        inputWW = findViewById(R.id.inputWW)
+        inputUS = findViewById(R.id.inputUS)
+        inputK = findViewById(R.id.inputK)
+        inputOdp = findViewById(R.id.inputOdp)
+        inputZr = findViewById(R.id.inputZr)
+        inputInt = findViewById(R.id.inputInt)
+        inputSW = findViewById(R.id.inputSW)
+        inputOgd = findViewById(R.id.inputOgd)
+        inputA = findViewById(R.id.inputA)
+        inputZyw = findViewById(R.id.inputZyw)
+        inputS = findViewById(R.id.inputS)
+        inputWt = findViewById(R.id.inputWt)
+        inputSz = findViewById(R.id.inputSz)
+        inputMag = findViewById(R.id.inputMag)
+        inputPO = findViewById(R.id.inputPO)
+        inputPP = findViewById(R.id.inputPP)
+    }
+
+    private fun professionStatsViews() {
+        buttonWW = findViewById(R.id.buttonWW)
+        buttonUS = findViewById(R.id.buttonUS)
+        buttonK = findViewById(R.id.buttonK)
+        buttonOdp = findViewById(R.id.buttonOdp)
+        buttonZr = findViewById(R.id.buttonZr)
+        buttonInt = findViewById(R.id.buttonInt)
+        buttonSW = findViewById(R.id.buttonSW)
+        buttonOgd = findViewById(R.id.buttonOgd)
+        buttonA = findViewById(R.id.buttonA)
+        buttonZyw = findViewById(R.id.buttonZyw)
+        buttonSz = findViewById(R.id.buttonSz)
+        buttonMag = findViewById(R.id.buttonMag)
+    }
+
+    private fun assignProfessionStats(profession: Profession) {
+        setStatOrHide(buttonWW, profession.ww)
+        setStatOrHide(buttonUS, profession.us)
+        setStatOrHide(buttonK, profession.k)
+        setStatOrHide(buttonOdp, profession.odp)
+        setStatOrHide(buttonZr, profession.zr)
+        setStatOrHide(buttonInt, profession.int)
+        setStatOrHide(buttonSW, profession.sw)
+        setStatOrHide(buttonOgd, profession.ogd)
+        setStatOrHide(buttonA, profession.a)
+        setStatOrHide(buttonZyw, profession.zyw)
+        setStatOrHide(buttonSz, profession.sz)
+        setStatOrHide(buttonMag, profession.mag)
+
+        mainStatButtons[buttonWW] = inputWW to 5
+        mainStatButtons[buttonUS] = inputUS to 5
+        mainStatButtons[buttonK] = inputK to 5
+        mainStatButtons[buttonOdp] = inputOdp to 5
+        mainStatButtons[buttonZr] = inputZr to 5
+        mainStatButtons[buttonInt] = inputInt to 5
+        mainStatButtons[buttonSW] = inputSW to 5
+        mainStatButtons[buttonOgd] = inputOgd to 5
+
+// Zakładamy że buttonA, buttonZyw itd. to +1
+        mainStatButtons[buttonA] = inputA to 1
+        mainStatButtons[buttonZyw] = inputZyw to 1
+        mainStatButtons[buttonSz] = inputSz to 1
+        mainStatButtons[buttonMag] = inputMag to 1
+
+        setupButtonClickListeners()
+    }
+
+    private fun setStatOrHide(view: TextView, value: Int) {
+        if (value == 0) {
+            view.visibility = View.GONE
+        } else {
+            view.text = "+$value"
+            view.visibility = View.VISIBLE
+        }
+    }
+
+    private fun setupButtonClickListeners() {
+        mainStatButtons.forEach { (button, pair) ->
+            val (inputView, increment) = pair
+            button.setOnClickListener {
+                if (selectedMainStatButton == button) {
+                    // Odznaczenie
+                    adjustStat(inputView, -increment)
+                    selectedMainStatButton = null
+                    button.isSelected = false
+                } else {
+                    // Odznacz poprzedni
+                    selectedMainStatButton?.let {
+                        mainStatButtons[it]?.let { (prevInput, prevInc) ->
+                            adjustStat(prevInput, -prevInc)
+                            it.isSelected = false
+                        }
+                    }
+                    // Zaznaczenie nowego
+                    adjustStat(inputView, increment)
+                    selectedMainStatButton = button
+                    button.isSelected = true
+                }
+            }
+        }
+    }
+
+    private fun adjustStat(textView: TextView, delta: Int) {
+        val current = textView.text.toString().toIntOrNull() ?: 0
+        textView.text = (current + delta).toString()
+    }
+
+    private fun loadAttributes() {
+        if (userId.isEmpty() || characterDocId.isNullOrEmpty()) {
+            Toast.makeText(this, "Błąd: Nie można odczytać statystyk", Toast.LENGTH_SHORT).show()
             return
         }
-        val professionName = selectedProfession!!.name
-        // Można tu zapisać wybraną profesję w Firestore lub na innej stronie
-        val professionData = hashMapOf(
-            "professionName" to professionName
-        )
 
         db.collection("users").document(userId)
             .collection("characters").document(characterDocId!!)
-            .collection("professions").document(professionName)
-            .set(professionData)
+            .collection("attributes").document("main_attributes")
+            .get()
+            .addOnSuccessListener { document ->
+                if (document != null && document.exists()) {
+                    inputWW.text = (document.getLong("WW") ?: 0).toString()
+                    inputUS.text = (document.getLong("US") ?: 0).toString()
+                    inputK.text = (document.getLong("K") ?: 0).toString()
+                    inputOdp.text = (document.getLong("Odp") ?: 0).toString()
+                    inputZr.text = (document.getLong("Zr") ?: 0).toString()
+                    inputInt.text = (document.getLong("Int") ?: 0).toString()
+                    inputSW.text = (document.getLong("SW") ?: 0).toString()
+                    inputOgd.text = (document.getLong("Ogd") ?: 0).toString()
 
-            .addOnSuccessListener {
-                db.collection("users").document(userId)
-                    .collection("characters").document(characterDocId!!)
-                    .update("progressStage", 4)
-
-                Toast.makeText(this, "Profesja zapisana!", Toast.LENGTH_SHORT).show()
-                // Przejście do nowej aktywności z przekazaniem ID dokumentu postaci
-                val intent = Intent(this, NewCardSkillsAndAbilitiesActivity::class.java).apply {
-                    putExtra("CHARACTER_DOC_ID", characterDocId)  // Przekazanie characterDocId
-                    putExtra("CHARACTER_RACE", intent.getStringExtra("CHARACTER_RACE"))
-                    putExtra("CHARACTER_PROFESSION", professionName) // Przekazanie nazwy profesji
+                    inputA.text = (document.getLong("A") ?: 0).toString()
+                    inputZyw.text = (document.getLong("Zyw") ?: 0).toString()
+                    inputS.text = (document.getLong("S") ?: 0).toString()
+                    inputWt.text = (document.getLong("Wt") ?: 0).toString()
+                    inputSz.text = (document.getLong("Sz") ?: 0).toString()
+                    inputMag.text = (document.getLong("Mag") ?: 0).toString()
+                    inputPO.text = (document.getLong("PO") ?: 0).toString()
+                    inputPP.text = (document.getLong("PP") ?: 0).toString()
+                } else {
+                    Toast.makeText(this, "Brak zapisanych statystyk", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-                finish()
             }
             .addOnFailureListener { e ->
-                Toast.makeText(this, "Błąd zapisu: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Błąd odczytu: ${e.message}", Toast.LENGTH_SHORT).show()
             }
+    }
 
+    // Funkcja do zapisywania profesji do Firestore (można rozbudować, aby zapisać więcej danych)
+    private fun saveProfessionToFirestore() {
 
-
-        if (userId.isEmpty() || characterDocId.isNullOrEmpty()) {
-            Toast.makeText(this, "Błąd: Nie można zapisać statystyk", Toast.LENGTH_SHORT).show()
-            return
-        }
 
     }
 
-    fun updateProfessionStats(profession: Profession) {
-        // Pobranie referencji do odpowiednich TextView
-        val wwTextView = findViewById<TextView>(R.id.inputWW)
-        val usTextView = findViewById<TextView>(R.id.inputUS)
-        val kTextView = findViewById<TextView>(R.id.inputK)
-        val odpTextView = findViewById<TextView>(R.id.inputOdp)
-        val zrTextView = findViewById<TextView>(R.id.inputZr)
-        val intTextView = findViewById<TextView>(R.id.inputInt)
-        val swTextView = findViewById<TextView>(R.id.inputSW)
-        val ogdTextView = findViewById<TextView>(R.id.inputOgd)
-        val aTextView = findViewById<TextView>(R.id.inputA)
-        val zywTextView = findViewById<TextView>(R.id.inputŻyw)
-        val szTextView = findViewById<TextView>(R.id.inputSz)
-        val magTextView = findViewById<TextView>(R.id.inputMag)
-
-        val abilitiesTextView = findViewById<TextView>(R.id.inputAbilities)
-        val skillsTextView = findViewById<TextView>(R.id.inputSkills)
-
-        val entryPathsTextView = findViewById<TextView>(R.id.inputEntryPaths)
-        val exitPathsTextView = findViewById<TextView>(R.id.inputExitPaths)
-
-        fun formatStat(value: Int): String {
-            return if (value == 0) "-" else value.toString()
-        }
-
-        // Ustawianie wartości statystyk w TextView
-        wwTextView.text = formatStat(profession.ww)
-        usTextView.text = formatStat(profession.us)
-        kTextView.text = formatStat(profession.k)
-        odpTextView.text = formatStat(profession.odp)
-        zrTextView.text = formatStat(profession.zr)
-        intTextView.text = formatStat(profession.int)
-        swTextView.text = formatStat(profession.sw)
-        ogdTextView.text = formatStat(profession.ogd)
-        aTextView.text = formatStat(profession.a)
-        zywTextView.text = formatStat(profession.zyw)
-        szTextView.text = formatStat(profession.sz)
-        magTextView.text = formatStat(profession.mag)
-
-        // Zastosowanie mapowania grup umiejętności
-        val simplifiedAbilities = profession.abilities.mapNotNull { ability ->
-            mapAbilityGroupToText(listOf(ability))
-        }
-
-        val fullAbilitiesText = buildString {
-            append("Umiejętności: ")
-            append(simplifiedAbilities.joinToString(separator = ", "))
-
-            if (profession.optionalAbility.isNotEmpty()) {
-                appendLine()
-                append("Do wyboru: ")
-                append(profession.optionalAbility.joinToString(separator = ", ") { group ->
-                    val simplifiedGroup = AbilityGroupSimplifier.simplify(group)
-                    if (simplifiedGroup != null) {
-                        simplifiedGroup
-                    } else {
-                        group.joinToString(separator = " lub ") { ability ->
-                            ability.name
-                        }
-                    }
-                })
-            }
-        }
-
-        abilitiesTextView.text = fullAbilitiesText.ifEmpty { "Brak umiejętności" }
-
-        // Wyświetlanie umiejętności
-        val fullSkillsText = buildString {
-            append("Zdolności: ")
-            append(profession.skills.joinToString(separator = ", ") { it.name })
-
-            if (profession.optionalSkills.isNotEmpty()) {
-                appendLine()
-                append("Do wyboru: ")
-                append(profession.optionalSkills.joinToString(separator = ", ") { group ->
-                    group.joinToString(separator = " lub ") { it.name }
-                })
-            }
-        }
-        skillsTextView.text = fullSkillsText.ifEmpty { "Brak zdolności" }
-
-        val professionPaths = ProfessionPaths.paths[profession]
-
-        // Jeśli istnieją ścieżki dla tej profesji
-        if (professionPaths != null) {
-            // Łączenie ścieżek wejściowych i ustawianie w TextView
-            val entryPathsText = "Ścieżki wejściowe: " + professionPaths.entry.joinToString(separator = ", ") { it.name }
-            entryPathsTextView.text = entryPathsText.ifEmpty { "Brak ścieżek wejściowych" }
-
-            // Łączenie ścieżek wyjściowych i ustawianie w TextView
-            val exitPathsText = "Ścieżki wyjściowe: " + professionPaths.exit.joinToString(separator = ", ") { it.name }
-            exitPathsTextView.text = exitPathsText.ifEmpty { "Brak ścieżek wyjściowych" }
-        } else {
-            entryPathsTextView.text = "Brak ścieżek wejściowych"
-            exitPathsTextView.text = "Brak ścieżek wyjściowych"
-        }
-    }
-
-    // Funkcja do wyświetlania PopupWindow z listą do wyboru
-    private fun showPopupWindow(view: View, items: List<String>, onItemSelected: (String) -> Unit) {
-        val context = this
-        val listView = ListView(context)
-        val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, items)
-        listView.adapter = adapter
-
-        // Tworzenie PopupWindow
-        val popupWindow = PopupWindow(listView, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
-        popupWindow.isFocusable = true
-        popupWindow.setBackgroundDrawable(getDrawable(android.R.drawable.screen_background_light))
-
-        // Ukrywanie systemowego UI, jak pasek stanu
-        popupWindow.setOnDismissListener {
-            SystemUIUtils.hideSystemUI(this)
-        }
-
-        // Obsługa kliknięcia na element w liście
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = items[position]
-            onItemSelected(selectedItem) // Wywołanie funkcji zwrotnej z wybranym elementem
-            popupWindow.dismiss() // Zamknięcie PopupWindow po wyborze
-        }
-
-        // Wyświetlanie PopupWindow
-        popupWindow.showAsDropDown(view)
-
-        view.postDelayed({
-            SystemUIUtils.hideSystemUI(this)
-        }, 1)
-    }
-    fun mapAbilityGroupToText(group: List<Ability>): String? {
-        return AbilityGroupSimplifier.simplify(group)
-    }
 }

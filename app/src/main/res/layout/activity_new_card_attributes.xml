@@ -144,14 +144,14 @@
                 style="@style/NumberInputStyle" />
         </LinearLayout>
 
-        <!-- Blok Żyw -->
+        <!-- Blok Zyw -->
         <LinearLayout style="@style/InputBlockStyle">
             <TextView
-                android:id="@+id/ŻywView"
+                android:id="@+id/ZywView"
                 style="@style/LabelStyle"
                 android:text="@string/label_zyw" />
             <EditText
-                android:id="@+id/inputŻyw"
+                android:id="@+id/inputZyw"
                 style="@style/NumberInputStyle"/>
         </LinearLayout>
 
@@ -275,6 +275,30 @@
 
     <View
         android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <TextView
+        android:id="@+id/inputAbilities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Umiejętności rasowe: "
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:maxLines="10"
+        android:ellipsize="end"
+        android:scrollHorizontally="false" />
+    <TextView
+        android:id="@+id/inputSkills"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zdolności rasowe: "
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:maxLines="10"
+        android:ellipsize="end"
+        android:scrollHorizontally="false" />
+
+    <View
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"/>
 
@@ -284,7 +308,17 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:paddingTop="8dp"
-        android:paddingBottom="16dp">
+        android:paddingBottom="10dp">
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/exit_001" />
 
         <Space
             android:layout_width="0dp"
@@ -298,7 +332,7 @@
             android:background="@drawable/next_001" />
 
         <Space
-            android:layout_width="40dp"
+            android:layout_width="10dp"
             android:layout_height="match_parent" />
     </LinearLayout>
 

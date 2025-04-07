@@ -20,6 +20,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import android.widget.SeekBar
 import com.dd.rpgcardapp.data.AllStarSigns
+import com.dd.rpgcardapp.data.SkillsGroupSimplifier
 import com.dd.rpgcardapp.data.Race
 import com.dd.rpgcardapp.data.Races
 import com.dd.rpgcardapp.data.GroupRace
@@ -28,6 +29,7 @@ import com.dd.rpgcardapp.data.StarSigns
 import com.dd.rpgcardapp.utils.SystemUIUtils
 import android.content.Context
 import android.view.inputmethod.InputMethodManager
+import com.dd.rpgcardapp.data.AbilityGroupSimplifier
 import com.dd.rpgcardapp.data.Eyes
 import com.dd.rpgcardapp.data.Hair
 
@@ -47,6 +49,9 @@ class NewCardAncestryActivity : BaseActivity() {
     private lateinit var weightSeekBar: SeekBar
     private lateinit var weightTextView: TextView
     private lateinit var starSignTextView: TextView
+    private lateinit var abilitiesTextView: TextView
+    private lateinit var skillsTextView: TextView
+
 
     companion object {
         const val MALE = "Mężczyzna"
@@ -76,6 +81,9 @@ class NewCardAncestryActivity : BaseActivity() {
         weightSeekBar = findViewById(R.id.weightSeekBar)
         weightTextView = findViewById(R.id.weightView)
         starSignTextView = findViewById(R.id.inputStarSignTextView)
+        abilitiesTextView = findViewById(R.id.abilitiesTextView)
+        skillsTextView = findViewById(R.id.skillsTextView)
+
 
         // Ustaw domyślną rasę (Człowiek) i zakres wieku
         setAgeRange(Races.Czlowiek)
@@ -93,6 +101,7 @@ class NewCardAncestryActivity : BaseActivity() {
         hairTextView.text = defaultHairColor
         eyesTextView.text = defaultEyesColor
 
+        updateAbilitiesAndSkills(selectedRace)
         // Nasłuchiwanie kliknięć na głównym kontenerze aktywności
         val rootLayout = findViewById<View>(R.id.rootLayout) // Zmienna 'rootLayout' to główny layout aktywności
         rootLayout.setOnTouchListener { v, event ->
@@ -119,6 +128,7 @@ class NewCardAncestryActivity : BaseActivity() {
                     hairTextView.text = it.hair.first().name
                     eyesTextView.text = it.eyes.first().name
                     setHeightRange(it, selectedSex)
+                    updateAbilitiesAndSkills(it)
                 }
             }
         }
@@ -155,15 +165,10 @@ class NewCardAncestryActivity : BaseActivity() {
 
         val nextButton = findViewById<Button>(R.id.nextButton)
         nextButton.setOnClickListener {
-            // Pobieranie wartości z pola tekstowego imienia
             val name = findViewById<EditText>(R.id.inputName).text.toString()
-
-            // Walidacja imienia
             if (name.isBlank()) {
-                // Jeśli imię jest puste, wyświetlamy Toast z komunikatem o błędzie
                 Toast.makeText(this, "Imię nie może być puste!", Toast.LENGTH_SHORT).show()
             } else {
-                // Jeśli imię nie jest puste, zapisujemy postać do Firestore
                 saveCharacterToFirestore()
             }
         }
@@ -320,7 +325,9 @@ class NewCardAncestryActivity : BaseActivity() {
             raceTextView.text = savedRaceName
             setAgeRange(it)
             setWeightRange(it)
-            setHeightRange(it, savedSex ?: MALE) // Użyj domyślnej płci, jeśli nie zapisano
+            setHeightRange(it, savedSex ?: MALE)
+            updateAbilitiesAndSkills(it)
+
         }
 
         // Przywróć płeć
@@ -345,6 +352,39 @@ class NewCardAncestryActivity : BaseActivity() {
         heightTextView.text = "Wzrost: ${calculateMinHeight(selectedRace, selectedSex) + savedHeightProgress}"
         weightSeekBar.progress = savedWeightProgress
         weightTextView.text = "Waga: ${selectedRace.minWeight + savedWeightProgress}"
+    }
+
+
+    private fun updateAbilitiesAndSkills(race: Race) {
+        val fullAbilitiesText = buildString {
+            append("Umiejętności rasowe: ")
+            if (race.abilities.isNotEmpty()) {
+                append(race.abilities.joinToString(", ") { it.name })
+            }
+
+            if (race.optionalAbility.isNotEmpty()) {
+                if (isNotEmpty()) append(", ") // Dodaje przecinek tylko, jeśli wcześniej coś było
+                append(race.optionalAbility.joinToString(", ") { group ->
+                    AbilityGroupSimplifier.simplify(group) ?: group.joinToString(" lub ") { it.name }
+                })
+            }
+        }
+        abilitiesTextView.text = fullAbilitiesText.ifBlank { "Brak" }
+
+
+        val fullSkillsText = buildString {
+            append("Zdolności rasowe: ")
+            if (race.skills.isNotEmpty()) {
+                append(race.skills.joinToString(", ") { it.name })
+            }
+
+            if (race.optionalSkills.isNotEmpty()) {
+                append(race.optionalSkills.joinToString(", ") { group ->
+                    SkillsGroupSimplifier.simplify(group) ?: group.joinToString(" lub ") { it.name }
+                })
+            }
+        }
+        skillsTextView.text = fullSkillsText.ifBlank { "Brak" }
     }
 
     // Zapisanie postaci do Firestore

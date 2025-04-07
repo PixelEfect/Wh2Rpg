@@ -25,12 +25,18 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.util.concurrent.ThreadLocalRandom
 
 class NewCardAttributesActivity : BaseActivity() {
 
     private lateinit var db: FirebaseFirestore
     private lateinit var userId: String
     private var characterDocId: String? = null
+    private var selectedGrace: String? = null
+    private lateinit var race: Race
+    private val randomStats = mutableMapOf<String, Int>()
+    private val graceStats = mutableMapOf<String, Int>()
+    private val manualStats = mutableMapOf<String, String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,13 +47,22 @@ class NewCardAttributesActivity : BaseActivity() {
 
         // Pobierz ID dokumentu postaci
         characterDocId = intent.getStringExtra("CHARACTER_DOC_ID")
-        val race = intent.getStringExtra("CHARACTER_RACE")
 
-        if (characterDocId == null) {
+        characterDocId ?: run {
             Toast.makeText(this, "Błąd: Brak ID postaci", Toast.LENGTH_SHORT).show()
             finish()
+            return
         }
         setupAutoCalculation()
+        setupManualInputTracking()
+
+        getRaceFromIntent()?.let { foundRace ->
+            race = foundRace
+            updateAttributesWithGrace(race)
+        } ?: run {
+            // Obsłuż brak rasy (jeśli nie znaleziono)
+            Toast.makeText(this, "Błąd: Brak informacji o rasie", Toast.LENGTH_SHORT).show()
+        }
 
         // Nasłuchiwanie kliknięć na głównym kontenerze aktywności
         val rootLayout = findViewById<View>(R.id.rootLayout) // Zmienna 'rootLayout' to główny layout aktywności
@@ -65,30 +80,33 @@ class NewCardAttributesActivity : BaseActivity() {
 
         val laskaTextView = findViewById<TextView>(R.id.LaskaTextView)
         laskaTextView.setOnClickListener {
-            val items = listOf("Nie kożystam z łaski", "Walka Wręcz", "Umiejętności Strzeleckie", "Krzepa", "Odporność", "Zręczność", "Inteligencja", "Siła Woli", "Ogłada") // Możesz podać tutaj własną listę opcji
+            val items = listOf("Nie korzystam z łaski", "Walka Wręcz", "Umiejętności Strzeleckie", "Krzepa", "Odporność", "Zręczność", "Inteligencja", "Siła Woli", "Ogłada")
             showPopupWindow(it, items) { selectedItem ->
-                // Po wybraniu elementu, ustaw tekst w LaskaTextView
+                selectedGrace = selectedItem
                 laskaTextView.text = selectedItem
+                updateAttributesWithGrace(race) // <- teraz masz dostęp!
             }
         }
 
         val rollButton = findViewById<Button>(R.id.rollButton)
         rollButton.setOnClickListener {
-            val raceName = intent.getStringExtra("CHARACTER_RACE")
-            if (raceName != null) {
-                val race = Races.getByName(raceName)
-                race?.let {
-                    fillAttributesFromRace(it)
-                }
-            } else {
+            getRaceFromIntent()?.let {
+                fillAttributesFromRace(it)
+            } ?: run {
                 Toast.makeText(this, "Błąd: Brak informacji o rasie", Toast.LENGTH_SHORT).show()
             }
         }
 
-
         val nextButton = findViewById<Button>(R.id.nextButton)
         nextButton.setOnClickListener {
             saveAttributesToFirestore() // Wywołanie zapisu po kliknięciu
+        }
+
+        val exitButton = findViewById<Button>(R.id.exitButton)
+        exitButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
@@ -97,81 +115,178 @@ class NewCardAttributesActivity : BaseActivity() {
         SystemUIUtils.hideSystemUI(this)
     }
 
+    private fun getRaceFromIntent(): Race? {
+        val raceName = intent.getStringExtra("CHARACTER_RACE")
+        return raceName?.let { Races.getByName(it) }
+    }
+
+    private fun updateAttributesWithGrace(race: Race) {
+        val graceBonus = 11
+
+        // Resetujemy graceStats
+        graceStats.clear()
+
+        // Aktualizujemy graceStats tylko dla wybranej Łaski
+        when (selectedGrace) {
+            "Walka Wręcz" -> graceStats["WW"] = race.ww + graceBonus
+            "Umiejętności Strzeleckie" -> graceStats["US"] = race.us + graceBonus
+            "Krzepa" -> graceStats["K"] = race.k + graceBonus
+            "Odporność" -> graceStats["Odp"] = race.odp + graceBonus
+            "Zręczność" -> graceStats["Zr"] = race.zr + graceBonus
+            "Inteligencja" -> graceStats["Int"] = race.int + graceBonus
+            "Siła Woli" -> graceStats["SW"] = race.sw + graceBonus
+            "Ogłada" -> graceStats["Ogd"] = race.ogd + graceBonus
+        }
+
+        updateDisplayedStats()
+    }
+
     private fun fillAttributesFromRace(race: Race) {
         val random = java.util.Random()
 
-        findViewById<EditText>(R.id.inputWW).setText((race.ww + random.nextInt(10) + random.nextInt(10) + 2).toString())
-        findViewById<EditText>(R.id.inputUS).setText((race.us + random.nextInt(10) + random.nextInt(10) + 2).toString())
-        findViewById<EditText>(R.id.inputK).setText((race.k + random.nextInt(10) + random.nextInt(10) + 2).toString())
-        findViewById<EditText>(R.id.inputOdp).setText((race.odp + random.nextInt(10) + random.nextInt(10) + 2).toString())
-        findViewById<EditText>(R.id.inputZr).setText((race.zr + random.nextInt(10) + random.nextInt(10) + 2).toString())
-        findViewById<EditText>(R.id.inputInt).setText((race.int + random.nextInt(10) + random.nextInt(10) + 2).toString())
-        findViewById<EditText>(R.id.inputSW).setText((race.sw + random.nextInt(10) + random.nextInt(10) + 2).toString())
-        findViewById<EditText>(R.id.inputOgd).setText((race.ogd + random.nextInt(10) + random.nextInt(10) + 2).toString())
+        fun rollStat(base: Int): Int {
+            return base + ThreadLocalRandom.current().nextInt(1, 11) + ThreadLocalRandom.current().nextInt(1, 11)
+        }
+
+        randomStats["WW"] = rollStat(race.ww)
+        randomStats["US"] = rollStat(race.us)
+        randomStats["K"] = rollStat(race.k)
+        randomStats["Odp"] = rollStat(race.odp)
+        randomStats["Zr"] = rollStat(race.zr)
+        randomStats["Int"] = rollStat(race.int)
+        randomStats["SW"] = rollStat(race.sw)
+        randomStats["Ogd"] = rollStat(race.ogd)
+
+        // Czyścimy ręczne wpisy po ponownym losowaniu
+        manualStats.clear()
+
+        // Pozostałe wartości niezależne od łaski
         findViewById<EditText>(R.id.inputA).setText(race.a.toString())
-        findViewById<EditText>(R.id.inputŻyw).setText(rollZyw(race.zyw).toString())
+        findViewById<EditText>(R.id.inputZyw).setText(rollZyw(race.zyw).toString())
         findViewById<EditText>(R.id.inputSz).setText(race.sz.toString())
         findViewById<EditText>(R.id.inputMag).setText(race.mag.toString())
-
-        // PO i PP mogą być na start ustawione na 0 (chyba że masz inne zasady)
         findViewById<EditText>(R.id.inputPO).setText("0")
         findViewById<EditText>(R.id.inputPP).setText(rollPP(race.ppOptions).toString())
+
+        updateDisplayedStats()
+    }
+
+    private fun updateDisplayedStats() {
+        listOf("WW", "US", "K", "Odp", "Zr", "Int", "SW", "Ogd").forEach { updateStatField(it) }
+        updateNonGraceStatField(R.id.inputA, race.a.toString())
+        updateNonGraceStatField(R.id.inputZyw, findViewById<EditText>(R.id.inputZyw).text.toString()) // Zachowaj, jeśli było losowane/ręcznie wpisane
+        updateNonGraceStatField(R.id.inputSz, race.sz.toString())
+        updateNonGraceStatField(R.id.inputMag, race.mag.toString())
+        updateNonGraceStatField(R.id.inputPO, findViewById<EditText>(R.id.inputPO).text.toString()) // Zachowaj
+        updateNonGraceStatField(R.id.inputPP, findViewById<EditText>(R.id.inputPP).text.toString()) // Zachowaj
+    }
+
+    private fun updateStatField(statKey: String) {
+        val editText = findViewById<EditText>(resources.getIdentifier("input$statKey", "id", packageName))
+        val manualValueStr = manualStats[statKey]
+        var displayedValue: Int
+
+        if (!manualValueStr.isNullOrEmpty()) {
+            displayedValue = manualValueStr.toIntOrNull() ?: 0
+        } else {
+            displayedValue = randomStats[statKey] ?: (race.getStatByName(statKey) ?: 0) // Użyj bazowej statystyki rasy, jeśli nie ma losowej
+        }
+
+        // Dodaj premię z Łaski, jeśli jest wybrana dla tej statystyki
+        if (selectedGrace != "Nie korzystam z łaski") {
+            val graceBonus = 11
+            val baseValueWithBonus = (race.getStatByName(statKey) ?: 0) + graceBonus
+            when (statKey) {
+                "WW" -> if (selectedGrace == "Walka Wręcz") displayedValue = maxOf(displayedValue, baseValueWithBonus)
+                "US" -> if (selectedGrace == "Umiejętności Strzeleckie") displayedValue = maxOf(displayedValue, baseValueWithBonus)
+                "K" -> if (selectedGrace == "Krzepa") displayedValue = maxOf(displayedValue, baseValueWithBonus)
+                "Odp" -> if (selectedGrace == "Odporność") displayedValue = maxOf(displayedValue, baseValueWithBonus)
+                "Zr" -> if (selectedGrace == "Zręczność") displayedValue = maxOf(displayedValue, baseValueWithBonus)
+                "Int" -> if (selectedGrace == "Inteligencja") displayedValue = maxOf(displayedValue, baseValueWithBonus)
+                "SW" -> if (selectedGrace == "Siła Woli") displayedValue = maxOf(displayedValue, baseValueWithBonus)
+                "Ogd" -> if (selectedGrace == "Ogłada") displayedValue = maxOf(displayedValue, baseValueWithBonus)
+            }
+        }
+
+        editText.setText(displayedValue.toString())
+    }
+
+    private fun Race.getStatByName(name: String): Int? {
+        return when (name) {
+            "WW" -> ww
+            "US" -> us
+            "K" -> k
+            "Odp" -> odp
+            "Zr" -> zr
+            "Int" -> int
+            "SW" -> sw
+            "Ogd" -> ogd
+            else -> null
+        }
+    }
+
+    private fun updateNonGraceStatField(editTextId: Int, defaultValue: String) {
+        val editText = findViewById<EditText>(editTextId)
+        if (editText.text.isNullOrEmpty()) {
+            editText.setText(defaultValue)
+        }
     }
 
     private fun saveAttributesToFirestore() {
-        val k = findViewById<EditText>(R.id.inputK).text.toString().toIntOrNull() ?: 0
-        val odp = findViewById<EditText>(R.id.inputOdp).text.toString().toIntOrNull() ?: 0
-        val laskaOption = findViewById<TextView>(R.id.LaskaTextView).text.toString()
+        val editTexts = listOf(
+            R.id.inputWW, R.id.inputUS, R.id.inputK, R.id.inputOdp,
+            R.id.inputZr, R.id.inputInt, R.id.inputSW, R.id.inputOgd,
+            R.id.inputA, R.id.inputZyw, R.id.inputSz, R.id.inputMag,
+            R.id.inputPO, R.id.inputPP
+        )
 
-// Pobranie wartości z rasy
-        val race = intent.getStringExtra("CHARACTER_RACE")?.let { Races.getByName(it) }
-        val baseWW = race?.ww ?: 0
-        val baseUS = race?.us ?: 0
-        val baseK = race?.k ?: 0
-        val baseOdp = race?.odp ?: 0
-        val baseZr = race?.zr ?: 0
-        val baseInt = race?.int ?: 0
-        val baseSW = race?.sw ?: 0
-        val baseOgd = race?.ogd ?: 0
-
-        var wwToSave = findViewById<EditText>(R.id.inputWW).text.toString().toIntOrNull() ?: 0
-        var usToSave = findViewById<EditText>(R.id.inputUS).text.toString().toIntOrNull() ?: 0
-        var kToSave = findViewById<EditText>(R.id.inputK).text.toString().toIntOrNull() ?: 0
-        var odpToSave = findViewById<EditText>(R.id.inputOdp).text.toString().toIntOrNull() ?: 0
-        var zrToSave = findViewById<EditText>(R.id.inputZr).text.toString().toIntOrNull() ?: 0
-        var intToSave = findViewById<EditText>(R.id.inputInt).text.toString().toIntOrNull() ?: 0
-        var swToSave = findViewById<EditText>(R.id.inputSW).text.toString().toIntOrNull() ?: 0
-        var ogdToSave = findViewById<EditText>(R.id.inputOgd).text.toString().toIntOrNull() ?: 0
-
-        // Dla każdej opcji sprawdzamy, czy wartość wprowadzona przez użytkownika jest mniejsza niż ta z rasy + 11
-        if (laskaOption == "Walka Wręcz" && wwToSave < (baseWW + 11)) {
-            wwToSave = baseWW + 11
-        }
-        if (laskaOption == "Umiejętności Strzeleckie" && usToSave < (baseUS + 11)) {
-            usToSave = baseUS + 11
-        }
-        if (laskaOption == "Krzepa" && kToSave < (baseK + 11)) {
-            kToSave = baseK + 11
-        }
-        if (laskaOption == "Odporność" && odpToSave < (baseOdp + 11)) {
-            odpToSave = baseOdp + 11
-        }
-        if (laskaOption == "Zręczność" && zrToSave < (baseZr + 11)) {
-            zrToSave = baseZr + 11
-        }
-        if (laskaOption == "Inteligencja" && intToSave < (baseInt + 11)) {
-            intToSave = baseInt + 11
-        }
-        if (laskaOption == "Siła Woli" && swToSave < (baseSW + 11)) {
-            swToSave = baseSW + 11
-        }
-        if (laskaOption == "Ogłada" && ogdToSave < (baseOgd + 11)) {
-            ogdToSave = baseOgd + 11
+        for (id in editTexts) {
+            val text = findViewById<EditText>(id).text.toString()
+            if (text.isBlank()) {
+                Toast.makeText(this, "Żadne z pól nie może być puste.", Toast.LENGTH_SHORT).show()
+                return
+            }
         }
 
+        val wwToSave = findViewById<EditText>(R.id.inputWW).text.toString().toIntOrNull() ?: 0
+        val usToSave = findViewById<EditText>(R.id.inputUS).text.toString().toIntOrNull() ?: 0
+        val kToSave = findViewById<EditText>(R.id.inputK).text.toString().toIntOrNull() ?: 0
+        val odpToSave = findViewById<EditText>(R.id.inputOdp).text.toString().toIntOrNull() ?: 0
+        val zrToSave = findViewById<EditText>(R.id.inputZr).text.toString().toIntOrNull() ?: 0
+        val intToSave = findViewById<EditText>(R.id.inputInt).text.toString().toIntOrNull() ?: 0
+        val swToSave = findViewById<EditText>(R.id.inputSW).text.toString().toIntOrNull() ?: 0
+        val ogdToSave = findViewById<EditText>(R.id.inputOgd).text.toString().toIntOrNull() ?: 0
+
+        val aToSave = findViewById<EditText>(R.id.inputA).text.toString().toIntOrNull() ?: 0
+        val zywToSave = findViewById<EditText>(R.id.inputZyw).text.toString().toIntOrNull() ?: 0
         val s = kToSave / 10 // Zaokrąglanie w dół dla liczb całkowitych
         val wt = odpToSave / 10// To samo dla Wt
+        val szToSave = findViewById<EditText>(R.id.inputSz).text.toString().toIntOrNull() ?: 0
+        val magToSave = findViewById<EditText>(R.id.inputMag).text.toString().toIntOrNull() ?: 0
+        val poToSave = findViewById<EditText>(R.id.inputPO).text.toString().toIntOrNull() ?: 0
+        val ppToSave = findViewById<EditText>(R.id.inputPP).text.toString().toIntOrNull() ?: 0
 
+        // Sprawdzanie, czy łaska została wybrana
+        if (selectedGrace.isNullOrEmpty()) {
+            Toast.makeText(this, "Musisz wybrać łaskę.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val firstEightStatsAndZyw = listOf(wwToSave, usToSave, kToSave, odpToSave, zrToSave, intToSave, swToSave, ogdToSave, zywToSave)
+        for (stat in firstEightStatsAndZyw) {
+            if (stat > 95) {
+                Toast.makeText(this, "Wartości podstawowych statystyk oraz Żyw nie mogą przekraczać 95.", Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
+
+        val remainingStats = listOf(aToSave, szToSave, magToSave, poToSave, ppToSave)
+        for (stat in remainingStats) {
+            if (stat > 10) {
+                Toast.makeText(this, "Wartości drugorzędnych statystyk nie mogą przekraczać 10.", Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
 
         // Pobranie wartości i konwersja do Int (lub 0, jeśli puste)
         val attributesData = hashMapOf(
@@ -183,14 +298,14 @@ class NewCardAttributesActivity : BaseActivity() {
             "Int" to intToSave,
             "SW" to swToSave,
             "Ogd" to ogdToSave,
-            "A" to (findViewById<EditText>(R.id.inputA).text.toString().toIntOrNull() ?: 0),
-            "Żyw" to (findViewById<EditText>(R.id.inputŻyw).text.toString().toIntOrNull() ?: 0),
+            "A" to aToSave,
+            "Zyw" to zywToSave,
             "S" to s,
             "Wt" to wt,
-            "Sz" to (findViewById<EditText>(R.id.inputSz).text.toString().toIntOrNull() ?: 0),
-            "Mag" to (findViewById<EditText>(R.id.inputMag).text.toString().toIntOrNull() ?: 0),
-            "PO" to (findViewById<EditText>(R.id.inputPO).text.toString().toIntOrNull() ?: 0),
-            "PP" to (findViewById<EditText>(R.id.inputPP).text.toString().toIntOrNull() ?: 0)
+            "Sz" to szToSave,
+            "Mag" to magToSave,
+            "PO" to poToSave,
+            "PP" to ppToSave
         )
 
         if (userId.isEmpty() || characterDocId.isNullOrEmpty()) {
@@ -245,32 +360,33 @@ class NewCardAttributesActivity : BaseActivity() {
         }
     }
 
-    fun setupAutoCalculation() {
-        val inputK = findViewById<EditText>(R.id.inputK)
-        val inputOdp = findViewById<EditText>(R.id.inputOdp)
-        val inputS = findViewById<EditText>(R.id.inputS)
-        val inputWt = findViewById<EditText>(R.id.inputWt)
-
-        val watcherK = object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                val k = inputK.text.toString().toIntOrNull() ?: 0
-                inputS.setText((k / 10).toString()) // Aktualizuje tylko S
-            }
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+    private fun setupAutoCalculation() {
+        fun addTextWatcherForStat(inputView: EditText, updateView: EditText, divideBy: Int) {
+            inputView.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                    val value = inputView.text.toString().toIntOrNull() ?: 0
+                    updateView.setText((value / divideBy).toString())
+                }
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            })
         }
 
-        val watcherOdp = object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                val odp = inputOdp.text.toString().toIntOrNull() ?: 0
-                inputWt.setText((odp / 10).toString()) // Aktualizuje tylko Wt
-            }
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-        }
+        addTextWatcherForStat(findViewById(R.id.inputK), findViewById(R.id.inputS), 10)
+        addTextWatcherForStat(findViewById(R.id.inputOdp), findViewById(R.id.inputWt), 10)
+    }
 
-        inputK.addTextChangedListener(watcherK)
-        inputOdp.addTextChangedListener(watcherOdp)
+    private fun setupManualInputTracking() {
+        listOf("WW", "US", "K", "Odp", "Zr", "Int", "SW", "Ogd").forEach { stat ->
+            val editTextId = resources.getIdentifier("input$stat", "id", packageName)
+            findViewById<EditText>(editTextId).addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    manualStats[stat] = s.toString()
+                }
+                override fun afterTextChanged(s: Editable?) {}
+            })
+        }
     }
 
     private fun showPopupWindow(view: View, items: List<String>, onItemSelected: (String) -> Unit) {

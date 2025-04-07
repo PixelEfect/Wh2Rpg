@@ -7,7 +7,7 @@
       </SelectionState>
       <SelectionState runConfigName="Wh2Rpg">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-04-06T14:28:58.369970100Z">
+        <DropdownSelection timestamp="2025-04-07T17:20:27.230090300Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="PhysicalDevice" identifier="serial=d780ca19" />

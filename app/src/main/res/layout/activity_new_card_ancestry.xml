@@ -257,6 +257,26 @@
                 android:layout_width="251dp"
                 />
         </LinearLayout>
+        <TextView
+            android:id="@+id/abilitiesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Umiejętności"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:maxLines="10"
+            android:ellipsize="end"
+            android:scrollHorizontally="false" />
+        <TextView
+            android:id="@+id/skillsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zdolności"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:maxLines="10"
+            android:ellipsize="end"
+            android:scrollHorizontally="false" />
     </LinearLayout>
 
     <View
@@ -270,13 +290,12 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:paddingTop="8dp"
-        android:paddingBottom="16dp">
+        android:paddingBottom="10dp">
 
         <Space
-            android:layout_width="40dp"
+            android:layout_width="10dp"
             android:layout_height="match_parent" />
 
-        <!-- Przycisk z grafiką -->
         <Button
             android:id="@+id/exitButton"
             android:layout_width="wrap_content"
@@ -288,7 +307,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <!-- Drugi przycisk z grafiką -->
         <Button
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
@@ -296,7 +314,7 @@
             android:background="@drawable/next_001" />
 
         <Space
-            android:layout_width="40dp"
+            android:layout_width="10dp"
             android:layout_height="match_parent" />
     </LinearLayout>
 
