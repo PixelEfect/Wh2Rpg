@@ -225,3 +225,27 @@ object Acrobat {
         WeaponSkills.bronRzucana,
     )
 }
+
+object SkillsGroupSimplifier {
+    private val knownGroups = mapOf(
+        Random.Halfling.map { it.name }.toSet() to "Losowa zdolność",
+        Random.All.map { it.name }.toSet() to "Losowa zdolność",
+        Acrobat.All.map { it.name }.toSet() to "Do wyboru z listy akrobaty",
+        MasterRuneForging.All.map { it.name }.toSet() to "Mistrzowska runa(dowolna)",
+        RuneForging.All.map { it.name }.toSet() to "Zwykła runa(dowolna)",
+        MinorRuneForging.All.map { it.name }.toSet() to "Łatwa runa (dowolna)",
+        Blessing.All.map { it.name }.toSet() to "Błogosławieństwo (dowolne)",
+        Virtue.All.map { it.name }.toSet() to "Cnota (dowolna)",
+        SpecialWeapon.Common.map { it.name }.toSet() to "Broń specjalna (dowolna)",
+        SpecialWeapon.All.map { it.name }.toSet() to "Broń specjalna (dowolna + skaveńska)",
+        SimplePriestlyMagic.All.map { it.name }.toSet() to "Magia prosta kapłańska (dowolna)",
+        PriestlyMagic.All.map { it.name }.toSet() to "Magia kapłańska (dowolna)",
+        TraditionsOfMagic.All.map { it.name }.toSet() to "Magia tajemna (dowolna)",
+        UniversalMagic.All.map { it.name }.toSet() to "Magia powszechna (dowolna)"
+    )
+
+    fun simplify(skills: List<Skill>): String? {
+        val skillNames = skills.map { it.name }.toSet()
+        return knownGroups[skillNames]
+    }
+}

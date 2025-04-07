@@ -51,6 +51,13 @@ class NewCardBackstoryActivity : BaseActivity() {
         nextButton.setOnClickListener {
             saveBackstoryToFirestore() // Wywołanie zapisu po kliknięciu
         }
+
+        val exitButton = findViewById<Button>(R.id.exitButton)
+        exitButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun saveBackstoryToFirestore() {
