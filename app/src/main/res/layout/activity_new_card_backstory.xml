@@ -36,7 +36,38 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="15dp" />
+        android:layout_height="5dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <LinearLayout style="@style/InputBlockStyle">
+                <TextView
+                    android:id="@+id/familyInformationView"
+                    style="@style/LabelStyle"
+                    android:text="@string/label_family" />
+                <EditText
+                    android:id="@+id/inputFamily"
+                    style="@style/MediumInputStyle" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,7 +96,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="15dp" />
+        android:layout_height="5dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,8 +120,12 @@
                     style="@style/LargeInputStyle" />
             </LinearLayout>
 
+
         </LinearLayout>
+
+
     </LinearLayout>
+
 
     <View
         android:layout_width="match_parent"

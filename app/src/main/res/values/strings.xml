@@ -21,6 +21,7 @@
     <string name="label_pp">PP:</string>
 
     <string name="label_stateOfHealth">Stan zdrowia</string>
+    <string name="label_family">Rodzina</string>
     <string name="label_history">Hisotria</string>
     <string name="label_additionalInformation">Dodatkowe informacje</string>
 </resources>

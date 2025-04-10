@@ -1,6 +1,14 @@
 package com.dd.rpgcardapp.data
 
-data class Skill (val name: String, val description: String)
+data class Skill (val name: String, val description: String){
+    // Tworzymy metodę do konwersji obiektu na mapę
+    fun toMap(): Map<String, String> {
+        return mapOf(
+            "name" to this.name,
+            "description" to this.description
+        )
+    }
+}
 
 object CommonSkills {
     val artylerzysta = Skill("Artylerzysta", "Ładowanie broni palnej krótsze o 1 akcję")
@@ -31,7 +39,6 @@ object CommonSkills {
     val etykieta = Skill("Etykieta", "+10 do testów związanych z arystokracją")
     val geniuszArytmetyczny = Skill("Geniusz arytmetyczny", "+10 do hazardu i nawigacji; +20 do szacowania")
     val grotolaz = Skill("Grotołaz", "+10 do skradania i ukrywania pod ziemią i w jaskiniach")
-
     val grozny = Skill("Groźny", "+10 do zastraszania i torturowania")
     val gusla = Skill("Gusła", "Dodatkowa kość przy określaniu poziomu mocy; służy do sprawdzania Przekleństwa Tzeentcha")
     val intrygant = Skill("Intrygant", "+10 do przekonywania i testów SW podczas intryg")
@@ -48,7 +55,6 @@ object CommonSkills {
     val luski3 = Skill("Łuski(3)", "Naturalny pancerz 3PZ")
     val luski4 = Skill("Łuski(4)", "Naturalny pancerz 4PZ")
     val luski5 = Skill("Łuski(5)", "Naturalny pancerz 5PZ")
-
     val medytacja = Skill("Medytacja", "Poziom mocy rytuału + Mag BG")
     val mieczRodowy = Skill("Miecz rodowy", "Miecz rodowy daje +5WW, +1obr, +10 na strach i grozę")
     val mierzonyCios = Skill("Mierzony cios", "+20 do WW podczas akcji 'celowanie'")
@@ -66,15 +72,13 @@ object CommonSkills {
     val odpornoscNaMagie = Skill("Odporność na magię", "+10 do SW przeciw magii")
     val odpornoscNaTrucizny = Skill("Odporność na Trucizny", "+10 do ODP przeciw truciznom")
     val odpornoscPsychiczna = Skill("Odporność psychiczna", "choroba umysłow dopiero od 14 PO")
-
     val odwaga = Skill("Odwaga", "+10 do SW przeciwko zastraszaniu, Strachowi i Grozie")
     val ogluszenie = Skill("Ogluszenie", "Przeciwstawny test K i test Odp")
-
+    val oporny = Skill("Oporny", "Przy rozwoju test tresury. Nieudany - utrata PD i brak rozwinięcia")
     val ozywieniec = Skill("Ożywieniec", "Jesteś nieumarłym stworem!")
     val pancerzWiary = Skill("Pancerz wiary", "+3 do rzucania zaklęć w zbroi")
     val poliglota = Skill("Poliglota", "+10 do czytania i pisania oraz znajomości języka")
     val polityk = Skill("Polityk", "+10 do gadaniny, przekonywania, targowania")
-
     val poteznyCios = Skill("Potężny cios", "-30 do parowania ciosu dla przeciwnika")
     val przemawianie = Skill("Przemawianie", "Oddziaływanie na grupę osób 10 razy większą niż normalnie")
     val przerazajacy = Skill("Przerażający", "Postać wzbudza Grozę!")
@@ -82,54 +86,41 @@ object CommonSkills {
     val silnyCios = Skill("Silny cios", "Obrażenia w walce wręcz +1")
     val skavenskiKonstrukt = Skill("Skaveński Konstrukt", "Mech sterowany przez skavena telepatycznie")
     val straszny = Skill("Straszny", "Postać wzbudza Strach!")
-
     val strzalMierzony = Skill("Strzał mierzony", "+20 do US podczas akcji 'celowanie'")
     val strzalPrecyzyjny = Skill("Strzał precyzyjny", "Obrażenia od broni strzeleckiej +1")
     val strzalPrzebijajacy = Skill("Strzał przebijający", "Pociski ignorują 1 PZ celu")
-
     val szalBojowy = Skill("Szał bojowy", "+10 SW i K; -10 WW i US; zawsze szarża lub szaleńczy")
     val szczescie = Skill("Szczęście", "dodatkowy punkt szczęścia dziennie")
     val szostyZmysl = Skill("Szósty zmysł", "Wyczucie zasadzek - test SW")
     val sztukaCichejSmierci = Skill("Sztuka cichej śmierci", "Walka wręcz, S -3, PZ nie liczą się podwójnie")
-
     val szybkieWyciagniecie = Skill("Szybkie wyciągnięcie", "Dobycie broni jako akcja natychmiastowa")
     val talentArtystyczny = Skill("Talent artystyczny", "+10 do rzemiosła/sztuki; +10 do wyceny dzieł sztuki")
     val tobarskiPilot = Skill("Tobarski pilot", "+10/20 do testów związanych ze Skałami Głupców")
-
     val ulicznik = Skill("Ulicznik", "+10 do skradania i ukrywania się w mieście")
     val uodpornionyNaChaos = Skill("Uodporniony na Chaos", "mutant otrzymuje +10 przeciwko kolejnym przemianom")
     val urodzonyWspinacz = Skill("Urodzony wspinacz", "W ramach akcji po udanym teście wspinaczki przebyto (Sz) metrów")
-
     val walkaOgonem = Skill("Walka ogonem", "Władanie bronią za pomocą ogona")
     val warzenieZarazy = Skill("Warzenie zarazy", "Rzemiosło piwowarstwo do tworzenia piwa z chorobą ze spaczenia")
     val wedrowiec = Skill("Wędrowiec", "+10 do skradania i ukrywania się poza miastem")
-
     val widzenieWCiemnosci = Skill("Widzenie w ciemności", "Widzenie w ciemności do 30 metrów")
     val woltyzerka = Skill("Woltyżerka", "+10 do jeździectwa; testy w ekstremalnych sytuacjach")
     val wybraniecChaosu = Skill("Wybraniec Chaosu", "2 testy na rodzaj mutacji + wybór")
     val wyczucieKierunku = Skill("Wyczucie kierunku", "+10 do nawigacji; naturalny kompas")
     val wykrywaniePulapek = Skill("Wykrywanie pułapek", "+10 do spostrzegawczości i otwierania zamków")
     val wyostrzoneZmysly = Skill("Wyostrzone zmysły", "+20 do spostrzegawczości")
-
     val zapasy = Skill("Zapasy", "+10 do spostrzegawczości i otwierania zamków")
     val zapieklaNienawisc = Skill("Zapiekła nienawiść", "+5 do WW przeciw Zielonoskórym")
     val zaspiew = Skill("Zaśpiew", "Test kuglarstwa - śpiewu przy asystowaniu daja rzucającemu rytuał 1 pkt mocy")
     val zawodnyKonstrukt = Skill("Zawodny konstrukt", "Konstrukt ma wady za każdym poleceniem k10 - jeśli 1 lub 2 to robi coś źle")
-
     val zelaznaWola = Skill("Żelazna wola", "Odporność na strach i grozę")
     val zmyslMagii = Skill("Zmysł magii", "+10 do testów splatania magii")
     val znajomoscRegionu = Skill("Znajomość regionu", "+10 do testów wiedzy na temat wybranego regionu")
     val zrodzonyWMorzu = Skill("Zrodzony w morzu", "Można pić wode morską, +5pływanie,żeglarstwo.Utrata zdolności po zejściu na ląd")
     val zylkaHandlowa = Skill("Żyłka handlowa", "+10 do testów targowania i wyceny")
-
-}
-
-object InnateSkills {
-    val oporny = Skill("Oporny", "Przy rozwoju test tresury. Nieudany - utrata PD i brak rozwinięcia")
 }
 
 object StatsSkills {
-    val bardzoSilny = Skill("Bardzo silny", "Krzeppa +5 na stałe")
+    val bardzoSilny = Skill("Bardzo silny", "Krzepa +5 na stałe")
     val bardzoSzybki = Skill("Bardzo szybki", "Szybkość +1 na stałe")
     val blyskotliwosc = Skill("Błyskotliwość", "Inteligencja +5 na stałe")
     val charyzmatyczny = Skill("Charyzmatyczny", "Ogłada +5 na stałe")
@@ -138,9 +129,8 @@ object StatsSkills {
     val strzelecWyborowy = Skill("Strzelec wyborowy", "US +5 na stałe")
     val szybkiRefleks = Skill("Szybki refleks", "+5 do Zr na stałe")
     val twardziel = Skill("Twardziel", "+1 Żywność na stałe")
-    val urodzonyWojownik = Skill("Urodzony wojownik", "US +5 na stałe")
+    val urodzonyWojownik = Skill("Urodzony wojownik", "WW +5 na stałe")
 }
-
 object WeaponSkills {
     val bronDwureczna = Skill("Broń specjalna: Dwureczna", "Posługiwanie się bronią dwuręczną bez kar")
     val bronKawaleryjska = Skill("Broń specjalna: Kawaleryjska", "Posługiwanie się bronią kawaleryjską bez kar")
@@ -156,7 +146,6 @@ object WeaponSkills {
     val bronSzermiercza = Skill("Broń specjalna: Szermiercza", "Posługiwanie się bronią szermierczą bez kar")
     val bronUnieruchamiajaca = Skill("Broń specjalna: Unieruchamiająca", "Posługiwanie się bronią unieruchamiającą bez kar")
 }
-
 object MagicSkills {
     val magiaProstaChaos = Skill("Magia prosta: Chaos", "Dostęp do czarów magii prostej - Chaos")
     val magiaProstaGusla = Skill("Magia prosta: Gusła", "Dostęp do czarów magii prostej - gusła")
@@ -175,7 +164,6 @@ object MagicSkills {
     val magiaProstaUlrykan = Skill("Magia prosta: Ulrykan", "Dostęp do błogosławieństw - Ulryk")
     val magiaProstaVerenian = Skill("Magia prosta: Verenian", "Dostęp do błogosławieństw - Verena")
     val magiaProstaZielarska = Skill("Magia prosta: Zielarska", "Dostęp do magii prostej - zielarskiej (mieszanka z krolestwa lodu i podrecznika glownego")
-
     val magiaCzarnoksieskaChaos = Skill("Magia czarnoksięska: Chaos", "Dostęp do czarów magii chaosu")
     val magiaCzarnoksieskaNagasha = Skill("Magia czarnoksięska: Nagasha", "Dostęp do czarów tradycji Nagasha")
     val magiaCzarnoksieskaNekromacja = Skill("Magia czarnoksięska: Nekromancja", "Dostęp do czarów magii nekromanckiej")
@@ -185,7 +173,6 @@ object MagicSkills {
     val magiaCzarnoksieskaSpaczenia = Skill("Magia czarnoksięska: Tradycja spaczenia", "Dostęp do czarów magii Skaveńskiej - tradycja spaczenia")
     val magiaCzarnoksieskaTzeentch = Skill("Magia czarnoksięska: Tzeentch", "Dostęp do czarów magii Tzeentcha")
     val magiaCzarnoksieskaZarazy = Skill("Magia czarnoksięska: Tradycja zarazy", "Dostęp do czarów magii Skaveńskiej - tradycja zarazy")
-
     val magiaKaplanskaDuchow = Skill("Magia kapłańska: Duchów", "Dostep do czarów magii szamańskiej")
     val magiaKaplanskaDazha = Skill("Magia kapłańska: Dazha", "Dostep do czarów kapłańskich Dazha")
     val magiaKaplanskaMannan = Skill("Magia kapłańska: Mannan", "Dostep do czarów kapłańskich Mannana")
@@ -202,7 +189,6 @@ object MagicSkills {
     val magiaKaplanskaVerena = Skill("Magia kapłańska: Verena", "Dostep do czarów kapłańskich Vereny")
     val magiaKaplanskaGunndreda = Skill("Magia kapłańska: Gunndred", "Dostep do czarów kapłańskich Gunndreda")
     val magiaKaplanskaHandricha = Skill("Magia kapłańska: Handrich", "Dostep do czarów kapłańskich Handricha")
-
     val magiaPowszechnaAnatema = Skill("Czar magii powszechnej: Anatema", "uzupelnic")
     val magiaPowszechnaAzyl = Skill("Czar magii powszechnej: Azyl", "uzupelnic")
     val magiaPowszechnaBarieraCzystosci = Skill("Czar magii powszechnej: Bariera czystości", "uzupelnic")
@@ -231,7 +217,6 @@ object MagicSkills {
     val magiaPowszechnaWspinacz = Skill("Czar magii powszechnej: Wspinacz", "uzupelnic")
     val magiaPowszechnaWstrzas = Skill("Czar magii powszechnej: Wstrząs", "uzupelnic")
     val magiaPowszechnaWytlumienie = Skill("Czar magii powszechnej: Wytłumienie", "uzupelnic")
-
     val magiaTajemnaTradycjaPlomienia = Skill("Aqshy - Tradycja Płomienia", "Dostęp do magii ognia, płomieni i gorąca")
     val magiaTajemnaTradycjaMetalu = Skill("Chamon - Tradycja Metalu", "Dostęp do magii metalu i transmutacji")
     val magiaTajemnaTradycjaZwierzat = Skill("Ghur - Tradycja Zwierząt", "Dostęp do magii dzikiej natury i kontroli zwierząt")
@@ -240,14 +225,11 @@ object MagicSkills {
     val magiaTajemnaTradycjaSmierci = Skill("Shyish - Tradycja Śmierci", "Dostęp do magii umierających i duchów")
     val magiaTajemnaTradycjaNiebios = Skill("Azyr - Tradycja Niebios", "Dostęp do magii wróżbiarskiej i kontroli pogody")
     val magiaTajemnaTradycjaCienia = Skill("Ulgu - Tradycja Cienia", "Dostęp do magii iluzji i manipulacji umysłem")
-
     val magiaCzarownicTradycjaWiedzm = Skill("Tradycja Wiedźm", "Dostęp do magii duchów")
     val magiaCzarownicTradycjaLodu = Skill("Tradycja Lodu", "Dostęp do magii lodu")
 }
-
 object KnightSkills {
     val cnotaRycerskosci = Skill("Cnota rycerskości", "Możliwość otrzymania błogosławieństwa po modlitwie")
-
     val cnotaDoskonalosci = Skill("Cnota doskonałości", "+1A jak przeciwnik ma przewagę liczebną")
     val cnotaDyscypliny = Skill("Cnota dyscypliny", "Ignorowanie modyfikatorów do WW u przeciwników wynikających z przewagi")
     val cnotaMestwa = Skill("Cnota męstwa", "Obrażenia powyżej 10 są traktowane jako trafienie krytyczne")
@@ -262,9 +244,7 @@ object KnightSkills {
     val cnotaWyszkolenia = Skill("Cnota wyszkolenia", "+1 obrażeń przeciwko wyzwanemu rycerzowi, który przyjął wyzwanie")
     val cnotaZrecznosci = Skill("Cnota zręczności", "W walce z silniejszym przeciwnikiem używa się jego Siły")
     val cnotaZuchwalosci = Skill("Cnota zuchwałości", "Szarża jako akcja pojedyńcza, +1 obrażeń celowi")
-
     val cnotaWyprawyRycerskiej = Skill("Cnota wyprawy rycerskiej", "-50WW w walce kopią, 1k10 Żyw za 1pkt szczęścia")
-
     val blogoslawienstwoDoskonalosci = Skill("Błogosławieństwo doskonałości", "+5WW, +5K")
     val blogoslawienstwoDyscypliny = Skill("Błogosławieństwo dyscypliny", "+1A do ataków wielokrotnych przeciwko dwóm przeciwnikom +")
     val blogoslawienstwoMestwa = Skill("Błogosławieństwo męstwa", "Ignorowanie pancerza o ile bez ignorowania zadanoby obrażenia")
@@ -300,7 +280,6 @@ object RuneSkills {
     val runaFurii = Skill("Runa furii", "+1A / 1 tura")
     val runaSzczescia = Skill("Runa szczęścia", "Dodatkowy pkt szczęścia dziennie / 1 dzień")
     val runaZdlawieniaMagii = Skill("Runa zdławienia magii", "brak trwałej / Rozprasza magię i uniemożliwia jej odnowienie przez 24h")
-
     val mistrzowskaRunaRzutu = Skill("Mistrzowska runa rzutu", "+1k10 inicjatywy / 1x")
     val mistrzowskaRunaSzybkosci = Skill("Mistrzowska runa szybkości", "+10WW / 1 tura")
     val mistrzowskaRunaZlosliwosci = Skill("Mistrzowska runa złośliwości", "+10SW przeciw magii / 1 tura")
@@ -315,4 +294,297 @@ object RuneSkills {
     val mistrzowskaRunaGromrilu = Skill("Mistrzowska runa gromrilu", "+1 obr od ognia / 1 tura")
     val mistrzowskaRunaSkalfa = Skill("Mis. runa Skalfa Czarnego Młota", "Odporność na ogień / 1 tura")
     val mistrzowskaRunaWladzyKrolewskiej = Skill("Mistrzowska runa władzy królewskiej", "Daje 4 pkt żywotności / 1 tura")
+}
+
+
+// Mapa przypisująca zdolnosci do odpowiednich grup
+val skillCategoryMap = mapOf(
+    "Common" to setOf(
+        CommonSkills.artylerzysta,
+        CommonSkills.bezksztaltny,
+        CommonSkills.bezrozumny,
+        CommonSkills.biegPoScianach,
+        CommonSkills.bijatyka,
+        CommonSkills.blyskawicznePrzadowanie,
+        CommonSkills.blyskawicznyJezdziec,
+        CommonSkills.blyskawicznyBlok,
+        CommonSkills.brawura,
+        CommonSkills.bronNaturalna,
+        CommonSkills.bystryWzrok,
+        CommonSkills.chirurgia,
+        CommonSkills.chodu,
+        CommonSkills.cialoksztaltowanie,
+        CommonSkills.czarnoksiestwo,
+        CommonSkills.czarostwo,
+        CommonSkills.czarnyGlod,
+        CommonSkills.czlowiekGuma,
+        CommonSkills.czulySluch,
+        CommonSkills.czulyWech,
+        CommonSkills.demonicznaAura,
+        CommonSkills.dodatkoweZaklecie,
+        CommonSkills.dotykMocy,
+        CommonSkills.dziecieGor,
+        CommonSkills.eteryczny,
+        CommonSkills.etykieta,
+        CommonSkills.geniuszArytmetyczny,
+        CommonSkills.grotolaz,
+        CommonSkills.grozny,
+        CommonSkills.gusla,
+        CommonSkills.intrygant,
+        CommonSkills.inzynieriaSpaczeniowa,
+        CommonSkills.kontrolowanaMutacja,
+        CommonSkills.krasnoludzkifach,
+        CommonSkills.krasomowstwo,
+        CommonSkills.krzepki,
+        CommonSkills.latanie,
+        CommonSkills.lewitacja,
+        CommonSkills.lotrzyk,
+        CommonSkills.luski1,
+        CommonSkills.luski2,
+        CommonSkills.luski3,
+        CommonSkills.luski4,
+        CommonSkills.luski5,
+        CommonSkills.medytacja,
+        CommonSkills.mieczRodowy,
+        CommonSkills.mierzonyCios,
+        CommonSkills.mistrzTresury,
+        CommonSkills.morderczyAtak,
+        CommonSkills.morderczyPocisk,
+        CommonSkills.nasladowca,
+        CommonSkills.niekompletny,
+        CommonSkills.niepokojacy,
+        CommonSkills.nieustraszony,
+        CommonSkills.obiezyswiat,
+        CommonSkills.oburecznosc,
+        CommonSkills.odpornoscNaChaos,
+        CommonSkills.odpornoscNaChoroby,
+        CommonSkills.odpornoscNaMagie,
+        CommonSkills.odpornoscNaTrucizny,
+        CommonSkills.odpornoscPsychiczna,
+        CommonSkills.odwaga,
+        CommonSkills.ogluszenie,
+        CommonSkills.oporny,
+        CommonSkills.ozywieniec,
+        CommonSkills.pancerzWiary,
+        CommonSkills.poliglota,
+        CommonSkills.polityk,
+        CommonSkills.poteznyCios,
+        CommonSkills.przemawianie,
+        CommonSkills.przerazajacy,
+        CommonSkills.rozbrajanie,
+        CommonSkills.silnyCios,
+        CommonSkills.skavenskiKonstrukt,
+        CommonSkills.straszny,
+        CommonSkills.strzalMierzony,
+        CommonSkills.strzalPrecyzyjny,
+        CommonSkills.strzalPrzebijajacy,
+        CommonSkills.szalBojowy,
+        CommonSkills.szczescie,
+        CommonSkills.szostyZmysl,
+        CommonSkills.sztukaCichejSmierci,
+        CommonSkills.szybkieWyciagniecie,
+        CommonSkills.talentArtystyczny,
+        CommonSkills.tobarskiPilot,
+        CommonSkills.ulicznik,
+        CommonSkills.uodpornionyNaChaos,
+        CommonSkills.urodzonyWspinacz,
+        CommonSkills.walkaOgonem,
+        CommonSkills.warzenieZarazy,
+        CommonSkills.wedrowiec,
+        CommonSkills.widzenieWCiemnosci,
+        CommonSkills.woltyzerka,
+        CommonSkills.wybraniecChaosu,
+        CommonSkills.wyczucieKierunku,
+        CommonSkills.wykrywaniePulapek,
+        CommonSkills.wyostrzoneZmysly,
+        CommonSkills.zapasy,
+        CommonSkills.zapieklaNienawisc,
+        CommonSkills.zaspiew,
+        CommonSkills.zawodnyKonstrukt,
+        CommonSkills.zelaznaWola,
+        CommonSkills.zmyslMagii,
+        CommonSkills.znajomoscRegionu,
+        CommonSkills.zrodzonyWMorzu,
+        CommonSkills.zylkaHandlowa,
+    ),
+    "Stats" to setOf(
+        StatsSkills.bardzoSilny,
+        StatsSkills.bardzoSzybki,
+        StatsSkills.blyskotliwosc,
+        StatsSkills.charyzmatyczny,
+        StatsSkills.niezwykleOdporny,
+        StatsSkills.opanowanie,
+        StatsSkills.strzelecWyborowy,
+        StatsSkills.szybkiRefleks,
+        StatsSkills.twardziel,
+        StatsSkills.urodzonyWojownik,
+    ),
+    "Weapon" to setOf(
+        WeaponSkills.bronDwureczna,
+        WeaponSkills.bronKawaleryjska,
+        WeaponSkills.korbacze,
+        WeaponSkills.kusze,
+        WeaponSkills.dlugieLuki,
+        WeaponSkills.bronMechaniczna,
+        WeaponSkills.bronPalna,
+        WeaponSkills.bronParujaca,
+        WeaponSkills.proce,
+        WeaponSkills.ostrzeJadowe,
+        WeaponSkills.bronRzucana,
+        WeaponSkills.bronSzermiercza,
+        WeaponSkills.bronUnieruchamiajaca,
+    ),
+    "Magic" to setOf(
+        MagicSkills.magiaProstaChaos,
+        MagicSkills.magiaProstaGusla,
+        MagicSkills.magiaProstaKaplanska,
+        MagicSkills.magiaProstaSpaczeniowa,
+        MagicSkills.magiaProstaLodu,
+        MagicSkills.magiaProstaWiedzm,
+        MagicSkills.magiaProstaTajemna,
+        MagicSkills.magiaProstaManannitow,
+        MagicSkills.magiaProstaMorrytow,
+        MagicSkills.magiaProstaMyrmidian,
+        MagicSkills.magiaProstaRanaldian,
+        MagicSkills.magiaProstaShallyan,
+        MagicSkills.magiaProstaSigmarytow,
+        MagicSkills.magiaProstaTaalitow,
+        MagicSkills.magiaProstaUlrykan,
+        MagicSkills.magiaProstaVerenian,
+        MagicSkills.magiaProstaZielarska,
+        MagicSkills.magiaCzarnoksieskaChaos,
+        MagicSkills.magiaCzarnoksieskaNagasha,
+        MagicSkills.magiaCzarnoksieskaNekromacja,
+        MagicSkills.magiaCzarnoksieskaNurgl,
+        MagicSkills.magiaCzarnoksieskaSkrytosci,
+        MagicSkills.magiaCzarnoksieskaSlaanesh,
+        MagicSkills.magiaCzarnoksieskaSpaczenia,
+        MagicSkills.magiaCzarnoksieskaTzeentch,
+        MagicSkills.magiaCzarnoksieskaZarazy,
+        MagicSkills.magiaKaplanskaDuchow,
+        MagicSkills.magiaKaplanskaDazha,
+        MagicSkills.magiaKaplanskaMannan,
+        MagicSkills.magiaKaplanskaMorr,
+        MagicSkills.magiaKaplanskaMyrmidia,
+        MagicSkills.magiaKaplanskaRanald,
+        MagicSkills.magiaKaplanskaSigmar,
+        MagicSkills.magiaKaplanskaShallya,
+        MagicSkills.magiaKaplanskaTaalRhyia,
+        MagicSkills.magiaKaplanskaKhaina,
+        MagicSkills.magiaKaplanskaUlryk,
+        MagicSkills.magiaKaplanskaTora,
+        MagicSkills.magiaKaplanskaUrsuna,
+        MagicSkills.magiaKaplanskaVerena,
+        MagicSkills.magiaKaplanskaGunndreda,
+        MagicSkills.magiaKaplanskaHandricha,
+        MagicSkills.magiaPowszechnaAnatema,
+        MagicSkills.magiaPowszechnaAzyl,
+        MagicSkills.magiaPowszechnaBarieraCzystosci,
+        MagicSkills.magiaPowszechnaBarieraDuchow,
+        MagicSkills.magiaPowszechnaDotykNaOdleglosc,
+        MagicSkills.magiaPowszechnaEgzorcyzm,
+        MagicSkills.magiaPowszechnaGlosKaznodziei,
+        MagicSkills.magiaPowszechnaKrwistyPlomien,
+        MagicSkills.magiaPowszechnaMagicznaBron,
+        MagicSkills.magiaPowszechnaMagiczneZamkniecie,
+        MagicSkills.magiaPowszechnaMagicznyAlarm,
+        MagicSkills.magiaPowszechnaMocnePostanowienie,
+        MagicSkills.magiaPowszechnaPalecBozy,
+        MagicSkills.magiaPowszechnaPancerzEteru,
+        MagicSkills.magiaPowszechnaPeta,
+        MagicSkills.magiaPowszechnaPieknaMaska,
+        MagicSkills.magiaPowszechnaPobranieMocy,
+        MagicSkills.magiaPowszechnaPodniebnyChod,
+        MagicSkills.magiaPowszechnaPowstrzymanieMutacji,
+        MagicSkills.magiaPowszechnaPrzeskok,
+        MagicSkills.magiaPowszechnaRozproszenieMagii,
+        MagicSkills.magiaPowszechnaSlubowanie,
+        MagicSkills.magiaPowszechnaUcienie,
+        MagicSkills.magiaPowszechnaWazila,
+        MagicSkills.magiaPowszechnaWiezn,
+        MagicSkills.magiaPowszechnaWspinacz,
+        MagicSkills.magiaPowszechnaWstrzas,
+        MagicSkills.magiaPowszechnaWytlumienie,
+        MagicSkills.magiaTajemnaTradycjaPlomienia,
+        MagicSkills.magiaTajemnaTradycjaMetalu,
+        MagicSkills.magiaTajemnaTradycjaZwierzat,
+        MagicSkills.magiaTajemnaTradycjaZycia,
+        MagicSkills.magiaTajemnaTradycjaSwiatla,
+        MagicSkills.magiaTajemnaTradycjaSmierci,
+        MagicSkills.magiaTajemnaTradycjaNiebios,
+        MagicSkills.magiaTajemnaTradycjaCienia,
+        MagicSkills.magiaCzarownicTradycjaWiedzm,
+        MagicSkills.magiaCzarownicTradycjaLodu,
+    ),
+    "Knight" to setOf(
+        KnightSkills.cnotaRycerskosci,
+        KnightSkills.cnotaDoskonalosci,
+        KnightSkills.cnotaDyscypliny,
+        KnightSkills.cnotaMestwa,
+        KnightSkills.cnotaOpanowania,
+        KnightSkills.cnotaPoboznosci,
+        KnightSkills.cnotaPokory,
+        KnightSkills.cnotaSlusznegoGniewu,
+        KnightSkills.cnotaSprawiedliwosci,
+        KnightSkills.cnotaSprawnosciBojowej,
+        KnightSkills.cnotaSzlachetnosci,
+        KnightSkills.cnotaWiernosci,
+        KnightSkills.cnotaWyszkolenia,
+        KnightSkills.cnotaZrecznosci,
+        KnightSkills.cnotaZuchwalosci,
+        KnightSkills.cnotaWyprawyRycerskiej,
+        KnightSkills.blogoslawienstwoDoskonalosci,
+        KnightSkills.blogoslawienstwoDyscypliny,
+        KnightSkills.blogoslawienstwoMestwa,
+        KnightSkills.blogoslawienstwoOpanowania,
+        KnightSkills.blogoslawienstwoPoboznosci,
+        KnightSkills.blogoslawienstwoPokory,
+        KnightSkills.blogoslawienstwoSlusznegoGniewu,
+        KnightSkills.blogoslawienstwoSprawiedliwosci,
+        KnightSkills.blogoslawienstwoSprawnosciBojowej,
+        KnightSkills.blogoslawienstwoSzlachetnosci,
+        KnightSkills.blogoslawienstwoWiernosci,
+        KnightSkills.blogoslawienstwoWyszkolenia,
+        KnightSkills.blogoslawienstwoZrecznosci,
+        KnightSkills.blogoslawienstwoZuchwalosci,
+    ),
+    "Rune" to setOf(
+        RuneSkills.runaSzybkosci,
+        RuneSkills.runaCiosu,
+        RuneSkills.runaOchrony,
+        RuneSkills.runaKamienia,
+        RuneSkills.runaKrzywd,
+        RuneSkills.runaRozproszeniaCzaru,
+        RuneSkills.runaOslony,
+        RuneSkills.runaSily,
+        RuneSkills.runaMocy,
+        RuneSkills.runaZelaza,
+        RuneSkills.runaPrzeznaczenia,
+        RuneSkills.runaOgnia,
+        RuneSkills.runaPieca,
+        RuneSkills.runaZywotnosci,
+        RuneSkills.runaWytrzymalosci,
+        RuneSkills.runaFurii,
+        RuneSkills.runaSzczescia,
+        RuneSkills.runaZdlawieniaMagii,
+        RuneSkills.mistrzowskaRunaRzutu,
+        RuneSkills.mistrzowskaRunaSzybkosci,
+        RuneSkills.mistrzowskaRunaZlosliwosci,
+        RuneSkills.mistrzowskaRunaDiamentu,
+        RuneSkills.mistrzowskaRunaStrzaskania,
+        RuneSkills.mistrzowskaRunaTlumieniaMagii,
+        RuneSkills.mistrzowskaRunaZwiazaniaMagii,
+        RuneSkills.mistrzowskaRunaAlaryka,
+        RuneSkills.mistrzowskaRunaStali,
+        RuneSkills.mistrzowskaRunaZwatpienia,
+        RuneSkills.mistrzowskaRunaSnorriego,
+        RuneSkills.mistrzowskaRunaGromrilu,
+        RuneSkills.mistrzowskaRunaSkalfa,
+        RuneSkills.mistrzowskaRunaWladzyKrolewskiej,
+    )
+)
+
+// Funkcja sprawdzająca kategorię zdolnosci
+fun getSkillCategory(skill: Skill): String {
+    return skillCategoryMap.entries.find { it.value.contains(skill) }?.key ?: "Unknown"
 }

@@ -8,24 +8,27 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.MotionEvent
 import android.view.View
-import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ListView
-import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
+import com.dd.rpgcardapp.data.Ability
 import com.dd.rpgcardapp.data.Race
 
 import com.dd.rpgcardapp.data.Races
+import com.dd.rpgcardapp.data.Skill
+import com.dd.rpgcardapp.data.getAbilityCategory
+import com.dd.rpgcardapp.data.getSkillCategory
 import com.dd.rpgcardapp.utils.SystemUIUtils
+import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.util.concurrent.ThreadLocalRandom
+import com.dd.rpgcardapp.utils.showAlertDialog
 
 class NewCardAttributesActivity : BaseActivity() {
 
@@ -37,11 +40,17 @@ class NewCardAttributesActivity : BaseActivity() {
     private val randomStats = mutableMapOf<String, Int>()
     private val graceStats = mutableMapOf<String, Int>()
     private val manualStats = mutableMapOf<String, String>()
+    private lateinit var abilitiesTextView: TextView
+    private lateinit var skillsTextView: TextView
+    private val GRACE_BONUS = 11
+    private var selectedSkill1: String? = null
+    private var selectedSkill2: String? = null
+    private var selectedAbility1: String? = null
+    private var selectedAbility2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_card_attributes)
-
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
 
@@ -53,9 +62,12 @@ class NewCardAttributesActivity : BaseActivity() {
             finish()
             return
         }
+
+        abilitiesTextView = findViewById(R.id.abilitiesTextView)
+        skillsTextView = findViewById(R.id.skillsTextView)
+
         setupAutoCalculation()
         setupManualInputTracking()
-
         getRaceFromIntent()?.let { foundRace ->
             race = foundRace
             updateAttributesWithGrace(race)
@@ -63,6 +75,86 @@ class NewCardAttributesActivity : BaseActivity() {
             // Obsłuż brak rasy (jeśli nie znaleziono)
             Toast.makeText(this, "Błąd: Brak informacji o rasie", Toast.LENGTH_SHORT).show()
         }
+
+        val laskaTextView = findViewById<TextView>(R.id.LaskaTextView)
+        laskaTextView.setOnClickListener {
+            val items = listOf(
+                "Nie korzystam z łaski",
+                "Walka Wręcz",
+                "Umiejętności Strzeleckie",
+                "Krzepa",
+                "Odporność",
+                "Zręczność",
+                "Inteligencja",
+                "Siła Woli",
+                "Ogłada"
+            )
+            showAlertDialog(context = this, title = "Wybierz łaskę", items = items) { selectedItem ->
+                selectedGrace = selectedItem
+                laskaTextView.text = selectedItem
+                updateAttributesWithGrace(race)
+            }
+        }
+
+        updateAbilitiesAndSkills(race)
+
+        val ability1TextView = findViewById<TextView>(R.id.ability1TextView)
+        if (race.optionalAbility.getOrNull(0)?.isEmpty() != false) {
+            ability1TextView.visibility = View.GONE
+        } else {
+            ability1TextView.setOnClickListener {
+                race.optionalAbility.getOrNull(0)?.let { abilitiesList ->
+                    showAlertDialog(context = this, title = "Wybierz zdolność", items = abilitiesList.map { it.name }) { selectedItem ->
+                        selectedAbility1 = selectedItem
+                        ability1TextView.text = selectedItem
+                        // ewentualnie zaktualizuj inne elementy w UI, jeśli to konieczne
+                    }
+                }
+            }
+        }
+
+        val ability2TextView = findViewById<TextView>(R.id.ability2TextView)
+        if (race.optionalAbility.getOrNull(1)?.isEmpty() != false) {
+            ability2TextView.visibility = View.GONE
+        } else {
+            ability2TextView.setOnClickListener {
+                race.optionalAbility.getOrNull(1)?.let { abilitiesList ->
+                    showAlertDialog(context = this, title = "Wybierz zdolność", items = abilitiesList.map { it.name }) { selectedItem ->
+                        selectedAbility2 = selectedItem
+                        ability2TextView.text = selectedItem
+                    }
+                }
+            }
+        }
+
+        val skill1TextView = findViewById<TextView>(R.id.skill1TextView)
+        if (race.optionalSkills.getOrNull(0)?.isEmpty() != false) {
+            skill1TextView.visibility = View.GONE
+        } else {
+            skill1TextView.setOnClickListener {
+                race.optionalSkills.getOrNull(0)?.let { skillsList ->
+                    showAlertDialog(context = this, title = "Wybierz zdolność", items = skillsList.map { it.name }) { selectedItem ->
+                        selectedSkill1 = selectedItem
+                        skill1TextView.text = selectedItem
+                    }
+                }
+            }
+        }
+
+        val skill2TextView = findViewById<TextView>(R.id.skill2TextView)
+        if (race.optionalSkills.getOrNull(1)?.isEmpty() != false) {
+            skill2TextView.visibility = View.GONE
+        } else {
+            skill2TextView.setOnClickListener {
+                race.optionalSkills.getOrNull(1)?.let { skillsList ->
+                    showAlertDialog(context = this, title = "Wybierz zdolność", items = skillsList.map { it.name }) { selectedItem ->
+                        selectedSkill2 = selectedItem
+                        skill2TextView.text = selectedItem
+                    }
+                }
+            }
+        }
+
 
         // Nasłuchiwanie kliknięć na głównym kontenerze aktywności
         val rootLayout = findViewById<View>(R.id.rootLayout) // Zmienna 'rootLayout' to główny layout aktywności
@@ -76,16 +168,6 @@ class NewCardAttributesActivity : BaseActivity() {
                 }
             }
             false
-        }
-
-        val laskaTextView = findViewById<TextView>(R.id.LaskaTextView)
-        laskaTextView.setOnClickListener {
-            val items = listOf("Nie korzystam z łaski", "Walka Wręcz", "Umiejętności Strzeleckie", "Krzepa", "Odporność", "Zręczność", "Inteligencja", "Siła Woli", "Ogłada")
-            showPopupWindow(it, items) { selectedItem ->
-                selectedGrace = selectedItem
-                laskaTextView.text = selectedItem
-                updateAttributesWithGrace(race) // <- teraz masz dostęp!
-            }
         }
 
         val rollButton = findViewById<Button>(R.id.rollButton)
@@ -104,15 +186,27 @@ class NewCardAttributesActivity : BaseActivity() {
 
         val exitButton = findViewById<Button>(R.id.exitButton)
         exitButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        SystemUIUtils.hideSystemUI(this)
+    }
+
     override fun onResume() {
         super.onResume()
         SystemUIUtils.hideSystemUI(this)
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            SystemUIUtils.hideSystemUI(this)
+        }
     }
 
     private fun getRaceFromIntent(): Race? {
@@ -121,23 +215,20 @@ class NewCardAttributesActivity : BaseActivity() {
     }
 
     private fun updateAttributesWithGrace(race: Race) {
-        val graceBonus = 11
-
         // Resetujemy graceStats
         graceStats.clear()
 
         // Aktualizujemy graceStats tylko dla wybranej Łaski
         when (selectedGrace) {
-            "Walka Wręcz" -> graceStats["WW"] = race.ww + graceBonus
-            "Umiejętności Strzeleckie" -> graceStats["US"] = race.us + graceBonus
-            "Krzepa" -> graceStats["K"] = race.k + graceBonus
-            "Odporność" -> graceStats["Odp"] = race.odp + graceBonus
-            "Zręczność" -> graceStats["Zr"] = race.zr + graceBonus
-            "Inteligencja" -> graceStats["Int"] = race.int + graceBonus
-            "Siła Woli" -> graceStats["SW"] = race.sw + graceBonus
-            "Ogłada" -> graceStats["Ogd"] = race.ogd + graceBonus
+            "Walka Wręcz" -> graceStats["WW"] = race.ww + GRACE_BONUS
+            "Umiejętności Strzeleckie" -> graceStats["US"] = race.us + GRACE_BONUS
+            "Krzepa" -> graceStats["K"] = race.k + GRACE_BONUS
+            "Odporność" -> graceStats["Odp"] = race.odp + GRACE_BONUS
+            "Zręczność" -> graceStats["Zr"] = race.zr + GRACE_BONUS
+            "Inteligencja" -> graceStats["Int"] = race.int + GRACE_BONUS
+            "Siła Woli" -> graceStats["SW"] = race.sw + GRACE_BONUS
+            "Ogłada" -> graceStats["Ogd"] = race.ogd + GRACE_BONUS
         }
-
         updateDisplayedStats()
     }
 
@@ -194,8 +285,7 @@ class NewCardAttributesActivity : BaseActivity() {
 
         // Dodaj premię z Łaski, jeśli jest wybrana dla tej statystyki
         if (selectedGrace != "Nie korzystam z łaski") {
-            val graceBonus = 11
-            val baseValueWithBonus = (race.getStatByName(statKey) ?: 0) + graceBonus
+            val baseValueWithBonus = (race.getStatByName(statKey) ?: 0) + GRACE_BONUS
             when (statKey) {
                 "WW" -> if (selectedGrace == "Walka Wręcz") displayedValue = maxOf(displayedValue, baseValueWithBonus)
                 "US" -> if (selectedGrace == "Umiejętności Strzeleckie") displayedValue = maxOf(displayedValue, baseValueWithBonus)
@@ -233,38 +323,51 @@ class NewCardAttributesActivity : BaseActivity() {
     }
 
     private fun saveAttributesToFirestore() {
-        val editTexts = listOf(
-            R.id.inputWW, R.id.inputUS, R.id.inputK, R.id.inputOdp,
-            R.id.inputZr, R.id.inputInt, R.id.inputSW, R.id.inputOgd,
-            R.id.inputA, R.id.inputZyw, R.id.inputSz, R.id.inputMag,
-            R.id.inputPO, R.id.inputPP
-        )
+        val editTextsMap = mapOf(
+            "WW" to R.id.inputWW,
+            "US" to R.id.inputUS,
+            "K" to R.id.inputK,
+            "Odp" to R.id.inputOdp,
+            "Zr" to R.id.inputZr,
+            "Int" to R.id.inputInt,
+            "SW" to R.id.inputSW,
+            "Ogd" to R.id.inputOgd,
+            "A" to R.id.inputA,
+            "Zyw" to R.id.inputZyw,
+            "Sz" to R.id.inputSz,
+            "Mag" to R.id.inputMag,
+            "PO" to R.id.inputPO,
+            "PP" to R.id.inputPP
+        ).mapValues { findViewById<EditText>(it.value) }
 
-        for (id in editTexts) {
-            val text = findViewById<EditText>(id).text.toString()
-            if (text.isBlank()) {
-                Toast.makeText(this, "Żadne z pól nie może być puste.", Toast.LENGTH_SHORT).show()
-                return
-            }
+        val emptyField = editTextsMap.entries.firstOrNull { it.value.text.toString().isBlank() }
+        if (emptyField != null) {
+            Toast.makeText(this, "Uzupełnij statystyki.", Toast.LENGTH_SHORT).show()
+            return
         }
 
-        val wwToSave = findViewById<EditText>(R.id.inputWW).text.toString().toIntOrNull() ?: 0
-        val usToSave = findViewById<EditText>(R.id.inputUS).text.toString().toIntOrNull() ?: 0
-        val kToSave = findViewById<EditText>(R.id.inputK).text.toString().toIntOrNull() ?: 0
-        val odpToSave = findViewById<EditText>(R.id.inputOdp).text.toString().toIntOrNull() ?: 0
-        val zrToSave = findViewById<EditText>(R.id.inputZr).text.toString().toIntOrNull() ?: 0
-        val intToSave = findViewById<EditText>(R.id.inputInt).text.toString().toIntOrNull() ?: 0
-        val swToSave = findViewById<EditText>(R.id.inputSW).text.toString().toIntOrNull() ?: 0
-        val ogdToSave = findViewById<EditText>(R.id.inputOgd).text.toString().toIntOrNull() ?: 0
+        fun getIntValue(key: String): Int = editTextsMap[key]?.text.toString().toIntOrNull() ?: 0
 
-        val aToSave = findViewById<EditText>(R.id.inputA).text.toString().toIntOrNull() ?: 0
-        val zywToSave = findViewById<EditText>(R.id.inputZyw).text.toString().toIntOrNull() ?: 0
-        val s = kToSave / 10 // Zaokrąglanie w dół dla liczb całkowitych
-        val wt = odpToSave / 10// To samo dla Wt
-        val szToSave = findViewById<EditText>(R.id.inputSz).text.toString().toIntOrNull() ?: 0
-        val magToSave = findViewById<EditText>(R.id.inputMag).text.toString().toIntOrNull() ?: 0
-        val poToSave = findViewById<EditText>(R.id.inputPO).text.toString().toIntOrNull() ?: 0
-        val ppToSave = findViewById<EditText>(R.id.inputPP).text.toString().toIntOrNull() ?: 0
+
+
+        val attributesData = hashMapOf(
+            "WW" to getIntValue("WW"),
+            "US" to getIntValue("US"),
+            "K" to getIntValue("K"),
+            "Odp" to getIntValue("Odp"),
+            "Zr" to getIntValue("Zr"),
+            "Int" to getIntValue("Int"),
+            "SW" to getIntValue("SW"),
+            "Ogd" to getIntValue("Ogd"),
+            "A" to getIntValue("A"),
+            "Zyw" to getIntValue("Zyw"),
+            "S" to getIntValue("K") / 10,
+            "Wt" to getIntValue("Odp") / 10,
+            "Sz" to getIntValue("Sz"),
+            "Mag" to getIntValue("Mag"),
+            "PO" to getIntValue("PO"),
+            "PP" to getIntValue("PP")
+        )
 
         // Sprawdzanie, czy łaska została wybrana
         if (selectedGrace.isNullOrEmpty()) {
@@ -272,59 +375,172 @@ class NewCardAttributesActivity : BaseActivity() {
             return
         }
 
-        val firstEightStatsAndZyw = listOf(wwToSave, usToSave, kToSave, odpToSave, zrToSave, intToSave, swToSave, ogdToSave, zywToSave)
-        for (stat in firstEightStatsAndZyw) {
-            if (stat > 95) {
-                Toast.makeText(this, "Wartości podstawowych statystyk oraz Żyw nie mogą przekraczać 95.", Toast.LENGTH_SHORT).show()
-                return
+        if (listOf(
+                attributesData["WW"], attributesData["US"], attributesData["K"],
+                attributesData["Odp"], attributesData["Zr"], attributesData["Int"],
+                attributesData["SW"], attributesData["Ogd"], attributesData["Zyw"]
+            ).any { it ?: 0 > 95 }
+        ) {
+            Toast.makeText(
+                this,
+                "Wartości podstawowych statystyk oraz Żyw nie mogą przekraczać 95.",
+                Toast.LENGTH_SHORT
+            ).show()
+            return
+        }
+
+        // Sprawdzanie wartości drugorzędnych statystyk
+        if (listOf(
+                attributesData["A"], attributesData["Sz"], attributesData["Mag"],
+                attributesData["PO"], attributesData["PP"]
+            ).any { it ?: 0 > 10 }
+        ) {
+            Toast.makeText(
+                this,
+                "Wartości drugorzędnych statystyk nie mogą przekraczać 10.",
+                Toast.LENGTH_SHORT
+            ).show()
+            return
+        }
+
+        val ability1TextView = findViewById<TextView>(R.id.ability1TextView)
+        val ability2TextView = findViewById<TextView>(R.id.ability2TextView)
+        val skill1TextView = findViewById<TextView>(R.id.skill1TextView)
+        val skill2TextView = findViewById<TextView>(R.id.skill2TextView)
+
+        if (
+            (ability1TextView.visibility == View.VISIBLE && selectedAbility1.isNullOrEmpty()) ||
+            (ability2TextView.visibility == View.VISIBLE && selectedAbility2.isNullOrEmpty()) ||
+            (skill1TextView.visibility == View.VISIBLE && selectedSkill1.isNullOrEmpty()) ||
+            (skill2TextView.visibility == View.VISIBLE && selectedSkill2.isNullOrEmpty())
+        ) {
+            Toast.makeText(this, "Wybierz wszystkie umiejętności i zdolności.", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
+
+        // Sprawdzanie, czy obie wybrane zdolności są takie same
+        if (selectedAbility1 != null && selectedAbility1 == selectedAbility2) {
+            Toast.makeText(this, "Obie wybrane zdolności nie mogą być takie same. $selectedAbility1", Toast.LENGTH_SHORT).show()
+            return
+        }
+        // Sprawdzanie, czy obie wybrane umiejętności są takie same
+        if (selectedSkill1 != null && selectedSkill1 == selectedSkill2) {
+            Toast.makeText(this, "Obie wybrane umiejętności nie mogą być takie same.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val commonAbilitiesData = mutableListOf<Ability>()
+        val rareAbilitiesData = mutableListOf<Ability>()
+        val specialAbilitiesData = mutableListOf<Ability>()
+        fun addAbilityToCategoryList(ability: Ability) {
+            when (getAbilityCategory(ability)) {
+                "Common" -> commonAbilitiesData.add(ability)
+                "Rare" -> rareAbilitiesData.add(ability)
+                else -> specialAbilitiesData.add(ability)
+            }
+        }
+        for (ability in race.abilities) {
+            addAbilityToCategoryList(ability)
+        }
+        listOf(selectedAbility1, selectedAbility2).forEachIndexed { index, selected ->
+            race.optionalAbility.getOrNull(index)
+                ?.find { it.name == selected }
+                ?.let { addAbilityToCategoryList(it) }
+        }
+
+        val commonSkillsData = mutableListOf<Skill>()
+        val statsSkillsData = mutableListOf<Skill>()
+        val weaponSkillsData = mutableListOf<Skill>()
+        val magicSkillsData = mutableListOf<Skill>()
+        val knightSkillsData = mutableListOf<Skill>()
+        val runeSkillsData = mutableListOf<Skill>()
+
+        fun addSkillToCategoryList(skill: Skill) {
+            when (getSkillCategory(skill)) {
+                "Common" -> commonSkillsData.add(skill)
+                "Stats" -> statsSkillsData.add(skill)
+                "Weapon" -> weaponSkillsData.add(skill)
+                "Magic" -> magicSkillsData.add(skill)
+                "Knight" -> knightSkillsData.add(skill)
+                "Rune" -> runeSkillsData.add(skill)
+                else -> commonSkillsData.add(skill)
             }
         }
 
-        val remainingStats = listOf(aToSave, szToSave, magToSave, poToSave, ppToSave)
-        for (stat in remainingStats) {
-            if (stat > 10) {
-                Toast.makeText(this, "Wartości drugorzędnych statystyk nie mogą przekraczać 10.", Toast.LENGTH_SHORT).show()
-                return
-            }
+        for (skill in race.skills) {
+            addSkillToCategoryList(skill)
         }
-
-        // Pobranie wartości i konwersja do Int (lub 0, jeśli puste)
-        val attributesData = hashMapOf(
-            "WW" to wwToSave,
-            "US" to usToSave,
-            "K" to kToSave,
-            "Odp" to odpToSave,
-            "Zr" to zrToSave,
-            "Int" to intToSave,
-            "SW" to swToSave,
-            "Ogd" to ogdToSave,
-            "A" to aToSave,
-            "Zyw" to zywToSave,
-            "S" to s,
-            "Wt" to wt,
-            "Sz" to szToSave,
-            "Mag" to magToSave,
-            "PO" to poToSave,
-            "PP" to ppToSave
-        )
+        listOf(selectedSkill1, selectedSkill2).forEachIndexed { index, selected ->
+            race.optionalSkills.getOrNull(index)
+                ?.find { it.name == selected }
+                ?.let { addSkillToCategoryList(it) }
+        }
 
         if (userId.isEmpty() || characterDocId.isNullOrEmpty()) {
             Toast.makeText(this, "Błąd: Nie można zapisać statystyk", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // Zapis statystyk jako poddokument "attributes"
-        db.collection("users").document(userId)
-            .collection("characters").document(characterDocId!!)
-            .collection("attributes").document("main_attributes")
-            .set(attributesData)
-            .addOnSuccessListener {
-                db.collection("users").document(userId)
-                    .collection("characters").document(characterDocId!!)
-                    .update("progressStage", 2)
+        // Tworzymy listę zadań (tasks), które będziemy monitorować
+        val tasks = mutableListOf<Task<Void>>()
 
-                Toast.makeText(this, "Statystyki zapisane!", Toast.LENGTH_SHORT).show()
-                // Przejście do nowej aktywności z przekazaniem ID dokumentu postaci
+// Zapis atrybutów w subkolekcji "attributes"
+        val attributesBaseTask = db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+            .collection("attributes").document("base")
+            .set(attributesData)
+
+        tasks.add(attributesBaseTask)
+
+// Zapis abilities w subkolekcjach
+        val abilitiesData = mapOf(
+            "common" to commonAbilitiesData,
+            "rare" to rareAbilitiesData,
+            "special" to specialAbilitiesData
+        )
+        for ((abilityType, abilityData) in abilitiesData) {
+            val abilityTask = db.collection("users").document(userId)
+                .collection("characters").document(characterDocId!!)
+                .collection("abilities").document(abilityType)
+                .set(mapOf("owned" to abilityData))
+            tasks.add(abilityTask)
+        }
+
+// Zapis skills w subkolekcjach
+        val skillsData = mapOf(
+            "common" to commonSkillsData,
+            "stats" to statsSkillsData,
+            "weapon" to weaponSkillsData,
+            "magic" to magicSkillsData,
+            "knight" to knightSkillsData,
+            "rune" to runeSkillsData
+        )
+        for ((skillType, skillData) in skillsData) {
+            val skillTask = db.collection("users").document(userId)
+                .collection("characters").document(characterDocId!!)
+                .collection("skills").document(skillType)
+                .set(mapOf("owned" to skillData))
+            tasks.add(skillTask)
+        }
+
+        // Uaktualnienie progressStage na 2
+        val progressStageTask = db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+            .update("progressStage", 2)  // Ustawienie progressStage na 4
+        tasks.add(progressStageTask)
+
+// Czekamy na zakończenie wszystkich operacji zapisu
+        Tasks.whenAllSuccess<Void>(*tasks.toTypedArray())
+            .addOnSuccessListener {
+                // Jeśli wszystkie zapisy zakończyły się sukcesem
+                Toast.makeText(
+                    this,
+                    "Statystyki, umiejętności i zdolności zapisane!",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+
                 val intent = Intent(this, NewCardBackstoryActivity::class.java).apply {
                     putExtra("CHARACTER_DOC_ID", characterDocId)  // Przekazanie characterDocId
                     putExtra("CHARACTER_RACE", intent.getStringExtra("CHARACTER_RACE"))
@@ -333,9 +549,45 @@ class NewCardAttributesActivity : BaseActivity() {
                 finish()
             }
             .addOnFailureListener { e ->
-                Toast.makeText(this, "Błąd zapisu: ${e.message}", Toast.LENGTH_SHORT).show()
+                // Jeśli któraś z operacji zakończy się błędem
+                Toast.makeText(this, "Błąd zapisu danych postaci: ${e.message}", Toast.LENGTH_SHORT)
+                    .show()
             }
+    }
 
+        private fun updateAbilitiesAndSkills(race: Race) {
+        val fullAbilitiesText = buildString {
+            var isNotEmpty = false // Zmienna pomocnicza dla umiejętności
+
+            // Dodajemy tylko, jeśli lista abilities nie jest pusta
+            if (race.abilities.isNotEmpty()) {
+                append("Umiejętności rasowe: ")
+                append(race.abilities.joinToString(", ") { it.name })
+                isNotEmpty = true
+            }
+            // Jeśli nie dodano niczego, pozostawiamy "Brak"
+            if (!isNotEmpty) {
+                append("Brak")
+            }
+        }
+        abilitiesTextView.text = fullAbilitiesText.ifBlank { "Brak" }
+
+        val fullSkillsText = buildString {
+            var isNotEmpty = false // Zmienna pomocnicza dla umiejętności
+
+            // Dodajemy tylko, jeśli lista skills nie jest pusta
+            if (race.skills.isNotEmpty()) {
+                append("Zdolności rasowe: ")
+                append(race.skills.joinToString(", ") { it.name })
+                isNotEmpty = true
+            }
+            // Jeśli nie dodano niczego, pozostawiamy "Brak"
+            if (!isNotEmpty) {
+                append("Brak")
+            }
+        }
+
+        skillsTextView.text = fullSkillsText
     }
 
     fun rollZyw(base: Int): Int {
@@ -388,38 +640,5 @@ class NewCardAttributesActivity : BaseActivity() {
             })
         }
     }
-
-    private fun showPopupWindow(view: View, items: List<String>, onItemSelected: (String) -> Unit) {
-        val context = this
-        val listView = ListView(context)
-        val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, items)
-        listView.adapter = adapter
-
-        // Tworzenie PopupWindow
-        val popupWindow = PopupWindow(listView, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
-        popupWindow.isFocusable = true
-        popupWindow.setBackgroundDrawable(getDrawable(android.R.drawable.screen_background_light))
-
-        // Ukrywanie systemowego UI, jak pasek stanu
-        popupWindow.setOnDismissListener {
-            // Tutaj możesz ukrywać systemowe UI, jeśli chcesz
-            SystemUIUtils.hideSystemUI(this)
-        }
-
-        // Obsługa kliknięcia na element w liście
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = items[position]
-            onItemSelected(selectedItem) // Wywołanie funkcji zwrotnej z wybranym elementem
-            popupWindow.dismiss() // Zamknięcie PopupWindow po wyborze
-        }
-
-
-        // Wyświetlanie PopupWindow
-        popupWindow.showAsDropDown(view)
-        view.postDelayed({
-            SystemUIUtils.hideSystemUI(this)
-        }, 1)
-    }
-
 }
 

@@ -39,6 +39,7 @@ android {
 
     buildFeatures {
         compose = true
+        viewBinding  = true
     }
 }
 
@@ -51,9 +52,11 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-auth-ktx") // Aktualna wersja
-
+    implementation ("org.jetbrains.kotlin:kotlin-reflect:1.8.0")
     // Google Sign-In
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4") // Spróbuj tej wersji
+
 
     // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))

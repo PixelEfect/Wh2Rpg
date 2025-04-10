@@ -1,6 +1,14 @@
 package com.dd.rpgcardapp.data
 
-data class Ability(val name: String, val attribute: String ="Int")
+data class Ability(val name: String, val attribute: String ="Int"){
+    // Tworzymy metodę do konwersji obiektu na mapę
+    fun toMap(): Map<String, String> {
+        return mapOf(
+            "name" to this.name,
+            "attribute" to this.attribute
+        )
+    }
+}
 
 object CommonAbilities {
     val charakteryzacja = Ability("Charakteryzacja", "Ogd")
@@ -162,13 +170,13 @@ object SpecialAbilities{
 
     val jezykArabski = Ability("Znajomość języka: Arabski",)
     val jezykBretonski = Ability("Znajomość języka: Bretoński",)
-    val jezykEltharin = Ability("Znajomość języka: Eltharin (elfi)",)
+    val jezykEltharin = Ability("Znajomość języka: Eltharin",)
     val jezykEstalijski = Ability("Znajomość języka: Estalijski",)
-    val jezykKhazalid = Ability("Znajomość języka: Khazalid (krasnoludzki)",)
+    val jezykKhazalid = Ability("Znajomość języka: Khazalid",)
     val jezykKislevski = Ability("Znajomość języka: Kislevski",)
     val jezykNorski = Ability("Znajomość języka: Norski",)
     val jezykTileanski = Ability("Znajomość języka: Tileański",)
-    val jezykReikspiel = Ability("Znajomość języka: Reikspiel (staroświatowy)",)
+    val jezykReikspiel = Ability("Znajomość języka: Reikspiel",)
     val jezykNiziolkow = Ability("Znajomość języka: Niziołków",)
     val jezykKlasyczny = Ability("Znajomość języka: Klasyczny",)
     val jezykGoblinski = Ability("Znajomość języka: Gobliński",)
@@ -180,3 +188,172 @@ object SpecialAbilities{
     val jezykGnomi = Ability("Znajomość języka: Gnomi",)
 }
 
+// Mapa przypisująca umiejętności do odpowiednich grup
+val abilityCategoryMap = mapOf(
+    "Common" to setOf(
+        CommonAbilities.charakteryzacja,
+        CommonAbilities.dowodzenie,
+        CommonAbilities.hazard,
+        CommonAbilities.jezdziectwo,
+        CommonAbilities.mocnaGlowa,
+        CommonAbilities.opiekaNadZwierzetami,
+        CommonAbilities.plotkowanie,
+        CommonAbilities.plywanie,
+        CommonAbilities.powozenie,
+        CommonAbilities.przekonywanie,
+        CommonAbilities.przeszukiwanie,
+        CommonAbilities.skradanieSie,
+        CommonAbilities.spostrzegawczosc,
+        CommonAbilities.sztukaPrzetrwania,
+        CommonAbilities.targowanie,
+        CommonAbilities.ukrywanieSie,
+        CommonAbilities.wioslarstwo,
+        CommonAbilities.wspinaczka,
+        CommonAbilities.wycena,
+        CommonAbilities.zastraszanie
+    ),
+    "Rare" to setOf(
+        RareAbilities.brzuchomowstwo,
+        RareAbilities.czytanieIPisanie,
+        RareAbilities.czytanieZWarg,
+        RareAbilities.gadanina,
+        RareAbilities.hipnoza,
+        RareAbilities.leczenie,
+        RareAbilities.nawigacja,
+        RareAbilities.oswajanie,
+        RareAbilities.otwieranieZamkow,
+        RareAbilities.splatanieMagii,
+        RareAbilities.sledzenie,
+        RareAbilities.torturowanie,
+        RareAbilities.tresura,
+        RareAbilities.tropienie,
+        RareAbilities.unik,
+        RareAbilities.warzenieTrucizn,
+        RareAbilities.wykrywanieMagii,
+        RareAbilities.wykuwanieRun,
+        RareAbilities.zastawianiePulapek,
+        RareAbilities.zwinnePalce,
+        RareAbilities.zeglarstwo
+    ),
+    "Special" to setOf(
+        SpecialAbilities.jezykTajemnyDemoniczny,
+        SpecialAbilities.jezykTajemnyMagiczny,
+        SpecialAbilities.jezykTajemnyElfi,
+        SpecialAbilities.jezykTajemnyKrasnoludzki,
+        SpecialAbilities.jezykTajemnyNehekharanski,
+        SpecialAbilities.kuglarstwoAkrobatyka,
+        SpecialAbilities.kuglarstwoAktorstwo,
+        SpecialAbilities.kuglarstwoBlaznowanie,
+        SpecialAbilities.kuglarstwoGawedziarstwo,
+        SpecialAbilities.kuglarstwoKomedianctwo,
+        SpecialAbilities.kuglarstwoMimika,
+        SpecialAbilities.kuglarstwoMuzykalnosc,
+        SpecialAbilities.kuglarstwoPolykanieOgnia,
+        SpecialAbilities.kuglarstwoSpiew,
+        SpecialAbilities.kuglarstwoTaniec,
+        SpecialAbilities.kuglarstwoWrozenieZDloni,
+        SpecialAbilities.kuglarstwoZonglerka,
+        SpecialAbilities.naukaAlchemia,
+        SpecialAbilities.naukaAnatomia,
+        SpecialAbilities.naukaAstronomia,
+        SpecialAbilities.naukaDemonologia,
+        SpecialAbilities.naukaDuchy,
+        SpecialAbilities.naukaFilozofia,
+        SpecialAbilities.naukaFizyka,
+        SpecialAbilities.naukaGeografia,
+        SpecialAbilities.naukaGeneologiaHeraldyka,
+        SpecialAbilities.naukaHistoria,
+        SpecialAbilities.naukaInzynieria,
+        SpecialAbilities.naukaMagia,
+        SpecialAbilities.naukaMatematyka,
+        SpecialAbilities.naukaMechanika,
+        SpecialAbilities.naukaNekromancja,
+        SpecialAbilities.naukaPrawo,
+        SpecialAbilities.naukaRuny,
+        SpecialAbilities.naukaStrategiaTaktyka,
+        SpecialAbilities.naukaSztuka,
+        SpecialAbilities.naukaTeologia,
+        SpecialAbilities.rzemiosloAptekarstwo,
+        SpecialAbilities.rzemiosloBednarstwo,
+        SpecialAbilities.rzemiosloGarbarstwo,
+        SpecialAbilities.rzemiosloGotowanie,
+        SpecialAbilities.rzemiosloGornictwo,
+        SpecialAbilities.rzemiosloGornictwoOdkrywkowe,
+        SpecialAbilities.rzemiosloHandel,
+        SpecialAbilities.rzemiosloHodowlaKoni,
+        SpecialAbilities.rzemiosloHodowlaPsow,
+        SpecialAbilities.rzemiosloHodowlaPtakow,
+        SpecialAbilities.rzemiosloJubilerstwo,
+        SpecialAbilities.rzemiosloKaligrafia,
+        SpecialAbilities.rzemiosloKamieniarstwo,
+        SpecialAbilities.rzemiosloKartografia,
+        SpecialAbilities.rzemiosloKowalstwo,
+        SpecialAbilities.rzemiosloKrawiectwo,
+        SpecialAbilities.rzemiosloMlynarstwo,
+        SpecialAbilities.rzemiosloPiwowarstwo,
+        SpecialAbilities.rzemiosloPlatnerstwo,
+        SpecialAbilities.rzemiosloRusznikarstwo,
+        SpecialAbilities.rzemiosloRymarstwo,
+        SpecialAbilities.rzemiosloStolarstwo,
+        SpecialAbilities.rzemiosloSzkutnictwo,
+        SpecialAbilities.rzemiosloSzewstwo,
+        SpecialAbilities.rzemiosloSztuka,
+        SpecialAbilities.rzemiosloSwiecarstwo,
+        SpecialAbilities.rzemiosloUprawaZiemi,
+        SpecialAbilities.rzemiosloWyrobLukow,
+        SpecialAbilities.rzemiosloZielarstwo,
+        SpecialAbilities.rzemiosloZlotnictwo,
+        SpecialAbilities.sekretneZnakiAstrologow,
+        SpecialAbilities.sekretneZnakiLowcow,
+        SpecialAbilities.sekretneZnakiRycerzyZakonnych,
+        SpecialAbilities.sekretneZnakiZlodziei,
+        SpecialAbilities.sekretneZnakiZwiadowcow,
+        SpecialAbilities.sekretneZnakiKultuOswiecenia,
+        SpecialAbilities.sekretnyjezykBitewny,
+        SpecialAbilities.sekretnyjezykGildii,
+        SpecialAbilities.sekretnyjezykLowcow,
+        SpecialAbilities.sekretnyjezykZlodziei,
+        SpecialAbilities.sekretnyjezykWieziennySlang,
+        SpecialAbilities.wiedzaBretonia,
+        SpecialAbilities.wiedzaEstalia,
+        SpecialAbilities.wiedzaImperium,
+        SpecialAbilities.wiedzaJalowaKraina,
+        SpecialAbilities.wiedzaKataj,
+        SpecialAbilities.wiedzaKislev,
+        SpecialAbilities.wiedzaKsiestwaGraniczne,
+        SpecialAbilities.wiedzaLustria,
+        SpecialAbilities.wiedzaNorska,
+        SpecialAbilities.wiedzaTilea,
+        SpecialAbilities.wiedzaElfy,
+        SpecialAbilities.wiedzaKrasnoludy,
+        SpecialAbilities.wiedzaNiziolki,
+        SpecialAbilities.wiedzaOgry,
+        SpecialAbilities.wiedzaSkaveny,
+        SpecialAbilities.wiedzaKrajTrolli,
+        SpecialAbilities.wiedzaPustkowiaChaosu,
+        SpecialAbilities.wiedzaGnomy,
+        SpecialAbilities.jezykArabski,
+        SpecialAbilities.jezykBretonski,
+        SpecialAbilities.jezykEltharin,
+        SpecialAbilities.jezykEstalijski,
+        SpecialAbilities.jezykKhazalid,
+        SpecialAbilities.jezykKislevski,
+        SpecialAbilities.jezykNorski,
+        SpecialAbilities.jezykTileanski,
+        SpecialAbilities.jezykReikspiel,
+        SpecialAbilities.jezykNiziolkow,
+        SpecialAbilities.jezykKlasyczny,
+        SpecialAbilities.jezykGoblinski,
+        SpecialAbilities.jezykGrumbarth,
+        SpecialAbilities.jezykMrocznaMowa,
+        SpecialAbilities.jezykQueekish,
+        SpecialAbilities.jezykStrzyganski,
+        SpecialAbilities.jezykUngolski,
+        SpecialAbilities.jezykGnomi
+    )
+)
+
+// Funkcja sprawdzająca kategorię umiejętności
+fun getAbilityCategory(ability: Ability): String {
+    return abilityCategoryMap.entries.find { it.value.contains(ability) }?.key ?: "Unknown"
+}

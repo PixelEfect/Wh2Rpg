@@ -9,10 +9,6 @@ import android.widget.Toast
 import android.content.Intent
 import android.view.MotionEvent
 import android.view.View
-import android.view.WindowManager
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.PopupWindow
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -32,6 +28,7 @@ import android.view.inputmethod.InputMethodManager
 import com.dd.rpgcardapp.data.AbilityGroupSimplifier
 import com.dd.rpgcardapp.data.Eyes
 import com.dd.rpgcardapp.data.Hair
+import com.dd.rpgcardapp.utils.showAlertDialog
 
 class NewCardAncestryActivity : BaseActivity() {
 
@@ -42,8 +39,8 @@ class NewCardAncestryActivity : BaseActivity() {
     private lateinit var ageSeekBar: SeekBar
     private lateinit var ageTextView: TextView
     private lateinit var sexTextView: TextView
-    private lateinit var hairTextView: TextView
     private lateinit var eyesTextView: TextView
+    private lateinit var hairTextView: TextView
     private lateinit var heightSeekBar: SeekBar
     private lateinit var heightTextView: TextView
     private lateinit var weightSeekBar: SeekBar
@@ -52,14 +49,13 @@ class NewCardAncestryActivity : BaseActivity() {
     private lateinit var abilitiesTextView: TextView
     private lateinit var skillsTextView: TextView
 
-
     companion object {
         const val MALE = "Mężczyzna"
         const val FEMALE = "Kobieta"
     }
 
     private var selectedRace: Race = Races.Czlowiek
-    private var selectedSex: String = MALE // Domyślna płeć
+    private var selectedSex: String = MALE
     private var selectedStarSign: StarSign = StarSigns.bebniarz
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,8 +70,8 @@ class NewCardAncestryActivity : BaseActivity() {
         ageSeekBar = findViewById(R.id.ageSeekBar)
         ageTextView = findViewById(R.id.ageView)
         sexTextView = findViewById(R.id.inputSexTextView)
-        hairTextView = findViewById(R.id.inputHairTextView)
         eyesTextView = findViewById(R.id.inputEyesTextView)
+        hairTextView = findViewById(R.id.inputHairTextView)
         heightSeekBar = findViewById(R.id.heightSeekBar)
         heightTextView = findViewById(R.id.heightView)
         weightSeekBar = findViewById(R.id.weightSeekBar)
@@ -85,80 +81,84 @@ class NewCardAncestryActivity : BaseActivity() {
         skillsTextView = findViewById(R.id.skillsTextView)
 
 
-        // Ustaw domyślną rasę (Człowiek) i zakres wieku
-        setAgeRange(Races.Czlowiek)
-        setWeightRange(Races.Czlowiek)
-
         raceTextView.text = Races.Czlowiek.name
+        setAgeRange(Races.Czlowiek)
         selectedSex = MALE
         sexTextView.text = selectedSex
-        starSignTextView.text = "${selectedStarSign.name}"
-        setHeightRange(Races.Czlowiek, selectedSex)
-
-        val defaultHairColor = Hair.brazowy.name
         val defaultEyesColor = Eyes.brazowy.name
-
-        hairTextView.text = defaultHairColor
         eyesTextView.text = defaultEyesColor
+        val defaultHairColor = Hair.brazowy.name
+        hairTextView.text = defaultHairColor
+
+        setHeightRange(Races.Czlowiek, selectedSex)
+        setWeightRange(Races.Czlowiek)
+        starSignTextView.text = "${selectedStarSign.name}"
 
         updateAbilitiesAndSkills(selectedRace)
         // Nasłuchiwanie kliknięć na głównym kontenerze aktywności
         val rootLayout = findViewById<View>(R.id.rootLayout) // Zmienna 'rootLayout' to główny layout aktywności
         rootLayout.setOnTouchListener { v, event ->
-            // Ukryj klawiaturę, jeśli kliknięcie nie jest w polu tekstowym
             if (event.action == MotionEvent.ACTION_DOWN) {
-                // Sprawdzamy, czy kliknięcie miało miejsce poza polem tekstowym
                 if (currentFocus != null) {
                     val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                     imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
                 }
             }
+            SystemUIUtils.hideSystemUI(this)
             false
         }
 
-
-        raceTextView.setOnClickListener { v ->
-            showPopupWindow(v, GroupRace.All.map { it.name }) { selectedRaceName ->
-                val foundRace = GroupRace.All.find { it.name == selectedRaceName }
-                foundRace?.let {
-                    selectedRace = it
+        raceTextView.setOnClickListener {
+            val raceNames = GroupRace.All.map { it.name }
+            showAlertDialog(
+                context = this,
+                title = "Wybierz rasę",
+                items = raceNames
+            ) { selectedRaceName ->
+                GroupRace.All.find { it.name == selectedRaceName }?.let { foundRace ->
+                    selectedRace = foundRace
                     raceTextView.text = selectedRaceName
-                    setAgeRange(it)
-                    setWeightRange(it)
-                    hairTextView.text = it.hair.first().name
-                    eyesTextView.text = it.eyes.first().name
-                    setHeightRange(it, selectedSex)
-                    updateAbilitiesAndSkills(it)
+                    setAgeRange(foundRace)
+                    setWeightRange(foundRace)
+                    hairTextView.text = foundRace.hair.first().name
+                    eyesTextView.text = foundRace.eyes.first().name
+                    setHeightRange(foundRace, selectedSex)
+                    updateAbilitiesAndSkills(foundRace)
                 }
             }
         }
 
-        sexTextView.setOnClickListener { v ->
-            showPopupWindow(v, listOf(MALE, FEMALE)) { selectedSexValue ->
-                selectedSex = selectedSexValue // Zmieniamy zmienną `selectedSex`
-                sexTextView.text = selectedSex  // Aktualizujemy tekst w TextView
+        sexTextView.setOnClickListener {
+            val sexes = listOf(MALE, FEMALE)
+            showAlertDialog(context = this, title = "Wybierz płeć", items = sexes) { selected ->
+                selectedSex = selected
+                sexTextView.text = selected
                 setHeightRange(selectedRace, selectedSex)
             }
         }
 
-        hairTextView.setOnClickListener { v ->
-            showPopupWindow(v, selectedRace.hair.map { it.name }) { selectedHairColor ->
-                hairTextView.text = selectedHairColor
+        eyesTextView.setOnClickListener {
+            val eyeColors = selectedRace.eyes.map { it.name }
+            showAlertDialog(context = this, title = "Wybierz kolor oczu", items = eyeColors) { selected ->
+                eyesTextView.text = selected
             }
         }
 
-        eyesTextView.setOnClickListener { v ->
-            showPopupWindow(v, selectedRace.eyes.map { it.name }) { selectedeyesColor ->
-                eyesTextView.text = selectedeyesColor
+        hairTextView.setOnClickListener {
+            val hairColors = selectedRace.hair.map { it.name }
+            showAlertDialog(context = this, title = "Wybierz kolor włosów", items = hairColors) { selected ->
+                hairTextView.text = selected
             }
         }
 
-        starSignTextView.setOnClickListener { v ->
-            showPopupWindow(v, getStarSignsList().map { it.name }) { selectedStarSignName ->
-                val foundStarSign = getStarSignsList().find { it.name == selectedStarSignName }
-                foundStarSign?.let {
+        starSignTextView.setOnClickListener {
+            val starSigns = getStarSignsList()
+            val starSignNames = starSigns.map { it.name }
+
+            showAlertDialog(context = this, title = "Wybierz znak gwiezdny", items = starSignNames) { selectedName ->
+                starSigns.find { it.name == selectedName }?.let {
                     selectedStarSign = it
-                    starSignTextView.text = "$selectedStarSignName"
+                    starSignTextView.text = selectedName
                 }
             }
         }
@@ -175,15 +175,27 @@ class NewCardAncestryActivity : BaseActivity() {
 
         val exitButton = findViewById<Button>(R.id.exitButton)
         exitButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        SystemUIUtils.hideSystemUI(this)
+    }
+
     override fun onResume() {
         super.onResume()
         SystemUIUtils.hideSystemUI(this)
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            SystemUIUtils.hideSystemUI(this)
+        }
     }
 
     // Wspólna funkcja do ustawiania SeekBar dla wieku, wagi, wzrostu
@@ -193,16 +205,15 @@ class NewCardAncestryActivity : BaseActivity() {
         minValue: Int,
         maxValue: Int,
         step: Int = 1,
-        labelPrefix: String
     ) {
         seekBar.max = (maxValue - minValue) / step
         seekBar.progress = 0
-        textView.text = "$labelPrefix: $minValue"
+        textView.text = "$minValue"
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 val value = minValue + progress * step
-                textView.text = "$labelPrefix: $value"
+                textView.text = "$value"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
@@ -218,7 +229,6 @@ class NewCardAncestryActivity : BaseActivity() {
             race.minAge,
             race.maxAge,
             step = 1,
-            labelPrefix = "Wiek"
         )
     }
 
@@ -230,19 +240,18 @@ class NewCardAncestryActivity : BaseActivity() {
             race.minWeight,
             race.maxWeight,
             step = 5,
-            labelPrefix = "Waga"
         )
     }
 
     // Ustawianie zakresu dla wzrostu
     private fun setHeightRange(race: Race, sex: String) {
+        val minHeight = calculateMinHeight(race, sex)
         setupSeekBar(
             heightSeekBar,
             heightTextView,
-            race.minHeight,
-            race.minHeight + 20,
+            minHeight,
+            minHeight + 20,
             step = 1,
-            labelPrefix = "Wzrost"
         )
     }
 
@@ -261,38 +270,6 @@ class NewCardAncestryActivity : BaseActivity() {
     // Pobieranie listy znaków zodiaku
     private fun getStarSignsList(): List<StarSign> {
         return AllStarSigns.All
-    }
-
-    // Funkcja do wyświetlania PopupWindow z listą do wyboru
-    private fun showPopupWindow(view: View, items: List<String>, onItemSelected: (String) -> Unit) {
-        val context = this
-        val listView = ListView(context)
-        val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, items)
-        listView.adapter = adapter
-
-        // Tworzenie PopupWindow
-        val popupWindow = PopupWindow(listView, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
-        popupWindow.isFocusable = true
-        popupWindow.setBackgroundDrawable(getDrawable(android.R.drawable.screen_background_light))
-
-        // Ukrywanie systemowego UI, jak pasek stanu
-        popupWindow.setOnDismissListener {
-            SystemUIUtils.hideSystemUI(this)
-        }
-
-        // Obsługa kliknięcia na element w liście
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = items[position]
-            onItemSelected(selectedItem) // Wywołanie funkcji zwrotnej z wybranym elementem
-            popupWindow.dismiss() // Zamknięcie PopupWindow po wyborze
-        }
-
-        // Wyświetlanie PopupWindow
-        popupWindow.showAsDropDown(view)
-
-        view.postDelayed({
-            SystemUIUtils.hideSystemUI(this)
-        }, 1)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -347,41 +324,66 @@ class NewCardAncestryActivity : BaseActivity() {
 
         // Przywróć postęp SeekBarów
         ageSeekBar.progress = savedAgeProgress
-        ageTextView.text = "Wiek: ${selectedRace.minAge + savedAgeProgress}"
+        ageTextView.text = "${selectedRace.minAge + savedAgeProgress}"
         heightSeekBar.progress = savedHeightProgress
-        heightTextView.text = "Wzrost: ${calculateMinHeight(selectedRace, selectedSex) + savedHeightProgress}"
+        heightTextView.text = "${calculateMinHeight(selectedRace, selectedSex) + savedHeightProgress}"
         weightSeekBar.progress = savedWeightProgress
-        weightTextView.text = "Waga: ${selectedRace.minWeight + savedWeightProgress}"
+        weightTextView.text = "${selectedRace.minWeight + savedWeightProgress* 5}"
+
     }
 
 
     private fun updateAbilitiesAndSkills(race: Race) {
         val fullAbilitiesText = buildString {
-            append("Umiejętności rasowe: ")
+            var isNotEmpty = false // Zmienna pomocnicza dla umiejętności
+
+            // Dodajemy tylko, jeśli lista abilities nie jest pusta
             if (race.abilities.isNotEmpty()) {
+                append("Umiejętności rasowe: ")
                 append(race.abilities.joinToString(", ") { it.name })
+                isNotEmpty = true
             }
 
+            // Dodajemy optionalAbility tylko jeśli jest coś do dodania
             if (race.optionalAbility.isNotEmpty()) {
-                if (isNotEmpty()) append(", ") // Dodaje przecinek tylko, jeśli wcześniej coś było
+                if (isNotEmpty) append(", ") // Dodaj przecinek, jeśli coś już było
+                if (!isNotEmpty) append("Umiejętności rasowe: ") // Jeśli wcześniej nic nie było, dodajemy nagłówek
                 append(race.optionalAbility.joinToString(", ") { group ->
                     AbilityGroupSimplifier.simplify(group) ?: group.joinToString(" lub ") { it.name }
                 })
+                isNotEmpty = true
+            }
+
+            // Jeśli nie dodano niczego, pozostawiamy "Brak"
+            if (!isNotEmpty) {
+                append("Brak umiejętności")
             }
         }
         abilitiesTextView.text = fullAbilitiesText.ifBlank { "Brak" }
 
-
         val fullSkillsText = buildString {
-            append("Zdolności rasowe: ")
+            var isNotEmpty = false // Zmienna pomocnicza dla umiejętności
+
+            // Dodajemy tylko, jeśli lista skills nie jest pusta
             if (race.skills.isNotEmpty()) {
+                append("Zdolności rasowe: ")
                 append(race.skills.joinToString(", ") { it.name })
+                isNotEmpty = true
             }
 
+            // Dodajemy optionalSkills tylko jeśli jest coś do dodania
             if (race.optionalSkills.isNotEmpty()) {
+                if (isNotEmpty) append(", ") // Dodaj przecinek, jeśli coś już było
+                if (!isNotEmpty) append("Zdolności rasowe: ") // Jeśli wcześniej nic nie było, dodajemy nagłówek
                 append(race.optionalSkills.joinToString(", ") { group ->
                     SkillsGroupSimplifier.simplify(group) ?: group.joinToString(" lub ") { it.name }
                 })
+                isNotEmpty = true
+            }
+
+            // Jeśli nie dodano niczego, pozostawiamy "Brak"
+            if (!isNotEmpty) {
+                append("Brak zdolności")
             }
         }
         skillsTextView.text = fullSkillsText.ifBlank { "Brak" }
@@ -389,34 +391,23 @@ class NewCardAncestryActivity : BaseActivity() {
 
     // Zapisanie postaci do Firestore
     private fun saveCharacterToFirestore() {
-        val name = findViewById<EditText>(R.id.inputName).text.toString()
+
         val race = raceTextView.text.toString()
-        val age = ageSeekBar.progress + selectedRace.minAge
-        val sex = sexTextView.text.toString()
-        val eyes = eyesTextView.text.toString()
-        val hair = hairTextView.text.toString()
-        val growth = heightSeekBar.progress + calculateMinHeight(selectedRace, selectedSex)
-        val weight = weightSeekBar.progress + selectedRace.minWeight
-        val placeOfBirth = findViewById<EditText>(R.id.inputPlaceOfBirth).text.toString()
-        val starSign = selectedStarSign.name
-        val specialSigns = findViewById<EditText>(R.id.inputSpecialSigns).text.toString()
-        val family = findViewById<EditText>(R.id.inputFamily).text.toString()
-        val createdAt = FieldValue.serverTimestamp()
 
         val characterData = hashMapOf(
-            "name" to name,
+            "name" to findViewById<EditText>(R.id.inputName).text.toString(),
             "race" to race,
-            "age" to age,
-            "sex" to sex,
-            "eyes" to eyes,
-            "hair" to hair,
-            "growth" to growth,
-            "weight" to weight,
-            "placeOfBirth" to placeOfBirth,
-            "starSign" to starSign,
-            "specialSigns" to specialSigns,
-            "family" to family,
-            "createdAt" to createdAt,
+            "age" to findViewById<TextView>(R.id.ageView).text.toString(),
+            "sex" to sexTextView.text.toString(),
+            "eyes" to eyesTextView.text.toString(),
+            "hair" to hairTextView.text.toString(),
+            "height" to findViewById<TextView>(R.id.heightView).text.toString(),
+            "weight" to findViewById<TextView>(R.id.weightView).text.toString(),
+            "placeOfBirth" to findViewById<EditText>(R.id.inputPlaceOfBirth).text.toString(),
+            "starSign" to selectedStarSign.name,
+            "specialSigns" to findViewById<EditText>(R.id.inputSpecialSigns).text.toString(),
+            "createdAt" to FieldValue.serverTimestamp(),
+            "lastActiveAt" to FieldValue.serverTimestamp(),
             "progressStage" to 1
         )
 

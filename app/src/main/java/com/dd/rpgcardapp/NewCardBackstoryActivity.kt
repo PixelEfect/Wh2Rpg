@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -54,17 +55,34 @@ class NewCardBackstoryActivity : BaseActivity() {
 
         val exitButton = findViewById<Button>(R.id.exitButton)
         exitButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
 
-    private fun saveBackstoryToFirestore() {
+    override fun onStart() {
+        super.onStart()
+        SystemUIUtils.hideSystemUI(this)
+    }
 
+    override fun onResume() {
+        super.onResume()
+        SystemUIUtils.hideSystemUI(this)
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            SystemUIUtils.hideSystemUI(this)
+        }
+    }
+
+    private fun saveBackstoryToFirestore() {
         // Pobranie wartości i konwersja do Int (lub 0, jeśli puste)
         val backstoryData = hashMapOf(
             "stateOfHealth" to findViewById<EditText>(R.id.inputStateOfHealth).text.toString(),
+            "family" to findViewById<EditText>(R.id.inputFamily).text.toString(),
             "history" to findViewById<EditText>(R.id.inputHistory).text.toString(),
             "additionalInformation" to findViewById<EditText>(R.id.inputAdditionalInformation).text.toString(),
         )
