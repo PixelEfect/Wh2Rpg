@@ -4,7 +4,6 @@ import BaseActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.activity.ComponentActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -77,7 +76,7 @@ class LoginActivity : BaseActivity() {
                     // If sign-in is successful, get the current user
                     val user = auth.currentUser
                     saveUserToFirestore(user?.email ?: "")  // Save the user's email to Firestore
-                    startActivity(Intent(this, MainActivity::class.java))  // Navigate to MainActivity
+                    startActivity(Intent(this, HomeActivity::class.java))  // Navigate to MainActivity
                     finish()  // Finish the login activity
                 } else {
                     // Handle error in login

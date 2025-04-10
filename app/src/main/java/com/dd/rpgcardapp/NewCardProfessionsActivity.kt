@@ -3,12 +3,7 @@ package com.dd.rpgcardapp
 import BaseActivity
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.view.WindowManager
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.ListView
-import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
 import com.dd.rpgcardapp.data.Ability
@@ -17,6 +12,9 @@ import com.dd.rpgcardapp.data.Profession
 import com.dd.rpgcardapp.data.ProfessionPaths
 import com.dd.rpgcardapp.data.Races
 import com.dd.rpgcardapp.utils.SystemUIUtils
+import com.dd.rpgcardapp.utils.showAlertDialog
+import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -57,12 +55,12 @@ class NewCardProfessionsActivity : BaseActivity() {
 
             professionsTextView = findViewById(R.id.inputProfessionTextView)
             professionsTextView.setOnClickListener {
-                showPopupWindow(professionsTextView, professionNames) { selectedProfessionName ->
+                // Zamiast PopupWindow używamy AlertDialog
+                showAlertDialog(this, "Wybierz profesję", professionNames) { selectedProfessionName ->
                     // Wybór profesji
                     selectedProfession = race.startingProfessions.first { it.name == selectedProfessionName }
                     professionsTextView.text = selectedProfessionName // Ustaw tekst na wybraną profesję
                     selectedProfession?.let { updateProfessionStats(it) }
-
                 }
             }
 
@@ -81,9 +79,26 @@ class NewCardProfessionsActivity : BaseActivity() {
 
         val exitButton = findViewById<Button>(R.id.exitButton)
         exitButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        SystemUIUtils.hideSystemUI(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        SystemUIUtils.hideSystemUI(this)
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            SystemUIUtils.hideSystemUI(this)
         }
     }
 
@@ -119,65 +134,6 @@ class NewCardProfessionsActivity : BaseActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    // Funkcja do zapisywania profesji do Firestore (można rozbudować, aby zapisać więcej danych)
-    private fun saveProfessionToFirestore() {
-        if (characterDocId == null || selectedProfession == null) {
-            Toast.makeText(this, "Brak danych do zapisania", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val professionName = selectedProfession!!.name
-        val professionData = hashMapOf(
-            "professionName" to professionName
-        )
-
-        val characterRef = db.collection("users").document(userId)
-            .collection("characters").document(characterDocId!!)
-
-        characterRef.collection("professions").document(professionName)
-            .set(professionData)
-            .addOnSuccessListener {
-                // Zapisz abilities
-                selectedProfession!!.abilities.forEach { ability ->
-                    val abilityData = hashMapOf(
-                        "name" to ability.name
-                    )
-                    characterRef.collection("abilities").document(ability.name)
-                        .set(abilityData)
-                }
-
-                // Zapisz skills
-                selectedProfession!!.skills.forEach { skill ->
-                    val skillData = hashMapOf(
-                        "name" to skill.name
-                    )
-                    characterRef.collection("skills").document(skill.name)
-                        .set(skillData)
-                }
-
-                // Aktualizacja etapu tworzenia postaci
-                characterRef.update("progressStage", 4)
-
-                Toast.makeText(this, "Profesja i dane zapisane!", Toast.LENGTH_SHORT).show()
-                // Przejście do nowej aktywności z przekazaniem ID dokumentu postaci
-                val intent = Intent(this, NewCardSkillsAndAbilitiesActivity::class.java).apply {
-                    putExtra("CHARACTER_DOC_ID", characterDocId)  // Przekazanie characterDocId
-                    putExtra("CHARACTER_RACE", intent.getStringExtra("CHARACTER_RACE"))
-                    putExtra("CHARACTER_PROFESSION", professionName) // Przekazanie nazwy profesji
-                }
-                startActivity(intent)
-                finish()
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(this, "Błąd zapisu: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-    }
-
     fun updateProfessionStats(profession: Profession) {
         // Pobranie referencji do odpowiednich TextView
         val wwTextView = findViewById<TextView>(R.id.inputWW)
@@ -195,27 +151,22 @@ class NewCardProfessionsActivity : BaseActivity() {
 
         val abilitiesTextView = findViewById<TextView>(R.id.inputAbilities)
         val skillsTextView = findViewById<TextView>(R.id.inputSkills)
-
         val entryPathsTextView = findViewById<TextView>(R.id.inputEntryPaths)
         val exitPathsTextView = findViewById<TextView>(R.id.inputExitPaths)
 
-        fun formatStat(value: Int): String {
-            return if (value == 0) "-" else value.toString()
-        }
-
         // Ustawianie wartości statystyk w TextView
-        wwTextView.text = formatStat(profession.ww)
-        usTextView.text = formatStat(profession.us)
-        kTextView.text = formatStat(profession.k)
-        odpTextView.text = formatStat(profession.odp)
-        zrTextView.text = formatStat(profession.zr)
-        intTextView.text = formatStat(profession.int)
-        swTextView.text = formatStat(profession.sw)
-        ogdTextView.text = formatStat(profession.ogd)
-        aTextView.text = formatStat(profession.a)
-        zywTextView.text = formatStat(profession.zyw)
-        szTextView.text = formatStat(profession.sz)
-        magTextView.text = formatStat(profession.mag)
+        wwTextView.text = profession.ww.toString()
+        usTextView.text = profession.us.toString()
+        kTextView.text = profession.k.toString()
+        odpTextView.text = profession.odp.toString()
+        zrTextView.text = profession.zr.toString()
+        intTextView.text = profession.int.toString()
+        swTextView.text = profession.sw.toString()
+        ogdTextView.text = profession.ogd.toString()
+        aTextView.text = profession.a.toString()
+        zywTextView.text = profession.zyw.toString()
+        szTextView.text = profession.sz.toString()
+        magTextView.text = profession.mag.toString()
 
         // Zastosowanie mapowania grup umiejętności
         val simplifiedAbilities = profession.abilities.mapNotNull { ability ->
@@ -276,38 +227,107 @@ class NewCardProfessionsActivity : BaseActivity() {
         }
     }
 
-    // Funkcja do wyświetlania PopupWindow z listą do wyboru
-    private fun showPopupWindow(view: View, items: List<String>, onItemSelected: (String) -> Unit) {
-        val context = this
-        val listView = ListView(context)
-        val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, items)
-        listView.adapter = adapter
-
-        // Tworzenie PopupWindow
-        val popupWindow = PopupWindow(listView, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
-        popupWindow.isFocusable = true
-        popupWindow.setBackgroundDrawable(getDrawable(android.R.drawable.screen_background_light))
-
-        // Ukrywanie systemowego UI, jak pasek stanu
-        popupWindow.setOnDismissListener {
-            SystemUIUtils.hideSystemUI(this)
-        }
-
-        // Obsługa kliknięcia na element w liście
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = items[position]
-            onItemSelected(selectedItem) // Wywołanie funkcji zwrotnej z wybranym elementem
-            popupWindow.dismiss() // Zamknięcie PopupWindow po wyborze
-        }
-
-        // Wyświetlanie PopupWindow
-        popupWindow.showAsDropDown(view)
-
-        view.postDelayed({
-            SystemUIUtils.hideSystemUI(this)
-        }, 1)
-    }
     fun mapAbilityGroupToText(group: List<Ability>): String? {
         return AbilityGroupSimplifier.simplify(group)
     }
+
+    // Funkcja do zapisywania profesji do Firestore (można rozbudować, aby zapisać więcej danych)
+    private fun saveProfessionToFirestore() {
+        if (characterDocId == null || selectedProfession == null) {
+            Toast.makeText(this, "Brak danych do zapisania", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val characterRef = db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+
+        val professionName = selectedProfession!!.name
+        val professionData = hashMapOf(
+            "professionName" to professionName
+        )
+        fun getIntFromTextView(viewId: Int): Int {
+            return findViewById<TextView>(viewId).text.toString().toIntOrNull() ?: 0
+        }
+        // 2. Zapisz atrybuty
+        val attributesData = mapOf(
+            "ww" to getIntFromTextView(R.id.inputWW),
+            "us" to getIntFromTextView(R.id.inputUS),
+            "k" to getIntFromTextView(R.id.inputK),
+            "odp" to getIntFromTextView(R.id.inputOdp),
+            "zr" to getIntFromTextView(R.id.inputZr),
+            "int" to getIntFromTextView(R.id.inputInt),
+            "sw" to getIntFromTextView(R.id.inputSW),
+            "ogd" to getIntFromTextView(R.id.inputOgd),
+            "a" to getIntFromTextView(R.id.inputA),
+            "zyw" to getIntFromTextView(R.id.inputŻyw),
+            "sz" to getIntFromTextView(R.id.inputSz),
+            "mag" to getIntFromTextView(R.id.inputMag)
+        )
+
+        val professionPaths = ProfessionPaths.paths[selectedProfession]
+        val tasks = mutableListOf<Task<Void>>()
+        // Iterowanie po wszystkich ścieżkach wyjściowych
+        professionPaths?.exit?.let { exitPaths ->
+            val exitPathDataList = exitPaths.map { exitProfession ->
+                // Tworzymy mapę dla każdej ścieżki wyjściowej
+                hashMapOf(
+                    "name" to exitProfession.name
+                )
+            }
+
+            // Zapisz wszystkie ścieżki wyjściowe w jednym dokumencie "exitpath"
+            val exitPathTask = characterRef.collection("profession")
+                .document("exitpath") // Dokument o nazwie "exitpath"
+                .set(hashMapOf("exitPaths" to exitPathDataList))
+                .addOnFailureListener { e ->
+                    // Obsługuje błędy zapisu
+                    Toast.makeText(this, "Błąd zapisu ścieżek wyjściowych: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+
+            tasks.add(exitPathTask)
+        }
+
+        val professionNameTask = db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+            .collection("profession").document("owned")
+            .set(professionData)
+
+        tasks.add(professionNameTask)
+
+        val attributesTask = db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+            .collection("attributes").document("progression")
+            .set(attributesData)
+        tasks.add(attributesTask)
+
+        // Uaktualnienie progressStage na 4
+        val progressStageTask = db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+            .update("progressStage", 4)  // Ustawienie progressStage na 4
+        tasks.add(progressStageTask)
+
+        Tasks.whenAllSuccess<Void>(*tasks.toTypedArray())
+            .addOnSuccessListener {
+                // Jeśli wszystkie zapisy zakończyły się sukcesem
+                Toast.makeText(
+                    this,
+                    "Dane zapisane poprawnie",
+                    Toast.LENGTH_SHORT
+                ).show()
+                val intent = Intent(this, NewCardSkillsAndAbilitiesActivity::class.java).apply {
+                    putExtra("CHARACTER_DOC_ID", characterDocId)  // Przekazanie characterDocId
+                    putExtra("CHARACTER_RACE", intent.getStringExtra("CHARACTER_RACE"))
+                    putExtra("CHARACTER_PROFESSION", professionName)
+                }
+                startActivity(intent)
+                finish()
+            }
+            .addOnFailureListener { e ->
+                // Jeśli któraś z operacji zakończy się błędem
+                Toast.makeText(this, "Błąd zapisu danych postaci: ${e.message}", Toast.LENGTH_SHORT)
+                    .show()
+            }
+
+    }
+
 }

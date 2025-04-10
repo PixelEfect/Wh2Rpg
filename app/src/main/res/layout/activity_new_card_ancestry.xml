@@ -8,6 +8,10 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,10 +65,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/ageView"
-                style="@style/LabelStyle"
-                android:text="Wiek: 16" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/ageNameView"
+                    style="@style/LabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Wiek: " />
+                <TextView
+                    android:id="@+id/ageView"
+                    style="@style/LabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="16" />
+            </LinearLayout>
             <SeekBar
                 android:id="@+id/ageSeekBar"
                 android:layout_width="match_parent"
@@ -152,10 +172,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/heightView"
-                style="@style/LabelStyle"
-                android:text="Wzrost: 160" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/heightNameView"
+                    style="@style/LabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Wzrost: " />
+                <TextView
+                    android:id="@+id/heightView"
+                    style="@style/LabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="160" />
+            </LinearLayout>
             <SeekBar
                 android:id="@+id/heightSeekBar"
                 android:layout_width="match_parent"
@@ -168,10 +203,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/weightView"
-                style="@style/LabelStyle"
-                android:text="Waga: 50" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/weightNameView"
+                    style="@style/LabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Waga: " />
+                <TextView
+                    android:id="@+id/weightView"
+                    style="@style/LabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="50" />
+            </LinearLayout>
             <SeekBar
                 android:id="@+id/weightSeekBar"
                 android:layout_width="match_parent"
@@ -238,22 +289,6 @@
             <EditText
                 android:id="@+id/inputSpecialSigns"
                 style="@style/MediumInputStyle"
-                android:layout_width="251dp"
-                />
-        </LinearLayout>
-
-        <!-- RODZINA -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/familyView"
-                style="@style/LabelStyle"
-                android:text="Rodzina: " />
-            <EditText
-                android:id="@+id/inputFamily"
-                style="@style/LargeInputStyle"
                 android:layout_width="251dp"
                 />
         </LinearLayout>
