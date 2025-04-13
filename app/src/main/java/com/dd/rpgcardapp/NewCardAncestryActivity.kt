@@ -1,183 +1,78 @@
 package com.dd.rpgcardapp
 
 import BaseActivity
-import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.SeekBar
+import android.widget.Toast
+import com.dd.rpgcardapp.data.AbilityGroupSimplifier
+import com.dd.rpgcardapp.data.AllStarSigns
+import com.dd.rpgcardapp.data.Eyes
+import com.dd.rpgcardapp.data.GroupRace
+import com.dd.rpgcardapp.data.Hair
+import com.dd.rpgcardapp.data.Race
+import com.dd.rpgcardapp.data.Races
+import com.dd.rpgcardapp.data.SkillsGroupSimplifier
+import com.dd.rpgcardapp.data.StarSign
+import com.dd.rpgcardapp.data.StarSigns
+import com.dd.rpgcardapp.databinding.ActivityNewCardAncestryBinding
+import com.dd.rpgcardapp.utils.SystemUIUtils
+import com.dd.rpgcardapp.utils.showAlertDialog
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import android.widget.SeekBar
-import com.dd.rpgcardapp.data.AllStarSigns
-import com.dd.rpgcardapp.data.SkillsGroupSimplifier
-import com.dd.rpgcardapp.data.Race
-import com.dd.rpgcardapp.data.Races
-import com.dd.rpgcardapp.data.GroupRace
-import com.dd.rpgcardapp.data.StarSign
-import com.dd.rpgcardapp.data.StarSigns
-import com.dd.rpgcardapp.utils.SystemUIUtils
-import android.content.Context
-import android.view.inputmethod.InputMethodManager
-import com.dd.rpgcardapp.data.AbilityGroupSimplifier
-import com.dd.rpgcardapp.data.Eyes
-import com.dd.rpgcardapp.data.Hair
-import com.dd.rpgcardapp.utils.showAlertDialog
 
 class NewCardAncestryActivity : BaseActivity() {
 
+    private lateinit var binding: ActivityNewCardAncestryBinding
     private lateinit var db: FirebaseFirestore
     private lateinit var userId: String
-
-    private lateinit var raceTextView: TextView
-    private lateinit var ageSeekBar: SeekBar
-    private lateinit var ageTextView: TextView
-    private lateinit var sexTextView: TextView
-    private lateinit var eyesTextView: TextView
-    private lateinit var hairTextView: TextView
-    private lateinit var heightSeekBar: SeekBar
-    private lateinit var heightTextView: TextView
-    private lateinit var weightSeekBar: SeekBar
-    private lateinit var weightTextView: TextView
-    private lateinit var starSignTextView: TextView
-    private lateinit var abilitiesTextView: TextView
-    private lateinit var skillsTextView: TextView
-
-    companion object {
-        const val MALE = "Mężczyzna"
-        const val FEMALE = "Kobieta"
-    }
-
+    private var characterDocId: String? = null
     private var selectedRace: Race = Races.Czlowiek
     private var selectedSex: String = MALE
     private var selectedStarSign: StarSign = StarSigns.bebniarz
 
+    companion object {
+        const val MALE = "Mężczyzna"
+        const val FEMALE = "Kobieta"
+        const val CHARACTER_DOC_ID_EXTRA = "CHARACTER_DOC_ID"
+        private const val STEP_WEIGHT = 5
+        private const val HEIGHT_RANGE = 20
+        private const val FEMALE_HEIGHT_PENALTY = 10
+        private const val DWARF_FEMALE_HEIGHT_PENALTY = 5
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_card_ancestry)
+        binding = ActivityNewCardAncestryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
+        characterDocId = intent.getStringExtra(CHARACTER_DOC_ID_EXTRA)
 
-        // Wyszukaj widżety
-        raceTextView = findViewById(R.id.inputRaceTextView)
-        ageSeekBar = findViewById(R.id.ageSeekBar)
-        ageTextView = findViewById(R.id.ageView)
-        sexTextView = findViewById(R.id.inputSexTextView)
-        eyesTextView = findViewById(R.id.inputEyesTextView)
-        hairTextView = findViewById(R.id.inputHairTextView)
-        heightSeekBar = findViewById(R.id.heightSeekBar)
-        heightTextView = findViewById(R.id.heightView)
-        weightSeekBar = findViewById(R.id.weightSeekBar)
-        weightTextView = findViewById(R.id.weightView)
-        starSignTextView = findViewById(R.id.inputStarSignTextView)
-        abilitiesTextView = findViewById(R.id.abilitiesTextView)
-        skillsTextView = findViewById(R.id.skillsTextView)
+        setupListeners()
 
+        if (characterDocId != null) {
+            loadCharacterData(characterDocId!!)
+        } else {
+            setDefaultValues()
+        }
 
-        raceTextView.text = Races.Czlowiek.name
-        setAgeRange(Races.Czlowiek)
-        selectedSex = MALE
-        sexTextView.text = selectedSex
-        val defaultEyesColor = Eyes.brazowy.name
-        eyesTextView.text = defaultEyesColor
-        val defaultHairColor = Hair.brazowy.name
-        hairTextView.text = defaultHairColor
-
-        setHeightRange(Races.Czlowiek, selectedSex)
-        setWeightRange(Races.Czlowiek)
-        starSignTextView.text = "${selectedStarSign.name}"
-
-        updateAbilitiesAndSkills(selectedRace)
-        // Nasłuchiwanie kliknięć na głównym kontenerze aktywności
-        val rootLayout = findViewById<View>(R.id.rootLayout) // Zmienna 'rootLayout' to główny layout aktywności
-        rootLayout.setOnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_DOWN) {
-                if (currentFocus != null) {
-                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-                }
+        // Hide keyboard on touch outside edit texts
+        binding.rootLayout.setOnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_DOWN && currentFocus != null) {
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
             }
             SystemUIUtils.hideSystemUI(this)
             false
-        }
-
-        raceTextView.setOnClickListener {
-            val raceNames = GroupRace.All.map { it.name }
-            showAlertDialog(
-                context = this,
-                title = "Wybierz rasę",
-                items = raceNames
-            ) { selectedRaceName ->
-                GroupRace.All.find { it.name == selectedRaceName }?.let { foundRace ->
-                    selectedRace = foundRace
-                    raceTextView.text = selectedRaceName
-                    setAgeRange(foundRace)
-                    setWeightRange(foundRace)
-                    hairTextView.text = foundRace.hair.first().name
-                    eyesTextView.text = foundRace.eyes.first().name
-                    setHeightRange(foundRace, selectedSex)
-                    updateAbilitiesAndSkills(foundRace)
-                }
-            }
-        }
-
-        sexTextView.setOnClickListener {
-            val sexes = listOf(MALE, FEMALE)
-            showAlertDialog(context = this, title = "Wybierz płeć", items = sexes) { selected ->
-                selectedSex = selected
-                sexTextView.text = selected
-                setHeightRange(selectedRace, selectedSex)
-            }
-        }
-
-        eyesTextView.setOnClickListener {
-            val eyeColors = selectedRace.eyes.map { it.name }
-            showAlertDialog(context = this, title = "Wybierz kolor oczu", items = eyeColors) { selected ->
-                eyesTextView.text = selected
-            }
-        }
-
-        hairTextView.setOnClickListener {
-            val hairColors = selectedRace.hair.map { it.name }
-            showAlertDialog(context = this, title = "Wybierz kolor włosów", items = hairColors) { selected ->
-                hairTextView.text = selected
-            }
-        }
-
-        starSignTextView.setOnClickListener {
-            val starSigns = getStarSignsList()
-            val starSignNames = starSigns.map { it.name }
-
-            showAlertDialog(context = this, title = "Wybierz znak gwiezdny", items = starSignNames) { selectedName ->
-                starSigns.find { it.name == selectedName }?.let {
-                    selectedStarSign = it
-                    starSignTextView.text = selectedName
-                }
-            }
-        }
-
-        val nextButton = findViewById<Button>(R.id.nextButton)
-        nextButton.setOnClickListener {
-            val name = findViewById<EditText>(R.id.inputName).text.toString()
-            if (name.isBlank()) {
-                Toast.makeText(this, "Imię nie może być puste!", Toast.LENGTH_SHORT).show()
-            } else {
-                saveCharacterToFirestore()
-            }
-        }
-
-        val exitButton = findViewById<Button>(R.id.exitButton)
-        exitButton.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
         }
     }
 
@@ -198,22 +93,42 @@ class NewCardAncestryActivity : BaseActivity() {
         }
     }
 
-    // Wspólna funkcja do ustawiania SeekBar dla wieku, wagi, wzrostu
-    private fun setupSeekBar(
-        seekBar: SeekBar,
-        textView: TextView,
-        minValue: Int,
-        maxValue: Int,
-        step: Int = 1,
-    ) {
-        seekBar.max = (maxValue - minValue) / step
-        seekBar.progress = 0
-        textView.text = "$minValue"
+    private fun setupListeners() {
+        binding.inputRaceTextView.setOnClickListener { showRaceSelectionDialog() }
+        binding.inputSexTextView.setOnClickListener { showSexSelectionDialog() }
+        binding.inputEyesTextView.setOnClickListener { showEyeColorSelectionDialog() }
+        binding.inputHairTextView.setOnClickListener { showHairColorSelectionDialog() }
+        binding.inputStarSignTextView.setOnClickListener { showStarSignSelectionDialog() }
+        binding.nextButton.setOnClickListener { saveCharacterToFirestore() }
+        binding.backButton.setOnClickListener { navigateToHome() }
 
-        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        binding.ageSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                val value = minValue + progress * step
-                textView.text = "$value"
+                binding.ageView.text = (selectedRace.minAge + progress).toString()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        binding.heightSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                // Obliczanie aktualnej wysokości
+                val minHeight = calculateMinHeight(selectedRace, selectedSex)
+                val currentHeight = minHeight + progress // dodajemy progress do minimalnej wysokości
+                binding.heightView.text = currentHeight.toString()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        binding.weightSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                // Obliczanie aktualnej wagi
+                val minWeight = selectedRace.minWeight
+                val currentWeight = minWeight + progress * STEP_WEIGHT // dodajemy progres pomnożony przez STEP_WEIGHT
+                binding.weightView.text = currentWeight.toString()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
@@ -221,53 +136,166 @@ class NewCardAncestryActivity : BaseActivity() {
         })
     }
 
-    // Ustawianie zakresu dla wieku
-    private fun setAgeRange(race: Race) {
-        setupSeekBar(
-            ageSeekBar,
-            ageTextView,
-            race.minAge,
-            race.maxAge,
-            step = 1,
-        )
+    private fun setDefaultValues() {
+        binding.inputRaceTextView.text = Races.Czlowiek.name
+        setAgeRange(Races.Czlowiek)
+        selectedSex = MALE
+        binding.inputSexTextView.text = selectedSex
+        binding.inputEyesTextView.text = Eyes.brazowy.name
+        binding.inputHairTextView.text = Hair.brazowy.name
+        setHeightRange(Races.Czlowiek, selectedSex)
+        setWeightRange(Races.Czlowiek)
+        binding.inputStarSignTextView.text = selectedStarSign.name
+        updateAbilitiesAndSkills(selectedRace)
     }
 
-    // Ustawianie zakresu dla wagi
-    private fun setWeightRange(race: Race) {
-        setupSeekBar(
-            weightSeekBar,
-            weightTextView,
-            race.minWeight,
-            race.maxWeight,
-            step = 5,
-        )
+    private fun loadCharacterData(docId: String) {
+        db.collection("users").document(userId).collection("characters")
+            .document(docId)
+            .get()
+            .addOnSuccessListener { document ->
+                document.data?.let { data ->
+                    binding.inputName.setText(data["name"] as? String)
+                    val raceName = data["race"] as? String ?: Races.Czlowiek.name
+                    selectedRace = Races.getByName(raceName) ?: Races.Czlowiek
+                    binding.inputRaceTextView.text = selectedRace.name
+
+                    selectedSex = data["sex"] as? String ?: MALE
+                    binding.inputSexTextView.text = selectedSex
+
+                    val ageString = data["age"] as? String
+                    val age = ageString?.toIntOrNull() ?: selectedRace.minAge
+                    setAgeRange(selectedRace, age)
+                    println("Loaded age: $age") // Added print statement
+
+                    binding.inputEyesTextView.text = data["eyes"] as? String
+                    binding.inputHairTextView.text = data["hair"] as? String
+
+                    val heightString = data["height"] as? String
+                    val height = heightString?.toIntOrNull() ?: calculateMinHeight(selectedRace, selectedSex)
+                    setHeightRange(selectedRace, selectedSex, height)
+                    println("Loaded height: $height")
+
+                    val weightString = data["weight"] as? String
+                    val weight = weightString?.toIntOrNull() ?: selectedRace.minWeight
+                    setWeightRange(selectedRace, weight)
+                    println("Loaded weight: $weight")
+
+                    binding.inputPlaceOfBirth.setText(data["placeOfBirth"] as? String)
+                    val starSignName = data["starSign"] as? String ?: StarSigns.bebniarz.name
+                    selectedStarSign = AllStarSigns.All.find { it.name == starSignName } ?: AllStarSigns.All.firstOrNull { it.name == "Bębniarz" } ?: StarSigns.bebniarz
+                    binding.inputStarSignTextView.text = selectedStarSign.name
+                    binding.inputSpecialSigns.setText(data["specialSigns"] as? String)
+                    updateAbilitiesAndSkills(selectedRace)
+                }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Błąd ładowania danych: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
-    // Ustawianie zakresu dla wzrostu
-    private fun setHeightRange(race: Race, sex: String) {
+    private fun showRaceSelectionDialog() {
+        val raceNames = GroupRace.All.map { it.name }
+        showAlertDialog(this, "Wybierz rasę", raceNames) { selectedRaceName ->
+            GroupRace.All.find { it.name == selectedRaceName }?.let { foundRace ->
+                selectedRace = foundRace
+                binding.inputRaceTextView.text = selectedRaceName
+                setAgeRange(foundRace)
+                setWeightRange(foundRace)
+                binding.inputHairTextView.text = foundRace.hair.first().name
+                binding.inputEyesTextView.text = foundRace.eyes.first().name
+                setHeightRange(foundRace, selectedSex)
+                updateAbilitiesAndSkills(foundRace)
+            }
+        }
+    }
+
+    private fun showSexSelectionDialog() {
+        val sexes = listOf(MALE, FEMALE)
+        showAlertDialog(this, "Wybierz płeć", sexes) { selected ->
+            selectedSex = selected
+            binding.inputSexTextView.text = selected
+            setHeightRange(selectedRace, selectedSex)
+        }
+    }
+
+    private fun showEyeColorSelectionDialog() {
+        val eyeColors = selectedRace.eyes.map { it.name }
+        showAlertDialog(this, "Wybierz kolor oczu", eyeColors) { selected ->
+            binding.inputEyesTextView.text = selected
+        }
+    }
+
+    private fun showHairColorSelectionDialog() {
+        val hairColors = selectedRace.hair.map { it.name }
+        showAlertDialog(this, "Wybierz kolor włosów", hairColors) { selected ->
+            binding.inputHairTextView.text = selected
+        }
+    }
+
+    private fun showStarSignSelectionDialog() {
+        val starSigns = AllStarSigns.All
+        val starSignNames = starSigns.map { it.name }
+        showAlertDialog(this, "Wybierz znak gwiezdny", starSignNames) { selectedName ->
+            starSigns.find { it.name == selectedName }?.let {
+                selectedStarSign = it
+                binding.inputStarSignTextView.text = selectedName
+            }
+        }
+    }
+
+    private fun setAgeRange(race: Race, currentAge: Int? = null) {
+        binding.ageSeekBar.min = race.minAge
+        binding.ageSeekBar.max = race.maxAge
+        val ageToSet = currentAge ?: race.minAge
+        println("setAgeRange - minAge: ${race.minAge}, maxAge: ${race.maxAge}, ageToSet: $ageToSet")
+        val progressToSet = ageToSet - race.minAge
+        binding.ageSeekBar.progress = progressToSet
+        binding.ageView.text = ageToSet.toString()
+    }
+
+    private fun setHeightRange(race: Race, sex: String, currentHeight: Int? = null) {
         val minHeight = calculateMinHeight(race, sex)
-        setupSeekBar(
-            heightSeekBar,
-            heightTextView,
-            minHeight,
-            minHeight + 20,
-            step = 1,
-        )
+        val heightToSet = currentHeight ?: minHeight
+        println("setHeightRange - minHeight: $minHeight, currentHeight: $heightToSet")
+        binding.heightSeekBar.min = 0
+        binding.heightSeekBar.max = HEIGHT_RANGE
+        val progressToSet = (heightToSet - minHeight)
+        binding.heightSeekBar.progress = progressToSet
+        binding.heightView.text = heightToSet.toString()
     }
 
-    // Obliczanie minimalnego wzrostu na podstawie rasy i płci
+    private fun setWeightRange(race: Race, currentWeight: Int? = null) {
+        val minWeight = race.minWeight
+        val maxWeight = race.maxWeight
+        val weightToSet = currentWeight ?: minWeight
+        println("setWeightRange - minWeight: $minWeight, maxWeight: $maxWeight, weightToSet: $weightToSet")
+        binding.weightSeekBar.min = 0
+        binding.weightSeekBar.max = (maxWeight - minWeight) / STEP_WEIGHT
+        val progressToSet = (weightToSet - minWeight) / STEP_WEIGHT
+        binding.weightSeekBar.progress = progressToSet
+        binding.weightView.text = weightToSet.toString()
+    }
+
     private fun calculateMinHeight(race: Race, sex: String): Int {
         var minHeight = race.minHeight
         if (sex == FEMALE) {
-            minHeight -= 10
+            minHeight -= FEMALE_HEIGHT_PENALTY
             if (race.name.lowercase().contains("krasnolud")) {
-                minHeight -= 5
+                minHeight -= DWARF_FEMALE_HEIGHT_PENALTY
             }
         }
         return minHeight
     }
 
-    // Pobieranie listy znaków zodiaku
+    private fun calculateCurrentHeight(): Int {
+        return calculateMinHeight(selectedRace, selectedSex) + binding.heightSeekBar.progress
+    }
+
+    private fun calculateCurrentWeight(): Int {
+        return selectedRace.minWeight + binding.weightSeekBar.progress * STEP_WEIGHT
+    }
+
     private fun getStarSignsList(): List<StarSign> {
         return AllStarSigns.All
     }
@@ -276,12 +304,12 @@ class NewCardAncestryActivity : BaseActivity() {
         super.onSaveInstanceState(outState)
         outState.putString("selectedRaceName", selectedRace.name)
         outState.putString("selectedSex", selectedSex)
-        outState.putString("selectedHairColor", hairTextView.text.toString())
-        outState.putString("selectedEyesColor", eyesTextView.text.toString())
+        outState.putString("selectedHairColor", binding.inputHairTextView.text.toString())
+        outState.putString("selectedEyesColor", binding.inputEyesTextView.text.toString())
         outState.putString("selectedStarSignName", selectedStarSign.name)
-        outState.putInt("ageProgress", ageSeekBar.progress)
-        outState.putInt("heightProgress", heightSeekBar.progress)
-        outState.putInt("weightProgress", weightSeekBar.progress)
+        outState.putInt("ageProgress", binding.ageSeekBar.progress)
+        outState.putInt("heightProgress", binding.heightSeekBar.progress)
+        outState.putInt("weightProgress", binding.weightSeekBar.progress)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -292,120 +320,83 @@ class NewCardAncestryActivity : BaseActivity() {
         val savedEyesColor = savedInstanceState.getString("selectedEyesColor")
         val savedStarSignName = savedInstanceState.getString("selectedStarSignName")
         val savedAgeProgress = savedInstanceState.getInt("ageProgress")
+        println("onRestoreInstanceState - savedAgeProgress: $savedAgeProgress")
+
         val savedHeightProgress = savedInstanceState.getInt("heightProgress")
         val savedWeightProgress = savedInstanceState.getInt("weightProgress")
 
-        // Przywróć rasę
-        val foundRace = GroupRace.All.find { it.name == savedRaceName }
-        foundRace?.let {
+        GroupRace.All.find { it.name == savedRaceName }?.let {
             selectedRace = it
-            raceTextView.text = savedRaceName
-            setAgeRange(it)
-            setWeightRange(it)
-            setHeightRange(it, savedSex ?: MALE)
+            binding.inputRaceTextView.text = savedRaceName
+            val restoredAge = it.minAge + savedAgeProgress
+
+            println("onRestoreInstanceState - restoredAge: $restoredAge")
+            setAgeRange(it, restoredAge)
+            setWeightRange(it, it.minWeight + savedWeightProgress * STEP_WEIGHT)
+            setHeightRange(it, savedSex ?: MALE, calculateMinHeight(it, savedSex ?: MALE) + savedHeightProgress)
             updateAbilitiesAndSkills(it)
-
         }
 
-        // Przywróć płeć
         selectedSex = savedSex ?: MALE
-        sexTextView.text = selectedSex
+        binding.inputSexTextView.text = selectedSex
+        binding.inputHairTextView.text = savedHairColor
+        binding.inputEyesTextView.text = savedEyesColor
 
-        // Przywróć kolor włosów i oczu
-        hairTextView.text = savedHairColor
-        eyesTextView.text = savedEyesColor
-
-        // Przywróć znak gwiezdny
-        val foundStarSign = getStarSignsList().find { it.name == savedStarSignName }
-        foundStarSign?.let {
+        getStarSignsList().find { it.name == savedStarSignName }?.let {
             selectedStarSign = it
-            starSignTextView.text = savedStarSignName
+            binding.inputStarSignTextView.text = savedStarSignName
         }
-
-        // Przywróć postęp SeekBarów
-        ageSeekBar.progress = savedAgeProgress
-        ageTextView.text = "${selectedRace.minAge + savedAgeProgress}"
-        heightSeekBar.progress = savedHeightProgress
-        heightTextView.text = "${calculateMinHeight(selectedRace, selectedSex) + savedHeightProgress}"
-        weightSeekBar.progress = savedWeightProgress
-        weightTextView.text = "${selectedRace.minWeight + savedWeightProgress* 5}"
-
     }
-
 
     private fun updateAbilitiesAndSkills(race: Race) {
-        val fullAbilitiesText = buildString {
-            var isNotEmpty = false // Zmienna pomocnicza dla umiejętności
-
-            // Dodajemy tylko, jeśli lista abilities nie jest pusta
-            if (race.abilities.isNotEmpty()) {
-                append("Umiejętności rasowe: ")
-                append(race.abilities.joinToString(", ") { it.name })
-                isNotEmpty = true
+        binding.abilitiesTextView.text = buildString {
+            val racialAbilities = race.abilities.joinToString(", ") { it.name }
+            val optionalAbilities = race.optionalAbility.joinToString(", ") { group ->
+                AbilityGroupSimplifier.simplify(group) ?: group.joinToString(" lub ") { it.name }
             }
 
-            // Dodajemy optionalAbility tylko jeśli jest coś do dodania
-            if (race.optionalAbility.isNotEmpty()) {
-                if (isNotEmpty) append(", ") // Dodaj przecinek, jeśli coś już było
-                if (!isNotEmpty) append("Umiejętności rasowe: ") // Jeśli wcześniej nic nie było, dodajemy nagłówek
-                append(race.optionalAbility.joinToString(", ") { group ->
-                    AbilityGroupSimplifier.simplify(group) ?: group.joinToString(" lub ") { it.name }
-                })
-                isNotEmpty = true
+            if (racialAbilities.isNotEmpty()) {
+                append("Umiejętności rasowe: $racialAbilities")
             }
-
-            // Jeśli nie dodano niczego, pozostawiamy "Brak"
-            if (!isNotEmpty) {
-                append("Brak umiejętności")
+            if (optionalAbilities.isNotEmpty()) {
+                if (racialAbilities.isNotEmpty()) append(", ")
+                append("Dodatkowe umiejętności: $optionalAbilities")
             }
+            if (isEmpty()) append("Brak umiejętności rasowych")
         }
-        abilitiesTextView.text = fullAbilitiesText.ifBlank { "Brak" }
 
-        val fullSkillsText = buildString {
-            var isNotEmpty = false // Zmienna pomocnicza dla umiejętności
-
-            // Dodajemy tylko, jeśli lista skills nie jest pusta
-            if (race.skills.isNotEmpty()) {
-                append("Zdolności rasowe: ")
-                append(race.skills.joinToString(", ") { it.name })
-                isNotEmpty = true
+        binding.skillsTextView.text = buildString {
+            val racialSkills = race.skills.joinToString(", ") { it.name }
+            val optionalSkills = race.optionalSkills.joinToString(", ") { group ->
+                SkillsGroupSimplifier.simplify(group) ?: group.joinToString(" lub ") { it.name }
             }
 
-            // Dodajemy optionalSkills tylko jeśli jest coś do dodania
-            if (race.optionalSkills.isNotEmpty()) {
-                if (isNotEmpty) append(", ") // Dodaj przecinek, jeśli coś już było
-                if (!isNotEmpty) append("Zdolności rasowe: ") // Jeśli wcześniej nic nie było, dodajemy nagłówek
-                append(race.optionalSkills.joinToString(", ") { group ->
-                    SkillsGroupSimplifier.simplify(group) ?: group.joinToString(" lub ") { it.name }
-                })
-                isNotEmpty = true
+            if (racialSkills.isNotEmpty()) {
+                append("Zdolności rasowe: $racialSkills")
             }
-
-            // Jeśli nie dodano niczego, pozostawiamy "Brak"
-            if (!isNotEmpty) {
-                append("Brak zdolności")
+            if (optionalSkills.isNotEmpty()) {
+                if (racialSkills.isNotEmpty()) append(", ")
+                append("Dodatkowe zdolności: $optionalSkills")
             }
+            if (isEmpty()) append("Brak zdolności rasowych")
         }
-        skillsTextView.text = fullSkillsText.ifBlank { "Brak" }
     }
 
-    // Zapisanie postaci do Firestore
     private fun saveCharacterToFirestore() {
-
-        val race = raceTextView.text.toString()
+        val race = binding.inputRaceTextView.text.toString()
 
         val characterData = hashMapOf(
-            "name" to findViewById<EditText>(R.id.inputName).text.toString(),
+            "name" to binding.inputName.text.toString(),
             "race" to race,
-            "age" to findViewById<TextView>(R.id.ageView).text.toString(),
-            "sex" to sexTextView.text.toString(),
-            "eyes" to eyesTextView.text.toString(),
-            "hair" to hairTextView.text.toString(),
-            "height" to findViewById<TextView>(R.id.heightView).text.toString(),
-            "weight" to findViewById<TextView>(R.id.weightView).text.toString(),
-            "placeOfBirth" to findViewById<EditText>(R.id.inputPlaceOfBirth).text.toString(),
+            "age" to binding.ageView.text.toString(),
+            "sex" to binding.inputSexTextView.text.toString(),
+            "eyes" to binding.inputEyesTextView.text.toString(),
+            "hair" to binding.inputHairTextView.text.toString(),
+            "height" to binding.heightView.text.toString(),
+            "weight" to binding.weightView.text.toString(),
+            "placeOfBirth" to binding.inputPlaceOfBirth.text.toString(),
             "starSign" to selectedStarSign.name,
-            "specialSigns" to findViewById<EditText>(R.id.inputSpecialSigns).text.toString(),
+            "specialSigns" to binding.inputSpecialSigns.text.toString(),
             "createdAt" to FieldValue.serverTimestamp(),
             "lastActiveAt" to FieldValue.serverTimestamp(),
             "progressStage" to 1
@@ -416,20 +407,44 @@ class NewCardAncestryActivity : BaseActivity() {
             return
         }
 
-        db.collection("users").document(userId).collection("characters")
-            .add(characterData)
-            .addOnSuccessListener { documentReference ->
-                val documentId = documentReference.id
-                Toast.makeText(this, "Karta postaci zapisana!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, NewCardAttributesActivity::class.java).apply {
-                    putExtra("CHARACTER_DOC_ID", documentId)
-                    putExtra("CHARACTER_RACE", race)
+        if (characterDocId != null) {
+            db.collection("users").document(userId).collection("characters")
+                .document(characterDocId!!) // Używamy ID istniejącego dokumentu
+                .update(characterData) // Używamy set, aby nadpisać dane
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Karta postaci zapisana!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, NewCardAttributesActivity::class.java).apply {
+                        putExtra("CHARACTER_DOC_ID", characterDocId)
+                        putExtra("CHARACTER_RACE", binding.inputRaceTextView.text.toString())
+                    }
+                    startActivity(intent)
+                    finish()
                 }
-                startActivity(intent)
-                finish()
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(this, "Błąd zapisu: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Błąd zapisu: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        } else {
+            db.collection("users").document(userId).collection("characters")
+                .add(characterData)
+                .addOnSuccessListener { documentReference ->
+                    val documentId = documentReference.id
+                    Toast.makeText(this, "Karta postaci zapisana!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, NewCardAttributesActivity::class.java).apply {
+                        putExtra("CHARACTER_DOC_ID", documentId)
+                        putExtra("CHARACTER_RACE", binding.inputRaceTextView.text.toString())
+                    }
+                    startActivity(intent)
+                    finish()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Błąd zapisu: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

@@ -16,7 +16,7 @@ class HomeActivity : BaseActivity() {
     // onCreate is called when the activity is first created
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
 
         // Set an onClickListener for the logout button
         findViewById<Button>(R.id.logoutButton).setOnClickListener {
@@ -30,11 +30,19 @@ class HomeActivity : BaseActivity() {
             finish()
         }
 
-        // Set an onClickListener for the profile button
         findViewById<Button>(R.id.profileButton).setOnClickListener {
             // Start the ProfileActivity when the profile button is clicked
             startActivity(Intent(this, ProfileActivity::class.java))
         }
+        findViewById<Button>(R.id.myCardButton).setOnClickListener {
+            // Start the ProfileActivity when the profile button is clicked
+            startActivity(Intent(this, MyCardListActivity::class.java))
+        }
+        findViewById<Button>(R.id.unfinishedCardsButton).setOnClickListener {
+            // Start the ProfileActivity when the profile button is clicked
+            startActivity(Intent(this, UnfinishedCardsActivity::class.java))
+        }
+
         findViewById<Button>(R.id.addCharacterButton).setOnClickListener {
             startActivity(Intent(this, NewCardAncestryActivity::class.java))
         }

@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.dd.rpgcardapp.databinding.ActivityNewCardBackstoryBinding
 import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -20,10 +21,13 @@ class NewCardBackstoryActivity : BaseActivity() {
     private lateinit var db: FirebaseFirestore
     private lateinit var userId: String
     private var characterDocId: String? = null
+    private lateinit var binding: ActivityNewCardBackstoryBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_card_backstory)
+        binding = ActivityNewCardBackstoryBinding.inflate(layoutInflater)  // Binding dla aktywności
+        setContentView(binding.root)
 
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
@@ -35,11 +39,10 @@ class NewCardBackstoryActivity : BaseActivity() {
             Toast.makeText(this, "Błąd: Brak ID postaci", Toast.LENGTH_SHORT).show()
             finish()
         }
-        val rootLayout = findViewById<View>(R.id.rootLayout) // Zmienna 'rootLayout' to główny layout aktywności
-        rootLayout.setOnTouchListener { v, event ->
-            // Ukryj klawiaturę, jeśli kliknięcie nie jest w polu tekstowym
+
+        // Ustawienie nasłuchiwania na dotyk poza polem tekstowym
+        binding.rootLayout.setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                // Sprawdzamy, czy kliknięcie miało miejsce poza polem tekstowym
                 if (currentFocus != null) {
                     val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                     imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
@@ -48,17 +51,20 @@ class NewCardBackstoryActivity : BaseActivity() {
             false
         }
 
-        val nextButton = findViewById<Button>(R.id.nextButton)
-        nextButton.setOnClickListener {
+        // Obsługa przycisku "Dalej"
+        binding.nextButton.setOnClickListener {
             saveBackstoryToFirestore() // Wywołanie zapisu po kliknięciu
         }
 
-        val exitButton = findViewById<Button>(R.id.exitButton)
-        exitButton.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+        // Obsługa przycisku "Wstecz"
+        binding.backButton.setOnClickListener {
+            val intent = Intent(this, NewCardAttributesActivity::class.java).apply {
+                putExtra("CHARACTER_DOC_ID", characterDocId)  // Przekazanie characterDocId
+                putExtra("CHARACTER_RACE", intent.getStringExtra("CHARACTER_RACE"))
+            }
             startActivity(intent)
-            finish()
         }
+        loadBackstoryData()
     }
 
     override fun onStart() {
@@ -78,13 +84,39 @@ class NewCardBackstoryActivity : BaseActivity() {
         }
     }
 
+    // Funkcja do pobierania danych z Firestore
+    private fun loadBackstoryData() {
+        if (userId.isEmpty() || characterDocId.isNullOrEmpty()) return
+
+        // Pobieranie danych z Firestore
+        db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+            .collection("backstory").document("main_backstory")
+            .get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val data = document.data
+                    // Ustawienie pobranych danych w odpowiednich polach tekstowych
+                    binding.inputStateOfHealth.setText(data?.get("stateOfHealth") as? String)
+                    binding.inputFamily.setText(data?.get("family") as? String)
+                    binding.inputHistory.setText(data?.get("history") as? String)
+                    binding.inputAdditionalInformation.setText(data?.get("additionalInformation") as? String)
+                } else {
+                    Toast.makeText(this, "Nie znaleziono danych w bazie", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Błąd pobierania danych: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
     private fun saveBackstoryToFirestore() {
-        // Pobranie wartości i konwersja do Int (lub 0, jeśli puste)
+        // Pobranie wartości z bindingu
         val backstoryData = hashMapOf(
-            "stateOfHealth" to findViewById<EditText>(R.id.inputStateOfHealth).text.toString(),
-            "family" to findViewById<EditText>(R.id.inputFamily).text.toString(),
-            "history" to findViewById<EditText>(R.id.inputHistory).text.toString(),
-            "additionalInformation" to findViewById<EditText>(R.id.inputAdditionalInformation).text.toString(),
+            "stateOfHealth" to binding.inputStateOfHealth.text.toString(),
+            "family" to binding.inputFamily.text.toString(),
+            "history" to binding.inputHistory.text.toString(),
+            "additionalInformation" to binding.inputAdditionalInformation.text.toString(),
         )
 
         if (userId.isEmpty() || characterDocId.isNullOrEmpty()) {

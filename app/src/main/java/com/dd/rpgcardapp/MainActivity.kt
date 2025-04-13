@@ -5,18 +5,17 @@ import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import android.graphics.Color
 import android.animation.ValueAnimator
 import android.view.MotionEvent
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.core.animation.addListener
 import kotlin.random.Random
@@ -36,10 +35,20 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome)
+        setContentView(R.layout.activity_main)
 
         auth = Firebase.auth  // Initialize Firebase Authentication
-        val rootLayout = findViewById<RelativeLayout>(R.id.rootLayout) // Główny layout, zmieniony na RelativeLayout
+        val rootLayout = findViewById<RelativeLayout>(R.id.rootLayout) // Główny layout
+        val option = Random.nextBoolean()
+        // Losowy wybór obrazka tła
+        val backgroundImage = if (option) {
+            R.drawable.welcome_0001
+        } else {
+            R.drawable.welcome_0002
+        }
+
+        // Ustawienie tła
+        rootLayout.setBackgroundResource(backgroundImage)
 
         val startButton: Button = findViewById(R.id.startButton)
 
@@ -58,15 +67,26 @@ class MainActivity : BaseActivity() {
         startButton.setOnClickListener {
             checkUser()
         }
-
-        // 🔹 Obsługa dotyku na całym ekranie
-        rootLayout.setOnTouchListener { _, event ->
-            if (event.action == MotionEvent.ACTION_DOWN) {
-                createFlyingRunes(rootLayout)  // Wywołujemy bez współrzędnych dotyku
+        if (option) {
+            // 🔹 Obsługa dotyku na całym ekranie
+            rootLayout.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                    createFlyingRunes(rootLayout)  // Wywołujemy bez współrzędnych dotyku
+                }
+                true
             }
-            true
+        } else {
+            rootLayout.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                    createFlyingLights(rootLayout)  // Wywołanie efektu świetlnego
+                    // Lub:
+                    // createFlyingButterflies(rootLayout)  // Wywołanie efektu motylków
+                }
+                true
+            }
         }
     }
+
 
     // This method checks if the user is logged in
     private fun checkUser() {
@@ -114,4 +134,55 @@ class MainActivity : BaseActivity() {
             }
         }
     }
+    private fun createFlyingLights(parent: RelativeLayout) {
+        // Obliczamy współrzędne ekranu
+        val screenWidth = parent.width
+        val screenHeight = parent.height
+
+        // Lista kolorów ARGB – różne odcienie błękitu/jasnoniebieskiego
+        val blueColors = listOf(
+            Color.argb(255, 173, 216, 230), // Light Blue
+            Color.argb(255, 135, 206, 250), // Sky Blue
+            Color.argb(255, 0, 191, 255),   // Deep Sky Blue
+            Color.argb(255, 176, 224, 230), // Powder Blue
+            Color.argb(255, 240, 248, 255), // Alice Blue
+            Color.argb(255, 70, 130, 180),  // Steel Blue
+            Color.argb(255, 135, 206, 235), // Light Sky Blue
+            Color.argb(255, 224, 255, 255), // Light Cyan
+            Color.argb(255, 0, 255, 255),   // Aqua
+            Color.argb(255, 64, 224, 208)   // Turquoise
+        )
+        // Tworzymy efekt błysku w losowych miejscach
+        repeat(30) {  // Liczba efektów, które pojawią się
+            val light = View(this).apply {
+                // Zmieniamy tło na okrągły "punkt" przypominający światło w odcieniach błękitu
+                // Stała wartość dla czerwonego i zielonego (np. 0), losowy dla niebieskiego
+                setBackgroundColor(blueColors.random())
+
+                val size = Random.nextInt(1, 10) // Rozmiar błysku (większy niż poprzednio)
+                layoutParams = ViewGroup.LayoutParams(size, size)
+
+                // Pozycjonowanie: 3/5 wysokości i 1/4 szerokości
+                val startX = screenWidth / 4  // 1/4 szerokości
+                val startY = (screenHeight * 7) / 19  // 2/5 wysokości
+
+                setX(startX.toFloat())  // Ustawiamy startową pozycję X
+                setY(startY.toFloat())  // Ustawiamy startową pozycję Y
+            }
+
+            parent.addView(light)
+
+            // Animacja: ruch w losowym kierunku
+            val moveX = PropertyValuesHolder.ofFloat("translationX", light.x, light.x + Random.nextInt(-500, 500).toFloat())  // Losowy ruch w poziomie
+            val moveY = PropertyValuesHolder.ofFloat("translationY", light.y, light.y + Random.nextInt(-500, 500).toFloat())  // Losowy ruch w pionie
+            val fadeOut = PropertyValuesHolder.ofFloat("alpha", 1f, 0f)  // Znikanie
+
+            ObjectAnimator.ofPropertyValuesHolder(light, moveX, moveY, fadeOut).apply {
+                duration = Random.nextLong(2000, 4000)  // Czas animacji
+                addListener(onEnd = { parent.removeView(light) }) // Usuwamy po zakończeniu animacji
+                start()
+            }
+        }
+    }
+
 }
