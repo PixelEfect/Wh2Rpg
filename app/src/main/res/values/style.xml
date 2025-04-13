@@ -22,7 +22,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:inputType">number</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:background">@drawable/translucent_bg1</item>
         <item name="android:padding">4dp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -39,11 +39,54 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="BaseAttribute">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/translucent_bg2</item>
+
+        <item name="android:textSize">24sp</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">none</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ProgressAttribute">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/translucent_bg1</item>
+
+        <item name="android:textSize">24sp</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">none</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="ObtainedAttribute">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/translucent_bg3</item>
+
+        <item name="android:textSize">24sp</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">none</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="StatProgressStyle">
+        <item name="android:layout_height">8dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+    </style>
     <style name="SmallInputStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:inputType">textCapWords|textNoSuggestions</item>
-        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:background">@drawable/translucent_bg1</item>
         <item name="android:padding">8dp</item>
     </style>
 
@@ -52,7 +95,7 @@
         <item name="android:layout_height">60dp</item>
         <item name="android:gravity">top</item>
         <item name="android:inputType">text|textCapSentences|textMultiLine|textNoSuggestions</item>
-        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:background">@drawable/translucent_bg1</item>
         <item name="android:padding">8dp</item>
     </style>
 
@@ -61,7 +104,7 @@
         <item name="android:layout_height">80dp</item>
         <item name="android:gravity">top</item>
         <item name="android:inputType">text|textCapSentences|textMultiLine|textNoSuggestions</item>
-        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:background">@drawable/translucent_bg1</item>
         <item name="android:padding">8dp</item>
     </style>
 
@@ -70,7 +113,7 @@
         <item name="android:layout_height">160dp</item>
         <item name="android:gravity">top</item>
         <item name="android:inputType">text|textCapSentences|textMultiLine|textNoSuggestions</item>
-        <item name="android:background">@drawable/translucent_bg</item>
+        <item name="android:background">@drawable/translucent_bg1</item>
         <item name="android:padding">8dp</item>
     </style>
 

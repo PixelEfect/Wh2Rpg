@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_0003"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nameTextView"
+            style="@style/LabelStyle"
+            android:text="Imię: "
+            android:textSize="18sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3" /> <!-- 3/5 -->
+
+        <TextView
+            android:id="@+id/raceTextView"
+            style="@style/LabelStyle"
+            android:text="Rasa: "
+            android:textSize="18sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" /> <!-- 2/5 -->
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/professionTextView"
+            style="@style/LabelStyle"
+            android:textSize="18sp"
+            android:text="Profesja: " />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Blok WW -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/WWView"
+                style="@style/LabelStyle"
+                android:text="@string/label_ww" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseWW"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionWW"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/wwProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedWW"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/USView"
+                style="@style/LabelStyle"
+                android:text="@string/label_us" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseUS"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionUS"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/usProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedUS"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/KView"
+                style="@style/LabelStyle"
+                android:text="@string/label_k" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseK"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionK"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/kProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedK"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <!-- Blok Odp -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/OdpView"
+                style="@style/LabelStyle"
+                android:text="@string/label_odp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseOdp"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionOdp"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/odpProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedOdp"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+        <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"/>
+        <!-- Blok Zr -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/ZrView"
+                style="@style/LabelStyle"
+                android:text="@string/label_zr" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseZr"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionZr"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/zrProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedZr"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <!-- Blok Int -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/IntView"
+                style="@style/LabelStyle"
+                android:text="@string/label_int" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseInt"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionInt"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/intProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedInt"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <!-- Blok SW -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/SWView"
+                style="@style/LabelStyle"
+                android:text="@string/label_sw" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseSW"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionSW"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/swProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedSW"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <!-- Blok Ogd -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/OgdView"
+                style="@style/LabelStyle"
+                android:text="@string/label_ogd" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseOgd"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionOgd"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/ogdProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedOgd"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Blok a -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/AView"
+                style="@style/LabelStyle"
+                android:text="@string/label_a" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseA"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionA"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/aProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedA"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/ZywView"
+                style="@style/LabelStyle"
+                android:text="@string/label_zyw" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseZyw"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionZyw"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/zywProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedZyw"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/SView"
+                style="@style/LabelStyle"
+                android:text="@string/label_s" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseS"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionS"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+            <TextView
+                android:id="@+id/obtainedS"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <!-- Blok Odp -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/WtView"
+                style="@style/LabelStyle"
+                android:text="@string/label_wt" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseWt"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionWt"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+            <TextView
+                android:id="@+id/obtainedWt"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <!-- Blok Zr -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/SzView"
+                style="@style/LabelStyle"
+                android:text="@string/label_sz" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseSz"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionSz"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/szProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedSz"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <!-- Blok Int -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/MagView"
+                style="@style/LabelStyle"
+                android:text="@string/label_mag" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/baseMag"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionMag"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <com.dd.rpgcardapp.StatProgressView
+                android:id="@+id/magProgressBar"
+                style="@style/StatProgressStyle"
+                android:layout_width="match_parent" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/obtainedMag"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <!-- Blok SW -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/POView"
+                style="@style/LabelStyle"
+                android:text="@string/label_po" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/basePO"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionPO"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+            <TextView
+                android:id="@+id/obtainedPO"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <!-- Blok Ogd -->
+        <LinearLayout style="@style/InputBlockStyle">
+            <TextView
+                android:id="@+id/PPView"
+                style="@style/LabelStyle"
+                android:text="@string/label_pp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/basePP"
+                style="@style/BaseAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/progressionPP"
+                style="@style/ProgressAttribute"
+                android:text="22" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+            <TextView
+                android:id="@+id/obtainedPP"
+                style="@style/ObtainedAttribute"
+                android:text="22" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="10dp">
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/leftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/exit_001" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/rightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/next_001" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>

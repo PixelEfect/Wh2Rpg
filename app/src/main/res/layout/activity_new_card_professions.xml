@@ -163,14 +163,14 @@
                     style="@style/ReadOnlyInputStyle" />
             </LinearLayout>
 
-            <!-- Blok Żyw -->
+            <!-- Blok Zyw -->
             <LinearLayout style="@style/InputBlockStyle">
                 <TextView
-                    android:id="@+id/ŻywView"
+                    android:id="@+id/ZywView"
                     style="@style/LabelStyle"
                     android:text="@string/label_zyw" />
                 <TextView
-                    android:id="@+id/inputŻyw"
+                    android:id="@+id/inputZyw"
                     style="@style/ReadOnlyInputStyle"/>
             </LinearLayout>
 
@@ -302,7 +302,7 @@
                 android:layout_height="match_parent" />
 
             <Button
-                android:id="@+id/exitButton"
+                android:id="@+id/backButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/exit_001" />

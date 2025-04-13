@@ -31,7 +31,7 @@
             <EditText
                 android:id="@+id/inputName"
                 style="@style/SmallInputStyle"
-                android:background="@drawable/translucent_bg"
+                android:background="@drawable/translucent_bg1"
                 android:layout_width="251dp" />
         </LinearLayout>
 
@@ -332,7 +332,7 @@
             android:layout_height="match_parent" />
 
         <Button
-            android:id="@+id/exitButton"
+            android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/exit_001" />

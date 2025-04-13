@@ -42,6 +42,18 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
+            android:name=".MyCardListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"/>
+        <activity
+            android:name=".MyCardAttributesActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"/>
+        <activity
+            android:name=".UnfinishedCardsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"/>
+        <activity
             android:name=".NewCardAncestryActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>

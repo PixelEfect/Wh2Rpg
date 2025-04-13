@@ -76,15 +76,17 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
             false
         }
 
-        // binding.nextButton.setOnClickListener { saveProfessionDataToFirestore() }
-
         binding.nextButton.setOnClickListener {
             handleNextButtonClick()
         }
 
-        binding.exitButton.setOnClickListener {
-            startActivity(Intent(this, HomeActivity::class.java))
-            finish()
+        // Obsługa przycisku "Wstecz"
+        binding.backButton.setOnClickListener {
+            val intent = Intent(this, NewCardProfessionsActivity::class.java).apply {
+                putExtra("CHARACTER_DOC_ID", characterDocId)  // Przekazanie characterDocId
+                putExtra("CHARACTER_RACE", intent.getStringExtra("CHARACTER_RACE"))
+            }
+            startActivity(intent)
         }
     }
 
@@ -133,7 +135,10 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
             .addOnSuccessListener { document ->
                 if (document != null && document.exists()) {
                     inputViews.forEach { (key, view) ->
-                        view.text = (document.getLong(key) ?: 0).toString()
+                        if (key != "S" && key != "Wt") {
+                            view.text = (document.getLong(key) ?: 0).toString()
+                        }
+                        updateDerivedStats()
                     }
                 } else {
                     Toast.makeText(this, "Brak zapisanych statystyk", Toast.LENGTH_SHORT).show()
@@ -280,6 +285,18 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
     private fun adjustStat(textView: TextView, delta: Int) {
         val current = textView.text.toString().toIntOrNull() ?: 0
         textView.text = (current + delta).toString()
+        updateDerivedStats()
+    }
+
+    private fun updateDerivedStats() {
+        val k = inputViews["K"]?.text.toString().toIntOrNull() ?: 0
+        val odp = inputViews["Odp"]?.text.toString().toIntOrNull() ?: 0
+
+        val sValue = k / 10
+        val wtValue = odp / 10
+
+        inputViews["S"]?.text = sValue.toString()
+        inputViews["Wt"]?.text = wtValue.toString()
     }
 
     private fun initViews() {

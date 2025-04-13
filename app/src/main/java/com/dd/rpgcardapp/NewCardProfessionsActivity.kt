@@ -10,7 +10,9 @@ import com.dd.rpgcardapp.data.Ability
 import com.dd.rpgcardapp.data.AbilityGroupSimplifier
 import com.dd.rpgcardapp.data.Profession
 import com.dd.rpgcardapp.data.ProfessionPaths
+import com.dd.rpgcardapp.data.Race
 import com.dd.rpgcardapp.data.Races
+import com.dd.rpgcardapp.databinding.ActivityNewCardProfessionsBinding
 import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.dd.rpgcardapp.utils.showAlertDialog
 import com.google.android.gms.tasks.Task
@@ -28,12 +30,14 @@ class NewCardProfessionsActivity : BaseActivity() {
     private lateinit var userId: String
     private var characterDocId: String? = null
     private var selectedProfession: Profession? = null
+    private lateinit var binding: ActivityNewCardProfessionsBinding
 
     private lateinit var professionsTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_card_professions)
+        binding = ActivityNewCardProfessionsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
@@ -63,13 +67,13 @@ class NewCardProfessionsActivity : BaseActivity() {
                     selectedProfession?.let { updateProfessionStats(it) }
                 }
             }
+            loadProfessionFromFirestore(race)
 
         } else {
             Toast.makeText(this, "Rasa nieznana", Toast.LENGTH_SHORT).show()
         }
 
-        val nextButton = findViewById<Button>(R.id.nextButton)
-        nextButton.setOnClickListener {
+        binding.nextButton.setOnClickListener {
             if (selectedProfession == null) {
                 Toast.makeText(this, "Musisz wybrać profesję, zanim przejdziesz dalej", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -77,11 +81,13 @@ class NewCardProfessionsActivity : BaseActivity() {
             saveProfessionToFirestore()
         }
 
-        val exitButton = findViewById<Button>(R.id.exitButton)
-        exitButton.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+        // Obsługa przycisku "Wstecz"
+        binding.backButton.setOnClickListener {
+            val intent = Intent(this, NewCardBackstoryActivity::class.java).apply {
+                putExtra("CHARACTER_DOC_ID", characterDocId)  // Przekazanie characterDocId
+                putExtra("CHARACTER_RACE", intent.getStringExtra("CHARACTER_RACE"))
+            }
             startActivity(intent)
-            finish()
         }
     }
 
@@ -134,6 +140,35 @@ class NewCardProfessionsActivity : BaseActivity() {
         }
     }
 
+    // Funkcja do pobrania zapisanej profesji z Firestore
+    private fun loadProfessionFromFirestore(race: Race) {
+        if (characterDocId == null) return
+
+        val characterRef = db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+
+        // Pobranie zapisanej profesji
+        characterRef.collection("profession").document("owned")
+            .get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val professionName = document.getString("professionName")
+                    if (professionName != null) {
+                        // Profesja została znaleziona, ustawiamy ją
+                        val profession = race.startingProfessions.firstOrNull { it.name == professionName }
+                        if (profession != null) {
+                            selectedProfession = profession
+                            professionsTextView.text = professionName
+                            updateProfessionStats(profession)
+                        }
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Błąd ładowania profesji: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
     fun updateProfessionStats(profession: Profession) {
         // Pobranie referencji do odpowiednich TextView
         val wwTextView = findViewById<TextView>(R.id.inputWW)
@@ -145,7 +180,7 @@ class NewCardProfessionsActivity : BaseActivity() {
         val swTextView = findViewById<TextView>(R.id.inputSW)
         val ogdTextView = findViewById<TextView>(R.id.inputOgd)
         val aTextView = findViewById<TextView>(R.id.inputA)
-        val zywTextView = findViewById<TextView>(R.id.inputŻyw)
+        val zywTextView = findViewById<TextView>(R.id.inputZyw)
         val szTextView = findViewById<TextView>(R.id.inputSz)
         val magTextView = findViewById<TextView>(R.id.inputMag)
 
@@ -250,18 +285,18 @@ class NewCardProfessionsActivity : BaseActivity() {
         }
         // 2. Zapisz atrybuty
         val attributesData = mapOf(
-            "ww" to getIntFromTextView(R.id.inputWW),
-            "us" to getIntFromTextView(R.id.inputUS),
-            "k" to getIntFromTextView(R.id.inputK),
-            "odp" to getIntFromTextView(R.id.inputOdp),
-            "zr" to getIntFromTextView(R.id.inputZr),
-            "int" to getIntFromTextView(R.id.inputInt),
-            "sw" to getIntFromTextView(R.id.inputSW),
-            "ogd" to getIntFromTextView(R.id.inputOgd),
-            "a" to getIntFromTextView(R.id.inputA),
-            "zyw" to getIntFromTextView(R.id.inputŻyw),
-            "sz" to getIntFromTextView(R.id.inputSz),
-            "mag" to getIntFromTextView(R.id.inputMag)
+            "WW" to getIntFromTextView(R.id.inputWW),
+            "US" to getIntFromTextView(R.id.inputUS),
+            "K" to getIntFromTextView(R.id.inputK),
+            "Odp" to getIntFromTextView(R.id.inputOdp),
+            "Zr" to getIntFromTextView(R.id.inputZr),
+            "Int" to getIntFromTextView(R.id.inputInt),
+            "Sw" to getIntFromTextView(R.id.inputSW),
+            "Ogd" to getIntFromTextView(R.id.inputOgd),
+            "A" to getIntFromTextView(R.id.inputA),
+            "Zyw" to getIntFromTextView(R.id.inputZyw),
+            "Sz" to getIntFromTextView(R.id.inputSz),
+            "Mag" to getIntFromTextView(R.id.inputMag)
         )
 
         val professionPaths = ProfessionPaths.paths[selectedProfession]
