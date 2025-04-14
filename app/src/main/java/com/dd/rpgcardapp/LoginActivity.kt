@@ -4,6 +4,7 @@ import BaseActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -25,6 +26,8 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        enableTouchToHideKeyboardAndSystemUI()
+
         auth = FirebaseAuth.getInstance()  // Initialize Firebase Authentication
 
         val signInButton: Button = findViewById(R.id.signInButton)  // Find the sign-in button in the layout
@@ -41,6 +44,7 @@ class LoginActivity : BaseActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)  // Create GoogleSignInClient
     }
+
 
     // This method initiates the Google sign-in process
     private fun signInWithGoogle() {

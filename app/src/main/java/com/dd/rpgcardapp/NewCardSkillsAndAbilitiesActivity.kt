@@ -55,6 +55,8 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
         binding = ActivityNewCardSkillsAndAbilitiesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        enableTouchToHideKeyboardAndSystemUI()
+
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
 
@@ -68,16 +70,13 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
         loadProfession(professionName)
         setupAbilityAndSkillFields()
 
-        binding.rootLayout.setOnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_DOWN && currentFocus != null) {
-                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-            }
-            false
-        }
-
         binding.nextButton.setOnClickListener {
             handleNextButtonClick()
+        }
+
+        binding.exitButton.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }
 
         // Obsługa przycisku "Wstecz"
@@ -87,23 +86,6 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
                 putExtra("CHARACTER_RACE", intent.getStringExtra("CHARACTER_RACE"))
             }
             startActivity(intent)
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
-            SystemUIUtils.hideSystemUI(this)
         }
     }
 

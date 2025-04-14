@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_0003"
@@ -70,45 +71,59 @@
     <!-- Dolny pasek z trzema przyciskami -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:orientation="horizontal"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:paddingTop="8dp"
         android:paddingBottom="16dp">
+
         <Space
             android:layout_width="10dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
-        <Button
+        <ImageButton
             android:id="@+id/testButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/campaign_001"
-            android:layout_weight="1" />
+            android:layout_height="match_parent"
+            android:src="@drawable/test_001"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="@null"/>
 
         <Space
             android:layout_width="30dp"
-            android:layout_height="match_parent" />
-        <Button
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
             android:id="@+id/scanQRButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/qr_002"
-            android:layout_weight="1" />
+            android:layout_height="match_parent"
+            android:src="@drawable/qr_003"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="@null"/>
 
         <Space
             android:layout_width="30dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
-        <Button
+        <ImageButton
             android:id="@+id/addCharacterButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/card_001"
-            android:layout_weight="1" />
+            android:layout_height="match_parent"
+            android:src="@drawable/card_002"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="@null" />
+
         <Space
             android:layout_width="10dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
     </LinearLayout>
+
 
 </LinearLayout>

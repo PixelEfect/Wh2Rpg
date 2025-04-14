@@ -11,11 +11,16 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-
         android:gravity="center_horizontal">
 
         <!-- PROFESJA -->
@@ -61,14 +66,7 @@
                     style="@style/ReadOnlyInputStyle" />
                 <TextView
                     android:id="@+id/buttonWW"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" /> <!-- Użycie selektora tła -->
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok US -->
@@ -82,14 +80,7 @@
                     style="@style/ReadOnlyInputStyle" />
                 <TextView
                     android:id="@+id/buttonUS"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" />
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok K -->
@@ -100,16 +91,11 @@
                     android:text="@string/label_k" />
                 <TextView
                     android:id="@+id/inputK"
-                    style="@style/ReadOnlyInputStyle" /><TextView
-                android:id="@+id/buttonK"
-                style="@style/ReadOnlyInputStyle"
-                android:text="+"
-                android:textColor="@android:color/black"
-                android:clickable="true"
-                android:focusable="true"
-                android:padding="4dp"
-                android:gravity="center"
-                android:background="@drawable/button_border_state" />
+                    style="@style/ReadOnlyInputStyle" />
+
+                <TextView
+                    android:id="@+id/buttonK"
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok Odp -->
@@ -122,15 +108,8 @@
                     android:id="@+id/inputOdp"
                     style="@style/ReadOnlyInputStyle" />
                 <TextView
-                android:id="@+id/buttonOdp"
-                style="@style/ReadOnlyInputStyle"
-                android:text="+"
-                android:textColor="@android:color/black"
-                android:clickable="true"
-                android:focusable="true"
-                android:padding="4dp"
-                android:gravity="center"
-                android:background="@drawable/button_border_state" />
+                    android:id="@+id/buttonOdp"
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
             <!-- Blok Zr -->
             <LinearLayout style="@style/InputBlockStyle">
@@ -143,14 +122,7 @@
                     style="@style/ReadOnlyInputStyle" />
                 <TextView
                     android:id="@+id/buttonZr"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" />
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok Int -->
@@ -164,14 +136,7 @@
                     style="@style/ReadOnlyInputStyle" />
                 <TextView
                     android:id="@+id/buttonInt"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" />
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok SW -->
@@ -185,14 +150,7 @@
                     style="@style/ReadOnlyInputStyle" />
                 <TextView
                     android:id="@+id/buttonSW"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" />
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok Ogd -->
@@ -206,14 +164,7 @@
                     style="@style/ReadOnlyInputStyle" />
                 <TextView
                     android:id="@+id/buttonOgd"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" />
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
         </LinearLayout>
@@ -239,14 +190,7 @@
                     style="@style/ReadOnlyInputStyle" />
                 <TextView
                     android:id="@+id/buttonA"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" />
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok Żyw -->
@@ -260,14 +204,7 @@
                     style="@style/ReadOnlyInputStyle"/>
                 <TextView
                     android:id="@+id/buttonZyw"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" />
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok S -->
@@ -305,14 +242,7 @@
                     style="@style/ReadOnlyInputStyle"/>
                 <TextView
                     android:id="@+id/buttonSz"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" />
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok Mag -->
@@ -326,14 +256,7 @@
                     style="@style/ReadOnlyInputStyle" />
                 <TextView
                     android:id="@+id/buttonMag"
-                    style="@style/ReadOnlyInputStyle"
-                    android:text="+"
-                    android:textColor="@android:color/black"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/button_border_state" />
+                    style="@style/AbilityPlusButtonStyle" />
             </LinearLayout>
 
             <!-- Blok PO -->
@@ -364,278 +287,145 @@
 
         <TextView
             android:id="@+id/ability1TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz umiejętność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/ability2TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz umiejętność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/ability3TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz umiejętność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/ability4TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz umiejętność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/ability5TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz umiejętność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/ability6TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz umiejętność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/ability7TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz umiejętność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/ability8TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz umiejętność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/ability9TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz umiejętność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="8dp"/>
         <TextView
             android:id="@+id/skill1TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz zdolność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/skill2TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz zdolność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/skill3TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz zdolność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/skill4TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz zdolność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"/>
         <TextView
             android:id="@+id/skill5TextView"
-            android:layout_width="251dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:drawableEnd="@drawable/ic_arrow_drop_down"
-            android:gravity="center_vertical|start"
-            android:hint="Wybierz zdolność"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="false" />
+            style="@style/AbilityTextStyle" />
+    </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back_001"
+            android:scaleType="fitCenter"
             android:paddingTop="8dp"
-            android:paddingBottom="10dp">
+            android:paddingBottom="16dp"
+            android:adjustViewBounds="true"
+            android:background="@null"/>
 
-            <Space
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
-            <Button
-                android:id="@+id/backButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/exit_001" />
+        <ImageButton
+            android:id="@+id/exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/exit_002"
+            android:scaleType="fitCenter"
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+            android:adjustViewBounds="true"
+            android:background="@null"/>
 
-            <Button
-                android:id="@+id/nextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/next_001" />
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
-            <Space
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/next_001"
+            android:scaleType="fitCenter"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:adjustViewBounds="true"
+            android:background="@null" />
 
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>

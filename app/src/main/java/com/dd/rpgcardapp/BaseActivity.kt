@@ -1,31 +1,45 @@
 import android.os.Build
 import android.os.Bundle
-
+import android.view.MotionEvent
+import android.content.Context
+import android.view.inputmethod.InputMethodManager
 import android.view.View
 import android.view.WindowInsetsController
 import androidx.activity.ComponentActivity
+import com.dd.rpgcardapp.utils.SystemUIUtils
 
 open class BaseActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        hideSystemUI() // Ukrywanie systemowego UI w każdej aktywności
+        SystemUIUtils.hideSystemUI(this)// Ukrywanie systemowego UI w każdej aktywności
+    }
+    override fun onStart() {
+        super.onStart()
+        SystemUIUtils.hideSystemUI(this)
     }
 
-    private fun hideSystemUI() {
-        window.decorView.systemUiVisibility = (
-                View.SYSTEM_UI_FLAG_IMMERSIVE
-                        or View.SYSTEM_UI_FLAG_FULLSCREEN
-                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                )
+    override fun onResume() {
+        super.onResume()
+        SystemUIUtils.hideSystemUI(this)
+    }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.let { controller ->
-                controller.hide(WindowInsetsController.BEHAVIOR_DEFAULT)
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            SystemUIUtils.hideSystemUI(this)
+        }
+    }
+
+    protected fun enableTouchToHideKeyboardAndSystemUI() {
+        val rootView = findViewById<View>(android.R.id.content)
+        rootView.setOnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_DOWN && currentFocus != null) {
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
             }
+            SystemUIUtils.hideSystemUI(this)
+            false
         }
     }
 }

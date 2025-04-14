@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.core.animation.addListener
+import com.dd.rpgcardapp.utils.SystemUIUtils
 import kotlin.random.Random
 
 //NIEWOLNIK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! podobnie pielgrzymem moze zostac kazdy
@@ -32,17 +33,31 @@ class MainActivity : BaseActivity() {
         "ᛏ", "ᛒ", "ᛖ", "ᛗ", "ᛚ", "ᛝ", "ᛟ", "ᛞ", "ᛡ", "ᛣ",
         "ᛤ", "ᛥ", "ᛦ", "ᛧ", "ᛨ", "ᛩ", "ᛪ",
     )
+    val blueColors = listOf(
+        Color.argb(255, 173, 216, 230), // Light Blue
+        Color.argb(255, 135, 206, 250), // Sky Blue
+        Color.argb(255, 0, 191, 255),   // Deep Sky Blue
+        Color.argb(255, 176, 224, 230), // Powder Blue
+        Color.argb(255, 240, 248, 255), // Alice Blue
+        Color.argb(255, 70, 130, 180),  // Steel Blue
+        Color.argb(255, 135, 206, 235), // Light Sky Blue
+        Color.argb(255, 224, 255, 255), // Light Cyan
+        Color.argb(255, 0, 255, 255),   // Aqua
+        Color.argb(255, 64, 224, 208)   // Turquoise
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        enableTouchToHideKeyboardAndSystemUI()
+
         auth = Firebase.auth  // Initialize Firebase Authentication
         val rootLayout = findViewById<RelativeLayout>(R.id.rootLayout) // Główny layout
-        val option = Random.nextBoolean()
+        val option = true//Random.nextBoolean()
         // Losowy wybór obrazka tła
         val backgroundImage = if (option) {
-            R.drawable.welcome_0001
+            R.drawable.welcome_0003
         } else {
             R.drawable.welcome_0002
         }
@@ -79,14 +94,11 @@ class MainActivity : BaseActivity() {
             rootLayout.setOnTouchListener { _, event ->
                 if (event.action == MotionEvent.ACTION_DOWN) {
                     createFlyingLights(rootLayout)  // Wywołanie efektu świetlnego
-                    // Lub:
-                    // createFlyingButterflies(rootLayout)  // Wywołanie efektu motylków
                 }
                 true
             }
         }
     }
-
 
     // This method checks if the user is logged in
     private fun checkUser() {
@@ -106,14 +118,14 @@ class MainActivity : BaseActivity() {
         // Obliczamy współrzędne środka ekranu
         val screenWidth = parent.width
         val screenHeight = parent.height
-        val startX = (screenWidth / 4)   // Środek ekranu, przesunięcie w lewo o 100px
-        val startY = screenHeight / 2  // Środek ekranu w pionie
+        val startX = (screenWidth * 7  / 19)   // Środek ekranu, przesunięcie w lewo o 100px
+        val startY = (screenHeight * 11) / 19
 
         repeat(3) { // Tworzymy 5 run
             val runeText = TextView(this).apply {
                 text = runes.random() // Wybieramy losową runę
                 textSize = 32f
-                setTextColor(Color.WHITE)
+                setTextColor(blueColors.random())
                 // Ustawiamy pozycję na podstawie obliczonego miejsca
                 layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
                 setX(startX.toFloat())  // Ustawiamy startową pozycję X
@@ -123,7 +135,7 @@ class MainActivity : BaseActivity() {
             parent.addView(runeText)
 
             // Animacja - losowy kierunek i efekt zanikania
-            val moveX = PropertyValuesHolder.ofFloat("translationX", Random.nextInt(-1000, 1000).toFloat())
+            val moveX = PropertyValuesHolder.ofFloat("translationX", runeText.x, runeText.x + Random.nextInt(-1000, 1000).toFloat())
             val moveY = PropertyValuesHolder.ofFloat("translationY", Random.nextInt(-300, -100).toFloat())
             val fadeOut = PropertyValuesHolder.ofFloat("alpha", 1f, 0f)
 
@@ -140,18 +152,7 @@ class MainActivity : BaseActivity() {
         val screenHeight = parent.height
 
         // Lista kolorów ARGB – różne odcienie błękitu/jasnoniebieskiego
-        val blueColors = listOf(
-            Color.argb(255, 173, 216, 230), // Light Blue
-            Color.argb(255, 135, 206, 250), // Sky Blue
-            Color.argb(255, 0, 191, 255),   // Deep Sky Blue
-            Color.argb(255, 176, 224, 230), // Powder Blue
-            Color.argb(255, 240, 248, 255), // Alice Blue
-            Color.argb(255, 70, 130, 180),  // Steel Blue
-            Color.argb(255, 135, 206, 235), // Light Sky Blue
-            Color.argb(255, 224, 255, 255), // Light Cyan
-            Color.argb(255, 0, 255, 255),   // Aqua
-            Color.argb(255, 64, 224, 208)   // Turquoise
-        )
+
         // Tworzymy efekt błysku w losowych miejscach
         repeat(30) {  // Liczba efektów, które pojawią się
             val light = View(this).apply {

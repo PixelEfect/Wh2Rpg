@@ -5,14 +5,13 @@ import android.os.Build
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController
-import androidx.activity.ComponentActivity
 
 object SystemUIUtils {
     fun hideSystemUI(activity: Activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             activity.window.insetsController?.hide(
-                android.view.WindowInsets.Type.statusBars() or
-                        android.view.WindowInsets.Type.navigationBars()
+                WindowInsets.Type.statusBars() or
+                        WindowInsets.Type.navigationBars()
             )
             activity.window.insetsController?.systemBarsBehavior =
                 WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
@@ -30,9 +29,9 @@ object SystemUIUtils {
     fun showSystemUI(activity: Activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             activity.window.insetsController?.show(
-                android.view.WindowInsets.Type.statusBars() or
+                WindowInsets.Type.statusBars() or
 
-                        android.view.WindowInsets.Type.navigationBars()
+                        WindowInsets.Type.navigationBars()
             )
         } else {
             // Dla starszych wersji Androida
@@ -40,4 +39,3 @@ object SystemUIUtils {
         }
     }
 }
-

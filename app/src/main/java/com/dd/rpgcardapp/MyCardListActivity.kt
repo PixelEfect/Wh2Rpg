@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.dd.rpgcardapp.UnfinishedCardsActivity
+import com.dd.rpgcardapp.databinding.ActivityMyCardListBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -23,43 +24,29 @@ class MyCardListActivity : BaseActivity() {
     private lateinit var db: FirebaseFirestore
     private lateinit var userId: String
     private var characterDocId: String? = null
+    private lateinit var binding: ActivityMyCardListBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_card_list)
+        binding = ActivityMyCardListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        enableTouchToHideKeyboardAndSystemUI()
 
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
 
         loadCharacters()
 
-        val exitButton = findViewById<Button>(R.id.backButton)
-        exitButton.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+        binding.exitButton.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
-            SystemUIUtils.hideSystemUI(this)
-        }
-    }
-
     private fun loadCharacters() {
-        val container = findViewById<LinearLayout>(R.id.buttonContainer)
+        val container = binding.buttonContainer
         container.removeAllViews()
 
         db.collection("users").document(userId)

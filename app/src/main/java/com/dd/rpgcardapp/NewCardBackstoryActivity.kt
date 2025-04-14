@@ -29,6 +29,8 @@ class NewCardBackstoryActivity : BaseActivity() {
         binding = ActivityNewCardBackstoryBinding.inflate(layoutInflater)  // Binding dla aktywności
         setContentView(binding.root)
 
+        enableTouchToHideKeyboardAndSystemUI()
+
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
 
@@ -40,20 +42,13 @@ class NewCardBackstoryActivity : BaseActivity() {
             finish()
         }
 
-        // Ustawienie nasłuchiwania na dotyk poza polem tekstowym
-        binding.rootLayout.setOnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_DOWN) {
-                if (currentFocus != null) {
-                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-                }
-            }
-            false
-        }
-
         // Obsługa przycisku "Dalej"
         binding.nextButton.setOnClickListener {
             saveBackstoryToFirestore() // Wywołanie zapisu po kliknięciu
+        }
+        binding.exitButton.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }
 
         // Obsługa przycisku "Wstecz"
@@ -65,23 +60,6 @@ class NewCardBackstoryActivity : BaseActivity() {
             startActivity(intent)
         }
         loadBackstoryData()
-    }
-
-    override fun onStart() {
-        super.onStart()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
-            SystemUIUtils.hideSystemUI(this)
-        }
     }
 
     // Funkcja do pobierania danych z Firestore

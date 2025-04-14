@@ -1,5 +1,7 @@
 package com.dd.rpgcardapp
 
+import BaseActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.ComponentActivity
@@ -7,15 +9,19 @@ import com.dd.rpgcardapp.data.Paths
 import com.dd.rpgcardapp.data.Profession
 import com.dd.rpgcardapp.data.ProfessionPaths
 import com.dd.rpgcardapp.data.Professions
+import com.dd.rpgcardapp.databinding.ActivityProfessionsConsistencyCheckerBinding
+import com.dd.rpgcardapp.utils.SystemUIUtils
 
 
-class ProfessionsConsistencyChecker : ComponentActivity() {
+class ProfessionsConsistencyChecker : BaseActivity() {
+    private lateinit var binding: ActivityProfessionsConsistencyCheckerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_professions_consistency_checker)
+        binding = ActivityProfessionsConsistencyCheckerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val textView: TextView = findViewById(R.id.textViewConsistencyReport)
+        enableTouchToHideKeyboardAndSystemUI()
 
         val inconsistencies = ConsistencyChecker.checkConsistency(ProfessionPaths.paths)
         val reverseInconsistencies = ConsistencyChecker.checkReverseConsistency(ProfessionPaths.paths)
@@ -45,7 +51,12 @@ class ProfessionsConsistencyChecker : ComponentActivity() {
             append("\nProfesja z najwięcej list w optionalSkills: ${maxSkillsProfession.name} (${maxSkillsCount} list).")
         }
 
-        textView.text = report
+        binding.textViewConsistencyReport.text = report
+        binding.exitButton.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        }
+
     }
 
     // Funkcja do znalezienia profesji z największą liczbą list w optionalAbility

@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
+import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -17,6 +19,8 @@ class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        enableTouchToHideKeyboardAndSystemUI()
 
         // Set an onClickListener for the logout button
         findViewById<Button>(R.id.logoutButton).setOnClickListener {
@@ -43,13 +47,15 @@ class HomeActivity : BaseActivity() {
             startActivity(Intent(this, UnfinishedCardsActivity::class.java))
         }
 
-        findViewById<Button>(R.id.addCharacterButton).setOnClickListener {
+        findViewById<ImageButton>(R.id.addCharacterButton).setOnClickListener {
             startActivity(Intent(this, NewCardAncestryActivity::class.java))
         }
-        findViewById<Button>(R.id.testButton).setOnClickListener {
+        findViewById<ImageButton>(R.id.testButton).setOnClickListener {
             startActivity(Intent(this, ProfessionsConsistencyChecker::class.java))
         }
     }
+
+
 
     // onStart is called when the activity is about to become visible
     override fun onStart() {
@@ -82,6 +88,7 @@ class HomeActivity : BaseActivity() {
             Toast.makeText(this, "Błąd pobierania danych profilu: ${exception.message}", Toast.LENGTH_SHORT).show()
         }
     }
+
 
     // This method is used to create a new profile for the user
     private fun createProfile(userId: String) {
