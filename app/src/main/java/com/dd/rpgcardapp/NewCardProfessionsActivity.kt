@@ -39,6 +39,8 @@ class NewCardProfessionsActivity : BaseActivity() {
         binding = ActivityNewCardProfessionsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        enableTouchToHideKeyboardAndSystemUI()
+
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
 
@@ -80,6 +82,10 @@ class NewCardProfessionsActivity : BaseActivity() {
             }
             saveProfessionToFirestore()
         }
+        binding.exitButton.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        }
 
         // Obsługa przycisku "Wstecz"
         binding.backButton.setOnClickListener {
@@ -88,23 +94,6 @@ class NewCardProfessionsActivity : BaseActivity() {
                 putExtra("CHARACTER_RACE", intent.getStringExtra("CHARACTER_RACE"))
             }
             startActivity(intent)
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
-            SystemUIUtils.hideSystemUI(this)
         }
     }
 

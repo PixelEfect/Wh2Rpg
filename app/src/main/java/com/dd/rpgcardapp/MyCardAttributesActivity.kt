@@ -2,29 +2,22 @@ package com.dd.rpgcardapp
 
 import BaseActivity
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
-import com.dd.rpgcardapp.data.Ability
-import com.dd.rpgcardapp.data.AbilityGroupSimplifier
-import com.dd.rpgcardapp.data.Profession
-import com.dd.rpgcardapp.data.ProfessionPaths
-import com.dd.rpgcardapp.data.Race
-import com.dd.rpgcardapp.data.Races
+import androidx.activity.result.contract.ActivityResultContracts
+import com.dd.rpgcardapp.data.StatsSkills
 import com.dd.rpgcardapp.databinding.ActivityMyCardAttributesBinding
-
-import com.dd.rpgcardapp.utils.SystemUIUtils
-import com.dd.rpgcardapp.utils.showAlertDialog
-import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.text.Collator
-import java.util.Locale
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 class MyCardAttributesActivity : BaseActivity() {
 
@@ -43,6 +36,8 @@ class MyCardAttributesActivity : BaseActivity() {
         binding = ActivityMyCardAttributesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        enableTouchToHideKeyboardAndSystemUI()
+
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
 
@@ -60,47 +55,90 @@ class MyCardAttributesActivity : BaseActivity() {
         // Możesz również dodać logikę do pobrania danych z Firestore, jeśli to potrzebne
         characterDocId?.let { docId ->
             fetchCharacterAttributes(docId)
+            fetchCharacterInfo(docId)
+        }
+
+        loadSavedImageIfExists()
+
+        binding.buttonEditImage.setOnClickListener {
+            openImagePicker()
+        }
+
+        binding.exitButton.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }
     }
 
-
-    override fun onStart() {
-        super.onStart()
-        SystemUIUtils.hideSystemUI(this)
+    private fun loadSavedImageIfExists() {
+        val filename = "image_${characterDocId}"
+        val file = File(filesDir, filename)
+        if (file.exists()) {
+            binding.imageView.setImageBitmap(BitmapFactory.decodeFile(file.absolutePath))
+        }
     }
 
-    override fun onResume() {
-        super.onResume()
-        SystemUIUtils.hideSystemUI(this)
+    private val pickImageLauncher = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        uri?.let {
+            saveImageLocally(it)
+        }
     }
 
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
-            SystemUIUtils.hideSystemUI(this)
+    private fun openImagePicker() {
+        pickImageLauncher.launch("image/*")
+    }
+
+    private fun saveImageLocally(uri: Uri) {
+        val filename = "image_${characterDocId}"
+        val file = File(filesDir, filename)
+
+        try {
+            val inputStream = contentResolver.openInputStream(uri)
+            val outputStream = FileOutputStream(file)
+
+            inputStream?.copyTo(outputStream)
+
+            inputStream?.close()
+            outputStream.close()
+
+            Toast.makeText(this, "Zapisano obrazek", Toast.LENGTH_SHORT).show()
+
+            // Od razu wczytaj ten obraz do ImageView
+            binding.imageView.setImageBitmap(BitmapFactory.decodeFile(file.absolutePath))
+
+        } catch (e: IOException) {
+            Toast.makeText(this, "Błąd zapisu: ${e.message}", Toast.LENGTH_LONG).show()
+            e.printStackTrace()
         }
     }
 
     private fun fetchCharacterAttributes(characterDocId: String) {
         // Pobieranie danych z dokumentów "base", "obtained", "progression"
-        val attributesRef = db.collection("users")
+        val characterRef = db.collection("users")
             .document(userId)
             .collection("characters")
             .document(characterDocId)
-            .collection("attributes")
 
-        // Pobranie danych z dokumentu "base"
+        val attributesRef = characterRef.collection("attributes")
+        val skillsRef = characterRef.collection("skills").document("stats")
+
+        // Zadania Firestore
         val baseDocTask = attributesRef.document("base").get()
-        // Pobranie danych z dokumentu "obtained"
         val obtainedDocTask = attributesRef.document("obtained").get()
-        // Pobranie danych z dokumentu "progression"
         val progressionDocTask = attributesRef.document("progression").get()
+        val skillsDocTask = skillsRef.get()
 
         // Oczekiwanie na wszystkie trzy dokumenty
-        Tasks.whenAllSuccess<DocumentSnapshot>(baseDocTask, obtainedDocTask, progressionDocTask)
+        Tasks.whenAllSuccess<DocumentSnapshot>(baseDocTask, obtainedDocTask, progressionDocTask, skillsDocTask)
             .addOnSuccessListener { documents ->
+                val baseDoc = documents[0]
+                val obtainedDoc = documents[1]
+                val progressionDoc = documents[2]
+                val skillsDoc = documents[3]
+
                 // Dokument base
-                val baseDoc = documents[0] as DocumentSnapshot
                 val baseA = baseDoc.getLong("A")?.toInt() ?: 0
                 val baseInt = baseDoc.getLong("Int")?.toInt() ?: 0
                 val baseK = baseDoc.getLong("K")?.toInt() ?: 0
@@ -109,17 +147,14 @@ class MyCardAttributesActivity : BaseActivity() {
                 val baseOgd = baseDoc.getLong("Ogd")?.toInt() ?: 0
                 val basePO = baseDoc.getLong("PO")?.toInt() ?: 0
                 val basePP = baseDoc.getLong("PP")?.toInt() ?: 0
-                val baseS = baseDoc.getLong("S")?.toInt() ?: 0
                 val baseSW = baseDoc.getLong("SW")?.toInt() ?: 0
                 val baseSz = baseDoc.getLong("Sz")?.toInt() ?: 0
                 val baseUS = baseDoc.getLong("US")?.toInt() ?: 0
                 val baseWW = baseDoc.getLong("WW")?.toInt() ?: 0
-                val baseWt = baseDoc.getLong("Wt")?.toInt() ?: 0
                 val baseZr = baseDoc.getLong("Zr")?.toInt() ?: 0
                 val baseZyw = baseDoc.getLong("Zyw")?.toInt() ?: 0
 
                 // Dokument obtained
-                val obtainedDoc = documents[1] as DocumentSnapshot
                 val obtainedA = obtainedDoc.getLong("A")?.toInt() ?: 0
                 val obtainedInt = obtainedDoc.getLong("Int")?.toInt() ?: 0
                 val obtainedK = obtainedDoc.getLong("K")?.toInt() ?: 0
@@ -128,17 +163,14 @@ class MyCardAttributesActivity : BaseActivity() {
                 val obtainedOgd = obtainedDoc.getLong("Ogd")?.toInt() ?: 0
                 val obtainedPO = obtainedDoc.getLong("PO")?.toInt() ?: 0
                 val obtainedPP = obtainedDoc.getLong("PP")?.toInt() ?: 0
-                val obtainedS = obtainedDoc.getLong("S")?.toInt() ?: 0
                 val obtainedSW = obtainedDoc.getLong("SW")?.toInt() ?: 0
                 val obtainedSz = obtainedDoc.getLong("Sz")?.toInt() ?: 0
                 val obtainedUS = obtainedDoc.getLong("US")?.toInt() ?: 0
                 val obtainedWW = obtainedDoc.getLong("WW")?.toInt() ?: 0
-                val obtainedWt = obtainedDoc.getLong("Wt")?.toInt() ?: 0
                 val obtainedZr = obtainedDoc.getLong("Zr")?.toInt() ?: 0
                 val obtainedZyw = obtainedDoc.getLong("Zyw")?.toInt() ?: 0
 
                 // Dokument progression
-                val progressionDoc = documents[2] as DocumentSnapshot
                 val progressionA = progressionDoc.getLong("A")?.toInt() ?: 0
                 val progressionInt = progressionDoc.getLong("Int")?.toInt() ?: 0
                 val progressionK = progressionDoc.getLong("K")?.toInt() ?: 0
@@ -156,41 +188,83 @@ class MyCardAttributesActivity : BaseActivity() {
                 val progressionZr = progressionDoc.getLong("Zr")?.toInt() ?: 0
                 val progressionZyw = progressionDoc.getLong("Zyw")?.toInt() ?: 0
 
+                // Pobieranie nazw umiejętności
+                val ownedSkills = (skillsDoc.get("owned") as? List<Map<String, Any>>)
+                    ?.mapNotNull { it["name"] as? String }
+                    ?: emptyList()
+
+                val skillStatBonuses: Map<String, Map<String, Int>> = mapOf(
+                    StatsSkills.bardzoSilny.name to mapOf("K" to 5),
+                    StatsSkills.bardzoSzybki.name to mapOf("Sz" to 1),
+                    StatsSkills.blyskotliwosc.name to mapOf("Int" to 5),
+                    StatsSkills.charyzmatyczny.name to mapOf("Ogd" to 5),
+                    StatsSkills.niezwykleOdporny.name to mapOf("Odp" to 5),
+                    StatsSkills.opanowanie.name to mapOf("SW" to 5),
+                    StatsSkills.strzelecWyborowy.name to mapOf("US" to 5),
+                    StatsSkills.szybkiRefleks.name to mapOf("Zr" to 5),
+                    StatsSkills.twardziel.name to mapOf("Zyw" to 1),
+                    StatsSkills.urodzonyWojownik.name to mapOf("WW" to 5)
+                )
+                fun calculateSkillBonuses(ownedSkills: List<String>): Map<String, Int> {
+                    val result = mutableMapOf<String, Int>()
+                    for (skillName in ownedSkills) {
+                        val bonuses = skillStatBonuses[skillName] ?: continue
+                        for ((stat, bonus) in bonuses) {
+                            result[stat] = result.getOrDefault(stat, 0) + bonus
+                        }
+                    }
+                    return result
+                }
+
+                val skillBonuses = calculateSkillBonuses(ownedSkills)
+
+                val swBonus = skillBonuses["SW"] ?: 0
+                val intBonus = skillBonuses["Int"] ?: 0
+                val odpBonus = skillBonuses["Odp"] ?: 0
+                val ogdBonus = skillBonuses["Ogd"] ?: 0
+                val szBonus = skillBonuses["Sz"] ?: 0
+                val usBonus = skillBonuses["US"] ?: 0
+                val wwBonus = skillBonuses["WW"] ?: 0
+                val kBonus = skillBonuses["K"] ?: 0
+                val zrBonus = skillBonuses["Zr"] ?: 0
+                val zywBonus = skillBonuses["Zyw"] ?: 0
+
                 // Aktualizowanie UI z danymi z dokumentu base
                 binding.baseA.text = "$baseA"
-                binding.baseInt.text = "$baseInt"
-                binding.baseK.text = "$baseK"
+                binding.baseInt.text = "${baseInt + intBonus}"
+                binding.baseK.text = "${baseK + kBonus}"
                 binding.baseMag.text = "$baseMag"
-                binding.baseOdp.text = "$baseOdp"
-                binding.baseOgd.text = "$baseOgd"
+                binding.baseOdp.text = "${baseOdp + odpBonus}"
+                binding.baseOgd.text = "${baseOgd + ogdBonus}"
                 binding.basePO.text = "$basePO"
                 binding.basePP.text = "$basePP"
-                binding.baseS.text = "$baseS"
-                binding.baseSW.text = "$baseSW"
-                binding.baseSz.text = "$baseSz"
-                binding.baseUS.text = "$baseUS"
-                binding.baseWW.text = "$baseWW"
-                binding.baseWt.text = "$baseWt"
-                binding.baseZr.text = "$baseZr"
-                binding.baseZyw.text = "$baseZyw"
+                binding.baseS.text = "${(baseK + kBonus)/10}"
+                binding.baseSW.text = "${baseSW + swBonus}"
+                binding.baseSz.text = "${baseSz + szBonus}"
+                binding.baseUS.text = "${baseUS + usBonus}"
+                binding.baseWW.text = "${baseWW + wwBonus}"
+                binding.baseWt.text = "${(baseOdp + odpBonus)/10}"
+                binding.baseZr.text = "${baseZr + zrBonus}"
+                binding.baseZyw.text = "${baseZyw + zywBonus}"
 
                 // Aktualizowanie UI z danymi z dokumentu obtained
                 binding.obtainedA.text = "${baseA + obtainedA}"
-                binding.obtainedInt.text = "${baseInt + obtainedInt}"
-                binding.obtainedK.text = "${baseK + obtainedK}"
+                binding.obtainedInt.text = "${baseInt + obtainedInt + intBonus}"
+                binding.obtainedK.text = "${baseK + obtainedK + kBonus}"
                 binding.obtainedMag.text = "${baseMag + obtainedMag}"
-                binding.obtainedOdp.text = "${baseOdp + obtainedOdp}"
-                binding.obtainedOgd.text = "${baseOgd + obtainedOgd}"
+                binding.obtainedOdp.text = "${baseOdp + obtainedOdp + odpBonus}"
+                binding.obtainedOgd.text = "${baseOgd + obtainedOgd + ogdBonus}"
                 binding.obtainedPO.text = "${basePO + obtainedPO}"
                 binding.obtainedPP.text = "${basePP + obtainedPP}"
-                binding.obtainedS.text = "${baseS + obtainedS}"
-                binding.obtainedSW.text = "${baseSW + obtainedSW}"
-                binding.obtainedSz.text = "${baseSz + obtainedSz}"
-                binding.obtainedUS.text = "${baseUS + obtainedUS}"
-                binding.obtainedWW.text = "${baseWW + obtainedWW}"
-                binding.obtainedWt.text = "${baseWt + obtainedWt}"
-                binding.obtainedZr.text = "${baseZr + obtainedZr}"
-                binding.obtainedZyw.text = "${baseZyw + obtainedZyw}"
+                binding.obtainedS.text = "${(baseK + obtainedK + kBonus)/10}"
+                binding.obtainedSz.text = "${baseSz + obtainedSz + szBonus}"
+                binding.obtainedUS.text = "${baseUS + obtainedUS + usBonus}"
+                binding.obtainedWW.text = "${baseWW + obtainedWW + wwBonus}"
+                binding.obtainedWt.text = "${(baseOdp + obtainedOdp + odpBonus)/10}"
+                binding.obtainedZr.text = "${baseZr + obtainedZr + zrBonus}"
+                binding.obtainedSW.text = "${baseSW + obtainedSW + swBonus}"
+                binding.obtainedZyw.text = "${baseZyw + obtainedZyw + zywBonus}"
+
 
                 // Aktualizowanie UI z danymi z dokumentu progression
                 binding.progressionA.text = "$progressionA"
@@ -225,6 +299,12 @@ class MyCardAttributesActivity : BaseActivity() {
                     binding.zywProgressBar to obtainedZyw
                 )
 
+                binding.skillsTextView.text = "Premie ze zdolności: " + ownedSkills
+                    .flatMap { skill ->
+                        skillStatBonuses[skill]?.entries?.map { e -> "+${e.value} ${e.key}" } ?: emptyList()
+                    }
+                    .joinToString(", ")
+
                 for ((view, value) in statMap) {
                     view.currentPoints = value
                 }
@@ -234,4 +314,40 @@ class MyCardAttributesActivity : BaseActivity() {
                 Toast.makeText(this, "Błąd pobierania danych", Toast.LENGTH_SHORT).show()
             }
     }
+    private fun fetchCharacterInfo(docId: String) {
+        val characterRef = db.collection("users")
+            .document(userId)
+            .collection("characters")
+            .document(docId)
+
+        characterRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null && document.exists()) {
+                    val sex = document.getString("sex") ?: "Brak danych"
+                    val age = document.getString("age") ?: "Brak danych"
+                    val eyes = document.getString("eyes") ?: "Brak danych"
+                    val hair = document.getString("hair") ?: "Brak danych"
+                    val height = document.getString("height") ?: "Brak danych"
+                    val weight = document.getString("weight") ?: "Brak danych"
+                    val starSign = document.getString("starSign") ?: "Brak danych"
+
+                    // Przypisanie do TextView
+                    binding.sexTextView.text = "Płeć: $sex"
+                    binding.ageTextView.text = "Wiek: $age"
+                    binding.eyesTextView.text = "Oczy: $eyes"
+                    binding.hairTextView.text = "Włosy: $hair"
+                    binding.heightTextView.text = "Wzrost: $height cm"
+                    binding.weightTextView.text = "Waga: $weight kg"
+                    binding.starSignTextView.text = "Znak: $starSign"
+
+                    // Możesz też obsłużyć createdAt i lastActiveAt jeśli chcesz je sformatować
+                } else {
+                    Toast.makeText(this, "Brak danych postaci", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Błąd podczas pobierania: ${e.message}", Toast.LENGTH_LONG).show()
+            }
+    }
+
 }

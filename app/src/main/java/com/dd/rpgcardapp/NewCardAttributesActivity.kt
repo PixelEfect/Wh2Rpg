@@ -53,6 +53,8 @@ class NewCardAttributesActivity : BaseActivity() {
         binding = ActivityNewCardAttributesBinding.inflate(layoutInflater) // Inicjalizacja Binding
         setContentView(binding.root) // Użyj binding.root jako głównego widoku
 
+        enableTouchToHideKeyboardAndSystemUI()
+
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
 
@@ -150,19 +152,6 @@ class NewCardAttributesActivity : BaseActivity() {
             }
         }
 
-        // Nasłuchiwanie kliknięć na głównym kontenerze aktywności
-        binding.root.setOnTouchListener { v, event -> // Użyj binding
-            // Ukryj klawiaturę, jeśli kliknięcie nie jest w polu tekstowym
-            if (event.action == MotionEvent.ACTION_DOWN) {
-                // Sprawdzamy, czy kliknięcie miało miejsce poza polem tekstowym
-                if (currentFocus != null) {
-                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-                }
-            }
-            false
-        }
-
         binding.rollButton.setOnClickListener { // Użyj binding
             getRaceFromIntent()?.let {
                 fillAttributesFromRace(it)
@@ -174,39 +163,18 @@ class NewCardAttributesActivity : BaseActivity() {
         binding.nextButton.setOnClickListener { // Użyj binding
             saveAttributesToFirestore() // Wywołanie zapisu po kliknięciu
         }
+        binding.exitButton.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        }
 
-        binding.backButton.setOnClickListener { // Użyj binding
-            // Pobierz wartość characterDocId
+        binding.backButton.setOnClickListener {
             val characterDocId = intent.getStringExtra("CHARACTER_DOC_ID")
-
-            // Przygotuj Intent do przekierowania do NewCardAncestryActivity
             val intent = Intent(this, NewCardAncestryActivity::class.java)
-
-            // Przekaż characterDocId jako dodatkowy parametr w Intent
             intent.putExtra("CHARACTER_DOC_ID", characterDocId)
-
-            // Uruchom NewCardAncestryActivity
             startActivity(intent)
         }
 
-    }
-
-    override fun onStart() {
-        super.onStart()
-        SystemUIUtils.hideSystemUI(this)
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
-            SystemUIUtils.hideSystemUI(this)
-        }
     }
 
     private fun getRaceFromIntent(): Race? {

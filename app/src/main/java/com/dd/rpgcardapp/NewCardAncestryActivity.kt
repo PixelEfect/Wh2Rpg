@@ -53,6 +53,8 @@ class NewCardAncestryActivity : BaseActivity() {
         binding = ActivityNewCardAncestryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        enableTouchToHideKeyboardAndSystemUI()
+
         db = Firebase.firestore
         userId = Firebase.auth.currentUser?.uid ?: ""
         characterDocId = intent.getStringExtra(CHARACTER_DOC_ID_EXTRA)
@@ -65,32 +67,6 @@ class NewCardAncestryActivity : BaseActivity() {
             setDefaultValues()
         }
 
-        // Hide keyboard on touch outside edit texts
-        binding.rootLayout.setOnTouchListener { _, event ->
-            if (event.action == MotionEvent.ACTION_DOWN && currentFocus != null) {
-                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-            }
-            SystemUIUtils.hideSystemUI(this)
-            false
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        SystemUIUtils.hideSystemUI(this)
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
-            SystemUIUtils.hideSystemUI(this)
-        }
     }
 
     private fun setupListeners() {
@@ -100,7 +76,7 @@ class NewCardAncestryActivity : BaseActivity() {
         binding.inputHairTextView.setOnClickListener { showHairColorSelectionDialog() }
         binding.inputStarSignTextView.setOnClickListener { showStarSignSelectionDialog() }
         binding.nextButton.setOnClickListener { saveCharacterToFirestore() }
-        binding.backButton.setOnClickListener { navigateToHome() }
+        binding.exitButton.setOnClickListener { navigateToHome() }
 
         binding.ageSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
@@ -383,6 +359,13 @@ class NewCardAncestryActivity : BaseActivity() {
     }
 
     private fun saveCharacterToFirestore() {
+        val name = binding.inputName.text.toString().trim()
+
+        if (name.isEmpty()) {
+            Toast.makeText(this, "Wprowadź imię postaci", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val race = binding.inputRaceTextView.text.toString()
 
         val characterData = hashMapOf(

@@ -1,15 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_0003"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Główna przestrzeń na tekst -->
     <TextView
         android:id="@+id/textViewConsistencyReport"
         android:layout_width="match_parent"
-        android:layout_height="807dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="Sprawdzanie spójności danych..."
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <!-- Pasek z przyciskami na dole -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp">
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/exit_002"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="@null"/>
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
 </LinearLayout>
