@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="4dp">
+
+    <EditText
+        android:id="@+id/weaponName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Nazwa"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/weaponPower"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:hint="Moc"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/weaponInformation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Informacje"
+        android:inputType="text" />
+</LinearLayout>

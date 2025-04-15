@@ -1,14 +1,22 @@
 package com.dd.rpgcardapp
 
 import BaseActivity
+import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.dd.rpgcardapp.MyCardListActivity
 import com.dd.rpgcardapp.data.StatsSkills
 import com.dd.rpgcardapp.databinding.ActivityMyCardAttributesBinding
+import com.dd.rpgcardapp.utils.SystemUIUtils
+import com.dd.rpgcardapp.utils.showAlertDialog
 import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentSnapshot
@@ -18,6 +26,7 @@ import com.google.firebase.ktx.Firebase
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
+import kotlin.random.Random
 
 class MyCardAttributesActivity : BaseActivity() {
 
@@ -57,16 +66,67 @@ class MyCardAttributesActivity : BaseActivity() {
             fetchCharacterAttributes(docId)
             fetchCharacterInfo(docId)
         }
-
+        setupArmorPickers(binding, this)
         loadSavedImageIfExists()
+        setupUIToHideKeyboard(binding.root)
+
+        loadWeaponData()
+        loadArmorData()
+
+        binding.d10Button.setOnClickListener {
+            val result = Random.nextInt(1, 11) // 1 do 10 włącznie
+            binding.diceTextView.text = "K10"
+            binding.numberTextView.text = result.toString()
+        }
+
+        // Obsługa kliknięcia d100
+        binding.d100Button.setOnClickListener {
+            val result = Random.nextInt(1, 101) // 1 do 100 włącznie
+            binding.diceTextView.text = "K100"
+            binding.numberTextView.text = result.toString()
+        }
 
         binding.buttonEditImage.setOnClickListener {
             openImagePicker()
         }
-
+        binding.backButton.setOnClickListener {
+            saveWeaponData()
+            saveArmorData()
+            val intent = Intent(this@MyCardAttributesActivity,
+                MyCardBackstoryActivity::class.java)
+            intent.putExtra("CHARACTER_DOC_ID", characterDocId)  // Ustaw odpowiedni klucz
+            intent.putExtra("CHARACTER_RACE", characterRace)
+            intent.putExtra("CHARACTER_PROFESSION", characterProfession)
+            intent.putExtra("CHARACTER_NAME", characterName)
+            startActivity(intent)
+        }
         binding.exitButton.setOnClickListener {
+            saveWeaponData()
+            saveArmorData()
             startActivity(Intent(this, HomeActivity::class.java))
             finish()
+        }
+    }
+
+    fun setupUIToHideKeyboard(view: View) {
+        // Jeśli to nie jest EditText – dodaj listener do chowania klawiatury
+        if (view !is EditText) {
+            view.setOnTouchListener { _, _ ->
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                currentFocus?.let {
+                    imm.hideSoftInputFromWindow(it.windowToken, 0)
+                    it.clearFocus()
+                }
+                SystemUIUtils.hideSystemUI(this)
+                false
+            }
+        }
+
+        // Jeśli to jest ViewGroup – przejdź rekurencyjnie po dzieciach
+        if (view is ViewGroup) {
+            for (i in 0 until view.childCount) {
+                setupUIToHideKeyboard(view.getChildAt(i))
+            }
         }
     }
 
@@ -111,6 +171,136 @@ class MyCardAttributesActivity : BaseActivity() {
         } catch (e: IOException) {
             Toast.makeText(this, "Błąd zapisu: ${e.message}", Toast.LENGTH_LONG).show()
             e.printStackTrace()
+        }
+    }
+
+    fun setupArmorPickers(binding: ActivityMyCardAttributesBinding, context: Context) {
+
+        val options = (0..9).map { it.toString() }
+
+        val pairs = listOf(
+            binding.armorNumber1TextView to binding.armorImage1View,
+            binding.armorNumber2TextView to binding.armorImage2View,
+            binding.armorNumber3TextView to binding.armorImage3View,
+            binding.armorNumber4TextView to binding.armorImage4View,
+            binding.armorNumber5TextView to binding.armorImage5View,
+            binding.armorNumber6TextView to binding.armorImage6View
+        )
+
+        pairs.forEach { (selector, target) ->
+            selector.setOnClickListener {
+                showAlertDialog(
+                    context = context,
+                    title = "Wybierz wartość",
+                    items = options
+
+                ) { selected ->
+                    selector.text = selected
+                    target.text = selected
+                }
+            }
+        }
+    }
+
+    private fun saveArmorData() {
+        if (characterDocId != null) {
+            val armorData = hashMapOf(
+                "head" to binding.armorNumber1TextView.text.toString(),
+                "rightHand" to binding.armorNumber2TextView.text.toString(),
+                "leftHand" to binding.armorNumber3TextView.text.toString(),
+                "body" to binding.armorNumber4TextView.text.toString(),
+                "rightLeg" to binding.armorNumber5TextView.text.toString(),
+                "leftLeg" to binding.armorNumber6TextView.text.toString()
+            )
+
+            db.collection("users").document(userId)
+                .collection("characters").document(characterDocId!!)
+                .collection("inventory").document("armor")
+                .set(armorData)
+                .addOnSuccessListener {
+                    println("Dane zbroi zostały pomyślnie zapisane!")
+                    // Możesz dodać kod obsługujący sukces zapisu
+                }
+                .addOnFailureListener { e ->
+                    println("Błąd podczas zapisywania danych zbroi: $e")
+                    // Możesz dodać kod obsługujący błąd zapisu
+                }
+        } else {
+            println("Nieprawidłowy characterDocId")
+        }
+    }
+
+    private fun loadArmorData() {
+        if (characterDocId != null) {
+            db.collection("users").document(userId)
+                .collection("characters").document(characterDocId!!)
+                .collection("inventory").document("armor")
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        val armorData = document.data
+
+                        val armorNumberTextViews = listOf(
+                            binding.armorNumber1TextView,
+                            binding.armorNumber2TextView,
+                            binding.armorNumber3TextView,
+                            binding.armorNumber4TextView,
+                            binding.armorNumber5TextView,
+                            binding.armorNumber6TextView
+                        )
+
+                        val armorImageViews = listOf(
+                            binding.armorImage1View,
+                            binding.armorImage2View,
+                            binding.armorImage3View,
+                            binding.armorImage4View,
+                            binding.armorImage5View,
+                            binding.armorImage6View
+                        )
+
+                        val armorKeys = listOf("head", "rightHand", "leftHand", "body", "rightLeg", "leftLeg")
+
+                        for (i in armorKeys.indices) {
+                            val value = armorData?.get(armorKeys[i]) as? String ?: "0"
+                            armorNumberTextViews[i].text = value
+                            armorImageViews[i].text = value // Ustawiamy wartość również w armorImageView
+                        }
+
+                    } else {
+                        println("Dokument 'armor' nie istnieje w inwentarzu.")
+                        setInitialArmorValues()
+                    }
+                }
+                .addOnFailureListener { e ->
+                    println("Błąd podczas pobierania danych zbroi: $e")
+                }
+        } else {
+            println("Nieprawidłowy characterDocId")
+        }
+    }
+
+    private fun setInitialArmorValues() {
+        val armorNumberTextViews = listOf(
+            binding.armorNumber1TextView,
+            binding.armorNumber2TextView,
+            binding.armorNumber3TextView,
+            binding.armorNumber4TextView,
+            binding.armorNumber5TextView,
+            binding.armorNumber6TextView
+        )
+
+        val armorImageViews = listOf(
+            binding.armorImage1View,
+            binding.armorImage2View,
+            binding.armorImage3View,
+            binding.armorImage4View,
+            binding.armorImage5View,
+            binding.armorImage6View
+        )
+
+        for (i in armorNumberTextViews.indices) {
+            armorNumberTextViews[i].text = "0"
+            armorImageViews[i].text = "0"
         }
     }
 
@@ -349,5 +539,103 @@ class MyCardAttributesActivity : BaseActivity() {
                 Toast.makeText(this, "Błąd podczas pobierania: ${e.message}", Toast.LENGTH_LONG).show()
             }
     }
+    private fun loadWeaponData() {
+        if (characterDocId != null) {
+            db.collection("users").document(userId)
+                .collection("characters").document(characterDocId!!)
+                .collection("inventory").document("weapon")
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        val weaponData = document.data
 
+                        (weaponData?.get("weapon1") as? Map<String, String>)?.let { weapon1 ->
+                            binding.weapon1Name.setText(weapon1["name"])
+                            binding.weapon1Power.setText(weapon1["power"])
+                            binding.weapon1Information.setText(weapon1["information"])
+                        }
+
+                        (weaponData?.get("weapon2") as? Map<String, String>)?.let { weapon2 ->
+                            binding.weapon2Name.setText(weapon2["name"])
+                            binding.weapon2Power.setText(weapon2["power"])
+                            binding.weapon2Information.setText(weapon2["information"])
+                        }
+
+                        (weaponData?.get("weapon3") as? Map<String, String>)?.let { weapon3 ->
+                            binding.weapon3Name.setText(weapon3["name"])
+                            binding.weapon3Power.setText(weapon3["power"])
+                            binding.weapon3Information.setText(weapon3["information"])
+                        }
+
+                        (weaponData?.get("weapon4") as? Map<String, String>)?.let { weapon4 ->
+                            binding.weapon4Name.setText(weapon4["name"])
+                            binding.weapon4Power.setText(weapon4["power"])
+                            binding.weapon4Information.setText(weapon4["information"])
+                        }
+
+                        (weaponData?.get("weapon5") as? Map<String, String>)?.let { weapon5 ->
+                            binding.weapon5Name.setText(weapon5["name"])
+                            binding.weapon5Power.setText(weapon5["power"])
+                            binding.weapon5Information.setText(weapon5["information"])
+                        }
+                    } else {
+                        println("Dokument 'weapon' nie istnieje w inwentarzu.")
+                        // Możesz tutaj dodać logikę, co zrobić, gdy dokument nie istnieje (np. ustawić domyślne wartości)
+                    }
+                }
+                .addOnFailureListener { e ->
+                    println("Błąd podczas pobierania danych broni: $e")
+                    // Możesz tutaj dodać kod obsługujący błąd pobierania danych
+                }
+        } else {
+            println("Nieprawidłowy characterDocId")
+        }
+    }
+
+    private fun saveWeaponData() {
+        if (characterDocId != null) {
+            val weaponData = hashMapOf(
+                "weapon1" to hashMapOf(
+                    "name" to binding.weapon1Name.text.toString(),
+                    "power" to binding.weapon1Power.text.toString(),
+                    "information" to binding.weapon1Information.text.toString()
+                ),
+                "weapon2" to hashMapOf(
+                    "name" to binding.weapon2Name.text.toString(),
+                    "power" to binding.weapon2Power.text.toString(),
+                    "information" to binding.weapon2Information.text.toString()
+                ),
+                "weapon3" to hashMapOf(
+                    "name" to binding.weapon3Name.text.toString(),
+                    "power" to binding.weapon3Power.text.toString(),
+                    "information" to binding.weapon3Information.text.toString()
+                ),
+                "weapon4" to hashMapOf(
+                    "name" to binding.weapon4Name.text.toString(),
+                    "power" to binding.weapon4Power.text.toString(),
+                    "information" to binding.weapon4Information.text.toString()
+                ),
+                "weapon5" to hashMapOf(
+                    "name" to binding.weapon5Name.text.toString(),
+                    "power" to binding.weapon5Power.text.toString(),
+                    "information" to binding.weapon5Information.text.toString()
+                )
+            )
+
+            db.collection("users").document(userId)
+                .collection("characters").document(characterDocId!!)
+                .collection("inventory").document("weapon")
+                .set(weaponData)
+                .addOnSuccessListener {
+                    println("Dane broni zostały pomyślnie zapisane!")
+                    // Możesz tutaj dodać kod obsługujący sukces zapisu
+                }
+                .addOnFailureListener { e ->
+                    println("Błąd podczas zapisywania danych broni: $e")
+                    // Możesz tutaj dodać kod obsługujący błąd zapisu
+                }
+        } else {
+            println("Nieprawidłowy characterDocId")
+        }
+    }
 }

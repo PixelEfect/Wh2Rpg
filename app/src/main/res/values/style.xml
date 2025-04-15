@@ -116,6 +116,19 @@
         <item name="android:background">@drawable/translucent_bg1</item>
         <item name="android:padding">8dp</item>
     </style>
+    <style name="AutoResizingInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minLines">1</item>
+        <item name="android:maxLines">6</item>
+        <item name="android:gravity">top|start</item>
+        <item name="android:inputType">text|textCapSentences|textMultiLine|textNoSuggestions</item>
+        <item name="android:scrollHorizontally">false</item>
+        <item name="android:background">@drawable/translucent_bg1</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+
     <style name="AbilityTextStyle">
         <item name="android:layout_width">251dp</item>
         <item name="android:layout_height">30dp</item>
@@ -142,6 +155,40 @@
         <item name="android:textStyle">bold</item>
         <item name="android:text">+</item>
         <item name="android:textColor">@android:color/black</item>
+    </style>
+    <!-- Styl dla numerków (np. 1, 2, 3...) -->
+    <style name="BodyPartNumberStyle">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:background">#AA000000</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">top|start</item>
+    </style>
+
+    <!-- Styl dla opisów (np. Głowa, P.ręka...) -->
+    <style name="BodyPartLabelStyle">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">top|start</item>
+        <item name="android:layout_margin">0dp</item>
+    </style>
+
+    <style name="ArmorDropdownTextViewStyle">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/rounded_edittext</item>
+        <item name="android:clickable">true</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow_drop_down</item>
+        <item name="android:focusable">false</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

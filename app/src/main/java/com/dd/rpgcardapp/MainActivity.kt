@@ -15,10 +15,11 @@ import android.animation.ValueAnimator
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.RelativeLayout
 import androidx.core.animation.addListener
-import com.dd.rpgcardapp.utils.SystemUIUtils
+import androidx.core.content.ContextCompat
 import kotlin.random.Random
 
 //NIEWOLNIK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! podobnie pielgrzymem moze zostac kazdy
@@ -54,12 +55,13 @@ class MainActivity : BaseActivity() {
 
         auth = Firebase.auth  // Initialize Firebase Authentication
         val rootLayout = findViewById<RelativeLayout>(R.id.rootLayout) // Główny layout
-        val option = true//Random.nextBoolean()
-        // Losowy wybór obrazka tła
-        val backgroundImage = if (option) {
-            R.drawable.welcome_0003
-        } else {
-            R.drawable.welcome_0002
+        val option = Random.nextInt(4) // Wylosuje 0, 1, 2 lub 3
+        val backgroundImage = when (option) {
+            0 -> R.drawable.welcome_0001
+            1 -> R.drawable.welcome_0002
+            2 -> R.drawable.welcome_0003
+            3 -> R.drawable.welcome_0004
+            else -> R.drawable.welcome_0010 // fallback, raczej niepotrzebny, ale dla bezpieczeństwa
         }
 
         // Ustawienie tła
@@ -82,21 +84,16 @@ class MainActivity : BaseActivity() {
         startButton.setOnClickListener {
             checkUser()
         }
-        if (option) {
-            // 🔹 Obsługa dotyku na całym ekranie
-            rootLayout.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
-                    createFlyingRunes(rootLayout)  // Wywołujemy bez współrzędnych dotyku
+        rootLayout.setOnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                when (option) {
+                    0 -> createFlyingRunes(rootLayout)
+                    1 -> createFlyingLights(rootLayout)
+                    2 -> createSparks(rootLayout)
+                    3 -> createRisingSmoke(rootLayout)
                 }
-                true
             }
-        } else {
-            rootLayout.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
-                    createFlyingLights(rootLayout)  // Wywołanie efektu świetlnego
-                }
-                true
-            }
+            true
         }
     }
 
@@ -147,43 +144,140 @@ class MainActivity : BaseActivity() {
         }
     }
     private fun createFlyingLights(parent: RelativeLayout) {
-        // Obliczamy współrzędne ekranu
         val screenWidth = parent.width
         val screenHeight = parent.height
 
-        // Lista kolorów ARGB – różne odcienie błękitu/jasnoniebieskiego
+        // Poziomy startowe: bazowy + wyżej o 1/10 i 2/10 ekranu
+        val baseY = screenHeight * 7 / 19
+        val yLevels = listOf(
+            baseY, baseY, baseY,
+            baseY - screenHeight / 30,
+            baseY - screenHeight / 20,
+            baseY - screenHeight / 15,
+            baseY - (screenHeight / 10)
+        )
 
-        // Tworzymy efekt błysku w losowych miejscach
-        repeat(30) {  // Liczba efektów, które pojawią się
-            val light = View(this).apply {
-                // Zmieniamy tło na okrągły "punkt" przypominający światło w odcieniach błękitu
-                // Stała wartość dla czerwonego i zielonego (np. 0), losowy dla niebieskiego
+        repeat(50) {
+            val light = View(parent.context).apply {
                 setBackgroundColor(blueColors.random())
-
-                val size = Random.nextInt(1, 10) // Rozmiar błysku (większy niż poprzednio)
+                val size = Random.nextInt(1, 10)
                 layoutParams = ViewGroup.LayoutParams(size, size)
 
-                // Pozycjonowanie: 3/5 wysokości i 1/4 szerokości
-                val startX = screenWidth / 4  // 1/4 szerokości
-                val startY = (screenHeight * 7) / 19  // 2/5 wysokości
+                val startX = screenWidth / 4
+                val startY = yLevels.random() // losujemy jedno z trzech poziomów
 
-                setX(startX.toFloat())  // Ustawiamy startową pozycję X
-                setY(startY.toFloat())  // Ustawiamy startową pozycję Y
+                x = startX.toFloat()
+                y = startY.toFloat()
             }
 
             parent.addView(light)
 
-            // Animacja: ruch w losowym kierunku
-            val moveX = PropertyValuesHolder.ofFloat("translationX", light.x, light.x + Random.nextInt(-500, 500).toFloat())  // Losowy ruch w poziomie
-            val moveY = PropertyValuesHolder.ofFloat("translationY", light.y, light.y + Random.nextInt(-500, 500).toFloat())  // Losowy ruch w pionie
-            val fadeOut = PropertyValuesHolder.ofFloat("alpha", 1f, 0f)  // Znikanie
+            val moveX = PropertyValuesHolder.ofFloat("translationX", light.x, light.x + Random.nextInt(-500, 500).toFloat())
+            val moveY = PropertyValuesHolder.ofFloat("translationY", light.y, light.y + Random.nextInt(-500, 500).toFloat())
+            val fadeOut = PropertyValuesHolder.ofFloat("alpha", 1f, 0f)
 
             ObjectAnimator.ofPropertyValuesHolder(light, moveX, moveY, fadeOut).apply {
-                duration = Random.nextLong(2000, 4000)  // Czas animacji
-                addListener(onEnd = { parent.removeView(light) }) // Usuwamy po zakończeniu animacji
+                duration = Random.nextLong(2000, 4000)
+                addListener(onEnd = { parent.removeView(light) })
                 start()
             }
         }
     }
+
+
+    private fun createRisingSmoke(parent: RelativeLayout) {
+        val screenWidth = parent.width
+        val screenHeight = parent.height
+
+        repeat(20) {
+            val smoke = View(parent.context).apply {
+                val size = Random.nextInt(20, 60)
+                layoutParams = ViewGroup.LayoutParams(size, size)
+                background = ContextCompat.getDrawable(context, R.drawable.smoke_circle)
+                alpha = 0.4f + Random.nextFloat() * 0.2f
+
+                // Ograniczenie do środkowej strefy
+                val minX = screenWidth * 11 / 25
+                val maxX = screenWidth * 17 / 25
+
+                // Bias: większe prawdopodobieństwo środka
+                val bias = Random.nextFloat()
+                val biasedX = when {
+                    bias < 0.2f -> Random.nextInt(minX, minX + (maxX - minX) / 4)  // Lewy brzeg – rzadziej
+                    bias > 0.8f -> Random.nextInt(maxX - (maxX - minX) / 4, maxX)  // Prawy brzeg – rzadziej
+                    else -> Random.nextInt(minX + (maxX - minX) / 4, maxX - (maxX - minX) / 4)  // Środek – częściej
+                }
+
+                // Bazowa wysokość + korekta dla brzegów
+                val baseY = screenHeight * 39 / 56
+                val adjustedY = if (bias < 0.2f || bias > 0.8f) baseY - 20 else baseY
+
+                x = biasedX.toFloat()
+                y = adjustedY.toFloat()
+            }
+
+            parent.addView(smoke)
+
+            val moveX = PropertyValuesHolder.ofFloat("translationX", smoke.x, smoke.x + Random.nextInt(-100, 100))
+            val moveY = PropertyValuesHolder.ofFloat("translationY", smoke.y, smoke.y - Random.nextInt(300, 600))
+            val fade = PropertyValuesHolder.ofFloat("alpha", smoke.alpha, 0f)
+
+            ObjectAnimator.ofPropertyValuesHolder(smoke, moveX, moveY, fade).apply {
+                duration = Random.nextLong(4000, 7000)
+                interpolator = AccelerateDecelerateInterpolator()
+                addListener(onEnd = { parent.removeView(smoke) })
+                start()
+            }
+        }
+    }
+
+
+
+    private fun createSparks(parent: RelativeLayout) {
+        val screenWidth = parent.width
+        val screenHeight = parent.height
+
+        val sources = listOf(
+            Pair(screenWidth *3/8, screenHeight * 4 / 5),
+            Pair(screenWidth *3/8- 20, screenHeight * 4 / 5),
+            Pair(screenWidth *3/8- 10, screenHeight * 4 / 5 - 20)
+        )
+        val sparkNumber = Random.nextInt(15)
+        sources.forEachIndexed { index, (startX, startY) ->
+            repeat(sparkNumber) {
+                val spark = View(parent.context).apply {
+                    val size = Random.nextInt(4, 10)
+                    layoutParams = ViewGroup.LayoutParams(size, size)
+                    setBackgroundColor(Color.parseColor("#66CCFF"))
+                    x = startX.toFloat()
+                    y = startY.toFloat()
+                }
+
+                parent.addView(spark)
+
+                val directionX = when (index) {
+                    0 -> Random.nextInt(100, 400)
+                    1 -> -Random.nextInt(100, 400)
+                    2 -> Random.nextInt(-200,200)
+                    else -> 0
+                }
+
+                val directionY = if (index == 2) Random.nextInt(-200, -100) else Random.nextInt(0, 300)
+
+                val moveX = PropertyValuesHolder.ofFloat("translationX", spark.x, spark.x + directionX)
+                val moveY = PropertyValuesHolder.ofFloat("translationY", spark.y, spark.y + directionY)
+                val fade = PropertyValuesHolder.ofFloat("alpha", 1f, 0f)
+
+                ObjectAnimator.ofPropertyValuesHolder(spark, moveX, moveY, fade).apply {
+                    duration = Random.nextLong(1000, 2500)
+                    interpolator = DecelerateInterpolator()
+                    addListener(onEnd = { parent.removeView(spark) })
+                    start()
+                }
+            }
+        }
+    }
+
+
 
 }
