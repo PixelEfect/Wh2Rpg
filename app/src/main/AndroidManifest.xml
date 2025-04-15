@@ -50,6 +50,11 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
+            android:name=".MyCardBackstoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
             android:name=".UnfinishedCardsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
