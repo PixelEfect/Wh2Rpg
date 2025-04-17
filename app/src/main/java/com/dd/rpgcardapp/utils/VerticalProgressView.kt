@@ -7,13 +7,13 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 
-class StatProgressView @JvmOverloads constructor(
+class VerticalProgressView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : View(context, attrs, defStyle) {
 
-    var maxPoints: Int = 8
+    var maxPoints: Int = 3 // Zmieniono na 3
     var currentPoints: Int = 0
         set(value) {
             field = value
@@ -32,17 +32,20 @@ class StatProgressView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        val squareSize = height.toFloat()
-        val totalWidth = width.toFloat()
-        val spacing = 4f
-        val availableWidth = totalWidth - spacing * (maxPoints - 1)
-        val squareWidth = availableWidth / maxPoints
+
+        val barWidth = width.toFloat() // Szerokość paska będzie szerokością widoku
+        val totalHeight = height.toFloat()
+        val spacing = 4f // Odstęp między paskami
+        val availableHeight = totalHeight - spacing * (maxPoints - 1) // Dostępna wysokość na paski
+        val barHeight = availableHeight / maxPoints // Wysokość pojedynczego paska
 
         for (i in 0 until maxPoints) {
-            val left = i * (squareWidth + spacing)
+            // Obliczamy górną krawędź każdego paska.
+            val top = i * (barHeight + spacing)
+            // Wybieramy kolor paska na podstawie jego pozycji i currentPoints.
             val paint = if (i < currentPoints) filledPaint else emptyPaint
-            canvas.drawRect(left, 0f, left + squareWidth, squareSize, paint)
+            // Rysujemy pionowy prostokąt.  Argumenty to: lewa krawędź, górna krawędź, prawa krawędź, dolna krawędź, Paint
+            canvas.drawRect(0f, top, barWidth, top + barHeight, paint)
         }
     }
 }
-

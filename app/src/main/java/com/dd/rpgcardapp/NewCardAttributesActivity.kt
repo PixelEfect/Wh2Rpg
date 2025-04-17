@@ -446,9 +446,9 @@ class NewCardAttributesActivity : BaseActivity() {
 
         // Zapis abilities
         val abilitiesDataMap = mapOf(
-            "common" to commonAbilitiesData,
-            "rare" to rareAbilitiesData,
-            "special" to specialAbilitiesData
+            "Common" to commonAbilitiesData,
+            "Rare" to rareAbilitiesData,
+            "Special" to specialAbilitiesData
         )
         for ((type, data) in abilitiesDataMap) {
             tasks.add(characterRef.collection("abilities").document(type).set(mapOf("owned" to data)))
@@ -456,12 +456,12 @@ class NewCardAttributesActivity : BaseActivity() {
 
         // Zapis skills
         val skillsDataMap = mapOf(
-            "common" to commonSkillsData,
-            "stats" to statsSkillsData,
-            "weapon" to weaponSkillsData,
-            "magic" to magicSkillsData,
-            "knight" to knightSkillsData,
-            "rune" to runeSkillsData
+            "Common" to commonSkillsData,
+            "Stats" to statsSkillsData,
+            "Weapon" to weaponSkillsData,
+            "Magic" to magicSkillsData,
+            "Knight" to knightSkillsData,
+            "Rune" to runeSkillsData
         )
         for ((type, data) in skillsDataMap) {
             tasks.add(characterRef.collection("skills").document(type).set(mapOf("owned" to data)))

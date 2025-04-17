@@ -96,10 +96,10 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
             return
         }
         loadAttributes()
-        listOf("common", "rare", "special").forEach {
+        listOf("Common", "Rare", "Special").forEach {
             fetchAbilitiesData(userId, characterDocId, it)
         }
-        listOf("common", "stats", "weapon", "magic", "knight", "rune").forEach {
+        listOf("Common", "Stats", "Weapon", "Magic", "Knight", "Rune").forEach {
             fetchSkillsData(userId, characterDocId, it)
         }
     }
@@ -439,16 +439,16 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
     // Mapowanie zdolności i umiejętności
     fun mapProfessionAbilitiesAndSkills() {
         // Inicjalizowanie pustych MutableList dla każdej kategorii
-        professionAbilitiesMap["common"] = mutableListOf()
-        professionAbilitiesMap["rare"] = mutableListOf()
-        professionAbilitiesMap["special"] = mutableListOf()
+        professionAbilitiesMap["Common"] = mutableListOf()
+        professionAbilitiesMap["Rare"] = mutableListOf()
+        professionAbilitiesMap["Special"] = mutableListOf()
 
-        professionSkillsMap["common"] = mutableListOf()
-        professionSkillsMap["stats"] = mutableListOf()
-        professionSkillsMap["weapon"] = mutableListOf()
-        professionSkillsMap["magic"] = mutableListOf()
-        professionSkillsMap["knight"] = mutableListOf()
-        professionSkillsMap["rune"] = mutableListOf()
+        professionSkillsMap["Common"] = mutableListOf()
+        professionSkillsMap["Stats"] = mutableListOf()
+        professionSkillsMap["Weapon"] = mutableListOf()
+        professionSkillsMap["Magic"] = mutableListOf()
+        professionSkillsMap["Knight"] = mutableListOf()
+        professionSkillsMap["Rune"] = mutableListOf()
 
         // Mapowanie zdolności
         profession.abilities.forEach { ability ->
@@ -465,9 +465,9 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
     fun addProfessionAbilityToCategoryList(ability: Ability) {
         val category = getAbilityCategory(ability)  // Pobieramy kategorię tej zdolności
         when (category) {
-            "Common" -> professionAbilitiesMap["common"]?.add(ability)  // Dodajemy do "common"
-            "Rare" -> professionAbilitiesMap["rare"]?.add(ability)      // Dodajemy do "rare"
-            "Special" -> professionAbilitiesMap["special"]?.add(ability) // Dodajemy do "special"
+            "Common" -> professionAbilitiesMap["Common"]?.add(ability)  // Dodajemy do "common"
+            "Rare" -> professionAbilitiesMap["Rare"]?.add(ability)      // Dodajemy do "rare"
+            "Special" -> professionAbilitiesMap["Special"]?.add(ability) // Dodajemy do "special"
             else -> Log.e(
                 "UnknownCategory",
                 "Unknown ability category"
@@ -479,12 +479,12 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
     fun addProfessionSkillToCategoryList(skill: Skill) {
         val category = getSkillCategory(skill)  // Pobieramy kategorię tej umiejętności
         when (category) {
-            "Common" -> professionSkillsMap["common"]?.add(skill)  // Dodajemy do "common"
-            "Stats" -> professionSkillsMap["stats"]?.add(skill)    // Dodajemy do "stats"
-            "Weapon" -> professionSkillsMap["weapon"]?.add(skill)  // Dodajemy do "weapon"
-            "Magic" -> professionSkillsMap["magic"]?.add(skill)    // Dodajemy do "magic"
-            "Knight" -> professionSkillsMap["knight"]?.add(skill)  // Dodajemy do "knight"
-            "Rune" -> professionSkillsMap["rune"]?.add(skill)      // Dodajemy do "rune"
+            "Common" -> professionSkillsMap["Common"]?.add(skill)  // Dodajemy do "common"
+            "Stats" -> professionSkillsMap["Stats"]?.add(skill)    // Dodajemy do "stats"
+            "Weapon" -> professionSkillsMap["Weapon"]?.add(skill)  // Dodajemy do "weapon"
+            "Magic" -> professionSkillsMap["Magic"]?.add(skill)    // Dodajemy do "magic"
+            "Knight" -> professionSkillsMap["Knight"]?.add(skill)  // Dodajemy do "knight"
+            "Rune" -> professionSkillsMap["Rune"]?.add(skill)      // Dodajemy do "rune"
             else -> Log.e(
                 "UnknownCategory",
                 "Unknown skill category"
@@ -661,11 +661,21 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
     ) {
         val db = FirebaseFirestore.getInstance()
 
+        val selectedAbilityNames = selectedAbilities.filterNotNull().toSet()
+        val selectedSkillNames = selectedSkills.filterNotNull().toSet()
+
         // Sprawdzamy, czy userId i characterDocId są poprawne
         if (userId.isEmpty() || characterDocId.isNullOrEmpty()) {
             Toast.makeText(this, "Błąd: Nie można zapisać statystyk", Toast.LENGTH_SHORT).show()
             return
         }
+        val optionalAbilitiesList = profession.optionalAbility.flatten()
+            .filter { it.name !in selectedAbilityNames }
+            .map { mapOf("name" to it.name, "attribute" to it.attribute) }
+
+        val optionalSkillsList = profession.optionalSkills.flatten()
+            .filter { it.name !in selectedSkillNames }
+            .map { mapOf("name" to it.name, "description" to it.description) }
 
 
         val tasks = mutableListOf<Task<Void>>()
@@ -701,6 +711,18 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
             .collection("characters").document(characterDocId!!)
             .update("progressStage", 5)  // Ustawienie progressStage na 5
         tasks.add(progressStageTask)
+
+        val optionalAbilitiesTask = db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+            .collection("abilities").document("Optional")
+            .set(mapOf("all" to optionalAbilitiesList))
+        tasks.add(optionalAbilitiesTask)
+
+        val optionalSkillsTask = db.collection("users").document(userId)
+            .collection("characters").document(characterDocId!!)
+            .collection("skills").document("Optional")
+            .set(mapOf("all" to optionalSkillsList))
+        tasks.add(optionalSkillsTask)
 
         // Po zapisaniu danych
         Tasks.whenAllSuccess<Void>(*tasks.toTypedArray())

@@ -936,6 +936,8 @@
                     android:layout_width="10dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1" />
+
+
             </LinearLayout>
 
             <View
@@ -958,10 +960,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -986,7 +985,7 @@
                         android:gravity="center"
                         android:textStyle="bold"/>
                 </LinearLayout>
-            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1314,6 +1313,194 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    style="@style/LabelStyle"
+                    android:gravity="center"
+                    android:text="Punkty doświadczenia" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="1dp">
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/inputPD"
+                    style="@style/NumberInputStyle"
+                    android:background="@drawable/translucent_bg1"
+                    android:layout_width="100dp" />
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="1dp">
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/spendPD"
+                    style="@style/LabelStyle"
+                    android:gravity="center"
+                    android:text="" />
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    style="@style/LabelStyle"
+                    android:gravity="center"
+                    android:text="Majątek" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="1dp">
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="Złote korony"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="Szylingi"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="Pensy"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="1dp">
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/moneyGoldName"
+                    style="@style/NumberInputStyle"
+                    android:background="@drawable/translucent_bg1"
+                    android:layout_width="100dp" />
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/moneySilverName"
+                    style="@style/NumberInputStyle"
+                    android:background="@drawable/translucent_bg1"
+                    android:layout_width="100dp" />
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/moneyCopperName"
+                    style="@style/NumberInputStyle"
+                    android:background="@drawable/translucent_bg1"
+                    android:layout_width="100dp" />
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/InventoryInformation1View"
+                        style="@style/LabelStyle"
+                        android:text="Ekwipunek" />
+                    <EditText
+                        android:id="@+id/inputInventory1"
+                        style="@style/AutoResizingInputStyle"
+                        android:minLines="3"
+                        android:maxLines="12"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/InventoryInformation2View"
+                        style="@style/LabelStyle"
+                        android:text="Inne" />
+                    <EditText
+                        android:id="@+id/inputInventory2"
+                        style="@style/AutoResizingInputStyle"
+                        android:minLines="2"
+                        android:maxLines="12"/>
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
