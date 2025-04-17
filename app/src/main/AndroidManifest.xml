@@ -55,6 +55,11 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize"/>
         <activity
+            android:name=".MyCardSkillsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
             android:name=".UnfinishedCardsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>

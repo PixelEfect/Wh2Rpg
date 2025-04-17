@@ -2,6 +2,7 @@ package com.dd.rpgcardapp.utils
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.res.Resources
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ArrayAdapter
@@ -108,3 +109,5 @@ fun showAlertDialogWithTiles(
         ContextCompat.getDrawable(context, R.drawable.bg_alert_dialog)
     )
 }
+val Int.dp: Int
+    get() = (this * Resources.getSystem().displayMetrics.density).toInt()

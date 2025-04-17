@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_0003"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nameView"
+            style="@style/LabelStyle"
+            android:gravity="center"
+            android:text="Imie: " />
+    </LinearLayout>
+
+
+    <!-- ScrollView z treścią formularza -->
+    <ScrollView
+        android:id="@+id/formScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/LabelStyle"
+                    android:gravity="center"
+                    android:text="Umiejętności podstawowe:" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp">
+                <!-- Kolumna 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <!-- Przykładowy wiersz -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA1"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a1ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA1"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Charakteryzacja" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA2"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a2ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA2"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Dowodzenie" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA3"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a3ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA3"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Hazard" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA4"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a4ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA4"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Jeździectwo" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA5"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a5ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA5"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Mocna głowa" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA6"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a6ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA6"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Opieka nad zwierzętami" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA7"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a7ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA7"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Plotkowanie" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA8"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a8ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA8"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Pływanie" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA9"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a9ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA9"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Powożenie" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA10"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a10ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA10"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Przekonywanie" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/LabelStyle"
+                        android:gravity="center"
+                        android:text="Zaawansowane: " />
+
+                    <LinearLayout
+                        android:id="@+id/rareAbilitiesColumn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <!-- Dodaj więcej wierszy... -->
+
+                </LinearLayout>
+
+                <!-- Kolumna 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:orientation="vertical">
+
+                    <!-- Przykładowy wiersz -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA11"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a11ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA11"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Przeszukiwanie" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA12"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a12ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA12"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Skradanie się" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA13"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a13ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA13"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Spostrzegawczość" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA14"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a14ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA14"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Sztuka przetrwania" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA15"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a15ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA15"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Targowanie" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA16"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a16ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA16"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Ukrywanie się" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA17"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a17ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA17"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Wioślarstwo" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA18"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a18ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA18"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Wspinaczka" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA19"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a19ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA19"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Wycena" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <EditText
+                            android:id="@+id/inputA20"
+                            style="@style/ReadOnlyInputStyle"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <com.dd.rpgcardapp.VerticalProgressView
+                            android:id="@+id/a20ProgressBar"
+                            style="@style/StatProgressStyle"
+                            android:layout_width="8dp"
+                            android:layout_height="30dp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nameA20"
+                            style="@style/CharSkillTextStyle"
+                            android:text="Zastraszanie" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/LabelStyle"
+                        android:gravity="center"
+                        android:text="Inne: " />
+
+                    <LinearLayout
+                        android:id="@+id/specialAbilitiesColumn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+                    <!-- Dodaj więcej wierszy... -->
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/skillsMainContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    style="@style/LabelStyle"
+                    android:gravity="center"
+                    android:text="Punkty doświadczenia" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="1dp">
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/ownedPD"
+                    style="@style/LabelStyle"
+                    android:gravity="center"
+                    android:text="" />
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="1dp">
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/spendPD"
+                    style="@style/LabelStyle"
+                    android:gravity="center"
+                    android:text="" />
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/InputBlockStyle">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+                    <TextView
+                        android:id="@+id/abilitiesTextView"
+                        android:layout_gravity="center"
+                        style="@style/AbilityTextStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/InputBlockStyle">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+                    <TextView
+                        android:id="@+id/skillTextView"
+                        android:layout_gravity="center"
+                        style="@style/AbilityTextStyle" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <!-- Przyciski nawigacyjne poza ScrollView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp">
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back_001" />
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/exit_002" />
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/next_001"
+            android:visibility="invisible" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>
