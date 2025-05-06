@@ -221,10 +221,10 @@ class NewCardAncestryActivity : BaseActivity() {
     }
 
     private fun setAgeRange(race: Race, currentAge: Int? = null) {
-        binding.ageSeekBar.min = race.minAge
-        binding.ageSeekBar.max = race.maxAge
+        val range = race.maxAge - race.minAge
+        binding.ageSeekBar.min = 0
+        binding.ageSeekBar.max = range
         val ageToSet = currentAge ?: race.minAge
-        println("setAgeRange - minAge: ${race.minAge}, maxAge: ${race.maxAge}, ageToSet: $ageToSet")
         val progressToSet = ageToSet - race.minAge
         binding.ageSeekBar.progress = progressToSet
         binding.ageView.text = ageToSet.toString()
