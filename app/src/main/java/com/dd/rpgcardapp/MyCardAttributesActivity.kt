@@ -97,6 +97,17 @@ class MyCardAttributesActivity : BaseActivity() {
         binding.buttonEditImage.setOnClickListener {
             openImagePicker()
         }
+        binding.newProfessionTextView.setOnClickListener {
+            saveAllData()
+            val intent = Intent(this@MyCardAttributesActivity,
+                NewProfessionActivity::class.java)
+            intent.putExtra("CHARACTER_DOC_ID", characterDocId)  // Ustaw odpowiedni klucz
+            intent.putExtra("CHARACTER_RACE", characterRace)
+            intent.putExtra("CHARACTER_PROFESSION", characterProfession)
+            intent.putExtra("CHARACTER_NAME", characterName)
+            startActivity(intent)
+        }
+
         binding.backButton.setOnClickListener {
             saveAllData()
             val intent = Intent(this@MyCardAttributesActivity,
@@ -671,7 +682,7 @@ class MyCardAttributesActivity : BaseActivity() {
 
     fun setupArmorPickers(binding: ActivityMyCardAttributesBinding, context: Context) {
 
-        val options = (0..9).map { it.toString() }
+        val options = (0..7).map { it.toString() }
 
         val pairs = listOf(
             binding.armorNumber1TextView to binding.armorImage1View,

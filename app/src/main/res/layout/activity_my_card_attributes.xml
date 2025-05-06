@@ -103,6 +103,21 @@
                         android:layout_height="wrap_content"
                         android:text="Profesja: "
                         android:textSize="18sp" />
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="5dp" />
+                    <TextView
+                        android:id="@+id/newProfessionTextView"
+                        style="@style/LabelStyle"
+                        android:layout_height="wrap_content"
+                        android:text="  Zmień profesję  "
+                        android:textSize="18sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:background="@drawable/translucent_bg1"/>
+
+
                 </LinearLayout>
 
                 <View
@@ -111,7 +126,7 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="280dp">
+                    android:layout_height="290dp">
 
                     <!-- Obrazek -->
                     <ImageView
