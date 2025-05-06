@@ -55,12 +55,15 @@ class MainActivity : BaseActivity() {
 
         auth = Firebase.auth  // Initialize Firebase Authentication
         val rootLayout = findViewById<RelativeLayout>(R.id.rootLayout) // Główny layout
-        val option = Random.nextInt(4) // Wylosuje 0, 1, 2 lub 3
+        val option = Random.nextInt(7) // Wylosuje 0, 1, 2 lub 3
         val backgroundImage = when (option) {
             0 -> R.drawable.welcome_0001
             1 -> R.drawable.welcome_0002
             2 -> R.drawable.welcome_0003
             3 -> R.drawable.welcome_0004
+            4 -> R.drawable.welcome_0005
+            5 -> R.drawable.welcome_0006
+            6 -> R.drawable.welcome_0007
             else -> R.drawable.welcome_0010 // fallback, raczej niepotrzebny, ale dla bezpieczeństwa
         }
 
