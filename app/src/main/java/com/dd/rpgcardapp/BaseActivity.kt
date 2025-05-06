@@ -12,7 +12,7 @@ open class BaseActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        SystemUIUtils.hideSystemUI(this)// Ukrywanie systemowego UI w każdej aktywności
+        //SystemUIUtils.hideSystemUI(this)// Ukrywanie systemowego UI w każdej aktywności
     }
     override fun onStart() {
         super.onStart()
