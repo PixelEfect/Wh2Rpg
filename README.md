@@ -15,7 +15,7 @@ Głównym celem projektu było rozwijanie umiejętności programowania aplikacji
 - **ViewModel + LiveData** (MVVM)
 - **Firebase Authentication** – logowanie użytkowników
 - **Firebase Firestore** – przechowywanie danych postaci
-- **Firebase Storage** – pliki i obrazy (generowane AI)
+- **Lokalne przechowywanie obrazów**: Grafiki są przechowywane bezpośrednio w aplikacji lub w pamięci urządzenia
 - **Google Sign-In**
 
 ## 🖼 Zrzuty ekranu
