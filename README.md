@@ -21,16 +21,16 @@ Głównym celem projektu było rozwijanie umiejętności programowania aplikacji
 ## 🖼 Zrzuty ekranu
 
 <div style="display: flex; gap: 10px;">
-  <img src="screenshots/screen01.png" width="220"/>
-  <img src="screenshots/screen02.png" width="220"/>
-  <img src="screenshots/screen03.png" width="220"/>
-  <img src="screenshots/screen04.png" width="220"/>
+  <img src="screenshots/screen01.png" width="200"/>
+  <img src="screenshots/screen02.png" width="200"/>
+  <img src="screenshots/screen03.png" width="200"/>
+  <img src="screenshots/screen04.png" width="200"/>
 </div>
 <div style="display: flex; gap: 10px;">
-  <img src="screenshots/screen5.png" width="220"/>
-  <img src="screenshots/screen6.png" width="220"/>
-  <img src="screenshots/screen7.png" width="220"/>
-  <img src="screenshots/screen8.png" width="220"/>
+  <img src="screenshots/screen5.png" width="200"/>
+  <img src="screenshots/screen6.png" width="200"/>
+  <img src="screenshots/screen7.png" width="200"/>
+  <img src="screenshots/screen8.png" width="200"/>
 </div>
 
 ## 🚀 Uruchomienie
