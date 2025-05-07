@@ -64,7 +64,7 @@ class MainActivity : BaseActivity() {
             4 -> R.drawable.welcome_0005
             5 -> R.drawable.welcome_0006
             6 -> R.drawable.welcome_0007
-            else -> R.drawable.welcome_0010 // fallback, raczej niepotrzebny, ale dla bezpieczeństwa
+            else -> R.drawable.welcome_0001 // fallback, raczej niepotrzebny, ale dla bezpieczeństwa
         }
 
         // Ustawienie tła
