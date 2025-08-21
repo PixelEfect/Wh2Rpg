@@ -1,17 +1,14 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
-import android.content.Context
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.dd.rpgcardapp.MyCardAttributesActivity
+import com.dd.rpgcardapp.base.BaseActivity
 import com.dd.rpgcardapp.databinding.ActivityMyCardBackstoryBinding
 import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.google.firebase.auth.ktx.auth
@@ -50,7 +47,7 @@ class MyCardBackstoryActivity : BaseActivity() {
             Toast.makeText(this, "Błąd: Brak ID postaci", Toast.LENGTH_SHORT).show()
             finish()
         }
-        binding.nameView.text = "${characterName ?: "Brak imienia"}"
+        binding.nameView.text = characterName ?: "Brak imienia"
         setupUIToHideKeyboard(binding.root)
 
         binding.nextButton.setOnClickListener {
@@ -83,11 +80,12 @@ class MyCardBackstoryActivity : BaseActivity() {
         loadCharacterData()
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     fun setupUIToHideKeyboard(view: View) {
         // Jeśli to nie jest EditText – dodaj listener do chowania klawiatury
         if (view !is EditText) {
             view.setOnTouchListener { _, _ ->
-                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                 currentFocus?.let {
                     imm.hideSoftInputFromWindow(it.windowToken, 0)
                     it.clearFocus()

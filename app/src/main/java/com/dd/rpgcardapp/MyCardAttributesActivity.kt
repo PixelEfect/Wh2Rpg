@@ -1,6 +1,6 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -15,7 +15,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import com.dd.rpgcardapp.MyCardListActivity
 import com.dd.rpgcardapp.data.StatsSkills
 import com.dd.rpgcardapp.databinding.ActivityMyCardAttributesBinding
 import com.dd.rpgcardapp.utils.SystemUIUtils
@@ -34,6 +33,7 @@ import java.io.IOException
 import kotlin.random.Random
 import android.text.TextWatcher
 import android.text.Editable
+import com.dd.rpgcardapp.base.BaseActivity
 
 class MyCardAttributesActivity : BaseActivity() {
 
@@ -49,6 +49,7 @@ class MyCardAttributesActivity : BaseActivity() {
     // Inicjalizacja ViewBinding
     private lateinit var binding: ActivityMyCardAttributesBinding
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyCardAttributesBinding.inflate(layoutInflater)
@@ -158,6 +159,7 @@ class MyCardAttributesActivity : BaseActivity() {
         })
     }
 
+    @SuppressLint("SetTextI18n")
     private fun fetchCharacterAttributes(characterDocId: String) {
         // Pobieranie danych z dokumentów "base", "obtained", "progression"
         val characterRef = db.collection("users")
@@ -233,8 +235,10 @@ class MyCardAttributesActivity : BaseActivity() {
                 val progressionZyw = progressionDoc.getLong("Zyw")?.toInt() ?: 0
 
                 // Pobieranie nazw umiejętności
-                val ownedSkills = (skillsDoc.get("owned") as? List<Map<String, Any>>)
-                    ?.mapNotNull { it["name"] as? String }
+                val ownedSkills = (skillsDoc.get("owned") as? List<*>)
+                    ?.mapNotNull { item ->
+                        (item as? Map<*, *>)?.get("name") as? String
+                    }
                     ?: emptyList()
 
                 val skillStatBonuses: Map<String, Map<String, Int>> = mapOf(
@@ -401,7 +405,7 @@ class MyCardAttributesActivity : BaseActivity() {
                                     batch.set(charDocRef, mapOf("spendPD" to newSpendPD), SetOptions.merge())
                                     batch.commit().addOnSuccessListener {
                                         binding.inputPD.setText(newInputPD.toString())
-                                        binding.spendPD.setText(newSpendPD.toString())
+                                        binding.spendPD.text = newSpendPD.toString()
 
                                         // Ponowne załadowanie danych
                                         fetchCharacterAttributes(characterDocId)
@@ -422,6 +426,7 @@ class MyCardAttributesActivity : BaseActivity() {
             }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun fetchCharacterInfo(docId: String) {
         val characterRef = db.collection("users")
             .document(userId)
@@ -569,13 +574,13 @@ class MyCardAttributesActivity : BaseActivity() {
 
     private fun savePDData() {
         if (characterDocId != null) {
-            val PDData = hashMapOf(
+            val pdData = hashMapOf(
                 "ownedPD" to binding.inputPD.text.toString()
             )
 
             db.collection("users").document(userId)
                 .collection("characters").document(characterDocId!!)
-                .set(PDData, SetOptions.merge())
+                .set(pdData, SetOptions.merge())
                 .addOnSuccessListener {
                     println("Dane PD zostały pomyślnie zapisane!")
                     // Możesz dodać kod obsługujący sukces zapisu
@@ -743,34 +748,34 @@ class MyCardAttributesActivity : BaseActivity() {
                     if (document.exists()) {
                         val weaponData = document.data
 
-                        (weaponData?.get("weapon1") as? Map<String, String>)?.let { weapon1 ->
-                            binding.weapon1Name.setText(weapon1["name"])
-                            binding.weapon1Power.setText(weapon1["power"])
-                            binding.weapon1Information.setText(weapon1["information"])
+                        (weaponData?.get("weapon1") as? Map<*, *>)?.let { weapon1 ->
+                            binding.weapon1Name.setText(weapon1["name"] as? String ?: "")
+                            binding.weapon1Power.setText(weapon1["power"] as? String ?: "")
+                            binding.weapon1Information.setText(weapon1["information"] as? String ?: "")
                         }
 
-                        (weaponData?.get("weapon2") as? Map<String, String>)?.let { weapon2 ->
-                            binding.weapon2Name.setText(weapon2["name"])
-                            binding.weapon2Power.setText(weapon2["power"])
-                            binding.weapon2Information.setText(weapon2["information"])
+                        (weaponData?.get("weapon2") as? Map<*, *>)?.let { weapon2 ->
+                            binding.weapon2Name.setText(weapon2["name"] as? String ?: "")
+                            binding.weapon2Power.setText(weapon2["power"] as? String ?: "")
+                            binding.weapon2Information.setText(weapon2["information"] as? String ?: "")
                         }
 
-                        (weaponData?.get("weapon3") as? Map<String, String>)?.let { weapon3 ->
-                            binding.weapon3Name.setText(weapon3["name"])
-                            binding.weapon3Power.setText(weapon3["power"])
-                            binding.weapon3Information.setText(weapon3["information"])
+                        (weaponData?.get("weapon3") as? Map<*, *>)?.let { weapon3 ->
+                            binding.weapon3Name.setText(weapon3["name"] as? String ?: "")
+                            binding.weapon3Power.setText(weapon3["power"] as? String ?: "")
+                            binding.weapon3Information.setText(weapon3["information"] as? String ?: "")
                         }
 
-                        (weaponData?.get("weapon4") as? Map<String, String>)?.let { weapon4 ->
-                            binding.weapon4Name.setText(weapon4["name"])
-                            binding.weapon4Power.setText(weapon4["power"])
-                            binding.weapon4Information.setText(weapon4["information"])
+                        (weaponData?.get("weapon4") as? Map<*, *>)?.let { weapon4 ->
+                            binding.weapon4Name.setText(weapon4["name"] as? String ?: "")
+                            binding.weapon4Power.setText(weapon4["power"] as? String ?: "")
+                            binding.weapon4Information.setText(weapon4["information"] as? String ?: "")
                         }
 
-                        (weaponData?.get("weapon5") as? Map<String, String>)?.let { weapon5 ->
-                            binding.weapon5Name.setText(weapon5["name"])
-                            binding.weapon5Power.setText(weapon5["power"])
-                            binding.weapon5Information.setText(weapon5["information"])
+                        (weaponData?.get("weapon5") as? Map<*, *>)?.let { weapon5 ->
+                            binding.weapon5Name.setText(weapon5["name"] as? String ?: "")
+                            binding.weapon5Power.setText(weapon5["power"] as? String ?: "")
+                            binding.weapon5Information.setText(weapon5["information"] as? String ?: "")
                         }
                     } else {
                         println("Dokument 'weapon' nie istnieje w inwentarzu.")
@@ -809,7 +814,6 @@ class MyCardAttributesActivity : BaseActivity() {
                             moneyNumberTextViews[i].setText(value)
                         }
 
-                    } else {
                     }
                 }
                 .addOnFailureListener { e ->
@@ -827,13 +831,13 @@ class MyCardAttributesActivity : BaseActivity() {
                 .get()
                 .addOnSuccessListener { document ->
                     if (document.exists()) {
-                        val PDData = document.data
+                        val pdData = document.data
 
-                        val ownedPD = PDData?.get("ownedPD") as? String ?: "0"
-                        val spendPD = (PDData?.get("spendPD") as? Number)?.toInt() ?: 1
+                        val ownedPD = pdData?.get("ownedPD") as? String ?: "0"
+                        val spendPD = (pdData?.get("spendPD") as? Number)?.toInt() ?: 0
 
                         binding.inputPD.setText(ownedPD)
-                        binding.spendPD.setText(spendPD.toString())
+                        binding.spendPD.text = spendPD.toString()
 
                     } else {
                         println("Dokument nie istnieje.")
@@ -869,7 +873,6 @@ class MyCardAttributesActivity : BaseActivity() {
                             inventoryNumberTextViews[i].setText(value)
                         }
 
-                    } else {
                     }
                 }
                 .addOnFailureListener { e ->
@@ -917,11 +920,12 @@ class MyCardAttributesActivity : BaseActivity() {
     }
     /////////////////////////////// HIDE  /////////////////////////////////
 
+    @SuppressLint("ClickableViewAccessibility")
     fun setupUIToHideKeyboard(view: View) {
         // Jeśli to nie jest EditText – dodaj listener do chowania klawiatury
         if (view !is EditText) {
             view.setOnTouchListener { _, _ ->
-                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                 currentFocus?.let {
                     imm.hideSoftInputFromWindow(it.windowToken, 0)
                     it.clearFocus()

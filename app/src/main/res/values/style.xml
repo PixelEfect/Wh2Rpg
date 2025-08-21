@@ -1,37 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="LabelStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:textStyle">bold</item> <!-- Pogrubienie tekstu -->
-        <item name="android:textColor">@color/black</item> <!-- Kolor tekstu -->
-        <item name="android:textSize">16sp</item> <!-- Rozmiar czcionki -->
-    </style>
-
-    <style name="InputBlockStyle">
+    <!--Pojedynczy napis -->
+    <style name="SingleLabelStyle">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--Podwojny napis -->
+    <style name="DoubleLabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!--Pojedyncza linijka na text -->
+    <style name="SmallInputStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:inputType">textCapWords|textNoSuggestions</item>
+        <item name="android:background">@drawable/translucent_bg1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingHorizontal">8dp</item>
+    </style>
+    <!--Rzoszerzająca się linijka na text -->
+    <style name="MediumInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">top</item>
+        <item name="android:inputType">text|textCapSentences|textMultiLine|textNoSuggestions</item>
+        <item name="android:background">@drawable/translucent_bg1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">8dp</item>
     </style>
 
+
+
+
+
+
+
+
+    <!--Pojedyncze miejsce na wpis wartosci statystyki-->
     <style name="NumberInputStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:inputType">number</item>
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/translucent_bg1</item>
-        <item name="android:padding">4dp</item>
+
+        <item name="android:textSize">22dp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
+    <!--Pojedyncze miejsce na niezmienna wartosc statystyki-->
     <style name="ReadOnlyInputStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/translucent_bg2</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:textSize">22dp</item>
         <item name="android:focusable">false</item>
         <item name="android:clickable">false</item>
         <item name="android:gravity">center</item>
@@ -81,6 +117,7 @@
         <item name="android:layout_marginTop">2dp</item>
         <item name="android:layout_marginStart">2dp</item>
         <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
     </style>
     <style name="StatProgressVerticalStyle">
         <item name="android:layout_height">2dp</item>
@@ -89,22 +126,7 @@
         <item name="android:layout_marginEnd">2dp</item>
     </style>
 
-    <style name="SmallInputStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:inputType">textCapWords|textNoSuggestions</item>
-        <item name="android:background">@drawable/translucent_bg1</item>
-        <item name="android:padding">8dp</item>
-    </style>
 
-    <style name="MediumInputStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">60dp</item>
-        <item name="android:gravity">top</item>
-        <item name="android:inputType">text|textCapSentences|textMultiLine|textNoSuggestions</item>
-        <item name="android:background">@drawable/translucent_bg1</item>
-        <item name="android:padding">8dp</item>
-    </style>
 
     <style name="LargeInputStyle">
         <item name="android:layout_width">match_parent</item>
@@ -154,14 +176,14 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/button_border_state</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:paddingVertical">4dp</item>
         <item name="android:focusable">false</item>
         <item name="android:clickable">false</item>
         <item name="android:gravity">center</item>
         <item name="android:inputType">none</item>
         <item name="android:textStyle">bold</item>
         <item name="android:text">+</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <!-- Styl dla numerków (np. 1, 2, 3...) -->
     <style name="BodyPartNumberStyle">

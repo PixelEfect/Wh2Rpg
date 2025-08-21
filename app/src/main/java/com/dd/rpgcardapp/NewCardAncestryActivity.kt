@@ -1,14 +1,10 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.SeekBar
 import android.widget.Toast
+import com.dd.rpgcardapp.base.BaseActivity
 import com.dd.rpgcardapp.data.AbilityGroupSimplifier
 import com.dd.rpgcardapp.data.AllStarSigns
 import com.dd.rpgcardapp.data.Eyes
@@ -20,7 +16,6 @@ import com.dd.rpgcardapp.data.SkillsGroupSimplifier
 import com.dd.rpgcardapp.data.StarSign
 import com.dd.rpgcardapp.data.StarSigns
 import com.dd.rpgcardapp.databinding.ActivityNewCardAncestryBinding
-import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.dd.rpgcardapp.utils.showAlertDialog
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FieldValue
@@ -77,7 +72,7 @@ class NewCardAncestryActivity : BaseActivity() {
         binding.inputStarSignTextView.setOnClickListener { showStarSignSelectionDialog() }
         binding.nextButton.setOnClickListener { saveCharacterToFirestore() }
         binding.exitButton.setOnClickListener { navigateToHome() }
-
+        
         binding.ageSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 binding.ageView.text = (selectedRace.minAge + progress).toString()

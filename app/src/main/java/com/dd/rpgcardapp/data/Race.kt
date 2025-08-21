@@ -97,6 +97,9 @@ object Races {
             CommonSkills.widzenieWCiemnosci,
             CommonSkills.zapieklaNienawisc,
         ),
+        optionalAbility = listOf(
+            listOf(SpecialAbilities.rzemiosloGornictwo, SpecialAbilities.rzemiosloKamieniarstwo, SpecialAbilities.rzemiosloKowalstwo),
+        ),
         startingProfessions = StartingProfessions.Gnome,
         hair = HairColor.DwarfGnom,
         minWeight = 40,

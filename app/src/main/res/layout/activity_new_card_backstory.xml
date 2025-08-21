@@ -1,140 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    style="@style/RootLinearLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rootLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_0003"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:id="@+id/rootLayout">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
-
-    <!-- Pierwszy blok z Inputami -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
-
-        <!-- Blok WW -->
-        <LinearLayout style="@style/InputBlockStyle">
-            <TextView
-                android:id="@+id/stateOfHealthView"
-                style="@style/LabelStyle"
-                android:text="@string/label_stateOfHealth" />
-
-            <EditText
-                android:id="@+id/inputStateOfHealth"
-                style="@style/MediumInputStyle"
-                android:layout_height="68dp"
-                android:text="Zdrowy" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
+    <ScrollView
+        android:id="@+id/scrollView"
+        style="@style/ScrollStyle">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
+            style="@style/ScrollLinearVertical">
 
-            <LinearLayout style="@style/InputBlockStyle">
+            <LinearLayout
+                style="@style/VerticalRow"
+                android:layout_marginBottom="4dp">
+                <TextView
+                    android:id="@+id/stateOfHealthView"
+                    style="@style/DoubleLabelStyle"
+                    android:layout_gravity="center"
+                    android:text="@string/label_stateOfHealth" />
+                <EditText
+                    android:id="@+id/inputStateOfHealth"
+                    style="@style/MediumInputStyle"
+                    android:minHeight ="68dp"
+                    android:text="Zdrowy" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/VerticalRow"
+                android:layout_marginBottom="4dp">
                 <TextView
                     android:id="@+id/familyInformationView"
-                    style="@style/LabelStyle"
+                    style="@style/DoubleLabelStyle"
+                    android:layout_gravity="center"
                     android:text="@string/label_family" />
                 <EditText
                     android:id="@+id/inputFamily"
+                    android:minHeight ="68dp"
                     style="@style/MediumInputStyle" />
             </LinearLayout>
 
 
-        </LinearLayout>
 
 
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
-
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/historyView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_history" />
-                <EditText
-                    android:id="@+id/inputHistory"
-                    style="@style/LargeInputStyle" />
+            <LinearLayout
+                style="@style/VerticalRow"
+                android:layout_marginBottom="4dp">
+                    <TextView
+                        android:id="@+id/historyView"
+                        style="@style/DoubleLabelStyle"
+                        android:layout_gravity="center"
+                        android:text="@string/label_history" />
+                    <EditText
+                        android:id="@+id/inputHistory"
+                        android:minHeight ="68dp"
+                        style="@style/MediumInputStyle" />
             </LinearLayout>
 
-        </LinearLayout>
-    </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
-
-            <LinearLayout style="@style/InputBlockStyle">
+            <LinearLayout
+                style="@style/VerticalRow"
+                android:layout_marginBottom="4dp">
                 <TextView
                     android:id="@+id/additionalInformationView"
-                    style="@style/LabelStyle"
+                    style="@style/DoubleLabelStyle"
+                    android:layout_gravity="center"
                     android:text="@string/label_additionalInformation" />
                 <EditText
                     android:id="@+id/inputAdditionalInformation"
-                    style="@style/LargeInputStyle" />
+                    android:minHeight ="68dp"
+                    style="@style/MediumInputStyle" />
             </LinearLayout>
-
 
         </LinearLayout>
 
-
-    </LinearLayout>
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingTop="8dp"

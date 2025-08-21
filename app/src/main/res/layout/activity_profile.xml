@@ -1,40 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rootLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_0003"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="top|center_horizontal"
-    android:weightSum="1">
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-    <!-- Tytuł profilu użytkownika -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profil użytkownika"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        />
+<LinearLayout
+    style="@style/RootLinearLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout">
 
-    <!-- Wyświetlanie emaila -->
-    <TextView
-        android:id="@+id/emailTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email: "
-        android:textSize="16sp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:gravity="center"/> <!-- Wykorzystanie wagi, by tekst był na górze -->
 
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        style="@style/ScrollStyle">
+
+        <LinearLayout
+            style="@style/ScrollLinearVertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Profil użytkownika"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginBottom="80dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email: "
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+            <!-- Wyświetlanie emaila -->
+            <TextView
+                android:id="@+id/emailTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+    </ScrollView>
     <!-- Pasek z przyciskami na dole -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingTop="8dp"

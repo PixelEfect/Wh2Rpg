@@ -1,6 +1,5 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
@@ -11,12 +10,12 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.dd.rpgcardapp.base.BaseActivity
 import com.dd.rpgcardapp.databinding.ActivityMyCardListBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.dd.rpgcardapp.utils.SystemUIUtils
 
 class UnfinishedCardsActivity : BaseActivity() {
 

@@ -1,12 +1,10 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.ComponentActivity
+import com.dd.rpgcardapp.base.BaseActivity
 import com.dd.rpgcardapp.databinding.ActivityProfileBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore

@@ -1,101 +1,131 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
-import com.dd.rpgcardapp.utils.SystemUIUtils
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
+import android.widget.Toast
+import androidx.credentials.CredentialManager
+import androidx.credentials.GetCredentialRequest
+import androidx.credentials.exceptions.GetCredentialException
+import com.dd.rpgcardapp.base.BaseActivity
+import com.google.android.libraries.identity.googleid.GetGoogleIdOption
+import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
+import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-// LoginActivity.kt
+// Modern LoginActivity using Credential Manager API (recommended approach)
 class LoginActivity : BaseActivity() {
-    private lateinit var auth: FirebaseAuth  // Declare FirebaseAuth instance
-    private lateinit var googleSignInClient: GoogleSignInClient  // Declare GoogleSignInClient instance
+    private lateinit var auth: FirebaseAuth
+    private lateinit var credentialManager: CredentialManager
 
-    // onCreate is called when the activity is first created
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         enableTouchToHideKeyboardAndSystemUI()
 
-        auth = FirebaseAuth.getInstance()  // Initialize Firebase Authentication
+        auth = FirebaseAuth.getInstance()
+        credentialManager = CredentialManager.create(this)
 
-        val signInButton: Button = findViewById(R.id.signInButton)  // Find the sign-in button in the layout
+        val signInButton: Button = findViewById(R.id.signInButton)
         signInButton.setOnClickListener {
-            // Trigger Google Sign-In when the button is clicked
             signInWithGoogle()
         }
+    }
 
-        // Configure Google Sign-In
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))  // Ensure you have the correct client ID
-            .requestEmail()  // Request user's email
+    private fun signInWithGoogle() {
+        val googleIdOption = GetGoogleIdOption.Builder()
+            .setFilterByAuthorizedAccounts(false)
+            .setServerClientId(getString(R.string.default_web_client_id))
             .build()
 
-        googleSignInClient = GoogleSignIn.getClient(this, gso)  // Create GoogleSignInClient
-    }
+        val request = GetCredentialRequest.Builder()
+            .addCredentialOption(googleIdOption)
+            .build()
 
-
-    // This method initiates the Google sign-in process
-    private fun signInWithGoogle() {
-        val signInIntent = googleSignInClient.signInIntent  // Get the sign-in intent
-        startActivityForResult(signInIntent, RC_SIGN_IN)  // Start the sign-in activity
-    }
-
-    // Handle the result from the Google Sign-In activity
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == RC_SIGN_IN) {
-            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)  // Get the Google sign-in task
-            handleSignInResult(task)  // Handle the sign-in result
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val result = credentialManager.getCredential(
+                    request = request,
+                    context = this@LoginActivity,
+                )
+                handleSignIn(result)
+            } catch (e: GetCredentialException) {
+                Log.e("LoginActivity", "Sign-in failed", e)
+                Toast.makeText(this@LoginActivity, "Sign-in failed", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
-    // This method processes the result of the Google sign-in
-    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
-        try {
-            val account = completedTask.getResult(ApiException::class.java)  // Try to get the signed-in account
-            firebaseAuthWithGoogle(account.idToken!!)  // Authenticate with Firebase using the Google ID token
-        } catch (e: ApiException) {
-            // Handle the error if sign-in fails
-        }
-    }
-
-    // Authenticate with Firebase using the Google ID token
-    private fun firebaseAuthWithGoogle(idToken: String) {
-        val credential = GoogleAuthProvider.getCredential(idToken, null)  // Get the Firebase credential
-        auth.signInWithCredential(credential)  // Sign in with the Google credential
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // If sign-in is successful, get the current user
-                    val user = auth.currentUser
-                    saveUserToFirestore(user?.email ?: "")  // Save the user's email to Firestore
-                    startActivity(Intent(this, HomeActivity::class.java))  // Navigate to MainActivity
-                    finish()  // Finish the login activity
+    private suspend fun handleSignIn(result: androidx.credentials.GetCredentialResponse) {
+        when (val credential = result.credential) {
+            is androidx.credentials.CustomCredential -> {
+                if (credential.type == GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL) {
+                    try {
+                        val googleIdTokenCredential = GoogleIdTokenCredential.createFrom(credential.data)
+                        firebaseAuthWithGoogle(googleIdTokenCredential.idToken)
+                    } catch (e: GoogleIdTokenParsingException) {
+                        Log.e("LoginActivity", "Invalid Google ID token", e)
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(this@LoginActivity, "Invalid Google ID token", Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 } else {
-                    // Handle error in login
+                    Log.e("LoginActivity", "Unexpected credential type")
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@LoginActivity, "Unexpected credential type", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
+            else -> {
+                Log.e("LoginActivity", "Unexpected credential type")
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@LoginActivity, "Unexpected credential type", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
-    // Save the user's email to Firestore when they sign in
+    private suspend fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+
+        withContext(Dispatchers.Main) {
+            auth.signInWithCredential(credential)
+                .addOnCompleteListener(this@LoginActivity) { task ->
+                    if (task.isSuccessful) {
+                        val user = auth.currentUser
+                        user?.let {
+                            saveUserToFirestore(it.email ?: "")
+                            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+                            finish()
+                        }
+                    } else {
+                        Log.e("LoginActivity", "Firebase authentication failed", task.exception)
+                        Toast.makeText(this@LoginActivity, "Authentication failed", Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }
+    }
+
     private fun saveUserToFirestore(email: String) {
-        val db = Firebase.firestore  // Initialize Firestore
-        val user = hashMapOf("email" to email)  // Create a user map with email
-        db.collection("users").document(auth.currentUser!!.uid).set(user)  // Save the user document with the current user's UID
-    }
-
-    companion object {
-        private const val RC_SIGN_IN = 9001  // Request code for Google Sign-In
+        val db = Firebase.firestore
+        val user = hashMapOf("email" to email)
+        auth.currentUser?.let { currentUser ->
+            db.collection("users").document(currentUser.uid).set(user)
+                .addOnSuccessListener {
+                    Log.d("LoginActivity", "User saved to Firestore")
+                }
+                .addOnFailureListener { e ->
+                    Log.e("LoginActivity", "Error saving user to Firestore", e)
+                }
+        }
     }
 }

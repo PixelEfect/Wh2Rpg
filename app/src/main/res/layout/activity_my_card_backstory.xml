@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_0003"
+    android:background="@drawable/background_0004"
     android:padding="16dp">
     <View
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:orientation="horizontal">
         <TextView
             android:id="@+id/nameView"  
-            style="@style/LabelStyle"
+            style="@style/DoubleLabelStyle"
             android:gravity="center"
             android:text="Imie: " />
     </LinearLayout>
@@ -49,7 +49,7 @@
                 <LinearLayout style="@style/InputBlockStyle">
                     <TextView
                         android:id="@+id/stateOfHealthView"
-                        style="@style/LabelStyle"
+                        style="@style/DoubleLabelStyle"
                         android:text="@string/label_stateOfHealth" />
 
                     <EditText
@@ -72,7 +72,7 @@
                 <LinearLayout style="@style/InputBlockStyle">
                     <TextView
                         android:id="@+id/specialSignsView"
-                        style="@style/LabelStyle"
+                        style="@style/DoubleLabelStyle"
                         android:text="Znaki szczególne" />
 
                     <EditText
@@ -95,7 +95,7 @@
                 <LinearLayout style="@style/InputBlockStyle">
                     <TextView
                         android:id="@+id/placeOfBirthView"
-                        style="@style/LabelStyle"
+                        style="@style/DoubleLabelStyle"
                         android:text="Miejsce urodzenia" />
 
                     <EditText
@@ -118,7 +118,7 @@
                 <LinearLayout style="@style/InputBlockStyle">
                     <TextView
                         android:id="@+id/familyInformationView"
-                        style="@style/LabelStyle"
+                        style="@style/DoubleLabelStyle"
                         android:text="@string/label_family" />
                     <EditText
                         android:id="@+id/inputFamily"
@@ -139,7 +139,7 @@
                 <LinearLayout style="@style/InputBlockStyle">
                     <TextView
                         android:id="@+id/historyView"
-                        style="@style/LabelStyle"
+                        style="@style/DoubleLabelStyle"
                         android:text="@string/label_history" />
                     <EditText
                         android:id="@+id/inputHistory"
@@ -160,7 +160,7 @@
                 <LinearLayout style="@style/InputBlockStyle">
                     <TextView
                         android:id="@+id/additionalInformationView"
-                        style="@style/LabelStyle"
+                        style="@style/DoubleLabelStyle"
                         android:text="@string/label_additionalInformation" />
                     <EditText
                         android:id="@+id/inputAdditionalInformation"
@@ -177,7 +177,7 @@
     <!-- Przyciski nawigacyjne poza ScrollView -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingTop="8dp"

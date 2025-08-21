@@ -65,6 +65,7 @@
             android:exported="false"/>
         <activity
             android:name=".NewCardAncestryActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
@@ -93,6 +94,10 @@
             android:exported="false"/>
         <activity
             android:name=".ProfessionsConsistencyChecker"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"/>
+        <activity
+            android:name=".SpellBlessingViewerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
     </application>

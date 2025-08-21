@@ -1,327 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    style="@style/RootLinearLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rootLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_0003"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:id="@+id/rootLayout">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
 
-        android:gravity="center_horizontal">
+    <ScrollView
+        android:id="@+id/scrollView"
+        style="@style/ScrollStyle">
 
-        <!-- IMIE -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/nameView"
-                style="@style/LabelStyle"
-                android:text="Imie: " />
-            <EditText
-                android:id="@+id/inputName"
-                style="@style/SmallInputStyle"
-                android:background="@drawable/translucent_bg1"
-                android:layout_width="251dp" />
-        </LinearLayout>
+            style="@style/ScrollLinearVertical">
 
-        <!-- RASA -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/raceView"
-                style="@style/LabelStyle"
-                android:text="Rasa: " />
-            <TextView
-                android:id="@+id/inputRaceTextView"
-                android:layout_width="251dp"
-                android:layout_height="35dp"
-                android:background="@drawable/rounded_edittext"
-                android:drawableEnd="@drawable/ic_arrow_drop_down"
-                android:gravity="center_vertical|start"
-                android:hint="Wybierz rasę"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:clickable="true"
-                android:focusable="false" />
-        </LinearLayout>
-
-        <!-- WIEK -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            <!-- IMIE -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:orientation="horizontal">
+                style="@style/HorizontalRow">
                 <TextView
-                    android:id="@+id/ageNameView"
-                    style="@style/LabelStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="Wiek: " />
-                <TextView
-                    android:id="@+id/ageView"
-                    style="@style/LabelStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="16" />
+                    android:id="@+id/nameView"
+                    style="@style/SingleLabelStyle"
+                    android:text="Imię: " />
+                <EditText
+                    android:id="@+id/inputName"
+                    style="@style/SmallInputStyle" />
             </LinearLayout>
-            <SeekBar
-                android:id="@+id/ageSeekBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:max="20" />
-        </LinearLayout>
 
-        <!-- PŁEĆ -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/sexView"
-                style="@style/LabelStyle"
-                android:text="Płeć: " />
-            <TextView
-                android:id="@+id/inputSexTextView"
-                android:layout_width="251dp"
-                android:layout_height="35dp"
-                android:background="@drawable/rounded_edittext"
-                android:drawableEnd="@drawable/ic_arrow_drop_down"
-                android:gravity="center_vertical|start"
-                android:hint="Wybierz płeć"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:clickable="true"
-                android:focusable="false" />
-        </LinearLayout>
+            <!-- RASA -->
+            <LinearLayout
+                style="@style/HorizontalRow">
+                <TextView
+                    android:id="@+id/raceView"
+                    style="@style/SingleLabelStyle"
+                    android:text="Rasa: " />
+                <TextView
+                    android:id="@+id/inputRaceTextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:hint="Wybierz rasę" />
 
-        <!-- OCZY -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/eyesView"
-                style="@style/LabelStyle"
-                android:text="Oczy: " />
-            <TextView
-                android:id="@+id/inputEyesTextView"
-                android:layout_width="251dp"
-                android:layout_height="35dp"
-                android:background="@drawable/rounded_edittext"
-                android:drawableEnd="@drawable/ic_arrow_drop_down"
-                android:gravity="center_vertical|start"
-                android:hint="Wybierz kolor"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:clickable="true"
-                android:focusable="false" />
-        </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/HorizontalRow">
+                <TextView
+                    android:id="@+id/abilitiesTextView"
+                    style="@style/DoubleLabelStyle"
+                    android:layout_width="match_parent"
+                    android:text="Umiejętności"
+                    android:layout_marginBottom="4dp"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/HorizontalRow">
+                <TextView
+                    android:id="@+id/skillsTextView"
+                    style="@style/DoubleLabelStyle"
+                    android:layout_width="match_parent"
+                    android:text="Zdolności"
+                    android:layout_marginBottom="4dp"/>
+            </LinearLayout>
+            <!-- MIEJSCE URODZENIA -->
+            <LinearLayout
+                style="@style/HorizontalRow">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/placeOfBirthView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Miejsce" />
+                    <TextView
+                        android:id="@+id/placeOfBirth2View"
+                        style="@style/DoubleLabelStyle"
+                        android:text="urodzenia: " />
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/inputPlaceOfBirth"
+                    style="@style/SmallInputStyle" />
+            </LinearLayout>
 
-        <!-- WŁOSY -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/hairView"
-                style="@style/LabelStyle"
-                android:text="Włosy: " />
-            <TextView
-                android:id="@+id/inputHairTextView"
-                android:layout_width="251dp"
-                android:layout_height="35dp"
-                android:background="@drawable/rounded_edittext"
-                android:drawableEnd="@drawable/ic_arrow_drop_down"
-                android:gravity="center_vertical|start"
-                android:hint="Wybierz kolor"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:clickable="true"
-                android:focusable="false" />
-        </LinearLayout>
+            <!-- WIEK -->
+            <LinearLayout
+                style="@style/VerticalRow">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/ageNameView"
+                        android:layout_width="wrap_content"
+                        style="@style/SingleLabelStyle"
+                        android:layout_weight="0"
+                        android:text="Wiek: " />
+                    <TextView
+                        android:id="@+id/ageView"
+                        style="@style/SingleLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="0"
+                        android:text="16" />
+                </LinearLayout>
+                <SeekBar
+                    android:id="@+id/ageSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="20" />
+            </LinearLayout>
+
+            <!-- PŁEĆ -->
+            <LinearLayout
+                style="@style/HorizontalRow">
+                <TextView
+                    android:id="@+id/sexView"
+                    style="@style/SingleLabelStyle"
+                    android:text="Płeć: " />
+                <TextView
+                    android:id="@+id/inputSexTextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:hint="Wybierz płeć" />
+            </LinearLayout>
+
+            <!-- OCZY -->
+            <LinearLayout
+                style="@style/HorizontalRow">
+                <TextView
+                    android:id="@+id/eyesView"
+                    style="@style/SingleLabelStyle"
+                    android:text="Oczy: " />
+                <TextView
+                    android:id="@+id/inputEyesTextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:hint="Wybierz kolor" />
+            </LinearLayout>
+
+            <!-- WŁOSY -->
+            <LinearLayout
+                style="@style/HorizontalRow">
+                <TextView
+                    android:id="@+id/hairView"
+                    style="@style/SingleLabelStyle"
+                    android:text="Włosy: " />
+                <TextView
+                    android:id="@+id/inputHairTextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:hint="Wybierz kolor" />
+            </LinearLayout>
 
             <!-- WZROST -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/heightNameView"
-                    style="@style/LabelStyle"
-                    android:layout_width="wrap_content"
+                style="@style/VerticalRow">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="Wzrost: " />
-                <TextView
-                    android:id="@+id/heightView"
-                    style="@style/LabelStyle"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/heightNameView"
+                        android:layout_width="wrap_content"
+                        style="@style/SingleLabelStyle"
+                        android:layout_weight="0"
+                        android:text="Wzrost: " />
+                    <TextView
+                        android:id="@+id/heightView"
+                        style="@style/SingleLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="0"
+                        android:text="160" />
+                </LinearLayout>
+                <SeekBar
+                    android:id="@+id/heightSeekBar"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="160" />
+                    android:max="20" />
             </LinearLayout>
-            <SeekBar
-                android:id="@+id/heightSeekBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:max="20" />
-        </LinearLayout>
 
-        <!-- WAGA -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            <!-- WAGA -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/weightNameView"
-                    style="@style/LabelStyle"
-                    android:layout_width="wrap_content"
+                style="@style/VerticalRow">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="Waga: " />
-                <TextView
-                    android:id="@+id/weightView"
-                    style="@style/LabelStyle"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/weightNameView"
+                        android:layout_width="wrap_content"
+                        style="@style/SingleLabelStyle"
+                        android:layout_weight="0"
+                        android:text="Waga: " />
+                    <TextView
+                        android:id="@+id/weightView"
+                        style="@style/SingleLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="0"
+                        android:text="50" />
+                </LinearLayout>
+                <SeekBar
+                    android:id="@+id/weightSeekBar"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="50" />
+                    android:max="20" />
             </LinearLayout>
-            <SeekBar
-                android:id="@+id/weightSeekBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:max="20" />
+
+            <!-- ZNAK GWIEZDNY -->
+            <LinearLayout
+                style="@style/HorizontalRow">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/starSignView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Znak: " />
+                    <TextView
+                        android:id="@+id/starSign2View"
+                        style="@style/DoubleLabelStyle"
+                        android:text="gwiezdny: " />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/inputStarSignTextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:hint="Wybierz znak" />
+            </LinearLayout>
+
+            <!-- ZNAKI SZCZEGÓLNE -->
+            <LinearLayout
+                style="@style/HorizontalRow">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/specialSignsView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Znaki" />
+                    <TextView
+                        android:id="@+id/specialSigns2View"
+                        style="@style/DoubleLabelStyle"
+                        android:text="szczególne: " />
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/inputSpecialSigns"
+                    style="@style/MediumInputStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="2" />
+            </LinearLayout>
+
+
         </LinearLayout>
 
-        <!-- MIEJSCE URODZENIA -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/placeOfBirthView"
-                style="@style/LabelStyle"
-                android:text="M.urodzenia: " />
-            <EditText
-                android:id="@+id/inputPlaceOfBirth"
-                style="@style/SmallInputStyle"
-                android:layout_width="251dp" />
-        </LinearLayout>
+    </ScrollView>
 
-        <!-- ZNAK GWIEZDNY -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/starSignView"
-                style="@style/LabelStyle"
-                android:text="Z. gwiezdny: " />
-            <TextView
-                android:id="@+id/inputStarSignTextView"
-                android:layout_width="251dp"
-                android:layout_height="35dp"
-                android:background="@drawable/rounded_edittext"
-                android:drawableEnd="@drawable/ic_arrow_drop_down"
-                android:gravity="center_vertical|start"
-                android:hint="Wybierz znak"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:clickable="true"
-                android:focusable="false" />
-        </LinearLayout>
-    </LinearLayout>
-
+    <!-- Sekcja Umiejętności i Zdolności -->
+    <!-- Panel przycisków na dole - zostanie ukryty pod klawiaturą -->
     <LinearLayout
+        android:id="@+id/bottomButtonPanel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
-
-        <!-- ZNAKI SZCZEGÓLNE -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/specialSignsView"
-                style="@style/LabelStyle"
-                android:text="Znaki Szczególne: " />
-            <EditText
-                android:id="@+id/inputSpecialSigns"
-                style="@style/MediumInputStyle"
-                android:layout_width="251dp"
-                />
-        </LinearLayout>
-        <TextView
-            android:id="@+id/abilitiesTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Umiejętności"
-            android:textStyle="bold"
-            android:padding="4dp"
-            android:maxLines="10"
-            android:ellipsize="end"
-            android:scrollHorizontally="false" />
-        <TextView
-            android:id="@+id/skillsTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Zdolności"
-            android:textStyle="bold"
-            android:padding="4dp"
-            android:maxLines="10"
-            android:ellipsize="end"
-            android:scrollHorizontally="false" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingTop="8dp"
@@ -342,7 +277,7 @@
             android:paddingBottom="16dp"
             android:adjustViewBounds="true"
             android:background="@null"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
         <Space
             android:layout_width="30dp"
@@ -355,9 +290,8 @@
             android:layout_height="match_parent"
             android:src="@drawable/exit_002"
             android:scaleType="fitCenter"
-
             android:adjustViewBounds="true"
-            android:background="@null"/>
+            android:background="@null" />
 
         <Space
             android:layout_width="30dp"
@@ -380,6 +314,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
     </LinearLayout>
+
+
 
 
 </LinearLayout>

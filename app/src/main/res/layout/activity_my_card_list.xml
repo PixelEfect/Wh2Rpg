@@ -4,7 +4,7 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_0003"
+    android:background="@drawable/background_0004"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -29,7 +29,7 @@
     <!-- Pasek z przyciskami na dole -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingTop="8dp"

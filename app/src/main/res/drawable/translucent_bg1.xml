@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#80FFFFFF"/> <!-- Białe, 50% przezroczystości -->
+    <solid android:color="#BBFFFFFF"/> <!-- Białe, 50% przezroczystości -->
     <corners android:radius="8dp"/> <!-- Zaokrąglone rogi -->
     <stroke android:width="2dp" android:color="#A0FFFFFF"/> <!-- Jasna obwódka -->
 </shape>

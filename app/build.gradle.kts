@@ -39,7 +39,7 @@ android {
 
     buildFeatures {
         compose = true
-        viewBinding  = true
+        viewBinding = true
     }
 }
 
@@ -47,16 +47,28 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:33.10.0")) // BOM zarządza wersjami
+    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-analytics-ktx")
-    implementation("com.google.firebase:firebase-auth-ktx") // Aktualna wersja
-    implementation ("org.jetbrains.kotlin:kotlin-reflect:1.8.0")
-    // Google Sign-In
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4") // Spróbuj tej wersji
+    implementation("com.google.firebase:firebase-auth-ktx")
 
+    // Kotlin reflect
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.25") // Zaktualizowana wersja
+
+    // Google Sign-In (stare API - można usunąć jeśli używasz tylko Credential Manager)
+    implementation("com.google.android.gms:play-services-auth:21.2.0") // Zaktualizowana wersja
+
+    // Constraint Layout
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // Credential Manager (nowoczesne API)
+    implementation("androidx.credentials:credentials:1.2.2")
+    implementation("androidx.credentials:credentials-play-services-auth:1.2.2")
+
+    // Google Identity
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.0")
 
     // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))

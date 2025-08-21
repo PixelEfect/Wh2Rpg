@@ -1,17 +1,10 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
+import com.dd.rpgcardapp.base.BaseActivity
 import com.dd.rpgcardapp.databinding.ActivityNewCardBackstoryBinding
-import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore

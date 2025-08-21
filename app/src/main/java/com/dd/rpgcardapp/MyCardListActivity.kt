@@ -1,6 +1,5 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
@@ -11,19 +10,17 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import com.dd.rpgcardapp.UnfinishedCardsActivity
+import com.dd.rpgcardapp.base.BaseActivity
 import com.dd.rpgcardapp.databinding.ActivityMyCardListBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.dd.rpgcardapp.utils.SystemUIUtils
 
 class MyCardListActivity : BaseActivity() {
 
     private lateinit var db: FirebaseFirestore
     private lateinit var userId: String
-    private var characterDocId: String? = null
     private lateinit var binding: ActivityMyCardListBinding
 
 
@@ -49,35 +46,31 @@ class MyCardListActivity : BaseActivity() {
         val container = binding.buttonContainer
         container.removeAllViews()
 
-        db.collection("users").document(userId)
-            .collection("characters")
-            .whereGreaterThanOrEqualTo("progressStage", 5)
-            .orderBy("lastActiveAt", com.google.firebase.firestore.Query.Direction.DESCENDING)
+        db.collection(getString(R.string.collection_users)).document(userId)
+            .collection(getString(R.string.collection_characters))
+            .whereGreaterThanOrEqualTo(getString(R.string.field_progress_stage), 5)
+            .orderBy(getString(R.string.field_last_active_at), com.google.firebase.firestore.Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener { querySnapshot ->
                 for (document in querySnapshot) {
-                    val name = document.getString("name") ?: continue
-                    val race = document.getString("race") ?: "Brak rasy"
-                    val lastActive = document.getTimestamp("lastActiveAt")
-                    val progressStage = document.getLong("progressStage")?.toInt() ?: continue
-
+                    val name = document.getString(getString(R.string.field_name)) ?: continue
+                    val race = document.getString(getString(R.string.field_race)) ?: getString(R.string.default_race)
                     val documentId = document.id
 
-                    // Pobieramy professionName z subkolekcji
-                    db.collection("users").document(userId)
-                        .collection("characters").document(documentId)
-                        .collection("profession").document("owned")
+                    db.collection(getString(R.string.collection_users)).document(userId)
+                        .collection(getString(R.string.collection_characters)).document(documentId)
+                        .collection(getString(R.string.collection_profession)).document(getString(R.string.document_owned))
                         .get()
                         .addOnSuccessListener { professionDoc ->
-                            val professionName = professionDoc.getString("professionName") ?: "Brak profesji"
+                            val professionName = professionDoc.getString(getString(R.string.field_profession_name)) ?: getString(R.string.default_profession)
 
                             val displayText = if (name.length > 20) {
-                                name.substring(0, 17) + "..."
+                                name.substring(0, 17) + getString(R.string.text_truncate_suffix)
                             } else {
                                 name
                             }
 
-                            val fullDisplay = "$displayText\nRasa: $race\nProfesja: $professionName"
+                            val fullDisplay = "$displayText\n${getString(R.string.race_label)} $race\n${getString(R.string.profession_label)} $professionName"
 
                             val button = Button(this).apply {
                                 layoutParams = LinearLayout.LayoutParams(
@@ -95,33 +88,43 @@ class MyCardListActivity : BaseActivity() {
                                 text = fullDisplay
 
                                 gravity = Gravity.CENTER_VERTICAL or Gravity.CENTER_HORIZONTAL
-                                setPadding(70, 70, 70, 70)  // większy padding góra/dół
-                                minHeight = 200  // lub więcej, zależnie jak dużo tekstu
-                                maxLines = 5     // jeśli chcesz ograniczyć
+                                setPadding(70, 70, 70, 70)
+                                minHeight = 200
+                                maxLines = 5
                             }
+
                             button.setOnClickListener {
-                                val intent = Intent(this@MyCardListActivity,
-                                    MyCardAttributesActivity::class.java)
-                                intent.putExtra("CHARACTER_DOC_ID", documentId)  // Ustaw odpowiedni klucz
-                                intent.putExtra("CHARACTER_RACE", race)
-                                intent.putExtra("CHARACTER_PROFESSION", professionName)
-                                intent.putExtra("CHARACTER_NAME", name)
+                                db.collection(getString(R.string.collection_users)).document(userId)
+                                    .collection(getString(R.string.collection_characters)).document(documentId)
+                                    .update(getString(R.string.field_last_active_at), com.google.firebase.Timestamp.now())
+                                    .addOnSuccessListener {
+                                        Log.d(getString(R.string.log_tag_last_active), getString(R.string.log_last_active_updated, name))
+                                    }
+                                    .addOnFailureListener {
+                                        Log.e(getString(R.string.log_tag_last_active), getString(R.string.log_last_active_error), it)
+                                    }
+
+                                val intent = Intent(this@MyCardListActivity, MyCardAttributesActivity::class.java)
+                                intent.putExtra(getString(R.string.extra_character_doc_id), documentId)
+                                intent.putExtra(getString(R.string.extra_character_race), race)
+                                intent.putExtra(getString(R.string.extra_character_profession), professionName)
+                                intent.putExtra(getString(R.string.extra_character_name), name)
                                 startActivity(intent)
                             }
                             container.addView(button)
                         }
                         .addOnFailureListener {
-                            Log.e("Firestore", "Nie udało się pobrać profession dla $name", it)
+                            Log.e(getString(R.string.log_tag_firestore), getString(R.string.log_profession_fetch_error, name), it)
                         }
                 }
 
                 if (querySnapshot.isEmpty) {
-                    Toast.makeText(this, "Brak dostępnych kart do wyświetlenia.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.no_cards_available), Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener {
-                Toast.makeText(this, "Błąd podczas ładowania postaci: ${it.message}", Toast.LENGTH_SHORT).show()
-                Log.e("MyCardListActivity", "Błąd podczas pobierania postaci", it)
+                Toast.makeText(this, getString(R.string.error_loading_characters, it.message), Toast.LENGTH_SHORT).show()
+                Log.e(getString(R.string.log_tag_my_card_list), getString(R.string.log_characters_fetch_error), it)
             }
     }
 }

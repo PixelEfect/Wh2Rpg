@@ -4,7 +4,7 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_0003"
+    android:background="@drawable/background_0004"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -19,7 +19,7 @@
 
         <TextView
             android:id="@+id/nameView"
-            style="@style/LabelStyle"
+            style="@style/DoubleLabelStyle"
             android:gravity="center"
             android:text="Imie: " />
     </LinearLayout>
@@ -43,7 +43,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    style="@style/LabelStyle"
+                    style="@style/DoubleLabelStyle"
                     android:gravity="center"
                     android:text="Umiejętności podstawowe:" />
             </LinearLayout>
@@ -392,7 +392,7 @@
                     </LinearLayout>
 
                     <TextView
-                        style="@style/LabelStyle"
+                        style="@style/DoubleLabelStyle"
                         android:gravity="center"
                         android:text="Zaawansowane: " />
 
@@ -747,7 +747,7 @@
                     </LinearLayout>
 
                     <TextView
-                        style="@style/LabelStyle"
+                        style="@style/DoubleLabelStyle"
                         android:gravity="center"
                         android:text="Inne: " />
 
@@ -776,7 +776,7 @@
                 android:orientation="vertical"
                 android:gravity="center">
                 <TextView
-                    style="@style/LabelStyle"
+                    style="@style/DoubleLabelStyle"
                     android:gravity="center"
                     android:text="Punkty doświadczenia" />
             </LinearLayout>
@@ -791,7 +791,7 @@
                     android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/ownedPD"
-                    style="@style/LabelStyle"
+                    style="@style/DoubleLabelStyle"
                     android:gravity="center"
                     android:text="" />
                 <View
@@ -810,7 +810,7 @@
                     android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/spendPD"
-                    style="@style/LabelStyle"
+                    style="@style/DoubleLabelStyle"
                     android:gravity="center"
                     android:text="" />
                 <View
@@ -860,7 +860,7 @@
     <!-- Przyciski nawigacyjne poza ScrollView -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingTop="8dp"

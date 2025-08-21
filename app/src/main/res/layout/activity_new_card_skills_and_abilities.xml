@@ -1,376 +1,538 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    style="@style/RootLinearLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rootLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_0003"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:id="@+id/rootLayout">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
-
-        <!-- PROFESJA -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/professionsTextView"
-                style="@style/LabelStyle"
-                android:text="Profesja: " />
-        </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/freeView"
-                style="@style/LabelStyle"
-                android:text="Darmowe rozwinięcie: " />
-        </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="5dp"/>
-        <!-- Pierwszy blok z Inputami -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
-
-            <!-- Blok WW -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/WWView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_ww" />
-                <TextView
-                    android:id="@+id/inputWW"
-                    style="@style/ReadOnlyInputStyle" />
-                <TextView
-                    android:id="@+id/buttonWW"
-                    style="@style/AbilityPlusButtonStyle" />
-            </LinearLayout>
-
-            <!-- Blok US -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/USView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_us" />
-                <TextView
-                    android:id="@+id/inputUS"
-                    style="@style/ReadOnlyInputStyle" />
-                <TextView
-                    android:id="@+id/buttonUS"
-                    style="@style/AbilityPlusButtonStyle" />
-            </LinearLayout>
-
-            <!-- Blok K -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/KView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_k" />
-                <TextView
-                    android:id="@+id/inputK"
-                    style="@style/ReadOnlyInputStyle" />
-
-                <TextView
-                    android:id="@+id/buttonK"
-                    style="@style/AbilityPlusButtonStyle" />
-            </LinearLayout>
-
-            <!-- Blok Odp -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/OdpView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_odp" />
-                <TextView
-                    android:id="@+id/inputOdp"
-                    style="@style/ReadOnlyInputStyle" />
-                <TextView
-                    android:id="@+id/buttonOdp"
-                    style="@style/AbilityPlusButtonStyle" />
-            </LinearLayout>
-            <!-- Blok Zr -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/ZrView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_zr" />
-                <TextView
-                    android:id="@+id/inputZr"
-                    style="@style/ReadOnlyInputStyle" />
-                <TextView
-                    android:id="@+id/buttonZr"
-                    style="@style/AbilityPlusButtonStyle" />
-            </LinearLayout>
-
-            <!-- Blok Int -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/IntView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_int" />
-                <TextView
-                    android:id="@+id/inputInt"
-                    style="@style/ReadOnlyInputStyle" />
-                <TextView
-                    android:id="@+id/buttonInt"
-                    style="@style/AbilityPlusButtonStyle" />
-            </LinearLayout>
-
-            <!-- Blok SW -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/SWView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_sw" />
-                <TextView
-                    android:id="@+id/inputSW"
-                    style="@style/ReadOnlyInputStyle" />
-                <TextView
-                    android:id="@+id/buttonSW"
-                    style="@style/AbilityPlusButtonStyle" />
-            </LinearLayout>
-
-            <!-- Blok Ogd -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/OgdView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_ogd" />
-                <TextView
-                    android:id="@+id/inputOgd"
-                    style="@style/ReadOnlyInputStyle" />
-                <TextView
-                    android:id="@+id/buttonOgd"
-                    style="@style/AbilityPlusButtonStyle" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="5dp"/>
+        android:id="@+id/scrollView"
+        style="@style/ScrollStyle">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
+            style="@style/ScrollLinearVertical">
 
-            <!-- Blok A -->
-            <LinearLayout style="@style/InputBlockStyle">
+            <!-- PROFESJA -->
+            <LinearLayout
+                style="@style/HorizontalRow"
+                android:layout_marginBottom="8dp">
                 <TextView
-                    android:id="@+id/AView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_a" />
-                <TextView
-                    android:id="@+id/inputA"
-                    style="@style/ReadOnlyInputStyle" />
-                <TextView
-                    android:id="@+id/buttonA"
-                    style="@style/AbilityPlusButtonStyle" />
+                    android:id="@+id/professionsTextView"
+                    style="@style/DoubleLabelStyle"
+                    android:text="Profesja: " />
             </LinearLayout>
 
-            <!-- Blok Żyw -->
-            <LinearLayout style="@style/InputBlockStyle">
+            <LinearLayout
+                style="@style/HorizontalRow"
+                android:layout_marginBottom="8dp">
                 <TextView
-                    android:id="@+id/ZywView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_zyw" />
-                <TextView
-                    android:id="@+id/inputZyw"
-                    style="@style/ReadOnlyInputStyle"/>
-                <TextView
-                    android:id="@+id/buttonZyw"
-                    style="@style/AbilityPlusButtonStyle" />
+                    android:id="@+id/freeView"
+                    style="@style/DoubleLabelStyle"
+                    android:text="Wybierz darmowe rozwinięcie: " />
             </LinearLayout>
 
-            <!-- Blok S -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/SView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_s" />
-                <TextView
-                    android:id="@+id/inputS"
-                    android:gravity="center"
-                    style="@style/ReadOnlyInputStyle"/>
+            <!-- Pierwszy blok z Inputami -->
+            <LinearLayout
+                style="@style/HorizontalRow"
+                android:layout_marginBottom="8dp">
+
+                <!-- Blok WW -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/WWView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_ww" />
+                    <TextView
+                        android:id="@+id/inputWW"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonWW"
+                        style="@style/AbilityPlusButtonStyle"/>
+                </LinearLayout>
+
+                <!-- Blok US -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/USView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_us" />
+                    <TextView
+                        android:id="@+id/inputUS"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonUS"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
+                <!-- Blok K -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/KView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_k" />
+                    <TextView
+                        android:id="@+id/inputK"
+                        android:textColor="@color/white"
+                        style="@style/ReadOnlyInputStyle" />
+
+                    <TextView
+                        android:id="@+id/buttonK"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
+                <!-- Blok Odp -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/OdpView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_odp" />
+                    <TextView
+                        android:id="@+id/inputOdp"
+                        android:textColor="@color/white"
+                        style="@style/ReadOnlyInputStyle" />
+                    <TextView
+                        android:id="@+id/buttonOdp"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+                <!-- Blok Zr -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/ZrView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_zr" />
+                    <TextView
+                        android:id="@+id/inputZr"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonZr"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
+                <!-- Blok Int -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/IntView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_int" />
+                    <TextView
+                        android:id="@+id/inputInt"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonInt"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
+                <!-- Blok SW -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/SWView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_sw" />
+                    <TextView
+                        android:id="@+id/inputSW"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonSW"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
+                <!-- Blok Ogd -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/OgdView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_ogd" />
+                    <TextView
+                        android:id="@+id/inputOgd"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonOgd"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
             </LinearLayout>
 
-            <!-- Blok Wt -->
-            <LinearLayout style="@style/InputBlockStyle">
-                <TextView
-                    android:id="@+id/WtView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_wt" />
-                <TextView
-                    android:id="@+id/inputWt"
-                    android:gravity="center"
-                    style="@style/ReadOnlyInputStyle" />
+
+            <LinearLayout
+                style="@style/HorizontalRow"
+                android:layout_marginBottom="8dp">
+
+                <!-- Blok A -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/AView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_a" />
+                    <TextView
+                        android:id="@+id/inputA"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonA"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
+                <!-- Blok Żyw -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/ZywView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_zyw" />
+                    <TextView
+                        android:id="@+id/inputZyw"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonZyw"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
+                <!-- Blok S -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/SView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_s" />
+                    <TextView
+                        android:id="@+id/inputS"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <!-- Blok Wt -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/WtView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_wt" />
+                    <TextView
+                        android:id="@+id/inputWt"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <!-- Blok Sz -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/SzView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_sz" />
+                    <TextView
+                        android:id="@+id/inputSz"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonSz"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
+                <!-- Blok Mag -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/MagView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_mag" />
+                    <TextView
+                        android:id="@+id/inputMag"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/buttonMag"
+                        style="@style/AbilityPlusButtonStyle" />
+                </LinearLayout>
+
+                <!-- Blok PO -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/POView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_po" />
+                    <TextView
+                        android:id="@+id/inputPO"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <!-- Blok PP -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/PPView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_pp" />
+                    <TextView
+                        android:id="@+id/inputPP"
+                        style="@style/ReadOnlyInputStyle"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- Blok Sz -->
-            <LinearLayout style="@style/InputBlockStyle">
+            <LinearLayout
+                android:id="@+id/ability1View"
+                style="@style/HorizontalRow">
+
                 <TextView
-                    android:id="@+id/SzView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_sz" />
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
                 <TextView
-                    android:id="@+id/inputSz"
-                    style="@style/ReadOnlyInputStyle"/>
+                    android:id="@+id/ability1TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz umiejętność"/>
+
                 <TextView
-                    android:id="@+id/buttonSz"
-                    style="@style/AbilityPlusButtonStyle" />
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
             </LinearLayout>
 
-            <!-- Blok Mag -->
-            <LinearLayout style="@style/InputBlockStyle">
+            <LinearLayout
+                android:id="@+id/ability2View"
+                style="@style/HorizontalRow">
+
                 <TextView
-                    android:id="@+id/MagView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_mag" />
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
                 <TextView
-                    android:id="@+id/inputMag"
-                    style="@style/ReadOnlyInputStyle" />
+                    android:id="@+id/ability2TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz umiejętność"/>
+
                 <TextView
-                    android:id="@+id/buttonMag"
-                    style="@style/AbilityPlusButtonStyle" />
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
             </LinearLayout>
 
-            <!-- Blok PO -->
-            <LinearLayout style="@style/InputBlockStyle">
+            <LinearLayout
+                android:id="@+id/ability3View"
+                style="@style/HorizontalRow">
+
                 <TextView
-                    android:id="@+id/POView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_po" />
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
                 <TextView
-                    android:id="@+id/inputPO"
-                    style="@style/ReadOnlyInputStyle" />
+                    android:id="@+id/ability3TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz umiejętność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ability4View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/ability4TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz umiejętność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ability5View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/ability5TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz umiejętność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ability6View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/ability6TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz umiejętność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ability7View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/ability7TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz umiejętność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ability8View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/ability8TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz umiejętność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
             </LinearLayout>
 
-            <!-- Blok PP -->
-            <LinearLayout style="@style/InputBlockStyle">
+            <LinearLayout
+                android:id="@+id/ability9View"
+                style="@style/HorizontalRow">
+
                 <TextView
-                    android:id="@+id/PPView"
-                    style="@style/LabelStyle"
-                    android:text="@string/label_pp" />
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
                 <TextView
-                    android:id="@+id/inputPP"
-                    style="@style/ReadOnlyInputStyle" />
+                    android:id="@+id/ability9TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz umiejętność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/skill1View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/skill1TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz zdolność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/skill2View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/skill2TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz zdolność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/skill3View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/skill3TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz zdolność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/skill4View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/skill4TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz zdolność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/skill5View"
+                style="@style/HorizontalRow">
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/skill5TextView"
+                    style="@style/ClickableDropdownTextView"
+                    android:layout_weight="6"
+                    android:hint="Wybierz zdolność"/>
+
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:text="" />
             </LinearLayout>
         </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"/>
-
-        <TextView
-            android:id="@+id/ability1TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/ability2TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/ability3TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/ability4TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/ability5TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/ability6TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/ability7TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/ability8TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/ability9TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="8dp"/>
-        <TextView
-            android:id="@+id/skill1TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/skill2TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/skill3TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/skill4TextView"
-            style="@style/AbilityTextStyle" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
-        <TextView
-            android:id="@+id/skill5TextView"
-            style="@style/AbilityTextStyle" />
-    </LinearLayout>
     </ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingTop="8dp"

@@ -2420,7 +2420,7 @@ object BasicProfessions {
 
     val Szuler = Profession(
         name = "Szuler",
-        ww = 10, us = 5, k = 0, odp = 10, zr = 5, int = 0, sw = 10, ogd = 0,
+        ww = 10, us = 5, k = 0, odp = 0, zr = 10, int = 10, sw = 0, ogd = 10,
 
         abilities = listOf(
             CommonAbilities.hazard,
@@ -5423,7 +5423,7 @@ object BasicProfessions {
                 WeaponSkills.bronDwureczna,
             ),
             optionalSkills = listOf(
-                Blessing.All,
+                KnightBlessing.All,
                 listOf(CommonSkills.morderczyAtak, CommonSkills.mierzonyCios)
             ),
         )

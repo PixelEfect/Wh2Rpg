@@ -1,16 +1,13 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
-import androidx.activity.ComponentActivity
+import com.dd.rpgcardapp.base.BaseActivity
 import com.dd.rpgcardapp.data.Paths
 import com.dd.rpgcardapp.data.Profession
 import com.dd.rpgcardapp.data.ProfessionPaths
 import com.dd.rpgcardapp.data.Professions
 import com.dd.rpgcardapp.databinding.ActivityProfessionsConsistencyCheckerBinding
-import com.dd.rpgcardapp.utils.SystemUIUtils
 
 
 class ProfessionsConsistencyChecker : BaseActivity() {

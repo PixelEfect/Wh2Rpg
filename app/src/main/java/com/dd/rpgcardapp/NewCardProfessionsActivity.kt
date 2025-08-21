@@ -1,11 +1,10 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.dd.rpgcardapp.base.BaseActivity
 import com.dd.rpgcardapp.data.Ability
 import com.dd.rpgcardapp.data.AbilityGroupSimplifier
 import com.dd.rpgcardapp.data.Profession
@@ -13,7 +12,6 @@ import com.dd.rpgcardapp.data.ProfessionPaths
 import com.dd.rpgcardapp.data.Race
 import com.dd.rpgcardapp.data.Races
 import com.dd.rpgcardapp.databinding.ActivityNewCardProfessionsBinding
-import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.dd.rpgcardapp.utils.showAlertDialog
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks

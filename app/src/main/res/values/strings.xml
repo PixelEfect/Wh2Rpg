@@ -24,4 +24,144 @@
     <string name="label_family">Rodzina</string>
     <string name="label_history">Historia</string>
     <string name="label_additionalInformation">Dodatkowe informacje</string>
+
+    <!-- Nowe wpisy z kodu -->
+    <string name="error_no_character_id">Błąd: Brak ID postaci</string>
+    <string name="error_no_race_info">Błąd: Brak informacji o rasie</string>
+    <string name="error_save_stats">Błąd: Nie można zapisać statystyk</string>
+    <string name="error_save_character">Błąd zapisu danych postaci: %s</string>
+    <string name="error_loading_attributes">Błąd ładowania danych atrybutów: %s</string>
+    <string name="error_loading_data">Błąd ładowania danych: %s</string>
+
+    <string name="complete_stats">Uzupełnij statystyki.</string>
+    <string name="choose_grace">Musisz wybrać łaskę.</string>
+    <string name="choose_all_skills_abilities">Wybierz wszystkie umiejętności i zdolności.</string>
+    <string name="abilities_cannot_be_same">Obie wybrane zdolności nie mogą być takie same. %s</string>
+    <string name="skills_cannot_be_same">Obie wybrane umiejętności nie mogą być takie same.</string>
+    <string name="primary_stats_limit">Wartości podstawowych statystyk oraz Żyw nie mogą przekraczać 95.</string>
+    <string name="secondary_stats_limit">Wartości drugorzędnych statystyk nie mogą przekraczać 10.</string>
+    <string name="stats_saved_success">Statystyki, umiejętności i zdolności zapisane!</string>
+    <string name="character_data_not_found">Nie znaleziono danych postaci.</string>
+    <string name="attributes_data_not_found">Nie znaleziono danych atrybutów postaci.</string>
+
+    <string name="grace_dialog_title">Wybierz łaskę</string>
+    <string name="ability_dialog_title">Wybierz zdolność</string>
+    <string name="skill_dialog_title">Wybierz umiejętność</string>
+
+    <string name="grace_none">Nie korzystam!</string>
+    <string name="grace_melee">Walka Wręcz</string>
+    <string name="grace_ranged">Um. Strzeleckie</string>
+    <string name="grace_strength">Krzepa</string>
+    <string name="grace_toughness">Odporność</string>
+    <string name="grace_agility">Zręczność</string>
+    <string name="grace_intelligence">Inteligencja</string>
+    <string name="grace_willpower">Siła Woli</string>
+    <string name="grace_fellowship">Ogłada</string>
+
+    <string name="racial_abilities">Umiejętności rasowe: %s</string>
+    <string name="racial_skills">Zdolności rasowe: %s</string>
+    <string name="noAbilities">Umiejętności rasowe: Brak</string>
+    <string name="noSkills">Zdolności rasowe: Brak</string>
+
+    <!-- Toast messages -->
+    <string name="error_profile_fetch">Błąd pobierania danych profilu: %s</string>
+    <string name="profile_created">Utworzono profil.</string>
+    <string name="error_profile_creation">Błąd tworzenia profilu: %s</string>
+    <string name="user_not_logged_in">Użytkownik nie jest zalogowany.</string>
+
+    <!-- Log messages -->
+    <string name="user_profile_exists">User profile already exists.</string>
+
+    <!-- Button labels (if you want to localize them) -->
+    <string name="logout_button">Wyloguj</string>
+    <string name="profile_button">Profil</string>
+    <string name="my_cards_button">Moje Karty</string>
+    <string name="unfinished_cards_button">Niedokończone Karty</string>
+    <string name="add_character_button">Dodaj Postać</string>
+    <string name="test_button">Test</string>
+
+    <!-- Domyślne wartości -->
+    <string name="default_race">Brak rasy</string>
+    <string name="default_profession">Brak profesji</string>
+
+    <!-- Etykiety wyświetlane w UI -->
+    <string name="race_label">Rasa:</string>
+    <string name="profession_label">Profesja:</string>
+
+    <!-- Komunikaty toast -->
+    <string name="no_cards_available">Brak dostępnych kart do wyświetlenia.</string>
+    <string name="error_loading_characters">Błąd podczas ładowania postaci: %s</string>
+
+    <!-- Komunikaty logów -->
+    <string name="log_last_active_updated">Zaktualizowano lastActiveAt dla postaci: %s</string>
+    <string name="log_last_active_error">Błąd aktualizacji lastActiveAt</string>
+    <string name="log_profession_fetch_error">Nie udało się pobrać profession dla %s</string>
+    <string name="log_characters_fetch_error">Błąd podczas pobierania postaci</string>
+
+    <!-- Tagi logów -->
+    <string name="log_tag_firestore">Firestore</string>
+    <string name="log_tag_last_active">LastActive</string>
+    <string name="log_tag_my_card_list">MyCardListActivity</string>
+
+    <!-- Klucze Intent extras (opcjonalnie) -->
+    <string name="extra_character_doc_id">CHARACTER_DOC_ID</string>
+    <string name="extra_character_race">CHARACTER_RACE</string>
+    <string name="extra_character_profession">CHARACTER_PROFESSION</string>
+    <string name="extra_character_name">CHARACTER_NAME</string>
+
+    <!-- Nazwy kolekcji Firestore (opcjonalnie) -->
+    <string name="collection_users">users</string>
+    <string name="collection_characters">characters</string>
+    <string name="collection_profession">profession</string>
+    <string name="document_owned">owned</string>
+
+    <!-- Pola dokumentów Firestore (opcjonalnie) -->
+    <string name="field_name">name</string>
+    <string name="field_race">race</string>
+    <string name="field_profession_name">professionName</string>
+    <string name="field_progress_stage">progressStage</string>
+    <string name="field_last_active_at">lastActiveAt</string>
+    <string name="text_truncate_suffix">...</string>
+
+    <!-- Komunikaty błędów -->
+    <string name="error_insufficient_pd">Za mało PD!</string>
+    <string name="error_object_not_found">Nie znaleziono obiektu w optional.</string>
+    <string name="error_saving_to_category">Błąd przy zapisie do %s</string>
+    <string name="error_saving_pd">Błąd zapisu PD!</string>
+    <string name="error_loading_skills">Błąd pobierania umiejętności</string>
+    <string name="error_loading_optional">Błąd przy pobieraniu optional: %s</string>
+
+    <!-- Komunikaty sukcesu -->
+    <string name="success_added_to_category">Dodano do %s!</string>
+    <string name="ability_purchased">Zdolność "%s" zakupiona!</string>
+    <string name="skill_purchased">Umiejętność "%s" zakupiona!</string>
+
+    <!-- Dialogi -->
+    <string name="confirm_purchase">Czy chcesz zakupić: %s?</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+
+    <!-- Sekcje umiejętności -->
+    <string name="section_abilities">Zdolności:</string>
+    <string name="section_weapon_proficiency">Biegłość w orężu:</string>
+    <string name="section_magic_abilities">Zdolności magiczne:</string>
+    <string name="section_rune_knowledge">Znajomość run:</string>
+    <string name="section_virtues_blessings">Cnoty i Błogosławieństwa:</string>
+
+    <!-- Inne -->
+    <string name="default_character_name">Brak imienia</string>
+    <string name="invalid_character_id">Nieprawidłowy characterDocId</string>
+    <string name="document_not_exists">Dokument nie istnieje.</string>
+    <string name="error_loading_pd">Błąd podczas pobierania PD: %s</string>
+
+    <!-- Nowe stringi dla rozszerzonego systemu zakupów -->
+    <string name="confirm_purchase_detailed">Czy chcesz kupić:\n%1$s\n\nŹródło: %2$s</string>
+    <string name="insufficient_pd">Za mało PD! Potrzebujesz 100 PD.</string>
+    <string name="error_purchase_failed">Błąd podczas zakupu</string>
+    <string name="group_purchase_warning">Uwaga: Zakup z grupy spowoduje przeniesienie pozostałych elementów do Optional.</string>
+    <string name="source_optional">Optional</string>
+    <string name="source_must_have">Must Have</string>
+    <string name="source_group">Grupa: %1$s</string>
+    <string name="group_not_found">Nie odnaleziono grupy</string>
+
 </resources>

@@ -4,10 +4,11 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_0003"
+    android:background="@drawable/background_0004"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- GÓRNY PASEK - STAŁY -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,40 +39,76 @@
             android:scaleX="0.8"
             android:scaleY="0.8" />
     </LinearLayout>
-    <!-- Przewijana lista kampanii i kart postaci -->
+
     <View
         android:layout_width="match_parent"
         android:layout_height="20dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="8dp">
 
-        <Button
-            android:id="@+id/myCardButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/moje_karty"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-        <Button
-            android:id="@+id/unfinishedCardsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/dokoncz_karte"/>
-    </LinearLayout>
-
-    <View
+    <!-- ŚRODEK - PRZEWIJALNA ZAWARTOŚĆ -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
-    <!-- Dolny pasek z trzema przyciskami -->
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/myCardButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttony"
+                android:text="Moje karty"
+                android:textColor="@android:color/black"
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:textSize="20sp"
+                android:padding="10dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/unfinishedCardsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttony"
+                android:text="Dokończ"
+                android:textColor="@android:color/black"
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:textSize="20sp"
+                android:padding="10dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <Button
+                android:id="@+id/magicBookButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttony"
+                android:text="Księga zaklęć"
+                android:textColor="@android:color/black"
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:textSize="16sp"
+                android:padding="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- DOLNY PASEK - STAŁY -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingTop="8dp"
@@ -124,6 +161,5 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
     </LinearLayout>
-
 
 </LinearLayout>

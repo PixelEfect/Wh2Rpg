@@ -1,6 +1,5 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
@@ -12,6 +11,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import android.graphics.Color
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
@@ -21,11 +21,8 @@ import android.widget.RelativeLayout
 import androidx.core.animation.addListener
 import androidx.core.content.ContextCompat
 import kotlin.random.Random
-
-//NIEWOLNIK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! podobnie pielgrzymem moze zostac kazdy
-//DODATKOWE ZAKLECIE
-//TODO Profesje: ksiega zbawienia, ksiega spaczenia, kraina królowej lodu, mroczni wladcy nocy, poradnik staroswiatowca, królestwa renegatów
-// Duch przodka - ksiega zbawienia 81,
+import androidx.core.graphics.toColorInt
+import com.dd.rpgcardapp.base.BaseActivity
 
 class MainActivity : BaseActivity() {
     private lateinit var auth: FirebaseAuth  // Firebase Authentication instance
@@ -47,6 +44,7 @@ class MainActivity : BaseActivity() {
         Color.argb(255, 64, 224, 208)   // Turquoise
     )
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -54,8 +52,8 @@ class MainActivity : BaseActivity() {
         enableTouchToHideKeyboardAndSystemUI()
 
         auth = Firebase.auth  // Initialize Firebase Authentication
-        val rootLayout = findViewById<RelativeLayout>(R.id.rootLayout) // Główny layout
-        val option = Random.nextInt(7) // Wylosuje 0, 1, 2 lub 3
+        val rootLayout = findViewById<RelativeLayout>(R.id.rootLayout)
+        val option = Random.nextInt(7)
         val backgroundImage = when (option) {
             0 -> R.drawable.welcome_0001
             1 -> R.drawable.welcome_0002
@@ -64,26 +62,23 @@ class MainActivity : BaseActivity() {
             4 -> R.drawable.welcome_0005
             5 -> R.drawable.welcome_0006
             6 -> R.drawable.welcome_0007
-            else -> R.drawable.welcome_0001 // fallback, raczej niepotrzebny, ale dla bezpieczeństwa
+            else -> R.drawable.welcome_0001
         }
 
-        // Ustawienie tła
         rootLayout.setBackgroundResource(backgroundImage)
 
         val startButton: Button = findViewById(R.id.startButton)
 
-        // 🔹 Animacja zmiany koloru napisu
         val animator = ValueAnimator.ofArgb(Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW).apply {
-            duration = 6000 // Pełna zmiana kolorów trwa 6 sekund
-            repeatCount = ValueAnimator.INFINITE // Nieskończona pętla
-            repeatMode = ValueAnimator.REVERSE // Animacja idzie w przód i w tył
+            duration = 6000
+            repeatCount = ValueAnimator.INFINITE
+            repeatMode = ValueAnimator.REVERSE
             addUpdateListener { animation ->
                 startButton.setTextColor(animation.animatedValue as Int)
             }
         }
-        animator.start() // Uruchomienie animacji
+        animator.start()
 
-        // 🔹 Obsługa kliknięcia przycisku
         startButton.setOnClickListener {
             checkUser()
         }
@@ -113,35 +108,34 @@ class MainActivity : BaseActivity() {
         finish()  // Finish this activity so the user cannot return to it
     }
 
-    // Metoda do tworzenia animowanych run
+
     private fun createFlyingRunes(parent: RelativeLayout) {
-        // Obliczamy współrzędne środka ekranu
+
         val screenWidth = parent.width
         val screenHeight = parent.height
-        val startX = (screenWidth * 7  / 19)   // Środek ekranu, przesunięcie w lewo o 100px
+        val startX = (screenWidth * 7  / 19)
         val startY = (screenHeight * 11) / 19
 
-        repeat(3) { // Tworzymy 5 run
+        repeat(3) {
             val runeText = TextView(this).apply {
-                text = runes.random() // Wybieramy losową runę
+                text = runes.random()
                 textSize = 32f
                 setTextColor(blueColors.random())
-                // Ustawiamy pozycję na podstawie obliczonego miejsca
+
                 layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-                setX(startX.toFloat())  // Ustawiamy startową pozycję X
-                setY(startY.toFloat())  // Ustawiamy startową pozycję Y
+                x = startX.toFloat()
+                y = startY.toFloat()
             }
 
             parent.addView(runeText)
 
-            // Animacja - losowy kierunek i efekt zanikania
             val moveX = PropertyValuesHolder.ofFloat("translationX", runeText.x, runeText.x + Random.nextInt(-1000, 1000).toFloat())
             val moveY = PropertyValuesHolder.ofFloat("translationY", Random.nextInt(-300, -100).toFloat())
             val fadeOut = PropertyValuesHolder.ofFloat("alpha", 1f, 0f)
 
             ObjectAnimator.ofPropertyValuesHolder(runeText, moveX, moveY, fadeOut).apply {
-                duration = 2000 // 1 sekunda animacji
-                addListener(onEnd = { parent.removeView(runeText) }) // Usuwamy runę po animacji
+                duration = 2000
+                addListener(onEnd = { parent.removeView(runeText) })
                 start()
             }
         }
@@ -150,7 +144,6 @@ class MainActivity : BaseActivity() {
         val screenWidth = parent.width
         val screenHeight = parent.height
 
-        // Poziomy startowe: bazowy + wyżej o 1/10 i 2/10 ekranu
         val baseY = screenHeight * 7 / 19
         val yLevels = listOf(
             baseY, baseY, baseY,
@@ -167,7 +160,7 @@ class MainActivity : BaseActivity() {
                 layoutParams = ViewGroup.LayoutParams(size, size)
 
                 val startX = screenWidth / 4
-                val startY = yLevels.random() // losujemy jedno z trzech poziomów
+                val startY = yLevels.random()
 
                 x = startX.toFloat()
                 y = startY.toFloat()
@@ -199,19 +192,16 @@ class MainActivity : BaseActivity() {
                 background = ContextCompat.getDrawable(context, R.drawable.smoke_circle)
                 alpha = 0.4f + Random.nextFloat() * 0.2f
 
-                // Ograniczenie do środkowej strefy
                 val minX = screenWidth * 11 / 25
                 val maxX = screenWidth * 17 / 25
 
-                // Bias: większe prawdopodobieństwo środka
                 val bias = Random.nextFloat()
                 val biasedX = when {
-                    bias < 0.2f -> Random.nextInt(minX, minX + (maxX - minX) / 4)  // Lewy brzeg – rzadziej
-                    bias > 0.8f -> Random.nextInt(maxX - (maxX - minX) / 4, maxX)  // Prawy brzeg – rzadziej
-                    else -> Random.nextInt(minX + (maxX - minX) / 4, maxX - (maxX - minX) / 4)  // Środek – częściej
+                    bias < 0.2f -> Random.nextInt(minX, minX + (maxX - minX) / 4)
+                    bias > 0.8f -> Random.nextInt(maxX - (maxX - minX) / 4, maxX)
+                    else -> Random.nextInt(minX + (maxX - minX) / 4, maxX - (maxX - minX) / 4)
                 }
 
-                // Bazowa wysokość + korekta dla brzegów
                 val baseY = screenHeight * 39 / 56
                 val adjustedY = if (bias < 0.2f || bias > 0.8f) baseY - 20 else baseY
 
@@ -251,7 +241,7 @@ class MainActivity : BaseActivity() {
                 val spark = View(parent.context).apply {
                     val size = Random.nextInt(4, 10)
                     layoutParams = ViewGroup.LayoutParams(size, size)
-                    setBackgroundColor(Color.parseColor("#66CCFF"))
+                    setBackgroundColor(ContextCompat.getColor(context, R.color.light_blue))
                     x = startX.toFloat()
                     y = startY.toFloat()
                 }

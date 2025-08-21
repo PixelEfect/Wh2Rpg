@@ -3,10 +3,17 @@ package com.dd.rpgcardapp.utils
 import android.app.AlertDialog
 import android.content.Context
 import android.content.res.Resources
+import android.graphics.Color
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.GridView
+import android.widget.ListView
 import androidx.core.content.ContextCompat
 import com.dd.rpgcardapp.R
 import android.widget.TextView
@@ -14,6 +21,27 @@ import android.widget.LinearLayout
 import android.text.TextUtils
 import android.util.TypedValue
 import android.widget.ScrollView
+
+// Funkcja pomocnicza do kolorowania gwiazdek
+fun colorizeAsterisks(text: String, color: Int = Color.RED): SpannableString {
+    val spannableString = SpannableString(text)
+    var index = 0
+
+    while (index < text.length) {
+        val asteriskIndex = text.indexOf('*', index)
+        if (asteriskIndex == -1) break
+
+        spannableString.setSpan(
+            ForegroundColorSpan(color),
+            asteriskIndex,
+            asteriskIndex + 1,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        index = asteriskIndex + 1
+    }
+
+    return spannableString
+}
 
 fun showAlertDialog(
     context: Context,
@@ -23,15 +51,33 @@ fun showAlertDialog(
 ) {
     val dialog = AlertDialog.Builder(context).apply {
         title?.let { setTitle(it) }
-        setItems(items.toTypedArray()) { dialog, which ->
-            onItemSelected(items[which])
-            dialog.dismiss()
-        }
+        setCancelable(true)
     }.create()
 
+    // Tworzymy własny ListView z customowym adapterem
+    val listView = ListView(context).apply {
+        adapter = object : ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, items) {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val view = super.getView(position, convertView, parent)
+                val textView = view.findViewById<TextView>(android.R.id.text1)
+
+                // Kolorujemy gwiazdki w każdym elemencie
+                textView.text = colorizeAsterisks(items[position])
+
+                return view
+            }
+        }
+
+        setOnItemClickListener { _, _, position, _ ->
+            onItemSelected(items[position])
+            dialog.dismiss()
+        }
+    }
+
+    dialog.setView(listView)
     dialog.show()
 
-    // 🪄 Ustawiamy marginesy (np. 40dp po bokach)
+    // Ustawiamy marginesy
     val marginHorizontalDp = 60
     val scale = context.resources.displayMetrics.density
     val marginPx = (marginHorizontalDp * scale).toInt()
@@ -52,47 +98,57 @@ fun showAlertDialogWithTiles(
     items: List<String>,
     onItemSelected: (String) -> Unit
 ) {
-    // Tworzymy dialog wcześniej, aby był dostępny w całej funkcji
     val dialog = AlertDialog.Builder(context).apply {
-        setCancelable(false)  // Zapobiega zamknięciu dialogu przez kliknięcie poza nim
+        setCancelable(false)
     }.create()
 
-    // Tworzymy TextView dla komunikatu
+    // Tworzymy TextView dla komunikatu z kolorowaniem gwiazdek
     val messageTextView = TextView(context).apply {
-        text = title // Komunikat przekazywany do tytułu
-        setPadding(40, 20, 40, 20) // Padding wokół tekstu
-        setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f) // Ustawiamy rozmiar czcionki
-        setLineSpacing(1.5f, 1f) // Ustawiamy odstępy między wierszami
-        maxLines = 5  // Możemy ustawić limit linii, by zapewnić odpowiednią wysokość
-        ellipsize = TextUtils.TruncateAt.END  // Skracamy tekst, jeśli jest za długi
+        text = title?.let { colorizeAsterisks(it) } ?: ""
+        setPadding(40, 20, 40, 20)
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
+        setLineSpacing(1.5f, 1f)
+        maxLines = 5
+        ellipsize = TextUtils.TruncateAt.END
     }
 
-    // Tworzymy ScrollView, aby umożliwić przewijanie tekstu, jeśli jest zbyt długi
     val scrollView = ScrollView(context)
     scrollView.addView(messageTextView)
 
-    // Tworzymy GridView dla kafelków
+    // Tworzymy GridView dla kafelków z własnym adapterem
     val gridView = GridView(context).apply {
-        numColumns = items.size // Liczba kolumn w GridView
+        numColumns = items.size
         layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
-        adapter = object : ArrayAdapter<String>(context, R.layout.button_item, R.id.item_text, items) {}
+
+        adapter = object : ArrayAdapter<String>(context, R.layout.button_item, R.id.item_text, items) {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val inflater = LayoutInflater.from(context)
+                val view = convertView ?: inflater.inflate(R.layout.button_item, parent, false)
+                val textView = view.findViewById<TextView>(R.id.item_text)
+
+                // Kolorujemy gwiazdki w każdym elemencie
+                textView.text = colorizeAsterisks(items[position])
+
+                return view
+            }
+        }
+
         setOnItemClickListener { _, _, position, _ ->
             onItemSelected(items[position])
-            dialog.dismiss()  // Zamykamy dialog po wybraniu elementu
+            dialog.dismiss()
         }
     }
 
-    // Ustawiamy widok na dialogu (pierwszy będzie komunikat, potem kafelki)
     val linearLayout = LinearLayout(context).apply {
         orientation = LinearLayout.VERTICAL
-        addView(scrollView) // Dodajemy ScrollView z komunikatem
-        addView(gridView)   // Dodajemy GridView z kafelkami
+        addView(scrollView)
+        addView(gridView)
     }
 
-    dialog.setView(linearLayout)  // Ustawiamy cały układ w dialogu
+    dialog.setView(linearLayout)
     dialog.show()
 
     // Ustawianie marginesów i wyglądu dialogu
@@ -109,5 +165,6 @@ fun showAlertDialogWithTiles(
         ContextCompat.getDrawable(context, R.drawable.bg_alert_dialog)
     )
 }
+
 val Int.dp: Int
     get() = (this * Resources.getSystem().displayMetrics.density).toInt()

@@ -11,7 +11,9 @@
     <color name="secondaryColor">#03DAC5</color>
     <color name="backgroundColor">#FFFFFF</color>
 
-    <color name="pressed_border_color">#FF6347</color> <!-- Kolor ramki po wciśnięciu (np. pomarańczowy) -->
-    <color name="default_border_color">#B0B0B0</color> <!-- Kolor ramki, gdy nie jest wciśnięty (np. szary) -->
+    <color name="pressed_border_color">#FF6347</color>
+    <color name="default_border_color">#B0B0B0</color>
+
+    <color name="light_blue">#66CCFF</color>
 
 </resources>

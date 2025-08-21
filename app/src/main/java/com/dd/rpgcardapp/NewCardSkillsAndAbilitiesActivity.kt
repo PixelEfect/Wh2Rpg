@@ -1,23 +1,18 @@
 package com.dd.rpgcardapp
 
-import BaseActivity
-import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.MotionEvent
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import android.widget.Toast
+import com.dd.rpgcardapp.base.BaseActivity
 import com.dd.rpgcardapp.data.Ability
 import com.dd.rpgcardapp.data.Profession
 import com.dd.rpgcardapp.data.Professions
 import com.dd.rpgcardapp.data.Skill
 import com.dd.rpgcardapp.data.getAbilityCategory
 import com.dd.rpgcardapp.data.getSkillCategory
-import com.dd.rpgcardapp.utils.SystemUIUtils
 import com.dd.rpgcardapp.utils.showAlertDialog
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
@@ -320,66 +315,85 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
     }
 
     private fun setupAbilityAndSkillFields() {
-        val abilityTextViews = listOf(
-            binding.ability1TextView,
-            binding.ability2TextView,
-            binding.ability3TextView,
-            binding.ability4TextView,
-            binding.ability5TextView,
-            binding.ability6TextView,
-            binding.ability7TextView,
-            binding.ability8TextView,
-            binding.ability9TextView
+        val abilityPairs = listOf(
+            binding.ability1View to binding.ability1TextView,
+            binding.ability2View to binding.ability2TextView,
+            binding.ability3View to binding.ability3TextView,
+            binding.ability4View to binding.ability4TextView,
+            binding.ability5View to binding.ability5TextView,
+            binding.ability6View to binding.ability6TextView,
+            binding.ability7View to binding.ability7TextView,
+            binding.ability8View to binding.ability8TextView,
+            binding.ability9View to binding.ability9TextView,
         )
-        val skillTextViews = listOf(
-            binding.skill1TextView,
-            binding.skill2TextView,
-            binding.skill3TextView,
-            binding.skill4TextView,
-            binding.skill5TextView
+        val skillPairs = listOf(
+            binding.skill1View to binding.skill1TextView,
+            binding.skill2View to binding.skill2TextView,
+            binding.skill3View to binding.skill3TextView,
+            binding.skill4View to binding.skill4TextView,
+            binding.skill5View to binding.skill5TextView,
         )
 
-        abilityTextViews.forEachIndexed { index, textView ->
-            setupAbilityField(index, textView)
+        abilityPairs.forEachIndexed { index, (view, textView) ->
+            setupAbilityField(index, view, textView)
         }
-        skillTextViews.forEachIndexed { index, textView ->
-            setupSkillField(index, textView)
+        skillPairs.forEachIndexed { index, (view, textView) ->
+            setupSkillField(index, view, textView)
         }
     }
 
-    private fun setupAbilityField(abilityIndex: Int, abilityTextView: TextView) {
-        val ability = profession.optionalAbility.getOrNull(abilityIndex)
+    private fun setupAbilityField(index: Int, container: View, textView: TextView) {
+        val ability = profession.optionalAbility.getOrNull(index)
         if (ability.isNullOrEmpty()) {
-            abilityTextView.visibility = View.GONE
+            container.visibility = View.GONE
         } else {
-            abilityTextView.setOnClickListener {
+            textView.setOnClickListener {
                 showAlertDialog(
                     context = this,
-                    title = "Wybierz zdolność",
+                    title = "Wybierz umiejętność",
                     items = ability.map { it.name }
                 ) { selectedItem ->
-                    // Znajdujemy wybraną umiejętność
                     val selectedAbility = ability.find { it.name == selectedItem }
-
                     if (selectedAbility != null) {
-                        // Przed dodaniem nowej umiejętności, usuwamy starą, jeśli istnieje
-                        val previousAbility = selectedAbilities[abilityIndex]
-                        if (previousAbility != null) {
-                            // Jeśli poprzednia umiejętność istniała, usuwamy ją z mapy
+                        val previousAbility = selectedAbilities[index]
+                        if (!previousAbility.isNullOrEmpty()) {
                             removeProfessionAbilityFromCategoryList(previousAbility)
                         }
-
-                        // Dodajemy nową umiejętność do odpowiedniej kategorii w mapie
                         addProfessionAbilityToCategoryList(selectedAbility)
-
-                        // Ustawiamy wybraną umiejętność w TextView i zapisujemy ją w selectedAbilities
-                        selectedAbilities[abilityIndex] = selectedItem
-                        abilityTextView.text = selectedItem
+                        selectedAbilities[index] = selectedItem
+                        textView.text = selectedItem
                     }
                 }
             }
         }
     }
+
+    private fun setupSkillField(index: Int, container: View, textView: TextView) {
+        val skill = profession.optionalSkills.getOrNull(index)
+        if (skill.isNullOrEmpty()) {
+            container.visibility = View.GONE
+        } else {
+            textView.setOnClickListener {
+                showAlertDialog(
+                    context = this,
+                    title = "Wybierz zdolność",
+                    items = skill.map { it.name }
+                ) { selectedItem ->
+                    val selectedSkill = skill.find { it.name == selectedItem }
+                    if (selectedSkill != null) {
+                        val previousSkill = selectedSkills[index]
+                        if (!previousSkill.isNullOrEmpty()) {
+                            removeProfessionSkillFromCategoryList(previousSkill)
+                        }
+                        addProfessionSkillToCategoryList(selectedSkill)
+                        selectedSkills[index] = selectedItem
+                        textView.text = selectedItem
+                    }
+                }
+            }
+        }
+    }
+
 
     fun removeProfessionAbilityFromCategoryList(abilityName: String) {
         // Iterujemy przez kategorie w mapie professionAbilitiesMap
@@ -387,40 +401,6 @@ class NewCardSkillsAndAbilitiesActivity : BaseActivity() {
             val abilityToRemove = abilitiesList.find { it.name == abilityName }
             if (abilityToRemove != null) {
                 abilitiesList.remove(abilityToRemove)
-            }
-        }
-    }
-
-    // Funkcja pomocnicza do obsługi kliknięć i widoczności pól umiejętności
-    private fun setupSkillField(skillIndex: Int, skillTextView: TextView) {
-        val skill = profession.optionalSkills.getOrNull(skillIndex)
-        if (skill.isNullOrEmpty()) {
-            skillTextView.visibility = View.GONE
-        } else {
-            skillTextView.setOnClickListener {
-                showAlertDialog(
-                    context = this,
-                    title = "Wybierz umiejętność",
-                    items = skill.map { it.name }
-                ) { selectedItem ->
-                    val selectedSkill = skill.find { it.name == selectedItem }
-
-                    if (selectedSkill != null) {
-                        // Przed dodaniem nowej umiejętności, usuwamy starą, jeśli istnieje
-                        val previousSkill = selectedSkills[skillIndex]
-                        if (previousSkill != null) {
-                            // Jeśli poprzednia umiejętność istniała, usuwamy ją z mapy
-                            removeProfessionSkillFromCategoryList(previousSkill)
-                        }
-
-                        // Dodajemy nową umiejętność do odpowiedniej kategorii w mapie
-                        addProfessionSkillToCategoryList(selectedSkill)
-
-                        // Ustawiamy wybraną umiejętność w TextView i zapisujemy ją w selectedSkills
-                        selectedSkills[skillIndex] = selectedItem
-                        skillTextView.text = selectedItem
-                    }
-                }
             }
         }
     }
