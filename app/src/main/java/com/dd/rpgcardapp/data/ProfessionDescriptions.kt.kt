@@ -11,35 +11,26 @@ object ProfessionDescriptions {
             quote = "Wiara nie jest dana za darmo. Trzeba ją sobie zasłużyć. Próbuję to uczynić od wielu lat.",
             description = "Religia zeszła na drugi plan w życiu wielu mieszkańców Starego Świata, ustępując miejsca pieniądzom, lecz wciąż istnieje wielu młodych mężczyzn i kobiet gotowych poświęcić swoje życie bogom. Aby zostać Kapłanem, potrzebne są ogromne poświęcenie i szkolenie. Inicjaci są kapłanami w trakcie nauki. Poddawani są surowej edukacji pod okiem wymagających nauczycieli i dopóki nie ukończą szkolenia, nie mają prawa głosić kazań ani prowadzić obrzędów. Ich nauka obejmuje czytanie i pisanie, kaligrafię, studiowanie pism świętych oraz sztukę kaznodziejstwa. Uczą się także podstaw posługiwania się bronią, aby móc bronić świątyni w razie potrzeby.",
         ),
-        BasicProfessions.AkolitaKultuKhorna to ProfessionDescription(
-            quote = " ",
-            description = " "),
-        BasicProfessions.AkolitaKultuNurgla to ProfessionDescription(
-            quote = " ",
-            description = " "),
-        BasicProfessions.AkolitaKultuSlaanesha to ProfessionDescription(
-            quote = " ",
-            description = " "),
-        BasicProfessions.AkolitaKultuTzeentcha to ProfessionDescription(
-            quote = " ",
-            description = " "),
         BasicProfessions.Aptekarz to ProfessionDescription(
             quote = "„Dwie części alkoholu, jedna część sproszkowanego niedźwiedziego zęba i jedna część pasty z flegmoberu. Napawaj stałe składniki aż pojawią się bąbelki, a następnie odparuj alkohol. Doda ci to siły w ramionach na dobrą godzinę, jeśli tylko wytrzymasz skurcze.”",
             description = "Podczas gdy lekarze przepisują leki na różne dolegliwości pacjentów, to aptekarz faktycznie przygotowuje medykamenty. Specjalizując się w minerałach, chemikaliach i solach pochodzenia organicznego, aptekarz miesza proszki do spożycia z winem, maści do nakładania na zakażone miejsca oraz lecznicze kadzidła do odstraszania szkodliwych oparów. Prawo cechowe pozwala im przepisywać leki na drobne dolegliwości, takie jak przeziębienie czy ból brzucha, ale niewielu to robi, ponieważ wielu lekarzy niechętnie patrzy na konkurencję. Niektórzy aptekarze przechodzą do wyższych karier w medycynie lub nauce, inni wykorzystują swoją wiedzę dla osobistej chciwości lub ulegają pragnieniu szkodzenia innym. Niektórzy aptekarze znani są z tego, że podają swoim klientom środki w przebraniu lekarstwa, zmuszając ich do powrotu i płacenia wyższych cen dla podtrzymania uzależnienia, podczas gdy inni sprzedają swoje usługi jako truciciele, dzieląc zyski z poszkodowaną wdową lub spadkobiercą."
         ),
         BasicProfessions.Bagiennik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie, nie… tam. Widzisz ten ciemniejszy fragment błota? Tam znajdziesz najszersze żaby. Wystarczająco dobre dla księcia!",
+            description = "Bagiennicy to łowcy i zbieracze ślimaków oraz żab. Nazwa wywodzi się z mało znanego dialektu, który w zasadzie oznacza człowieka bagien, a częściej – poganiacza żab. Ślimaki i żaby to jedyne zasoby, w które Mousillon jest bogaty, a zajmowanie się tym uważane jest za prestiżowe wśród chłopów. Ponieważ wszystkie stworzenia na bagnie są formalnie własnością lokalnego pana, Swampaire potrzebuje przynajmniej domniemanej zgody szlachcica. Niektórzy szlachcice wymagają długiego stażu i składania przysiąg, zanim mężczyzna może nazwać siebie Swampaire i polować na bagna pana. Swampaires są zazwyczaj twardymi ludźmi, biegłymi w tropieniu ślimaków i żab, co jest trudnym i czasochłonnym zajęciem. Zazwyczaj są to mężczyźni, ale niektórzy szlachcice pozwalali wyjątkowo spostrzegawczym i zręcznym kobietom polować, jeśli nie było wystarczająco wykwalifikowanych mężczyzn."
+        ),
         BasicProfessions.Bajarz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Ha, ha… tak, mówisz o swojej córce? Cóż… jestem pewien, że to wszystko jakieś nieporozumienie. Właściwie przypomina mi to pewną opowieść…",
+            description = "Bajarze rodzą się z talentem do gawędziarstwa i pragnieniem jego wykorzystania. Można ich spotkać w tawernach, zajazdach i salonach w całym Imperium. Bez względu na okazję – a czasem nawet jeśli jej nie ma – Raconteur ma gotową historię. Podróżuje od miejsca do miejsca, będąc świadkiem cudownych zdarzeń i snując o nich pasjonujące opowieści. W społeczeństwie, w którym większość ludzi nie potrafi czytać, Raconteur stanowi źródło zarówno wiadomości, jak i rozrywki, mieszając dowcipną ripostę i ciętą inteligencję w swoich opowieściach. Aby zdobyć wiadomości, Raconteur może podróżować z armiami i grupami awanturników, mając nadzieję zobaczyć (i przeżyć) coś nowego i ekscytującego, co przyniesie mu kilka rund napojów i zaciekawioną publiczność w lokalnym zajazdzie. Nie wszyscy Raconteurzy cenią życie pełne przygód – niektórzy zostają wygodnie na miejscu i wymyślają wszystko sami."
+        ),
         BasicProfessions.Balsamista to ProfessionDescription(
             quote = "Tak piękna, tak doskonała… Spójrzcie tylko na tę skórę. Zachowała całe ciepło, całą giętkość, którą miała za życia. To niemal tak, jakby wasza ukochana wciąż żyła, panie.",
             description = "Nie każdy pragnie spoczynku w Ogrodach Morra. Niektórzy wolą po śmierci poddać się procesowi konserwacji – czy to dla siebie, czy dla swych zwierzęcych towarzyszy – i wtedy zwracają się do balsamistów. Ci mistrzowie peklowania, konserwacji i taksydermii nie są już jedynie kaprysem bogaczy. Coraz częściej mają swój udział w rozwijającej się medycynie, a fortuna czeka na tych, którzy potrafią sprzedać swe osobliwe wyroby klientom o szczególnych potrzebach. Wielu kapłanów Morra (i znaczna część społeczeństwa) uważa jednak odcinanie fragmentów ciała i zamykanie ich w słoikach za obrazę zarówno dla ciała, jak i duszy zmarłego, a Łowcy Czarownic dobrze wiedzą, jak łatwo tacy handlarze mogą skłonić się ku mrocznym sztukom. Dlatego wielu balsamistów ukrywa ludzkie preparaty za wystawami zwierzęcymi lub usługami chirurgicznymi, czekając na dzień, w którym nauka ich poziomu wreszcie zyska należny szacunek i uznanie. Balsamiści zazwyczaj nie mają do czynienia z Nieumarłymi, ale ściśle współpracują z hienami cmentarnymi i rabusiami grobowców, którzy już ich spotykają. Zazwyczaj też dobrze znają nekromantów – choć, rzecz jasna, nigdy nie ujawniliby tożsamości swoich klientów."
         ),
         BasicProfessions.Banita to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Oddajcie wszystkie kosztowności i rozepnijcie pasy z mieczami. Róbcie, co wam każę, a wszystko będzie dobrze. Nie chcemy was zabić... jeszcze.",
+            description = "Imperialna sprawiedliwość jest szybka i bezlitosna. Nic dziwnego, że wielu ucieka przed strażą i wybiera życie banity. Wzgórza i lasy pełne są band banitów. To niepewna egzystencja, bo muszą mierzyć się nie tylko ze strażnikami dróg, żołnierzami i innymi przedstawicielami prawa, lecz także z mrocznymi mieszkańcami dziczy. Choć wielu banitów to zwykli złodzieje napadający na dyliżanse i karawany, inni twierdzą, że walczą w imię „sprawiedliwości, a nie prawa”. Dopóki atakują tylko bogatych, chłopi wspierają ich jedzeniem, informacjami i kryjówkami. To wsparcie, a także trudny teren, na którym zakładają swoje bazy, sprawia, że państwo ma problem z ich wytępieniem. Lokalni możni często wynajmują łowców nagród, by rozwiązać problem bandytyzmu.",
+        ),
         BasicProfessions.BerserkerZNorski to ProfessionDescription(
             quote = "Nie gniewaj Skorriego. Nie tak jak kiedy gniewny. Zapłać teraz.",
             description = "Norsca to ponura północna kraina pełna złowrogich bestii, takich jak Trolle Lodowe i Potwory Chaosu, która wyhodowała twardych wojowników. Berserkerzy są słusznie budzącym strach kultem wojowników. Wchodzą do bitwy bez zbroi, aby udowodnić, że nie znają strachu. Wzbudzają w sobie niesamowitą furię, często gryząc własne tarcze. Ich wyczyny opisują sagi i pozostają w pamięci żołnierzy Imperium, którzy ich spotkali. Nieliczni berserkerzy trafiają do Cesarstwa, bo zostali wygnani lub chcą zobaczyć więcej świata. Rzadko pozostają w jednym miejscu, gdyż żaden strażnik nie chce mieć przy sobie wściekłego szaleńca. Berserkerzy są wysoko cenionymi najemnikami ze względu na swoją rzadkość i skuteczność.",
@@ -57,8 +48,9 @@ object ProfessionDescriptions {
             description = "Zenobici żyją w wspólnotach, zwykle nazywanych klasztorami, i podążają za radami lidera. Lider jest często charyzmatyczny, lecz równie często szalony. Przynajmniej są fanatycznymi wyznawcami bardzo osobistej wizji prawdy (oszuści nie osiedlają się na Ziemiach Granicznych). Większość Zenobitów to ludzie; członkowie innych ras rzadko wykazują zainteresowanie, choć większość klasztorów przyjęłaby ich, gdyby poprosili. Niechciane dzieci czasem zostają pozostawione na progu klasztorów. Te dzieci są przyjmowane; ci, którzy nie uciekają, zostają zaakceptowani jako Zenobici. Większość ucieka."
         ),
         BasicProfessions.Chlop to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Ale panie, zbiory były marne; jeśli zapłacę tyle podatku, nie zostanie mi nic do jedzenia na zimę!",
+            description = "Chłopi stanowią zdecydowaną większość ludności Imperium. Podczas gdy szlachta rządzi, a mieszczanie handlują, chłopi pracują na roli. To rolnicy, pasterze i robotnicy, którzy w czasach wojny chwytają za broń i giną w obronie Imperium. Wielu marzy o lepszym życiu w miastach, ale tam często czeka ich jedynie nędza i żebractwo. Większość spędza całe życie w tej samej wiosce, otoczeni wrogą dziczą i tylko od czasu do czasu słysząc wieści ze świata. Choć bywają prowincjonalni i przesądni, to właśnie chłopi są sercem Imperium.",
+        ),
         BasicProfessions.CiuraObozowa to ProfessionDescription(
             quote = "Na marszu musi być strasznie zimno i samotnie. Mogę pomóc w obu tych sprawach.",
             description = "W Imperium armie ciągle się przemieszczają. Siły obejmują od lokalnych jednostek milicji przeszukujących lasy w poszukiwaniu bandytów po pełną zbrojną potęgę Cesarza stawiającego czoła Zielonoskórym lub siłom Chaosu. Żadna armia nie podróżuje samotnie. Za armią zawsze podąża karawana obozowych towarzyszy. Są to drobni handlarze chcący dorobić, wojenne wdowy szukające zarobku przy gotowaniu lub szyciu oraz grabieżcy ciał mający nadzieję na zdobycie łupów na polach bitew. Choć pogardzani przez szlacheckich dowódców wielu armii, obozowi towarzysze zapewniają kluczowe wsparcie dla żołnierzy w polu."
@@ -80,15 +72,17 @@ object ProfessionDescriptions {
             description = "Runesmithowie to w istocie klan obejmujący kilka starych rodzin, które przekazywały wiedzę i umiejętności wytwarzania run z pokolenia na pokolenie. Każdy Mistrz Runesmith uczy podstaw ognia i kuźni młodych członków swojej rodziny, wybierając najbardziej utalentowanych, aby zostali Uczniami Runesmitha. Choć wybór jest wielkim zaszczytem, oznacza długie lata nauki i służby u swojego mistrza przy tworzeniu bardziej skomplikowanych run. Runesmithowie rzadko zapisują sekrety swojego rzemiosła, a gdy to robią, wiedza jest ukryta w zagadkach i łamigłówkach. Uczniowie muszą być cierpliwi, bystrzy i spostrzegawczy, aby awansować w hierarchii. W tym czasie Uczniowie Runesmitha często opuszczają służbę u swojego mentora, aby zdobywać składniki, narzędzia i materiały do kuźni nowych run."
         ),
         BasicProfessions.Doker to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie wygłupiaj się, chłopcze. Albo pomożesz mi znieść te skrzynie do ładowni, albo znajdź sobie inny nabrzeże do kręcenia się.",
+            description = "Stevedores to wyspecjalizowani dokerzy, szkoleni w prawidłowym pakowaniu i rozpakowywaniu ładowni statków. Załadunek statku jest pracą wymagającą umiejętności i niebezpieczną, ponieważ nieprawidłowo spakowany statek może się przewrócić, a niezabezpieczone ładunki mogą zmiażdżyć nieostrożnych. W klaustrofobicznych wnętrzach statku Stevedores stosują „stevedore lashings” (specjalne węzły) z klinami drewnianymi, aby zabezpieczyć i chronić ciężki towar. Wielu Stevedores specjalizuje się w „przenoszeniu” jednego rodzaju ładunku, ponieważ każdy wymaga innych umiejętności manipulacji, układania i pakowania. Większość większych nabrzeży posiada więc gangi „porterów”, którzy identyfikują się według towarów, które importują lub eksportują, w tym porterzy rybni, porterzy mięsni i porterzy drewna. Najsłynniejsi są jednak porterzy węgla z Nuln w czarnych uniformach, znani z bezkompromisowego podejścia i miłości do nieprzyzwoitych pieśni dokerskich. Stevedores noszą charakterystyczne czapki z tkaniny barwione kolorami swojego gangu, zarówno dla identyfikacji, jak i ochrony przed żywiołami. Gangi Stevedores zazdrośnie strzegą swoich nabrzeży przed rywalami i wystarczy niewielka prowokacja, by wymierzyć „laskowanie” innego rodzaju."
+        ),
         BasicProfessions.Dylentant to ProfessionDescription(
             quote = "To przypomina mi coś ciekawego, co napisał von Halmith, i... Och! Czy to Kwiat Gryfa?",
             description = "Dyletanci lubią uważać się za uczonych i w istocie mogą za takich uchodzić w oczach większości ludzi – potrafią czytać i pisać, co już ich wyróżnia. Jednak często brakuje im dyscypliny i pasji, które pozwalają prawdziwym uczonym skupić się na jednym zagadnieniu i osiągnąć w nim mistrzostwo. Zamiast tego rozpraszają swoje wysiłki na wiele kierunków naraz. Większość dyletantów pochodzi z bogatych rodzin, gdyż bieda i groźba głodu zazwyczaj skutecznie skupiają umysł na praktyczniejszych sprawach. Dyletant szczyci się tym, że wie trochę o niemal wszystkim, zaczyna wiele projektów i rozwija tuzin zainteresowań jednocześnie. To zawodowy amator – ciekawi go sztuka, rodząca się nauka, literatura, religia i praktycznie każda inna dziedzina. Przynajmniej dopóki nie pojawi się kolejny temat, który skradnie jego uwagę."
         ),
         BasicProfessions.Fanatyk to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "O wielki i potężny Sigmarze, dlaczego mnie opuściłeś? Pokaż mi światło, abym mógł znaleźć pokutę. Pokaż mi drogę, abym mógł kroczyć z Tobą. Pokaż mi prawdę, abym mógł się Tobie poświęcić! Moje życie dla Ciebie, o Sigmarze, moje życie dla Ciebie!",
+            description = "Fanatycy stracili wszystko. Może ich rodziny zostały zamordowane przez Bestie lub ich wioski spalone przez Orków. Albo przebiegli Kupcy zniszczyli ich interesy, a potężni Szlachcice uprowadzili ich córki. W każdym przypadku, nic nie pozostało tym ludziom oprócz religii. Znaleźli pocieszenie w gniewnych kazaniach wojowniczych Kapłanów Sigmara lub Ulrica. Teraz wędrują po Imperium w podartych szatach, gotowi razić sługi zła i Chaosu. Szukają odkupienia poprzez krew – własną lub wrogów. Mogą nie mieć wyszkolenia Żołnierzy, ale mają ogień wiary, a to naprawdę potężna broń."
+        ),
         BasicProfessions.Flisak to ProfessionDescription(
             quote = "Szukasz przejażdżki w górę rzeki, proszę pana? My – mój kapitan i ja – możemy ci w tym pomóc, oczywiście za niewielką opłatą.",
             description = "Rzeki Imperium są życiowymi arterami komunikacji i handlu. Zapewniają szybki transport i łączą większość głównych miast w królestwie. Flisacy przemierzają te ruchliwe szlaki wodne, przewożąc pasażerów i towary w całym Imperium, a nawet do Kislevu. Chociaż rzeki są bezpieczniejsze niż ciemne leśne drogi, nie są pozbawione niebezpieczeństw. Wiele tras prowadzi przez dzikie tereny niezmienione przez cywilizację. Flisacy muszą być gotowi chronić swoje ładunki i pasażerów przed najeźdźcami i bandytami. Doświadczeni flisacy są twardzi i zaradni, równie biegli w obsłudze łodzi, nawigacji i walce."
@@ -98,14 +92,17 @@ object ProfessionDescriptions {
             description = "Dawniej skrybowie mieli monopol na słowo pisane, ale zmieniło się to wraz z wynalezieniem prasy drukarskiej. Obecnie gazetki stały się powszechne w miastach Cesarstwa. Zwykle ukazują się raz dziennie i zawierają lokalne wiadomości oraz sensacyjne historie. Duża sensacja może doczekać się specjalnego wydania. Sprzedawcy gazetek chodzą po ulicach, ogłaszając najważniejsze nagłówki i starając się prześcignąć konkurencję w teatralności. W każdym mieście działa wielu wydawców, a rywalizacja między nimi bywa zaciekła. Nie jest rzadkością, że sprzedawcy walczą ze sobą na ulicach. Ironią jest to, że takie bójki często stają się głównym tematem gazet następnego dnia.",
         ),
         BasicProfessions.Giermek to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Wyczesałem twego konia, naostrzyłem twój miecz i wypolerowałem twoją zbroję, panie. Co jeszcze trzeba zrobić?",
+            description = "Giermkowie to rycerze w szkoleniu. Często pochodzenia szlacheckiego, asystują rycerzom zarówno na polu bitwy, jak i poza nim. Choć mogą wydawać się niczym więcej niż utytułowanymi sługami, przynoszącymi jedzenie i wino dla swojego pana lub dbającymi o jego konie i zbroję, wyczerpująca praca ma na celu zahartowanie giermków i przygotowanie ich do rycerstwa. Ich panowie powinni również zapewnić im trening wojskowy, choć niektórzy są w tym obowiązku pobłażliwi. Uprzywilejowani synowie szlachty służą jako giermkowie przez kilka miesięcy, podczas gdy mniej szczęśliwi spędzają lata na zdobywaniu swoich ostróg."
+        ),
         BasicProfessions.Gladiator to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Jam jest Gustaf Potężny! Stań przede mną, jeśli masz odwagę!",
+            description = "Mówi się, że sport walk w jamach wywodzi się od Ogrów. Nietrudno uwierzyć, że rasa tak ograniczona jak Oni wprowadziła do kultury Starego Świata walki na śmierć i życie. W dawnych czasach większość Wojowników Areny stanowili przestępcy lub jeńcy wojenni — wrzucani do jamy z kilkoma rodzajami broni, gdzie tylko zwycięzca wychodził żywy. Dziś, obok skazańców, istnieje klasa zawodowych Wojowników Areny. Szukają oni emocji i chwały, choć dla większości kończy się to jedynie brutalną śmiercią przy ryku tłumu domagającego się krwi. Tym nielicznym, którzy odniosą sukces, udaje się zdobyć bogactwo z nagród i hazardu towarzyszącego walkom, a nawet wykupić swoją wolność.",
+        ),
         BasicProfessions.Goniec to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Wiadomość to moje życie.",
+            description = "Undgrin Ankor, sieć skomplikowanych tuneli ciągnących się niegdyś wzdłuż Gór Krańca Świata, łączy krasnoludzkie twierdze na wschodzie Imperium. Komunikacja między twierdzami odbywa się za pośrednictwem Nosicieli Run – specjalnie wyszkolonych młodych krasnoludów, którzy ryzykują życie, aby przenieść wiadomości (pisane runicznym pismem krasnoludów) z jednej twierdzy do drugiej. W ostatnich wiekach, w miarę jak kolejne twierdze padały ofiarą goblinów, a tunele popadały w ruinę, los Nosicieli Run stawał się coraz trudniejszy. Muszą wybierać dłuższe trasy, które i tak są pełne niebezpieczeństw, gdy wrogowie odkrywają ich drogi. Często Nosiciele Run muszą opuszczać tunele i przemierzać góry oraz doliny na powierzchni. Ci, którzy specjalizują się w długodystansowych przesyłkach, bywają używani do przekazywania wiadomości między krasnoludzkimi społecznościami Imperium a innymi w górach."
+        ),
         BasicProfessions.Gornik to ProfessionDescription(
             quote = "Jeśli usłyszysz stukot, a nie pochodzi on od ciebie, najlepiej opuścić kopalnię i wrócić innym razem.",
             description = "Góry otaczają Cesarstwo. Na wschodzie znajdują się Góry Krańca Świata, na południu Góry Czarne, a na zachodzie Góry Szare. Krasnoludy i Ludzie eksploatują te góry od niepamiętnych czasów, mimo ciągłych ataków Goblinów i innych podziemnych potworów. Górnicy ryzykują w takich warunkach, poszukując żelaza, srebra, złota, kamieni szlachetnych i innych cennych surowców. Inni wolą poszukiwania na powierzchni, szczególnie w Górach Środkowych, które rozciągają się na prowincje Ostland i Hochland. Chociaż te zalesione góry znajdują się w granicach Cesarstwa, są schronieniem dla Trolli i Bestii Ludzkich.",
@@ -123,22 +120,25 @@ object ProfessionDescriptions {
             description = "Guslarz to osoby obdarzone zdolnościami magicznymi, które nie przeszły formalnego szkolenia w magii. Posługując się instynktem, szczęściem i przesądami, potrafią wykonywać drobne, wyspecjalizowane zaklęcia. Choć nie zawsze są tego świadomi, Hedge Wizardzy igrają z niebezpieczeństwem za każdym razem, gdy używają swoich uroków i czarów. Z tego powodu Łowcy Wiedźm chętnie tropią i egzekwują tych nieszczęśników, którzy zbyt często nieświadomie sprowadzają na świat demony i katastrofy. Niektórzy Hedge Wizardzy wybierają rozsądną drogę i dołączają do Zakonów Magii, podczas gdy inni ukrywają swój haniebny sekret."
         ),
         BasicProfessions.HienaCmentarna to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Zmarli i tak nie będą używać tych klejnotów.",
+            description = "Hieny Cmentarne różnią się od zwykłych rabusiów tym, że interesują się wartościowymi przedmiotami znajdującymi się w miejscach pochówku, a nie samymi ciałami. Choć dziś niewiele grobów w Starym Świecie zawiera cenne przedmioty, istnieje wiele starożytnych miejsc pochówku kryjących bezcenne skarby. Rabusie grobów są ekspertami w ich lokalizowaniu i grabieniu bogactw. Tajemnicze grobowce zwykle znajdują się w niebezpiecznych i trudno dostępnych miejscach. Te w granicach Imperium są czczone i chronione przez lokalną ludność, więc dostęp do nich bywa równie ryzykowny. Sprytne pułapki i podstępy chronią najbogatsze groby, a zręczni rabusie muszą nauczyć się je rozbrajać lub omijać. Niewielu przeżywa wystarczająco długo, by splądrować więcej niż jeden grób."
+        ),
         BasicProfessions.Kadet to ProfessionDescription(
             quote = "Sir! Tak jest, proszę pana! Natychmiast, proszę pana!",
             description = "Kadeci to oficerowie w trakcie szkolenia. Mogą uczęszczać do formalnych szkół, takich jak Akademie Orła, lub uczyć się bezpośrednio od oficerów w terenie. Choć kadeci uczą się walczyć, główny nacisk kładzie się na rozwój umiejętności przywódczych. Niektórzy pochodzą ze szlacheckich rodzin, ale nie jest to regułą. Ci, którzy zdobyli miejsce dzięki osiągnięciom na polu bitwy, cieszą się większym szacunkiem, ponieważ znają wojnę z własnego doświadczenia, a nie tylko z książek."
         ),
         BasicProfessions.Kanciarz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Okradziony? Tutaj? W tej samej karczmie?! Nie do pomyślenia! Na moją cześć nie spocznę, dobry kupcu, dopóki nie odkryjemy łotra odpowiedzialnego za tak przebiegłe pozbawienie cię srebra!",
+            description = "Jeśli Złodzieje mają jakąś zasadę, to brzmi ona: nigdy nie wykonuj uczciwej pracy, jeśli możesz tego uniknąć. Ci szybko mówiący oszuści używają swojego uroku i szczęścia, aby przetrwać w świecie. Niektórzy pracują jako bawdy, profesjonalni przewodnicy po zaułkach nieprawości i zepsucia w każdym mieście. Inni to zawodowi hazardziści lub gawędziarze. Wszyscy Złodzieje cenią swój spryt ponad miecze i zawsze mają gotową opowieść na ustach. Choć Złodzieje często mają jedno miasto jako swoje terytorium, niektórzy podróżują, czerpiąc zyski z wyszukanych intryg, a potem ruszają dalej. Najbardziej wprawni Złodzieje pozostają niezauważeni. Ich kłamstwa są tak przekonujące, że nawet ci, których oszukali, nigdy nie zdają sobie sprawy, że padli ofiarą oszustwa."
+        ),
         BasicProfessions.Kartograf to ProfessionDescription(
             quote = "Hmm... Co za ciekawa anomalia. Szczegóły wybrzeża sugerują zatokę w tym odcinku. Może moglibyśmy tam wylądować, a ja mógłbym sporządzić mapę wnętrza?",
             description = "Kartografowie tworzą mapy dla bogatych mecenasów, wytrwałych odkrywców i kolekcjonerów. Towarzyszą ekspedycjom w dziczy, a także przekształcają nieudolne prace innych w bardziej czytelną formę. Mapy w Starym Świecie są notorycznie zawodnie – czy to badania lokalnych szlaków, ambitne przewodniki po regionach, czy w większości fikcyjne przedstawienia samego Starego Świata. Mimo to usługi kartografów wciąż cieszą się dużym popytem."
         ),
         BasicProfessions.Koczownik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Dobrze, że nasze ścieżki się skrzyżowały. Bądź ostrożny podróżując tamtędy, bo w tych porach roku stepy są pełne trolli.",
+            description = "Niepoliczalne klany nomadów Ungol wędrują po zamarzniętych stepach Kraju Trolli. Te plemiona zostały wypchnięte na północ, gdy Gospodarze najechali ich ziemie i odtąd wędrują po niebezpiecznej prowincji. Tam podążają za swoimi udomowionymi stadami z pastwiska na pastwisko, szukając ciepła Dazha, swojego patrona, i osiedlając się na krótko w przenośnych chatkach zwanych kibitkami. Są narodem pełnym pasji i waleczności, zahartowanym przez surowe otoczenie i niekończące się konflikty z maraudującymi kyazakami. Zgodnie z prawem Kislevu każdy nomadyczny klan corocznie tworzy rota słynnych łuczników konnych Kislevu, którzy patrolują północną oblast wiosną, bezlitośnie mordując napotkanych najeźdźców."
+        ),
         BasicProfessions.Kominiarz to ProfessionDescription(
             quote = "Nie jest tak źle, kiedy się wchodzi. To utknięcie w środku to już inna sprawa, tego nie lubię.",
             description = "W miastach i miasteczkach Imperium gospodarstwa domowe, które mogą sobie na to pozwolić, palą węglem drzewnym, aby odeprzeć zimowy chłód. Wiele gałęzi przemysłu również intensywnie wykorzystuje węgiel drzewny, szczególnie kuźnie w Nuln. Częste używanie zatkanych kominów powoduje wzrost zapotrzebowania na kominiarzy. Wielu z tych pracowników to dzieci, ale także krasnoludy i szczególnie szczupli mężczyźni. Pracując na dachach, oczyszczają kominy, usuwając przeszkody – zwykle sadzę, ale czasem, o wiele dziwniejsze rzeczy."
@@ -148,8 +148,9 @@ object ProfessionDescriptions {
             description = "Koniarze słyną z bycia nadętymi i nieuczciwymi. Każda stajnia wydaje się mieć uśmiechniętego handlarza oferującego „najlepszą końską krew na rynku, panie”, pochodzącą z „najsilniejszych linii Ostermarker Veldt, panie”. Ponieważ konie są centralnym elementem życia Kislevitów, rynek jest niezwykle konkurencyjny, a kupujący mają trudności ze znalezieniem uczciwego handlarza, szczególnie że wielu z nich stosuje podstępne triki, aby dokonać sprzedaży. Niektórzy nieuczciwi sprzedawcy malują gnijące zęby na biało, przedstawiają chore konie jako „nieśmiałe” i chlubnie twierdzą, że bezpłodne ogiery „spłodzą linię piękności, panie”. Jedynym miejscem, gdzie sprzedawcy koni nigdy nie sprzedają, są rzeźnie, choć są one dobrym źródłem zwierząt.",
         ),
         BasicProfessions.Korsarz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Krew i terror! Dla chwały Władców Zarazy!",
+            description = "Morza Starego Świata są pełne przerażeń, niektóre ludzkie, inne podludzkie. Wśród najbardziej obawianych marynarzy znajdują się Norscy Reaverzy, brutalni wojownicy, którzy plądrują wybrzeża w poszukiwaniu żywności, złota i niewolników. Są bezlitosni, zahartowani w częstych walkach z imperialnymi żeglarzami i słabymi milicjami, które stają im na drodze. Reaverzy żeglują po morzach, by przywieźć łupy do swoich osad na mroźnych ziemiach. Inni sprzedają swoje dusze Siłom Zniszczenia, mając nadzieję przyciągnąć uwagę swoich obojętnych bogów i zdobyć moc, której tak pragną."
+        ),
         BasicProfessions.KozakKislevski to ProfessionDescription(
             quote = "Zachowamy trochę kwasu po walce, śpiewaj hej kalinka hej! Tylko przetrwaj noc, śpiewaj hej kalinka hej! Zimno na tyle, by pękały kamienie, śpiewaj hej kalinka hej! Jeszcze jeden kwas, by rozgrzać kości, śpiewaj hej kalinka hej!",
             description = "Kossarzy pierwotnie byli plemieniem Ungoli zamieszkującym północno-wschodnie tereny Cesarstwa. Lud wschodni zwany Gospodarami najechał ten region, podbił Ungoli i założył państwo Kislev. W trakcie tego konfliktu Kossarzy sprzedawali swoje umiejętności Gospodarom jako najemnicy, walcząc przeciwko innym plemionom Ungoli. Ich unikalny styl walki zrobił wrażenie na szlachcie Gospodarów, i od tego czasu pułki Kossarów służą carom Kislevu. Obecnie Kossarzy nie są już plemieniem, lecz twardą jednostką wojskową z całego Kislevu. Uzbrojeni w łuki i wielkie topory, są bardzo wszechstronni na polu bitwy. Wielu Kossarów, zmęczonych nieustannymi wojnami w swojej ojczyźnie, wyjeżdża do Cesarstwa jako najemnicy lub poszukiwacze przygód.",
@@ -159,8 +160,9 @@ object ProfessionDescriptions {
             description = "Największe miasta Imperium mają coś, czego nie spotka się nigdzie indziej w Starym Świecie: latarnie uliczne. Oświetlają one główne ulice i trakty, szczególnie w bogatszych dzielnicach. Altdorf był pierwszym miastem, które je zainstalowało, a te stojące wokół Pałacu Cesarza są wyjątkowo ozdobne. Latarnicy odpowiadają za ich utrzymanie i codzienne zapalanie o zmierzchu. Noszą ze sobą różne świece i zapałki, a niektórzy używają nawet wolno żarzących się lontów znanych z broni palnej. Mieszkańcy miast są dumni ze swoich latarni, traktując je jako symbol wyrafinowania i cywilizacji. Z uwagi na ogromne zagrożenie pożarowe w gęsto zabudowanych dzielnicach, przeszkadzanie latarnikowi jest karane śmiercią.",
         ),
         BasicProfessions.Lesnik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Wygląda na to, że musimy wyciąć ten zagajnik przy starej farmie Holmstead. Potrzebują drewna, aby odbudować spaloną gospodę.",
+            description = "Drwale żyją w potężnych lasach Imperium, opiekując się drzewami, które potem ścinają na drewno. Szczęśliwsi pracują dla rodzin szlacheckich na dużych posiadłościach. Odważniejsi pracują na skraju cywilizacji, pomagając poszerzać osadzone tereny. Ci drwale muszą zmagać się ze wszystkimi niebezpieczeństwami lasu, od pułapek i bandytów po dzikie zwierzęta i Bestiariuszy. Zawsze trzymają swoje siekiery pod ręką i nie tylko do rąbania drewna. Znane są starcia drwali z Elfami, ponieważ ci niechętnie patrzą na wycinanie ich cennych lasów."
+        ),
         BasicProfessions.Lowca to ProfessionDescription(
             quote = "Ścieżka jest stara, ale potrafię ją śledzić. Wracaj do obozu i rozpal ognisko. Dziś jemy królika.",
             description = "Chociaż Imperium rozwinęło się znacznie od czasów plemion, które je założyły 2500 lat temu, niektóre rzeczy pozostały niezmienne. Mimo że chłopi uprawiają ziemię, ogromne obszary Imperium wciąż pokrywają lasy lub są nieprzyjazne dla rolnictwa. To właśnie tam najlepiej czują się Łowcy i Traperzy. Korzystają z technik swoich przodków, by upolować zwierzynę – czy to przy użyciu pułapki, czy precyzyjnego strzału. Wymaga to umiejętności śledzenia dzikich zwierząt przy jednoczesnym unikaniu mrocznych stworzeń lasu. Łowcy w swoich skórzanych ubraniach i futrzanych czapkach mogą wydawać się nieokrzesani mieszczanom, ale niewiele sobie robią z tego, co inni o nich myślą.",
@@ -174,8 +176,9 @@ object ProfessionDescriptions {
             description = "Mieszczanie stali się nową klasą obywateli w miastach Imperium. Burgherowie – lub ich przodkowie – wywędrowali z chłopstwa, by zbudować nowe życie w miastach. Teraz stanowią spoiwo miejskiego społeczeństwa. Są właścicielami sklepów, drobnymi kupcami, urzędnikami celnymi, handlarzami i lokalnymi urzędnikami. Nie są ani tak pogardzani jak chłopi, ani tak wywyższeni jak szlachta. Choć najbardziej cierpią z powodu zarazy, żyjąc w ciasno zabudowanych dzielnicach, nie zamieniliby życia w mieście na ciężką pracę na wsi. W ich przekonaniu miasta niosą szanse, nie tylko choroby."
         ),
         BasicProfessions.Mytnik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Proszę odsłońcie plandekę na swoim wozie. Czy przewozicie marynowane buraki? Cóż, obowiązuje tutaj groszowy podatek na wszystkie marynowane towary, oprócz standardowych opłat drogowych.",
+            description = "Pobieranie pieniędzy dla rządu to niewdzięczna praca. Wykonywanie jej w samym środku dziczy to praktycznie wyrok śmierci. Poborcy opłat żyją w odizolowanych domkach przy drogach, pobierając opłaty od przejezdnych podróżnych. Zebrane środki przeznaczane są na utrzymanie dróg, ale to nie powstrzymuje podróżnych przed krytykowaniem, biciem, a nawet zabijaniem poborców próbujących wypełniać swoje obowiązki. Jakby tego było mało, domki poborców są głównymi celami dla bandytów. Życie Poborcy Opłat jest tak pełne niebezpieczeństw, że niewielu wykonuje tę pracę długo, mimo wysokiego wynagrodzenia."
+        ),
         BasicProfessions.Najemnik to ProfessionDescription(
             quote = "Mógłbym spokojnie przeżyć kilka żywotów, nie tłumiąc kolejnego chłopskiego powstania. O ile, oczywiście, powstanie dobrze płaci. Ale życie samo się nie sfinansuje, wiesz.",
             description = "W Starym Świecie wojna nigdy się nie kończy, a to oznacza, że zawsze jest zapotrzebowanie na walecznych ludzi. Choć Cesarstwo utrzymuje stałą armię, jej siła jest wspierana przez najemników. Szlachta i bogaci kupcy również wynajmują takich wojowników do ochrony swoich interesów, wielu z nich posiada praktycznie prywatne armie. Najemnicy to zarówno młodzi poszukiwacze przygód, jak i doświadczeni żołnierze, którzy uczestniczyli w dziesiątkach bitew. Pochodzą z całego świata, przy czym szczególną renomą cieszą się pułki z Tilei. Wszyscy najemnicy marzą o niezmierzonych bogactwach; dla większości z nich rzeczywistość to wczesna śmierć i nieoznaczony grób.",
@@ -193,8 +196,9 @@ object ProfessionDescriptions {
             description = "Mieszkańcy Starego Świata twierdzą, że kupcy z Altdorfu są tak nieuczciwi, że nie mogą nawet ufać sobie w kwestii własnego życia – dlatego płacą ochroniarzom, aby strzegli ich majątku. Stary Świat jest, oczywiście, niebezpiecznym miejscem, a jego miasta nie stanowią wyjątku. Zbyt łatwo jest skończyć z nożem w plecach na zatłoczonych ulicach wielkiej metropolii, takiej jak Nuln czy Middenheim. Bogaci i wpływowi używają ochroniarzy, aby chronić siebie przed złodziejami i zwykłym elementem. Podczas gdy wielu wygląda jak zbirzy, jakimi są w rzeczywistości, inni występują w uniformach szlacheckich lub kupieckich domów, którym służą. Niektóre grupy są tak duże, że praktycznie stanowią prywatne armie."
         ),
         BasicProfessions.Oprych to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Uwielbiam swoją pracę. Jestem w tym naprawdę dobry. Zaraz się przekonasz dlaczego.",
+            description = "W przestępczym półświatku siła i brutalność są wysoko cenionymi cnotami, a żadna profesja nie ilustruje tego lepiej niż Chuligan. Gdy ktoś zalega z haraczem, gdy Agitatorzy grożą ujawnieniem korupcji, lub gdy rywale przekraczają swoje granice, Chuligan pojawia się na miejscu. Kilka uderzeń pałką zwykle wystarcza, aby wysłać odpowiedni komunikat, ale trudniejsze przypadki spotykają pełne traktowanie. Najmądrzej jest w takich sytuacjach uciekać, ale cmentarze są pełne tych, którzy myśleli, że szybki spryt wystarczy, aby ich ocalić. Każda Gildia Złodziei i organizacja przestępcza ma w swoich szeregach Chuliganów."
+        ),
         BasicProfessions.Pacholek to ProfessionDescription(
             quote = "Będziesz walczył na rozkaz i wedle widzimisię jego Wysokości. Będziesz lepszy niż byłeś, bo dzierżysz i nosisz broń jego Ekscelencji! I umrzesz, jeśli tego będzie wymagała sprawa, ale umrzesz dobrze dla sprawy naszego Pana.",
             description = "Choć rycerze stanowią trzon armii Bretonnii, większość to chłopi. Niektórzy nie przechodzą żadnego szkolenia i są po prostu zebrani i ustawieni przeciw wrogowi. Ci, którzy zostają uznani za zdolnych do walki i przeszkoleni, stają się żołnierzami (Men-at-Arms). Ich szkolenie i wyposażenie nie są najlepsze, a chociaż otrzymują pewne wynagrodzenie, jest ono znacznie mniejsze niż można by oczekiwać za ryzyko życia. Najważniejsze jest to, że nie mają wyboru w tej kwestii. W rezultacie wielu żołnierzy korzysta z każdej okazji do dezercji, a wielu dezerterów podejmuje życie pełne przygód.",
@@ -204,18 +208,21 @@ object ProfessionDescriptions {
             description = "Pasterze z Karaksonny stanowią pierwszą linię obrony księstwa przed najazdami Orków, którzy zaludniają góry. Często pracują w pojedynkę, choć nowicjusz może zostać sparowany z doświadczonym pasterzem. Oczywiście pojedynczy człowiek, nawet dobrze wyszkolony, nie może oczekiwać, że stawi czoła całej orczej bandzie, dlatego pasterze szkoleni są w zbieraniu informacji, spowalnianiu grupy i przekazywaniu jej lokalnej szlachcie. Opiekują się też stadami owiec. Pasterz, który straci owce, jest bezlitośnie wyśmiewany przez swoich towarzyszy, co prowadzi wielu z nich do podejmowania absurdalnego ryzyka, aby odzyskać choćby jedną zagubioną owieczkę."
         ),
         BasicProfessions.Paz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Pański strój galowy został wyprany, wyprasowany i czeka przygotowany. Czy mogę jeszcze w czymś pomóc, sir?",
+            description = "Lokaj to osobisty służący szlachcica, wysokiego rangą dowódcy wojskowego lub zamożnego mieszczanina. Odpowiada za komfort i wygląd swojego pana, w tym pielęgnację, garderobę i prezencję. Lokaj zawsze jest gotów podać kapelusz i płaszcz, gdy pada deszcz, laskę na spacer czy surdut na oficjalne okazje. Dobrze wyszkolony lokaj jest nieoceniony dla szlachcica dbającego o styl. Choć cieszą się życiem, za które wielu innych służących oddałoby wszystko, lokaje często żywią urazę wobec próżnych panów, którym muszą służyć. Kobiety pełniące podobną rolę wobec dam nazywane są pokojówkami."
+        ),
         BasicProfessions.Pielgrzym to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Wasza gościnność była niezwykle hojna. Czy chcielibyście, abym złożył modlitwę w waszym imieniu?",
+            description = "Ścieżki do wielu świętych miejsc – Sanktuarium Sira Severicha Verenusa, Świątyni Sigmara Trójcy Świętej, Wzgórza Głębin Taala czy odległej Heiligerburg, Świętej Góry Shallyi – pełne są stóp wiernych. Niezależnie od tego, jak kosztowne, uciążliwe czy wręcz śmiertelnie niebezpieczne mogą być takie podróże, ludzie ze wszystkich warstw społecznych wyruszają w nie, każdy z własnych powodów, by zmierzyć się z grozą podróży po Starym Świecie. Najpopularniejsze pielgrzymki przyciągają co roku tysiące pokutników, a ich trasy usiane są sprzedawcami pamiątek, przydrożnymi kapliczkami, okazałymi świątyniami, wysokimi opłatami oraz bandytami, którzy liczą na łatwy łup od słabo bronionych. Ci nieliczni, którym uda się przeżyć te próby, mogą do końca życia nosić unikatowy symbol swojej pielgrzymki, zazwyczaj broszę lub naszyjnik o wzorze nawiązującym do patrona pielgrzymki i miejsca przeznaczenia.",
+        ),
         BasicProfessions.PielgrzymGraala to ProfessionDescription(
             quote = "Jestem jedynie prostym człowiekiem. Służba tej najświętszej misji jest dla mnie wystarczającą nagrodą.",
             description = "Pielgrzymi Graala to chłopi oddani Damie Jeziora, tak jak reprezentują ją Rycerze Graala. Wierzą, że Rycerze Graala są wzorcami odwagi, sprawiedliwości i uprzejmości, a najlepszym sposobem, w jaki oni, jako prosti chłopi, mogą służyć Damie, jest służba Rycerzowi Graala.\n\nW tym celu wybierają Rycerza Graala i podążają za nim. Jeśli rycerz coś zgubi (stare łyżki, guziki itp.), pielgrzymowie zabierają te przedmioty i traktują je jako relikwie, środek kontaktu ze świętym. Jeśli Rycerz Graala potrzebuje czegoś, przynoszą mu to. A jeśli Rycerz Graala jest w niebezpieczeństwie, starają się walczyć za niego. Większość Pielgrzymów Graala nie żyje długo.\n\nJeśli Rycerz Graala zginie podczas wyprawy, jego pielgrzymi rzucają się na ciało, zabierając relikwie. Wielu z nich następnie tworzy z tego ciało Graalowych Relikwii, które noszą ze sobą zamiast samego Rycerza."
         ),
         BasicProfessions.PiratRzeczny to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "No proszę, no proszę… Spójrzcie, co właśnie wyrzuciło prąd rzeki?",
+            description = "Długie rzeki Starego Świata są niebezpieczne, a jeszcze bardziej przez Złomiarzy. Ci rzeczni piraci starają się zatapiać statki, a następnie plądrować wraki. Ich metody są różne, choć większość zwabia niczego niepodejrzewających w płytkie, kamieniste miejsca, aby zrobić dziury w kadłubach. Choć interesuje ich głównie ładunek, niektórzy Złomiarze mają zwyczaj zabijania, obawiając się, że ci, którzy przeżyją, mogą donieść Strażnikom Rzek o ich tożsamości lub lokalizacji. W trudnych czasach całe społeczności czasami zwracają się ku rozbójnictwu, aby nakarmić głodne rodziny. Podczas gdy większość z nich działa z desperacji i tylko krótkoterminowo, niektóre załogi Złomiarzy są bardzo doświadczone, atakując nawet dobrze chronionych kupców. Takie załogi rzadko pozostają w jednym miejscu przez dłuższy czas, ponieważ ich działalność szybko przyciąga uwagę Strażników Rzek, Łowców Głów i lokalnej Milicji."
+        ),
         BasicProfessions.Podzegacz to ProfessionDescription(
             quote = "„Przyjacielu – podejdź bliżej! Chciałbym uświadomić ci poważną sytuację... okropieństwo, o którym być może nie wiesz. Jest problem, mój przyjacielu, problem tutaj, w Altdorfie.”",
             description = "Dla większości mieszkańców Imperium polityka ma niewielkie znaczenie, Imperator i Elektorowie hrabiowie tworzą i egzekwują prawo, przy wsparciu różnych kościołów (najbardziej widocznie Sigmara i Ulrica), Artykułowo, zagorzali działacze polityczni są powszechnym widokiem w miastach Imperium. Ci Agitatorzy organizują się w imieniu różnych spraw, rozdając ulotki, wygłaszając porywające przemówienia i podburzając ludność. Skrajni fanatycy są po prostu ignorowani, ale skuteczni Agitatorzy – ci, którzy potrafią wykorzystać źródło gniewu chłopów i mieszczan – zwykle są postrzegani jako zagrożenie dla państwa. Są ścigani przez lokalną straż, oskarżani o herezję przez przedstawicieli kościoła lub zmuszani do poddania się łaskawości Łowców Czarownic. Agitatorzy kontynuują swoją działalność mimo ryzyka. Niektórzy naprawdę wierzą w swoją sprawę, inni są cynicznymi poszukiwaczami władzy, tak skorumpowanymi jak ci, przeciw którym się wypowiadają."
@@ -233,8 +240,9 @@ object ProfessionDescriptions {
             description = "Badlanderzy, jak sama nazwa wskazuje, żyją w złych ziemiach Księstw Granicznych. Te obszary to często labirynty połamanych skał, z małą ilością wody i jeszcze mniejszą ilością życia, a to, co istnieje, jest co najwyżej niejadalne, a w najgorszym przypadku wrogie. Muszą stale wędrować po okolicy, aby znaleźć pożywienie i wodę, co również ułatwia im ukrywanie się. Zaskakująco wysoki odsetek Badlanderów ma wcześniejsze kariery, przed którymi się ukrywa; ci, którzy ich nie mają, zwykle marzą o czymś, przed czym warto byłoby się ukrywać."
         ),
         BasicProfessions.Pokutnik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Byłem naprawdę, naprawdę bardzo zły.",
+            description = "Pokutnicy wędrują ulicami Starego Świata, wołając, że są heretykami i niegodnymi, bijąc się sami lub nawzajem, aby oczyścić się ze swej nieprawości. Często praktykują na sobie Umiejętność Tortur, co sprawia, że przedstawiciele tej profesji mają wyjątkowo dobrą wiedzę na temat jej działania. Najczęściej spotyka się ich wśród wyznawców Sigmara, ale można ich znaleźć również wśród najbardziej gorliwych czcicieli wszystkich bogów.",
+        ),
         BasicProfessions.PorywaczZwlok to ProfessionDescription(
             quote = "Nie chcę mieć nic wspólnego z paleniem na stosie. Zabieranie ciężkiej pracy uczciwych ludzi, oto co to jest.",
             description = "Porywacz Zwlok zarabiają na życie wśród zmarłych. Profesje medyczne i magiczne tworzą stałe zapotrzebowanie na świeże zwłoki, niektóre do badań, inne do bardziej złowieszczych celów. Zdobycie takich zwłok legalnie jest bardzo trudne, dlatego lekarze i czarodzieje często polegają na grabarzach. Jest to odrażający zawód, ale opłacalny. Najświeższe zwłoki mogą osiągać wygórowane ceny. Ryzyko w tej branży jest znaczne: straże, kapłani Morra (Boga Śmierci) oraz Łowcy Czarownic pilnie strzegą cmentarzy i surowo karzą intruzów."
@@ -252,11 +260,13 @@ object ProfessionDescriptions {
             description = "Prawnicy są powszechnym widokiem zarówno w Talabheim, jak i we wszystkich większych miastach Starego Świata. Sporządzają dokumenty prawne, interpretują prawo i reprezentują osoby w sądzie, które mogą sobie pozwolić na opłacenie ich usług. Pozwani są niemal powszechnie pogardzani, chyba że ktoś znajduje się w tarapatach prawnych i potrzebuje pomocy. Muszą być dobrze obeznani zarówno z prawem Cesarstwa, jak i regionu, w którym zamierzają praktykować, oraz posiadać dużą wiedzę na temat codziennych spraw. Nawet najniżej urodzony pozwany uważany jest przez ogół społeczeństwa za „osobę piśmienną” i może być proszony o wykonanie zadań wykraczających poza jego szkolenie.",
         ),
         BasicProfessions.Przemytnik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Przemyt? Nie wiem, o czym mówisz!",
+            description = "Większość handlu morskiego i lądowego w Starym Świecie podlega cłom i podatkom. Imperialni poborcy podatkowi, lokalni poborcy ceł, drobni panowie, a także każdy, kto ma wystarczająco siły, może nałożyć opłatę na przemieszczanie towarów. Legalne podatki są wystarczająco uciążliwe, ale wielu piratów i Szefów Outlaw również wymaga swojej części, aby umożliwić bezpieczne przejście. W dużych portach, takich jak Marienburg, niemal wszystko, co wchodzi lub wychodzi, jest w pewien sposób opodatkowane. W takim stanie rzeczy handel przemytników kwitnie. Choć przemyt jest oczywiście nielegalny, większość mieszkańców Imperium nie widzi nic złego w obchodzeniu przepisów. W ich mniemaniu prawdziwymi złodziejami są poborcy podatkowi i biurokraci."
+        ),
         BasicProfessions.Przepatrywacz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie jesteśmy pierwsi, którzy tędy przeszli. Widzisz te ślady? Obawiam się, że to my jesteśmy ścigani.",
+            description = "Zwiadowcy to doświadczeni ludzie lasu, którzy prowadzą rozpoznanie dla armii, karawan i innych grup podróżnych. Są oczami i uszami, nieustannie wypatrując zasadzek i innych zagrożeń. Ponieważ działają przed główną grupą, muszą być samowystarczalni i opanowani. Zwiadowcy muszą ufać własnym instynktom i podejmować samodzielne decyzje, gdyż w dziczy nie mają nikogo, do kogo mogliby się zwrócić. Większość działa w znanym sobie terenie, wykorzystując dogłębną znajomość okolicy. Niektórzy specjalizują się w przecieraniu szlaków, jadąc naprzód w nieznane i wrogie terytoria. Tacy zwiadowcy zarabiają więcej, ale ich oczekiwana długość życia jest krótka.",
+        ),
         BasicProfessions.Przewoznik to ProfessionDescription(
             quote = "Podróż to coś więcej niż tylko nurt między brzegami… a podróż skończy się szybko, jeśli nie zapłacisz odpowiedniej opłaty.",
             description = "Rzeki, zarówno duże, jak i małe, przecinają Cesarstwo. Chociaż niektóre są na tyle płytkie, że można je bez problemu przeprawić pieszo, większość wymaga transportu, aby bezpiecznie je przekroczyć. Ferrymani zarabiają na życie przewożeniem ludzi i towarów przez rzeki Cesarstwa – oczywiście za opłatą. Preferują barki o płaskim dnie, ponieważ mają niewielki zanurzenie i dużo miejsca na pokładzie. Ferrymani w bardziej odległych rejonach często posługują się też muszkietem. Rozbójnicy są stałym zagrożeniem, a muszkiet skutecznie zniechęca do opóźnień. Wielu Ferrymanów jest również mistrzami wyłudzania, arbitralnie zmieniając ceny w zależności od widocznego bogactwa i desperacji pasażerów."
@@ -286,44 +296,53 @@ object ProfessionDescriptions {
             description = "Starszyzna wielkich elfickich rodzin kupieckich jest daleka od codziennego życia w Imperium. Dla nich Ludzie żyją i umierają tak szybko, że trudno nadążyć za aktualnymi trendami i polityką Starego Świata. Gdy potrzebują takiej wiedzy, zwracają się do swoich Wysłanników. Ci młodzi Elfowie stanowią publiczną twarz Domów Kupieckich. Negocjują kontrakty, zawierają umowy i utrzymują pokój z Ludźmi w ośrodkach handlowych, takich jak Altdorf, Nuln czy Marienburg. Nawet Elfowie mają swoje granice cierpliwości, więc nic dziwnego, że wielu Wysłanników opuszcza rodziny, by prowadzić życie awanturników."
         ),
         BasicProfessions.Rzemieslnik to ProfessionDescription(
-            quote = "„Kluczem do mistrzowskiego rzemiosła jest prostota. Usuń wszystko, co przeszkadza w osiągnięciu perfekcji.”",
-            description = "Rzemieślnicy to wykwalifikowani fachowcy i mistrzowie w swoim rzemiośle. Najczęściej spotykani w miastach i miasteczkach, rzemieślnicy zrzeszeni są w zaskakująco różnorodnych gildiach. Najlepsi fachowcy przyciągani są do największych miast, takich jak Altdorf, Marienburg i Nuln. Tam mogą żądać wysokich cen od najbogatszych klientów lub współpracować z Kupcami, którzy sprzedadzą ich towary w dalszych regionach. Niektórzy rzemieślnicy są tak sławni, że nawet Szlachta musi wpisywać się na listy oczekujących, ponieważ posiadanie dzieła renomowanego mistrza jest oznaką statusu. Mistrzowskie dzieło rzemieślnika naprawdę zapiera dech w piersiach."
+            quote = "Handel to życiodajna siła Imperium. Traktuj mnie jak lekarza-pijawkę, który dba, aby ta krew płynęła czysta i przejrzysta. Cokolwiek Ty lub Imperium potrzebuje, mam to – za odpowiednią cenę.",
+            description = "Rzemieślnicy to wykwalifikowani pracownicy i mistrzowie w swoim fachu. Choć zwykle skupiają się w miastach, można ich również znaleźć w wsiach na terenie całego Imperium. Dostarczają wiele dóbr wykorzystywanych przez kupców w handlu zagranicznym i są cenieni jako istotna część gospodarki Imperium. Rzemieślnicy obejmują aptekarzy, zbrojmistrzów, łuczników, piwowarów, kaligrafów, cieśli, kartografów, szlifierzy klejnotów, rusznikarzy, zielarzy, handlarzy, stoczniowców, kowali, kamieniarzy, krawców i wytwórców broni. Każdy zawód posiada własną gildie, choć nie wszystkie gildie mają lokalne oddziały."
         ),
         BasicProfessions.Rzezimieszek to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Chcesz, żeby był porządnie pobity, czy tylko przestraszony? I tak pobieram tę samą stawkę, tylko chcę wiedzieć, jak daleko chcesz, żeby to poszło.",
+            description = "Rzezimieszki to zawodowi zbirzy. Ich umiejętności walki można wynająć, i pobiją niemal każdego za odpowiednią cenę. W wielu przypadkach Protagonists ukrywają fakt, że są wynajęci, wymyślając absurdalne wymówki, by rozpocząć bójkę z wybranym celem. Zleceniodawca obserwuje upokorzenie swojej ofiary, dla własnej przyjemności lub zysku. Pobicie kilku lokalnych osób jest stosunkowo tanie, podczas gdy potężniejsi przeciwnicy i poważniejsze obrażenia są proporcjonalnie droższe. Większość pozostawia morderstwo profesjonalistom, ale wyjątki od tej reguły można wykupić. Bezrobotni Protagonists sami wybierają swoje walki i okradają swoje ofiary. Naturalnie, strażnicy uważnie obserwują znanych Protagonistów, więc ci często przemieszczają się szybko z miejsca na miejsce."
+        ),
         BasicProfessions.Skald to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Będą śpiewać o naszym zwycięstwie dziś przez pokolenia. Sam się o to zatroszczę.",
+            description = "Skaldowie są strażnikami wiedzy i kronikarzami historii Nordów. Częściowo artyści, częściowo wojownicy, cieszą się dużym szacunkiem za swoją mądrość i znajomość tradycji. Wszyscy królowie zatrudniają Skaldów w swoich dworach, podobnie jak większość Jarlów. Gdy zabrzmi wezwanie do wojny, Skald niesie sztandar i maszeruje do bitwy razem z towarzyszami."
+        ),
         BasicProfessions.Skarbnik to ProfessionDescription(
             quote = "Zgubiłeś tegoroczny dowód zapłaty podatku? Co za pech, mistrzu szewcu. Przewróćcie mu dom, chłopcy! Chcę, aby każda moneta została znaleziona! Czas zapłacić, mój przyjacielu.",
             description = "Wszystkie miasta wymagają podatków i ceł, aby mogły funkcjonować. Stały przepływ pieniędzy zapewnia finansowanie robót publicznych i utrzymanie służby, a także zasila kieszenie polityków. Jednak bez względu na szlachetny cel czy powód, nikt nie lubi płacić podatków. Ponieważ jest to niepopularna rzeczywistość, większość prawodawców dystansuje się od samego poboru pieniędzy, polegając na specjalnie zatrudnionych Poborcach Podatkowych, którzy wykonują tę pracę zamiast nich. Spośród wszystkich ludzi w mieście Poborca Podatkowy jest prawdopodobnie najbardziej nielubiany, tuż obok farbiarzy, żebraków i reszty plebsu. Mimo że spotykają się z wrogością na każdym kroku, większość Poborców wie, że ich obowiązek jest konieczny. Ciężko jednak o to, aby byli dobrze opłacani za tę niewdzięczną pracę. W rezultacie niewielu cieszy się tym, co robią, i szuka najszybszej drogi do poprawy swojej sytuacji, poprzez sprytne podbieranie pieniędzy lub dodatkową pracę w nikłej nadziei na zdobycie lepszej pozycji w administracji."
         ),
         BasicProfessions.Skryba to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nigdy wcześniej nie widziałem takiego pisma. Może to rzadko używana forma archaicznego imperium. Być może znajdę wskazówkę w jednej z moich ksiąg…",
+            description = "Ponieważ większość obywateli Imperium jest analfabetami, skrybowie są bardzo poszukiwani. Prawie każda instytucja rządowa, cywilna, wojskowa czy religijna potrzebuje dużej liczby skrybów do prowadzenia rejestrów. Istnieją również skrybowie publiczni, którzy zarabiają na życie pisaniem i odczytywaniem listów dla prostego ludu. Skrybowie są dobrze wykształceni, a wielu z nich zostaje uczonymi lub prawnikami. Niektórzy mają dość czytania o przygodach innych i postanawiają przeżyć własne. Dzięki rozległej znajomości innych języków, doskonale nadają się na tłumaczy podczas zagranicznych wypraw."
+        ),
         BasicProfessions.Sluga to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Czy życzycie sobie do tego chrupiących ziemniaków?",
+            description = "Na drabinie społecznej niewielu znajduje się niżej niż służący. Choć ich praca jest niezbędna, zazwyczaj są pogardzani przez swoich przełożonych. Dla kucharza pomocnika, woźnicy stajennego czy pokojówki ucieczka od ciężkiego życia często wydaje się niemożliwa. Ci nieszczęśnicy muszą wykonywać niezliczoną liczbę podrzędnych zadań dla swoich pracodawców, czy to szlachty, mistrzów gildii czy karczmarzy. Możliwe jest awansowanie na lepsze stanowisko, lecz droga jest trudna. Nikt nie chce słuchać chłopaka, który w zeszłym tygodniu czyścił wychodek. Wiele służących opuszcza więc swoich panów i wyrusza w świat jako awanturnicy."
+        ),
         BasicProfessions.Straznik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Stój! Kto idzie?",
+            description = "Początkowo miasta i miasteczka same rekrutowały i utrzymywały własne straże miejskie, lecz korupcja była tak powszechna, że cesarz powierzył to zadanie armii. Obecnie niektóre regimenty pełniące służbę garnizonową muszą sprawować także funkcję straży. Znacznie ograniczyło to nadużycia, choć wojsko samo nie jest od nich wolne. Strażnicy odpowiadają za utrzymanie porządku i prawa, posiadają uprawnienia do dokonywania aresztowań, a w mniejszych osadach pełnią dodatkowo funkcję straży pożarnej. Dla części żołnierzy służba w straży to jedynie tymczasowe zadanie, dla innych zaś staje się życiową karierą."
+        ),
         BasicProfessions.StraznikDrog to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "To sprawka Czerwonego Pasa. Patrz, wyraźny ślad wśród drzew. Pochowamy martwych, a potem wymierzymy sprawiedliwość Cesarza w tym lesie. Nie zostawiaj nikogo przy życiu.",
+            description = "Imperium składa się z enklaw cywilizacji, luźno połączonych drogami i rzekami. Większość terenu jest gęsto zalesiona, a takie okolice są siedliskiem bandytów, mutantów, bestii i goblinów. Samo przemieszczanie się między miastami jest przygodą, mimo stałej czujności Strażników Drogowych. Ci stróże prawa patrolują drogi i trakty Imperium, chroniąc podróżnych i ich dobytek. Ze względu na niewielką liczbę współpracują z lokalną milicją i żołnierzami w przypadku większych zagrożeń. Najczęściej jednak to małe grupy Strażników Drogowych muszą radzić sobie ze wszystkimi, poza najgroźniejszymi niebezpieczeństwami."
+        ),
         BasicProfessions.StraznikKanalow to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Więc stałem tam, twarzą w twarz z czterema szczuro-ludami. Pogodziłem się z Morr, myśląc, że zaraz mnie rozprują, ale nie, po prostu syknęły i przebiegły obok. Ostatni raz schodziłem tam sam.",
+            description = "Straznik Kanalow to wyspecjalizowana jednostka podległa Straży Miejskiej, której celem jest zapewnienie bezpieczeństwa w systemie kanałów i podziemiach miasta. Do patrolowania cuchnących tuneli Middenheim wymagana jest odwaga, lecz Sewer Jacki są mniej wybredni w rekrutacji niż inne siły zbrojne – częściowo dlatego, że niemal zawsze brakuje ochotników do tej niebezpiecznej i nieprzyjemnej służby. Typowa patrolowa jednostka Sewer Jacków liczy 6-8 osób."
+        ),
         BasicProfessions.StraznikPol to ProfessionDescription(
             quote = "I trzymaj się z daleka, chyba że chcesz, żeby kolejny kamień trafił w coś bardziej wrażliwego.",
             description = "Dla osób z zewnątrz, Moot wygląda na bezpieczną i szczęśliwą krainę. W dużej mierze jest to zasługa Strażników Polnych. Ci Półkrasnoludkowie patrolują granice Moot, odstraszając zagrożenia i niechcianych intruzów. Są zręcznymi zwiadowcami, którzy wykorzystują swoją dogłębną znajomość Moot do maksymalnej przewagi. Wolą atakować z zasadzki, używając przewagi w obsłudze broni dystansowej, aby zneutralizować przewagę liczebną przeciwników. Ponieważ Moot graniczy z Sylvania, Strażnicy Polni mają szczególne doświadczenie w walce z żywymi trupami. Niejedna grupa zombie została unicestwiona przez serię pocisków z procy wystrzelonych przez zdeterminowanych Strażników Polnych."
         ),
         BasicProfessions.StraznikRzeczny to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "A co to mamy? Brandy, co? Produkt Bretonnii. Tylko jedna butelka. Nigdy tego wcześniej nie widziałeś? Lepiej to przemieścić, zanim ktoś się potknie. Do zobaczenia w tym samym czasie w przyszłym tygodniu.",
+            description = "Potężny sygnał nad mętnymi wodami Reiku może oznaczać tylko jedno: Strażnicy Rzeczni. Ci silni i wytrzymali stróże prawa są przez użytkowników rzek często postrzegani niczym zbirzy, gdyż muszą kontrolować nawet niewinne jednostki w poszukiwaniu kontrabandy i nauczyli się, że grzeczność i zaufanie nie przynoszą korzyści. Przemęczeni patroliści, pracujący przez miesiące na zmianach, odpowiadają za wody zbyt rozległe, by skutecznie je kontrolować. Spędzają większość czasu tropiąc najgorszych przestępców, w tym piratów, morderców i złodziei barek, a drobne wykroczenia pozostawiają na drobne grzywny. Strażnicy rzeczni są powszechnym widokiem na rzekach, a ich patrole sięgają aż Kislevu."
+        ),
         BasicProfessions.StraznikSwiatynny to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Proszę ustawić się w pojedynczej kolejce, panie, i przestać się przepychać. Relikwia nigdzie nie ucieknie.",
+            description = "Strażnicy świątyń są wybierani nie spośród najbystrzejszych członków kongregacji, którzy mogliby być bardziej użyteczni w innych zadaniach, lecz spośród tych, których umiejętności leżą w sferze fizycznej. Oczekuje się od nich nienagannego zachowania i odporności na pokusę kradzieży w własnej świątyni. Niektóre kulty dbają o to, opowiadając przerażające historie o losie takich zdrajców w życiu pozagrobowym, inne po prostu zachęcają strażników do wzajemnej czujności, nagradzając wielkim bogactwem każdą udowodnioną kradzież lub brak lojalności."
+        ),
         BasicProfessions.StraznikTuneli to ProfessionDescription(
             quote = "Zobaczyć słońce ponownie po długiej Straży Głębin. Nie było jaśniejszej złotej korony ani bogatszej nagrody.",
             description = "Straż Tuneli składa się z tych, którzy są zbyt pochłonięci opowieściami o przygodach i chwale, by zwracać uwagę na inherentne niebezpieczeństwa, lub z tych, którzy są zbyt zdesperowani, by się tym przejmować. W istocie Straż Tuneli to gildia profesjonalnych poszukiwaczy przygód, z grupami wysyłanymi do tuneli pod miastem, by utrzymywać je wolne od potworów i powstrzymywać wszelkie stworzenia przed dotarciem do miasta. To niebezpieczna praca, ale ktoś musi ją wykonywać."
@@ -333,14 +352,17 @@ object ProfessionDescriptions {
             description = "Imperium to naród praw, co oznacza również naród więzień. Pomimo wysiłków kapłanów Vereny, Bogini Sprawiedliwości, niewinni równie często trafiają do więzienia, co winni. Prawo uznaje lepiej być zbyt surowym niż zbyt łagodnym. Więzienia imperialne to odrażające lochy, pachnące zarówno strachem, jak i ekskrementami. Więzienni strażnicy nadzorują te instytucje, używając kombinacji brutalności i upokorzenia, aby utrzymać porządek. Zwykle nie mają poczucia sprawiedliwości ani litości i rzadko ulegają błaganiom lub przemowom (choć łapówki przyjmują chętnie). Najgorsi są jawnie sadystyczni, czerpiąc przyjemność z władzy nad swoimi podopiecznymi.",
         ),
         BasicProfessions.Strielec to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Najpierw używasz tego, na wielki wybuch, da? Potem, gdy prochu brak – topór! Nyet kłopotów po tym.",
+            description = "Strielcy pierwotnie byli rotą koszarów z Erengradu. Prowadzeni przez Boyara Boydinova – ekscentrycznego szlachcica zafascynowanego Imperium – posługiwali się halabardami zamiast toporów, na wzór halabard preferowanych przez Regimentu Państwowe w Ostlandzie. W 2345 IC, podczas odpychania hordy Chaosu wraz z sojusznikami Imperium, szeroko-oczny boyar po raz pierwszy zobaczył czarny proch imperialny. Jego koszarzy zmienili się na zawsze. Wiele lat po śmierci Boydinova streltsi są w Kislevie czołowymi mistrzami broni palnej, kiedyś budzącej strach i przesąd. Żołnierze z całego Kislevu przybywają do Erengradu, aby zdobyć odznakę skrzyżowanego „berdysha i pistoletu”, przyznawaną tym, którzy szkolą się ze streltsi przez ponad dwa sezony."
+        ),
         BasicProfessions.StrzyganskiMistyk to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Czuję w tym miejscu chmurę zła… strzeżcie się umarłych, gdyż chodzą wśród was, nosząc twarze żywych.",
+            description = "Ludzie ze Strigos zostali rozproszeni, gdy ich ziemie zostały zniszczone, i odtąd prowadzili życie nomadów. Wędrują po Imperium w karawanach lub barkach rzecznych, zarabiając, gdzie mogą, a kradnąc, gdy nie mogą. Ich historia pod panowaniem Wampirów sprawia, że ich styl życia wędrowny jest utrzymywany, co czyni ich nie tylko złodziejami i bandytami, lecz także nekromantami i sługami ciemności. W rzeczywistości większość z nich to prości leśnicy, artyści uliczni lub włóczędzy, ale niektórzy znają coś z czarów, trochę wróżbiarstwa i dużą wiedzę o Wampirach. Ci mistycy zostali nauczani prawdziwej i pełnej historii swojego narodu, niosąc tajemną wiedzę z dawnych czasów oraz obietnicę swoich władców ze Strigos, że pewnego dnia powrócą i poprowadzą ich do chwały."
+        ),
         BasicProfessions.Szczurolap to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Jeśli złapiesz je za ogony, prawie nie będą mogły cię ugryźć. No, przynajmniej większość czasu.",
+            description = "Łapacze szczurów to powszechny widok w całym Imperium. Spotkać ich można w wioskach, miastach i miasteczkach, zarabiając na życie usuwaniem szkodników, które infestują wszystkie domostwa w tej niesanitarnej epoce. Łapacze szczurów często są wędrownymi ludźmi, choć większe miasta i miasteczka mają stałe oddziały 'żołnierzy szkodników'. Szczury są ich głównym wrogiem, ale mogą też usuwać krety, myszy, a nawet bardziej paskudne szkodniki. Mieszkańcy miast spędzają dużo czasu w kanałach, brodząc w rzekach brudu w poszukiwaniu swojej zdobyczy. To brudna praca, ale pomaga utrzymać epidemię z dala od miasta."
+        ),
         BasicProfessions.SzermierzEstalijski to ProfessionDescription(
             quote = "Odbiję twoje pierwsze ataki na moim trzecio-ćwiartkowym radiale i zajmę wyższy grunt. Z zasięgiem zaledwie pięćdziesięciu trzech cali nie wygrasz tej walki, używając ostrza tnącego. Nie z tak słabą postawą, señor.",
             description = "Królewstwa Estalii leżą na południowy zachód od Imperium. Tam zagrożenie ze strony Chaosu wydaje się odległe. Pustkowia Chaosu są dość daleko od tej słonecznej krainy, która nigdy nie doświadczyła gniewu krwiożerczych hord tak jak Imperium czy Kislev. Mieszkańcy Estalii zajmują się różnymi sprawami, od nauki i badań po przestępczość i vendettę. Jedną z ich największych pasji jest szermierka. Miasta Estalii mają wiele szkół szermierczych, z których każda kultywuje własny styl. Wiele z tych stylów wywodzi się z nauk Mistrza Figueroi, legendarnego szermierza, który stosował najnowsze teorie naukowe w szermierce z oszałamiającymi efektami. Zwolennicy stylu Figueroi, zwani Diestro, walczą i pojedynkują się w całej Estalii. Niektórzy, znudzeni swoją ojczyzną, szukają wrażeń gdzie indziej, najczęściej w Tilei i Bretonni. Najodważniejsi podróżują na północny wschód do Imperium, by sprawdzić swoje szpady w starciu z godnymi przeciwnikami i zobaczyć krainę stojącą na pierwszej linii walki z Chaosem."
@@ -350,8 +372,9 @@ object ProfessionDescriptions {
             description = "Szlachta stanowi klasę rządzącą Cesarstwem. Posiadają władzę, kontrolują ziemię i stanowione są przez nich prawa. Najważniejsze rody szlacheckie to rodziny elektorów cesarskich, a oczywiście sam Cesarz. Istnieją setki innych rodów, które rywalizują o większy majątek i władzę. Niektórzy szukają szczęścia na wojnie, inni w biznesie lub polityce. Żaden z nich nie zniżyłby się do wykonywania zwykłego rzemiosła. Najbardziej pogardzani szlachcice nic nie robią, żyjąc wyłącznie z rodzinnego majątku i uczestnicząc w niezliczonych przyjęciach, balach i galach. Młodsze dzieci rodów szlacheckich mają jednak trudniej. Ponieważ spadek przypada najstarszemu, często muszą radzić sobie same, nawet jeśli oznacza to obcowanie z niższymi klasami i wchodzenie w towarzystwo awanturników i łobuzów.",
         ),
         BasicProfessions.Szperacz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Haczyk, stary kapelusz, wcięta klinga miecza i dwa brązowe klangsy. Ogólnie, całkiem udana poranna robota.",
+            description = "Spośród wszystkich terenów w Kresach, niewiele jest tak nieprzyjaznych i zdradliwych jak bagna i mokradła. Zanieczyszczone obszary, pełne krwiopijnych komarów i żarłocznych pijaw, stanowią siedlisko chorób. Ponieważ miejsca te są zazwyczaj opuszczone, kryją się pod winoroślami i brunatną wodą wszelkiego rodzaju skarby i dziwactwa, a ci, którzy mają odwagę i wytrzymałość, by oprzeć się chorobom i robactwu, mogą dobrze zarobić. Zbiorowo znani jako Skimmerzy Bagienni, ci ludzie ryzykują wrogie środowisko w nadziei na poprawę swojego losu i być może wykupienie przeprawy z tej niebezpiecznej krainy."
+        ),
         BasicProfessions.Szuler to ProfessionDescription(
             quote = "Nie trzeba bać się tych, którzy zawsze wygrywają… trzeba bać się tych, którzy zawsze wydają się przegrywać.",
             description = "Hazardziści unikają ciężkiej pracy niższych i średnich warstw społecznych. W końcu po co trudzić się dla tak małych nagród, skoro miesięczne dochody można zdobyć jedną dobrze rozegraną ręką? Hazardziści wykorzystują swoje umiejętności w grach losowych, aby zdobywać pieniądze od bogatych i niezdarnych. Przemierzają zajazdy i domy gier, gotowi oddzielić łatwowiernych od ich monet. Czasem jednak coś idzie nie tak i hazardziści tracą duże sumy pieniędzy. W takich przypadkach konieczna jest szybka ucieczka, zanim wierzyciele odkryją, że długi nie mogą zostać spłacone. Hazardziści z natury są włóczęgami, ciągle w ruchu, aby unikać starych długów i urażonych przegranych."
@@ -361,8 +384,9 @@ object ProfessionDescriptions {
             description = "Zbieracz Kości (Bone Picker) to padlinożerca, który zarabia na życie, grzebiąc w odpadkach innych. Prowadzą swoje wózki przez wsie i miasta, zbierając stare kości, szmaty i inne śmieci, a następnie wymieniając je na kilka groszy lub drobny przedmiot w handlu. Czasami znani są jako zbieracze szmat i kości albo po prostu zbieracze odpadków. Są powszechnym widokiem w miastach Imperium, które generują ogromne ilości odpadów. Ponieważ wiele dóbr przechodzi przez ich ręce, Zbieracze Kości są też drobnymi handlarzami. To, co jest śmieciem dla bogatego mieszczanina, jest skarbem dla biednego chłopa."
         ),
         BasicProfessions.Tarczownik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Topory gotowe. Tarcze w górę. Włóżcie w to całe siły, chłopaki. Dziś nie przebiją się przez nas.",
+            description = "Najazdy Chaosu i zielskórych zniszczyły na przestrzeni wieków wiele krasnoludzkich twierdz w Górach Krańca Świata. Aby chronić pozostałe miasta-fortecy, Krasnoludy wyszkoliły elitarnych żołnierzy specjalizujących się w walce głęboko pod ziemią. Są nimi Shieldbreakerzy – dzielni wojownicy, którzy starają się powstrzymać falę zła i chronić swój lud. Choć większość Shieldbreakerów to Krasnoludy, od czasu do czasu do ich szeregów dołączają przedstawiciele innych ras w zamian za krasnoludzkie złoto. Młodzi Krasnoludy z Imperium często zostają Shieldbreakerami, aby udowodnić swoją wartość i okazać solidarność z góralami."
+        ),
         BasicProfessions.UczenCzarodzieja to ProfessionDescription(
             quote = "„Moje egzaminy zbliżają się szybko. Jeśli uda mi się zapalić świecę z dziesięciu kroków, nie podpaliwszy sobie włosów, jestem pewien, że tym razem zdam.”",
             description = "Ludzie obdarzeni talentem magicznym są niebezpieczni i budzą strach. Demony i nieszczęścia gromadzą się wokół nieprzeszkolonego Czarodzieja. Aby poradzić sobie z tym zagrożeniem, Imperium wysyła takie osoby do jednej z ośmiu Gildii Czarodziejów. Podczas nauki młodzi Czarodzieje uczą się, jak praktykować magię bezpiecznie, oraz rozważają, do której Gildii ostatecznie dołączą. Niektórzy uczniowie są zobowiązani służyć Czarodziejowi, który odkrył ich talenty, podczas gdy inni wyruszają na przygody, aby zebrać wystarczająco pieniędzy na naukę w Kolegiach Magii. Elfy posiadają naturalne zdolności magiczne i nie muszą uczęszczać do ludzkich instytucji, ucząc się od własnych mistrzów wiedzy. Zobacz Rozdział 7: Magia w Podręczniku Podstawowym, aby poznać szczegóły dotyczące Gildii Magii."
@@ -380,11 +404,13 @@ object ProfessionDescriptions {
             description = "Wypalacze węgla drzewnego można znaleźć w każdej wiosce Imperium. Palą drewno, aby uzyskać węgiel drzewny, ważne paliwo na zimowe miesiące. Ich praca jest zarówno brudna, jak i potencjalnie niebezpieczna, dlatego działają na obrzeżach wiosek. Najlepsze są skraje lasów, skąd łatwo dostępne jest drewno. Bliskość lasu sprawia również, że praca jest ryzykowna, ponieważ izolowane grupy takich ludzi są łatwym łupem dla złowrogich stworzeń lasu. Obóz wypalaczy węgla zawsze ma pod ręką broń, nawet jeśli są to tylko kije ścięte z pobliskich drzew."
         ),
         BasicProfessions.Wielorybnik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Zabiłeś skavena, mówisz? Szczura wielkości człowieka? Przyjdź pochwalić się, gdy zmierzysz się z Bestią Chaosu większą niż dwie karczmy, która przeciągnie cię na szerokość całego kraju, zanim zrozumie, że ją zabiłeś!",
+            description = "Polowanie na wieloryby to istotny zawód w Norsce, a Wielorybnicy cieszą się szacunkiem nawet wśród wojowników. Pływają w ciemnych nurtach Morza Chaosu, gdzie spotkać można olbrzymie wieloryby, często z dziwnymi znakami i nietypowym ubarwieniem, zniekształcone i wypaczone mocą Chaosu. Te potwory mogą przewrócić statki i połykać setki ludzi jednym kłapnięciem szczęk. Wielorybnicy muszą więc być z twardszej stali niż zwykli rybacy."
+        ),
         BasicProfessions.Wloczykij to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Ja? Nie jestem nikim ważnym. Po prostu przechodzę…",
+            description = "Włóczędzy uwielbiają życie w drodze. Tradycyjna egzystencja Chłopa lub Mieszczanina wydaje im się więzieniem. Kto chciałby budzić się codziennie w tej samej wiosce lub mieście, robiąc to samo, co wczoraj? Włóczędzy to wolni podróżnicy, którzy traktują każdy dzień jako nową przygodę. Mogą przyjmować drobne prace tu i tam, by zarobić trochę miedziaków, ale nigdy nie zostają długo w jednym miejscu. Droga wzywa, obiecując coś lepszego zawsze za kolejnym wzgórzem. Choć kochają podróże, nie są nieświadomi niebezpieczeństw czyhających na drodze. Włóczędzy często podróżują w grupach, utworzonych dla wzajemnej ochrony. Prawo nie darzy ich sympatią, a w wielu miejscach włóczędzy są postrzegani jako zwykli przestępcy."
+        ),
         BasicProfessions.Woj to ProfessionDescription(
             quote = "Jarl mówi, że masz umrzeć. Powoli. A ja jestem niczym, jeśli nie lojalny wobec Jarla.",
             description = "Woj to wojownik służący konkretnemu Jarlowi. Oczekuje się od niego, że będzie mieszkał w Hali Jarla, dzielił jego jedzenie i pozostawał niezachwianie lojalny. W zamian za przysięgę lojalności, Jarl nagradza służbę prezentami, takimi jak broń i zbroja, a najlepszych także ziemią i tytułem. Wartość prezentu nie jest mierzona jego faktyczną wartością, lecz prestiżem, jaki nadaje Wojowi. Ważne jest, aby pamiętać, że takie prezenty nie czynią Woja najemnikiem; są one nagrodą za stałą i wierną służbę."
@@ -398,15 +424,17 @@ object ProfessionDescriptions {
             description = "Choć Imperium jest potężnym państwem, jego ziemie są dalekie od bezpieczeństwa. Duże obszary nigdy nie zostały ujarzmione ani zagospodarowane. Niepewny system dróg łączy wsie, miasta i metropolie, a właśnie tutaj zarabiają na życie Woźnice, pracując dla jednej z licznych cesarskich firm przewozowych. Drogi często są w złym stanie lub pełne goblinów, bestii i bandytów. Niemniej, Woźnice ryzykują życie i zdrowie, by bezpiecznie przewieźć pasażerów i ładunki przez niebezpieczne szlaki Imperium. Każdy dzień to wyścig, aby dotrzeć do kolejnej osady lub zajazdu przed zachodem słońca. Nikt nie chce podróżować nocą, zwłaszcza gdy na niebie świeci księżyc Chaosu."
         ),
         BasicProfessions.Wrozbita to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Widzę złe znaki w gwiazdach. Przyprowadź mi baranka, najlepiej urodzonego w pełnię księżyca. Jego krew ujawni naturę tych omenów.",
+            description = "Wróżbici są samozwańczymi autorytetami we wszystkich sprawach związanych ze światem duchowym. Można ich spotkać na targowiskach w każdym mieście, głoszących swoje najnowsze objawienia wszystkim, którzy chcą słuchać. Ponieważ działają poza granicami oficjalnych praw religijnych i twierdzą, że rozumieją wolę bogów, są łatwym celem prześladowań przez Łowców Czarownic, którzy nie odróżniają prawdziwych wróżbitów od szarlatanów. W Norsce wróżbici są jednak cenionymi członkami świty jarla, odczytując znaki i przepowiednie w wnętrznościach ofiar lub tłumacząc iskry ognia, by odgadnąć przebłysk przyszłych wydarzeń."
+        ),
         BasicProfessions.Zabiarka to ProfessionDescription(
             quote = "Nóż wchodzi, wnętrzności wychodzą. Nóż wchodzi, wnętrzności wychodzą. A tak przy okazji… słyszeliście nowiny o Madam de Verre? Mówią, że jej syn ma dziesięć palców… ale nie po pięć na każdej ręce…",
             description = "Żabie żony są powszechnym widokiem we wioskach Mousillon. Przetwarzają wiadra ślimaków i żab złowionych przez wiejskich Bagienników (często swoich mężów, synów lub ojców), czyszcząc je do późnych godzin wieczornych. Żaba-żona to nie tylko ekspertka w patroszeniu i oczyszczaniu żab i ślimaków, ale także kluczowy element struktury społecznej wioski. Zwykle posiadają sporą wiedzę o otaczającym świecie, czasem mogą opuszczać wioskę na krótkie okresy, by zdobyć użyteczne zioła lub inne niezbędne rzeczy w sąsiednich wsiach. Niektóre żabie żony są ekspertkami w ziołolecznictwie, medycynie ludowej lub innych ezoterycznych, lecz użytecznych dziedzinach. Rzadko zdarza się żabia żona, która nie zna większości wydarzeń w swojej wiosce, a żabie żony słyną z plotkarstwa, opowiadania historii i tworzenia dziwnych przesądów. Żaba-żona jest prawie zawsze kobietą, a praca mężczyzny przy wiadrze z bagna jest wielką rzadkością."
         ),
         BasicProfessions.ZabojcaTrolli to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Mój wstyd jest mój własny. Pozwólcie mi znaleźć wroga godnego tego.",
+            description = "Krasnoludy, które zostały upokorzone, zdradzone w miłości lub w inny sposób poniżone, porzucają tradycyjne życie i szukają słodkiego ukojenia w śmierci. Polują na najniebezpieczniejsze potwory, mając nadzieję na chwalebny koniec. Większość z nich ginie stosunkowo szybko, ale nieliczni, którzy przeżyją, stają się członkami dziwacznego kultu Zabójców Trolli. Istnieją tylko po to, by umrzeć, a przez to odkupić swoje wcześniejsze upokorzenia. Poszukują najzacieklejszych przeciwników, a trolle uważane są za idealne, gdyż śmierć krasnoluda jest prawie pewna. Zabójcy Trolli są natychmiast rozpoznawalni po kolczastych pomarańczowych włosach, ekstrawaganckich tatuażach i krzykliwej biżuterii. Spędzają dużo czasu, chwaląc się swoimi wyczynami i pokazując liczne blizny, a często oddają się objadaniu, pijaństwu i niewyspaniu."
+        ),
         BasicProfessions.Zakapturzony to ProfessionDescription(
             quote = "Kiedy szlachecka cnota nie sięga dalej niż miecz, nasze strzały i ostrza ujawniają ten wstyd. Ludzie wiedzą, że nasze trafienia nie dorównują naszej czci.",
             description = "Zakapturzeni to bretońscy banici, którzy trzymają się ścisłego kodeksu moralnego, działając poza prawem tylko dlatego, że jest ono niesprawiedliwe. Chociaż wielu szlachciców i chłopów nie widzi różnicy między nimi a zwykłymi przestępcami, Herrimaultowie dążą do wymierzania sprawiedliwości tam, gdzie prawo zawodzi. Ich reputacja wynikająca z etycznych działań przynosi im uznanie wśród chłopstwa, a czasami nawet odważni szlachcice dołączają do ich sprawy."
@@ -420,20 +448,25 @@ object ProfessionDescriptions {
             description = "Dbając o czystość ulic, ci dzielni pracownicy przemierzają zaułki i trakty ze szpadlem oraz sporą dozą hartu ducha, usuwając najgorsze odchody, by ludzie mogli swobodnie chodzić. Niektórzy to przedsiębiorczy handlarze działający w dzielnicach, które mogą sobie na nich pozwolić, inni zaś pracują dla miasta, patrolując te obszary, gdzie im płacą. Choć z pewnością nie jest to zajęcie chwalebne, zbieracze gnoju często dorabiają sobie, sprzedając wysuszony nawóz jako tani opał na zimę."
         ),
         BasicProfessions.Zlodziej to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Gdyby naprawdę chciał to zachować, lepiej by się tym zaopiekował. Zostawił to w skrzyni, gdzie każdy mógł to znaleźć.",
+            description = "Imperium jest domem dla wielu uczciwych, ciężko pracujących obywateli, a Złodzieje poświęcają się zabieraniu jak największej ilości ich pieniędzy. Zwykle są to wszechstronni rzemieślnicy, gotowi wykorzystać każdą nadarzającą się okazję do zarobku. Specjalistyczni Złodzieje to szantażyści, defraudanci, porywacze, kieszonkowcy i złodzieje bydła. W miastach i miasteczkach każdej wielkości działają Gildie Złodziei, które kontrolują i organizują działalność przestępczą. Niekiedy w jednym mieście działa więcej niż jedna gildia, co prowadzi do zaciekłych walk, aż jedna z gildi wyeliminuje rywalkę. Najbardziej skuteczne Gildie Złodziei posiadają tak wiele legalnych biznesów, że z czasem przekształcają się w Gildie Kupieckie. Rzadko która gildia porzuca swoje przestępcze praktyki."
+        ),
         BasicProfessions.Zak to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Psst... Wilhelm – jaką odpowiedź otrzymałeś na jedenaste pytanie?",
+            description = "Wielkie miasta Imperium mają wiele uniwersytetów. Większość z nich, jak Imperialna Szkoła Inżynierów w Altdorfie, jest finansowana przez państwo. Pierwsza uczelnia w Imperium została założona w Nuln i to miasto wciąż słynie ze swoich instytucji edukacyjnych (i, ironicznie, z Imperialnej Szkoły Artylerii). Studenci w całym Imperium mogą wybierać spośród szerokiej gamy kursów, od historii, przez anatomię, po nauki ścisłe. Oczywiście wielu studiuje jedynie dno butelki i porzuca szkołę w ciągu roku. Studenci elfowie nie uczęszczają na imperialne uniwersytety, lecz uczą się od własnych mistrzów wiedzy. Studenci krasnoludkowie są przyjmowani na uniwersytety z pewnym ograniczeniem, zgodnie z niejasnym postanowieniem Imperium wymogłym przez Starszego Młotu."
+        ),
         BasicProfessions.Zeglarz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie ma tyle rumu, bym wrócił na ten statek. Ale rum i trochę złota mogą to zmienić.",
+            description = "Większość imperialnych marynarzy pochodzi z prowincji Nordland, która ma długi odcinek wybrzeża nad Morzem Pazurów. Wielkie statki, wilcze okręty i wargalery floty imperialnej patrolują te wody, chroniąc Imperium przed norweskimi łodziami, bretońskimi korsarzami i przerażającymi flotami Chaosu. Doświadczone załogi marynarzy obsługują te statki, podczas gdy ich rodacy żeglują na statkach handlowych, pirackich i innych prywatnych jednostkach. Elfickich marynarzy można spotkać na Morzu Pazurów, szczególnie tych zatrudnionych przez wielkie domy kupieckie. Aktywność regionu skupia się wokół Marienburga, największego portu w Starym Świecie. Miasto i jego okolice (znane jako Pustkowie) były niegdyś prowincją imperialną Westerland, ale kilka lat temu wykupiły sobie niezależność. Chociaż Marienburg jest neutralny, Morze Pazurów jest miejscem codziennych starć. Na pokładach splamionych krwią marynarze zdobywają swoje racje rumu i łupy."
+        ),
         BasicProfessions.Znachorka to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie masz tu miejsca, to sprawa kobiet.",
+            description = "Większość społeczności Ungolami opiekuje się krug ciemno-osłoniętych mądrych kobiet. Te bezkompromisowe matriarchy strzegą niezliczonych pokoleń tradycji ustnych i sekretów plemiennych. Wiedza ta jest wykorzystywana w opiece nad chorymi, przy porodach, doradzaniu lokalnym przywódcom, łagodzeniu duchów ziemi oraz ochronie społeczności przed skażeniem Chaosu. Krugi mądrych kobiet zbierają się w specjalnie udekorowanych kibitkach, do których mężczyźni mają zakaz wstępu; tam dzielą się wiedzą i omawiają ważne sprawy. Dziewczęta wykazujące 'dar widzenia' są przesłuchiwane w tych namiotach, aby ocenić ich przydatność do dołączenia do grona mądrych kobiet, doświadczenie to może przestraszyć nawet osoby o silnym umyśle."
+        ),
         BasicProfessions.Zolnierz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Słyszeliście sierżanta, mężowie. Naprzód!",
+            description = "Każda prowincja i państwo-miasto w Imperium utrzymuje własną armię, szkoloną i wyposażoną na własny koszt. Razem te siły regionalne tworzą Armię Imperialną, choć często wspomagane są przez milicję i najemników. Ci Żołnierze są pełnoetatowymi, opłacanymi profesjonalistami, zwykle pochodzącymi z warstw chłopskiej lub mieszczańskiej. Obsadzają fortyfikacje Imperium, patrolują granice i odpierają najeźdźców. Większość piechoty szkoli się w używaniu halabardy lub broni palnej. Chociaż armia dominuje szlachta, awans opiera się również na umiejętnościach i możliwe jest osiągnięcie stanowiska dowódczego (choć uprzedzenia klasy rządzącej to utrudniają). Krasnoludy i Halflingi w służbie imperialnej zwykle tworzą własne jednostki."
+        ),
         BasicProfessions.ZolnierzOkretowy to ProfessionDescription(
             quote = "Więc myślą, że mogą sobie tutaj wparować i plądrować nasze fortece? Pokażmy im, kto tu rządzi, chłopaki!",
             description = "Żołnierz Okrętowy to żołnierze desantowi, którzy służą w flocie Imperialnej oraz na większych prywatnych statkach. Chronią swoje okręty przed piratami, nordyckimi plądrowcami i innymi najeźdźcami. W przeciwieństwie do marynarzy, których głównym zadaniem jest żeglowanie, Marines znajdują się na pokładzie wyłącznie w celu walki. W portach często tworzą grupy przymusowego werbunku, by uzupełnić załogę statku. Niejedna nieostrożna osoba obudziła się na morzu po otrzymaniu belayingu od nadgorliwego rekrutera. Z powodu tych działań oraz własnych pijackich bójek Marines bywają niechętnie przyjmowani w wielu nadmorskich społecznościach. Jednak gdy napastnicy atakują, ci sami mieszkańcy chętnie przyjmują pomoc doświadczonych Marines.",
@@ -450,20 +483,38 @@ object ProfessionDescriptions {
             quote = "„Walczyć o własne ziemie to przywilej. Przemawiać w imieniu własnych ziem to zaszczyt.”",
             description = "Obdarzeni prawem do przemawiania w imieniu swojego władcy, ambasadorowie mogą posiadać ogromną władzę w różnych stolicach narodowych i prowincjonalnych Starego Świata, W Kislevie ambasadorowie pracują niestrudzenie ze swoich dobrze strzeżonych ambasad, gotowi zrobić wszystko, by przyciągnąć uwagę Królowej Lodu. Niektórzy ambasadorowie są wybierani ze względu na wysublimowany gust i zdolność do rozpuszczania zarówno rywali, jak i sojuszników odpowiednio dobranymi słowami i prezentami, inni mogą być wybierani ze względu na bystry umysł, znajomość sieci wywiadowczych lub niezaprzeczalną charyzmę. Niezależnie od indywidualnych zalet, wszyscy ambasadorowie pochodzą z szlacheckich rodów, gdyż Czarownica nigdy nie zniżyłaby się, by spotkać się z zagranicznym chłopem."
         ),
+        AdvancedProfessions.AkolitaKultuKhorna to ProfessionDescription(
+            quote = "Krew i gniew są naszym chlebem, a każdy wróg jest jedynie kolejnym krokiem ku chwale Pana Krwi.",
+            description = "Akolici Khorna żyją tylko po to, aby siać śmierć, strach i nienawiść. Są gwałtownymi, złowrogimi i wyjątkowo wypaczonymi ludźmi, którzy wywodzą się spośród najbardziej brutalnych kultystów. Jedyne, co powstrzymuje ich przed bezmyślnymi aktami przemocy, to świadomość celów bractwa i wewnętrzny przymus, aby je zrealizować."
+        ),
+        AdvancedProfessions.AkolitaKultuNurgla to ProfessionDescription(
+            quote = "Choroba jest darem, a cierpienie kluczem do mocy Wielkiego Zielonego.",
+            description = "Akolici Nurgla werbują ludzi chorych, zagubionych i cierpiących, tworząc rzesze nowych wyznawców swego patrona i zwiększając tym samym jego moc, siłę i wpływy. Ich postępowanie jest na wskroś podłe, gdyż na swe ofiary wybierają ludzi szczególnie ciężko doświadczonych przez los."
+        ),
+        AdvancedProfessions.AkolitaKultuSlaanesha to ProfessionDescription(
+            quote = "Przyciągam pragnienia innych jak ćma światło – i karmiąc je, rosnę w siłę.",
+            description = "Akolici Slaanesha są opętani myślą o zaspokojeniu każdej ze swych żądz i zachcianek. Choć zepsuci do szpiku kości, są fascynującymi ludźmi, czarującymi i atrakcyjnymi, którzy zwracają na siebie uwagę. Ich wpływ na zwykłych ludzi jest równie silny jak akolitów Nurgla. Akolici innych wyznań nigdy nie osiągają równie zdumiewających sukcesów w werbowaniu nowych członków."
+        ),
+        AdvancedProfessions.AkolitaKultuTzeentcha to ProfessionDescription(
+            quote = "Każdy ruch jest przemyślany, każda intryga zaplanowana na wiele kroków do przodu.",
+            description = "Nie da się opisać typowego wyznawcy Tzeentcha. Kultystą Pana Przemian może być każdy: kapłan doglądający kapliczki Sigmara lub Magister doradzający Księciu-Elektorowi. Jedno, co można o nich powiedzieć na pewno, to że zawsze działają ostrożnie, cierpliwie tkając pajęczą sieć intryg i wzajemnie uzupełniających się planów, których ziszczenie ma doprowadzić do upadku Imperium."
+        ),
         AdvancedProfessions.Arcykaplan to ProfessionDescription(
             quote = "Błogosławiony Sigmar za swoje liczne łaski. Obdarzył nas dziś wielką siłą, aby pokonać naszych wrogów i szerzyć jego najświętsze słowo.",
             description = "Najwyższy Kapłan jest żywym ucieleśnieniem woli swojego Boga w Starym Świecie. Są dość rzadcy, ponieważ niewielu posiada zarówno siłę charakteru, jak i niezachwianą wiarę potrzebną do osiągnięcia tak wysokiego stanowiska. Z bardzo nielicznymi wyjątkami Najwyżsi Kapłani działają w jednym z głównych ośrodków swojej religii. Pielgrzymi przemierzają całe Cesarstwo, aby móc choćby przez chwilę przemówić do takiej istoty. Najwyżsi Kapłani zwykle albo odrzucają świat materialny, wycofując się do klasztoru, albo przyjmują władzę świecką, stając się potężnymi liderami temporalnymi.",
         ),
         AdvancedProfessions.Arcymag to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Zostaw mnie przy moich studiach. Mam znacznie ważniejsze sprawy do załatwienia – los Imperium może być zagrożony!",
+            description = "W Imperium Arcymagowie są niezwykle potężnymi jednostkami. Nie postrzegają już świata tak jak inni, gdyż oddali swoje dusze magii. Uosabiają wybraną przez siebie Dziedzinę w słowie, czynie i formie fizycznej. Jeśli Elf osiągnie ten poziom umiejętności magicznych, uważa się, że zakończył swoje wstępne nauki magii i jest gotów udać się do wież Hoeth, aby stać się Wielkim Magiem."
+        ),
         AdvancedProfessions.Arcymistrz to ProfessionDescription(
             quote = "Prowadzić godnych podziwu rycerzy do honorowej walki przeciw Chaosowi to zaszczyt dla dowódcy. A stać na czele takiego oddziału jak ty to błogosławieństwo, jakby od samych bogów.",
             description = "Wielki Mistrz to wzór rycerskich cnót i przywódca jednego z zakonów rycerskich. Nie jest on tylko jednym z najbardziej przerażających wojowników Starego Świata, lecz również legendarnym dowódcą i liderem ludzi. Wielu rycerzy, nawet posiadających umiejętności i siłę umysłu, aby zostać Rycerzem Wewnętrznego Kręgu, nigdy nie osiąga tego poziomu. Wielki Mistrz zawsze stoi na czele armii w czasie wojny, prowadząc swoich rycerzy, a często całą armię, do bitwy. Jest zwykle jednym z najbardziej zaufanych doradców wojskowych i generałów, a gdy nie bierze udziału w walkach, zajmuje się ich planowaniem. Wielki Mistrz zakonu templariuszy często odgrywa również znaczącą rolę w kulcie religijnym, ciesząc się całkowitą lojalnością swoich wojowników."
         ),
         AdvancedProfessions.ArcymistrzRun to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Masz potencjał. Odezwij się za sto lat.",
+            description = "Arcymistrz Run są najwybitniejszymi kowalami Run. Kandydat na Runelorda może zostać awansowany tylko po śmierci istniejącego Runelorda, więc stanowisko to jest bardzo pożądane i konkurencyjne. Wśród krasnoludów Runelordowie są równi królom, poruszając się po społeczeństwie krasnoludów jako jedni z najbardziej szanowanych członków. Niektórzy Runelordowie wycofują się z życia publicznego, odosabniając się, aby zgłębiać sekrety Mistrzowskich Run, a może nawet tworzyć własne, co dodatkowo zmniejsza ich liczbę, a ich imiona stają się legendą."
+        ),
         AdvancedProfessions.ArcymistrzZielarstwa to ProfessionDescription(
             quote = "Dla niektórych nasz sposób życia to czary. My po prostu postrzegamy go jako sposób lepszego zrozumienia zarówno świata widzialnego, jak i niewidzialnego.",
             description = "Hedgewise to najstarsi i najbardziej doświadczeni Hedgefolk. Kierują swoimi pobratymcami i są odpowiedzialni za ochronę ich przed wszelkim złem. Hedgewise mogą stawić czoła wielu różnym zagrożeniom, od wędrownych Kapłanów-Wojowników pragnących szerzyć Słowo Sigmara przy końcu młota, po tajemnicze Kulty, które mogłyby sprowadzić gniew Łowców Czarownic na lokalną społeczność. Wiele Hedgewise szybko nabywa głębokiej nienawiści wobec sług Mocy Zguby, ponieważ przyciągają niechcianą uwagę do Hedgefolk i są sprzeczni z ich sposobem życia. Z tego powodu nie jest rzadkością, że niektórzy Hedgewise przekraczają Granicę, by polować na prawdziwe Czarownice z równie wielką, jeśli nie większą, gorliwością niż Magistrowie i Kult Sigmara."
@@ -490,11 +541,12 @@ object ProfessionDescriptions {
         ),
         AdvancedProfessions.Bezimienny to ProfessionDescription(
             quote = "Honor wśród złodziei? Nie jesteśmy złodziejami. Nie mamy takich ograniczeń.",
-            description = "Wszystkie bandy Herrimaultów mają przywódcę; jeśli grupa zbiera się przypadkiem, albo pojawia się lider, albo grupa znów się rozprasza. Najczęściej udane bandy Herrimaultów prowadzi Faceless – osoba wysoko doświadczona w dochodzeniu sprawiedliwości i prawdy w sposób niekonwencjonalny.\n\nFaceless, w przeciwieństwie do zwykłych szefów band, rzadko muszą martwić się o zdradę własnych podwładnych. Większość z nich wspiera potencjalnych Faceless w grupie, pozwalając im się rozwijać i w końcu zakładać własne bandy. Etyka ma swoje zalety. Z drugiej strony, Faceless muszą dbać o wyżywienie swojej grupy, schronienie i naprawianie krzywd – wszystko bez naruszania zasad moralnych, które sami sobie ustanowili. Niektórzy w końcu ulegają presji.\n\nWiększość Faceless pielęgnuje aurę tajemniczości, nosząc głębokie kaptury, by ukryć twarz. Niektóre osoby krążące w plotkach to wpływowi szlachcice, a nawet Rycerze Graala, naprawiający krzywdy, których nie mogą ujawnić publicznie."
+            description = "Wszystkie bandy Herrimaultów mają przywódcę; jeśli grupa zbiera się przypadkiem, albo pojawia się lider, albo grupa znów się rozprasza. Najczęściej udane bandy prowadzi Bezimienny – osoba wysoko doświadczona w dochodzeniu sprawiedliwości i prawdy w sposób niekonwencjonalny.\n\nFaceless, w przeciwieństwie do zwykłych szefów band, rzadko muszą martwić się o zdradę własnych podwładnych. Większość z nich wspiera potencjalnych Faceless w grupie, pozwalając im się rozwijać i w końcu zakładać własne bandy. Etyka ma swoje zalety. Z drugiej strony, Faceless muszą dbać o wyżywienie swojej grupy, schronienie i naprawianie krzywd – wszystko bez naruszania zasad moralnych, które sami sobie ustanowili. Niektórzy w końcu ulegają presji.\n\nWiększość Faceless pielęgnuje aurę tajemniczości, nosząc głębokie kaptury, by ukryć twarz. Niektóre osoby krążące w plotkach to wpływowi szlachcice, a nawet Rycerze Graala, naprawiający krzywdy, których nie mogą ujawnić publicznie."
         ),
         AdvancedProfessions.BiczBozy to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "O wy o małej wierze! Spójrzcie na łaskę naszego boga! Jest zapisana krwią na moim ciele, Jego najświętsze przykazanie. Każda kropla mojej krwi jest dalszym dowodem Jego łaski!",
+            description = "Ci, którzy służą swoim bogom jako flagelanci, czasem przeżywają rzucanie się w niebezpieczeństwo, aby zgładzić siły Chaosu i ciemności. Ci, którzy przeżyją wystarczająco długo, stają się plagami boga, potężnymi wojownikami dla swojej boskiej istoty, obdarzonymi pewnym stopniem boskiej ochrony. Plagi boga są często bardzo charyzmatyczne i gromadzą wokół siebie innych fanatyków. W czasie wojny są wysoko cenione przez hierarchię kultu, ale gdy nadchodzi pokój, kapłani wolą szybko je przemieścić, aby nie znalazły zbyt wielu „wrogów boga” w miastach i wsiach. Większość plag boga umiera odważnie w boju, ale niektóre kontynuują, często odkrywając inne sposoby karania skorumpowanych. Plagi boga niemal zawsze zastępują nazwę swojego boga, opisując siebie: plaga Sigmara, plaga Ulrica i tak dalej."
+        ),
         AdvancedProfessions.Biczownik to ProfessionDescription(
             quote = "Czuję od ciebie odór Chaosu, bluźnierco! Może mój bicz uwolni go z twojego ciała!",
             description = "Biczownicy to oszalałe fanatyczne jednostki religijne, które ledwo przejmują się własnym życiem, o ile mogą zadać cios Chaosowi i wszystkiemu, co uważają za plugawstwo, zanim odejdą. Często są to wyjątkowo charyzmatyczne osoby, które prowadzą innych złamanych ludzi, gdyż siła ich osobowości i mocne przekonania religijne przyciągają innych do nich. Flagelanci zawsze używają ogromnych broni, aby skutecznie zadawać ciosy swoim wrogom, i unikają pancerza, wierząc, że ich Bogowie ochronią ich aż nadejdzie odpowiedni czas śmierci. Zdrowsi na umyśle ludzie zwykle aktywnie unikają ich towarzystwa."
@@ -508,18 +560,21 @@ object ProfessionDescriptions {
             description = "Głębokie głosy rozbrzmiewają po zatłoczonych miastach Starego Świata, gdy Majstrowie kierują swoimi spoconymi zespołami za pomocą ostrych słów i rubasznych pieśni. Na tętniących życiem nabrzeżach pisk gwizdka Majstra zmusza bezrobotnych do ucieczki z zadymionych tawern, wszyscy desperacko próbują przenieść ciężki ładunek z nabrzeża do magazynu w zamian za grosze. Ponieważ Majstrowie często są opłacani według tempa pracy swoich ludzi, mogą być bezwzględnymi nadzorcami, „motywując” swoich tymczasowych pracowników wszelkimi możliwymi sposobami. W przeciwieństwie do nich, Majstrowie Stevedore prowadzą swoje stałe zespoły z prawdziwą dumą, pewnie negocjując z właścicielami doków i kupcami dodatkową pracę i wynagrodzenie, a także aktywnie uczestnicząc w sprawach gildii i sporach terytorialnych. Z tego powodu zazwyczaj patrzą z nieukrywanym pogardą na swoich współczesnych kierujących pracownikami tymczasowymi."
         ),
         AdvancedProfessions.Budowniczy to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Skończyłeś? Będziesz bronił tego kawałka muru, kiedy przyjdą Zwierzoludzie... Jeszcze raz chcesz coś sprawdzić, tak? No dobrze.",
+            description = "Budowniczowie to chłopscy rzemieślnicy odpowiedzialni za utrzymanie i projektowanie fortyfikacji bretońskich możnych — potężnych zamków będących podstawą ich władzy. Zajmują się również budową i konserwacją machin oblężniczych. Większość lordów nie ma pojęcia o budownictwie czy inżynierii, dlatego muszą darzyć swych Strażników Murów ogromnym zaufaniem. Z tego powodu chłop otrzymuje tę funkcję dopiero po udowodnieniu swoich umiejętności. Ponieważ Strażnicy Murów często mają dostęp do ucha i zaufania swego pana, stanowisko to bywa krokiem w stronę ważniejszej roli w administracji lorda. Zdarza się jednak, że obce siły próbują ich przekupić, by zdradzili stan obrony zamku. Ci lojalni naturalnie odmawiają."
+        ),
         AdvancedProfessions.Ceremoniarz to ProfessionDescription(
             quote = "Atakują teraz? Nie? W takim razie możesz powiedzieć wysokiemu kapłanowi o szalejących mutantach po porannych modlitwach.",
             description = "Asystent kultu to pomocnik kapłanów kultu, odpowiedzialny za organizowanie wszystkich przyziemnych spraw związanych z funkcjonowaniem świątyni. Asystenci zajmują się logistyką, planują porządek nabożeństw, koordynują działalność duchowieństwa i wiernych, i dbają o to, by rytuały i modlitwy przebiegały jak najsprawniej. Asystent kultu działa za kulisami świątyni i wielu z nich szczyci się tym, że pozostają jak najmniej widoczni."
         ),
         AdvancedProfessions.Czarownik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Oko nowego traszki? Nie, nie, Lilith! Oko psa! Pies! Nic dziwnego, że się pienie na niebiesko!",
+            description = "Czarownik to Guślarz, który przetrwał praktykowanie swoich niezgrabnych sztuk, nie popadając w całkowite szaleństwo ani nie ginąc. Dysponują szerszym repertuarem domowych zaklęć i wiele z nich eksperymentuje w dziedzinach, które najlepiej byłoby pozostawić w spokoju. Z powodu braku wiedzy o okultystycznym działaniu Wiatrów Magii, wiele czarownic zaczyna używać Ciemnej Magii, nie zdając sobie z tego sprawy. W wyniku prób i błędów zaklęcia Czarownic są bardziej różnorodne i potężniejsze niż drobne zaklęcia innych Wiedźm-Ziołolecznic, obejmując elementy wielu Wiatrów Magii. Jednakże korzystanie z mocy Ciemnej Magii nieuchronnie odbija się tragicznie na umyśle i duszy czarownicy."
+        ),
         AdvancedProfessions.Czarnoksieznik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie waż się wzywać wielkich mrocznych mocy, jeśli nie jesteś gotów zaryzykować wszystkiego – nawet własnej duszy – tak jak ja.",
+            description = "Czarownicy, którzy sięgają po Mroczną Magię i przyjmują jej moc, mogą stać się Czarnoksiężnikami, o ile przeżyją wystarczająco długo, by zdobyć potrzebną wiedzę. Często nie zdają sobie początkowo sprawy, że ta ścieżka niemal nieuchronnie prowadzi ku skażeniu. Są postrachem łowców czarownic – magami, którzy stanowią zagrożenie zarówno dla siebie, jak i dla otoczenia. Czarnoksiężnicy zwykle specjalizują się w demonologii lub nekromancji. Ponieważ są samoukami, a ich magia opiera się w dużej mierze na eksperymentach, większość z nich wykształca unikalne poglądy na temat magii i świata. To właśnie ta indywidualność sprawia, że łowcom czarownic tak trudno jest ich wytępić."
+        ),
         AdvancedProfessions.CzarnyStraznik to ProfessionDescription(
             quote = "Nie przejdziesz. Chyba że przez Bramy Morra chcesz wędrować.",
             description = "Podczas gdy kult Morra ma niewielu, jeśli w ogóle, oficjalnych templariuszy, posiadają Czarną Gwardię. Ci zawsze posępni i poważni wojownicy mają jeszcze poważniejszą odpowiedzialność: strzec zarówno żywych, jak i zmarłych przed nieustającą złośliwością Nieumarłych oraz tych, którzy chcieliby ich wskrzeszać. W większości są to wojownicy defensywni, chroniący wielkie świątynie i cmentarze Imperium oraz dostojników kultu, wyruszając na wojnę tylko w wyjątkowych okolicznościach, na przykład podczas krucjaty przeciwko hrabiom wampirów. W przeciwieństwie do większości rycerzy, są szkoleni w użyciu broni dystansowej, aby przeciwnicy nie mogli wykorzystać swojej siły w zwarciu. W połączeniu z ich ponurą czarną, obsydianową zbroją oraz surową przysięgą milczenia podczas służby, sprawia to, że są unikani przez większość innych zakonów rycerskich, ale taka jest cena obowiązku."
@@ -549,36 +604,41 @@ object ProfessionDescriptions {
             description = "Fechtmistrzowie to wojownicy, którzy poświęcają swoje życie walce wręcz, przewyższając wszystkich innych na polu bitwy. Nie są przywódcami ludzi, ale jako indywidualni wojownicy są bezkonkurencyjni. Żyją dla momentów, gdy ich umiejętności są wystawione na najwyższą próbę, bo tylko wtedy naprawdę wiedzą, jak dobrzy są. Wielu Mistrzów służy w armiach, bandach wojennych i zakonach rycerskich, inni wędrują po Imperium, sprzedając swoje niezwykłe umiejętności najwyższemu oferentowi. Ich broń jest zawsze jedną z najlepszych, jakie można znaleźć w Starym Świecie."
         ),
         AdvancedProfessions.HandlarzNiewolnikami to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Och, sprawca kłopotów? Założę się, że chciałbyś, abym odczepił twoje kajdany i dał ci szansę na mój gardło? Hah, to duch, chłopcze! Zostaniesz wspaniałym gladiatorem! Zachowaj ten gniew, a może nawet doczekasz następnego roku!",
+            description = "W przeszłości niewolnictwo było dość powszechne w Starym Świecie. Praktyka ta jest tak stara jak ludzkość, wywodząc się ze starożytnego imperium Khemri, i przetrwała przez różne cywilizacje, które wznosiły się i upadały na przestrzeni lat, aż do czasów obecnych. W rozwijającej się gospodarce niewolnictwo jest po prostu niepraktyczne. W miejscach takich jak Bretonnia, pańszczyźniani chłopi wykonują całą pracę i prowadzą życie niewiele lepsze od niewolników, ale w Imperium mężczyźni i kobiety, będąc chłopami, kierują własnym losem. Oczywiście, w niektórych odległych zakątkach Starego Świata praktyka ta wciąż kwitnie. Araby słynie z targów niewolniczych, podobnie jak Sartosa, a nawet niektóre mroczne zakamarki Marienburga. Norsowie również biorą niewolników, zarówno z pokonanych przeciwników, jak i jako łup z jednej ze swoich najazdów. Czasami mają powód, by handlować z niegodziwymi handlarzami ludźmi, a niektórzy przedsiębiorczy Norsowie podejmują się tego zawodu."
+        ),
         AdvancedProfessions.Herold to ProfessionDescription(
             quote = "Per pale, sable and or, two scorpions tergant, counterchanged...to zarejestrowany herb jednego z wielkich domów kupieckich Remas. Ciekawe, że jeden z ich najemników znalazł się tak daleko na północy. Hm. Jeśli nie ukradł tego herbu podczas najazdu... cóż. Może być ciekawie.",
             description = "Heroldowie są głosem szlachty, zobowiązani do ogłaszania przybycia swoich panów i patronów lub czasami przekazywania wieści o ważnych wydarzeniach z daleka. Są niezmiennie biegli w mowie, posiadają szybki umysł i są dobrze wykształceni jak na swoje czasy. Heroldowie powinni rozpoznawać heraldykę setek szlachciców na pierwszy rzut oka, stąd ich nazwa. Rzadko sami są szlachcicami, ale ich stanowisko jest uważane za jedno z nielicznych, które stanowi krok w stronę niższej szlachty. Heroldowie dbają o swój wygląd, gdyż jest on odbiciem ich pana."
         ),
         AdvancedProfessions.HersztBanitow to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "To nie jest jakaś kompania najemników. Jak już do nas dołączysz, stajesz się częścią rodziny. Jeśli chcesz z nami biegać, musisz brać złe wraz z dobrym.",
+            description = "Każda banda zbójców potrzebuje przywódcy. Banita, który udowodni, że jest zarówno przebiegły, jak i odważny, może awansować do roli herszta. Dowodzenie bezprawną grupą niebezpiecznych ludzi nie jest łatwym zadaniem, a zdradliwe lasy Starego Świata wcale tego nie ułatwiają. Herszci mają prawo do najlepszej części łupów zdobytych przez bandę, ale odpowiadają też za każdą porażkę, a ich przywództwo zawsze jest kruche. Bandy zbójców słyną z tego, że nie pozwalają swoim członkom po prostu odejść, co sprawia, że rezygnacja z funkcji herszta może być bardzo trudnym zadaniem.",
+        ),
         AdvancedProfessions.Husarz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Dla Królowej, dla Kislevu, dla chwały — w górę! A przeklęty niech będzie ten, kto pierwszy zawoła 'stój!'",
+            description = "Każda osada Gospodarów corocznie powołuje rotę lancerników skrzydlatych. Wiosną młodzi ochotnicy wraz z weteranami stawiają się na zbiórce i zakładają zbroje na rozkaz rotamastera. Przy dźwiękach płaczu kobiet wsiadają na konie, a ich skrzydlate sztandary powiewają za nimi. Do czasu powrotu znani są jako 'Jeźdźcy Umarłych', gdyż opłakuje się ich jakby już zmarli. Każda rota ma inny charakter — niektóre południowe przypominają rycerzy imperialnych, z kolorowymi chorągwiami, misternie zdobionymi zbrojami i wielkimi futrzanymi pelerynami, podczas gdy lancernicy spoza Lynsk są bliżsi nomadom Ungol, z bujnymi wąsami, kitkami na głowach i futrzanymi amuletami chroniącymi przed złem."
+        ),
         AdvancedProfessions.Inzynier to ProfessionDescription(
             quote = "Teraz, jeśli tylko wyreguluję zębatkę celownika o jeden stopień… ups! Dzięki Sigmarowi, że to byli tylko najemnicy!",
             description = "To Krasnoludy jako pierwsze wprowadziły naukę inżynierii do Starego Świata. Wśród nich Gildia Inżynierów cieszy się wielkim szacunkiem, a jej dzieła mają wysoką rangę – o ile przestrzegają tradycyjnych metod i wartości. Ludzie przejęli krasnoludzką wiedzę i poszli dalej, zwłaszcza w zakresie prochu strzelniczego i innych urządzeń nadających się do użytku wojennego. Cesarska Szkoła Inżynierów w Altdorfie słynie ze swoich dziwacznych wynalazków, które potrafią być niezwykle przydatne – pod warunkiem, że w ogóle działają. Poza Imperium szczególną sławą cieszą się Tileańczycy, znani ze śmiałych pomysłów inżynieryjnych."
         ),
         AdvancedProfessions.Kapitan to ProfessionDescription(
-            quote = "Szukamy kilku dobrych ludzi, aby poprowadzić samobójczy rajd przeciw armii Orków. Ochotnicy?",
-            description = "Kapitanowie to dowódcy wojskowi w pełnym konfliktów Starym Świecie. Dowodzą Żołnierzami, Milicjantami, Najemnikami, a nawet Strażnikami Dróg na krwawych polach bitew i ulicach pełnych trupów w niekończących się kampaniach wojskowych Imperium i poza nim. Większość kapitanów to twardzi, zawodowi żołnierze, którzy przetrwali dziesiątki zaciekłych bitew, aby dotrzeć tam, gdzie są. Nic dziwnego, że niechętnie służą niedoświadczonym Szlachcicom, co jest zbyt częstym zjawiskiem. Kapitanowie cenią doświadczenie i umiejętności bardziej niż urodzenie i pozycję społeczną. Wiedzą, co naprawdę się liczy na polu bitwy."
+            quote = "Uwaga, łajdacy! Zaciągnijcie kotwicę i przygotujcie się do wypłynięcia!",
+            description = "Kapitanowie statków przemierzają oceany Starego Świata w poszukiwaniu zysku i przygód za następnym horyzontem. Kapitanowie przestrzegający honoru to dalekosiężni handlarze, którzy żeglują wyłącznie w poszukiwaniu najbardziej opłacalnych rynków dla swoich towarów. Najniebezpieczniejsi są krwiożerczy piraci, atakujący inne statki dla łupu i nie zostawiający żadnych ocalałych. Większość kapitanów statków mieści się gdzieś pomiędzy tymi skrajnościami. Na pokładzie statku słowo kapitana jest prawem. Jednak marynarze bywają kłótliwi; kapitan musi być sprytny, silnej woli i nieco bezwzględny, aby utrzymać dowództwo. Najsłynniejsi kapitanowie pochodzą z Marienburga, Tilei i elfiej wyspy Ulthuan."
         ),
         AdvancedProfessions.Kaplan to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Jestem tylko naczyniem dla woli i kaprysów bogów. Wszystko, co robię, robię na ich rozkaz.",
+            description = "Kapłani to osoby duchowne, które troszczą się o wiernych w całym Starym Świecie. Ich bogowie obdarzają ich zdolnością czerpania niewielkich ilości energii boskiej, aby wspomagać ich dzieła. Wielu kapłanów zostaje przypisanych do konkretnego regionu lub świątyni, inni wędrują tam, gdzie mogą najlepiej pomagać. Przyjęcie, jakiego doświadczają, zależy od ich bóstwa. Kapłanka Shallyi zostanie serdecznie przyjęta niemal wszędzie, podczas gdy kapłan Ulrica cieszy się gościnnością głównie przed wielką bitwą."
+        ),
         AdvancedProfessions.KaplanSwiecki to ProfessionDescription(
             quote = "Bogowie nie mogą odpowiedzieć na każde wołanie o pomoc. Dlatego musimy być wdzięczni za otrzymaną pomoc i zawsze gotowi, by pomagać sobie sami.",
             description = "Kapłani, którzy służą woli swoich bogów poprzez uczynki doczesne, znani są jako kapłani świeccy. W przeciwieństwie do swoich magicznych odpowiedników, kapłani świeccy nie spędzają dnia i nocy studiując ezoteryczne pisma, aby osiągnąć kontakt z boskością. Zamiast tego wygłaszają kazania dla zwykłych ludzi, gdyż ostatecznie wiara mas wynosi bogów ponad demony i duchy. Kapłani świeccy nie są jedynie kaznodziejami; są także rzemieślnikami, uczonymi i administratorami. Sfera wpływów boga przejawia się w fachowości kapłana świeckiego, a ideał boski ukazuje się poprzez jego publiczne postępowanie.",
         ),
         AdvancedProfessions.KaplanWojownik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Wiara będzie moją tarczą, a Sigmar moim sprawiedliwym młotem.",
+            description = "Choć od wszystkich kapłanów oczekuje się, że będą gotowi chwycić za broń w obronie swojej świątyni i wiary, a większość z nich ma przynajmniej podstawowe umiejętności bojowe, tylko nieliczni maszerują do bitwy ramię w ramię z templariuszami i armią Imperium. Kapłani-wojownicy mają potrójną odpowiedzialność: posługę duchową wśród żołnierzy, udzielanie rad taktycznych i duchowych dowództwu oraz wymierzanie ciosów niewiernym na polu bitwy. Gdy wojna dociera do świątyni, to właśnie kapłani-wojownicy stają na czele jej obrony, organizując wiernych do odparcia ataku. Zazwyczaj należą oni do zakonów, takich jak Sigmaryci Zakonu Srebrnego Młota. Najwięcej kapłanów-wojowników wywodzi się z kultów Sigmara, Ulryka i Myrmidii, choć i inne kulty posiadają kilku bojowych braci."
+        ),
         AdvancedProfessions.Karczmarz to ProfessionDescription(
             quote = "Prywatny pokój kosztuje złotą monetę. Nie obwiniaj mnie, obwiniaj festiwal. W przeciwnym razie wspólne kwatery kosztują tylko pół szylinga. Plus gratis – pluskwy.",
             description = "Karczmarze posiadają i prowadzą zajazdy, które pozwalają gospodarce Starego Świata kwitnąć. Wiele rodzin karczmarzy prowadzi swoje przybytki od pokoleń. Obsługują wszystkich klientów, niezależnie od klasy społecznej, pod warunkiem, że ci potrafią zapłacić. W czasach, gdy większość ludzi jest zamknięta w swoich społecznościach, karczmarze nauczyli się, że informacje są cenne, i zwykle dysponują wiadomościami z odległych miejsc. Niektórzy karczmarze zwiększają swoje dochody, łącząc klientów – od znajdowania odpowiedniego towarzystwa dla gości, po stwarzanie kontaktu z osobami, które mogą definitywnie usunąć kłopotliwych ludzi bez zadawania pytań.",
@@ -612,8 +672,9 @@ object ProfessionDescriptions {
             description = "Kupcy to spekulanci, którzy zajmują się przewożeniem dużych ilości towarów z miasta do miasta, szukając rynku, na którym osiągną największy zysk. Rzadko wchodzą w interakcje z ogółem ludności, gdyż handlują hurtowo, zazwyczaj sprzedając swoje towary mieszczanom i rzemieślnikom. Gildie kupieckie mają ogromny wpływ w Cesarstwie i stopniowo wypierają pozycję, którą niegdyś zajmowała szlachta w Starym Świecie. Nawet najbiedniejszy kupiec jest zwykle bardzo zamożny; wielu z nich wykorzystuje swoje bogactwo, by kupić legitymację, nabywając tytuły lub wydając swoje dzieci za członków rodzin szlacheckich.",
         ),
         AdvancedProfessions.Lajdak to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Noc wciąż młoda, przyjaciele. Do świtu pozostały co najmniej trzy lub cztery godziny. Co robimy dalej?",
+            description = "Niektórzy młodzi mężczyźni mają w sobie pewien urok. Nie muszą być bogaci, ale potrafią się dobrze ubrać, prezentować w sposób szykowny i nieco niekonwencjonalny. Są bystrzy, szybcy i nieco niebezpieczni, jak młody kot, który właśnie osiągnął pełnię wzrostu i jest dumny ze swojej prędkości i pazurów. Rapscallionowie nie są złodziejami, choć mogą kraść. Nie są pojedynkowiczami, choć mogą stawać do pojedynków. Nie są uczonymi, choć mogą być oczytani. Są młodymi mężczyznami pełnymi stylu, gracji i fantazji, którzy lubią znajdować się w centrum wydarzeń. Rapscallion żyje dla akcji, dla ekscytacji, a jego obecność zazwyczaj pobudza innych. Może być doskonałym sojusznikiem, niebezpiecznym wrogiem lub jedynie krótką rozrywką, ale jedno jest pewne — Rapscallion zawsze pozostaje w pamięci."
+        ),
         AdvancedProfessions.LesnyDuch to ProfessionDescription(
             quote = "Ci, którzy zagrażają świętości lasu, poczują gniew lasu w każdym strzale.",
             description = "Prawie nadprzyrodzenie cisi i zwinni, Duchowi Wędrowcy przemierzają Stary Świat, tropiąc siły Chaosu i inne zagrożenia dla przyrody. Najbardziej czują się w lasach, choć w razie potrzeby potrafią niepostrzeżenie poruszać się po górach i innych terenach. Duchowi Wędrowcy są zabójczymi łucznikami, słynącymi z tego, że nigdy nie chybią celu. Zwykle są cisi lub powściągliwi i uważani za osobliwych i budzących respekt, nawet w oczach własnego ludu. Często czują się bardziej komfortowo wśród przyrody niż w towarzystwie innych istot rozumnych."
@@ -627,21 +688,25 @@ object ProfessionDescriptions {
             description = "Gdy adeptki czarownictwa kończą szkolenie, zostają uwolnione przez swoje mistrzynie, aby zgłębić Magię Lodu. W tym celu muszą jak najwierniej naśladować Starą Wdowę, składając śluby czystości (symbolizujące stan wdowieństwa), po czym wyruszają z zimną determinacją w sercach. Panny lodu można spotkać w najbardziej nieoczekiwanych miejscach podczas ich poszukiwań wiedzy, lecz najczęściej wędrują po mroźnym obwodzie, stawiając czoła kyazakom, duchom ziemi i dzikim Zielonoskórym z równą niezłomnością. Śluby czystości panny lodu kończą się, gdy osiągnie ona pełną wiedzę o swej zimowej magii i staje się pełnoprawną czarownicą lodu; jednak niektóre nigdy nie osiągają tego zrozumienia i pozostają samotne na zawsze.",
         ),
         AdvancedProfessions.LowcaCzarownic to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Wyzdradź swoje plugastwa, a może sprawię, że twoja śmierć będzie szybka.",
+            description = "Łowcy Czarownic to ponure jednostki, które poświęciły swoje życie eliminowaniu sił Chaosu, służąc państwu lub Kościołowi Sigmara. Preferują tropienie kultystów Chaosu, mutantów i heretyków, którzy potajemnie ukryli się w miastach Imperium. Jednak podróżują bardzo daleko, jeśli uważają, że mogą zadać znaczący cios siłom zła. Łowcy Wiedźm są często zgorzkniali i podejrzliwi, nie mają skrupułów, by zabić niewinnych, o ile uda im się również zgładzić winnych, co sprawia, że ich obecność budzi postrach wśród innych ludzi."
+        ),
         AdvancedProfessions.LowcaWampirow to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie uciekną przede mną na długo. Słońce zadba o to.",
+            description = "Łowcy wampirów to ludzie owładnięci obsesją, którzy za wszelką cenę pragną zniszczyć Nieumarłych. Wielu z nich straciło bliskich z rąk Niespokojnych Umarłych, najczęściej właśnie wampirów. Ponieważ jakakolwiek wiedza o Nieumarłych jest w Imperium zakazana, łowcy wampirów to w pełni samoucy. Spotykają się potajemnie z innymi sobie podobnymi, dzieląc się skromnymi doświadczeniami i odkryciami wyniesionymi ze starć z Niespokojnymi Umarłymi, w nadziei, że pewnego dnia odnajdą niezawodny sposób na zgładzenie wampira."
+        ),
         AdvancedProfessions.MagisterRewizor to ProfessionDescription(
             quote = "Czas na skruchę minął, Magisterze Festusie. Teraz nadszedł sąd.",
             description = "Kolegium Magii niechętnie pozwala, by ich brudy były prane publicznie przez Łowców Czarownic lub inne władze. W związku z tym każda Orden zatrudnia własnych strażników i śledczych, poświęconych dyskretnemu ujawnianiu tych, którzy łamią swoje śluby i praktykują czarną magię, nekromancję lub diabolizm. Ponieważ wampiry często są uczniami tych czarnych sztuk, obserwatorzy ci z dumą polują także na książąt ciemności i ich niszczą. Magistrowie Strażnicy nadal płacą składki swojemu Kolegium, zgodnie z zasadami magistra-lorda, ale nie oczekuje się od nich przyjmowania uczniów. Ich obowiązki w całym Cesarstwie uniemożliwiają im zdobycie takiej kontroli nad magią, jaką posiada wielu ich kolegów, ale posiadają liczne inne umiejętności i talenty przydatne w różnych sytuacjach, zdobywając tym samym wielki szacunek i strach wśród swoich rówieśników.",
         ),
         AdvancedProfessions.Majordomus to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "To wołowina prawie się psuje, głupcze! Jego Wysokość dziś wieczorem gości Elektora! Jeśli nie przyniesiesz mi świeżego mięsa natychmiast, sam trafisz na stół!",
+            description = "Majordomus to zarządca domu, odpowiedzialny za wszystkie codzienne sprawy, którymi szlachta i najbogatsi, tacy jak zamożni kupcy czy wpływowe duchowieństwo, nie chcą się zajmować. Podczas gdy Szlachetny Lord często nie ma pojęcia, ile jest wart ani ile kosztuje utrzymanie jego majątku i posiadłości, jego Steward zna to do ostatniego szylinga. Ponieważ zamożni szlachcice posiadają rozległe majątki, niektórzy Stewardzi mogą przez lata kierować daną posiadłością, działając samodzielnie."
+        ),
         AdvancedProfessions.Medyk to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Ach, cóż za interesująca infekcja. Czy ona zawsze tak ropieje?",
+            description = "Lekarze są praktykami sztuki leczenia, którzy badają tajemnice chorób i anatomii. Nauka medycyny jest stosunkowo nowa i wciąż budzi nieufność wśród większości obywateli Starego Świata. Wielu uważa nieznanych lekarzy za nadętych aptekarzy lub niebezpiecznych znachorów, dopóki ci nie udowodnią swoich umiejętności. Wykwalifikowani lekarze cieszą się jednak dużym szacunkiem w swoich społecznościach. Potrafią radzić sobie z większością drobnych dolegliwości oraz wieloma prostszymi obrażeniami, takimi jak głębokie cięcia czy zmiażdżenia. Lekarze chętnie poszukują nowych lekarstw i uczą się skuteczniejszych metod leczenia.",
+        ),
         AdvancedProfessions.MistrzCieni to ProfessionDescription(
             quote = "Nic nigdy nie jest całkowicie bezpieczne. Jeśli ktoś czegoś naprawdę pragnie, znajdzie… sposoby… by to zdobyć.",
             description = "We wszystkich profesjach są ci, którzy osiągają szczyt. Mistrzowie Złodziei są wielkimi artystami świata przestępczego. Są najlepszymi złodziejami, biegłymi we wszystkich umiejętnościach potrzebnych do nielegalnego zdobywania cudzej własności. Mistrzowie Złodziei zazwyczaj działają w strukturach lokalnej gildii złodziei, ale jako bravos, którzy regularnie lekceważą prawo, wielu z nich woli działać, ironicznie, „nielegalnie”, czyli bez aprobaty lokalnego Władcy Przestępczego. Cesarstwo od dawna potajemnie podziwia odważnych złodziei, choć jeśli zostaną przyłapani, nadal ponoszą karę.",
@@ -659,8 +724,9 @@ object ProfessionDescriptions {
             description = "Mistrzowie Runiczni są nauczycielami i strażnikami wiedzy runicznej. Niewielu Runistów osiąga ten status, a spośród tych, którzy go zdobywają, wielu pozostaje w swoich twierdzach, przekazując zdobytą wiedzę młodym i utalentowanym Krasnoludom z rodzin. Inni Mistrzowie Runiczni poświęcają lata życia na poszukiwanie starożytnych sekretów, podróżując po świecie w celu odnalezienia pradawnych broni i artefaktów oraz odzyskania utraconych Run od dawnych, legendarnych Runistów. Takie wyprawy prowadzą Mistrzów Runicznych w niebezpieczne miejsca, jak zrujnowane twierdze, legowiska smoków, głębiny elfich lasów i inne, gdyż znaczna część krasnoludzkiego terytorium na przestrzeni wieków przeszła w ręce wrogów.",
         ),
         AdvancedProfessions.MistrzRzemiosla to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "„Kluczem do mistrzowskiego rzemiosła jest prostota. Usuń wszystko, co przeszkadza w osiągnięciu perfekcji.”",
+            description = "Rzemieślnicy to wykwalifikowani fachowcy i mistrzowie w swoim rzemiośle. Najczęściej spotykani w miastach i miasteczkach, rzemieślnicy zrzeszeni są w zaskakująco różnorodnych gildiach. Najlepsi fachowcy przyciągani są do największych miast, takich jak Altdorf, Marienburg i Nuln. Tam mogą żądać wysokich cen od najbogatszych klientów lub współpracować z Kupcami, którzy sprzedadzą ich towary w dalszych regionach. Niektórzy rzemieślnicy są tak sławni, że nawet Szlachta musi wpisywać się na listy oczekujących, ponieważ posiadanie dzieła renomowanego mistrza jest oznaką statusu. Mistrzowskie dzieło rzemieślnika naprawdę zapiera dech w piersiach."
+        ),
         AdvancedProfessions.MistrzZakonny to ProfessionDescription(
             quote = "Do mnie, dzielni rycerze! Razem oczyścimy tę ziemię z zagrożenia dla Imperium!",
             description = "W każdym zakonie rycerskim są tacy, którzy wznoszą się na sam szczyt – najlepsi z najlepszych. Raz po raz dowiedli swej odwagi i lojalności, za co zostali włączeni do wewnętrznego kręgu zakonu. Dowodzą rycerzami na polu bitwy, reprezentują zakon na dworach i podejmują najważniejsze decyzje. To jedni z najpotężniejszych wojowników, jakich ma do zaoferowania Stary Świat, a wielu z nich powierzono niebezpieczne sekrety dotyczące fundamentów ich bractwa. Każdy z nich marzy o tym, by pewnego dnia zostać Wielkim Mistrzem swojego zakonu – szczytem rycerskiej kariery.",
@@ -689,15 +755,17 @@ object ProfessionDescriptions {
             description = "Odkrywcy cierpią na silną żądzę podróży i przemierzają rozległe obszary Starego Świata i poza nim. Swoją wielką potrzebę poznawania tego, co kryje się za kolejnym horyzontem, przekuwają w odkrywanie nowych ziem i poszukiwanie możliwości handlowych. Odkrywcy regularnie zapuszczają się w nieznane, co może uczynić ich zręcznymi wojownikami i dyplomatami lub sprawić, że ich życie będzie bardzo krótkie.\n\nSą biegli w podróżowaniu zarówno lądem, jak i morzem. Odkrywcy zazwyczaj są bardzo kompetentnymi jednostkami. Różnorodność ról, jakie przychodzi im pełnić, zmusza ich do dużej elastyczności – potrafią dowodzić oddziałami lub negocjować w językach, których ledwie rozumieją."
         ),
         AdvancedProfessions.Oficer to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Szukamy kilku dobrych ludzi, aby poprowadzić samobójczy rajd przeciw armii Orków. Ochotnicy?",
+            description = "Kapitanowie to dowódcy wojskowi w pełnym konfliktów Starym Świecie. Dowodzą Żołnierzami, Milicjantami, Najemnikami, a nawet Strażnikami Dróg na krwawych polach bitew i ulicach pełnych trupów w niekończących się kampaniach wojskowych Imperium i poza nim. Większość kapitanów to twardzi, zawodowi żołnierze, którzy przetrwali dziesiątki zaciekłych bitew, aby dotrzeć tam, gdzie są. Nic dziwnego, że niechętnie służą niedoświadczonym Szlachcicom, co jest zbyt częstym zjawiskiem. Kapitanowie cenią doświadczenie i umiejętności bardziej niż urodzenie i pozycję społeczną. Wiedzą, co naprawdę się liczy na polu bitwy."
+        ),
         AdvancedProfessions.Oprawca to ProfessionDescription(
             quote = "Oszczędzimy język na koniec. Będzie go potrzebował, żeby wyznać prawdę. Resztę... wybierz kończynę i podaj mi szczypce.",
             description = "Interrogatorzy wiedzą, jak skłonić ludzi do mówienia. Stosują zarówno metody psychologiczne, jak i fizyczne, a żadna z nich nie należy do przyjemnych. Pracują dla Łowców Czarownic, szlachty, a czasem dla bardziej gorliwych kościołów. Szczycą się swoją skutecznością, choć wielu osiąga ją poprzez nadmierną brutalność. Najlepsi Interrogatorzy wiedzą, że odkrywanie prawdy to forma sztuki. Ludzie kłamią i zmyślają, powiedzą niemal wszystko, by przerwać ból. Wyciągnięcie przyznania się do winy jest łatwe; dotarcie do prawdy jest znacznie trudniejsze.",
         ),
         AdvancedProfessions.Pamflecista to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Czytajcie! Czy cesarz Karl Franz naprawdę postradał zmysły... ekhm, witam panie strażniku. Czytajcie! Cesarska kopalnia marmuru Karla Franza padła ofiarą zwierząt-ludzi!",
+            description = "Pamfleciści korzystają z nowego wynalazku – prasy drukarskiej – aby szerzyć swoje idee. Choć druk sam w sobie jest całkowicie legalny i zyskuje coraz większy prestiż, to materiały polityczne i religijne, które rozprowadzają pamfleciści, często już takie nie są. To nie tylko rzemieślnicy obsługujący maszynę: badają fakty, piszą, szkicują i drukują, by następnie rozpowszechniać swoje teksty po całych miastach i prowincjach. Dzięki temu agitatorzy, demagodzy i uliczni politycy zyskali potężne narzędzie do wpływania na opinię publiczną. Wielu pamflecistów musi jednak wykazać się sprytem, by uniknąć gniewu straży lub jeszcze potężniejszych wrogów.",
+        ),
         AdvancedProfessions.Paser to ProfessionDescription(
             quote = "Chłopcze, jeśli nie warto ryzykować szyi, żeby mi to przynieść, to prawdopodobnie nie warto mojego czasu.",
             description = "Większość mieszczan i rzemieślników jest skłonna handlować towarami o wątpliwej legalności. \n\nTakie towary są domeną i zajęciem Fence’a. Są ekspertami w zbywaniu skradzionych dóbr. Za procent zysku biorą zdobycz złodzieja i przenoszą ją do innego miasta, miasteczka, a nawet kraju, gdzie można ją bezpieczniej zbyć. Fence’e doskonale oceniają wartość danego przedmiotu i potrafią przewidzieć, jak bardzo jest „gorący”. Im większe ryzyko, tym większy procent zysku żądają."
@@ -711,18 +779,21 @@ object ProfessionDescriptions {
             description = "Legendaryczne Matki Czarownic są bardzo potężnymi wiedźmami, znanymi ze swoich zdolności wieszczących, leczniczych i wpływu na duchy Starej Wdowy. Większość z nich wiedzie proste życie w rustykalnych chatkach, daleko od społeczności, którymi się opiekują. Matki czarownic rzadko opuszczają swoje nawiedzone domy, zmuszając tych, którzy szukają ich pomocy, do odbycia trudnych podróży. Jednak niektóre wędrują po Kislevie, podążając tam, gdzie prowadzą duchy, dzieląc się swoją wiedzą. Choć większość wygląda na niezwykle starą i pochyloną – ich skrzywione kręgosłupy skrzypią alarmująco przy najmniejszym ruchu – wiele zachowuje młodzieńczą wigor i może być zaskakująco zwinna."
         ),
         AdvancedProfessions.Prelat to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Dach świątyni przecieka, szczypce dla psa zaginęły – znowu – a Lord Grüber zaprosił mnie na kolejną ze swoich piekielnych uczt. Rzeczywiście, bogowie wystawiają nas na próbę przy każdym przewróconym pergaminie.",
+            description = "Każdy popularny kult religijny posiada przynajmniej pewien stopień wpływów politycznych. Kapłani reprezentujący swoje świątynie w radach miejskich mogą – mając odpowiednią ambicję – uzyskać specjalne tytuły na dworze panującego szlachcica lub zostać administratorami ziem należących do świątyni. Umiejętność prełata w wygłaszaniu kazań i debatowaniu nad ustawami z równą biegłością czyni go wysoko szanowanym zarówno w kręgach świeckich, jak i religijnych. Jednakże pokusa doczesnego bogactwa i władzy poprowadziła wielu prelatów ścieżką korupcji. Prelaci mogą być także znani jako wikariusze, kuraci lub archilektorzy, w zależności od kultu."
+        ),
         AdvancedProfessions.Psalterzysta to ProfessionDescription(
             quote = "Podnoszę głos w śpiewie, aby dodać ducha naszym wiernym i wzmocnić energię naszego boga.",
             description = "Psalterzyści to utalentowani śpiewacy, którzy poświęcili się występowaniu w chórach świątynnych i podczas rytuałów. Kantorzy prowadzą chóry podczas nabożeństw oraz uczą indywidualnych chórzystów. Niektórzy kantorzy są także biegłymi muzykami i tworzą nowe hymny ku czci swoich Bogów. Poza śpiewaniem hymnów wielu kantorów potrafi wykonywać inkantacje i rytmiczne śpiewy wspomagające kapłanów w prowadzeniu rytuałów boskich, a przy najbardziej potężnych rytuałach arcykapłan może zażądać obecności wielu kantorów. Powszechnym symbolem urzędu kantora jest krótki berło, używane do uderzania o ziemię (lub fałszywych chórzystów, jeśli zajdzie taka potrzeba), aby utrzymać rytm muzyki podczas prowadzenia chóru. Umiejętny kantor może znacząco podnieść renomę świątyni i jej kapłanów."
         ),
         AdvancedProfessions.Rajtar to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Spójrzcie, co te przeklęte strzały zrobiły z moim kaftanem! No dobrze, panowie, dajmy im posmakować gorącego ołowiu. Do ataku!",
+            description = "Rajtarzy to elitarna lekka kawaleria Armii Imperialnej, wyspecjalizowana w używaniu broni palnej, a zwłaszcza pistoletów. Dopiero niedawno zyskali swoje miejsce w wojsku, gdyż do tej pory broń prochowa była zbyt zawodna w Starym Świecie. Ze względu na wysokie koszty uzbrojenia i konieczność stałej pielęgnacji zarówno pistoletów, jak i koni bojowych, szeregi Pistolerów zdominowane są przez szlachtę. Wielu młodych szlachciców zaciąga się do tej formacji w poszukiwaniu chwały lub z nadzieją na zdobycie sławy.",
+        ),
         AdvancedProfessions.Reketer to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Żyjemy w niebezpiecznym świecie, Siegfried. Nie chciałbym, żeby coś... przydarzyło się temu nowemu sklepikowi, który otworzyłeś.",
+            description = "Reketerzy stanowią zasadnicze szeregi większości organizacji przestępczych. Są ekspertami w wymuszaniu pieniędzy ochronnych od małych przedsiębiorstw, co zazwyczaj jest ich najbardziej dochodową działalnością. Sukcesywni Racketeerzy zajmują się także lichwą, handlem narkotykami, prostytucją oraz nielegalnymi domami hazardowymi. Rzadko bywają kreatywni, jak na przestępców przystało, ale są zazwyczaj bezwzględni i przyzwyczajeni do forsowania własnej woli. Czasami są nawet częścią lokalnego rządu, co czyni ich eliminację trudną dla organów ścigania. W niektórych rejonach sami stanowią lokalne służby porządkowe."
+        ),
         AdvancedProfessions.Rozbojnik to ProfessionDescription(
             quote = "To nie zajmie długo. Po prostu oddaj swoje kosztowności. Jeśli się opierasz, wszystko skończy się znacznie szybciej.",
             description = "Rozbójnicy drogowi napadają na powozy przemierzające drogi Starego Świata, okradając skrytki i pasażerów z ich kosztowności. Przyjmują styl wyższej szlachty, nosząc wyszukane maski i okazując ofiarom wszelkie maniery, woląc postrzegać siebie jako śmiałych łotrów, a nie prostych złodziei. Rozbójnicy muszą być zręcznymi jeźdźcami, potrafiącymi prowadzić konie po nierównym i zdradliwym terenie z dużą prędkością. Są także doskonałymi strzelcami, ponieważ muszą radzić sobie nie tylko z szybko poruszającymi się celami, ale także z licznymi niebezpiecznymi mieszkańcami lasu.",
@@ -752,29 +823,33 @@ object ProfessionDescriptions {
             description = "Rycerze Płonącego Słońca to zakon templariuszy poświęcony Myrmidii, bogini żołnierzy i strategii. Ich zakon, wywodzący się z Tilei i Estalii, w ostatnich stuleciach rozprzestrzenił się po całym Starym Świecie, głosząc ideały swojego kultu na polach bitew. Rzadko gromadzą się w większe siły, zamiast tego podróżują samotnie lub w małych grupach, doradzając możnym i ich generałom w sztuce wojny. Czasem dowodzą oddziałami lub całymi armiami, wykorzystując swoje umiejętności i reputację, aby powstrzymywać milicję przed ucieczką i utrzymywać lojalność najemników. Coraz częściej na południu Imperium Zakon Płonącego Słońca oraz kult Myrmidii postrzegane są jako wyzwanie dla wojskowej dominacji kultu Ulryka i Rycerzy Białego Wilka. W pewnym momencie swojej kariery każdy rycerz zakonu zostaje wysłany samotnie na rok lub dwa, by sprawdzić nabytą wiedzę i zahartować umiejętności w ogniu walki. Niejedna samotna wioska, gospodarstwo czy zajazd zostały ocalone dzięki temu, że młody rycerz stanął na czele ich obrony.",
         ),
         AdvancedProfessions.RycerzProby to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Czy widziałeś lub słyszałeś o Graalu? Przejechałem dwa tygodnie, żeby dowiedzieć się, co wiesz.",
+            description = "Rycerze poszukujący Graala wyruszają w ślady Ludwika Pospiesznego, przemierzając Bretonnię i resztę świata, szukając błogosławieństwa Damy Jeziora. Ci, którzy odnieśli sukces w swoim poszukiwaniu, spotkali Damę w różnych miejscach, więc wyprawa nie polega na znalezieniu konkretnego miejsca. Chodzi raczej o udowodnienie własnej wartości wobec Graala. Dlatego Rycerze Poszukujący dążą do tego, by pokazać się jako wzory rycerskości, stawiając się w niebezpiecznych sytuacjach, aby bronić honoru Bretonnii i Damy Jeziora. Rycerze Poszukujący wyrzekają się używania lanc, ponieważ jest to broń lojalnej służby, a Rycerz Poszukujący stoi poza hierarchią feudalną aż do ukończenia swojej wyprawy."
+        ),
         AdvancedProfessions.RycerzZakonuZielonejChoragwi to ProfessionDescription(
             quote = "Nasza praca nie jest jeszcze skończona. Większe zło czai się w sercu Drakwaldu.",
             description = "Rycerze Zielonego Pola to zakon templariuszy poświęcony ochronie Talabheim w imię swojej wojowniczej bogini, Myrmidii. Są prawdziwymi wojownikami, szkolonymi do prowadzenia walk w lasach i dzikich ostępach swojej ojczyzny. Choć rzadko opuszczają granice Talabheim, ich umiejętności sprawdzają się równie dobrze zarówno w Wielkiej Puszczy, jak i w Drakwaldzie. Rycerze Zielonego Pola wywodzą się z różnych warstw społecznych, lecz wszystkich łączy jeden cel: służyć swojej bogini i chronić swój lud.",
         ),
         AdvancedProfessions.Sierzant to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Jeśli którykolwiek z was, łajdacy, pomyśli o odwrocie, sam was zabiję!",
+            description = "Sierżanci to zawodowi wojownicy, którzy potrafili zaimponować kapitanowi lub szlachcicowi swoją zdolnością dowodzenia ludźmi w bitwie. Prowadzą małe jednostki żołnierzy, milicjantów, najemników i strażników drogowych, dbając o to, by rozkazy były wykonywane co do joty. Niektórzy dowodzą, dając wzorowy przykład, inni zastraszają swoich ludzi, wymuszając szybką posłuszność. Ci, którzy stawiają życie swoich podwładnych na pierwszym miejscu, są zwykle najbardziej szanowani. Najlepsi sierżanci zdobywają respekt żołnierzy własną krwią i odwagą. Często są wzywani, by prowadzić ludzi w niebezpieczeństwo i szybko stają się ekspertami w ocenie zdolności innych."
+        ),
         AdvancedProfessions.Skrytobojca to ProfessionDescription(
             quote = "„Wystarczy wyszeptać imię i zapłacić złoto. Do końca tygodnia będzie martwy.”",
             description = "Zabijanie za pieniądze nie jest w Starym Świecie niczym niezwykłym. Żołnierze i najemnicy robią to codziennie. Nieliczni jednak osiągają poziom śmiertelności Zabójcy. Ci najemnicy są doskonale wyszkoleni i zabójczy w użyciu różnych broni. Wielu z nich opanowuje także sztukę trucicielstwa. Najlepsi Zabójcy potrafią wyeliminować cel w ciągu kilku sekund, nie pozostawiając żadnych dowodów swojej obecności. Ich usługi są bardzo pożądane przez władze polityczne, a nawet instytucje religijne. Niewielu Zabójców przejmuje się źródłem zleceń. Chcą tylko wymagającej misji i solidnej zapłaty. Podczas gdy większość Zabójców działa samotnie, nieliczni zorganizowali się w gildie."
         ),
         AdvancedProfessions.StarszyWioskowy to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie mamy tu wielu obcych; cóż cię sprowadza w nasze strony?",
+            description = "Bretońscy możni odpowiadają za wymierzanie sprawiedliwości chłopom. Jeśli usłyszą o zbrodni, upewniają się, że ktoś zostanie ukarany. Dopóki to chłop, nie interesuje ich, który dokładnie. Zdarzało się, że ofiara kończyła na stryczku. Większość chłopów woli unikać takiej „sprawiedliwości”. Zamiast tego zwracają się do Starszych Wioski, szanowanych mieszkańców osady. Ci starcy wysłuchują sprawy i wydają wyroki — najczęściej w formie rekompensaty na rzecz ofiary, zwykle w pracy, a czasem w postaci „wypadków” spotykających winowajcę. Jakość tej sprawiedliwości zależy wyłącznie od mądrości Starszego, gdyż nikt nie sprawuje nad nim kontroli. Nawet zdziecinniały starszy potrafi wydać niesprawiedliwy wyrok, lecz niemal zawsze jest to lepsze niż odwołanie się do miejscowego lorda."
+        ),
         AdvancedProfessions.StrozPrawa to ProfessionDescription(
             quote = "Nie obchodzi mnie, co książę Olbert mówi o granicy. To tutaj są wolne ziemie Southwick, a ty wtargnąłeś bez pozwolenia. Kara to wysoka grzywna albo siedem batów. Wybór należy do ciebie.",
             description = "Egzekutorzy przemierzają Księstwa Graniczne, wymierzając sprawiedliwość albo – jeśli ta zawiedzie – zemstę. Czasem też po prostu zsyłają przypadkową przemoc, bo każdy może się pomylić. Na ogół jednak Egzekutorzy kierują się własnym kodeksem dobra i zła, który starają się podtrzymywać. Nie zwracają uwagi ani na prawo, ani na władzę książąt, polegając wyłącznie na swoim poczuciu etyki oraz zdolności do odnajdywania prawdziwych złoczyńców. Większość Egzekutorów uważa swoich zbuntowanych pobratymców za najczarniejszych z łotrów, ponieważ przez ich działania każdy Egzekutor ryzykuje, że zostanie przepędzony z danej okolicy. Poza Księstwami Granicznymi Egzekutorów niemal się nie spotyka, gdyż lokalne władze bardzo źle patrzą na samowolne wymierzanie prawa. Zresztą, książęta Graniczni również, lecz zazwyczaj nie mogą nic z tym zrobić."
         ),
         AdvancedProfessions.Strzelec to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Wolę pozwolić, by to mój łuk przemówił.",
+            description = "Strzelcy poświęcają się doskonaleniu swoich umiejętności w posługiwaniu się bronią miotającą, najczęściej potężnym długim łukiem, choć nieliczni wolą kuszę. Regularnie podróżują po różnych jarmarkach, zachwycając tłumy pokazami celnego strzelania i rywalizując w nieoficjalnych konkursach. Wielu szlachciców regularnie organizuje turnieje łucznicze z nagrodami pieniężnymi, a profesjonalny Targeteer może dobrze zarobić, jeśli potrafi regularnie zdobywać nagrody. W tych ponurych czasach niezwykła precyzja Targeteera z łuku jest bardzo pożądana w armiach i kompaniach najemników."
+        ),
         AdvancedProfessions.Szampierz to ProfessionDescription(
             quote = "Nie masz się czego obawiać, jeśli jesteś niewinny. Ale mój miecz jeszcze nie spotkał niewinnych ludzi.",
             description = "W wielu krajach Starego Świata prawo dopuszcza dowodzenie niewinności poprzez sąd boju. Oskarżeni zazwyczaj stają naprzeciw lokalnego Mistrza Sądowniczego, zawodowego wojownika specjalizującego się w szybkim i skutecznym pokonaniu pojedynczego przeciwnika. Wiele przepisów dotyczących takich walk wymaga użycia określonych broni, dzięki czemu Mistrzowie Sądowniczy są biegli w różnych rodzajach uzbrojenia. W konsekwencji są oni zarówno szanowanymi, jak i budzącymi strach wojownikami, a ich umiejętności często wyprzedzają ich reputację. Czasami zamożni oskarżeni mogą wynająć Mistrza Sądowniczego, aby walczył w ich imieniu.",
@@ -784,11 +859,13 @@ object ProfessionDescriptions {
             description = "Szarlatani to nadzwyczajni oszuści, przebiegli kłamcy, którzy potrafią przekonać ludzi niemal o wszystkim. Dzięki elokwentnym językom i bystrym umysłom wyłudzają majątek od naiwnych i uciekają zarówno z pieniędzmi, jak i z życiem. Dla szarlatana kłamstwo jest jak oddychanie. Zwykli szarlatani zadowalają się sprzedażą bezwartościowych cudownych leków i talizmanów mających rzekomo odstraszać czarną magię, podczas gdy bardziej utalentowani podszywają się pod różne profesje, pobierając opłaty konsultacyjne i sprzedając nieruchomości, do których nie mają prawa. Legendarnie zdolni szarlatani organizują oszustwa, mające na celu zrabowanie szlachty i bogatych kupców do ostatniego grosza."
         ),
         AdvancedProfessions.Szpieg to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Sekrety to mój towar. Moje wynagrodzenie jest równe wartości tajemnicy dla klienta. Moja milczenie kosztuje co najmniej dwukrotnie więcej.",
+            description = "Szpiedzy są tajnymi agentami, którzy zbierają informacje dla swoich patronów lub najwyższego oferenta. Są mistrzami kamuflażu, często ryzykując życie, aby działać w przebraniu na terytorium wroga. Niektórzy dołączają nawet do grup subwersywnych i przez miesiące badają je od środka. Szpieg, który ośmieli się przeniknąć do siedziby Chaosu, ryzykuje znacznie więcej niż śmierć, ale wiele grup w Starym Świecie desperacko potrzebuje informacji, które taki odważny człowiek może dostarczyć. Wszystkie narody Starego Świata zatrudniają szpiegów, zwykle do monitorowania ruchów wojskowych i politycznych swoich rywali."
+        ),
         AdvancedProfessions.SledczyVereny to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Co my tu mamy? Pozwól, że przyjrzę się bliżej. Hmm... Interesujące. Bardzo interesujące.",
+            description = "Śledczy Vereny to agenci zajmujący się sprawami, które kult woli trzymać z dala od zwykłych władz, takich jak strażnicy dróg czy łowcy czarownic. Doskonale znają się na cichym prowadzeniu dochodzeń — wolą szukać tropów i obserwować miejsce zdarzenia, niż wymuszać zeznania torturami, które bywają zawodne. Zwykle przekazują wyniki swych badań kultowi, lecz w razie potrzeby potrafią działać na własną rękę. Śledczy często wywodzą się z samego kultu, choć hierarchia Vereny nie ma oporów przed zatrudnianiem zdolnych ludzi o wątpliwej przeszłości, pod warunkiem że okażą skruchę i przysięgną lojalność bogini. Posiadają ogromną wiedzę i nieraz zdumiewają innych umiejętnością łączenia pozornie nieistotnych faktów w spójną całość, rzucając światło na sprawę."
+        ),
         AdvancedProfessions.TreserZwierzat to ProfessionDescription(
             quote = "„Spójrzcie, panowie! To zwierzę jest mniej dzikie niż stara wiedźma. Patrzcie, jak wkładam całą stopę do pyska tańczącego niedźwiedzia... czekaj... nie Vinny! Stop... urk!”",
             description = "Treserzy zwierząt rozmnażają i szkolą zwierzęta do transportu, polowań lub rozrywki. Ich najczęstsza praca polega na hodowli koni wierzchowych i bojowych na targi koni, ale treserzy są również biegli w tresurze psów i ptaków, które towarzyszą szlacheckim wyprawom łowieckim. Cyrki zatrudniają treserów zwierząt jako mistrzów ceremonii, aby zachwycać publiczność tańczącymi niedźwiedziami i kłusującymi kucykami. Treserzy mogą również pełnić rolę opiekunów zwierząt w arenach walk zwierząt, choć niewiele wysiłku wkłada się w szkolenie nieposłusznych zwierząt bojowych, które zostały pierwotnie schwytane na wolności. Chociaż kislevscy treserzy niedźwiedzi są znani ze swojej zdolności szkolenia dzikich niedźwiedzi, większość tresowanych zwierząt rodzi się w niewoli."
@@ -798,17 +875,21 @@ object ProfessionDescriptions {
             description = "Badlands Ranger to doświadczona osoba zaznajomiona z niebezpieczeństwami tego obszaru i potrafiąca bezpiecznie prowadzić innych przez złe ziemie. Godny zaufania Badlands Ranger jest wart wiele pieniędzy i żąda wysokiej stawki za swoje usługi. Grożenie mu rzadko działa, ponieważ potrafi przetrwać niemal każdą sytuację w regionie, zostawiając swoich nieprzyjemnych pracodawców na pastwę losu. Mniej uczciwi Badlands Rangerzy postępują podobnie wobec bogatych pracodawców – bogatych, czyli tych, którzy w ogóle mogą sobie pozwolić na ich wynajęcie. Później wracają po pieniądze."
         ),
         AdvancedProfessions.Uczony to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Kto myśli, że edukacja jest bezbolesnym zajęciem, nigdy nie zmagał się z traktatem von Richsteina o Księstwach Granicznych.",
+            description = "Uczeni to akademicy, którzy poświęcili swoje życie poszukiwaniu wiedzy. Należą do nich mędrcy zgłębiający filozofię i teorię naukową, mnisi specjalizujący się w wiedzy religijnej oraz nauczyciele starający się edukować dzieci bogatych kupców i szlachty. Niektórzy uczeni dążą do zdobywania ezoterycznej lub zakazanej wiedzy, co wymaga dużej siły umysłu i gotowości do ryzyka odkrycia przez Łowców Czarownic i innych fanatyków. Ci, którzy aktywnie studiują prawo, jak urzędnicy i prawnicy, uważani są za wyspecjalizowaną formę uczonego w Starym Świecie."
+        ),
         AdvancedProfessions.Urzednik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie udaję, że mówię w imieniu wszystkich tutaj zgromadzonych w tej pięknej wiosce. Mogę jednak z doświadczenia powiedzieć, że mając takiego rzecznika, łatwiej jest zarówno złagodzić wasze cierpienia, jak i negocjować z kupcami, konsorcjami czy szlachtą. Udzielcie mi swojego zaufania, a zobaczycie większe korzyści w bezpieczeństwie, dobrobycie i opiece.",
+            description = "Choć szlachta nominalnie rządzi większością państw Starego Świata, to Politycy faktycznie zarządzają wioskami, miastami i miasteczkami Imperium. Są to często pogardzani i łatwo skorumpowani urzędnicy, wśród których znajdują się burmistrzowie i inni urzędnicy cywilni. Niektórzy zostają wybrani, inni mianowani. Politycy często znajdują się między różnymi niebezpiecznymi frakcjami i muszą szybko opanować sztukę kompromisu. Są ekspertami w mówieniu dokładnie tego, co ludzie chcą usłyszeć, choć rzeczywiste wypełnienie obietnic jest prawdziwym cudem."
+        ),
         AdvancedProfessions.Vitki to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Niech moje słowa ukażą przyszłość, a moje ręce wyleczą to, co zepsute. Kto idzie w ciemność, niech nie lęka się światła Vitka.",
+            description = "Wśród Norsmenów paraących się magią większość to guślarze, czarownicy i czarnoksiężnicy. Czerpią moc od Mrocznych Bóstw, wykorzystując moc Dhar do swoich celów. Jednak w pewnych rejonach Norski przetrwała starsza tradycja, kładąca nacisk na przepowiadanie przyszłości, leczenie i wygłaszanie proroctw. Wielu uczonych traktuje Vitki jak czarnoksiężników, ale tak naprawdę nie są oni bezwolnymi sługami Niszczycielskich Mocy, lecz wykorzystują magiczną moc, aby pomagać swojemu klanowi i służyć radą jarlowi."
+        ),
         AdvancedProfessions.Weteran to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "To trochę jak tamto oblężenie w Ostlandzie. Niewielu przeżyło. Ja byłem jednym z nich. Trzymaj się mnie, chłopcze, a i tym razem znajdziemy się wśród ocalałych.",
+            description = "Zawodowy żołnierz lub najemnik, który przetrwał wiele bitew, ale nie dba o awanse, prędzej czy później staje się Weteranem. To przede wszystkim ocalali — nie zgłaszają się na samobójcze misje ani nie podejmują niepotrzebnego ryzyka, lecz gdy nadchodzi czas walki, należą do najtwardszych wojowników na polu bitwy. Po służbie Weterani chętnie snują wojenne opowieści i piją bez umiaru, wiedząc, że ich dni mogą być policzone i nie ma sensu umierać z pełną sakiewką złota."
+        ),
         AdvancedProfessions.WedrownyCzarodziej to ProfessionDescription(
             quote = "Uczenie się rzeczy, których człowiek nie powinien znać, to nasza praca. My je poznajemy, abyś ty nie musiał.",
             description = "Ludzie Czeladnicy Czarodzieje zakończyli swój okres nauki i dołączyli do Zakonu Czarodziejstwa. Mają teraz dostęp do wszystkich zaklęć wybranej dziedziny magii, ale muszą zrównoważyć nowo zdobyte moce z własną ograniczoną zdolnością do ich kontrolowania. Większość czeladników ma do spłacenia znaczne opłaty edukacyjne wobec swojej Akademii i musi wyruszać na przygody, aby uregulować dług. Czeladnicy Czarodzieje oferują swoje usługi, często na prośbę swojego Zakonu, za złoto, wiedzę lub w celu wzmocnienia pozycji Akademii. Elfy są oczywiście zwolnione z systemu Akademii i niczego nie są winne.",
@@ -822,20 +903,25 @@ object ProfessionDescriptions {
             description = "Włamywacze uważają się za lepszych od zwykłych złodziei i bandytów. Pozostawiają rozcinanie portfeli i gardel do ulicznego elementu, woląc kraść z większą finezją. Sztuka Włamywacza wymaga obserwacji, planowania i nienagannego wyczucia czasu. Dobrze wykonana kradzież może nie zostać wykryta przez miesiące, a w tym czasie Włamywacz jest już daleko. Większość Włamywaczy należy do gildii złodziejskiej, choć niektórzy ryzykują i działają samodzielnie. Tacy samotnicy muszą unikać zarówno prawa, jak i gildii – to niewątpliwie niebezpieczna gra."
         ),
         AdvancedProfessions.Wodz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Trzecie oko? Zyskałem je dawno temu. A czwarte? To już całkiem nowe.",
+            description = "Wodzowie to doświadczeni wojownicy Norski, którzy stoczyli niezliczone bitwy i którym Jarlowie oraz królowie powierzają dowództwo nad oddziałami wojowników i Maruderów w walce z wrogami. Zazwyczaj noszą na ciele liczne tatuaże, rytualne blizny, a większość z nich posiada jedną lub więcej mutacji — dowód łaski Bogów Chaosu."
+        ),
         AdvancedProfessions.WtajemniczonyKultuKhorna to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Szał jest naszym przewodnikiem, a krew najlepszą modlitwą ku chwale Pana Czaszek.",
+            description = "Przywódcy kultu Pana Czaszek są szczególnie krwiożerczy i niebezpieczni, a sens ich życiu nadaje tylko przemoc i rozlew krwi, czynione na większą chwałę ich pana. Wtajemniczony liczy na to, że kiedy nadejdzie jego dzień, Khorne spojrzy na niego łaskawym okiem i wyniesie do godności księcia demonów. Główną cechą Wtajemniczonych jest popędliwość i przerażająca łatwość, z jaką wpadają w szał, w którym zabijają bez opamiętania, dopóki nie odzyskają kontroli i zdołają opanować nagromadzoną wściekłość. Z tego powodu niewielu z nich udaje się ukrywać na terenach Imperium. Większość Wtajemniczonych wyrusza na Północ, by szukać chwały i krwi na Pustkowiach Chaosu."
+        ),
         AdvancedProfessions.WtajemniczonyKultuNurgla to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Gdzie krosty i wrzody, tam moc Wielkiego Zielonego – i śmierć w jednym oddechu.",
+            description = "Wtajemniczony kultu Nurgla jest ohydnym, trawionym przeróżnymi chorobami monstrum, które trudno odróżnić od demonów służących Władcy Much. Zwykle pokryty jest krostami i wrzodami, a bijący od niego smród zwala z nóg. Samo przebywanie w jego towarzystwie grozi zarażeniem się śmiertelnie niebezpieczną chorobą. Ludzie mający nieszczęście mieszkać w okolicy, którą na siedzibę wybierze sobie Wtajemniczony, umierają wkrótce po jego przybyciu, zapadając na koszmarne choroby."
+        ),
         AdvancedProfessions.WtajemniczonyKultuSlaanesha to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nigdy nie jest dość, dopóki nie poznam wszystkiego, co mroczne i zakazane.",
+            description = "Życie Wtajemniczonego jest wypełnione żądzą nowych, niepoznanych do tej pory przeżyć i bezustannym staraniem o zaspokojenie mrocznych popędów. Dawne doświadczenia przestają mieć jakąkolwiek wartość, a apetyt na nowe doznania rośnie z każdą chwilą. Wtajemniczony wykorzystuje swych popłucznków i sługi, poszerzając tym samym szeregi kultu i zapewniając sobie nieprzerwany strumień nowych sposobów odczuwania rozkoszy."
+        ),
         AdvancedProfessions.WtajemniczonyKultuTzeentcha to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Człowiek w dzień, koszmar w nocy – tak wygląda życie prawdziwego wtajemniczonego.",
+            description = "Wtajemniczeni kultu Tzeentcha należą do najstraszliwszych kultystów na świecie. Za ich sprawą zostają wdrożone skomplikowane i niemożliwe do pojęcia plany, których celem jest upadek Imperium i obrócenie jego miast w gruzy. Większość z tych bezecnych ludzi wiedzie podwójne życie: kultysty i człowieka prominentnego, cieszącego się przywilejami urodzenia oraz władzy."
+        ),
         AdvancedProfessions.WybraniecBozy to ProfessionDescription(
             quote = "„Odkryj przede mną głębsze tajemnice mojej wiary, o mądra Vereno, abym mógł ci lepiej służyć.”",
             description = "Kapłan, który konsekwentnie przestrzega zasad swojego kościoła, zostaje wybrany przez swoje bóstwo do przyjęcia większej mocy i odpowiedzialności. Namaszczeni Kapłani obdarzeni są Boską Wiedzą bóstwa, któremu służą, i w związku z tym oczekuje się od nich podejmowania wyzwań odpowiednich dla ich nowych błogosławieństw. Często posiadają wszystkie cechy, które podziwia ich bóstwo, działając jako latarnie wiary dla innych w Starym Świecie. Namaszczeni Kapłani cieszą się dużym zaufaniem zwykłych ludzi, którzy często słuchają ich bardziej niż Szlachty i Polityków, co daje im znaczną władzę doczesną, uzupełniającą władzę duchową."
@@ -861,119 +947,156 @@ object ProfessionDescriptions {
             description = "Zakonnicy to żebracy wędrujący po Imperium, nauczający cnoty religijnej poprzez własny przykład. Ich zakony sięgają czasów Magnusa Pobożnego. Łowca Czarownic, Berndt z Wurtbad, był szczególnym przeciwnikiem kultów Slaanesha, Chaosowego Boga Zmysłowości i Przyjemności. Berndt dostrzegł, jak dekadencja i pożądanie nieuchronnie prowadzą do objęcia Slaanesha. Po latach krwi i ognia odłożył miecz i pochodnię, rozdał swoje dobra i zaczął wędrować po Imperium, głosząc przesłanie ubóstwa, czystości i posłuszeństwa. Nie nosił nic poza włosienicą i żył z jałmużny zwykłych ludzi. Jego gorliwe przekonanie było takie, że pokorne życie w ubóstwie jest najpewniejszą metodą walki z podstępnym uwodzeniem Chaosu. Zakon Św. Berndta był pierwszym żebraczym zakonem w Imperium, choć od tego czasu powstało kilka innych."
         ),
         AdvancedProfessions.Zbrojny to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "To krwawa robota, ale lepsza niż łamanie sobie kręgosłupa w polu.",
+            description = "Zbrojni to elitarni chłopscy wojownicy Brettonii. Wielu rycerzy lekceważy ich osiągnięcia, twierdząc, że „elitarny chłopski wojownik” ma znaczenie podobne do „wielka mysz”. Jednak, choć prawdą jest, że szlachta jest znacznie lepiej wyposażona, Yeomen są tak samo sprawni jak większość Rycerzy Królestwa i słusznie dumni ze swoich umiejętności bojowych. \n\nPrzytłaczająca większość Yeomen to oddani profesjonaliści, ponieważ to ich poświęcenie wyróżnia ich spośród masy Żołnierzy. W zamian Yeomen otrzymują wierzchowce i są wykorzystywani do misji zwiadowczych, które nie nadają się dla rycerzy (za mało chwały, za duże ryzyko). Z czasem niektórzy Yeomen nudzą się ułatwianiem życia „wyższym rangą” i wyruszają na własną rękę. \n\nWiększość panów pozwala swoim Yeomen na zasłużoną emeryturę po kilku latach służby lub po spektakularnym wyczynie na polu bitwy. Inni po prostu dezerterują, zazwyczaj podczas misji zwiadowczej, tak że ich pan zakłada, że zostali zabici i nie ściga ich."
+        ),
         AdvancedProfessions.Zwadzca to ProfessionDescription(
             quote = "Czy śmiałeś splamić me dobre imię swym niestosownym żartem? Mam szczerą nadzieję, że tak...",
             description = "Na terenie Imperium wieki temu ustanowiono skomplikowany system prawny regulujący formalne pojedynki. Szermierze to specjaliści w śmiertelnym zastosowaniu szpady i pistoletu, wynajmujący się do obrony cudzej czci, choć wielu z nich wywodzi się z młodszych rodów szlacheckich i pojedynkuje się dla własnych celów. Szermierze dzielą się na dwie odmiany: beztroskich awanturników, którzy traktują swe wyczyny jak nieustającą przygodę, oraz śmiertelnie poważnych wojowników, noszących swój honor na ramieniu i gotowych obrazić się o najdrobniejszą, prawdziwą bądź wyimaginowaną zniewagę."
         ),
         AdvancedProfessions.Zwiadowca to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie tupaj jak pijak w slumsach Marienburga, chłopcze! Wyczuj teren. Pozwól, by las przemówił do ciebie. Powie ci wszystko, co musisz wiedzieć… jeśli będziesz wystarczająco cicho, by słuchać. Tyle rzeczy las może ci powiedzieć… więcej niż większość mieszczan by śniła…",
+            description = "Zwiadowcy to rzadkie jednostki, które czują się bardziej jak w dziczy niż w zatłoczonych miastach Starego Świata. Wędrują po dzikich terenach, podążając ścieżkami, które dla większości oczu są niewidoczne, jednocześnie mając oko na niebezpieczne bestie i nienaturalne zdarzenia. Skauci często czują się bardziej komfortowo wśród zwierząt niż ludzi. Często wynajmują swoje umiejętności armii, kupcom i podróżnikom, którzy muszą zbaczać z utartych dróg. Zwykle przemierzają teren przed swoimi klientami, szukając zasadzek i innych problemów, które mogą spotkać dużą grupę w ruchu."
+        ),
         SkavenProfessions.Czarnoszczur to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Silni-silni, szybcy-szybcy, najlepsi z klanu, tak-tak!",
+            description = "Czarnoszczur to ogólna kategoria, do której należą te skaveny, które rodzą się większe i znacznie silniejsze od zwykłych szczurołudzi. Mają ciemne, a czasem nawet całkowicie czarne futro i groźny wygląd. Niemal wszystkie czarnoszczury mogą dołączyć do szeregów skaveńskich armii. Stanowią elitę wojowników, służąc jako strażnicy, zwiadowcy lub elitarne jednostki bojowe. Często stają się uczniami Szarych Proroków, wykonując ich rozkazy i uczestnicząc w najważniejszych misjach."
+        ),
         SkavenProfessions.CzcicielZarazy to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Plaga, choroba, gnijąca śmierć – oto dar Pana Zarazy!",
+            description = "Czciciele zarazy stanowią trzon armii klanu Pestilens. Bez seminaria i nauk kapłanów zarazy byliby tylko brudnymi i chorymi istotami, dręczonymi pasożytami. Jednak ich wiara i oddanie czyni z nich śmiertelnie niebezpiecznych przeciwników. Większość z nich pada ofiarą własnych chorób, zanim jeszcze zdąży zmierzyć się z wrogiem, lecz w walce są fanatyczni i bezwzględni. Łatwo ich rozpoznać po brudnych bandażach i otaczających ich chmurach much, które żerują na trędowatej skórze. Tę profesję mogą wykonywać tylko członkowie klanu Pestilens."
+        ),
         SkavenProfessions.Harcownik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Pif-paf! Zielony ogień, trucizna-wichur, wszyscy giną-umierają! Tak-tak!",
+            description = "Nielicznym klanbraciom klanu Skryre powierza się tak ważny oręż, jak kule trującego wichru lub spaczeniowa broń palna. Uformowani w jednostki, mogą okazać się decydującą i niszczycielską siłą na polu bitwy – zarówno dla siebie, jak i dla wrogów. Najlepsi spośród nich poznają dalsze tajemnice inżynierów spaczenia, choć awanse są niezwykle rzadkie i okupione krwią oraz zdradą."
+        ),
         SkavenProfessions.Klanbrat to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Tak-tak, biegniemy, walczymy, giniesz ty-zamiast ja! Chwała klanowi, życie moje-tanie!",
+            description = "Klanbracia to ciało, mięśnie i serce skaveńskiego społeczeństwa. Pracują w wielkich, smrodliwych fabrykach Pod-Imperium, walczą w pierwszych szeregach stad uderzeniowych i pełnią rozliczne inne funkcje: od niewolniczej pracy aż po szpiegowanie na rzecz Szarych Proroków. Klanbracia-wojownicy stanowią podstawową siłę bojową armii skavenów, walcząc w tłumie, gdzie ich życie jest tanie i łatwo zastępowalne. Często giną jako mięso armatnie, przynęta lub ofiara dla szalonych planów swych wodzów. Ci, którzy przeżyją wystarczająco długo, mogą awansować na szponowładów lub wyższe pozycje w hierarchii klanu, zaś słabsi trafiają do laboratoriów klanu Moulder albo na ołtarze ofiarne Szarych Proroków. Klanbracia są powszechni we wszystkich klanach, z wyjątkiem Eshin i Pestilens, gdzie ich rolę zastępują wyspecjalizowani wojownicy."
+        ),
         SkavenProfessions.Niewolnik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Och, biada mi! Co zrobiłem, by na to zasłużyć?",
+            description = "Bez Niewolników społeczeństwo Skavenów by się rozpadło. Ci nieszczęśnicy są kupowani i sprzedawani za Tokeny Warpstone na targach niewolników w głównych skupiskach Podimperium. Po przybyciu do nowych domów czeka ich niekończąca się harówka i cierpienie: kopanie nowych tuneli, karmienie Rat Ogres, stawanie się pożywieniem dla panów, a także bycie obiektem eksperymentów nowych przedsięwzięć Klanu Skryre lub Klanu Moulder to tylko niektóre z wielu możliwych losów, które czekają Skaven Niewolników."
+        ),
         SkavenProfessions.PoganiaczSkavenski to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Naprzód! Gryź-szarp! Tak, tak, posłuszne szczury, nie ja-ja…!",
+            description = "Poganiacze to skaveńscy nadzorcy odpowiedzialni za kontrolowanie potworów tworzonych przez mistrzów ciałokształtowania z klanu Moulder. Większość z nich kieruje rojami szczurów i olbrzymich szczurów, zaganiając je prosto na wroga, inni natomiast prowadzą do boju przerażające szczurogry. Poganiacze są nieodłączną częścią armii skavenów, gdyż dzięki nim potwory nie rozszarpują własnych szeregów, zanim uderzą na przeciwnika. Ich życie jest krótkie i pełne strachu – niemal każdy poganiacz prędzej czy później kończy jako posiłek własnych podopiecznych."
+        ),
         SkavenProfessions.PoslaniecNocy to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Szybko-cicho! Ostrze błyska, a wróg już martwy!",
+            description = "Większość wojowników klanu Eshin to posłańcy nocy. W przeciwieństwie do zwykłych klanbraci przechodzą oni podstawowe szkolenie w sztukach walki, które klan poznał w odległym Kataju. Posłańcy nocy są szybsi i sprawniejsi niż zwykli skaveni, potrafią błyskawicznie zabijać i wciąż szukają nowych okazji do wyeliminowania kolejnych wrogów. Choć traktowani są jako podstawa sił klanu Eshin, ci, którzy dowiodą swojej wartości, czasem awansują na rynsztokowców, zdobywając wyższe miejsce w hierarchii zabójców."
+        ),
         SkavenProfessions.UczenSzaregoProroka to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Słaby-słaby ginie! Tylko przebiegły i silny pozna sekrety Rogatego Szczura...",
+            description = "Co pewien czas, niezwykle rzadko, rodzi się szczuroczłek odmienny od reszty – okryty białym lub szarym futrem, z dziwnymi wypustkami na skroniach. Od chwili narodzin jego los jest przesądzony: brutalne szkolenie, pełne zarówno cierpienia, jak i nadmiaru zbytków oraz wygód. Tacy wybrańcy są uznawani za żywe symbole łaski Rogatego Szczura, bowiem posiadają dar władania spaczeniową magią. Uczniowie Szarych Proroków nie należą do żadnego konkretnego klanu, lecz często pełnią rolę doradców lub wręcz faktycznych władców pomniejszych skavenów. Ich największą bronią jest strach – szybko i brutalnie karzą najmniejsze przejawy zdrady czy nieposłuszeństwa, często zabijając podwładnych przy błahej prowokacji. Dlatego wielu z nich zrywa więzi z mistrzami tak wcześnie, jak tylko potrafi, by uczyć się samodzielnie, aż staną się równie potężni, co ich dawni nauczyciele. Mimo wielkiej mocy, nawet uczniowie nie mają gwarancji przetrwania, bo doświadczeni prorocy z radością zgładzą każdego, kto może zagrozić ich pozycji."
+        ),
         SkavenProfessions.DiakonZarazy to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Rozkład, gnicie, śmierć – to największe dary naszego pana, tak-tak!",
+            description = "Chociaż Szarzy Prorocy są uznawani za ostateczny autorytet w kwestii doktryny Rogatego Szczura, klan Pestilens czci swego boga w aspekcie Pana Rozkładu. Wyznawcy tego kultu badają wszystko, co wiąże się z powolnym niszczeniem i gniciem, a najgorliwsi z nich sięgają po spaczeniową magię. Choć w teorii ich moc pochodzi bezpośrednio od Rogatego Szczura, faktycznie korzystają z tego samego czarnoksięstwa, co Szarzy Prorocy – ograniczonego jednak wyłącznie do zaklęć związanych z chorobami i epidemiami. Diakoni zarazy to pierwsi adepci tej mrocznej sztuki, stawiający swe kroki na drodze ku pełniejszemu zrozumieniu plugawych tajemnic swojego pana. Są zwiastunami chorób i zwiastunami śmierci, a ich obecność niemal zawsze zwiastuje nadejście zarazy."
+        ),
         SkavenProfessions.HersztKlanu to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Władza należy do tego, kto potrafi ją utrzymać – reszta to tylko mięso na ostrza, tak-tak!",
+            description = "Herszt kontroluje fragment dużego klanu i pełni funkcję lokalnego przywódcy. Jeśli klan ma przedstawicielstwo w jednym z miast Pod-Imperium, herszt otrzymuje rozkazy od swojego wodza i pana, lecz mimo to sprawuje całkowitą władzę nad własnymi poddanymi. To ambitny i bezwzględny przywódca, który stale spogląda ku wyższym szczeblom hierarchii. Herszt, który udowodni swoją wartość, może w przyszłości sam zostać wodzem, najczęściej mordując swojego pana i zajmując jego miejsce. Największym marzeniem hersztów jest zdobycie miejsca w Radzie Trzynastu – choć niewielu dożywa dnia, by tego dokonać. W społeczeństwie skavenów każdy herszt uważa, że to jego prawo i przeznaczenie, lecz droga do takiego zaszczytu usłana jest zdradą i śmiercią."
+        ),
         SkavenProfessions.InzynierSpaczenia to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nowa broń, nowe zniszczenie – ha! Jeszcze więcej śmierci dla słabych, jeszcze więcej chwały dla Skryre, tak-tak!",
+            description = "Skaveny słyną z wynaturzonych wynalazków – chorób, zmutowanych bestii i hord szczurów – lecz największą przewagę daje im bluźniercze połączenie inżynierii i spaczenia. Inżynierowie spaczenia, obdarzeni zmysłem technicznym i fanatycznym oddaniem, tworzą broń, która terroryzuje całe krainy: muszkiety spaczeniowe, koszmarne działa czy kule trującego wichru. To właśnie oni odpowiadają za wynalazki, które niszczą wioski, miasta i całe armie, pozostawiając po sobie jedynie śmierć i zgliszcza. W warsztatach klanu Skryre nieustannie opracowują nowe projekty, szukając coraz bardziej przerażających sposobów mordowania wrogów i zdobywania chwały dla swego klanu. Inżynierowie spaczenia są dumą Skryre i źródłem największej potęgi skaveńskiej machiny wojennej."
+        ),
         SkavenProfessions.Kadzielnik to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Chwała zarazie, chwała rozkładowi! Każdy oddech to dar, każdy kaszel to modlitwa dla Rogatego Szczura!",
+            description = "Jednym z największych zaszczytów, jakie mogą spotkać skavena z klanu Pestilens, jest prawo władania kadzielnicą zarazy – bluźnierczą bronią i symbolem poświęcenia. Kadzielnica to cep bojowy, którego bijak zastąpiono żelazną kulą na łańcuchu, wypełnioną spaczeniem i zarazą. Kapłani zarazy zapalają jej wnętrze, a kadzielnik w szaleńczym transie wymachuje nią na polu bitwy, roztaczając trujące opary i szerząc śmierć oraz cierpienie wśród wszystkich wokół – wrogów i sprzymierzeńców. Władanie kadzielnicą to dowód najwyższego oddania Panu Rozkładu, ale także wyrok śmierci, gdyż opary prędzej czy później dosięgają samego nosiciela. Kadzielnicy zarazy są jednocześnie błogosławieni i przeklęci – prawdziwe narzędzia destrukcji klanu Pestilens."
+        ),
         SkavenProfessions.KaplanZarazy to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Rozkład jest naszym chlebem, a śmierć naszych braci i wrogów – naszym darem!",
+            description = "Wodzowie, Szarzy Prorocy, a nawet potężne szturmoszczury wzbudzają lęk i respekt wśród swoich wrogów, ale żaden z nich nie wywołuje tak absolutnego przerażenia, jak kapłani zarazy. Ci groteskowi kapłani szerzą naukę o zepsuciu poprzez plugawe mikstury które warzą oraz za pomocą specjalnie hodowanych szczurów zarazy. Za każdym razem, gdy śmiertelnik pada ofiarą paskudnej śmierci z powodu jednego z ich wynalazków, kapłani wychwalają swego mistrza, Pana Rozkładu. W nagrodę za ich nieustające poświęcenie, Rogaty Szczur obdarza ich ciała najgorszymi chorobami znanymi w Starym Świecie."
+        ),
         SkavenProfessions.MistrzCialoksztaltowania to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nie ma granic dla prawdziwej sztuki – każde ciało można ulepszyć!",
+            description = "Istoty stworzone w laboratoriach klanu Moulder przerażają nawet Szarych Proroków. Dla mistrzów ciałokształtowania nie ma nic świętego, nawet prawa natury można, a nawet trzeba zmieniać. Łączą części ciał przeróżnych stworzeń, by wyhodować coś większego, lepszego i silniejszego – koszmar, który zabezpieczy miejsce klanu Moulder na szczycie hierarchii skavenów. Zaznajomieni z przekazywanymi z pokolenia na pokolenie technikami ciałokształtowania, są odpowiedzialni za powstanie olbrzymich szczurów, szczurogrów i wielu innych potworności."
+        ),
         SkavenProfessions.MistrzMutator to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Tylko ten, kto zna sekret przemiany, może dowodzić prawdziwą potęgą!",
+            description = "Mistrzowie mutatorzy dowodzą potwornymi skaveńskimi legionami wypaczonych stworów. Te szalone skaveny pilnie strzegą mrocznych sekretów swej sztuki, skąpo wydzielając informacje mistrzom ciałokształtowania i powierzając im tylko tyle wiedzy, ile trzeba, by chronić klan. Pozostałe tajemnice zachowują dla siebie, chcąc uchronić się przed utratą własnej pozycji. Nie wiadomo, jakie inne wynaturzenia zostały stworzone przez mistrzów mutatorów, ale niektórzy wierzą, że nie wszystkie okropieństwa znajdowane w Starym Świecie powstały z woli Pana Przemian."
+        ),
         SkavenProfessions.MistrzSkrytobojca to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Cień jest naszym sprzymierzeńcem, a dotyk śmiercią!",
+            description = "Rynsztokowcy, którzy osiągnęli mistrzostwo w swej sztuce, mogą mieć nadzieję na poznanie największych sekretów katajskich sztuk walki. Chociaż nadal wykazują przywary typowe dla skavenów, mistrzowie skrytobójcy są bardziej cierpliwi i bezwzględni niż ich kamraci. Potrafią zabijać dotykiem, są mistrzami niezliczonych typów broni i umieją niezauważeni zakradać się do najsilniej strzeżonych warowni."
+        ),
         SkavenProfessions.Nadprorok to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Rogaty Szczur prowadzi nas, a my kierujemy jego wolą!",
+            description = "W PodImperium najpotężniejszymi użytkownikami magii są Nadprorocy. Przetrwali rywalizację z innymi Szarymi Prorokami i ucieleśniają kapryśną wolę Rogatego Szczura, z wielkim znawstwem posługując się magią spaczenia. Większość Nadproroków doradza wodzom i hersztom, subtelnie kierując ich planami i działaniami, by jak najlepiej wypełniali wolę ich plugawego boga."
+        ),
         SkavenProfessions.Rynsztokowiec to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Cisza jest naszym sprzymierzeńcem, a cień naszym przewodnikiem!",
+            description = "Posłańcy Nocy, którym udało się przetrwać, mają dwie drogi dalszej kariery, jeśli chcą rozwijać się w obrębie swego klanu. Po pierwsze, mogą przyjąć odpowiedzialne stanowisko, stając się nocarzami i prowadzić misje przeciwko wrogom klanu. Po drugie, mogą zostać wybrani do poznania mrocznych tajemnic Sztuki Cichej Śmierci. Przechodzą wtedy intensywny trening, doskonaląc umiejętności bojowe, podchodów i dokonywania morderstw. Rynsztokowcy operują poza zwykłymi grupami skavenów i często samotnie, jako lepiej przystosowani do infiltracji obozowisk wroga i siania zamętu za jego liniami."
+        ),
         SkavenProfessions.SkavenskiZaklinacz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Cień i magia są naszymi narzędziami – nikt nie musi wiedzieć, jak potężni jesteśmy!",
+            description = "Sztuka Cichej Śmierci to nie jedyna tajemnica, jaką klan Eshin poznał w Kataju. Niewielka liczba skavenów zajęła się mrocznymi sztukami magicznymi. Łącząc to, co już wiedzieli o spaczeniu, z technikami wykorzystywanymi przez katajskich czarodziejów, opracowali nowy typ magii, który służy zwiększaniu potęgi i mistycyzmu ich klanu. Zaklinacze Eshin są tajemniczy, nieliczni i trzymają się z dala od innych; są świadomi, że Szarzy Prorocy nie zniosą konkurencji w postaci innych skaveńskich czarowników."
+        ),
         SkavenProfessions.SzaryProrok to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Wola Rogatego Szczura jest naszym prawem, a kto się jej sprzeciwia, zasługuje na śmierć!",
+            description = "Szarzy Prorocy zajmują szczególne miejsce w społeczności skavenów. Używając mocy danej im przez ich plugawego boga, oni i tylko oni mogą interpretować wolę i rozkazy Rogatego Szczura. Z tego względu uważani są za jego proroków i pośredników. Doradzają Wojowniczym Klanom, subtelnie nimi kierując w celu realizacji uknutego przez siebie złowieszczego planu, niezależnie od tego, czy powstał z inspiracji Rogatego Szczura, czy ich własnych, mrocznych wytworów wyobraźni. Szarzy Prorocy dysponują niezrównaną władzą, bowiem każdy, kto się im sprzeciwi, zostanie okrzyknięty heretykiem i zdrajcą, sprowadzając na siebie szybką i straszliwą śmierć. Wpływy i pozycja dają największym z nich więcej bezpieczeństwa i swobody niż wszelkim innym skavenom, ale zdrada jest w tej kulturze zakorzeniona głęboko. Wraz z władzą przychodzi zawiść, przez co wielu Szarych Proroków kończy żywot z nożem w plecach."
+        ),
         SkavenProfessions.Szponowlad to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Władza zdobyta ostrzem należy do nas, a kto stanie nam na drodze, niech liczy się ze śmiercią!",
+            description = "Szponowłady osiągnęły odpowiedzialną pozycję dowódców oddziałów, zwykle dzięki awansowi lub mordując swoich poprzedników. Chociaż zachowują niekwestionowaną władzę nad podległymi klanbraćmi, w oczach hersztów i wodzów są tylko nieco ważniejszymi sługami. W związku z tym szponowłady są równie dobre do poświęcenia na polu bitwy, jak wszystkie inne skaveny. Profesja szponowłada to ogólna kategoria przywódców w niemal wszystkich klanach i kastach. W każdej występuje pod inną nazwą, ale wszystkie szponowłady mają te same charakterystyki profesji. Szponowłady zazwyczaj dowodzą grupami klanbraci, kieł-liderzy prowadzą szturmoszczury, nocarze wiodą posłańców nocy, a pazur-liderzy dowodzą oddziałami niewolników."
+        ),
         SkavenProfessions.Szturmoszczur to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Siła w naszych zębach i pazurach jest niezrównana – nikt nie ośmieli się nas powstrzymać!",
+            description = "Czarnoszczury, które dowiodą swojej sprawności bojowej i wierności skaveńskiej rasie, dołączają do słynnych oddziałów szturmoszczurów. Uznawane za najbardziej niszczycielskich wojowników w społeczności skavenów, jednostki szturmoszczurów strzegą hersztów, szponowładów, a najlepsze służą jako osobista gwardia Szarych Proroków."
+        ),
         TribeProfessions.UczenSzamana to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Moc jest błogosławieństwem i przekleństwem – tylko najsilniejsi opanują jej tajemnice!",
+            description = "Wśród dzikich ludów magiczny talent rzadko spotyka się z akceptacją członków plemienia. Osobniki wykazujące oznaki magicznego daru zwykle popadają w obłęd, doprowadzone do szaleństwa przez koszmarne wizje i niepokojące przywidzenia. To z kolei szybko powoduje wrogość ze strony przesądnych rodaków. Nieliczni są w stanie samodzielnie nauczyć się prostych zaklęć, w podobny sposób jak czynią to guślarze. Najbardziej uzdolnieni mogą zwrócić na siebie uwagę szamana plemienia. Mimo iż takie zainteresowanie chroni ich przed śmiercią i prześladowaniami, uczniowie przechodzą istne piekło pod okiem porywczych i często okrutnych szamanów. Niewielu wytrzymuje lata bólu i upokorzeń, zanim wreszcie nauczą się panować nad swoją mocą. Ale jeśli przetrwają, wkroczą na drogę, która może ich zaprowadzić na szczyty władzy w plemieniu."
+        ),
         TribeProfessions.Szaman to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Duchy prowadzą nasze ręce – kto je zlekceważy, spotka gniew przodków!",
+            description = "Szamani to najważniejsze osoby w życiu duchowym barbarzyńskich plemion. Działają jako pośrednicy między światem materialnym i sferą duchów. Ich zadaniem jest obłaskawianie przyjaznych duchów i odpędzanie wrogich. Zwykle nawiązują bliską więź z duchami totemicznymi i opiekuńczymi plemienia. Najczęściej są to duchy przodków, które czuwają nad plemieniem i chronią jego członków, w zamian oczekując szacunku i czci szamana oraz regularnego składania ofiar."
+        ),
         TribeProfessions.WielkiSzaman to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Moc duchów daje władzę, a kto ją lekceważy, poznaje naszą siłę!",
+            description = "Najpotężniejsi z szamanów w mistrzowskim stopniu opanowali magię duchów. Dzięki swojej mocy i więzi z duchami zapewnili plemieniu bezpieczeństwo i siłę. Cieszą się wielkim szacunkiem i są obdarzani czcią przez członków plemienia. Wodzowie zasięgają u nich rady w niemal wszystkich kwestiach dotyczących plemienia. Wśród niektórych ludów wielcy szamani często sami zostają wodzami. Bywają też tacy, którzy władają kilkoma szczepami i mają na swe usługi wielu wojowników, a nawet innych szamanów. Ich życie jest jednak ciągłą walką o pozycję w plemieniu, gdyż muszą rywalizować z żądnymi władzy poddanymi. Czasem trzeba też ukarać takiego ambitnego podwładnego, dając przykład reszcie plemienia, że nie warto zadzierać z wielkim szamanem."
+        ),
         TribeProfessions.Knuj to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Zwinność i spryt to nasze ostrza – kto nas nie zauważy, tego nie ma!",
+            description = "Knuje to osobniki wyróżniające się sprytem i zwinnością. To świetni zwiadowcy i tropiciele. W plemieniu pełnią rolę przepatrywaczy i strażników. Przeprowadzają rozpoznanie terenu i gromadzą informacje o sile wrogich oddziałów. Zwykle preferują taktykę walki partyzanckiej, atakując z zaskoczenia. Potrafią też dość sprawnie radzić sobie w trudnym terenie oraz, gdy zajdzie taka potrzeba, szybko uciekać. Czasami są wykorzystywani jako skrytobójcy, a wielu z nich to zdolni truciciele."
+        ),
         TribeProfessions.Silacz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Siła to nasza broń, a każdy, kto stanie nam na drodze, poznaje jej moc!",
+            description = "Siłacze to osobniki wyróżniające się posturą i wytrzymałością. Sprawdzili się w bitwie i pokonali wielu przeciwników. Niektórzy są na tyle przebiegli, by próbować przejąć władzę w plemieniu. Inni to tylko mocarne mięśniaki. Siłacze zwykle można odróżnić od współplemieńców już na pierwszy rzut oka. Są więksi, obwieszeni bronią i odziani w ciężkie pancerze. Dumne obnoszą się z bliznami i przerażającymi trofeami zdobytymi w walce. Noszą ciężką broń, najchętniej dwuręczną."
+        ),
         TribeProfessions.WodzPlemienny to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Siła i przebiegłość rządzą plemieniem – kto nie posłucha, zginie!",
+            description = "Wodzowie to zwykle największe osobniki w całym plemieniu. Dowodzą grupami liczącymi od kilkunastu do nawet kilkuset wojowników. Zwykle rządzą dzięki swojej sile i bezwzględności, ale niektórzy potrafią być także przebiegli i podstępni."
+        ),
         AnimalProfessions.TresowanyNiedzwiedz to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Nawet największe bestie mogą być posłuszne temu, kto zna ich naturę!",
+            description = "Tresowane niedźwiedzie są groźne, lecz nie zaatakują, jeśli nie zostaną sprowokowane. Jednakże dla bezpieczeństwa zwykle są prowadzone na grubym łańcuchu, ponieważ pod nieobecność tresera mogą zachowywać się agresywnie. Poskramiacze mogą zmusić niedźwiedzia do ruchu wydaniem wartościowej komendy lub gestem dłoni. Nie wymaga to testu umiejętności. Wykonanie przez niedźwiedzia każdej innej czynności wymaga poświęcenia przez tresera akcji na „wykorzystanie umiejętności” oraz udanego testu oswajania. Każdy poziom sukcesu zmusza niedźwiedzia do wykonywania polecenia przez dodatkową rundę (jeśli to konieczne). Porażka oznacza, że niedźwiedź nie podejmuje żadnej czynności. Trzy lub więcej poziomów porażki oznacza, że zdezorientowane zwierzę rzuca się na najbliższą istotę. Trudność testu oswajania jest zależna od tego, jak zwierzę jest traktowane, tresowane i odżywiane. Zasady ze Zbrojowni Starego Świata można dostosować do tresowanych niedźwiedzi. Tresowane niedźwiedzie są zazwyczaj karmione mieszanką jagód, roślin, korzeni, grzybów, owadów i ryb. Pasza na jeden dzień kosztuje około 2 s, a w dzikim terenie tylko 6 p, ponieważ niedźwiedź może żywić się tym, co znajdzie. W zimie zapada zwykle w sen hibernacyjny, ale nie musi, jeśli ma pod dostatkiem żywności. Tresowane niedźwiedzie otrzymują połowę Punktów Doświadczenia zdobywanych przez poskramiacza."
+        ),
         BeastmenProfessions.Bestigor to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Siła, odwaga i dyscyplina – oto cechy, które czynią ze mnie przywódcę stada.",
+            description = "Najsilniejsi spośród zwierzoludzi nazywani są bestigorami. Oprócz fizycznej krzepy, cechuje ich dyscyplina i odwaga, które pomagają efektywniej walczyć i utrzymywać kontrolę nad stadem. Bestigory są także odporniejsze na pokusy, które rozpraszają ich głupszych braci, potrafią więc przez dłuższy czas skupiać się na jednym zadaniu. Oznaką ich rangi są najlepsze w stadzie pancerze i oręż, zazwyczaj zabrane pokonanym wrogom."
+        ),
         BeastmenProfessions.WodzZwierzoludzi to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Władza nie jest dana raz na zawsze – każdy dzień wymaga siły, sprytu i nieustannej walki o przewagę.",
+            description = "Niekwestionowanym przywódcą każdego stada zbrojnego jest wódz. Choć zwykle bywa nim gor, czasem zdarza się, że niezwykle sprytny ungor lub mutant zdoła przejąć kontrolę nad stadem. W takich przypadkach nowy wódz nie ma czasu nacieszyć się władzą czy planować najazdów, bowiem wciąż musi pilnować swego stanowiska i zwalczać konkurentów, którzy co rusz rzucają mu wyzwanie. Zwierzoludzie nadają swoim przywódcom przydomki (np. Rozpruwacz lub Wojogor), ale tylko najpotężniejszych określają mianem wodzów. Wielu spośród nich zostało obdarowanych Darami lub Nagrodami Chaosu, które wyróżniają ich spośród reszty członków stada."
+        ),
         BeastmenProfessions.SzamanRykowcowK to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Dusza szamana wędruje tam, gdzie inni nie odważyliby się spojrzeć – w same serce Chaosu.",
+            description = "Szaman rykowców pełni w stadzie zwierzoludzi bardzo ważną funkcję głównego doradcy wodza. To dzięki jego zaklęciom i wiedzy stado może zniszczyć wrogów. Wedle niektórych legend, szamani są w stanie wysłać swoją duszę do Domeny Chaosu, gdzie naradzają się z demonami, a niektórzy stają przed obliczem samych bogów Chaosu. To właśnie dzięki tym wędrówkom, rozumieniu snów i znaczenia wizji szamani potrafią przepowiadać przyszłość."
+        ),
         BeastmenProfessions.SzamanRykowcowNST to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Dusza szamana wędruje tam, gdzie inni nie odważyliby się spojrzeć – w same serce Chaosu.",
+            description = "Szaman rykowców pełni w stadzie zwierzoludzi bardzo ważną funkcję głównego doradcy wodza. To dzięki jego zaklęciom i wiedzy stado może zniszczyć wrogów. Wedle niektórych legend, szamani są w stanie wysłać swoją duszę do Domeny Chaosu, gdzie naradzają się z demonami, a niektórzy stają przed obliczem samych bogów Chaosu. To właśnie dzięki tym wędrówkom, rozumieniu snów i znaczenia wizji szamani potrafią przepowiadać przyszłość."
+        ),
         BeastmenProfessions.WielkiSzamanRykowcowK to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Moc Chaosu płynie przeze mnie; kto stanął mi na drodze, tego czeka zagłada.",
+            description = "Wielki szaman to jeden z najpotężniejszych zwierzoludzi w stadzie. Czerpie moc z piętna Chaosu i potrafi rzucać wyjątkowo niszczycielskie zaklęcia. Biorąc pod uwagę ich siłę i wprawę w walce, czyni to z szamanów niezwykle groźnych przeciwników."
+        ),
         BeastmenProfessions.WielkiSzamanRykowcowNST to ProfessionDescription(
-            quote = " ",
-            description = " "),
+            quote = "Moc Chaosu płynie przeze mnie; kto stanął mi na drodze, tego czeka zagłada.",
+            description = "Wielki szaman to jeden z najpotężniejszych zwierzoludzi w stadzie. Czerpie moc z piętna Chaosu i potrafi rzucać wyjątkowo niszczycielskie zaklęcia. Biorąc pod uwagę ich siłę i wprawę w walce, czyni to z szamanów niezwykle groźnych przeciwników."
+        ),
     )
 }

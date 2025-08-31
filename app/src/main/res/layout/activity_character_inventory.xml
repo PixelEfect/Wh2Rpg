@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_0004"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <include
+        layout="@layout/my_card_header"
+        android:id="@+id/headerLayout"/>
+    <!-- ScrollView z treścią formularza -->
+    <ScrollView
+        android:id="@+id/formScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            style="@style/ScrollLinearVertical"
+            android:paddingHorizontal="0dp">
+
+            <!-- Weapons and Armor Section Header -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    style="@style/DoubleLabelStyle"
+                    android:gravity="center"
+                    android:text="Broń i pancerz" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <!-- Weapons Table Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="1dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Nazwa broni"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="S"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Cechy oręża"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <!-- Weapons Table -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="1dp">
+                    <EditText
+                        android:id="@+id/weapon1Name"
+                        style="@style/SmallInputStyle"
+                        android:background="@drawable/translucent_bg1"
+                        android:layout_weight="5" />
+                    <EditText
+                        android:id="@+id/weapon1Power"
+                        style="@style/SmallInputStyle"
+                        android:background="@drawable/translucent_bg1"
+                        android:layout_weight="1" />
+                    <EditText
+                        android:id="@+id/weapon1Information"
+                        style="@style/SmallInputStyle"
+                        android:background="@drawable/translucent_bg1"
+                        android:layout_weight="4" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+                        <EditText
+                            android:id="@+id/weapon2Name"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="5" />
+                        <EditText
+                            android:id="@+id/weapon2Power"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="1" />
+                        <EditText
+                            android:id="@+id/weapon2Information"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="4" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+                        <EditText
+                            android:id="@+id/weapon3Name"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="5" />
+                        <EditText
+                            android:id="@+id/weapon3Power"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="1" />
+                        <EditText
+                            android:id="@+id/weapon3Information"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="4" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+                        <EditText
+                            android:id="@+id/weapon4Name"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="5" />
+                        <EditText
+                            android:id="@+id/weapon4Power"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="1" />
+                        <EditText
+                            android:id="@+id/weapon4Information"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="4" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+                        <EditText
+                            android:id="@+id/weapon5Name"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="5" />
+                        <EditText
+                            android:id="@+id/weapon5Power"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="1" />
+                        <EditText
+                            android:id="@+id/weapon5Information"
+                            style="@style/SmallInputStyle"
+                            android:background="@drawable/translucent_bg1"
+                            android:layout_weight="4" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Armor Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="16dp">
+
+                    <!-- Right half with armor image and squares -->
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+
+                        <!-- Armor Image -->
+                        <ImageView
+                            android:id="@+id/image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/armor_002" />
+
+                        <!-- Armor value squares with text -->
+                        <TextView
+                            android:id="@+id/armorImage1View"
+                            style="@style/BodyPartNumberStyle"
+                            android:text=""
+                            android:translationX="100dp"
+                            android:translationY="15dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            style="@style/BodyPartLabelStyle"
+                            android:text="Głowa\n01-15"
+                            android:translationX="130dp"
+                            android:translationY="5dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/armorImage2View"
+                            style="@style/BodyPartNumberStyle"
+                            android:text=""
+                            android:translationX="40dp"
+                            android:translationY="30dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            style="@style/BodyPartLabelStyle"
+                            android:text="P.ręka\n16-35"
+                            android:translationX="0dp"
+                            android:translationY="5dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/armorImage3View"
+                            style="@style/BodyPartNumberStyle"
+                            android:text=""
+                            android:translationX="100dp"
+                            android:translationY="70dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            style="@style/BodyPartLabelStyle"
+                            android:text="L.ręka\n36-55"
+                            android:translationX="130dp"
+                            android:translationY="55dp"
+                            android:textColor="@color/white"/>
+                        <TextView
+                            android:id="@+id/armorImage4View"
+                            style="@style/BodyPartNumberStyle"
+                            android:text=""
+                            android:translationX="40dp"
+                            android:translationY="70dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            style="@style/BodyPartLabelStyle"
+                            android:text="Korpus\n56-80"
+                            android:translationX="0dp"
+                            android:translationY="65dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/armorImage5View"
+                            style="@style/BodyPartNumberStyle"
+                            android:text=""
+                            android:translationX="20dp"
+                            android:translationY="130dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            style="@style/BodyPartLabelStyle"
+                            android:text="P.noga\n81-90"
+                            android:translationX="0dp"
+                            android:translationY="155dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/armorImage6View"
+                            style="@style/BodyPartNumberStyle"
+                            android:text=""
+                            android:translationX="115dp"
+                            android:translationY="135dp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            style="@style/BodyPartLabelStyle"
+                            android:text="L.noga\n91-100"
+                            android:translationX="130dp"
+                            android:translationY="160dp"
+                            android:textColor="@color/white"/>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="400dp"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    style="@style/DoubleLabelStyle"
+                                    android:text="Głowa: " />
+
+                                <TextView
+                                    android:id="@+id/armorNumber1TextView"
+                                    style="@style/ArmorDropdownTextViewStyle" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="1dp">
+
+                                <TextView
+                                    style="@style/DoubleLabelStyle"
+                                    android:text="Prawa ręka: " />
+
+                                <TextView
+                                    android:id="@+id/armorNumber2TextView"
+                                    style="@style/ArmorDropdownTextViewStyle" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="1dp">
+
+                                <TextView
+                                    style="@style/DoubleLabelStyle"
+                                    android:text="Lewa ręka: " />
+
+                                <TextView
+                                    android:id="@+id/armorNumber3TextView"
+                                    style="@style/ArmorDropdownTextViewStyle" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="1dp">
+
+                                <TextView
+                                    style="@style/DoubleLabelStyle"
+                                    android:text="Korpus: " />
+
+                                <TextView
+                                    android:id="@+id/armorNumber4TextView"
+                                    style="@style/ArmorDropdownTextViewStyle" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="1dp">
+
+                                <TextView
+                                    style="@style/DoubleLabelStyle"
+                                    android:text="Prawa noga: " />
+
+                                <TextView
+                                    android:id="@+id/armorNumber5TextView"
+                                    style="@style/ArmorDropdownTextViewStyle" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="1dp">
+
+                                <TextView
+                                    style="@style/DoubleLabelStyle"
+                                    android:text="Lewa noga: " />
+
+                                <TextView
+                                    android:id="@+id/armorNumber6TextView"
+                                    style="@style/ArmorDropdownTextViewStyle" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <!-- Money Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        style="@style/DoubleLabelStyle"
+                        android:gravity="center"
+                        android:text="Majątek" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:text="Złote korony"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:text="Szylingi"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:text="Pensy"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="1dp">
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <EditText
+                        android:id="@+id/moneyGoldName"
+                        style="@style/NumberInputStyle"
+                        android:background="@drawable/translucent_bg1"
+                        android:layout_width="100dp" />
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <EditText
+                        android:id="@+id/moneySilverName"
+                        style="@style/NumberInputStyle"
+                        android:background="@drawable/translucent_bg1"
+                        android:layout_width="100dp" />
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <EditText
+                        android:id="@+id/moneyCopperName"
+                        style="@style/NumberInputStyle"
+                        android:background="@drawable/translucent_bg1"
+                        android:layout_width="100dp" />
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <!-- Inventory Sections -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout style="@style/InputBlockStyle">
+                        <TextView
+                            android:id="@+id/InventoryInformation1View"
+                            style="@style/DoubleLabelStyle"
+                            android:text="Ekwipunek" />
+                        <EditText
+                            android:id="@+id/inputInventory1"
+                            style="@style/AutoResizingInputStyle"
+                            android:minLines="3"
+                            android:maxLines="12"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout style="@style/InputBlockStyle">
+                        <TextView
+                            android:id="@+id/InventoryInformation2View"
+                            style="@style/DoubleLabelStyle"
+                            android:text="Inne" />
+                        <EditText
+                            android:id="@+id/inputInventory2"
+                            style="@style/AutoResizingInputStyle"
+                            android:minLines="2"
+                            android:maxLines="12"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout></LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/descriptionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/description2"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/inventoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/inventory"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/statsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/stats2"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/magicButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/magic2"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/skillsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/skills2"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

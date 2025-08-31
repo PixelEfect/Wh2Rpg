@@ -24,7 +24,7 @@
         android:requestLegacyExternalStorage="true">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,71 +33,79 @@
         </activity>
 
         <activity
-            android:name=".HomeActivity"
+            android:name=".views.HomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:label="@string/app_name"/>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".views.ProfileActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".MyCardListActivity"
+            android:name=".views.card.CardsListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".MyCardAttributesActivity"
+            android:name=".views.card.StatsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".MyCardBackstoryActivity"
+            android:name=".views.card.InventoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"/>
+        <activity
+            android:name=".views.card.BackstoryActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".MyCardSkillsActivity"
+            android:name=".views.card.SkillsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".UnfinishedCardsActivity"
+            android:name=".views.create.UnfinishedCardsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".NewCardAncestryActivity"
+            android:name=".views.create.NewCardAncestryActivity"
             android:windowSoftInputMode="adjustResize|stateHidden"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".NewCardAttributesActivity"
+            android:name=".views.create.NewCardAttributesActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".NewCardBackstoryActivity"
+            android:name=".views.create.NewCardBackstoryActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".NewCardProfessionsActivity"
+            android:name=".views.create.NewCardProfessionsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".NewCardSkillsAndAbilitiesActivity"
+            android:name=".views.create.NewCardSkillsAndAbilitiesActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".NewProfessionActivity"
+            android:name=".views.card.ProfessionActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".LoginActivity"
+            android:name=".views.LoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".ProfessionsConsistencyChecker"
+            android:name=".views.ProfessionsConsistencyChecker"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
         <activity
-            android:name=".SpellBlessingViewerActivity"
+            android:name=".views.BlessingViewerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"/>
+        <activity
+            android:name=".views.SpellViewerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"/>
     </application>

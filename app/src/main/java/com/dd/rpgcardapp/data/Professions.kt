@@ -46,134 +46,6 @@ object BasicProfessions {
         ),
     )
 
-    val AkolitaKultuKhorna = Profession(
-        name = "Akolita kultu Khorna",
-        ww = 20, us = 0, k = 10, odp = 15, zr = 5, int = 0, sw = 15, ogd = 0,
-        a = 1, zyw = 4,
-        abilities = listOf(
-            CommonAbilities.zastraszanie,
-            RareAbilities.unik,
-            SpecialAbilities.sekretnyjezykBitewny,
-        ),
-        skills = listOf(
-            CommonSkills.silnyCios,
-            CommonSkills.uodpornionyNaChaos,
-            StatsSkills.twardziel,
-        ),
-        optionalAbility = listOf(
-            KnowledgeAbilities.OldWorld
-        ),
-        optionalSkills = listOf(
-            listOf(WeaponSkills.bronDwureczna, WeaponSkills.korbacze),
-            listOf(CommonSkills.morderczyAtak, CommonSkills.mierzonyCios),
-            listOf(StatsSkills.niezwykleOdporny, StatsSkills.szybkiRefleks)
-        )
-    )
-
-    val AkolitaKultuNurgla = Profession(
-        name = "Akolita kultu Nurgla",
-        ww = 10, us = 0, k = 0, odp = 20, zr = 5, int = 0, sw = 15, ogd = 15,
-        zyw = 3, mag = 1,
-        abilities = listOf(
-            CommonAbilities.charakteryzacja,
-            CommonAbilities.sztukaPrzetrwania,
-            CommonAbilities.zastraszanie,
-            RareAbilities.czytanieIPisanie,
-            RareAbilities.leczenie,
-            RareAbilities.splatanieMagii,
-            RareAbilities.torturowanie,
-            RareAbilities.wykrywanieMagii,
-            SpecialAbilities.jezykTajemnyDemoniczny,
-            SpecialAbilities.naukaDemonologia,
-        ),
-        skills = listOf(
-            CommonSkills.czarnoksiestwo,
-            CommonSkills.niepokojacy,
-            CommonSkills.nieustraszony,
-            CommonSkills.odpornoscNaChoroby,
-            CommonSkills.przemawianie,
-            CommonSkills.uodpornionyNaChaos,
-            MagicSkills.magiaProstaChaos,
-        ),
-        optionalAbility = listOf(
-            KnowledgeAbilities.OldWorld
-        ),
-        optionalSkills = listOf(
-            listOf(CommonSkills.zmyslMagii, StatsSkills.niezwykleOdporny)
-        )
-    )
-
-    val AkolitaKultuSlaanesha = Profession(
-        name = "Akolita kultu Slaanesha",
-        ww = 5, us = 5, k = 0, odp = 0, zr = 10, int = 20, sw = 0, ogd = 25,
-        zyw = 3, mag = 1,
-        abilities = listOf(
-            CommonAbilities.hazard,
-            CommonAbilities.plotkowanie,
-            RareAbilities.czytanieIPisanie,
-            RareAbilities.splatanieMagii,
-            SpecialAbilities.jezykTajemnyDemoniczny,
-            SpecialAbilities.naukaDemonologia,
-        ),
-        skills = listOf(
-            CommonSkills.czarnoksiestwo,
-            CommonSkills.etykieta,
-            CommonSkills.lotrzyk,
-            CommonSkills.uodpornionyNaChaos,
-            CommonSkills.wyostrzoneZmysly,
-            MagicSkills.magiaProstaChaos,
-            StatsSkills.charyzmatyczny,
-        ),
-        optionalAbility = listOf(
-            listOf(CommonAbilities.charakteryzacja, CommonAbilities.wycena),
-            SleightOfHandAbilities.All + CommonAbilities.mocnaGlowa,
-            listOf(CommonAbilities.przekonywanie, CommonAbilities.zastraszanie)
-        ),
-        optionalSkills = listOf(
-            listOf(CommonSkills.zmyslMagii, CommonSkills.zylkaHandlowa)
-        )
-    )
-
-    val AkolitaKultuTzeentcha = Profession(
-        name = "Akolita kultu Tzeentcha",
-        ww = 5, us = 5, k = 0, odp = 0, zr = 5, int = 20, sw = 10, ogd = 20,
-        zyw = 3, mag = 1,
-        abilities = listOf(
-            CommonAbilities.charakteryzacja,
-            CommonAbilities.spostrzegawczosc,
-            CommonAbilities.wycena,
-            RareAbilities.czytanieIPisanie,
-            RareAbilities.splatanieMagii,
-            RareAbilities.wykrywanieMagii,
-            SpecialAbilities.jezykTajemnyDemoniczny,
-            SpecialAbilities.naukaDemonologia,
-        ),
-        skills = listOf(
-            CommonSkills.czarnoksiestwo,
-            CommonSkills.etykieta,
-            CommonSkills.intrygant,
-            CommonSkills.odpornoscNaMagie,
-            CommonSkills.kontrolowanaMutacja,
-            CommonSkills.poliglota,
-            CommonSkills.przemawianie,
-            CommonSkills.uodpornionyNaChaos,
-            MagicSkills.magiaProstaChaos,
-            StatsSkills.charyzmatyczny,
-            StatsSkills.opanowanie,
-        ),
-        optionalAbility = listOf(
-            listOf(CommonAbilities.dowodzenie, CommonAbilities.przekonywanie),
-            ScienceAbilities.All,
-            listOf(CommonAbilities.plotkowanie, CommonAbilities.zastraszanie),
-            CraftAbilities.All + LanguageAbilities.All,
-            KnowledgeAbilities.OldWorld + RareAbilities.warzenieTrucizn,
-        ),
-        optionalSkills = listOf(
-            listOf(StatsSkills.blyskotliwosc, CommonSkills.obiezyswiat),
-            listOf(CommonSkills.zmyslMagii, CommonSkills.zylkaHandlowa)
-        )
-    )
-
     val Aptekarz = Profession(
         name = "Aptekarz",
         ww = 0, us = 0, k = 0, odp = 5, zr = 5, int = 10, sw = 10, ogd = 5,
@@ -3101,6 +2973,134 @@ object BasicProfessions {
                 listOf(CommonSkills.odwaga, StatsSkills.opanowanie),
                 listOf(CommonSkills.szostyZmysl, CommonSkills.wyostrzoneZmysly)
             ),
+        )
+
+        val  AkolitaKultuKhorna = Profession(
+            name = "Akolita kultu Khorna",
+            ww = 20, us = 0, k = 10, odp = 15, zr = 5, int = 0, sw = 15, ogd = 0,
+            a = 1, zyw = 4,
+            abilities = listOf(
+                CommonAbilities.zastraszanie,
+                RareAbilities.unik,
+                SpecialAbilities.sekretnyjezykBitewny,
+            ),
+            skills = listOf(
+                CommonSkills.silnyCios,
+                CommonSkills.uodpornionyNaChaos,
+                StatsSkills.twardziel,
+            ),
+            optionalAbility = listOf(
+                KnowledgeAbilities.OldWorld
+            ),
+            optionalSkills = listOf(
+                listOf(WeaponSkills.bronDwureczna, WeaponSkills.korbacze),
+                listOf(CommonSkills.morderczyAtak, CommonSkills.mierzonyCios),
+                listOf(StatsSkills.niezwykleOdporny, StatsSkills.szybkiRefleks)
+            )
+        )
+
+        val AkolitaKultuNurgla = Profession(
+            name = "Akolita kultu Nurgla",
+            ww = 10, us = 0, k = 0, odp = 20, zr = 5, int = 0, sw = 15, ogd = 15,
+            zyw = 3, mag = 1,
+            abilities = listOf(
+                CommonAbilities.charakteryzacja,
+                CommonAbilities.sztukaPrzetrwania,
+                CommonAbilities.zastraszanie,
+                RareAbilities.czytanieIPisanie,
+                RareAbilities.leczenie,
+                RareAbilities.splatanieMagii,
+                RareAbilities.torturowanie,
+                RareAbilities.wykrywanieMagii,
+                SpecialAbilities.jezykTajemnyDemoniczny,
+                SpecialAbilities.naukaDemonologia,
+            ),
+            skills = listOf(
+                CommonSkills.czarnoksiestwo,
+                CommonSkills.niepokojacy,
+                CommonSkills.nieustraszony,
+                CommonSkills.odpornoscNaChoroby,
+                CommonSkills.przemawianie,
+                CommonSkills.uodpornionyNaChaos,
+                MagicSkills.magiaProstaChaos,
+            ),
+            optionalAbility = listOf(
+                KnowledgeAbilities.OldWorld
+            ),
+            optionalSkills = listOf(
+                listOf(CommonSkills.zmyslMagii, StatsSkills.niezwykleOdporny)
+            )
+        )
+
+        val AkolitaKultuSlaanesha = Profession(
+            name = "Akolita kultu Slaanesha",
+            ww = 5, us = 5, k = 0, odp = 0, zr = 10, int = 20, sw = 0, ogd = 25,
+            zyw = 3, mag = 1,
+            abilities = listOf(
+                CommonAbilities.hazard,
+                CommonAbilities.plotkowanie,
+                RareAbilities.czytanieIPisanie,
+                RareAbilities.splatanieMagii,
+                SpecialAbilities.jezykTajemnyDemoniczny,
+                SpecialAbilities.naukaDemonologia,
+            ),
+            skills = listOf(
+                CommonSkills.czarnoksiestwo,
+                CommonSkills.etykieta,
+                CommonSkills.lotrzyk,
+                CommonSkills.uodpornionyNaChaos,
+                CommonSkills.wyostrzoneZmysly,
+                MagicSkills.magiaProstaChaos,
+                StatsSkills.charyzmatyczny,
+            ),
+            optionalAbility = listOf(
+                listOf(CommonAbilities.charakteryzacja, CommonAbilities.wycena),
+                SleightOfHandAbilities.All + CommonAbilities.mocnaGlowa,
+                listOf(CommonAbilities.przekonywanie, CommonAbilities.zastraszanie)
+            ),
+            optionalSkills = listOf(
+                listOf(CommonSkills.zmyslMagii, CommonSkills.zylkaHandlowa)
+            )
+        )
+
+        val AkolitaKultuTzeentcha = Profession(
+            name = "Akolita kultu Tzeentcha",
+            ww = 5, us = 5, k = 0, odp = 0, zr = 5, int = 20, sw = 10, ogd = 20,
+            zyw = 3, mag = 1,
+            abilities = listOf(
+                CommonAbilities.charakteryzacja,
+                CommonAbilities.spostrzegawczosc,
+                CommonAbilities.wycena,
+                RareAbilities.czytanieIPisanie,
+                RareAbilities.splatanieMagii,
+                RareAbilities.wykrywanieMagii,
+                SpecialAbilities.jezykTajemnyDemoniczny,
+                SpecialAbilities.naukaDemonologia,
+            ),
+            skills = listOf(
+                CommonSkills.czarnoksiestwo,
+                CommonSkills.etykieta,
+                CommonSkills.intrygant,
+                CommonSkills.odpornoscNaMagie,
+                CommonSkills.kontrolowanaMutacja,
+                CommonSkills.poliglota,
+                CommonSkills.przemawianie,
+                CommonSkills.uodpornionyNaChaos,
+                MagicSkills.magiaProstaChaos,
+                StatsSkills.charyzmatyczny,
+                StatsSkills.opanowanie,
+            ),
+            optionalAbility = listOf(
+                listOf(CommonAbilities.dowodzenie, CommonAbilities.przekonywanie),
+                ScienceAbilities.All,
+                listOf(CommonAbilities.plotkowanie, CommonAbilities.zastraszanie),
+                CraftAbilities.All + LanguageAbilities.All,
+                KnowledgeAbilities.OldWorld + RareAbilities.warzenieTrucizn,
+            ),
+            optionalSkills = listOf(
+                listOf(StatsSkills.blyskotliwosc, CommonSkills.obiezyswiat),
+                listOf(CommonSkills.zmyslMagii, CommonSkills.zylkaHandlowa)
+            )
         )
 
         val Ambasador = Profession(
@@ -7586,10 +7586,6 @@ object BeastmenProfessions {
 object Professions {
     val professionMap: Map<String, Profession> = mapOf(
         BasicProfessions.Akolita.name to BasicProfessions.Akolita,
-        BasicProfessions.AkolitaKultuKhorna.name to BasicProfessions.AkolitaKultuKhorna,
-        BasicProfessions.AkolitaKultuNurgla.name to BasicProfessions.AkolitaKultuNurgla,
-        BasicProfessions.AkolitaKultuSlaanesha.name to BasicProfessions.AkolitaKultuSlaanesha,
-        BasicProfessions.AkolitaKultuTzeentcha.name to BasicProfessions.AkolitaKultuTzeentcha,
         BasicProfessions.Aptekarz.name to BasicProfessions.Aptekarz,
         BasicProfessions.Bagiennik.name to BasicProfessions.Bagiennik,
         BasicProfessions.Bajarz.name to BasicProfessions.Bajarz,
@@ -7707,6 +7703,10 @@ object Professions {
         BasicProfessions.ZolnierzOkretowy.name to BasicProfessions.ZolnierzOkretowy,
         AdvancedProfessions.Admiral.name to AdvancedProfessions.Admiral,
         AdvancedProfessions.AgentCalunu.name to AdvancedProfessions.AgentCalunu,
+        AdvancedProfessions.AkolitaKultuKhorna.name to AdvancedProfessions.AkolitaKultuKhorna,
+        AdvancedProfessions.AkolitaKultuNurgla.name to AdvancedProfessions.AkolitaKultuNurgla,
+        AdvancedProfessions.AkolitaKultuSlaanesha.name to AdvancedProfessions.AkolitaKultuSlaanesha,
+        AdvancedProfessions.AkolitaKultuTzeentcha.name to AdvancedProfessions.AkolitaKultuTzeentcha,
         AdvancedProfessions.Ambasador.name to AdvancedProfessions.Ambasador,
         AdvancedProfessions.Arcykaplan.name to AdvancedProfessions.Arcykaplan,
         AdvancedProfessions.Arcymag.name to AdvancedProfessions.Arcymag,

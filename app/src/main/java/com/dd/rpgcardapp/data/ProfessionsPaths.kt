@@ -56,66 +56,6 @@ object ProfessionPaths {
             )
         ),
 
-        BasicProfessions.AkolitaKultuKhorna to Paths(
-            entry = listOf(
-            ),
-            exit = listOf(
-                BasicProfessions.Banita,
-                BasicProfessions.Fanatyk,
-                BasicProfessions.Grabiezca,
-                BasicProfessions.Podzegacz,
-                AdvancedProfessions.Weteran,
-                AdvancedProfessions.WtajemniczonyKultuKhorna,
-            )
-        ),
-
-        BasicProfessions.AkolitaKultuNurgla to Paths(
-            entry = listOf(
-            ),
-            exit = listOf(
-                BasicProfessions.Banita,
-                BasicProfessions.Cyrulik,
-                BasicProfessions.Grabiezca,
-                BasicProfessions.Podzegacz,
-                BasicProfessions.PorywaczZwlok,
-                AdvancedProfessions.Szarlatan,
-                AdvancedProfessions.WtajemniczonyKultuNurgla,
-            )
-        ),
-
-        BasicProfessions.AkolitaKultuSlaanesha to Paths(
-            entry = listOf(
-            ),
-            exit = listOf(
-                BasicProfessions.Cyrkowiec,
-                BasicProfessions.Grabiezca,
-                BasicProfessions.Kanciarz,
-                BasicProfessions.Podzegacz,
-                BasicProfessions.Szlachcic,
-                // BasicProfessions.WojownikChaosu,
-                AdvancedProfessions.WtajemniczonyKultuSlaanesha,
-            )
-        ),
-
-        BasicProfessions.AkolitaKultuTzeentcha to Paths(
-            entry = listOf(
-            ),
-            exit = listOf(
-                BasicProfessions.Grabiezca,
-                BasicProfessions.Kanciarz,
-                BasicProfessions.Mieszczanin,
-                BasicProfessions.Podzegacz,
-                BasicProfessions.Przemytnik,
-                BasicProfessions.Rzemieslnik,
-                BasicProfessions.Skryba,
-                BasicProfessions.Szlachcic,
-                BasicProfessions.Zak,
-                // BasicProfessions.WojownikChaosu,
-                AdvancedProfessions.WtajemniczonyKultuTzeentcha,
-                // BasicProfessions.ZniewolonyCzarodziej, ???
-            )
-        ),
-
         BasicProfessions.Aptekarz to Paths(
             entry = listOf(
                 BasicProfessions.Cyrulik,
@@ -200,8 +140,8 @@ object ProfessionPaths {
 
         BasicProfessions.Banita to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuKhorna,
-                BasicProfessions.AkolitaKultuNurgla,
+                AdvancedProfessions.AkolitaKultuKhorna,
+                AdvancedProfessions.AkolitaKultuNurgla,
                 BasicProfessions.Bagiennik,
                 BasicProfessions.BylySkazaniec,
                 BasicProfessions.Cenobita,
@@ -385,7 +325,7 @@ object ProfessionPaths {
 
         BasicProfessions.Cyrkowiec to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuSlaanesha,
+                AdvancedProfessions.AkolitaKultuSlaanesha,
                 BasicProfessions.Bajarz,
                 BasicProfessions.Gazeciarz,
                 AdvancedProfessions.Herold,
@@ -418,7 +358,7 @@ object ProfessionPaths {
         BasicProfessions.Cyrulik to Paths(
             entry = listOf(
                 BasicProfessions.Akolita,
-                BasicProfessions.AkolitaKultuNurgla,
+                AdvancedProfessions.AkolitaKultuNurgla,
                 BasicProfessions.Aptekarz,
                 BasicProfessions.Dylentant,
                 SkavenProfessions.Klanbrat,
@@ -532,7 +472,7 @@ object ProfessionPaths {
         BasicProfessions.Fanatyk to Paths(
             entry = listOf(
                 BasicProfessions.Akolita,
-                BasicProfessions.AkolitaKultuKhorna,
+                AdvancedProfessions.AkolitaKultuKhorna,
                 BasicProfessions.Chlop,
                 SkavenProfessions.CzcicielZarazy,
                 BasicProfessions.Gazeciarz,
@@ -696,10 +636,10 @@ object ProfessionPaths {
 
         BasicProfessions.Grabiezca to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuKhorna,
-                BasicProfessions.AkolitaKultuNurgla,
-                BasicProfessions.AkolitaKultuSlaanesha,
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuKhorna,
+                AdvancedProfessions.AkolitaKultuNurgla,
+                AdvancedProfessions.AkolitaKultuSlaanesha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
                 BasicProfessions.BerserkerZNorski,
                 BasicProfessions.Korsarz,
                 BasicProfessions.Obszarnik,
@@ -783,8 +723,8 @@ object ProfessionPaths {
 
         BasicProfessions.Kanciarz to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuSlaanesha,
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuSlaanesha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
                 BasicProfessions.Bajarz,
                 BasicProfessions.Cyrkowiec,
                 BasicProfessions.Gazeciarz,
@@ -1031,7 +971,7 @@ object ProfessionPaths {
 
         BasicProfessions.Mieszczanin to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
                 BasicProfessions.Balsamista,
                 AdvancedProfessions.Karczmarz,
                 BasicProfessions.Koniarz,
@@ -1328,10 +1268,10 @@ object ProfessionPaths {
 
         BasicProfessions.Podzegacz to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuKhorna,
-                BasicProfessions.AkolitaKultuNurgla,
-                BasicProfessions.AkolitaKultuSlaanesha,
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuKhorna,
+                AdvancedProfessions.AkolitaKultuNurgla,
+                AdvancedProfessions.AkolitaKultuSlaanesha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
                 BasicProfessions.Fanatyk,
                 BasicProfessions.Gazeciarz,
                 AdvancedProfessions.Herold,
@@ -1430,7 +1370,7 @@ object ProfessionPaths {
 
         BasicProfessions.PorywaczZwlok to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuNurgla,
+                AdvancedProfessions.AkolitaKultuNurgla,
                 BasicProfessions.Balsamista,
                 BasicProfessions.Cyrulik,
                 BasicProfessions.Grabaz,
@@ -1516,7 +1456,7 @@ object ProfessionPaths {
 
         BasicProfessions.Przemytnik to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
                 BasicProfessions.CiuraObozowa,
                 BasicProfessions.Doker,
                 BasicProfessions.Flisak,
@@ -1704,7 +1644,7 @@ object ProfessionPaths {
 
         BasicProfessions.Rzemieslnik to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
                 BasicProfessions.Chlop,
                 BasicProfessions.CiuraObozowa,
                 BasicProfessions.Cyrulik,
@@ -1798,7 +1738,7 @@ object ProfessionPaths {
         BasicProfessions.Skryba to Paths(
             entry = listOf(
                 BasicProfessions.Akolita,
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
                 AdvancedProfessions.Czarnoksieznik,
                 BasicProfessions.CzeladnikRun,
                 AdvancedProfessions.Falszerz,
@@ -2087,8 +2027,8 @@ object ProfessionPaths {
 
         BasicProfessions.Szlachcic to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuSlaanesha,
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuSlaanesha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
                 BasicProfessions.Giermek,
                 AdvancedProfessions.Majordomus,
             ),
@@ -2489,7 +2429,7 @@ object ProfessionPaths {
 
         BasicProfessions.Zak to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
                 AdvancedProfessions.Bard,
                 BasicProfessions.Dylentant,
                 AdvancedProfessions.Falszerz,
@@ -2693,6 +2633,67 @@ object ProfessionPaths {
                 AdvancedProfessions.Szpieg,
                 AdvancedProfessions.Uczony,
                 AdvancedProfessions.ZabojcaNieumarlych,
+            )
+        ),
+
+
+        AdvancedProfessions.AkolitaKultuKhorna to Paths(
+            entry = listOf(
+            ),
+            exit = listOf(
+                BasicProfessions.Banita,
+                BasicProfessions.Fanatyk,
+                BasicProfessions.Grabiezca,
+                BasicProfessions.Podzegacz,
+                AdvancedProfessions.Weteran,
+                AdvancedProfessions.WtajemniczonyKultuKhorna,
+            )
+        ),
+
+        AdvancedProfessions.AkolitaKultuNurgla to Paths(
+            entry = listOf(
+            ),
+            exit = listOf(
+                BasicProfessions.Banita,
+                BasicProfessions.Cyrulik,
+                BasicProfessions.Grabiezca,
+                BasicProfessions.Podzegacz,
+                BasicProfessions.PorywaczZwlok,
+                AdvancedProfessions.Szarlatan,
+                AdvancedProfessions.WtajemniczonyKultuNurgla,
+            )
+        ),
+
+        AdvancedProfessions.AkolitaKultuSlaanesha to Paths(
+            entry = listOf(
+            ),
+            exit = listOf(
+                BasicProfessions.Cyrkowiec,
+                BasicProfessions.Grabiezca,
+                BasicProfessions.Kanciarz,
+                BasicProfessions.Podzegacz,
+                BasicProfessions.Szlachcic,
+                // BasicProfessions.WojownikChaosu,
+                AdvancedProfessions.WtajemniczonyKultuSlaanesha,
+            )
+        ),
+
+        AdvancedProfessions.AkolitaKultuTzeentcha to Paths(
+            entry = listOf(
+            ),
+            exit = listOf(
+                BasicProfessions.Grabiezca,
+                BasicProfessions.Kanciarz,
+                BasicProfessions.Mieszczanin,
+                BasicProfessions.Podzegacz,
+                BasicProfessions.Przemytnik,
+                BasicProfessions.Rzemieslnik,
+                BasicProfessions.Skryba,
+                BasicProfessions.Szlachcic,
+                BasicProfessions.Zak,
+                // BasicProfessions.WojownikChaosu,
+                AdvancedProfessions.WtajemniczonyKultuTzeentcha,
+                // BasicProfessions.ZniewolonyCzarodziej, ???
             )
         ),
 
@@ -4459,7 +4460,7 @@ object ProfessionPaths {
 
         AdvancedProfessions.Szarlatan to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuNurgla,
+                AdvancedProfessions.AkolitaKultuNurgla,
                 BasicProfessions.Dylentant,
                 AdvancedProfessions.Astrolog,
                 BasicProfessions.Bajarz,
@@ -4675,7 +4676,7 @@ object ProfessionPaths {
 
         AdvancedProfessions.Weteran to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuKhorna,
+                AdvancedProfessions.AkolitaKultuKhorna,
                 AdvancedProfessions.Artylerzysta,
                 BasicProfessions.Banita,
                 BasicProfessions.BerserkerZNorski,
@@ -4794,7 +4795,7 @@ object ProfessionPaths {
 
         AdvancedProfessions.WtajemniczonyKultuKhorna to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuKhorna,
+                AdvancedProfessions.AkolitaKultuKhorna,
             ),
             exit = listOf(
                 // BasicProfessions.WojownikChaosu,
@@ -4803,7 +4804,7 @@ object ProfessionPaths {
 
         AdvancedProfessions.WtajemniczonyKultuNurgla to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuNurgla,
+                AdvancedProfessions.AkolitaKultuNurgla,
             ),
             exit = listOf(
                 // BasicProfessions.WojownikChaosu,
@@ -4813,7 +4814,7 @@ object ProfessionPaths {
 
         AdvancedProfessions.WtajemniczonyKultuSlaanesha to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuSlaanesha,
+                AdvancedProfessions.AkolitaKultuSlaanesha,
             ),
             exit = listOf(
                 // BasicProfessions.WojownikChaosu,
@@ -4823,7 +4824,7 @@ object ProfessionPaths {
 
         AdvancedProfessions.WtajemniczonyKultuTzeentcha to Paths(
             entry = listOf(
-                BasicProfessions.AkolitaKultuTzeentcha,
+                AdvancedProfessions.AkolitaKultuTzeentcha,
             ),
             exit = listOf(
                 // BasicProfessions.WojownikChaosu,

@@ -13,8 +13,8 @@ open class BaseActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //SystemUIUtils.hideSystemUI(this)// Ukrywanie systemowego UI w każdej aktywności
     }
+
     override fun onStart() {
         super.onStart()
         SystemUIUtils.hideSystemUI(this)
@@ -32,6 +32,34 @@ open class BaseActivity : ComponentActivity() {
         }
     }
 
+    // Dodaj te metody:
+    protected fun setCustomTransition(enterAnim: Int, exitAnim: Int) {
+        overridePendingTransition(enterAnim, exitAnim)
+    }
+
+    protected fun setFadeTransition() {
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+    }
+
+    protected fun setSlideFromBottomTransition() {
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+    }
+
+    // Użycie przy starcie nowej aktywności:
+    protected fun startActivityWithTransition(intent: android.content.Intent, transitionType: TransitionType = TransitionType.FADE) {
+        startActivity(intent)
+        when (transitionType) {
+            TransitionType.FADE -> setFadeTransition()
+            TransitionType.SLIDE_LEFT -> overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+            //TransitionType.SLIDE_UP -> overridePendingTransition(com.dd.rpgcardapp.R.anim.slide_up_in, com.dd.rpgcardapp.R.anim.slide_down_out)
+            TransitionType.DEFAULT ->{}
+        }
+    }
+
+    enum class TransitionType {
+        FADE, SLIDE_LEFT, DEFAULT,// SLIDE_UP
+    }
+
     @SuppressLint("ClickableViewAccessibility")
     protected fun enableTouchToHideKeyboardAndSystemUI() {
         val rootView = findViewById<View>(android.R.id.content)
@@ -39,28 +67,23 @@ open class BaseActivity : ComponentActivity() {
     }
 
     private fun setupUI(view: View) {
-        // Jeśli to nie jest pole tekstowe, ustaw listener
         if (view !is android.widget.EditText) {
             view.setOnTouchListener { _, event ->
                 if (event.action == MotionEvent.ACTION_DOWN) {
-                    // Chowamy klawiaturę
                     currentFocus?.let {
                         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                         imm.hideSoftInputFromWindow(it.windowToken, 0)
                     }
-                    // Chowamy system UI
                     SystemUIUtils.hideSystemUI(this)
                 }
                 false
             }
         }
 
-        // Jeśli to jest ViewGroup, przejdź rekurencyjnie przez wszystkie dzieci
         if (view is android.view.ViewGroup) {
             for (i in 0 until view.childCount) {
                 setupUI(view.getChildAt(i))
             }
         }
     }
-
 }

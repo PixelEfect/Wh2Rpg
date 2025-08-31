@@ -381,7 +381,7 @@ object WitchMagic {
         description = "Wiedźma wypowiada słowa inwokacji i prosi duchy o ochronę przed wpływem nieszczycielskich potęg. Dowolna postać, która musi zostać przez nią opluta podczas rzucania zakręcia zyskuje plus 10 do testu przeciwko mocy chaosu."
     )
 }
-    /////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////         MAGIA PROSTA LODU        ///////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -3102,305 +3102,298 @@ object NagashTradition {
 
 object SkavenTraditions {
 
-    // TRADYCJA SKRYTOŚCI
-    object SkrytosiTradition {
 
-        val SuchaNoga = Spell(
-            name = "Suchą nogą",
-            icon = "",
-            power = 6,
-            timeToCast = CastingTime.AKCJA,
-            range = "dotykowy",
-            componentName = "kawałek korka",
-            componentPower = 1,
-            duration = "liczba minut równa wartości Magii czarownika",
-            description = "Skaven nabiera pływalności kawałka drewna, co umożliwia mu chodzenie po powierzchni cieczy, takich jak woda, ścieki lub olej, zupełnie jakby były ciałem stałym."
-        )
 
-        val HycHyc = Spell(
-            name = "Hyc-hyc",
-            icon = "",
-            power = 8,
-            timeToCast = CastingTime.AKCJA,
-            range = "12 metrów",
-            componentName = "tylna łapa szczura",
-            componentPower = 1,
-            duration = "chwilowy",
-            description = "Z odgłosem zasysanego powietrza i w kłębie cuchnącego siarką dymu czarownik teleportuje siebie lub jednego sprzymierzeńca znajdującego się w promieniu 12 metrów do dowolnego miejsca w polu widzenia. Jeśli teleportuje sprzymierzeńca, ta postać musi być najwyżej rozmiaru człowieka. Czarownik musi widzieć lokację, do której teleportuje siebie lub sprzymierzeńca, a lokacja ta musi być wolna od przeszkód i oddalona o co najmniej 2 metry od wszelkich innych obiektów (poza powierzchnią, na której stanie przeniesiona osoba) lub stworzeń."
-        )
+    val SuchaNoga = Spell(
+        name = "Suchą nogą",
+        icon = "",
+        power = 6,
+        timeToCast = CastingTime.AKCJA,
+        range = "dotykowy",
+        componentName = "kawałek korka",
+        componentPower = 1,
+        duration = "liczba minut równa wartości Magii czarownika",
+        description = "Skaven nabiera pływalności kawałka drewna, co umożliwia mu chodzenie po powierzchni cieczy, takich jak woda, ścieki lub olej, zupełnie jakby były ciałem stałym."
+    )
 
-        val TrujacyRopien = Spell(
-            name = "Trujący ropień",
-            icon = "",
-            power = 10,
-            timeToCast = CastingTime.AKCJA,
-            range = "dotykowy",
-            componentName = "zardzewiały lancet",
-            componentPower = 2,
-            duration = "",
-            description = "Skaven tworzy pulsujący, ociekający ropą wrzód na jednej ze swych kończyn. Gdy wrzód zostanie przebity (powodując utratę 1 punktu Żywotności, bez uwzględnienia Wytrzymałości i pancerza), wyciekającą z niego ropą można natrzeć ostrze dowolnej broni jednoręcznej. Jeśli cios tym orężem spowoduje utratę choć 1 punktu Żywotności, ofiara musi wykonać Trudny (-20) test Odporności. Nieudany test oznacza, że traci tyle punktów Żywotności, ile wynosi wartość Magii czarownika."
-        )
+    val HycHyc = Spell(
+        name = "Hyc-hyc",
+        icon = "",
+        power = 8,
+        timeToCast = CastingTime.AKCJA,
+        range = "12 metrów",
+        componentName = "tylna łapa szczura",
+        componentPower = 1,
+        duration = "chwilowy",
+        description = "Z odgłosem zasysanego powietrza i w kłębie cuchnącego siarką dymu czarownik teleportuje siebie lub jednego sprzymierzeńca znajdującego się w promieniu 12 metrów do dowolnego miejsca w polu widzenia. Jeśli teleportuje sprzymierzeńca, ta postać musi być najwyżej rozmiaru człowieka. Czarownik musi widzieć lokację, do której teleportuje siebie lub sprzymierzeńca, a lokacja ta musi być wolna od przeszkód i oddalona o co najmniej 2 metry od wszelkich innych obiektów (poza powierzchnią, na której stanie przeniesiona osoba) lub stworzeń."
+    )
 
-        val LepkieLapy = Spell(
-            name = "Lepkie łapy",
-            icon = "",
-            power = 12,
-            timeToCast = CastingTime.AKCJA,
-            range = "dotykowy",
-            componentName = "kropla kleju lub miodu",
-            componentPower = 2,
-            duration = "liczba minut równa wartości Magii czarownika",
-            description = "Skaven zyskuje zdolność chodzenia lub pełzania po ścianach i sklepieniach z normalną Szybkością. Noszone przez niego przedmioty nadal podlegają grawitacji i upuszczone, spadną na podłoże."
-        )
+    val TrujacyRopien = Spell(
+        name = "Trujący ropień",
+        icon = "",
+        power = 10,
+        timeToCast = CastingTime.AKCJA,
+        range = "dotykowy",
+        componentName = "zardzewiały lancet",
+        componentPower = 2,
+        duration = "",
+        description = "Skaven tworzy pulsujący, ociekający ropą wrzód na jednej ze swych kończyn. Gdy wrzód zostanie przebity (powodując utratę 1 punktu Żywotności, bez uwzględnienia Wytrzymałości i pancerza), wyciekającą z niego ropą można natrzeć ostrze dowolnej broni jednoręcznej. Jeśli cios tym orężem spowoduje utratę choć 1 punktu Żywotności, ofiara musi wykonać Trudny (-20) test Odporności. Nieudany test oznacza, że traci tyle punktów Żywotności, ile wynosi wartość Magii czarownika."
+    )
 
-        val Chyzobieg = Spell(
-            name = "Chyżobieg",
-            icon = "",
-            power = 14,
-            timeToCast = CastingTime.AKCJA,
-            range = "dotykowy",
-            componentName = "skalp elfa",
-            componentPower = 2,
-            duration = "1 minuta (6 rund) plus jedna dodatkowa runda za każdy punkt uzyskanej mocy powyżej wymaganego poziomu mocy",
-            description = "Skaven uzyskuje zdolność poruszania się w zwiększonym tempie. W trakcie trwania czaru jego Szybkość wzrasta o wartość jego Magii."
-        )
+    val LepkieLapy = Spell(
+        name = "Lepkie łapy",
+        icon = "",
+        power = 12,
+        timeToCast = CastingTime.AKCJA,
+        range = "dotykowy",
+        componentName = "kropla kleju lub miodu",
+        componentPower = 2,
+        duration = "liczba minut równa wartości Magii czarownika",
+        description = "Skaven zyskuje zdolność chodzenia lub pełzania po ścianach i sklepieniach z normalną Szybkością. Noszone przez niego przedmioty nadal podlegają grawitacji i upuszczone, spadną na podłoże."
+    )
 
-        val FutroSkrytobojcy = Spell(
-            name = "Futro skrytobójcy",
-            icon = "",
-            power = 16,
-            timeToCast = CastingTime.AKCJA,
-            range = "dotykowy",
-            componentName = "skóra kameleona",
-            componentPower = 2,
-            duration = "liczba minut równa wartości Magii czarownika",
-            description = "Przywołując wiecznie zmieniającą się energię spaczenia, skaven przekształca strukturę własnego futra, by zmieniało kolor zależnie od otoczenia. Gdy czarownik stoi w idealnym bezruchu, otrzymuje modyfikator +30 do testów ukrywania się."
-        )
+    val Chyzobieg = Spell(
+        name = "Chyżobieg",
+        icon = "",
+        power = 14,
+        timeToCast = CastingTime.AKCJA,
+        range = "dotykowy",
+        componentName = "skalp elfa",
+        componentPower = 2,
+        duration = "1 minuta (6 rund) plus jedna dodatkowa runda za każdy punkt uzyskanej mocy powyżej wymaganego poziomu mocy",
+        description = "Skaven uzyskuje zdolność poruszania się w zwiększonym tempie. W trakcie trwania czaru jego Szybkość wzrasta o wartość jego Magii."
+    )
 
-        val ZabojczaFuria = Spell(
-            name = "Zabójcza furia",
-            icon = "",
-            power = 18,
-            timeToCast = CastingTime.AKCJA_PODWOJNA,
-            range = "18 metrów",
-            componentName = "dwie krople krwi zwierzęcia chorego na wściekliznę",
-            componentPower = 2,
-            duration = "liczba rund równa wartości Magii czarownika + 1k10",
-            description = "Skaven wzbudza w dowolnym towarzyszu w zasięgu 18 metrów straszliwy głód, od którego występuje piana na pysku, a ślepia zaczynają szaleńczo obracać się w oczodołach. W trakcie trwania czaru postać zyskuje zdolność czarny głód, ale musi natychmiast po rzuceniu czaru wywołać w sobie czarny głód, w przeciwnym razie zaklęcie nie odnosi skutku."
-        )
+    val FutroSkrytobojcy = Spell(
+        name = "Futro skrytobójcy",
+        icon = "",
+        power = 16,
+        timeToCast = CastingTime.AKCJA,
+        range = "dotykowy",
+        componentName = "skóra kameleona",
+        componentPower = 2,
+        duration = "liczba minut równa wartości Magii czarownika",
+        description = "Przywołując wiecznie zmieniającą się energię spaczenia, skaven przekształca strukturę własnego futra, by zmieniało kolor zależnie od otoczenia. Gdy czarownik stoi w idealnym bezruchu, otrzymuje modyfikator +30 do testów ukrywania się."
+    )
 
-        val CzarnyWir = Spell(
-            name = "Czarny wir",
-            icon = "",
-            power = 20,
-            timeToCast = CastingTime.AKCJA_PODWOJNA,
-            range = "48 metrów",
-            componentName = "szklana fiolka wypełniona popiołem",
-            componentPower = 3,
-            duration = "liczba rund równa wartości Magii czarownika",
-            description = "W dowolnym miejscu w zasięgu 48 metrów skaven przywołuje cuchnący wir paskudnego dymu i ostrych drobinek popiołu. Każda postać w promieniu 3 metrów od wskazanego miejsca otrzymuje trafienie z Siłą 2 i musi wykonać udany test Odporności, w przeciwnym razie na 1k10 minut otrzyma modyfikator -20 do testów Walki Wręcz, Umiejętności Strzeleckich, Zręczności oraz testów spostrzegawczości związanych ze wzrokiem. W czasie trwania czaru w każdej rundzie wir może przesunąć się na odległość do 10 metrów w kierunku wskazanym przez czarownika."
-        )
+    val ZabojczaFuria = Spell(
+        name = "Zabójcza furia",
+        icon = "",
+        power = 18,
+        timeToCast = CastingTime.AKCJA_PODWOJNA,
+        range = "18 metrów",
+        componentName = "dwie krople krwi zwierzęcia chorego na wściekliznę",
+        componentPower = 2,
+        duration = "liczba rund równa wartości Magii czarownika + 1k10",
+        description = "Skaven wzbudza w dowolnym towarzyszu w zasięgu 18 metrów straszliwy głód, od którego występuje piana na pysku, a ślepia zaczynają szaleńczo obracać się w oczodołach. W trakcie trwania czaru postać zyskuje zdolność czarny głód, ale musi natychmiast po rzuceniu czaru wywołać w sobie czarny głód, w przeciwnym razie zaklęcie nie odnosi skutku."
+    )
 
-        val ZnikniecieTwlok = Spell(
-            name = "Zniknięcie zwłok",
-            icon = "",
-            power = 22,
-            timeToCast = CastingTime.GODZINA,
-            range = "18 metrów",
-            componentName = "30 gramów spaczenia połkniętego przez cel(e) zaklęcia",
-            componentPower = 3,
-            duration = "liczba godzin równa wartości Magii czarownika",
-            description = "Jeśli postać poddana mocy tego zaklęcia umrze, jej ciało rozpuszcza się w paskudnie cuchnący, czarny śluz. Zniknięcie zwłok jest zwykle rzucane na skrytobójców z klanu Eshin, zanim wyruszą na misję, dzięki czemu na miejscu akcji nie pozostaną żadne trupy skavenów. To zaklęcie może być rzucone na tylu towarzyszy czarownika, ile wynosi czterokrotna wartość jego Magii."
-        )
+    val CzarnyWir = Spell(
+        name = "Czarny wir",
+        icon = "",
+        power = 20,
+        timeToCast = CastingTime.AKCJA_PODWOJNA,
+        range = "48 metrów",
+        componentName = "szklana fiolka wypełniona popiołem",
+        componentPower = 3,
+        duration = "liczba rund równa wartości Magii czarownika",
+        description = "W dowolnym miejscu w zasięgu 48 metrów skaven przywołuje cuchnący wir paskudnego dymu i ostrych drobinek popiołu. Każda postać w promieniu 3 metrów od wskazanego miejsca otrzymuje trafienie z Siłą 2 i musi wykonać udany test Odporności, w przeciwnym razie na 1k10 minut otrzyma modyfikator -20 do testów Walki Wręcz, Umiejętności Strzeleckich, Zręczności oraz testów spostrzegawczości związanych ze wzrokiem. W czasie trwania czaru w każdej rundzie wir może przesunąć się na odległość do 10 metrów w kierunku wskazanym przez czarownika."
+    )
 
-        val SpaczenioeGwiazdki = Spell(
-            name = "Spaczeniowe gwiazdki",
-            icon = "",
-            power = 26,
-            timeToCast = CastingTime.AKCJA,
-            range = "36 metrów",
-            componentName = "pokryta runami Chaosu srebrna gwiazdka do rzucania",
-            componentPower = 3,
-            duration = "chwilowy",
-            description = "Skaven wywołuje tyle zatrutych spaczeniowych gwiazdek, ile wynosi wartość jego Magii, i rzuca nimi w jednego lub więcej przeciwników w zasięgu 36 metrów. Są to magiczne pociski o Sile 2. Jeśli trafienie spowoduje utratę choć 1 punktu Żywotności, ofiara musi wykonać Trudny (-20) test Odporności. Nieudany test oznacza, że traci kolejne 5 punktów Żywotności."
-        )
-    }
+    val ZnikniecieTwlok = Spell(
+        name = "Zniknięcie zwłok",
+        icon = "",
+        power = 22,
+        timeToCast = CastingTime.GODZINA,
+        range = "18 metrów",
+        componentName = "30 gramów spaczenia połkniętego przez cel(e) zaklęcia",
+        componentPower = 3,
+        duration = "liczba godzin równa wartości Magii czarownika",
+        description = "Jeśli postać poddana mocy tego zaklęcia umrze, jej ciało rozpuszcza się w paskudnie cuchnący, czarny śluz. Zniknięcie zwłok jest zwykle rzucane na skrytobójców z klanu Eshin, zanim wyruszą na misję, dzięki czemu na miejscu akcji nie pozostaną żadne trupy skavenów. To zaklęcie może być rzucone na tylu towarzyszy czarownika, ile wynosi czterokrotna wartość jego Magii."
+    )
 
-    // TRADYCJA SPACZENIA
-    object SpaczenieTradition {
+    val SpaczenioeGwiazdki = Spell(
+        name = "Spaczeniowe gwiazdki",
+        icon = "",
+        power = 26,
+        timeToCast = CastingTime.AKCJA,
+        range = "36 metrów",
+        componentName = "pokryta runami Chaosu srebrna gwiazdka do rzucania",
+        componentPower = 3,
+        duration = "chwilowy",
+        description = "Skaven wywołuje tyle zatrutych spaczeniowych gwiazdek, ile wynosi wartość jego Magii, i rzuca nimi w jednego lub więcej przeciwników w zasięgu 36 metrów. Są to magiczne pociski o Sile 2. Jeśli trafienie spowoduje utratę choć 1 punktu Żywotności, ofiara musi wykonać Trudny (-20) test Odporności. Nieudany test oznacza, że traci kolejne 5 punktów Żywotności."
+    )
 
-        val IskrzacaZaglada = Spell(
-            name = "Iskrząca zagłada",
-            icon = "",
-            power = 7,
-            timeToCast = CastingTime.AKCJA,
-            range = "12 metrów",
-            componentName = "zwój miedzianego drutu",
-            componentPower = 1,
-            duration = "chwilowy",
-            description = "Skaven ciska iskrzącym wyładowaniem zielonej energii w dowolny cel w promieniu 12 metrów. Jest to magiczny pocisk o Sile 2. Ugodzona postać musi wykonać udany Prosty (+10) test Odporności, w przeciwnym razie zostaje ogłuszona na 1 rundę."
-        )
 
-        val PancerzCiemnosci = Spell(
-            name = "Pancerz ciemności",
-            icon = "",
-            power = 13,
-            timeToCast = CastingTime.AKCJA,
-            range = "dotykowy",
-            componentName = "kawałek poczerniałej skóry",
-            componentPower = 2,
-            duration = "liczba minut równa wartości Magii czarownika",
-            description = "Skaven zagęszcza cienie wokół swego ciała. Trudniej go dostrzec w słabym oświetleniu, a zbroja z cieni chroni go też przed obrażeniami. Czarownik uzyskuje 1 Punkt Zbroi na każdej lokacji trafienia oraz modyfikator +20 do wszystkich testów ukrywania się, wykonywanych w ciemnych miejscach. Skaven nie może rzucić tego zaklęcia, jeśli ma na sobie jakikolwiek zwykły pancerz. Jeśli założy zbroję podczas działania zaklęcia, czar natychmiast się rozprasza."
-        )
+    val IskrzacaZaglada = Spell(
+        name = "Iskrząca zagłada",
+        icon = "",
+        power = 7,
+        timeToCast = CastingTime.AKCJA,
+        range = "12 metrów",
+        componentName = "zwój miedzianego drutu",
+        componentPower = 1,
+        duration = "chwilowy",
+        description = "Skaven ciska iskrzącym wyładowaniem zielonej energii w dowolny cel w promieniu 12 metrów. Jest to magiczny pocisk o Sile 2. Ugodzona postać musi wykonać udany Prosty (+10) test Odporności, w przeciwnym razie zostaje ogłuszona na 1 rundę."
+    )
 
-        val SpaczeniwyGrom = Spell(
-            name = "Spaczeniowy grom",
-            icon = "",
-            power = 11,
-            timeToCast = CastingTime.AKCJA,
-            range = "48 metrów",
-            componentName = "wąski pręt miedziany",
-            componentPower = 2,
-            duration = "chwilowy",
-            description = "Skaven ciska iskrzącą błyskawicę spaczenia w dowolną postać w zasięgu 48 metrów. Jest to magiczny pocisk o Sile 5. Za każdą '1' wyrzuconą na kostce podczas określania uzyskanego poziomu mocy, czarownik otrzymuje trafienie z Siłą 1, z powodu utraty kontroli nad wyładowaniem energii spaczeniowej."
-        )
+    val PancerzCiemnosci = Spell(
+        name = "Pancerz ciemności",
+        icon = "",
+        power = 13,
+        timeToCast = CastingTime.AKCJA,
+        range = "dotykowy",
+        componentName = "kawałek poczerniałej skóry",
+        componentPower = 2,
+        duration = "liczba minut równa wartości Magii czarownika",
+        description = "Skaven zagęszcza cienie wokół swego ciała. Trudniej go dostrzec w słabym oświetleniu, a zbroja z cieni chroni go też przed obrażeniami. Czarownik uzyskuje 1 Punkt Zbroi na każdej lokacji trafienia oraz modyfikator +20 do wszystkich testów ukrywania się, wykonywanych w ciemnych miejscach. Skaven nie może rzucić tego zaklęcia, jeśli ma na sobie jakikolwiek zwykły pancerz. Jeśli założy zbroję podczas działania zaklęcia, czar natychmiast się rozprasza."
+    )
 
-        val RojSzkodnikow = Spell(
-            name = "Rój szkodników",
-            icon = "",
-            power = 14,
-            timeToCast = CastingTime.AKCJA_PODWOJNA,
-            range = "5 metrów",
-            componentName = "krąg sera dobrej jakości",
-            componentPower = 2,
-            duration = "liczba rund równa wartości Magii czarownika",
-            description = "Skaven przywołuje masę żarłocznych szczurów, które całym rojem atakują jego przeciwników. Każda postać w promieniu 5 metrów od czarownika otrzymuje trafienie z Siłą 1 w każdej rundzie, gdy jest atakowana przez rój. W następnej rundzie rój szczurów przemieszcza się o 12 metrów w kierunku wskazanym przez czarownika. Potem skaven traci nad nim kontrolę i w kolejnych rundach rój przesuwa się w losowym kierunku."
-        )
+    val SpaczeniwyGrom = Spell(
+        name = "Spaczeniowy grom",
+        icon = "",
+        power = 11,
+        timeToCast = CastingTime.AKCJA,
+        range = "48 metrów",
+        componentName = "wąski pręt miedziany",
+        componentPower = 2,
+        duration = "chwilowy",
+        description = "Skaven ciska iskrzącą błyskawicę spaczenia w dowolną postać w zasięgu 48 metrów. Jest to magiczny pocisk o Sile 5. Za każdą '1' wyrzuconą na kostce podczas określania uzyskanego poziomu mocy, czarownik otrzymuje trafienie z Siłą 1, z powodu utraty kontroli nad wyładowaniem energii spaczeniowej."
+    )
 
-        val SpaczeniowaBurza = Spell(
-            name = "Spaczeniowa burza",
-            icon = "",
-            power = 18,
-            timeToCast = CastingTime.AKCJA_PODWOJNA,
-            range = "48 metrów",
-            componentName = "podobizna Rogatego Szczura wyryta w miedzi",
-            componentPower = 2,
-            duration = "chwilowy",
-            description = "Czarownik wywołuje burzę spaczeniowych gromów w dowolnym miejscu w zasięgu 48 metrów. Stworzona z czystej energii spaczenia i zasilana złowrogą mocą Rogatego Szczura burza może pojawić się w dowolnym miejscu, nawet pod ziemią. Każda postać w promieniu 5 metrów od wskazanego miejsca otrzymuje trafienie z Siłą 5. Za każdą '1' wyrzuconą na kostce podczas określania uzyskanego poziomu mocy, czarownik otrzymuje trafienie z Siłą 3, z powodu utraty kontroli nad wyładowaniem energii spaczeniowej."
-        )
+    val RojSzkodnikow = Spell(
+        name = "Rój szkodników",
+        icon = "",
+        power = 14,
+        timeToCast = CastingTime.AKCJA_PODWOJNA,
+        range = "5 metrów",
+        componentName = "krąg sera dobrej jakości",
+        componentPower = 2,
+        duration = "liczba rund równa wartości Magii czarownika",
+        description = "Skaven przywołuje masę żarłocznych szczurów, które całym rojem atakują jego przeciwników. Każda postać w promieniu 5 metrów od czarownika otrzymuje trafienie z Siłą 1 w każdej rundzie, gdy jest atakowana przez rój. W następnej rundzie rój szczurów przemieszcza się o 12 metrów w kierunku wskazanym przez czarownika. Potem skaven traci nad nim kontrolę i w kolejnych rundach rój przesuwa się w losowym kierunku."
+    )
 
-        val SkórowanieZywcem = Spell(
-            name = "Skórowanie żywcem",
-            icon = "",
-            power = 25,
-            timeToCast = CastingTime.AKCJA_PODWOJNA,
-            range = "10 metrów",
-            componentName = "kawałek wyprawionej skóry człowieka, elfa lub krasnoluda",
-            componentPower = 3,
-            duration = "liczba rund równa wartości Magii czarownika",
-            description = "Zielone wstęgi spaczonej energii oddzierają ciało od kości ofiary. W trakcie trwania czaru dowolna postać w zasięgu 10 metrów od czarownika otrzymuje co rundę trafienie z Siłą 5, bez uwzględnienia Wytrzymałości i pancerza."
-        )
-    }
+    val SpaczeniowaBurza = Spell(
+        name = "Spaczeniowa burza",
+        icon = "",
+        power = 18,
+        timeToCast = CastingTime.AKCJA_PODWOJNA,
+        range = "48 metrów",
+        componentName = "podobizna Rogatego Szczura wyryta w miedzi",
+        componentPower = 2,
+        duration = "chwilowy",
+        description = "Czarownik wywołuje burzę spaczeniowych gromów w dowolnym miejscu w zasięgu 48 metrów. Stworzona z czystej energii spaczenia i zasilana złowrogą mocą Rogatego Szczura burza może pojawić się w dowolnym miejscu, nawet pod ziemią. Każda postać w promieniu 5 metrów od wskazanego miejsca otrzymuje trafienie z Siłą 5. Za każdą '1' wyrzuconą na kostce podczas określania uzyskanego poziomu mocy, czarownik otrzymuje trafienie z Siłą 3, z powodu utraty kontroli nad wyładowaniem energii spaczeniowej."
+    )
 
-    // TRADYCJA ZARAZY
-    object ZarazaTradition {
+    val SkórowanieZywcem = Spell(
+        name = "Skórowanie żywcem",
+        icon = "",
+        power = 25,
+        timeToCast = CastingTime.AKCJA_PODWOJNA,
+        range = "10 metrów",
+        componentName = "kawałek wyprawionej skóry człowieka, elfa lub krasnoluda",
+        componentPower = 3,
+        duration = "liczba rund równa wartości Magii czarownika",
+        description = "Zielone wstęgi spaczonej energii oddzierają ciało od kości ofiary. W trakcie trwania czaru dowolna postać w zasięgu 10 metrów od czarownika otrzymuje co rundę trafienie z Siłą 5, bez uwzględnienia Wytrzymałości i pancerza."
+    )
 
-        val OponcaZakazenia = Spell(
-            name = "Opończa zakażenia",
-            icon = "",
-            power = 6,
-            timeToCast = CastingTime.AKCJA,
-            range = "dotykowy",
-            componentName = "kawałek ciała wyciętego z pleców ofiary zarazy",
-            componentPower = 1,
-            duration = "",
-            description = "Skaven zakaża koc, płaszcz lub fragment ubrania zarazkami świerzbu. Każdy, kto będzie dotykał lub nosił zakażony materiał przez minutę lub dłużej, musi wykonać udany Wymagający (-10) test Odporności, inaczej zapada na tę chorobę."
-        )
 
-        val Przegnicie = Spell(
-            name = "Przegnicie",
-            icon = "",
-            power = 8,
-            timeToCast = CastingTime.AKCJA,
-            range = "6 metrów",
-            componentName = "garść zgniłego ziarna",
-            componentPower = 1,
-            duration = "",
-            description = "Wykonując gest i wypowiadając słowa klątwy, skaven powoduje zepsucie pewnej ilości jedzenia, które gnije i rozkłada się, stając się całkowicie niejadalne. Czarownik wybiera miejsce, psując całą żywność znajdującą się w promieniu 5 metrów od wskazanego punktu. To zaklęcie jest używane z wielką skutecznością, by wywoływać klęskę głodu wśród populacji na powierzchni. Dowolna postać, która zje zepsutą żywność, natychmiast zostaje zarażona chorobą smrodliwych wiatrów."
-        )
+    val OponcaZakazenia = Spell(
+        name = "Opończa zakażenia",
+        icon = "",
+        power = 6,
+        timeToCast = CastingTime.AKCJA,
+        range = "dotykowy",
+        componentName = "kawałek ciała wyciętego z pleców ofiary zarazy",
+        componentPower = 1,
+        duration = "",
+        description = "Skaven zakaża koc, płaszcz lub fragment ubrania zarazkami świerzbu. Każdy, kto będzie dotykał lub nosił zakażony materiał przez minutę lub dłużej, musi wykonać udany Wymagający (-10) test Odporności, inaczej zapada na tę chorobę."
+    )
 
-        val RopiejaceRany = Spell(
-            name = "Ropiejące rany",
-            icon = "",
-            power = 14,
-            timeToCast = CastingTime.AKCJA,
-            range = "24 metry",
-            componentName = "brudny pazur goblina",
-            componentPower = 2,
-            duration = "",
-            description = "Skaven sprawia, że zadawane przeciwnikowi rany stają się paskudnie zainfekowane. Ropiejące rany to magiczny pocisk o zasięgu 24 metrów. Jeśli trafi w postać, która otrzymała już przynajmniej jedno trafienie krytyczne, w jej rany wdaje się zakażenie, które utrzymuje się przez 7 dni. Ofiara nie leczy ran w normalny sposób i otrzymuje modyfikator -10 do wszystkich cech głównych. Postacie posiadające umiejętność leczenie mogą skrócić czas trwania tej choroby według normalnych zasad, ale trudność testu leczenia wykonywanego w tym celu rośnie do poziomu Wymagającego (-10)."
-        )
+    val Przegnicie = Spell(
+        name = "Przegnicie",
+        icon = "",
+        power = 8,
+        timeToCast = CastingTime.AKCJA,
+        range = "6 metrów",
+        componentName = "garść zgniłego ziarna",
+        componentPower = 1,
+        duration = "",
+        description = "Wykonując gest i wypowiadając słowa klątwy, skaven powoduje zepsucie pewnej ilości jedzenia, które gnije i rozkłada się, stając się całkowicie niejadalne. Czarownik wybiera miejsce, psując całą żywność znajdującą się w promieniu 5 metrów od wskazanego punktu. To zaklęcie jest używane z wielką skutecznością, by wywoływać klęskę głodu wśród populacji na powierzchni. Dowolna postać, która zje zepsutą żywność, natychmiast zostaje zarażona chorobą smrodliwych wiatrów."
+    )
 
-        val ZarazliweTchnienie = Spell(
-            name = "Zaraźliwe tchnienie",
-            icon = "",
-            power = 16,
-            timeToCast = CastingTime.AKCJA,
-            range = "16 metrów",
-            componentName = "pałeczka kadzidła ze spaczenia, zapalona na obu końcach",
-            componentPower = 2,
-            duration = "chwilowy",
-            description = "Skaven wydycha zaraźliwy, trujący obłok prosto w swoich wrogów. Długość wydychanej chmury wynosi 16 metrów, zaś szerokość od 1 metra przy czarowniku do 5 metrów na końcu. Każda postać w tym zasięgu musi wykonać udany Wymagający (-10) test Odporności, w przeciwnym razie otrzymuje trafienie z Siłą 4, bez uwzględnienia Wytrzymałości i pancerza. Czarownik jest odporny na własne zaraźliwe tchnienie."
-        )
+    val RopiejaceRany = Spell(
+        name = "Ropiejące rany",
+        icon = "",
+        power = 14,
+        timeToCast = CastingTime.AKCJA,
+        range = "24 metry",
+        componentName = "brudny pazur goblina",
+        componentPower = 2,
+        duration = "",
+        description = "Skaven sprawia, że zadawane przeciwnikowi rany stają się paskudnie zainfekowane. Ropiejące rany to magiczny pocisk o zasięgu 24 metrów. Jeśli trafi w postać, która otrzymała już przynajmniej jedno trafienie krytyczne, w jej rany wdaje się zakażenie, które utrzymuje się przez 7 dni. Ofiara nie leczy ran w normalny sposób i otrzymuje modyfikator -10 do wszystkich cech głównych. Postacie posiadające umiejętność leczenie mogą skrócić czas trwania tej choroby według normalnych zasad, ale trudność testu leczenia wykonywanego w tym celu rośnie do poziomu Wymagającego (-10)."
+    )
 
-        val ZaslonazMuch = Spell(
-            name = "Zasłona z much",
-            icon = "",
-            power = 18,
-            timeToCast = CastingTime.AKCJA_PODWOJNA,
-            range = "3 metry",
-            componentName = "kawałek łajna nurglinga",
-            componentPower = 2,
-            duration = "liczba rund równa dwukrotnej wartości Magii czarownika",
-            description = "Złorzecząc wrogom i młócąc ramionami, skaven przywołuje chmurę gzów i kąśliwych much. Owady roją się wokół niego, gryząc i kąsając jego wrogów. Każda postać w promieniu 3 metrów od czarownika otrzymuje modyfikator -20 do wszystkich testów. Zasłona z much utrudnia także dostrzeżenie otoczonego rojem skavena, co skutkuje modyfikatorem -20 do wszystkich testów US przeciwko niemu. Rój porusza się wraz ze skavenem."
-        )
+    val ZarazliweTchnienie = Spell(
+        name = "Zaraźliwe tchnienie",
+        icon = "",
+        power = 16,
+        timeToCast = CastingTime.AKCJA,
+        range = "16 metrów",
+        componentName = "pałeczka kadzidła ze spaczenia, zapalona na obu końcach",
+        componentPower = 2,
+        duration = "chwilowy",
+        description = "Skaven wydycha zaraźliwy, trujący obłok prosto w swoich wrogów. Długość wydychanej chmury wynosi 16 metrów, zaś szerokość od 1 metra przy czarowniku do 5 metrów na końcu. Każda postać w tym zasięgu musi wykonać udany Wymagający (-10) test Odporności, w przeciwnym razie otrzymuje trafienie z Siłą 4, bez uwzględnienia Wytrzymałości i pancerza. Czarownik jest odporny na własne zaraźliwe tchnienie."
+    )
 
-        val PizmoGrozy = Spell(
-            name = "Piżmo grozy",
-            icon = "",
-            power = 20,
-            timeToCast = CastingTime.AKCJA,
-            range = "36 metrów",
-            componentName = "żelazny krążek z wyrytym symbolem Rogatego Szczura",
-            componentPower = 3,
-            duration = "liczba rund równa wartości Magii czarownika",
-            description = "W dowolnym miejscu w zasięgu 36 metrów skaven wywołuje wielki obłok demonicznego piżma, którego zapach przeraża wszystkie stworzenia. Każda postać w promieniu 5 metrów od wskazanego miejsca musi wykonać test Grozy. Skaveny otrzymują modyfikator -10 do tego testu. Jeśli test okazał się nieudany, a postać wydostała się poza zasięg obłoku piżma, przez dodatkową minutę (6 rund) nadal odczuwa efekty Grozy."
-        )
+    val ZaslonazMuch = Spell(
+        name = "Zasłona z much",
+        icon = "",
+        power = 18,
+        timeToCast = CastingTime.AKCJA_PODWOJNA,
+        range = "3 metry",
+        componentName = "kawałek łajna nurglinga",
+        componentPower = 2,
+        duration = "liczba rund równa dwukrotnej wartości Magii czarownika",
+        description = "Złorzecząc wrogom i młócąc ramionami, skaven przywołuje chmurę gzów i kąśliwych much. Owady roją się wokół niego, gryząc i kąsając jego wrogów. Każda postać w promieniu 3 metrów od czarownika otrzymuje modyfikator -20 do wszystkich testów. Zasłona z much utrudnia także dostrzeżenie otoczonego rojem skavena, co skutkuje modyfikatorem -20 do wszystkich testów US przeciwko niemu. Rój porusza się wraz ze skavenem."
+    )
 
-        val KwasnyDeszcz = Spell(
-            name = "Kwaśny deszcz",
-            icon = "",
-            power = 24,
-            timeToCast = CastingTime.AKCJA_PODWOJNA,
-            range = "36 metrów",
-            componentName = "młoda żmija jaskiniowa",
-            componentPower = 3,
-            duration = "1 minuta (6 rund) plus liczba rund równa wartości Magii czarownika",
-            description = "Wzywając moc Rogatego Szczura, skaven wywołuje trującą chmurę, która pojawia się w odległości do 36 metrów od niego, unosząc się kilka metrów nad ziemią. W następnej rundzie z chmury spada trujący deszcz. Każda postać w promieniu 5 metrów od wskazanego miejsca musi wykonać udany test Odporności, w przeciwnym razie zapada w koszmarny sen. Dodatkowo w trakcie trwania czaru każda postać poddana działaniu kwaśnego deszczu musi w każdej rundzie wykonać Wymagający (-10) test Odporności. Nieudany test oznacza trafienie z Siłą 2, bez uwzględnienia Wytrzymałości i pancerza. Śpiące postacie, którym powiodą się trzy testy Odporności z rzędu, uwalniają się spod wpływu zaklęcia. W innym przypadku muszą zostać obudzone w normalny sposób."
-        )
+    val PizmoGrozy = Spell(
+        name = "Piżmo grozy",
+        icon = "",
+        power = 20,
+        timeToCast = CastingTime.AKCJA,
+        range = "36 metrów",
+        componentName = "żelazny krążek z wyrytym symbolem Rogatego Szczura",
+        componentPower = 3,
+        duration = "liczba rund równa wartości Magii czarownika",
+        description = "W dowolnym miejscu w zasięgu 36 metrów skaven wywołuje wielki obłok demonicznego piżma, którego zapach przeraża wszystkie stworzenia. Każda postać w promieniu 5 metrów od wskazanego miejsca musi wykonać test Grozy. Skaveny otrzymują modyfikator -10 do tego testu. Jeśli test okazał się nieudany, a postać wydostała się poza zasięg obłoku piżma, przez dodatkową minutę (6 rund) nadal odczuwa efekty Grozy."
+    )
 
-        val Zaraza = Spell(
-            name = "Zaraza",
-            icon = "",
-            power = 26,
-            timeToCast = CastingTime.AKCJA_PODWOJNA,
-            range = "18 metrów",
-            componentName = "kropidło z martwych pcheł",
-            componentPower = 3,
-            duration = "",
-            description = "Skaven zrasza zarazkami zielonej ospy dowolne miejsce w zasięgu 18 metrów. Każda postać w promieniu 3 metrów od wskazanego miejsca musi wykonać udany test Odporności, w przeciwnym razie natychmiast zaczyna odczuwać efekty choroby, tracąc po 5 punktów każdej cechy głównej. Za pierwszym razem, gdy inne postacie wejdą w bliski kontakt z kimkolwiek zarażonym tą plagą (także w czasie walki w zwarciu), również muszą wykonać udany test Odporności, albo same zarażą się zieloną ospą. Wtórne ofiary odczuwają normalne efekty choroby zamiast przyspieszonej wersji, jaka dotyka pierwszych zarażonych. Mogą dalej roznosić zarazę, lecz już w normalny sposób. Udany powyższy test Odporności oznacza, że postać na 24 godziny staje się odporna na działanie następnych zaklęć zarazy, nawet rzucanych przez innych czarowników."
-        )
-    }
+    val KwasnyDeszcz = Spell(
+        name = "Kwaśny deszcz",
+        icon = "",
+        power = 24,
+        timeToCast = CastingTime.AKCJA_PODWOJNA,
+        range = "36 metrów",
+        componentName = "młoda żmija jaskiniowa",
+        componentPower = 3,
+        duration = "1 minuta (6 rund) plus liczba rund równa wartości Magii czarownika",
+        description = "Wzywając moc Rogatego Szczura, skaven wywołuje trującą chmurę, która pojawia się w odległości do 36 metrów od niego, unosząc się kilka metrów nad ziemią. W następnej rundzie z chmury spada trujący deszcz. Każda postać w promieniu 5 metrów od wskazanego miejsca musi wykonać udany test Odporności, w przeciwnym razie zapada w koszmarny sen. Dodatkowo w trakcie trwania czaru każda postać poddana działaniu kwaśnego deszczu musi w każdej rundzie wykonać Wymagający (-10) test Odporności. Nieudany test oznacza trafienie z Siłą 2, bez uwzględnienia Wytrzymałości i pancerza. Śpiące postacie, którym powiodą się trzy testy Odporności z rzędu, uwalniają się spod wpływu zaklęcia. W innym przypadku muszą zostać obudzone w normalny sposób."
+    )
+
+    val Zaraza = Spell(
+        name = "Zaraza",
+        icon = "",
+        power = 26,
+        timeToCast = CastingTime.AKCJA_PODWOJNA,
+        range = "18 metrów",
+        componentName = "kropidło z martwych pcheł",
+        componentPower = 3,
+        duration = "",
+        description = "Skaven zrasza zarazkami zielonej ospy dowolne miejsce w zasięgu 18 metrów. Każda postać w promieniu 3 metrów od wskazanego miejsca musi wykonać udany test Odporności, w przeciwnym razie natychmiast zaczyna odczuwać efekty choroby, tracąc po 5 punktów każdej cechy głównej. Za pierwszym razem, gdy inne postacie wejdą w bliski kontakt z kimkolwiek zarażonym tą plagą (także w czasie walki w zwarciu), również muszą wykonać udany test Odporności, albo same zarażą się zieloną ospą. Wtórne ofiary odczuwają normalne efekty choroby zamiast przyspieszonej wersji, jaka dotyka pierwszych zarażonych. Mogą dalej roznosić zarazę, lecz już w normalny sposób. Udany powyższy test Odporności oznacza, że postać na 24 godziny staje się odporna na działanie następnych zaklęć zarazy, nawet rzucanych przez innych czarowników."
+    )
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////

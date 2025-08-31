@@ -101,6 +101,20 @@
                 android:fontFamily="serif"
                 android:textSize="16sp"
                 android:padding="10dp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+            <Button
+                android:id="@+id/blessingBookButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttony"
+                android:text="Modlitewnik"
+                android:textColor="@android:color/black"
+                android:textStyle="bold|italic"
+                android:fontFamily="serif"
+                android:textSize="16sp"
+                android:padding="10dp" />
 
         </LinearLayout>
     </ScrollView>

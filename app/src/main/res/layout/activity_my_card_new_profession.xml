@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    style="@style/RootLinearLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rootLayout">
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_0004"
+    android:padding="16dp">
+
+    <include
+        layout="@layout/my_card_header"
+        android:id="@+id/headerLayout"/>
 
     <ScrollView
         android:id="@+id/scrollView"
         style="@style/ScrollStyle">
 
         <LinearLayout
-            style="@style/ScrollLinearVertical">
-            <LinearLayout
-                style="@style/HorizontalRow">
-                <TextView
-                    android:id="@+id/nameView"
-                    style="@style/DoubleLabelStyle"
-                    android:gravity="center"
-                    android:text="Imie: " />
-            </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 style="@style/HorizontalRow">
@@ -309,29 +310,65 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/inputAbilities"
-                    style="@style/SingleLabelStyle"
-                    android:layout_width="match_parent"
-                    android:text="Umiejętności"/>
+                <LinearLayout
+                    style="@style/HorizontalRow"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:id="@+id/inputAbilities"
+                        style="@style/SingleLabelStyle"
+                        android:layout_width="match_parent"
+                        android:text="Umiejętności"/>
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/HorizontalRow"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:id="@+id/inputSkills"
+                        style="@style/SingleLabelStyle"
+                        android:layout_width="match_parent"
+                        android:text="Zdolności" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/inputSkills"
-                    style="@style/SingleLabelStyle"
-                    android:layout_width="match_parent"
-                    android:text="Zdolności" />
+                <LinearLayout
+                    style="@style/HorizontalRow"
+                    android:layout_marginBottom="8dp">
 
-                <TextView
-                    android:id="@+id/inputEntryPaths"
-                    style="@style/SingleLabelStyle"
-                    android:layout_width="match_parent"
-                    android:text="Profesje wejściowe"/>
+                    <TextView
+                        android:id="@+id/inputEntryPaths"
+                        style="@style/SingleLabelStyle"
+                        android:layout_width="match_parent"
+                        android:text="Profesje wejściowe" />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/HorizontalRow"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:id="@+id/inputExitPaths"
+                        style="@style/SingleLabelStyle"
+                        android:layout_width="match_parent"
+                        android:text="Profesje wyjściowe" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/inputExitPaths"
-                    style="@style/SingleLabelStyle"
-                    android:layout_width="match_parent"
-                    android:text="Profesje wyjściowe"/>
+                <LinearLayout
+                    style="@style/HorizontalRow"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/inputQuote"
+                        style="@style/SingleLabelStyle"
+                        android:layout_width="match_parent"
+                        android:textStyle="italic"
+                        android:text="Cytat" />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/HorizontalRow"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:id="@+id/inputDescription"
+                        style="@style/SingleLabelStyle"
+                        android:layout_width="match_parent"
+                        android:text="Profesje wyjściowe" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -360,20 +397,6 @@
             android:paddingBottom="16dp"
             android:scaleType="fitCenter"
             android:src="@drawable/back_001"/>
-
-        <Space
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/exitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/exit_002" />
 
         <Space
             android:layout_width="30dp"

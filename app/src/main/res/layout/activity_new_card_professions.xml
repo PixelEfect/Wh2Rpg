@@ -250,6 +250,7 @@
                     android:layout_width="match_parent"
                     android:text="Zdolności" />
             </LinearLayout>
+
             <LinearLayout
                 style="@style/HorizontalRow"
                 android:layout_marginBottom="8dp">
@@ -262,15 +263,33 @@
             </LinearLayout>
             <LinearLayout
                 style="@style/HorizontalRow"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="16dp">
                 <TextView
                     android:id="@+id/inputExitPaths"
                     style="@style/SingleLabelStyle"
                     android:layout_width="match_parent"
                     android:text="Profesje wyjściowe" />
             </LinearLayout>
+            <LinearLayout
+                style="@style/HorizontalRow"
+                android:layout_marginBottom="8dp">
 
-
+                <TextView
+                    android:id="@+id/inputQuote"
+                    style="@style/SingleLabelStyle"
+                    android:layout_width="match_parent"
+                    android:textStyle="italic"
+                    android:text="Cytat" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/HorizontalRow"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:id="@+id/inputDescription"
+                    style="@style/SingleLabelStyle"
+                    android:layout_width="match_parent"
+                    android:text="Profesje wyjściowe" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

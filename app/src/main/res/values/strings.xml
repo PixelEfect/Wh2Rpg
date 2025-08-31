@@ -163,5 +163,6 @@
     <string name="source_must_have">Must Have</string>
     <string name="source_group">Grupa: %1$s</string>
     <string name="group_not_found">Nie odnaleziono grupy</string>
+    <string name="punkty_do_wiadczenia">Punkty doświadczenia</string>
 
 </resources>

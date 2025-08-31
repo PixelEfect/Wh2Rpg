@@ -7,19 +7,9 @@
     android:orientation="vertical"
     android:background="@drawable/background_0004"
     android:padding="16dp">
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/nameView"  
-            style="@style/DoubleLabelStyle"
-            android:gravity="center"
-            android:text="Imie: " />
-    </LinearLayout>
+    <include
+        layout="@layout/my_card_header"
+        android:id="@+id/headerLayout"/>
     <!-- ScrollView z treścią formularza -->
     <ScrollView
         android:id="@+id/formScrollView"
@@ -178,61 +168,70 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingTop="8dp"
         android:paddingBottom="16dp">
 
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
         <ImageButton
-            android:id="@+id/backButton"
+            android:id="@+id/descriptionButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/back_001"
-            android:scaleType="fitCenter"
-            android:paddingTop="8dp"
-            android:paddingBottom="16dp"
             android:adjustViewBounds="true"
             android:background="@null"
-            android:visibility="invisible" />
-
-        <Space
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/exitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/exit_002"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:background="@null" />
-
-        <Space
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/nextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/next_001"
-            android:scaleType="fitCenter"
             android:paddingTop="8dp"
             android:paddingBottom="16dp"
-            android:adjustViewBounds="true"
-            android:background="@null" />
-
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/description"
             android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/inventoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/inventory2"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/statsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/stats2"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/magicButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/magic2"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/skillsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/skills2"
+            android:layout_weight="1"/>
+
     </LinearLayout>
 </LinearLayout>

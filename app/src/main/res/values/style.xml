@@ -73,6 +73,7 @@
         <item name="android:gravity">center</item>
         <item name="android:inputType">none</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="BaseAttribute">
@@ -86,6 +87,7 @@
         <item name="android:gravity">center</item>
         <item name="android:inputType">none</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="ProgressAttribute">
@@ -111,6 +113,7 @@
         <item name="android:gravity">center</item>
         <item name="android:inputType">none</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="StatProgressStyle">
         <item name="android:layout_height">8dp</item>
@@ -226,6 +229,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="ProfessionButtonStyle">
         <item name="android:layout_width">wrap_content</item>

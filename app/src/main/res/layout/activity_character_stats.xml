@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_0004"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <include
+        layout="@layout/my_card_header"
+        android:id="@+id/headerLayout"/>
+    <!-- ScrollView z treścią formularza -->
+    <ScrollView
+        android:id="@+id/formScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            style="@style/ScrollLinearVertical"
+            android:paddingHorizontal="0dp">
+
+            <LinearLayout
+                style="@style/HorizontalRow">
+
+                <LinearLayout
+                    style="@style/VerticalRow"
+                    android:layout_weight="6"
+                    android:layout_marginRight="4dp">
+
+
+                    <TextView
+                        android:id="@+id/raceTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Rasa: " />
+
+                    <TextView
+                        android:id="@+id/sexTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Płeć: "/>
+
+                    <TextView
+                        android:id="@+id/eyesTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Oczy: " />
+
+                    <TextView
+                        android:id="@+id/hairTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Włosy: " />
+
+                    <TextView
+                        android:id="@+id/ageTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Wiek: " />
+
+                    <TextView
+                        android:id="@+id/weightTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Waga: " />
+
+                    <TextView
+                        android:id="@+id/heightTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Wzrost: " />
+
+                    <TextView
+                        android:id="@+id/starSignTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Znak gwiezdny: " />
+
+                    <TextView
+                        android:id="@+id/professionTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="Profesja: "
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:id="@+id/newProfessionTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="  Zmień profesję  "
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:background="@drawable/translucent_bg1"/>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5">
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/image_0003" />
+
+                    <ImageButton
+                        android:id="@+id/buttonEditImage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="8dp"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/transparent"
+                        android:padding="4dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_image_001" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/HorizontalRow">
+
+                <!-- Blok WW -->
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/WWView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_ww" />
+
+                    <TextView
+                        android:id="@+id/baseWW"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionWW"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/wwProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedWW"
+                        style="@style/ObtainedAttribute"/>
+                </LinearLayout>
+
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/USView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_us" />
+
+                    <TextView
+                        android:id="@+id/baseUS"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionUS"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/usProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedUS"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/KView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_k" />
+
+                    <TextView
+                        android:id="@+id/baseK"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionK"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/kProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedK"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok Odp -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/OdpView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_odp" />
+
+                    <TextView
+                        android:id="@+id/baseOdp"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionOdp"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/odpProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedOdp"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok Zr -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/ZrView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_zr" />
+
+                    <TextView
+                        android:id="@+id/baseZr"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionZr"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/zrProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedZr"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok Int -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/IntView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_int" />
+
+                    <TextView
+                        android:id="@+id/baseInt"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionInt"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/intProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedInt"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok SW -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/SWView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_sw" />
+
+                    <TextView
+                        android:id="@+id/baseSW"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionSW"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/swProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedSW"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok Ogd -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/OgdView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_ogd" />
+
+                    <TextView
+                        android:id="@+id/baseOgd"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionOgd"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/ogdProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedOgd"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/HorizontalRow">
+
+                <!-- Blok a -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/AView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_a" />
+
+                    <TextView
+                        android:id="@+id/baseA"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionA"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/aProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedA"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/InputBlockStyle">
+                    <TextView
+                        android:id="@+id/ZywView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_zyw" />
+
+                    <TextView
+                        android:id="@+id/baseZyw"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionZyw"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/zywProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedZyw"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/SView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_s" />
+
+                    <TextView
+                        android:id="@+id/baseS"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionS"
+                        style="@style/ProgressAttribute"
+                        android:layout_marginBottom="14dp"/>
+
+                    <TextView
+                        android:id="@+id/obtainedS"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok Wt -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/WtView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_wt" />
+
+                    <TextView
+                        android:id="@+id/baseWt"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionWt"
+                        style="@style/ProgressAttribute"
+                        android:layout_marginBottom="14dp"/>
+
+                    <TextView
+                        android:id="@+id/obtainedWt"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok Sz -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/SzView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_sz" />
+
+                    <TextView
+                        android:id="@+id/baseSz"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionSz"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/szProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedSz"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok Mag -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/MagView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_mag" />
+
+                    <TextView
+                        android:id="@+id/baseMag"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionMag"
+                        style="@style/ProgressAttribute" />
+
+                    <com.dd.rpgcardapp.StatProgressView
+                        android:id="@+id/magProgressBar"
+                        style="@style/StatProgressStyle"
+                        android:layout_width="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/obtainedMag"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok PO -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/POView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_po" />
+
+                    <TextView
+                        android:id="@+id/basePO"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionPO"
+                        style="@style/ProgressAttribute"
+                        android:layout_marginBottom="14dp"/>
+
+                    <TextView
+                        android:id="@+id/obtainedPO"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+                <!-- Blok PP -->
+                <LinearLayout style="@style/InputBlockStyle">
+
+                    <TextView
+                        android:id="@+id/PPView"
+                        style="@style/DoubleLabelStyle"
+                        android:text="@string/label_pp" />
+
+                    <TextView
+                        android:id="@+id/basePP"
+                        style="@style/BaseAttribute"
+                        android:layout_marginBottom="2dp"/>
+
+                    <TextView
+                        android:id="@+id/progressionPP"
+                        style="@style/ProgressAttribute"
+                        android:layout_marginBottom="14dp"/>
+
+                    <TextView
+                        android:id="@+id/obtainedPP"
+                        style="@style/ObtainedAttribute" />
+                </LinearLayout>
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/skillsTextView"
+                style="@style/DoubleLabelStyle"
+                android:text="Zdolności"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp">
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/d100Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/d100" />
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/diceTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:layout_width="100dp"
+                        android:gravity="center"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/numberTextView"
+                        style="@style/DoubleLabelStyle"
+                        android:layout_width="100dp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="30dp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/d10Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/d10" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <!-- Experience Points Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:gravity="center"
+                    android:text="@string/punkty_do_wiadczenia"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="0dp"/>
+                <EditText
+                    android:id="@+id/inputPD"
+                    style="@style/NumberInputStyle"
+                    android:background="@drawable/translucent_bg1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    style="@style/SingleLabelStyle"
+                    android:gravity="center"
+                    android:text="/"
+                    android:layout_weight="0.4" />
+                <TextView
+                    android:id="@+id/spendPD"
+                    style="@style/SingleLabelStyle"
+                    android:gravity="center"
+                    android:text=""
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/descriptionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/description2"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/inventoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/inventory2"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/statsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/stats"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/magicButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/magic2"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/skillsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/skills2"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>
