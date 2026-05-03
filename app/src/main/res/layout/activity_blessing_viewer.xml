@@ -3,9 +3,9 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_0004"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/background_0004">
+    android:padding="16dp">
 
     <View
         android:layout_width="match_parent"
@@ -15,20 +15,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BŁOGOSŁAWIEŃSTWA"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
+        android:text="BŁOGOSŁAWIEŃSTWA"
         android:textColor="@color/white"
-        android:layout_marginBottom="16dp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <!-- Category Navigation -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
         android:gravity="center_vertical"
-        android:layout_marginBottom="8dp">
+        android:orientation="horizontal">
 
         <Space
             android:layout_width="10dp"
@@ -39,10 +39,10 @@
             android:id="@+id/buttonPreviousCategory"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/back_001"
-            android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:background="@null" />
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back_001" />
 
         <Space
             android:layout_width="20dp"
@@ -53,10 +53,10 @@
             android:id="@+id/textCurrentCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Błogosławieństwa"
-            android:textSize="16sp"
             android:gravity="center"
-            android:textColor="@color/white" />
+            android:text="Błogosławieństwa"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <Space
             android:layout_width="20dp"
@@ -67,10 +67,10 @@
             android:id="@+id/buttonNextCategory"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/next_001"
-            android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:background="@null" />
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/next_001" />
 
         <Space
             android:layout_width="10dp"
@@ -83,9 +83,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
         android:gravity="center_vertical"
-        android:layout_marginBottom="16dp">
+        android:orientation="horizontal">
 
         <Space
             android:layout_width="10dp"
@@ -96,10 +96,10 @@
             android:id="@+id/buttonPreviousBlessing"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/back_001"
-            android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:background="@null" />
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back_001" />
 
         <Space
             android:layout_width="20dp"
@@ -109,28 +109,28 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textCurrentBlessing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nazwa błogosławieństwa"
-                android:textSize="16sp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/white" />
+                android:text="Nazwa błogosławieństwa"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textBlessingCounter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1 / 2"
-                android:textSize="12sp"
+                android:layout_marginTop="4dp"
                 android:gravity="center"
+                android:text="1 / 2"
                 android:textColor="@color/white"
-                android:layout_marginTop="4dp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -143,10 +143,10 @@
             android:id="@+id/buttonNextBlessing"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/next_001"
-            android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:background="@null" />
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/next_001" />
 
         <Space
             android:layout_width="10dp"
@@ -172,86 +172,86 @@
                 android:id="@+id/textBlessingName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nazwa błogosławieństwa"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
                 android:layout_marginBottom="16dp"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="Nazwa błogosławieństwa"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textPower"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Moc: 3"
-                android:textSize="14sp"
                 android:textColor="@color/white"
-                android:layout_marginBottom="8dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textTimeToCast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Czas rzucania: akcja"
-                android:textSize="14sp"
                 android:textColor="@color/white"
-                android:layout_marginBottom="8dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textRange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Zasięg: dotykowy"
-                android:textSize="14sp"
                 android:textColor="@color/white"
-                android:layout_marginBottom="8dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textComponent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Komponent: nazwa (moc: 1)"
-                android:textSize="14sp"
                 android:textColor="@color/white"
-                android:layout_marginBottom="8dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textDuration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:text="Czas trwania: natychmiastowy"
-                android:textSize="14sp"
                 android:textColor="@color/white"
-                android:layout_marginBottom="16dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Opis:"
-                android:textSize="16sp"
-                android:textStyle="bold"
                 android:textColor="@color/white"
-                android:layout_marginBottom="8dp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Opis błogosławieństwa..."
-                android:textSize="14sp"
-                android:textColor="@color/white"
+                android:layout_marginBottom="16dp"
                 android:lineSpacingMultiplier="1.2"
-                android:layout_marginBottom="16dp" />
+                android:text="Opis błogosławieństwa..."
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textNote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
                 android:text=""
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="italic"
-                android:textColor="@color/white"
-                android:lineSpacingMultiplier="1.2"
                 android:visibility="gone" />
 
         </LinearLayout>
@@ -261,8 +261,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingTop="8dp"
         android:paddingBottom="16dp">
 
@@ -275,12 +275,12 @@
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/back_001"
-            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="@null"
             android:paddingTop="8dp"
             android:paddingBottom="16dp"
-            android:adjustViewBounds="true"
-            android:background="@null"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/back_001" />
 
         <Space
             android:layout_width="30dp"
@@ -291,10 +291,10 @@
             android:id="@+id/exitButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/exit_002"
-            android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:background="@null"/>
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/exit_002" />
 
         <Space
             android:layout_width="30dp"
@@ -305,12 +305,12 @@
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/next_001"
-            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="@null"
             android:paddingTop="8dp"
             android:paddingBottom="16dp"
-            android:adjustViewBounds="true"
-            android:background="@null" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/next_001" />
 
         <Space
             android:layout_width="10dp"

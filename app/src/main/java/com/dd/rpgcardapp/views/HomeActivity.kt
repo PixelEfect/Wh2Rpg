@@ -62,6 +62,9 @@ class HomeActivity : BaseActivity() {
         findViewById<Button>(R.id.magicBookButton).setOnClickListener {
             startActivityWithTransition(Intent(this, SpellViewerActivity::class.java), TransitionType.FADE)
         }
+        findViewById<Button>(R.id.mutationBookButton).setOnClickListener {
+            startActivityWithTransition(Intent(this, MutationViewerActivity::class.java), TransitionType.FADE)
+        }
     }
 
     // onStart is called when the activity is about to become visible
